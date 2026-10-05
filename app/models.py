@@ -105,6 +105,10 @@ class CitingSentence(BaseModel):
     reference_keys: list[str]
     # Offsets of each citation marker within the paper text, for highlighting.
     marker_spans: list[tuple[int, int]] = Field(default_factory=list)
+    # Keys cited by each marker, aligned with marker_spans.
+    marker_keys: list[list[str]] = Field(default_factory=list)
+    context_before: str = ""  # previous sentence in the same paragraph
+    context_after: str = ""  # next sentence in the same paragraph
 
 
 class IngestResult(BaseModel):
@@ -119,12 +123,17 @@ class Claim(BaseModel):
     claim_type: ClaimType = "finding"
     numbers: list[str] = Field(default_factory=list)
     scope: Optional[str] = None
+    # True when extraction failed and the whole sentence is used as the claim.
+    fallback: bool = False
 
 
 class Passage(BaseModel):
     text: str
     chunk_index: int  # -1 for the abstract
     score: float
+    heading: str = ""  # section heading the chunk falls under
+    start: int = -1  # character offsets in the cited paper's text (-1 for the abstract)
+    end: int = -1
 
 
 class Evidence(BaseModel):

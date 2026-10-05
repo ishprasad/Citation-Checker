@@ -2,7 +2,7 @@
 
 For every citation in a research paper, Citation Checker asks one question: does the cited source actually say what the citing author claims it says? It runs on NVIDIA Nemotron models served through Nebius Token Factory.
 
-> Work in progress. See `CITATION_CHECKER_BRIEF.md` for the full plan. Done so far: milestone 1 (scaffold, config, LLM wrapper), milestone 2 (arXiv LaTeX ingest) and milestone 3 (reference resolution and full-text fetching).
+> Work in progress. See `CITATION_CHECKER_BRIEF.md` for the full plan. Done so far: milestones 1–4 (scaffold and LLM wrapper, arXiv LaTeX ingest, reference resolution and full-text fetching, claim extraction and evidence retrieval).
 
 ## Setup
 
@@ -13,6 +13,7 @@ python scripts/list_models.py # copy the exact Nemotron / embedding model IDs in
 python scripts/smoke_test.py  # one call to each configured model, with token usage
 python scripts/ingest_paper.py 1706.03762  # parse a paper: references and citing sentences
 python scripts/resolve_refs.py 1706.03762  # find every cited paper, fetch its text, print coverage
+python scripts/sample_claims.py 2310.06825 # extracted claims and top evidence passages for a few citations
 uvicorn app.main:app --reload
 ```
 
@@ -70,3 +71,19 @@ Coverage on real papers:
 |---|---|---|---|
 | Attention Is All You Need | 32 of 40 | 8 | 0 |
 | Chain-of-Thought Prompting | 82 of 86 | 2 | 2 |
+
+## Claim extraction (`app/pipeline/claims.py`, Nemotron Nano)
+
+Each citing sentence goes to the extraction model with its citation markers replaced by short ids (`[R1, R2]`), along with the neighbouring sentences and the citing paper's title. For each marker, the model writes what the sentence attributes to the cited work: the statements that work itself must contain for the citation to be accurate. Framing it this way stops a small model from attributing the citing authors' own results to the works they cite ("our changes to FlashAttention [R1] give a 2x speedup" yields only "FlashAttention is an implementation of attention").
+
+Code checks guard the output:
+- Unknown reference ids are dropped.
+- Claims whose content words mostly don't appear in the citing sentence are dropped.
+- Numbers are re-extracted from the claim text.
+- A reference the model skipped gets a lenient `background` claim built from the phrase its marker is attached to, never the whole sentence.
+
+Reference titles are deliberately not shown to the model, because it tended to copy them into claims.
+
+## Evidence retrieval (`app/pipeline/evidence.py`, embeddings)
+
+Each cited paper is split into chunks of about 400 tokens with about 80 tokens of overlap, on sentence boundaries. Chunks never cross a section heading, and each keeps its heading and character offsets. For PDF text, only numbered headings or standard section names count as headings. Chunks are embedded once per reference (cached on disk). Claims are embedded with a retrieval instruction, which Qwen3-Embedding expects; set it with `EMBED_QUERY_INSTRUCTION`. Each (claim, reference) pair gets the top 5 chunks by cosine similarity, plus the abstract.

@@ -97,7 +97,16 @@ def citing_sentences(
     section_starts = [s.start for s in sections]
     ordered = sorted(markers, key=lambda m: m.start)
     result = []
-    for start, end in spans:
+
+    def neighbour(i: int) -> str:
+        if 0 <= i < len(spans):
+            a, b = spans[i]
+            lo, hi = (min(b, start), max(a, end))
+            if "\n\n" not in text[lo:hi]:  # same paragraph only
+                return text[a:b]
+        return ""
+
+    for i, (start, end) in enumerate(spans):
         inside = [m for m in ordered if start <= m.start < end]
         keys: list[str] = []
         for m in inside:
@@ -116,6 +125,9 @@ def citing_sentences(
                 end=end,
                 reference_keys=keys,
                 marker_spans=[(m.start, m.end) for m in inside],
+                marker_keys=[[k for k in m.keys if k in known_keys] for m in inside],
+                context_before=neighbour(i - 1),
+                context_after=neighbour(i + 1),
             )
         )
     return result

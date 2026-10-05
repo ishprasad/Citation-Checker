@@ -13,6 +13,11 @@ ROOT_DIR = Path(__file__).resolve().parent.parent
 
 ROLES = ("extract", "judge", "escalate", "vision", "embed")
 
+DEFAULT_EMBED_QUERY_INSTRUCTION = (
+    "Given a claim that a paper attributes to a cited work, retrieve passages from the cited work "
+    "that support or contradict the claim"
+)
+
 
 def _env(name: str, default: str = "") -> str:
     value = (os.getenv(name, default) or default).strip()
@@ -54,6 +59,9 @@ class Settings:
     contact_email: str
     prices: dict[str, ModelPrice]
     arxiv_min_interval: float = 3.0  # seconds between requests to arxiv.org (arXiv's policy)
+    # Instruction prefix for retrieval queries (instruction-aware embedders such as Qwen3-Embedding).
+    # Empty string = embed the raw claim.
+    embed_query_instruction: str = ""
 
     # Per-role generation parameters.
     max_tokens: dict[str, int] = field(default_factory=dict)
@@ -100,6 +108,10 @@ def get_settings() -> Settings:
         db_path=db_path,
         contact_email=_env("CONTACT_EMAIL"),
         arxiv_min_interval=_env_float("ARXIV_MIN_INTERVAL", 3.0),
+        embed_query_instruction=(
+            "" if _env("EMBED_QUERY_INSTRUCTION").lower() == "none"
+            else _env("EMBED_QUERY_INSTRUCTION", DEFAULT_EMBED_QUERY_INSTRUCTION)
+        ),
         prices={
             role: ModelPrice(
                 input=_env_float(f"PRICE_{role.upper()}_IN", 0.0),
@@ -120,7 +132,12 @@ def get_settings() -> Settings:
             "vision": _env_float("TEMPERATURE_VISION", 0.0),
         },
         # Reasoning on for judging and escalation, off for high-volume extraction.
-        reasoning={"extract": False, "judge": True, "escalate": True, "vision": False},
+        reasoning={
+            "extract": _env("REASONING_EXTRACT", "false").lower() in ("1", "true", "yes", "on"),
+            "judge": True,
+            "escalate": True,
+            "vision": False,
+        },
         quick_check_max_citations=_env_int("QUICK_CHECK_MAX_CITATIONS", 20),
         max_references=_env_int("MAX_REFERENCES", 150),
         max_pdf_mb=_env_int("MAX_PDF_MB", 25),
