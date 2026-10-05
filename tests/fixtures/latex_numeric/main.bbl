@@ -1,0 +1,19 @@
+\begin{thebibliography}{3}
+
+\bibitem{jones2019}
+Mary Jones and Peter Brown.
+\newblock Adapters for everything.
+\newblock {\em Journal of Testing}, 12(3):1--10, 2019.
+\newblock doi:10.1234/jot.2019.42.
+
+\bibitem{lee2021}
+Kim Lee, Ana Garc{\'\i}a, and Wei Zhang.
+\newblock Pretraining for low-resource {NLP}.
+\newblock {\em arXiv preprint arXiv:2101.00001}, 2021.
+
+\bibitem{smith2020}
+John Smith.
+\newblock Deep networks on {ImageNet}.
+\newblock In {\em Proc.\ of CVPR}, 2020.
+
+\end{thebibliography}

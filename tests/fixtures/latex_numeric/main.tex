@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage{natbib}
+\usepackage{graphicx}
+\def\method{FooNet\xspace}
+\newcommand{\data}{BarSet}
+\newcommand{\todo}[1]{{\color{red}#1}}
+% \def\unused{should not appear}
+
+\title{A Fixture Paper}
+\author{Ada Lovelace \and Alan Turing}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We study \method on the \data benchmark.
+\end{abstract}
+
+\input{sections/intro}
+
+\section{Method}
+\label{sec:method}
+As shown in Fig.~\ref{fig:arch}, \method follows prior work. % trailing comment
+The model reaches $12\%$ higher accuracy than the baseline~\cite{smith2020}.
+\begin{figure}[t]
+  \includegraphics[width=0.8\linewidth]{arch.pdf}
+  \caption{A figure caption citing \cite{jones2019}, which must be ignored.}
+  \label{fig:arch}
+\end{figure}
+\citet{lee2021} report that pretraining helps in low-resource settings.
+Training is stable for learning rates up to $10^{-3}$ (see~\citealp[Sec.~3]{smith2020}).
+
+\iffalse
+This paragraph is disabled \cite{jones2019}.
+\fi
+
+\section{Related Work}
+Several methods exist, e.g.\ adapters and prompts \citep{jones2019, lee2021}. Dr.\ Smith et al.\ proposed the first version.
+Unrelated sentence without citations.
+Early work studied this extensively. \cite{missingkey}
+Results improved further.\footnote{See also \cite{jones2019}.}
+
+\bibliographystyle{plain}
+\bibliography{refs}
+\end{document}

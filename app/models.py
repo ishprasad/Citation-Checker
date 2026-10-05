@@ -32,7 +32,8 @@ class Section(BaseModel):
 
 
 class Reference(BaseModel):
-    key: str  # as cited in text, e.g. "12" or "Smith2020"
+    key: str  # citation key as used in the source, e.g. "smith2020" (LaTeX) or "12" (PDF)
+    label: str = ""  # as displayed in the paper text, e.g. "12" or "Smith et al., 2020"
     raw: str
     title: Optional[str] = None
     authors: list[str] = Field(default_factory=list)
@@ -51,11 +52,19 @@ class Paper(BaseModel):
     id: str
     title: str = ""
     authors: list[str] = Field(default_factory=list)
+    abstract: str = ""
     source: Literal["arxiv", "pdf"]
+    arxiv_id: Optional[str] = None  # including version, e.g. "1706.03762v7"
     parsed_from: Literal["latex", "pdf", "grobid"] = "latex"
+    citation_style: Literal["numeric", "author_year"] = "numeric"
     text: str = ""  # full plain text; section/sentence offsets index into this
     sections: list[Section] = Field(default_factory=list)
     references: list[Reference] = Field(default_factory=list)
+    # In-text citation keys seen vs. those mapped to a bibliography entry.
+    citation_keys_total: int = 0
+    citation_keys_mapped: int = 0
+    notes: list[str] = Field(default_factory=list)  # shown in the report header
+
 
 
 class CitingSentence(BaseModel):
@@ -68,6 +77,10 @@ class CitingSentence(BaseModel):
     # Offsets of each citation marker within the paper text, for highlighting.
     marker_spans: list[tuple[int, int]] = Field(default_factory=list)
 
+
+class IngestResult(BaseModel):
+    paper: Paper
+    sentences: list[CitingSentence]
 
 class Claim(BaseModel):
     id: str
