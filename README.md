@@ -2,7 +2,7 @@
 
 For every citation in a research paper, Citation Checker asks one question: does the cited source actually say what the citing author claims it says? It runs on NVIDIA Nemotron models served through Nebius Token Factory.
 
-> Work in progress. See `CITATION_CHECKER_BRIEF.md` for the full plan. Done so far: milestone 1 (scaffold, config, LLM wrapper) and milestone 2 (arXiv LaTeX ingest).
+> Work in progress. See `CITATION_CHECKER_BRIEF.md` for the full plan. Done so far: milestone 1 (scaffold, config, LLM wrapper), milestone 2 (arXiv LaTeX ingest) and milestone 3 (reference resolution and full-text fetching).
 
 ## Setup
 
@@ -12,6 +12,7 @@ cp .env.example .env          # then add NEBIUS_API_KEY
 python scripts/list_models.py # copy the exact Nemotron / embedding model IDs into .env
 python scripts/smoke_test.py  # one call to each configured model, with token usage
 python scripts/ingest_paper.py 1706.03762  # parse a paper: references and citing sentences
+python scripts/resolve_refs.py 1706.03762  # find every cited paper, fetch its text, print coverage
 uvicorn app.main:app --reload
 ```
 
@@ -46,3 +47,26 @@ For an arXiv ID, the app downloads the paper's LaTeX source rather than the PDF.
 - **Bibliography.** `app/pipeline/bibliography.py` reads natbib or numeric `\bibitem` entries (in a `.bbl` file or inline), biblatex `.bbl` files and `.bib` files, in that order of preference. It extracts title, authors, year, DOI and arXiv ID.
 - **Citation markers.** Markers are rendered the way the paper shows them: numeric (`[3, 5]`, `Lee et al. [2]`) or author-year (`(Kaplan et al., 2020)`, `Brown et al. (2020)`).
 - **Sentences.** `app/pipeline/sentences.py` splits sentences without breaking on abbreviations such as `et al.`, `e.g.` and `Fig.`, and keeps each citation marker attached to its sentence.
+
+## Reference resolution (`app/pipeline/references.py`)
+
+Each reference is matched to a real paper, and its text is fetched using free APIs only.
+
+- **Identify.** The app first uses the arXiv ID or DOI from the bibliography entry. arXiv metadata is looked up in batches, as are OpenAlex records by DOI. Otherwise it runs an OpenAlex title search, then a Crossref bibliographic search. A match must reach a title-similarity threshold of 0.88 and pass a year sanity check. A shortened cited title is accepted if it is a prefix of the real title.
+- **Fetch text.** The app tries these sources in order:
+  1. arXiv LaTeX source, converted with figure and table captions kept, since captions often hold the cited numbers.
+  2. The arXiv PDF.
+  3. An open-access PDF listed by OpenAlex.
+  4. An arXiv preprint "twin" of a published paper.
+  5. The abstract alone, marked `abstract_only`.
+
+  PDF text comes from PyMuPDF, with hyphenation and ligatures repaired. The cited paper's own reference list is stored next to its text, for the secondary-citation detector.
+- **Retractions.** The app uses OpenAlex `is_retracted` and Crossref `updated-by` entries with `type: "retraction"`. Crossref includes Retraction Watch data. If neither source has a record, `retracted` stays `null`.
+- **Caching and politeness.** Every HTTP response and every resolved reference is cached under `.cache/`. Requests carry a `mailto` User-Agent, and arXiv requests are spaced 3 seconds apart. A transient download failure degrades to the abstract and is not cached, so the next run retries.
+
+Coverage on real papers:
+
+| Paper | Full text | Abstract only | Unavailable |
+|---|---|---|---|
+| Attention Is All You Need | 32 of 40 | 8 | 0 |
+| Chain-of-Thought Prompting | 82 of 86 | 2 | 2 |

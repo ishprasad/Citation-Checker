@@ -105,25 +105,55 @@ class ArxivMeta:
     abstract: str
 
 
+ARXIV_BATCH = 50
+
+
+def _clean_ws(s: Optional[str]) -> str:
+    return re.sub(r"\s+", " ", s or "").strip()
+
+
+def parse_arxiv_feed(data: bytes) -> dict[str, ArxivMeta]:
+    """Atom feed -> {unversioned id: ArxivMeta}."""
+    found = {}
+    for entry in ET.fromstring(data).findall(f"{ATOM}entry"):
+        entry_id = entry.findtext(f"{ATOM}id", "")
+        if "arxiv.org/abs/" not in entry_id:
+            continue  # error entries for unknown IDs
+        versioned = entry_id.split("arxiv.org/abs/", 1)[1]
+        found[strip_version(versioned)] = ArxivMeta(
+            id=versioned,
+            title=_clean_ws(entry.findtext(f"{ATOM}title")),
+            authors=[_clean_ws(a.findtext(f"{ATOM}name")) for a in entry.findall(f"{ATOM}author")],
+            abstract=_clean_ws(entry.findtext(f"{ATOM}summary")),
+        )
+    return found
+
+
+async def fetch_arxiv_metadata_batch(arxiv_ids: list[str]) -> dict[str, ArxivMeta]:
+    """Metadata for many papers in as few API calls as possible. Keys are unversioned IDs."""
+    ids = sorted({strip_version(i) for i in arxiv_ids})
+    found: dict[str, ArxivMeta] = {}
+    for start in range(0, len(ids), ARXIV_BATCH):
+        batch = ids[start : start + ARXIV_BATCH]
+        data = await fetch_cached(
+            "https://export.arxiv.org/api/query",
+            "arxiv_meta",
+            params={"id_list": ",".join(batch), "max_results": str(len(batch))},
+            suffix=".xml",
+        )
+        found.update(parse_arxiv_feed(data))
+    return found
+
+
 async def fetch_arxiv_metadata(arxiv_id: str) -> ArxivMeta:
     data = await fetch_cached(
         "https://export.arxiv.org/api/query", "arxiv_meta", params={"id_list": arxiv_id}, suffix=".xml"
     )
-    root = ET.fromstring(data)
-    entry = root.find(f"{ATOM}entry")
-    entry_id = entry.findtext(f"{ATOM}id", "") if entry is not None else ""
-    if entry is None or "arxiv.org/abs/" not in entry_id:
+    found = parse_arxiv_feed(data)
+    meta = found.get(strip_version(arxiv_id))
+    if meta is None:
         raise InvalidArxivId(f"arXiv has no paper with ID {arxiv_id}.")
-
-    def clean(s: Optional[str]) -> str:
-        return re.sub(r"\s+", " ", s or "").strip()
-
-    return ArxivMeta(
-        id=entry_id.split("arxiv.org/abs/", 1)[1],
-        title=clean(entry.findtext(f"{ATOM}title")),
-        authors=[clean(a.findtext(f"{ATOM}name")) for a in entry.findall(f"{ATOM}author")],
-        abstract=clean(entry.findtext(f"{ATOM}summary")),
-    )
+    return meta
 
 
 def unpack_source(data: bytes) -> dict[str, str]:
@@ -281,7 +311,7 @@ def _make_renderers(b: _Bib):
     return render, cite_text
 
 
-def parse_latex_project(files: dict[str, str]) -> tuple[Paper, list]:
+def parse_latex_project(files: dict[str, str], keep_captions: bool = False) -> tuple[Paper, list]:
     """Pure function (no network): LaTeX sources -> (Paper without metadata, citing sentences)."""
     project = LatexProject(files)
     main = project.main_file()
@@ -295,7 +325,7 @@ def parse_latex_project(files: dict[str, str]) -> tuple[Paper, list]:
     cited = _cited_keys_in_order(body)
     bibliography = _load_bibliography(project, preamble, body, cited)
     render, cite_text = _make_renderers(bibliography)
-    result = LatexConverter(render, cite_text).convert(body)
+    result = LatexConverter(render, cite_text, keep_captions=keep_captions).convert(body)
 
     sections = build_sections(result.text, result.headings)
     mapped = [k for k in cited if k in bibliography.entries]

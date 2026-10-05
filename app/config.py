@@ -53,6 +53,7 @@ class Settings:
     db_path: Path
     contact_email: str
     prices: dict[str, ModelPrice]
+    arxiv_min_interval: float = 3.0  # seconds between requests to arxiv.org (arXiv's policy)
 
     # Per-role generation parameters.
     max_tokens: dict[str, int] = field(default_factory=dict)
@@ -98,6 +99,7 @@ def get_settings() -> Settings:
         cache_dir=cache_dir,
         db_path=db_path,
         contact_email=_env("CONTACT_EMAIL"),
+        arxiv_min_interval=_env_float("ARXIV_MIN_INTERVAL", 3.0),
         prices={
             role: ModelPrice(
                 input=_env_float(f"PRICE_{role.upper()}_IN", 0.0),

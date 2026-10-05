@@ -133,7 +133,8 @@ def _bibitem_entry(key: str, label: Optional[str], body: str) -> BibEntry:
         url=url_match.group(1).strip() if url_match else None,
     )
     if len(plain_blocks) >= 2:
-        entry.title = plain_blocks[1].strip().rstrip(".").strip() or None
+        title = plain_blocks[1].strip().rstrip(".").strip()
+        entry.title = re.sub(r",\s*(?:19|20)\d{2}[a-z]?$", "", title) or None  # "Title, 2001."
         author_text = re.sub(r"\(?\b(?:19|20)\d{2}[a-z]?\)?\.?\s*$", "", plain_blocks[0]).strip()
         entry.authors = _split_author_list(author_text)
 

@@ -8,6 +8,7 @@ from typing import Literal, Optional
 from pydantic import BaseModel, Field
 
 FulltextStatus = Literal["full", "abstract_only", "unavailable"]
+FulltextSource = Literal["arxiv_latex", "arxiv_pdf", "oa_pdf"]
 ClaimType = Literal["finding", "method", "definition", "background"]
 VerdictLabel = Literal["supported", "overstated", "not_found", "contradicted", "unverifiable"]
 FailureMode = Literal[
@@ -44,8 +45,36 @@ class Reference(BaseModel):
     url: Optional[str] = None
     abstract: Optional[str] = None
     fulltext_status: FulltextStatus = "unavailable"
-    retracted: Optional[bool] = None
+    fulltext_source: Optional[FulltextSource] = None
+    status_reason: Optional[str] = None  # shown in the UI when text is limited
+    match_score: Optional[float] = None  # title similarity of the resolved record
+    retracted: Optional[bool] = None  # None = could not be checked
+    retraction_notice: Optional[str] = None  # DOI of the retraction notice, if known
     text_path: Optional[str] = None
+
+
+class Coverage(BaseModel):
+    total: int = 0
+    full: int = 0
+    abstract_only: int = 0
+    unavailable: int = 0
+    retracted: int = 0
+
+    @classmethod
+    def of(cls, references: list[Reference]) -> "Coverage":
+        return cls(
+            total=len(references),
+            full=sum(r.fulltext_status == "full" for r in references),
+            abstract_only=sum(r.fulltext_status == "abstract_only" for r in references),
+            unavailable=sum(r.fulltext_status == "unavailable" for r in references),
+            retracted=sum(bool(r.retracted) for r in references),
+        )
+
+    def line(self) -> str:
+        return (
+            f"Full text found for {self.full} of {self.total} references · abstract only for "
+            f"{self.abstract_only} · unavailable for {self.unavailable}."
+        )
 
 
 class Paper(BaseModel):

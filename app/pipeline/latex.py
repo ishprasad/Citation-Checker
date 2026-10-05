@@ -247,6 +247,11 @@ MATH_ENVS = {
     "eqnarray", "eqnarray*", "displaymath", "math", "flalign", "flalign*", "alignat", "alignat*",
     "split",
 }
+CAPTION_ENVS = {
+    "figure": "Figure", "wrapfigure": "Figure", "sidewaysfigure": "Figure", "subfigure": "Figure",
+    "table": "Table", "wraptable": "Table", "sidewaystable": "Table",
+}
+_CAPTION_RE = re.compile(r"\\caption\*?(?![A-Za-z])")
 LIST_ENVS = {"itemize", "enumerate", "description", "list", "compactitem", "compactenum"}
 ENV_ARGS = {"minipage": 1, "multicols": 1, "list": 2}
 
@@ -360,9 +365,16 @@ CiteRenderer = Callable[[str, list[str], list[str]], str]
 
 
 class LatexConverter:
-    def __init__(self, cite_renderer: Optional[CiteRenderer] = None, cite_text: Optional[Callable[[str, list[str]], str]] = None):
+    def __init__(
+        self,
+        cite_renderer: Optional[CiteRenderer] = None,
+        cite_text: Optional[Callable[[str, list[str]], str]] = None,
+        keep_captions: bool = False,
+    ):
         self.cite_renderer = cite_renderer
         self.cite_text = cite_text
+        # For cited papers we keep figure/table captions: they often hold the cited numbers.
+        self.keep_captions = keep_captions
         self.out: list[str] = []
         self.pos = 0
         self.pending = 0  # 0 none, 1 space, 2 paragraph break
@@ -639,6 +651,20 @@ class LatexConverter:
         self.emit(title)
         self.para()
 
+    def _captions(self, env_src: str, kind: str) -> None:
+        for m in _CAPTION_RE.finditer(env_src):
+            j = m.end()
+            if j < len(env_src) and env_src[j] == "[":
+                _, j = read_bracket(env_src, j)
+            j = self._skip_ws(env_src, j)
+            if j >= len(env_src) or env_src[j] != "{":
+                continue
+            caption, _ = read_group(env_src, j)
+            self.para()
+            self.emit(f"{kind}: ")
+            self._sub(caption)
+            self.para()
+
     def _begin(self, src: str, i: int) -> int:
         env, i = self._arg(src, i)
         env = (env or "").strip()
@@ -648,6 +674,8 @@ class LatexConverter:
                 self.space()
             else:
                 self.para()
+                if self.keep_captions and env.rstrip("*") in CAPTION_ENVS:
+                    self._captions(src[i:end], CAPTION_ENVS[env.rstrip("*")])
             return end
         if env == "abstract":
             self._heading("Abstract", 1)
