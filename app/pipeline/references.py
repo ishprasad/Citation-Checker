@@ -33,7 +33,7 @@ from app.config import get_settings
 import httpx
 
 from app.http import DownloadTooLarge, cache_path, fetch_cached
-from app.models import Reference
+from app.models import EditorialUpdate, Reference
 from app.pipeline.ingest import (
     ArxivMeta,
     NoLatexSource,
@@ -47,7 +47,7 @@ from app.pipeline.pdftext import PdfTextError, extract_pdf_text
 
 log = logging.getLogger(__name__)
 
-RESOLVER_VERSION = 6  # bump to invalidate cached resolutions after logic changes
+RESOLVER_VERSION = 7  # bump to invalidate cached resolutions after logic changes
 TITLE_MATCH_THRESHOLD = 0.88
 MIN_FULLTEXT_CHARS = 3000
 MAX_PDF_BYTES = 40 * 1024 * 1024
@@ -207,11 +207,29 @@ def candidate_from_crossref(item: dict[str, Any]) -> Candidate:
     )
 
 
-def crossref_retraction(item: dict[str, Any]) -> tuple[bool, Optional[str]]:
-    """Crossref marks retracted works with an `updated-by` entry of type "retraction"."""
+RETRACTION_TYPES = {"retraction", "withdrawal", "removal"}
+
+
+def crossref_updates(item: dict[str, Any]) -> list[EditorialUpdate]:
+    """Editorial notices attached to a work (`updated-by`): retractions, corrections, errata,
+    expressions of concern... Crossref merges in Retraction Watch data (source "retraction-watch")."""
+    updates = []
     for update in item.get("updated-by") or []:
-        if (update.get("type") or "").lower() == "retraction":
-            return True, normalize_doi(update.get("DOI"))
+        kind = (update.get("type") or "").lower().replace("-", "_").replace(" ", "_")
+        if not kind:
+            continue
+        date = ((update.get("updated") or {}).get("date-time") or "")[:10] or None
+        updates.append(EditorialUpdate(type=kind, doi=normalize_doi(update.get("DOI")),
+                                       source=update.get("source"), date=date))
+    return updates
+
+
+def crossref_retraction(item: dict[str, Any]) -> tuple[bool, Optional[str]]:
+    """Crossref marks retracted works with an `updated-by` entry of type "retraction"
+    (also "withdrawal" / "removal")."""
+    for update in crossref_updates(item):
+        if update.type in RETRACTION_TYPES:
+            return True, update.doi
     return False, None
 
 
@@ -417,7 +435,7 @@ def _resolution_cache_key(ref: Reference) -> str:
 
 _RESOLVED_FIELDS = (
     "title", "authors", "year", "doi", "arxiv_id", "openalex_id", "url", "abstract", "fulltext_status",
-    "fulltext_source", "status_reason", "match_score", "retracted", "retraction_notice", "text_path",
+    "fulltext_source", "status_reason", "match_score", "retracted", "retraction_notice", "text_path", "updates",
 )
 
 
@@ -428,7 +446,7 @@ def _load_cached_resolution(ref: Reference) -> Optional[Reference]:
     data = json.loads(path.read_text(encoding="utf-8"))
     if data.get("text_path") and not Path(data["text_path"]).exists():
         return None
-    return ref.model_copy(update={k: data.get(k) for k in _RESOLVED_FIELDS})
+    return Reference.model_validate({**ref.model_dump(), **{k: data[k] for k in _RESOLVED_FIELDS if k in data}})
 
 
 def _save_resolution(original: Reference, resolved: Reference) -> None:
@@ -541,6 +559,7 @@ class ReferenceResolver:
             retracted, notice = crossref_retraction(crossref_item)
             ref.retracted = bool(ref.retracted) or retracted
             ref.retraction_notice = notice
+            ref.updates = crossref_updates(crossref_item)
             ref.abstract = ref.abstract or _strip_jats(crossref_item.get("abstract"))
         if score is not None:
             ref.match_score = round(score, 3)

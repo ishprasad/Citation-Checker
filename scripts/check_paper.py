@@ -62,7 +62,9 @@ async def main() -> int:
         timings["extract"] = time.perf_counter() - t
 
         t = time.perf_counter()
-        evidence = await EvidenceRetriever().retrieve_all(claims, refs_by_key)
+        retriever = EvidenceRetriever()
+        evidence = await retriever.retrieve_all(claims, refs_by_key)
+        abstract_scores = await retriever.abstract_scores(claims, refs_by_key)
         timings["retrieve"] = time.perf_counter() - t
 
         t = time.perf_counter()
@@ -71,7 +73,7 @@ async def main() -> int:
         timings["judge+escalate"] = time.perf_counter() - t
 
     claims_by_id = {c.id: c for c in claims}
-    verdicts = apply_detectors(verdicts, claims_by_id, refs_by_key)
+    verdicts = apply_detectors(verdicts, claims_by_id, refs_by_key, evidence, abstract_scores=abstract_scores)
     for v in verdicts:
         claim = claims_by_id[v.claim_id]
         ref = refs_by_key.get(v.reference_key)

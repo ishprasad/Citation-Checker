@@ -17,7 +17,14 @@ FailureMode = Literal[
     "hypothesis_as_finding",
     "secondary_citation",
     "retracted_source",
+    "off_topic_citation",
+    "correlation_as_causation",
+    "significance_inflation",
+    "corrected_source",
+    "expression_of_concern",
 ]
+Relation = Literal["causal", "associational", "none"]
+SourceStatistics = Literal["significant", "not_significant", "not_tested", "unclear"]
 JobStatus = Literal["queued", "running", "done", "partial", "failed"]
 
 
@@ -30,6 +37,13 @@ class Section(BaseModel):
     text: str
     start: int  # character offset of `text` in the paper's plain text
     end: int
+
+
+class EditorialUpdate(BaseModel):
+    type: str  # Crossref update type: retraction, correction, erratum, expression_of_concern, ...
+    doi: Optional[str] = None  # DOI of the notice
+    source: Optional[str] = None  # "publisher" or "retraction-watch"
+    date: Optional[str] = None  # ISO date
 
 
 class Reference(BaseModel):
@@ -50,6 +64,8 @@ class Reference(BaseModel):
     match_score: Optional[float] = None  # title similarity of the resolved record
     retracted: Optional[bool] = None  # None = could not be checked
     retraction_notice: Optional[str] = None  # DOI of the retraction notice, if known
+    # Corrections, errata, expressions of concern... (Crossref `updated-by`, incl. Retraction Watch).
+    updates: list[EditorialUpdate] = Field(default_factory=list)
     text_path: Optional[str] = None
 
 
@@ -159,6 +175,10 @@ class JudgeSignals(BaseModel):
     numbers: list[NumberComparison] = Field(default_factory=list)
     support_attributed_to_other_work: bool = False
     other_work: Optional[str] = None
+    claim_relation: Relation = "none"  # how the claim links its variables
+    source_relation: Relation = "none"  # how the cited passage links them
+    source_statistics: SourceStatistics = "unclear"  # statistical support for the point in the source
+    cited_work_on_topic: bool = True  # False if the cited work is not about the claim's topic at all
 
 
 class Verdict(BaseModel):

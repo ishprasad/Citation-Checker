@@ -188,6 +188,27 @@ class EvidenceRetriever:
         vectors = _normalize(await llm.embed([query_text(c.claim_text) for c in claims]))
         return {c.id: v for c, v in zip(claims, vectors)}
 
+    async def abstract_scores(
+        self, claims: list[Claim], refs_by_key: dict[str, Reference]
+    ) -> dict[str, dict[str, float]]:
+        """For each claim, similarity to the abstract of every reference that has one.
+
+        Abstract-level similarity is comparable across references (unlike best-chunk scores,
+        which grow with paper length), so it can tell when a claim fits a different
+        reference in the same bibliography much better than the one it cites.
+        """
+        query_vecs = await self.query_vectors(claims)
+        keys = list(refs_by_key)
+        indexes = await asyncio.gather(*(self.index(refs_by_key[k]) for k in keys))
+        with_abstract = [(k, ix.abstract_vec) for k, ix in zip(keys, indexes) if ix is not None and ix.abstract_vec is not None]
+        if not with_abstract:
+            return {c.id: {} for c in claims}
+        matrix = np.stack([vec for _, vec in with_abstract])
+        return {
+            c.id: {k: float(s) for (k, _), s in zip(with_abstract, matrix @ query_vecs[c.id])}
+            for c in claims
+        }
+
     async def retrieve(self, claim: Claim, ref: Reference, query_vec: Optional[np.ndarray] = None) -> Evidence:
         evidence = Evidence(claim_id=claim.id, reference_key=ref.key)
         index = await self.index(ref)
