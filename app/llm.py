@@ -31,7 +31,7 @@ from openai import AsyncOpenAI
 from pydantic import BaseModel, ValidationError
 
 from app.config import Settings, get_settings
-from app.db import Database, LLMCache
+from app.db import Database, LLMCache, get_database
 from app.models import ModelUsage, UsageSummary
 
 log = logging.getLogger(__name__)
@@ -141,7 +141,7 @@ class LLMClient:
             max_retries=0,  # we do our own backoff
             timeout=600,
         )
-        self.db = db or Database(settings.db_path)
+        self.db = db or get_database()
         self.cache = cache or LLMCache(settings.cache_dir / "llm_cache.sqlite")
         self.semaphore = asyncio.Semaphore(settings.max_concurrency)
         self._format_mode: dict[str, str] = {}

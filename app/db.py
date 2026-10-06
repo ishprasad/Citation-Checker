@@ -1,4 +1,4 @@
-"""SQLite storage: per-call usage records and the LLM response cache.
+"""SQLite storage: jobs and their intermediate results, per-call usage records, and the LLM response cache.
 
 Two separate files are used on purpose: the jobs/usage database is per-deployment
 state, while the LLM cache is a reusable artifact (e.g. shipped with the demo paper
@@ -59,6 +59,61 @@ class Database(_SQLite):
             )"""
         )
         self.execute("CREATE INDEX IF NOT EXISTS usage_job ON usage(job_id)")
+        self.execute(
+            """CREATE TABLE IF NOT EXISTS jobs (
+                id TEXT PRIMARY KEY,
+                data TEXT NOT NULL,
+                status TEXT NOT NULL,
+                created_at REAL NOT NULL,
+                updated_at REAL NOT NULL
+            )"""
+        )
+        # Intermediate results per job: ingest, reference, claims, evidence, judged, verdict.
+        self.execute(
+            """CREATE TABLE IF NOT EXISTS artifacts (
+                job_id TEXT NOT NULL,
+                kind TEXT NOT NULL,
+                item_id TEXT NOT NULL,
+                data TEXT NOT NULL,
+                PRIMARY KEY (job_id, kind, item_id)
+            )"""
+        )
+
+    # -- jobs -------------------------------------------------------------------
+
+    def save_job(self, job_id: str, data: str, status: str, created_at: float) -> None:
+        self.execute(
+            "INSERT INTO jobs (id, data, status, created_at, updated_at) VALUES (?, ?, ?, ?, ?)"
+            " ON CONFLICT(id) DO UPDATE SET data = excluded.data, status = excluded.status,"
+            " updated_at = excluded.updated_at",
+            (job_id, data, status, created_at, time.time()),
+        )
+
+    def load_job(self, job_id: str) -> Optional[str]:
+        rows = self.execute("SELECT data FROM jobs WHERE id = ?", (job_id,))
+        return rows[0]["data"] if rows else None
+
+    def jobs_with_status(self, statuses: tuple[str, ...]) -> list[str]:
+        placeholders = ",".join("?" * len(statuses))
+        return [r["data"] for r in self.execute(f"SELECT data FROM jobs WHERE status IN ({placeholders})", statuses)]
+
+    # -- artifacts ----------------------------------------------------------------
+
+    def put_artifact(self, job_id: str, kind: str, item_id: str, data: str) -> None:
+        self.execute(
+            "INSERT OR REPLACE INTO artifacts (job_id, kind, item_id, data) VALUES (?, ?, ?, ?)",
+            (job_id, kind, item_id, data),
+        )
+
+    def get_artifact(self, job_id: str, kind: str, item_id: str) -> Optional[str]:
+        rows = self.execute(
+            "SELECT data FROM artifacts WHERE job_id = ? AND kind = ? AND item_id = ?", (job_id, kind, item_id)
+        )
+        return rows[0]["data"] if rows else None
+
+    def artifacts(self, job_id: str, kind: str) -> dict[str, str]:
+        rows = self.execute("SELECT item_id, data FROM artifacts WHERE job_id = ? AND kind = ?", (job_id, kind))
+        return {r["item_id"]: r["data"] for r in rows}
 
     def record_usage(
         self,
@@ -145,3 +200,22 @@ class LLMCache(_SQLite):
                 for k, v in items.items()
             ],
         )
+
+
+_database: Optional[Database] = None
+
+
+def get_database() -> Database:
+    """The app-wide jobs/usage database."""
+    global _database
+    if _database is None:
+        from app.config import get_settings
+
+        _database = Database(get_settings().db_path)
+    return _database
+
+
+def set_database(db: Optional[Database]) -> None:
+    """Override the app-wide database (tests)."""
+    global _database
+    _database = db

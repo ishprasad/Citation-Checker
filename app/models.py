@@ -223,18 +223,39 @@ class UsageSummary(BaseModel):
     total_estimated_cost_usd: float = 0.0
 
 
+STAGES = (
+    ("parse", "Parse"),
+    ("resolve", "Resolve references"),
+    ("extract", "Extract claims"),
+    ("retrieve", "Retrieve evidence"),
+    ("judge", "Judge"),
+    ("escalate", "Escalate"),
+)
+
+
 class StageProgress(BaseModel):
     stage: str
+    label: str = ""
     done: int = 0
     total: int = 0
+    state: Literal["pending", "running", "done"] = "pending"
+
+
+def default_progress() -> list[StageProgress]:
+    return [StageProgress(stage=key, label=label) for key, label in STAGES]
 
 
 class Job(BaseModel):
     id: str
     status: JobStatus = "queued"
     mode: Literal["quick", "full"] = "quick"
-    progress: list[StageProgress] = Field(default_factory=list)
+    source: Literal["arxiv", "pdf"] = "arxiv"
+    arxiv_id: Optional[str] = None  # as requested (normalized); versioned id is on the paper
+    title: str = ""
+    progress: list[StageProgress] = Field(default_factory=default_progress)
     created_at: datetime = Field(default_factory=_now)
     paper_id: Optional[str] = None
+    sentences_total: int = 0  # citing sentences in the paper
+    sentences_checked: int = 0  # citing sentences included in this check
     usage: UsageSummary = Field(default_factory=UsageSummary)
     message: Optional[str] = None

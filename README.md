@@ -2,7 +2,7 @@
 
 For every citation in a research paper, Citation Checker asks one question: does the cited source actually say what the citing author claims it says? It runs on NVIDIA Nemotron models served through Nebius Token Factory.
 
-> Work in progress. See `CITATION_CHECKER_BRIEF.md` for the full plan. Done so far: milestones 1–6, plus four extra failure-mode detectors (scaffold and LLM wrapper, arXiv LaTeX ingest, reference resolution and full-text fetching, claim extraction and evidence retrieval, judging with quote verification and escalation, failure-mode detectors).
+> Work in progress. See `CITATION_CHECKER_BRIEF.md` for the full plan. Done so far: milestones 1–7 (through the API, job orchestration and SSE), plus four extra failure-mode detectors (scaffold and LLM wrapper, arXiv LaTeX ingest, reference resolution and full-text fetching, claim extraction and evidence retrieval, judging with quote verification and escalation, failure-mode detectors).
 
 ## Setup
 
@@ -125,3 +125,21 @@ After judging, each verdict can carry one or more failure-mode tags, each with a
 | `correlation_as_causation` | The judge's signals say the source is associational and the claim is causal, *and* the claim uses causal wording ("reduces", "leads to") while the verified source text uses associational wording ("associated with", "correlated"). A `supported` verdict becomes `overstated`. | 'The cited work reports an association ("associated"); the claim states a causal effect ("reduces").' |
 | `significance_inflation` | The claim says "significantly", "proven" or similar, the judge says the source reports the result as not significant, *and* the source text says so ("not significant", "p = 0.12", "n.s."). A `supported` verdict becomes `overstated`. It also fires when a claim says "statistically significant" about a result the source never tested. "Significantly" alone is common ML wording and isn't flagged. | 'The cited work reports this as not statistically significant ("p = 0.12")…' |
 | `corrected_source`, `expression_of_concern` | Crossref `updated-by` lists a correction, erratum or corrigendum, or an expression of concern, for the cited work. This applies to every claim citing it. | "A correction was published for the cited work (doi:…, 2004-03-06)." |
+
+## API (`app/main.py`) and orchestration (`app/pipeline/run.py`)
+
+| Method | Path | Purpose |
+|---|---|---|
+| `POST` | `/api/jobs` | Start a check. Send `{"arxiv_id": "...", "mode": "quick" \| "full"}`; `arxiv_id` can be a bare ID, a versioned ID, an old-style ID or any arxiv.org URL. A multipart PDF upload (`file`, `mode`) is validated (content type, `%PDF-` magic bytes, `MAX_PDF_MB`); PDF parsing arrives in milestone 11. |
+| `POST` | `/api/jobs/{id}/expand` | Upgrade a finished quick check to a full check, reusing everything already computed. |
+| `GET` | `/api/jobs/{id}` | Status, per-stage progress and live token usage. |
+| `GET` | `/api/jobs/{id}/events` | Server-sent events. First a `snapshot` of everything so far, then `progress`, `paper`, `reference`, `coverage`, `claims`, `escalating`, `verdict`, `status` and finally `done`. |
+| `GET` | `/api/jobs/{id}/report` | Full report JSON: paper text with offsets, references, sentences, claims, verdicts, and a summary (label counts, failure modes, escalation stats, coverage line). |
+| `GET` | `/api/jobs/{id}/export?format=md\|json` | Download the report. |
+
+Stages overlap so results stream early:
+- Claim extraction starts while references are still downloading.
+- Each (claim, reference) pair goes through retrieval, judging and escalation as soon as its reference is ready.
+- A final pass re-runs the detectors that need paper-level context.
+
+Every intermediate result is stored in SQLite. When the server restarts it resumes unfinished jobs, skipping finished work; this was tested by killing the server mid-job. Expanding a quick check only processes the new sentences. A failure in one citation becomes an `unverifiable` verdict and never fails the job. Hitting the token budget stops the job and marks it `partial`, keeping its results.
