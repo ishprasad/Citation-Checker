@@ -2,7 +2,7 @@
 
 For every citation in a research paper, Citation Checker asks one question: does the cited source actually say what the citing author claims it says? It runs on NVIDIA Nemotron models served through Nebius Token Factory.
 
-> Work in progress. See `CITATION_CHECKER_BRIEF.md` for the full plan. Done so far: milestones 1–4 (scaffold and LLM wrapper, arXiv LaTeX ingest, reference resolution and full-text fetching, claim extraction and evidence retrieval).
+> Work in progress. See `CITATION_CHECKER_BRIEF.md` for the full plan. Done so far: milestones 1–5 (scaffold and LLM wrapper, arXiv LaTeX ingest, reference resolution and full-text fetching, claim extraction and evidence retrieval, judging with quote verification and escalation).
 
 ## Setup
 
@@ -14,6 +14,7 @@ python scripts/smoke_test.py  # one call to each configured model, with token us
 python scripts/ingest_paper.py 1706.03762  # parse a paper: references and citing sentences
 python scripts/resolve_refs.py 1706.03762  # find every cited paper, fetch its text, print coverage
 python scripts/sample_claims.py 2310.06825 # extracted claims and top evidence passages for a few citations
+python scripts/check_paper.py 2310.06825   # whole pipeline: verdicts, quotes, escalations, token usage
 uvicorn app.main:app --reload
 ```
 
@@ -87,3 +88,24 @@ Reference titles are deliberately not shown to the model, because it tended to c
 ## Evidence retrieval (`app/pipeline/evidence.py`, embeddings)
 
 Each cited paper is split into chunks of about 400 tokens with about 80 tokens of overlap, on sentence boundaries. Chunks never cross a section heading, and each keeps its heading and character offsets. For PDF text, only numbered headings or standard section names count as headings. Chunks are embedded once per reference (cached on disk). Claims are embedded with a retrieval instruction, which Qwen3-Embedding expects; set it with `EMBED_QUERY_INSTRUCTION`. Each (claim, reference) pair gets the top 5 chunks by cosine similarity, plus the abstract.
+
+## Judging (`app/pipeline/judge.py`, Nemotron Super) and escalation (Nemotron Ultra)
+
+For each (claim, reference) pair, the judge gets the citing sentence and its neighbours, the extracted claim (marked as a hint), and the retrieved passages. It returns a label (`supported`, `overstated`, `not_found`, `contradicted` or `unverifiable`), a confidence, a quote, a neutral explanation, and structured signals for the failure-mode detectors.
+
+The judge first works out what the citation marker is actually attached to. This catches extraction mistakes, such as a marker that only names the GSM8K benchmark being read as support for the citing paper's own result.
+
+Hard rules are enforced in code:
+- A `supported`, `overstated` or `contradicted` verdict needs a quote found verbatim in the cited text. Matching ignores differences in quotes, dashes, ligatures, accents, PDF hyphenation and inline citation markers, and allows "..." elisions. An unverified quote halves the confidence and adds the flag `quote_unverified`.
+- Background claims can only be `supported` or `unverifiable`.
+- A `not_found` judged against an abstract alone becomes `unverifiable`.
+- References with no available text get `unverifiable` with the reason, without a model call.
+- Explanations are passed through a tone filter, so no "error", "wrong" or "misconduct".
+
+A verdict is escalated to Ultra, with the full text of the cited paper (up to `ESCALATE_MAX_CHARS`) and the first verdict as context, when any of these hold:
+- confidence is below 0.6;
+- the label is `not_found` or `contradicted`;
+- the quote failed verification;
+- the label is `unverifiable` although the full text is available, which usually means retrieval missed the relevant part.
+
+Accusatory labels on abstract-only references are also escalated. Ultra's verdict replaces the judge's, and the original label is kept. In a 20-sentence run on the Chain-of-Thought paper, 8 of 46 verdicts were escalated and Ultra changed the label in 7. Most of those were `not_found` becoming `supported` or `overstated`, so escalation is mainly what removes false alarms.

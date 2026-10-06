@@ -47,7 +47,7 @@ from app.pipeline.pdftext import PdfTextError, extract_pdf_text
 
 log = logging.getLogger(__name__)
 
-RESOLVER_VERSION = 4  # bump to invalidate cached resolutions after logic changes
+RESOLVER_VERSION = 6  # bump to invalidate cached resolutions after logic changes
 TITLE_MATCH_THRESHOLD = 0.88
 MIN_FULLTEXT_CHARS = 3000
 MAX_PDF_BYTES = 40 * 1024 * 1024

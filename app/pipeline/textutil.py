@@ -77,3 +77,91 @@ def find_normalized(needle: str, haystack: str) -> Optional[int]:
         return None
     idx = h.find(n)
     return idx if idx >= 0 else None
+
+
+def normalize_with_map(text: str) -> tuple[str, list[int]]:
+    """Character-level normalization that remembers where each output character came from.
+
+    Folds quotes, dashes, ligatures and accents, lowercases, collapses whitespace and
+    removes PDF line-break hyphenation ("bench- marks" -> "benchmarks"). Returns the
+    normalized text and, for each of its characters, the index in `text`.
+    """
+    chars: list[str] = []
+    origin: list[int] = []
+    for i, c in enumerate(text or ""):
+        if c in _QUOTES:
+            piece = _QUOTES[c]
+        elif c in _DASHES:
+            piece = _DASHES[c]
+        else:
+            piece = "".join(ch for ch in unicodedata.normalize("NFKD", c) if not unicodedata.combining(ch))
+        for ch in piece.lower():
+            if ch.isspace():
+                if not chars or chars[-1] == " ":
+                    continue
+                ch = " "
+            chars.append(ch)
+            origin.append(i)
+    while chars and chars[-1] == " ":
+        chars.pop()
+        origin.pop()
+    # Drop "x- y" hyphenation joins.
+    out, out_origin = [], []
+    k = 0
+    while k < len(chars):
+        if (
+            chars[k] == "-" and 0 < k and k + 2 < len(chars) and chars[k + 1] == " "
+            and chars[k - 1].isalpha() and chars[k + 2].isalpha()
+        ):
+            k += 2
+            continue
+        out.append(chars[k])
+        out_origin.append(origin[k])
+        k += 1
+    # Drop inline citation markers ("[12]", "[3, 5-7]", "(smith et al., 2019)"): models
+    # routinely leave them out when quoting, and they carry nothing to verify.
+    text = "".join(out)
+    keep = [True] * len(text)
+    for m in _CITATION_MARKER_RE.finditer(text):
+        for j in range(m.start(), m.end()):
+            keep[j] = False
+    return "".join(c for c, k in zip(text, keep) if k), [o for o, k in zip(out_origin, keep) if k]
+
+
+_CITATION_MARKER_RE = re.compile(
+    r" ?\[\d+(?:\s?[,–-]\s?\d+)*\]"
+    r"| ?\((?:see |e\.g\., )?[a-z][^()]{0,80}?,? (?:19|20)\d{2}[a-z]?(?:[;,] [^()]{0,80}?(?:19|20)\d{2}[a-z]?)*\)"
+)
+
+
+_ELLIPSIS_RE = re.compile(r"\s*(?:\[\s*(?:\.\.\.|…)\s*\]|\.\.\.|…)\s*")
+MAX_FRAGMENT_GAP = 2000  # normalized chars allowed between pieces of an elided quote
+
+
+def locate_quote(quote: Optional[str], text: str) -> Optional[tuple[int, int]]:
+    """(start, end) of `quote` in `text` under normalized matching, or None if it is not verbatim.
+
+    A quote elided with "..." matches if every piece is found, in order, close together.
+    """
+    if not quote or not text:
+        return None
+    cleaned = quote.strip().strip("\"'“”‘’").strip()
+    fragments = [f for f in _ELLIPSIS_RE.split(cleaned) if f.strip()]
+    norm_text, origin = normalize_with_map(text)
+    spans: list[tuple[int, int]] = []
+    pos = 0
+    for frag in fragments:
+        norm_frag = normalize_with_map(frag)[0].strip(" .,;:")
+        min_len = 6 if len(fragments) == 1 else 12
+        if len(norm_frag) < min_len:
+            if len(fragments) == 1:
+                return None
+            continue
+        idx = norm_text.find(norm_frag, pos)
+        if idx < 0 or (spans and idx - spans[-1][1] > MAX_FRAGMENT_GAP):
+            return None
+        spans.append((idx, idx + len(norm_frag)))
+        pos = idx + len(norm_frag)
+    if not spans:
+        return None
+    return origin[spans[0][0]], origin[spans[-1][1] - 1] + 1

@@ -59,6 +59,7 @@ class Settings:
     contact_email: str
     prices: dict[str, ModelPrice]
     arxiv_min_interval: float = 3.0  # seconds between requests to arxiv.org (arXiv's policy)
+    escalate_max_chars: int = 300_000  # cited-paper text sent to the long-context model (~75k tokens)
     # Instruction prefix for retrieval queries (instruction-aware embedders such as Qwen3-Embedding).
     # Empty string = embed the raw claim.
     embed_query_instruction: str = ""
@@ -108,6 +109,7 @@ def get_settings() -> Settings:
         db_path=db_path,
         contact_email=_env("CONTACT_EMAIL"),
         arxiv_min_interval=_env_float("ARXIV_MIN_INTERVAL", 3.0),
+        escalate_max_chars=_env_int("ESCALATE_MAX_CHARS", 300_000),
         embed_query_instruction=(
             "" if _env("EMBED_QUERY_INSTRUCTION").lower() == "none"
             else _env("EMBED_QUERY_INSTRUCTION", DEFAULT_EMBED_QUERY_INSTRUCTION)

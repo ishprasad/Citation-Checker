@@ -200,8 +200,8 @@ def collect_macros(sources: list[str]) -> dict[str, str]:
 
 _COMPLEX_MACRO_RE = re.compile(
     r"@|#|\\(?:par|begin|end|[vh]box|def|let|if\w*|fi|else|setlength|global|renewcommand|newcommand|"
-    r"fontsize|selectfont|vskip|hskip|vspace|hspace|relax|expandafter|csname|makeatletter|"
-    r"usepackage|RequirePackage|color|newpage|clearpage)(?![A-Za-z])"
+    r"fontsize|selectfont|relax|expandafter|csname|makeatletter|"
+    r"usepackage|RequirePackage|newpage|clearpage)(?![A-Za-z])"
 )
 
 
@@ -381,6 +381,7 @@ class LatexConverter:
         self.last = "\n"
         self.headings: list[Heading] = []
         self.markers: list[Marker] = []
+        self.footnotes: list[str] = []  # raw LaTeX, emitted at the next paragraph break
 
     # -- emission --------------------------------------------------------------
 
@@ -400,7 +401,16 @@ class LatexConverter:
         self.pending = max(self.pending, 1)
 
     def para(self) -> None:
+        self._flush_footnotes()
         self.pending = 2
+
+    def _flush_footnotes(self) -> None:
+        notes, self.footnotes = self.footnotes, []
+        for note in notes:
+            self.space()
+            self.emit("(Footnote: ")
+            self._sub(note)
+            self.emit(")")
 
     def emit(self, s: str) -> None:
         for chunk in re.split(r"(\s+)", s):
@@ -419,6 +429,7 @@ class LatexConverter:
 
     def convert(self, src: str) -> ConvertResult:
         self._run(src)
+        self._flush_footnotes()
         return ConvertResult("".join(self.out), self.headings, self.markers)
 
     def _run(self, src: str) -> None:
@@ -561,9 +572,8 @@ class LatexConverter:
             _, i = self._opt_args(src, i, 1)
             content, i = self._arg(src, i)
             if content:
-                self.emit(" (")
-                self._sub(content)
-                self.emit(")")
+                # Deferred to the end of the paragraph so sentences read (and quote) cleanly.
+                self.footnotes.append(content)
             return i
         if name in ("url", "nolinkurl"):
             content, i = self._arg(src, i)
@@ -573,6 +583,8 @@ class LatexConverter:
             _, i = self._opt_args(src, i, 2)
             for _ in range(DROP_ARGS[name]):
                 _, i = self._arg(src, i)
+            if name == "hspace":  # "Social\hspace{.15em}IQa" reads as two words
+                self.space()
             return i
         if name in SKIP_THEN_KEEP:
             _, i = self._opt_args(src, i, 1)

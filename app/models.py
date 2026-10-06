@@ -142,17 +142,45 @@ class Evidence(BaseModel):
     passages: list[Passage] = Field(default_factory=list)
 
 
+class NumberComparison(BaseModel):
+    claim_value: str
+    source_value: str
+    same_quantity: bool  # the two numbers refer to the same measured quantity
+
+
+class JudgeSignals(BaseModel):
+    """Structured observations from the judge, used by the failure-mode detectors."""
+
+    claim_scope: Optional[str] = None
+    source_scope: Optional[str] = None
+    scope_broader_than_source: bool = False
+    source_hedged: bool = False
+    claim_hedged: bool = False
+    numbers: list[NumberComparison] = Field(default_factory=list)
+    support_attributed_to_other_work: bool = False
+    other_work: Optional[str] = None
+
+
 class Verdict(BaseModel):
     claim_id: str
     reference_key: str
     label: VerdictLabel
     confidence: float = Field(ge=0.0, le=1.0)
+    # What the citing sentence attributes to this reference, as the judge read it
+    # (may correct an imperfect extracted claim).
+    attributed_claim: str = ""
     quote: Optional[str] = None
+    quote_verified: bool = False
+    quote_start: Optional[int] = None  # offsets of the quote in quote_context
+    quote_end: Optional[int] = None
+    quote_context: Optional[str] = None  # surrounding text from the cited paper, for display
     explanation: str = ""
+    signals: JudgeSignals = Field(default_factory=JudgeSignals)
     failure_modes: list[FailureMode] = Field(default_factory=list)
     flags: list[str] = Field(default_factory=list)  # e.g. "quote_unverified"
     escalated: bool = False
     original_label: Optional[VerdictLabel] = None  # judge label before escalation
+    original_confidence: Optional[float] = None
     model_used: str = ""
 
 
