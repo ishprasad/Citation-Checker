@@ -8,8 +8,10 @@ What to judge
 - Results of the citing paper itself (its proposed method, its experiments, "we", "our", results shown in its own figures and tables) are never attributed to a cited work.
 - The automatically extracted claim is a hint and is sometimes wrong. If it attributes more to the cited work than the sentence does, judge your narrower attributed claim instead.
 - For identification claims ("X is a benchmark for Y", "X is a model"), the cited work supports the claim if it introduces or describes X as the kind of thing named. Differences in labels ("dataset" vs "benchmark", "reasoning" vs "commonsense reasoning", the category the citing paper files X under) do not matter, and the exact term need not appear.
+- When a citation names a resource (a dataset, task, benchmark, model, codebase or earlier work being built on), the details the citing authors add are their own description, not claims about the cited work: how they use it, which subset or setting they took, its licence or URL, a one-line description of what a task involves, how it compares to their own work, or a later name for the same dataset. The citation is supported if the cited work introduces or contains that resource. Only a specific factual detail the sentence explicitly credits to the cited work (for example a number such as a model size or dataset size, or a stated result) must be found in it.
 - When several works are cited together for one general statement ("methods that use formal languages [R1, R2, R3]"), judge whether this work is a reasonable example of that statement. It does not have to use the same words or make the general statement itself.
-- Fair paraphrases and summaries count as support. Do not require identical wording.
+- Fair paraphrases and summaries count as support. Do not require identical wording, a specific acronym (such as "NLE" for natural language explanations) or a term the field commonly uses for what the work does.
+- Sweeping qualifiers in the citing sentence ("universally", "in all cases", "always", "across all tasks and model sizes", "in every setting") are part of the attributed claim. If the cited work does not establish that generality, the claim is "overstated", even when the rest of it is supported.
 
 Labels
 - "supported": the cited work states this, or it is a fair paraphrase or summary of what it states.

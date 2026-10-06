@@ -959,8 +959,9 @@ function renderDemoNotice() {
   return `<div class="notice demo"><strong>Demo paper: ${esc(evalResult.summary_line)}.</strong>
     <details><summary>Details</summary>
       <ul class="demo-breakdown">${rows}</ul>
-      <p>Planted citations are marked “Planted” in the list on the right. Other flags are on citations
-      that were not altered; ${evalResult.other_flags_preexisting} of them were also flagged when the original,
-      unmodified paper was checked, so they may be genuine citation problems.</p>
+      <p>Planted citations are marked “Planted” in the list on the right. The other flags are on citations
+      that were not altered. A human review of them found ${evalResult.review.genuine} real citation problems in the
+      original paper, ${evalResult.review.false_alarm + evalResult.review.unreviewed} false alarms and
+      ${evalResult.review.debatable} debatable cases.</p>
     </details></div>`;
 }

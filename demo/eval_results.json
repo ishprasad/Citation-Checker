@@ -1,25 +1,25 @@
 {
-  "evaluated_at": "2026-10-06T17:59:22+00:00",
+  "evaluated_at": "2026-10-06T18:14:23+00:00",
   "paper": {
     "arxiv_id": "2201.11903v6",
     "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models"
   },
-  "job_id": "06c7175793a5",
+  "job_id": "5247198dd9d9",
   "planted": 10,
   "checked": 10,
-  "caught": 7,
-  "recall": 0.7,
-  "label_accuracy": 0.5,
-  "expected_mode_rate": 0.5,
-  "untouched_verdicts": 129,
-  "other_flags": 33,
-  "other_flags_preexisting": 33,
-  "precision": 0.175,
-  "precision_excluding_preexisting": 1.0,
+  "caught": 9,
+  "recall": 0.9,
+  "label_accuracy": 0.7,
+  "expected_mode_rate": 0.8,
+  "untouched_verdicts": 127,
+  "other_flags": 13,
+  "other_flags_preexisting": 11,
+  "precision": 0.4090909090909091,
+  "precision_excluding_preexisting": 0.8181818181818182,
   "by_mutation": {
     "scope_inflation": {
       "planted": 3,
-      "caught": 1
+      "caught": 2
     },
     "number_change": {
       "planted": 2,
@@ -31,10 +31,92 @@
     },
     "hedge_removal": {
       "planted": 1,
-      "caught": 0
+      "caught": 1
     }
   },
-  "summary_line": "Caught 7 of 10 planted errors · 33 other citations flagged for review (33 also flagged in the original paper)",
+  "flagged_citations": 13,
+  "review": {
+    "genuine": 3,
+    "false_alarm": 7,
+    "debatable": 3,
+    "unreviewed": 0
+  },
+  "review_details": {
+    "genuine": [
+      {
+        "sentence_id": "s13",
+        "reference_key": "ouyang2022training",
+        "note": "Checked: the InstructGPT paper reports 1.3B, 6B and 175B models; 350M and 6.7B do not appear."
+      },
+      {
+        "sentence_id": "s14",
+        "reference_key": "thoppilan2022lamda",
+        "note": "Checked: the LaMDA paper reports 2B, 8B and 137B; 422M and 68B do not appear."
+      },
+      {
+        "sentence_id": "s31",
+        "reference_key": "cobbe2021training",
+        "note": "GSM8K has 8.5K problems while Ling et al.'s AQuA has 100K, so the dataset is not larger (it is higher quality)."
+      }
+    ],
+    "false_alarm": [
+      {
+        "sentence_id": "s19",
+        "reference_key": "cobbe2021training",
+        "note": "Cites GSM8K as the source of the solution style; 'more concise' is the citing authors' own comparison."
+      },
+      {
+        "sentence_id": "s28",
+        "reference_key": "rashkin2021measuring",
+        "note": "Group citation for improving factuality being open; 'no guarantee of correct reasoning paths' is the citing paper's own point."
+      },
+      {
+        "sentence_id": "s38",
+        "reference_key": "cobbe2021training",
+        "note": "GSM8K is cited as the source of the training set; 'workers without an ML background' is the citing authors' own characterisation."
+      },
+      {
+        "sentence_id": "s6",
+        "reference_key": "brown2020language",
+        "note": "The marker names where the few-shot method comes from; 'works poorly on reasoning' is attributed to Rae et al."
+      },
+      {
+        "sentence_id": "s68",
+        "reference_key": "geva-etal-2021-aristotle",
+        "note": "The checked claim (StrategyQA is introduced here) is clearly supported."
+      },
+      {
+        "sentence_id": "s70",
+        "reference_key": "ahn2022can",
+        "note": "The URL and licence come from the project site; the citation identifies SayCan."
+      },
+      {
+        "sentence_id": "s9",
+        "reference_key": "patel-etal-2021-nlp",
+        "note": "SVAMP shows models struggle on harder arithmetic word problems; one of several examples (inter alia)."
+      }
+    ],
+    "debatable": [
+      {
+        "sentence_id": "s21",
+        "reference_key": "talmor2022commonsenseqa",
+        "note": "Checked: supports that models fall far short of humans; 'key for interacting with the world' is not stated."
+      },
+      {
+        "sentence_id": "s45",
+        "reference_key": "wu2022promptchainer",
+        "note": "Checked: PromptChainer's study had 4 participants; the 20-person study is in the companion paper (Wu et al. 2022b), which is cited alongside."
+      },
+      {
+        "sentence_id": "s52",
+        "reference_key": "nye2021show",
+        "note": "Nye et al. show these abilities with scratchpads; the sentence leaves out that condition."
+      }
+    ],
+    "unreviewed": []
+  },
+  "precision_reviewed": 0.631578947368421,
+  "summary_line": "Caught 9 of 10 planted errors · 7 false alarms · 3 real citation problems found in the original paper",
   "details": [
     {
       "id": "p1",
@@ -48,7 +130,6 @@
         "overstated"
       ],
       "failure_modes": [
-        "hypothesis_as_finding",
         "scope_inflation"
       ],
       "expected_mode_found": true,
@@ -60,13 +141,15 @@
       "mutation": "scope_inflation",
       "description": "Added the scope \"across all tasks and model sizes\" before the citation",
       "checked": true,
-      "caught": false,
-      "label_correct": false,
+      "caught": true,
+      "label_correct": true,
       "labels": [
-        "supported"
+        "overstated"
       ],
-      "failure_modes": [],
-      "expected_mode_found": false,
+      "failure_modes": [
+        "scope_inflation"
+      ],
+      "expected_mode_found": true,
       "escalated": false
     },
     {
@@ -78,10 +161,12 @@
       "caught": true,
       "label_correct": true,
       "labels": [
-        "not_found"
+        "contradicted"
       ],
-      "failure_modes": [],
-      "expected_mode_found": false,
+      "failure_modes": [
+        "number_drift"
+      ],
+      "expected_mode_found": true,
       "escalated": true
     },
     {
@@ -91,9 +176,9 @@
       "description": "Replaced the citation (Zhao et al., 2021) with (Roy and Roth, 2015) (\"Solving General Arithmetic Word Problems\") (similarity 0.38 vs 0.76 for the original)",
       "checked": true,
       "caught": true,
-      "label_correct": false,
+      "label_correct": true,
       "labels": [
-        "unverifiable"
+        "not_found"
       ],
       "failure_modes": [
         "off_topic_citation"
@@ -108,8 +193,9 @@
       "description": "Replaced the citation (Brown et al., 2020) with (Wiegreffe and Marasović, 2021) (\"Teach Me to Explain: A Review of Datasets for Explainable Natural Language Processing\") (similarity 0.33 vs 0.60 for the original)",
       "checked": true,
       "caught": true,
-      "label_correct": false,
+      "label_correct": true,
       "labels": [
+        "not_found",
         "unverifiable"
       ],
       "failure_modes": [
@@ -156,10 +242,10 @@
       "mutation": "hedge_removal",
       "description": "Removed the hedge: \"likely\" became \"(deleted)\"",
       "checked": true,
-      "caught": false,
+      "caught": true,
       "label_correct": false,
       "labels": [
-        "supported"
+        "not_found"
       ],
       "failure_modes": [],
       "expected_mode_found": false,
@@ -189,25 +275,29 @@
       "description": "Replaced the citation (Patel et al., 2021) with (Yao et al., 2021) (\"Refining Language Models with Compositional Explanations\") (similarity 0.34 vs 0.54 for the original)",
       "checked": true,
       "caught": true,
-      "label_correct": true,
+      "label_correct": false,
       "labels": [
-        "not_found"
+        "unverifiable"
       ],
-      "failure_modes": [],
-      "expected_mode_found": false,
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
       "escalated": true
     }
   ],
   "escalation": {
-    "verdicts": 148,
-    "escalated": 37,
-    "label_changed": 12,
+    "verdicts": 147,
+    "escalated": 30,
+    "label_changed": 13,
     "transitions": {
-      "not_found->supported": 5,
-      "unverifiable->not_found": 4,
+      "unverifiable->supported": 3,
+      "not_found->supported": 3,
+      "unverifiable->contradicted": 2,
+      "not_found->contradicted": 2,
       "contradicted->supported": 1,
-      "unverifiable->supported": 1,
-      "not_found->contradicted": 1
+      "unverifiable->overstated": 1,
+      "unverifiable->not_found": 1
     }
   },
   "coverage": {
@@ -223,11 +313,11 @@
       {
         "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
         "role": "escalate",
-        "calls": 39,
-        "cached_calls": 39,
-        "prompt_tokens": 717762,
-        "completion_tokens": 108402,
-        "estimated_cost_usd": 1.042968
+        "calls": 30,
+        "cached_calls": 27,
+        "prompt_tokens": 527356,
+        "completion_tokens": 80374,
+        "estimated_cost_usd": 0.768478
       },
       {
         "model": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
@@ -243,14 +333,14 @@
         "role": "judge",
         "calls": 153,
         "cached_calls": 153,
-        "prompt_tokens": 678216,
-        "completion_tokens": 198472,
-        "estimated_cost_usd": 0.38209
+        "prompt_tokens": 714477,
+        "completion_tokens": 189903,
+        "estimated_cost_usd": 0.385256
       }
     ],
-    "total_prompt_tokens": 1526643,
-    "total_completion_tokens": 315288,
-    "total_estimated_cost_usd": 1.434917
+    "total_prompt_tokens": 1372498,
+    "total_completion_tokens": 278691,
+    "total_estimated_cost_usd": 1.163593
   },
-  "wall_time_seconds": 28.1
+  "wall_time_seconds": 65.5
 }

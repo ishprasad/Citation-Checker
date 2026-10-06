@@ -197,7 +197,18 @@ def _snap_context(text: str, start: int, end: int) -> tuple[str, int, int]:
     return text[lo:hi], start - lo, end - lo
 
 
-def apply_rules(out: JudgeOutput, claim: Claim, ref: Reference, model: str, search_texts: list[str]) -> Verdict:
+GROUP_CITATION_SIZE = 3  # a marker citing this many works or more is a group citation
+
+
+def group_size(sentence: CitingSentence, key: str) -> int:
+    """How many works share the citation marker that cites `key` in this sentence."""
+    sizes = [len(keys) for keys in sentence.marker_keys if key in keys]
+    return max(sizes) if sizes else 1
+
+
+def apply_rules(
+    out: JudgeOutput, claim: Claim, ref: Reference, model: str, search_texts: list[str], group: int = 1
+) -> Verdict:
     label: VerdictLabel = out.label
     confidence = out.confidence
     flags: list[str] = []
@@ -205,6 +216,20 @@ def apply_rules(out: JudgeOutput, claim: Claim, ref: Reference, model: str, sear
     if claim.claim_type == "background" and label not in ("supported", "unverifiable"):
         label = "unverifiable"
         flags.append("background_lenient")
+    elif group >= GROUP_CITATION_SIZE and not claim.numbers and label not in ("supported", "unverifiable"):
+        # "A line of work does X (A; B; C)": each work only has to be a fair example of X,
+        # so a group citation is judged like a background citation. Wrong papers inside a
+        # group are still caught by the off-topic check.
+        label = "unverifiable"
+        flags.append("group_citation_lenient")
+    elif claim.claim_type == "method" and not claim.numbers and label in ("not_found", "overstated"):
+        # A citation that identifies a resource ("BIG-bench (BIG-bench collaboration, 2021): Date
+        # Understanding, which involves ...") fails by pointing at the wrong source, which the
+        # off-topic check catches. Missing incidental details (a licence, a subset, a one-line task
+        # description) are the citing authors' own and not a citation error. Contradictions and
+        # claims with numbers (model or dataset sizes) stay strict.
+        label = "unverifiable"
+        flags.append("identification_lenient")
     if ref.fulltext_status == "abstract_only" and label == "not_found":
         label = "unverifiable"
         flags.append("abstract_only")
@@ -238,6 +263,11 @@ def apply_rules(out: JudgeOutput, claim: Claim, ref: Reference, model: str, sear
 
 def needs_escalation(verdict: Verdict, claim: Claim, ref: Reference) -> bool:
     if claim.claim_type == "background" or verdict.escalated or "no_text" in verdict.flags:
+        return False
+    # A softened group citation has nothing more to gain from a second opinion. A softened
+    # identification claim still escalates: reading the full paper can surface an explicit
+    # contradiction ("a larger dataset" when the source's is smaller), which stays strict.
+    if "group_citation_lenient" in verdict.flags and verdict.signals.cited_work_on_topic:
         return False
     if ref.fulltext_status == "abstract_only":
         # Nothing more to read, but an accusation from an abstract alone deserves a second look.
@@ -317,7 +347,7 @@ async def judge_pair(claim: Claim, ref: Reference, evidence: Optional[Evidence],
             flags=["judge_error"], model_used=model,
         )
     full_text = read_reference_text(ref) if ref.fulltext_status == "full" else None
-    verdict = apply_rules(out, claim, ref, model, _search_texts(ref, full_text))
+    verdict = apply_rules(out, claim, ref, model, _search_texts(ref, full_text), group_size(sentence, ref.key))
     return humanize_reference_ids(verdict, sentence, ctx)
 
 
@@ -337,7 +367,7 @@ async def escalate_pair(
     except (llm.LLMError, openai.OpenAIError) as exc:
         log.warning("escalation %s / %s failed: %s", claim.id, ref.key, exc)
         return first.model_copy(update={"flags": [*first.flags, "escalation_failed"]})
-    verdict = apply_rules(out, claim, ref, model, _search_texts(ref, read_reference_text(ref)))
+    verdict = apply_rules(out, claim, ref, model, _search_texts(ref, read_reference_text(ref)), group_size(sentence, ref.key))
     verdict = humanize_reference_ids(verdict, sentence, ctx)
     verdict.escalated = True
     verdict.original_label = first.label

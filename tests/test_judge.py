@@ -282,3 +282,35 @@ def test_reference_ids_are_replaced_with_citation_labels(monkeypatch, setup):
         explanation="The marker [R1] is attached to the compound; R1 reports this.")]))
     [v] = asyncio.run(judge_all([FINDING], evidence, ctx))
     assert v.explanation == "The marker [1] is attached to the compound; [1] reports this."
+
+
+def test_group_citations_are_judged_as_examples():
+    from app.pipeline.judge import group_size
+
+    sentence = CitingSentence(id="s1", text="x", start=0, end=1, reference_keys=["a", "b", "c", "d"],
+                              marker_spans=[(0, 1), (0, 1)], marker_keys=[["a"], ["b", "c", "d"]])
+    assert group_size(sentence, "a") == 1 and group_size(sentence, "c") == 3
+    group_claim = FINDING.model_copy(update={"numbers": []})
+    v = apply_rules(out("not_found"), group_claim, FULL_REF, "super", [SOURCE], group=3)
+    assert v.label == "unverifiable" and v.flags == ["group_citation_lenient"]
+    assert not needs_escalation(v, group_claim, FULL_REF)  # nothing to gain from a second opinion
+    # A group member that looks like the wrong paper still gets a second look.
+    off_topic = v.model_copy(update={"signals": JudgeSignals(cited_work_on_topic=False)})
+    assert needs_escalation(off_topic, group_claim, FULL_REF)
+    # Claims with numbers, and small groups, are still judged strictly.
+    assert apply_rules(out("not_found"), FINDING.model_copy(update={"numbers": ["31%"]}), FULL_REF, "super",
+                       [SOURCE], group=3).label == "not_found"
+    assert apply_rules(out("not_found"), group_claim, FULL_REF, "super", [SOURCE], group=2).label == "not_found"
+
+
+def test_identification_claims_fail_only_by_wrong_source_or_contradiction():
+    ident = FINDING.model_copy(update={"claim_type": "method", "numbers": [],
+                                       "claim_text": "Date Understanding is a BIG-bench task about inferring dates"})
+    for label in ("not_found", "overstated"):
+        v = apply_rules(out(label, quote="x" * 3), ident, FULL_REF, "super", [SOURCE])
+        assert v.label == "unverifiable" and "identification_lenient" in v.flags
+        assert needs_escalation(v, ident, FULL_REF)  # the full paper may still show a contradiction
+    # Still strict: explicit contradictions, and identification claims that state numbers.
+    assert apply_rules(out("contradicted", quote="We evaluate on 24 mice"), ident, FULL_REF, "super", [SOURCE]).label == "contradicted"
+    sized = ident.model_copy(update={"numbers": ["6.7B"]})
+    assert apply_rules(out("not_found"), sized, FULL_REF, "super", [SOURCE]).label == "not_found"

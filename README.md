@@ -179,17 +179,38 @@ Edits are applied from the end of the text backwards, so every offset stays exac
 
 **Demo button (`POST /api/demo`).** It returns the latest finished check of the demo paper instantly. If there is none, it runs one live; with warm caches that takes about 30 seconds. With no API key configured, it shows the bundled snapshot of a recorded check (`demo/snapshot.json`). In the UI, the banner shows the score, each planted citation shows what was changed and its original sentence, and the issue list marks planted entries.
 
-**Latest results** (`python scripts/evaluate.py`, full check of all 70 citing sentences):
+**Calibration.** Flags on untouched citations were reviewed by hand (`demo/annotations.json`: genuine, false alarm or debatable, with notes; checked against the cited texts where it mattered). Most false alarms fell into two groups:
 
-| Planted error | Planted | Caught |
+- **Group citations read literally.** "Improving factuality is an open direction (A; B; C)" was flagged because A "does not mention chain-of-thought".
+- **Identification citations judged on the citing authors' own description.** BIG-bench was flagged for "not describing" the Date Understanding task.
+
+The fixes:
+
+- A marker citing three or more works for a statement without numbers is judged like a background citation: supported or "could not be verified".
+- An identification claim without numbers can no longer be "not found" or "overstated". It still escalates, and explicit contradictions stay strict.
+- The judge prompt now treats the citing authors' own details about a resource (subset, licence, URL, a task description) as theirs, accepts standard terms and acronyms as paraphrases, and treats sweeping qualifiers ("universally", "in all cases") as part of the claim.
+
+**Results** (`python scripts/evaluate.py`, full check of all 70 citing sentences, before and after calibration):
+
+| | Before | After |
 |---|---|---|
-| Citation swap | 4 | 4 (3 tagged "possibly the wrong reference") |
-| Number change | 2 | 2 (one tagged "number drift": "86.9% in the claim; 54.3% in the cited work") |
-| Scope inflation | 3 | 1 |
-| Hedge removal | 1 | 0 |
-| **Total** | **10** | **7 (recall 70%)** |
+| Planted errors caught (recall) | 7 of 10 | **9 of 10** |
+| Label accuracy on planted errors | 50% | 70% |
+| Expected failure-mode tag present | 50% | 80% |
+| Flags on untouched citations | 33 | 13 |
+| ... of which false alarms (human review) | 21 | 7 |
+| ... genuine citation problems found | 3 | 3 |
+| Precision with human review (debatable left out) | 32% | **63%** |
+| Estimated cost of a full check | $1.44 | $1.16 |
 
-- **Label accuracy** on planted errors is 50%. Some swaps are labelled "could not be verified" but tagged as the wrong reference.
-- **Other flags:** 33 of the 129 verdicts on untouched citations are flagged. All 33 were also flagged in the unmodified paper. A few are genuine, such as InstructGPT's model sizes, or "Cobbe et al. extend Ling et al. by creating a *larger* dataset" when GSM8K is smaller than AQuA. Most are strict readings of group citations or claims that misattribute what the citation covers. Strict precision is therefore 18%; improving it is the next calibration step.
-- **Escalation:** 37 of 148 verdicts went to Nemotron Ultra, which changed the label in 12, mostly "not found" to "supported".
-- **Cost:** a full check costs about $1.44 (1.84M tokens, mostly Ultra escalations) the first time. Repeat runs are served from the cache in about 30 seconds.
+The planted errors caught after calibration break down as: all 4 citation swaps (each tagged "possibly the wrong reference"), both number changes (both tagged "number drift", e.g. "86.9% in the claim; 54.3% in the cited work"), 2 of 3 scope inflations (tagged "scope inflation"), and the hedge removal. The one miss is a scope inflation on a sentence the extractor classified as a background citation, which is judged leniently by design.
+
+The genuine problems found in the unmodified paper:
+
+- InstructGPT and LaMDA model sizes that the cited papers do not report (350M and 6.7B; 422M and 68B).
+- "Cobbe et al. extend Ling et al. by creating a *larger* dataset": GSM8K has 8.5K problems and AQuA has 100K.
+
+Calibration was done on this paper, so these are development-set numbers; a second paper with planted errors would give a held-out estimate.
+
+- **Escalation:** 30 of 147 verdicts went to Nemotron Ultra, which changed the label in 13.
+- **Cost:** a full check costs about $1.16 (1.65M tokens) the first time. Repeat runs are served from the cache in about 30 seconds.

@@ -117,7 +117,7 @@ def test_score():
         _verdict("s5.c1", "e", "overstated"),                         # pre-existing flag
         _verdict("s6.c1", "f", "supported"),
     ]
-    result = score(truth, verdicts, claims)
+    result = score(truth, verdicts, claims, annotations={})
     assert (result["planted"], result["caught"]) == (3, 2)
     assert result["recall"] == pytest.approx(2 / 3)
     assert result["label_accuracy"] == pytest.approx(1 / 3)
@@ -125,4 +125,12 @@ def test_score():
     assert result["precision"] == pytest.approx(2 / 4)
     assert result["precision_excluding_preexisting"] == pytest.approx(2 / 3)
     assert result["by_mutation"]["citation_swap"] == {"planted": 1, "caught": 1}
-    assert result["summary_line"] == "Caught 2 of 3 planted errors · 2 other citations flagged for review (1 also flagged in the original paper)"
+    assert result["summary_line"] == "Caught 2 of 3 planted errors · 2 other citations flagged for review"
+    # With a human review: s5 is a real problem, s4 a false alarm.
+    reviewed = score(truth, verdicts, claims, annotations={
+        ("s5", "e"): {"verdict": "genuine", "note": ""}, ("s4", "d"): {"verdict": "false_alarm", "note": ""}})
+    assert reviewed["review"] == {"genuine": 1, "false_alarm": 1, "debatable": 0, "unreviewed": 0}
+    assert reviewed["precision_reviewed"] == pytest.approx((2 + 1) / (2 + 1 + 1))
+    assert reviewed["summary_line"] == "Caught 2 of 3 planted errors · 1 false alarm · 1 real citation problem found in the original paper"
+    unreviewed = score(truth, verdicts, claims, annotations={("s5", "e"): {"verdict": "debatable", "note": ""}})
+    assert unreviewed["review"]["unreviewed"] == 1 and unreviewed["precision_reviewed"] == pytest.approx(2 / 3)

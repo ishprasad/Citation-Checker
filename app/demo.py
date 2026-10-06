@@ -23,6 +23,7 @@ DEMO_DIR = ROOT_DIR / "demo"
 PAPER_PATH = DEMO_DIR / "paper.json"
 GROUND_TRUTH_PATH = DEMO_DIR / "ground_truth.json"
 SNAPSHOT_PATH = DEMO_DIR / "snapshot.json"
+ANNOTATIONS_PATH = DEMO_DIR / "annotations.json"
 ISSUE_LABELS = {"overstated", "contradicted", "not_found"}
 
 
@@ -57,6 +58,14 @@ def load_ground_truth() -> Optional[GroundTruth]:
     return _load_ground_truth(GROUND_TRUTH_PATH.stat().st_mtime)
 
 
+def load_annotations() -> dict[tuple[str, str], dict[str, str]]:
+    """Human review of flags on untouched citations: (sentence_id, reference_key) -> annotation."""
+    if not ANNOTATIONS_PATH.exists():
+        return {}
+    data = json.loads(ANNOTATIONS_PATH.read_text(encoding="utf-8"))
+    return {(a["sentence_id"], a["reference_key"]): a for a in data["annotations"]}
+
+
 def load_demo_paper() -> Optional[IngestResult]:
     if not PAPER_PATH.exists():
         return None
@@ -76,7 +85,12 @@ def is_flag(v: Verdict) -> bool:
     return v.label in ISSUE_LABELS or "off_topic_citation" in v.failure_modes
 
 
-def score(ground_truth: GroundTruth, verdicts: list[Verdict], claims: dict[str, Claim]) -> dict[str, Any]:
+def score(
+    ground_truth: GroundTruth,
+    verdicts: list[Verdict],
+    claims: dict[str, Claim],
+    annotations: Optional[dict[tuple[str, str], dict[str, str]]] = None,
+) -> dict[str, Any]:
     """Compare a check of the demo paper against the planted errors.
 
     caught:          a planted citation got an issue label (or was tagged as the wrong reference)
@@ -114,6 +128,15 @@ def score(ground_truth: GroundTruth, verdicts: list[Verdict], claims: dict[str, 
     other_flags = [v for v in untouched if is_flag(v)]
     preexisting = [v for v in other_flags if (claims[v.claim_id].citing_sentence_id, v.reference_key) in baseline]
 
+    # Citation-level view of flags on untouched citations, using the human review when present.
+    annotations = load_annotations() if annotations is None else annotations
+    flagged_citations = sorted({(claims[v.claim_id].citing_sentence_id, v.reference_key) for v in other_flags})
+    review: dict[str, list[dict[str, str]]] = {"genuine": [], "false_alarm": [], "debatable": [], "unreviewed": []}
+    for sid, key in flagged_citations:
+        a = annotations.get((sid, key))
+        review[a["verdict"] if a else "unreviewed"].append({"sentence_id": sid, "reference_key": key,
+                                                            "note": a.get("note", "") if a else ""})
+
     caught = sum(d["caught"] for d in details)
     checked = sum(d["checked"] for d in details)
     total = len(details)
@@ -125,6 +148,9 @@ def score(ground_truth: GroundTruth, verdicts: list[Verdict], claims: dict[str, 
         row = by_mutation.setdefault(d["mutation"], {"planted": 0, "caught": 0})
         row["planted"] += 1
         row["caught"] += d["caught"]
+    genuine, false_alarms = len(review["genuine"]), len(review["false_alarm"]) + len(review["unreviewed"])
+    correct_flags = caught + genuine
+    precision_reviewed = correct_flags / (correct_flags + false_alarms) if correct_flags + false_alarms else 0.0
     return {
         "planted": total,
         "checked": checked,
@@ -138,10 +164,20 @@ def score(ground_truth: GroundTruth, verdicts: list[Verdict], claims: dict[str, 
         "precision": precision,
         "precision_excluding_preexisting": precision_new,
         "by_mutation": by_mutation,
+        "flagged_citations": len(flagged_citations),
+        "review": {k: len(v) for k, v in review.items()},
+        "review_details": review,
+        # Precision with the human review: planted errors caught and genuine problems are correct
+        # flags; false alarms and unreviewed flags are not; debatable ones are left out.
+        "precision_reviewed": precision_reviewed,
         "details": details,
-        "summary_line": f"Caught {caught} of {total} planted errors · {len(other_flags)} other citation"
-                        f"{'' if len(other_flags) == 1 else 's'} flagged for review"
-                        + (f" ({len(preexisting)} also flagged in the original paper)" if preexisting else ""),
+        "summary_line": (
+            f"Caught {caught} of {total} planted errors · {false_alarms} false alarm{'' if false_alarms == 1 else 's'}"
+            + (f" · {genuine} real citation problem{'' if genuine == 1 else 's'} found in the original paper" if genuine else "")
+            if annotations else
+            f"Caught {caught} of {total} planted errors · {len(flagged_citations)} other citation"
+            f"{'' if len(flagged_citations) == 1 else 's'} flagged for review"
+        ),
     }
 
 
