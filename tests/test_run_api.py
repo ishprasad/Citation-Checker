@@ -302,3 +302,68 @@ def test_api_unknown_job(client):
     for path in ("/api/jobs/nope", "/api/jobs/nope/report", "/api/jobs/nope/events"):
         assert c.get(path).status_code == 404
     assert c.post("/api/jobs/nope/expand").status_code == 404
+
+
+# ----------------------------------------------------------------------------- demo
+
+
+@pytest.fixture
+def demo_files(monkeypatch, tmp_path):
+    import app.demo as demo_mod
+
+    ingest = fixture_ingest()
+    ingest.paper.id = "demo:2101.00001v1:abc"
+    s1 = ingest.sentences[0]
+    truth = demo_mod.GroundTruth(arxiv_id="2101.00001v1", title="Fixture Paper", planted=[
+        demo_mod.PlantedError(id="p1", sentence_id=s1.id, reference_keys=[s1.reference_keys[0]], mutation="number_change",
+                              description='Changed "12%" to "19%"', original=s1.text, mutated=s1.text,
+                              expected_labels=["overstated", "contradicted", "not_found"]),
+    ])
+    paths = {"PAPER_PATH": tmp_path / "paper.json", "GROUND_TRUTH_PATH": tmp_path / "ground_truth.json",
+             "SNAPSHOT_PATH": tmp_path / "snapshot.json"}
+    for name, path in paths.items():
+        monkeypatch.setattr(demo_mod, name, path)
+    paths["PAPER_PATH"].write_text(ingest.model_dump_json(), encoding="utf-8")
+    paths["GROUND_TRUTH_PATH"].write_text(truth.model_dump_json(), encoding="utf-8")
+    return paths
+
+
+def test_api_demo_runs_scores_and_reuses(client, demo_files, monkeypatch):
+    c, fakes = client
+    r = c.post("/api/demo")
+    assert r.status_code == 201
+    job_id = r.json()["id"]
+    job = _wait_done(c, job_id)
+    assert job["source"] == "demo" and job["mode"] == "full"
+    report = c.get(f"/api/jobs/{job_id}/report").json()
+    demo_info = report["demo"]
+    # The fake judge flags s1 (escalation turns it into supported), so the planted error is missed.
+    assert demo_info["planted"] == 1 and demo_info["eval"]["planted"] == 1
+    assert set(demo_info["planted_by_sentence"]) == {"s1"}
+    assert demo_info["eval"]["summary_line"].startswith("Caught 0 of 1 planted errors")
+
+    # A second click reuses the finished check; fresh=1 starts a new one.
+    assert c.post("/api/demo").json()["id"] == job_id
+    fresh = c.post("/api/demo?fresh=1").json()["id"]
+    assert fresh != job_id
+    _wait_done(c, fresh)
+
+    # Without an API key, the recorded snapshot is shown instead of running models.
+    get_runner_ = run_mod.get_runner
+    get_runner_().export_snapshot(job_id)
+    import app.main as main_mod
+    monkeypatch.setattr(main_mod, "get_settings", lambda: replace(get_settings(), nebius_api_key=""))
+    r = c.post("/api/demo?fresh=1")
+    snap_id = r.json()["id"]
+    assert snap_id not in (job_id, fresh) and r.json()["job"]["status"] == "done"
+    snap = c.get(f"/api/jobs/{snap_id}/report").json()
+    assert len(snap["verdicts"]) == len(report["verdicts"]) and snap["demo"]["eval"] is not None
+
+
+def test_api_demo_unavailable(client, monkeypatch, tmp_path):
+    import app.demo as demo_mod
+
+    monkeypatch.setattr(demo_mod, "PAPER_PATH", tmp_path / "missing.json")
+    c, _ = client
+    r = c.post("/api/demo")
+    assert r.status_code == 501 and "plant_errors" in r.json()["detail"]

@@ -54,6 +54,12 @@ const ROLE_TEXT = {
   embed: "Embeddings",
 };
 const FINISHED = new Set(["done", "partial", "failed"]);
+const MUTATION_TEXT = {
+  number_change: "number changed",
+  scope_inflation: "scope inflated",
+  hedge_removal: "hedge removed",
+  citation_swap: "citation swapped to an unrelated paper",
+};
 const TEXT_STATUS = {
   full: "Full text",
   abstract_only: "Abstract only",
@@ -113,6 +119,7 @@ function freshState() {
     claimById: new Map(),
     verdicts: new Map(),
     duplicates: new Set(), // pair ids merged into a sibling verdict
+    demo: null, // planted-error info and score for the demo paper
     escalating: new Set(),
     coverage: null,
     filter: { labels: new Set(), issuesOnly: false, query: "" },
@@ -426,6 +433,7 @@ function applyData(data) {
   for (const v of data.verdicts || []) S.verdicts.set(pid(v.claim_id, v.reference_key), v);
   for (const d of data.duplicates || []) { S.duplicates.add(d.pair_id); S.verdicts.delete(d.pair_id); }
   if (data.summary) S.coverage = data.summary.coverage;
+  if (data.demo !== undefined) S.demo = data.demo;
 }
 
 function addClaim(claim) {
@@ -503,6 +511,7 @@ function renderHead() {
   if (job.status === "failed" && p) notices.push(`<div class="notice bad">${esc(job.message || "This check stopped early.")}</div>`);
   if (job.status === "partial") notices.push(`<div class="notice warn">${esc(job.message || "This check stopped early; results so far are shown.")}</div>`);
   for (const note of p?.notes || []) notices.push(`<div class="notice warn">${esc(note)}</div>`);
+  if (job.source === "demo" && S.demo) notices.unshift(renderDemoNotice());
   if (job.mode === "quick" && job.sentences_total > job.sentences_checked && job.sentences_checked) {
     const done = FINISHED.has(job.status);
     notices.push(`<div class="notice">Quick check: ${job.sentences_checked} of ${job.sentences_total} citing sentences checked.
@@ -811,7 +820,7 @@ function renderOverview() {
     const what = first?.verdict?.attributed_claim || first?.claim?.claim_text || S.sentById.get(e.sid)?.text || "";
     return `<li><button type="button" data-go-sid="${e.sid}" data-go-m="${e.m}">
       <span class="dot v-${e.status}" aria-hidden="true"></span>
-      <span><strong>${esc(e.marker)}</strong> ${esc(LABELS[e.status]?.text || "")}<br>
+      <span><strong>${esc(e.marker)}</strong> ${esc(LABELS[e.status]?.text || "")}${S.demo?.planted_by_sentence?.[e.sid] ? ` <span class="badge planted-badge">Planted</span>` : ""}<br>
       <span class="what">${esc(what.length > 150 ? `${what.slice(0, 150)}…` : what)}</span></span></button></li>`;
   }).join("");
   const running = !FINISHED.has(S.job.status);
@@ -827,8 +836,16 @@ function renderOverview() {
 function renderCitation(sid, m) {
   const s = S.sentById.get(sid);
   const { status, items } = markerItems(sid, m);
+  const planted = S.demo?.planted_by_sentence?.[sid];
+  const plantedHtml = planted ? `
+    <div class="planted">
+      <div class="planted-title">Planted error · ${esc(MUTATION_TEXT[planted.mutation] || planted.mutation)}</div>
+      <div>${esc(planted.description)}.</div>
+      <details><summary>Original sentence</summary><p>${esc(planted.original)}</p></details>
+    </div>` : "";
   const head = `<button type="button" class="btn small close" data-close>← Overview</button>
     <h2>Citation ${esc(S.text.slice(...s.marker_spans[m]))}</h2>
+    ${plantedHtml}
     <p class="sentence">${esc(s.text)}</p>
     <p class="muted" style="font-size:12.5px;margin:0">${esc(s.section || "")}</p>`;
   if (status === "unchecked") {
@@ -924,4 +941,26 @@ function renderClaimSection({ claim, key, verdict }, ref, index, total) {
     <div class="field"><div class="field-name">From the cited paper</div>${evidence}</div>
     <div class="field"><div class="field-name">Why</div><div class="explanation">${esc(verdict.explanation)}</div></div>
   </section>`;
+}
+
+// ------------------------------------------------------------------- demo
+
+function renderDemoNotice() {
+  const d = S.demo;
+  const kinds = "numbers changed, scope inflated, hedges removed, citations swapped";
+  const evalResult = d.eval;
+  if (!evalResult) {
+    return `<div class="notice demo"><strong>Demo paper: ${d.planted} planted errors.</strong>
+      This is a real paper with ${d.planted} citations deliberately altered (${kinds}).
+      The checker is not told which ones.</div>`;
+  }
+  const rows = Object.entries(evalResult.by_mutation)
+    .map(([m, r]) => `<li>${esc(MUTATION_TEXT[m] || m)}: caught ${r.caught} of ${r.planted}</li>`).join("");
+  return `<div class="notice demo"><strong>Demo paper: ${esc(evalResult.summary_line)}.</strong>
+    <details><summary>Details</summary>
+      <ul class="demo-breakdown">${rows}</ul>
+      <p>Planted citations are marked “Planted” in the list on the right. Other flags are on citations
+      that were not altered; ${evalResult.other_flags_preexisting} of them were also flagged when the original,
+      unmodified paper was checked, so they may be genuine citation problems.</p>
+    </details></div>`;
 }

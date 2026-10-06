@@ -13,7 +13,7 @@ from fastapi.responses import JSONResponse, PlainTextResponse, Response, Streami
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, ValidationError
 
-from app import llm
+from app import demo, llm
 from app.config import ROOT_DIR, get_settings
 from app.pipeline.ingest import InvalidArxivId, normalize_arxiv_id
 from app.pipeline.run import FINISHED, JobBusy, get_runner
@@ -174,10 +174,24 @@ async def job_events(job_id: str, request: Request):
     )
 
 
-@app.post("/api/demo")
-def demo():
-    # The bundled demo paper (with planted errors and cached results) arrives in milestone 9.
-    return _error(501, "The demo paper is not available yet.")
+@app.post("/api/demo", status_code=201)
+async def start_demo(fresh: bool = False):
+    """Check the bundled demo paper (planted errors). Reuses the latest finished check unless
+    `fresh`; without an API key, shows the bundled snapshot of a recorded check."""
+    if not demo.demo_available():
+        return _error(501, "The demo paper has not been generated yet (run scripts/plant_errors.py).")
+    runner = get_runner()
+    if not fresh:
+        existing = runner.latest_demo_job()
+        if existing is not None:
+            return {"id": existing.id, "job": _job_view(existing)}
+    if not get_settings().nebius_api_key:
+        if not demo.SNAPSHOT_PATH.exists():
+            return _error(503, "No model API key is configured and there is no recorded demo to show.")
+        job = runner.import_snapshot()
+    else:
+        job = runner.create_demo_job()
+    return {"id": job.id, "job": _job_view(job)}
 
 
 app.mount("/", StaticFiles(directory=ROOT_DIR / "static", html=True), name="static")

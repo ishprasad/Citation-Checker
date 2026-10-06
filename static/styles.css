@@ -367,3 +367,15 @@ a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset:
 .trail li:first-child .verdict-pill { opacity: 0.75; }
 .trail-step { font-size: 12px; color: var(--muted); }
 .trail .verdict-line { margin-top: 3px; }
+
+/* Demo paper */
+.notice.demo { background: var(--accent-soft); border-color: transparent; }
+.notice.demo details { margin-top: 6px; }
+.notice.demo summary { cursor: pointer; color: var(--accent); }
+.demo-breakdown { margin: 6px 0; padding-left: 18px; }
+.planted { margin: 0 0 10px; padding: 10px 12px; border-radius: 8px; background: var(--accent-soft); font-size: 13.5px; }
+.planted-title { font-weight: 700; color: var(--accent); margin-bottom: 2px; }
+.planted details { margin-top: 4px; }
+.planted summary { cursor: pointer; color: var(--accent); font-size: 12.5px; }
+.planted details p { margin: 4px 0 0; font: 14px/1.5 var(--serif); color: var(--muted); }
+.planted-badge { color: var(--accent); background: var(--accent-soft); font-size: 11px; padding: 1px 7px; }

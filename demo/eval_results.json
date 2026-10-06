@@ -1,0 +1,256 @@
+{
+  "evaluated_at": "2026-10-06T17:59:22+00:00",
+  "paper": {
+    "arxiv_id": "2201.11903v6",
+    "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models"
+  },
+  "job_id": "06c7175793a5",
+  "planted": 10,
+  "checked": 10,
+  "caught": 7,
+  "recall": 0.7,
+  "label_accuracy": 0.5,
+  "expected_mode_rate": 0.5,
+  "untouched_verdicts": 129,
+  "other_flags": 33,
+  "other_flags_preexisting": 33,
+  "precision": 0.175,
+  "precision_excluding_preexisting": 1.0,
+  "by_mutation": {
+    "scope_inflation": {
+      "planted": 3,
+      "caught": 1
+    },
+    "number_change": {
+      "planted": 2,
+      "caught": 2
+    },
+    "citation_swap": {
+      "planted": 4,
+      "caught": 4
+    },
+    "hedge_removal": {
+      "planted": 1,
+      "caught": 0
+    }
+  },
+  "summary_line": "Caught 7 of 10 planted errors · 33 other citations flagged for review (33 also flagged in the original paper)",
+  "details": [
+    {
+      "id": "p1",
+      "sentence_id": "s2",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"in every setting and domain\" before the citation",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [
+        "hypothesis_as_finding",
+        "scope_inflation"
+      ],
+      "expected_mode_found": true,
+      "escalated": false
+    },
+    {
+      "id": "p2",
+      "sentence_id": "s3",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"across all tasks and model sizes\" before the citation",
+      "checked": true,
+      "caught": false,
+      "label_correct": false,
+      "labels": [
+        "supported"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": false
+    },
+    {
+      "id": "p3",
+      "sentence_id": "s15",
+      "mutation": "number_change",
+      "description": "Changed \"20B\" to \"32B\"",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": true
+    },
+    {
+      "id": "p4",
+      "sentence_id": "s18",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Zhao et al., 2021) with (Roy and Roth, 2015) (\"Solving General Arithmetic Word Problems\") (similarity 0.38 vs 0.76 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": false,
+      "labels": [
+        "unverifiable"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p5",
+      "sentence_id": "s35",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Brown et al., 2020) with (Wiegreffe and Marasović, 2021) (\"Teach Me to Explain: A Review of Datasets for Explainable Natural Language Processing\") (similarity 0.33 vs 0.60 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": false,
+      "labels": [
+        "unverifiable"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p6",
+      "sentence_id": "s36",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"universally, in all cases\" before the citation",
+      "checked": true,
+      "caught": false,
+      "label_correct": false,
+      "labels": [
+        "unverifiable"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": false
+    },
+    {
+      "id": "p7",
+      "sentence_id": "s39",
+      "mutation": "number_change",
+      "description": "Changed \"54.3%\" to \"86.9%\"",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "contradicted"
+      ],
+      "failure_modes": [
+        "number_drift"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p8",
+      "sentence_id": "s40",
+      "mutation": "hedge_removal",
+      "description": "Removed the hedge: \"likely\" became \"(deleted)\"",
+      "checked": true,
+      "caught": false,
+      "label_correct": false,
+      "labels": [
+        "supported"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": true
+    },
+    {
+      "id": "p9",
+      "sentence_id": "s57",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Dua et al., 2020) with (Yan et al., 2020) (\"Neural Execution Engines: Learning to Execute Subroutines\") (similarity 0.44 vs 0.61 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p10",
+      "sentence_id": "s66",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Patel et al., 2021) with (Yao et al., 2021) (\"Refining Language Models with Compositional Explanations\") (similarity 0.34 vs 0.54 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": true
+    }
+  ],
+  "escalation": {
+    "verdicts": 148,
+    "escalated": 37,
+    "label_changed": 12,
+    "transitions": {
+      "not_found->supported": 5,
+      "unverifiable->not_found": 4,
+      "contradicted->supported": 1,
+      "unverifiable->supported": 1,
+      "not_found->contradicted": 1
+    }
+  },
+  "coverage": {
+    "total": 82,
+    "full": 78,
+    "abstract_only": 2,
+    "unavailable": 2,
+    "retracted": 0,
+    "line": "Full text found for 78 of 82 references · abstract only for 2 · unavailable for 2."
+  },
+  "usage": {
+    "per_model": [
+      {
+        "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+        "role": "escalate",
+        "calls": 39,
+        "cached_calls": 39,
+        "prompt_tokens": 717762,
+        "completion_tokens": 108402,
+        "estimated_cost_usd": 1.042968
+      },
+      {
+        "model": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+        "role": "extract",
+        "calls": 70,
+        "cached_calls": 70,
+        "prompt_tokens": 130665,
+        "completion_tokens": 8414,
+        "estimated_cost_usd": 0.009859
+      },
+      {
+        "model": "nvidia/nemotron-3-super-120b-a12b",
+        "role": "judge",
+        "calls": 153,
+        "cached_calls": 153,
+        "prompt_tokens": 678216,
+        "completion_tokens": 198472,
+        "estimated_cost_usd": 0.38209
+      }
+    ],
+    "total_prompt_tokens": 1526643,
+    "total_completion_tokens": 315288,
+    "total_estimated_cost_usd": 1.434917
+  },
+  "wall_time_seconds": 28.1
+}

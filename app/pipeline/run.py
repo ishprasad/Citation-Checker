@@ -27,7 +27,7 @@ from typing import Any, Optional, TypeVar
 
 from pydantic import BaseModel
 
-from app import llm
+from app import demo, llm
 from app.config import get_settings
 from app.db import Database, get_database
 from app.models import (
@@ -145,6 +145,48 @@ class JobRunner:
         self.start(job.id)
         return job
 
+    # -- demo -----------------------------------------------------------------------
+
+    def create_demo_job(self, start: bool = True) -> Job:
+        """A full check of the bundled demo paper (model calls are cached after the first run)."""
+        paper = demo.load_demo_paper()
+        if paper is None:
+            raise FileNotFoundError("demo paper missing")
+        job = Job(id=uuid.uuid4().hex[:12], mode="full", source="demo", arxiv_id=paper.paper.arxiv_id,
+                  paper_id=paper.paper.id, title=paper.paper.title)
+        self.store.save_job(job)
+        if start:
+            self.start(job.id)
+        return job
+
+    def latest_demo_job(self) -> Optional[Job]:
+        """The newest finished check of the current demo paper, if any (reused instantly)."""
+        paper = demo.load_demo_paper()
+        if paper is None:
+            return None
+        candidates = [
+            Job.model_validate_json(d) for d in self.store.db.jobs_with_status(("done",))
+        ]
+        candidates = [j for j in candidates if j.source == "demo" and j.paper_id == paper.paper.id]
+        return max(candidates, key=lambda j: j.created_at, default=None)
+
+    def export_snapshot(self, job_id: str, path=None) -> None:
+        """Save a finished job's results so the demo can be shown without network or API key."""
+        job = self.store.load_job(job_id)
+        db = self.store.db
+        artifacts = {kind: db.artifacts(job_id, kind) for kind in ("ingest", "reference", "claims", "judged", "verdict")}
+        demo.write_json(path or demo.SNAPSHOT_PATH, {"job": json.loads(job.model_dump_json()), "artifacts": artifacts})
+
+    def import_snapshot(self, path=None) -> Job:
+        data = json.loads((path or demo.SNAPSHOT_PATH).read_text(encoding="utf-8"))
+        job = Job.model_validate(data["job"]).model_copy(update={"id": uuid.uuid4().hex[:12]})
+        for kind, items in data["artifacts"].items():
+            for item_id, value in items.items():
+                self.store.db.put_artifact(job.id, kind, item_id, value)
+        job.message = None
+        self.store.save_job(job)
+        return job
+
     def expand(self, job_id: str) -> Job:
         """Upgrade a finished quick check to a full check; completed work is reused."""
         job = self.store.load_job(job_id)
@@ -241,8 +283,13 @@ class JobRunner:
         if cached is not None:
             return cached
         self._progress(job, "parse", total=1)
-        log.info("job=%s stage=parse arxiv=%s", job.id, job.arxiv_id)
-        result = await ingest_arxiv(job.arxiv_id)
+        log.info("job=%s stage=parse source=%s arxiv=%s", job.id, job.source, job.arxiv_id)
+        if job.source == "demo":
+            result = demo.load_demo_paper()
+            if result is None:
+                raise IngestError("The demo paper is not available. Run scripts/plant_errors.py to create it.")
+        else:
+            result = await ingest_arxiv(job.arxiv_id)
         self.store.put(job.id, "ingest", "paper", result)
         return result
 

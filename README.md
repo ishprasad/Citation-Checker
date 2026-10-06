@@ -2,7 +2,7 @@
 
 For every citation in a research paper, Citation Checker asks one question: does the cited source actually say what the citing author claims it says? It runs on NVIDIA Nemotron models served through Nebius Token Factory.
 
-> Work in progress. See `CITATION_CHECKER_BRIEF.md` for the full plan. Done so far: milestones 1–8 (through the API, job orchestration, SSE and the UI), plus four extra failure-mode detectors (scaffold and LLM wrapper, arXiv LaTeX ingest, reference resolution and full-text fetching, claim extraction and evidence retrieval, judging with quote verification and escalation, failure-mode detectors).
+> Work in progress. See `CITATION_CHECKER_BRIEF.md` for the full plan. Done so far: milestones 1–9 (through the UI, demo mode and evaluation), plus four extra failure-mode detectors (scaffold and LLM wrapper, arXiv LaTeX ingest, reference resolution and full-text fetching, claim extraction and evidence retrieval, judging with quote verification and escalation, failure-mode detectors).
 
 ## Setup
 
@@ -15,6 +15,8 @@ python scripts/ingest_paper.py 1706.03762  # parse a paper: references and citin
 python scripts/resolve_refs.py 1706.03762  # find every cited paper, fetch its text, print coverage
 python scripts/sample_claims.py 2310.06825 # extracted claims and top evidence passages for a few citations
 python scripts/check_paper.py 2310.06825   # whole pipeline: verdicts, quotes, escalations, token usage
+python scripts/plant_errors.py             # build the demo paper (planted errors) and its ground truth
+python scripts/evaluate.py --snapshot      # score a check of the demo paper; bundle it for offline demos
 uvicorn app.main:app --reload
 ```
 
@@ -161,3 +163,33 @@ The UI is plain HTML, CSS and JavaScript, with no build step and no CDN. Run `uv
   With nothing selected, the panel shows a legend and the list of citations that need a human check.
 - **Top bar.** Verdict counts double as filters. There's also a search box (over sentences, claims, reference titles and explanations), a "Show only issues" toggle, and "Next issue" (or press `j`). Export gives Markdown or JSON. A cost panel shows tokens and estimated cost per model, plus how many verdicts needed the large model.
 - **Layout.** Light and dark themes follow `prefers-color-scheme`. The layout is two-column at laptop widths and single-column below 900px. The URL (`#/job/<id>`) reopens a report after a reload.
+
+## Demo paper and evaluation (`app/demo.py`, `scripts/plant_errors.py`, `scripts/evaluate.py`)
+
+The demo is the Chain-of-Thought Prompting paper (arXiv:2201.11903). Its references are mostly open (full text for 78 of 82), and 10 of its citations have been deliberately altered.
+
+**How errors are planted.** `plant_errors.py` first checks the unmodified paper. Errors are planted only on citations the checker judged supported with high confidence and no tags, so a caught error can't be a pre-existing problem. The four mutation types:
+
+- **Number change.** A number the cited work actually reports, inside the clause the citation is attached to, is changed. Years and list enumerators are excluded.
+- **Scope inflation.** A sweeping phrase is added before a parenthetical citation that closes its clause, supports a finding, and cites at most two works.
+- **Hedge removal.** "may" or "suggests" becomes "will" or "shows", or "likely" is deleted.
+- **Citation swap.** The citation is replaced by the bibliography entry least related to the claim. It must be at least 0.15 less similar than the original, and each replacement is used only once.
+
+Edits are applied from the end of the text backwards, so every offset stays exact; this is covered by tests. The output is `demo/paper.json` and `demo/ground_truth.json`, which also records the citations flagged in the unmodified paper.
+
+**Demo button (`POST /api/demo`).** It returns the latest finished check of the demo paper instantly. If there is none, it runs one live; with warm caches that takes about 30 seconds. With no API key configured, it shows the bundled snapshot of a recorded check (`demo/snapshot.json`). In the UI, the banner shows the score, each planted citation shows what was changed and its original sentence, and the issue list marks planted entries.
+
+**Latest results** (`python scripts/evaluate.py`, full check of all 70 citing sentences):
+
+| Planted error | Planted | Caught |
+|---|---|---|
+| Citation swap | 4 | 4 (3 tagged "possibly the wrong reference") |
+| Number change | 2 | 2 (one tagged "number drift": "86.9% in the claim; 54.3% in the cited work") |
+| Scope inflation | 3 | 1 |
+| Hedge removal | 1 | 0 |
+| **Total** | **10** | **7 (recall 70%)** |
+
+- **Label accuracy** on planted errors is 50%. Some swaps are labelled "could not be verified" but tagged as the wrong reference.
+- **Other flags:** 33 of the 129 verdicts on untouched citations are flagged. All 33 were also flagged in the unmodified paper. A few are genuine, such as InstructGPT's model sizes, or "Cobbe et al. extend Ling et al. by creating a *larger* dataset" when GSM8K is smaller than AQuA. Most are strict readings of group citations or claims that misattribute what the citation covers. Strict precision is therefore 18%; improving it is the next calibration step.
+- **Escalation:** 37 of 148 verdicts went to Nemotron Ultra, which changed the label in 12, mostly "not found" to "supported".
+- **Cost:** a full check costs about $1.44 (1.84M tokens, mostly Ultra escalations) the first time. Repeat runs are served from the cache in about 30 seconds.

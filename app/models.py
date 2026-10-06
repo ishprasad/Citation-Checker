@@ -252,7 +252,7 @@ class Job(BaseModel):
     id: str
     status: JobStatus = "queued"
     mode: Literal["quick", "full"] = "quick"
-    source: Literal["arxiv", "pdf"] = "arxiv"
+    source: Literal["arxiv", "pdf", "demo"] = "arxiv"
     arxiv_id: Optional[str] = None  # as requested (normalized); versioned id is on the paper
     title: str = ""
     progress: list[StageProgress] = Field(default_factory=default_progress)

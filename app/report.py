@@ -5,7 +5,7 @@ from __future__ import annotations
 from collections import Counter
 from typing import Any, Optional
 
-from app import llm
+from app import demo, llm
 from app.models import Claim, Coverage, IngestResult, Job, Reference, Verdict
 from app.pipeline.detectors import failure_mode_counts
 from app.pipeline.judge import escalation_stats
@@ -81,6 +81,14 @@ def build_report(store: JobStore, job: Job, include_text: bool = True) -> dict[s
     claims = [c for s in ingest.sentences for c in data["claims_by_sentence"].get(s.id, [])]
 
     paper = ingest.paper.model_dump(mode="json", exclude={"references"})
+    demo_info = None
+    if job.source == "demo" and (truth := demo.load_ground_truth()) is not None:
+        claims_by_id = {c.id: c for c in claims}
+        demo_info = {
+            "planted": len(truth.planted),
+            "planted_by_sentence": demo.planted_by_sentence(truth),
+            "eval": demo.score(truth, data["verdicts"], claims_by_id) if job.status in ("done", "partial") else None,
+        }
     if not include_text:
         paper.pop("text", None)
         paper.pop("sections", None)
@@ -92,6 +100,7 @@ def build_report(store: JobStore, job: Job, include_text: bool = True) -> dict[s
         "claims": [c.model_dump(mode="json") for c in claims],
         "verdicts": [v.model_dump(mode="json") for v in verdicts],
         "duplicates": duplicates,
+        "demo": demo_info,
         "summary": summarize(job, checked_refs, verdicts),
     }
 

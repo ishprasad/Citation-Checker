@@ -1,0 +1,342 @@
+{
+  "arxiv_id": "2201.11903v6",
+  "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+  "planted": [
+    {
+      "id": "p1",
+      "sentence_id": "s2",
+      "reference_keys": [
+        "brown2020language"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"in every setting and domain\" before the citation",
+      "original": "Scaling up the size of language models has been shown to confer a range of benefits, such as improved performance and sample efficiency (Kaplan et al., 2020; Brown et al., 2020, inter alia).",
+      "mutated": "Scaling up the size of language models has been shown to confer a range of benefits, such as improved performance and sample efficiency in every setting and domain (Kaplan et al., 2020; Brown et al., 2020, inter alia).",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p2",
+      "sentence_id": "s3",
+      "reference_keys": [
+        "rae2021scaling"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"across all tasks and model sizes\" before the citation",
+      "original": "However, scaling up model size alone has not proved sufficient for achieving high performance on challenging tasks such as arithmetic, commonsense, and symbolic reasoning (Rae et al., 2021).",
+      "mutated": "However, scaling up model size alone has not proved sufficient for achieving high performance on challenging tasks such as arithmetic, commonsense, and symbolic reasoning across all tasks and model sizes (Rae et al., 2021).",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p3",
+      "sentence_id": "s15",
+      "reference_keys": [
+        "tay2022unifying"
+      ],
+      "mutation": "number_change",
+      "description": "Changed \"20B\" to \"32B\"",
+      "original": "The fourth is UL2 20B (Tay et al., 2022), and the fifth is Codex (Chen et al., 2021, code-davinci-002 in the OpenAI API).",
+      "mutated": "The fourth is UL2 32B (Tay et al., 2022), and the fifth is Codex (Chen et al., 2021, code-davinci-002 in the OpenAI API).",
+      "expected_labels": [
+        "overstated",
+        "contradicted",
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "number_drift"
+      ]
+    },
+    {
+      "id": "p4",
+      "sentence_id": "s18",
+      "reference_keys": [
+        "roy-roth-2015-solving"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Zhao et al., 2021) with (Roy and Roth, 2015) (\"Solving General Arithmetic Word Problems\") (similarity 0.38 vs 0.76 for the original)",
+      "original": "Sensitivity to exemplars is a key consideration of prompting approaches—for instance, varying the permutation of few-shot exemplars can cause the accuracy of GPT-3 on SST-2 to range from near chance (54.3%) to near state of the art (93.4%) (Zhao et al., 2021).",
+      "mutated": "Sensitivity to exemplars is a key consideration of prompting approaches—for instance, varying the permutation of few-shot exemplars can cause the accuracy of GPT-3 on SST-2 to range from near chance (54.3%) to near state of the art (93.4%) (Roy and Roth, 2015).",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p5",
+      "sentence_id": "s35",
+      "reference_keys": [
+        "wiegreffe2021teach"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Brown et al., 2020) with (Wiegreffe and Marasović, 2021) (\"Teach Me to Explain: A Review of Datasets for Explainable Natural Language Processing\") (similarity 0.33 vs 0.60 for the original)",
+      "original": "The second observation is that small language models seem to have inherently weaker arithmetic abilities, as shown by (Brown et al., 2020), the ability to do simple arithmetic operations (without semantic understanding) requires sufficient model scale.",
+      "mutated": "The second observation is that small language models seem to have inherently weaker arithmetic abilities, as shown by (Wiegreffe and Marasović, 2021), the ability to do simple arithmetic operations (without semantic understanding) requires sufficient model scale.",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p6",
+      "sentence_id": "s36",
+      "reference_keys": [
+        "min2022rethinking"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"universally, in all cases\" before the citation",
+      "original": "There is no shortage of work showing that prompts affect language models in unexpected ways (Min et al., 2022).",
+      "mutated": "There is no shortage of work showing that prompts affect language models in unexpected ways universally, in all cases (Min et al., 2022).",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p7",
+      "sentence_id": "s39",
+      "reference_keys": [
+        "zhao2021calibrate"
+      ],
+      "mutation": "number_change",
+      "description": "Changed \"54.3%\" to \"86.9%\"",
+      "original": "Prior work has shown that in some cases (e.g., classification) even the order of prompts matter—varying the permutation of few-shot exemplars can cause the accuracy of GPT-3 on SST-2 to range from near chance (54.3%) to near SOTA (93.4%) (Zhao et al., 2021).",
+      "mutated": "Prior work has shown that in some cases (e.g., classification) even the order of prompts matter—varying the permutation of few-shot exemplars can cause the accuracy of GPT-3 on SST-2 to range from near chance (86.9%) to near SOTA (93.4%) (Zhao et al., 2021).",
+      "expected_labels": [
+        "overstated",
+        "contradicted",
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "number_drift"
+      ]
+    },
+    {
+      "id": "p8",
+      "sentence_id": "s40",
+      "reference_keys": [
+        "zhao2021calibrate"
+      ],
+      "mutation": "hedge_removal",
+      "description": "Removed the hedge: \"likely\" became \"(deleted)\"",
+      "original": "The one exception is the coin flip task, for which exemplar orders have high standard deviation, likely for the reason cited in Zhao et al. (2021)—for classification, many exemplars of the same category in a row biases the model outputs).",
+      "mutated": "The one exception is the coin flip task, for which exemplar orders have high standard deviation, for the reason cited in Zhao et al. (2021)—for classification, many exemplars of the same category in a row biases the model outputs).",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "hypothesis_as_finding"
+      ]
+    },
+    {
+      "id": "p9",
+      "sentence_id": "s57",
+      "reference_keys": [
+        "yan2020neural"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Dua et al., 2020) with (Yan et al., 2020) (\"Neural Execution Engines: Learning to Execute Subroutines\") (similarity 0.44 vs 0.61 for the original)",
+      "original": "As examples, it has been shown that natural language intermediate steps can improve performance (Zaidan et al., 2007; Yao et al., 2021; Hase and Bansal, 2022; Gu et al., 2022), improve robustness (Chen et al., 2022), speed up training (Hancock et al., 2018), mitigate bias (Dua et al., 2020), and even help in image and reinforcement learning settings (Andreas et al., 2018).",
+      "mutated": "As examples, it has been shown that natural language intermediate steps can improve performance (Zaidan et al., 2007; Yao et al., 2021; Hase and Bansal, 2022; Gu et al., 2022), improve robustness (Chen et al., 2022), speed up training (Hancock et al., 2018), mitigate bias (Yan et al., 2020), and even help in image and reinforcement learning settings (Andreas et al., 2018).",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p10",
+      "sentence_id": "s66",
+      "reference_keys": [
+        "yao2021refining"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Patel et al., 2021) with (Yao et al., 2021) (\"Refining Language Models with Compositional Explanations\") (similarity 0.34 vs 0.54 for the original)",
+      "original": "• SVAMP (Patel et al., 2021): https://github.com/arkilpatel/SVAMP, MIT license: https://github.com/arkilpatel/SVAMP/blob/main/LICENSE.",
+      "mutated": "• SVAMP (Yao et al., 2021): https://github.com/arkilpatel/SVAMP, MIT license: https://github.com/arkilpatel/SVAMP/blob/main/LICENSE.",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    }
+  ],
+  "baseline_flags": [
+    [
+      "s13",
+      "ouyang2022training",
+      "not_found"
+    ],
+    [
+      "s13",
+      "ouyang2022training",
+      "overstated"
+    ],
+    [
+      "s14",
+      "thoppilan2022lamda",
+      "overstated"
+    ],
+    [
+      "s19",
+      "cobbe2021training",
+      "not_found"
+    ],
+    [
+      "s20",
+      "le-scao-rush-2021-many",
+      "not_found"
+    ],
+    [
+      "s20",
+      "reynolds2021prompt",
+      "not_found"
+    ],
+    [
+      "s21",
+      "talmor2022commonsenseqa",
+      "overstated"
+    ],
+    [
+      "s24",
+      "bigbench",
+      "not_found"
+    ],
+    [
+      "s28",
+      "rashkin2021measuring",
+      "not_found"
+    ],
+    [
+      "s28",
+      "wiegreffe2021reframing",
+      "not_found"
+    ],
+    [
+      "s28",
+      "ye2022unreliability",
+      "not_found"
+    ],
+    [
+      "s31",
+      "cobbe2021training",
+      "contradicted"
+    ],
+    [
+      "s31",
+      "ling-etal-2017-program",
+      "overstated"
+    ],
+    [
+      "s4",
+      "chiang-chen-2019-semantically",
+      "contradicted"
+    ],
+    [
+      "s4",
+      "roy-roth-2015-solving",
+      "not_found"
+    ],
+    [
+      "s41",
+      "cobbe2021training",
+      "not_found"
+    ],
+    [
+      "s45",
+      "wu2022promptchainer",
+      "not_found"
+    ],
+    [
+      "s47",
+      "majumder2021rationale",
+      "overstated"
+    ],
+    [
+      "s47",
+      "wiegreffe-etal-2021-measuring",
+      "contradicted"
+    ],
+    [
+      "s48",
+      "rajagopal2021selfexplain",
+      "not_found"
+    ],
+    [
+      "s52",
+      "nye2021show",
+      "overstated"
+    ],
+    [
+      "s55",
+      "saeed-etal-2021-rulebert",
+      "overstated"
+    ],
+    [
+      "s57",
+      "chen2022can",
+      "overstated"
+    ],
+    [
+      "s6",
+      "brown2020language",
+      "overstated"
+    ],
+    [
+      "s60",
+      "maynez-etal-2020-faithfulness",
+      "overstated"
+    ],
+    [
+      "s60",
+      "wiegreffe2021reframing",
+      "overstated"
+    ],
+    [
+      "s61",
+      "thoppilan2022lamda",
+      "overstated"
+    ],
+    [
+      "s62",
+      "roy-roth-2015-solving",
+      "not_found"
+    ],
+    [
+      "s63",
+      "miao-etal-2020-diverse",
+      "overstated"
+    ],
+    [
+      "s68",
+      "bigbench",
+      "not_found"
+    ],
+    [
+      "s68",
+      "geva-etal-2021-aristotle",
+      "overstated"
+    ],
+    [
+      "s70",
+      "ahn2022can",
+      "not_found"
+    ]
+  ]
+}

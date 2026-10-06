@@ -269,6 +269,9 @@ DROP_ARGS = {
     "markboth": 2, "markright": 1, "runningtitle": 1, "runningauthor": 1, "icmltitle": 1,
     "icmltitlerunning": 1, "icmlsetsymbol": 2, "icmlcorrespondingauthor": 2, "icmlkeywords": 1,
     "keywords": 1, "DeclareMathOperator": 2, "newif": 0, "setcitestyle": 1, "tnotetext": 1,
+    # Package configuration blocks ("\pgfplotsset{compat=1.11, ...}") are never prose.
+    "pgfplotsset": 1, "tikzset": 1, "pgfkeys": 1, "usetikzlibrary": 1, "usepgfplotslibrary": 1,
+    "sisetup": 1, "setlist": 1, "newcolumntype": 2, "lstset": 1, "algrenewcommand": 2,
     "fntext": 1, "ead": 1, "cortext": 1, "address": 1, "email": 1, "institute": 1, "affil": 1,
     "affiliation": 1, "author": 1, "authorrunning": 1, "titlerunning": 1, "acmConference": 1,
 }
