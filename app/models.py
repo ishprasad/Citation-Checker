@@ -177,6 +177,8 @@ class Verdict(BaseModel):
     explanation: str = ""
     signals: JudgeSignals = Field(default_factory=JudgeSignals)
     failure_modes: list[FailureMode] = Field(default_factory=list)
+    # One short human-readable note per failure mode, e.g. {"number_drift": "34B in the claim, 33B in the source"}.
+    failure_notes: dict[str, str] = Field(default_factory=dict)
     flags: list[str] = Field(default_factory=list)  # e.g. "quote_unverified"
     escalated: bool = False
     original_label: Optional[VerdictLabel] = None  # judge label before escalation

@@ -25,10 +25,10 @@ Quote
 
 Signals (used to tag failure modes)
 - "claim_scope" and "source_scope": the population, dataset, setting or conditions in the claim and in the cited passage, or null.
-- "scope_broader_than_source": true if the claim generalizes beyond the source's scope (animal study cited as human evidence, one dataset cited as "in general", a pilot study cited as conclusive, a subset cited as "all").
+- "scope_broader_than_source": true only if the claim generalizes beyond who or what was studied: animal study cited as human evidence, one dataset or domain cited as "in general", a pilot or small study cited as conclusive, a subset cited as "all". Differing numbers, missing details or a different claim are not scope differences, so leave this false for them.
 - "source_hedged": true if the cited passage hedges this point ("may", "might", "could", "suggests", "we hypothesize", "preliminary evidence").
 - "claim_hedged": true if the attributed claim itself hedges.
-- "numbers": for each number in the claim for which the cited passage reports a corresponding value, give both values as written and whether they measure the same quantity. Leave the list empty if there are none.
+- "numbers": pair each number in the claim with the value the cited work reports for the same thing, one pair per number, each value as written (for example {"claim_value": "6.7B", "source_value": "6B", "same_quantity": true} when both describe the size of the same model). "same_quantity" says whether the two numbers describe the same thing; it is true even when the values differ, and it does not say whether they agree. Skip claim numbers that the cited work gives no value for. Leave the list empty if there are none.
 - "support_attributed_to_other_work": true if the passage that supports the claim itself credits this point to another work (it carries a citation such as "[12]" or "(Smith et al., 2019)" for it). Put that citation, as written, in "other_work".
 
 Confidence

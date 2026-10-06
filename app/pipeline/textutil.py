@@ -14,7 +14,7 @@ NUMBER_RE = re.compile(
     r"(?P<sign>[-−+])?"
     r"(?P<num>\d{1,3}(?:,\d{3})+|\d+)(?P<dec>\.\d+)?"
     r"(?:\s?(?P<op>\^|×\s?10\^)(?P<exp>[-−]?\d+))?"
-    r"(?P<unit>\s?%|\s?percent\b|\s?pp\b|\s?(?:x|×)(?![\w])|-?fold\b|[kKMB](?![\w]))?"
+    r"(?P<unit>\s(?:billion|million|thousand)\b|\s?%|\s?percent\b|\s?pp\b|\s?(?:x|×)(?![\w])|-?fold\b|[kKMB](?![\w]))?"
     r"(?![\d.]\d)"
 )
 
@@ -32,7 +32,8 @@ class Number:
 
 
 _UNIT_MAP = {"%": "%", "percent": "%", "pp": "pp", "x": "x", "×": "x", "fold": "x", "-fold": "x",
-             "k": "k", "K": "k", "M": "M", "B": "B"}
+             "k": "k", "K": "k", "M": "M", "B": "B", "thousand": "k", "million": "M", "billion": "B"}
+SCALE = {"k": 1e3, "M": 1e6, "B": 1e9}
 
 
 def extract_numbers(text: str) -> list[Number]:
@@ -165,3 +166,31 @@ def locate_quote(quote: Optional[str], text: str) -> Optional[tuple[int, int]]:
     if not spans:
         return None
     return origin[spans[0][0]], origin[spans[-1][1] - 1] + 1
+
+
+def _decimals(raw: str) -> int:
+    m = re.search(r"\.(\d+)", raw)
+    return len(m.group(1)) if m else 0
+
+
+def numbers_match(claim: Number, source: Number) -> Optional[bool]:
+    """Do two numbers state the same value, allowing for the claim's rounding?
+
+    Returns None when they are not comparable (different kinds of unit), so callers can
+    avoid flagging what they cannot judge.
+    """
+    cu, su = claim.unit, source.unit
+    cv = claim.value * SCALE.get(cu, 1.0)
+    sv = source.value * SCALE.get(su, 1.0)
+    # A percentage stated as a fraction ("12%" vs "0.12").
+    if cu == "%" and su == "" and abs(source.value) <= 1:
+        sv *= 100
+    elif su == "%" and cu == "" and abs(claim.value) <= 1:
+        cv *= 100
+    elif (cu in SCALE or su in SCALE) and (cu in SCALE or cu == "") and (su in SCALE or su == ""):
+        pass  # "175B" vs "175 billion" vs "175000000000"
+    elif cu != su:
+        return None
+    # The claim may round the source: "31%" for "30.9%", "2x" for "2.1x".
+    tolerance = 0.5 * 10 ** (-_decimals(claim.raw)) * SCALE.get(cu, 1.0)
+    return abs(cv - sv) <= tolerance + 1e-9 * max(abs(cv), abs(sv), 1.0)

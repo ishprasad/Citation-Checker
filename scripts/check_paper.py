@@ -20,6 +20,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from app import llm  # noqa: E402
 from app.models import Coverage  # noqa: E402
 from app.pipeline.claims import extract_claims  # noqa: E402
+from app.pipeline.detectors import apply_detectors, failure_mode_counts  # noqa: E402
 from app.pipeline.evidence import EvidenceRetriever  # noqa: E402
 from app.pipeline.ingest import ingest_arxiv  # noqa: E402
 from app.pipeline.judge import JudgeContext, escalation_stats, judge_all  # noqa: E402
@@ -70,6 +71,7 @@ async def main() -> int:
         timings["judge+escalate"] = time.perf_counter() - t
 
     claims_by_id = {c.id: c for c in claims}
+    verdicts = apply_detectors(verdicts, claims_by_id, refs_by_key)
     for v in verdicts:
         claim = claims_by_id[v.claim_id]
         ref = refs_by_key.get(v.reference_key)
@@ -84,6 +86,8 @@ async def main() -> int:
             mark = "verbatim" if v.quote_verified else "NOT FOUND IN SOURCE"
             print(wrap(f"quote ({mark}): \"{v.quote[:300]}\"", "      "))
         print(wrap(f"why: {v.explanation}", "      "))
+        for mode in v.failure_modes:
+            print(wrap(f"<{mode}> {v.failure_notes.get(mode, '')}", "      "))
         print()
 
     stats = escalation_stats(verdicts)
@@ -92,6 +96,7 @@ async def main() -> int:
     print("Verdicts: " + ", ".join(f"{k}={labels[k]}" for k in ICON if labels[k]))
     print(f"Escalated {stats.escalated} of {stats.verdicts}; label changed in {stats.label_changed} "
           f"{stats.transitions or ''}")
+    print(f"Failure modes: {failure_mode_counts(verdicts) or 'none'}")
     print(f"Quotes verified: {sum(v.quote_verified for v in verdicts)} / {sum(bool(v.quote) for v in verdicts)}")
     print(Coverage.of(refs).line())
     print("Timing: " + ", ".join(f"{k} {v:.1f}s" for k, v in timings.items()))

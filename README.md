@@ -2,7 +2,7 @@
 
 For every citation in a research paper, Citation Checker asks one question: does the cited source actually say what the citing author claims it says? It runs on NVIDIA Nemotron models served through Nebius Token Factory.
 
-> Work in progress. See `CITATION_CHECKER_BRIEF.md` for the full plan. Done so far: milestones 1–5 (scaffold and LLM wrapper, arXiv LaTeX ingest, reference resolution and full-text fetching, claim extraction and evidence retrieval, judging with quote verification and escalation).
+> Work in progress. See `CITATION_CHECKER_BRIEF.md` for the full plan. Done so far: milestones 1–6 (scaffold and LLM wrapper, arXiv LaTeX ingest, reference resolution and full-text fetching, claim extraction and evidence retrieval, judging with quote verification and escalation, failure-mode detectors).
 
 ## Setup
 
@@ -109,3 +109,15 @@ A verdict is escalated to Ultra, with the full text of the cited paper (up to `E
 - the label is `unverifiable` although the full text is available, which usually means retrieval missed the relevant part.
 
 Accusatory labels on abstract-only references are also escalated. Ultra's verdict replaces the judge's, and the original label is kept. In a 20-sentence run on the Chain-of-Thought paper, 8 of 46 verdicts were escalated and Ultra changed the label in 7. Most of those were `not_found` becoming `supported` or `overstated`, so escalation is mainly what removes false alarms.
+
+## Failure-mode detectors (`app/pipeline/detectors.py`)
+
+After judging, each verdict can carry one or more failure-mode tags, each with a short note for the UI. The judge returns structured signals for this, at no extra model cost. Every tag also needs rule-based evidence, so one mistaken signal can't put a tag on a citation.
+
+| Tag | Fires when | Example note from a real run |
+|---|---|---|
+| `number_drift` | The judge pairs a claim number with the source's value for the same quantity. Both numbers must actually appear in the claim and in the verified quote, and they must differ beyond the claim's rounding (31% for 30.9% is fine; fractions and percentages, and 175B and "175 billion", are compared correctly). A `supported` verdict with drift becomes `overstated`. | "6.7B in the claim; 6B in the cited work." (Chain-of-Thought citing InstructGPT's model sizes) |
+| `scope_inflation` | An `overstated` or `contradicted` verdict where the judge found the claim broader than who or what was studied. Both scopes must be stated and must differ, and a scope that is only a list of numbers doesn't count. | "Claim scope: tasks that require reasoning abilities. Source scope: specific reasoning tasks…" |
+| `hypothesis_as_finding` | An `overstated` finding where the source hedges (the judge's signal, or hedge words such as "may" or "suggests" in the quote) and the claim doesn't. | 'The cited work hedges this point ("may"); the claim states it as fact.' |
+| `secondary_citation` | The judge says the supporting passage credits the point to another work, and a citation marker is visible in the source text. The original work is named from the cited paper's own bibliography. | 'The supporting passage credits Brown et al. (2020): "Language models are few-shot learners".' |
+| `retracted_source` | The reference is marked as retracted (Crossref / Retraction Watch, OpenAlex). This applies to every claim citing it. | "The cited work has been retracted (notice: doi:…)." |
