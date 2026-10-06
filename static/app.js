@@ -112,6 +112,7 @@ function freshState() {
     claimsBySentence: new Map(),
     claimById: new Map(),
     verdicts: new Map(),
+    duplicates: new Set(), // pair ids merged into a sibling verdict
     escalating: new Set(),
     coverage: null,
     filter: { labels: new Set(), issuesOnly: false, query: "" },
@@ -350,6 +351,8 @@ function connect() {
     addClaim(claim);
     const id = pid(verdict.claim_id, verdict.reference_key);
     S.verdicts.set(id, verdict);
+    if (verdict.duplicate_of) S.duplicates.add(id);
+    else S.duplicates.delete(id);
     S.escalating.delete(id);
     updateMarkers(claim.citing_sentence_id);
     renderSummary();
@@ -421,6 +424,7 @@ function applyData(data) {
     data.claims.forEach(addClaim);
   }
   for (const v of data.verdicts || []) S.verdicts.set(pid(v.claim_id, v.reference_key), v);
+  for (const d of data.duplicates || []) { S.duplicates.add(d.pair_id); S.verdicts.delete(d.pair_id); }
   if (data.summary) S.coverage = data.summary.coverage;
 }
 
@@ -540,8 +544,8 @@ function renderProgress() {
         <div class="bar"><span style="width:${(ratio * 100).toFixed(1)}%"></span></div>
       </div>`;
   }).join("");
-  const verdictCount = S.verdicts.size;
-  const escalated = Array.from(S.verdicts.values()).filter((v) => v.escalated).length;
+  const verdictCount = liveVerdicts().length;
+  const escalated = liveVerdicts().filter((v) => v.escalated).length;
   const line = finished
     ? `<div class="progress-line">${job.status === "done" ? "Check complete" : job.status === "partial" ? "Check stopped early" : "Check failed"}
         · ${verdictCount} citation verdicts · ${escalated} escalated to Ultra
@@ -550,9 +554,13 @@ function renderProgress() {
   el.innerHTML = `${line}<div class="stages">${stages}</div>`;
 }
 
+function liveVerdicts() {
+  return Array.from(S.verdicts.values()).filter((v) => !v.duplicate_of);
+}
+
 function verdictCounts() {
   const counts = Object.fromEntries(SUMMARY_ORDER.map((l) => [l, 0]));
-  for (const v of S.verdicts.values()) counts[v.label] = (counts[v.label] || 0) + 1;
+  for (const v of liveVerdicts()) counts[v.label] = (counts[v.label] || 0) + 1;
   return counts;
 }
 
@@ -576,7 +584,7 @@ function renderCost() {
     <tr><td title="${esc(m.model)}">${esc(ROLE_TEXT[m.role] || m.role)}</td><td>${m.calls}</td>
       <td>${fmtTokens(m.prompt_tokens)}</td><td>${fmtTokens(m.completion_tokens)}</td>
       <td>${cost ? `$${m.estimated_cost_usd.toFixed(4)}` : "–"}</td></tr>`).join("");
-  const verdicts = Array.from(S.verdicts.values());
+  const verdicts = liveVerdicts();
   const escalated = verdicts.filter((v) => v.escalated);
   const changed = escalated.filter((v) => v.original_label && v.original_label !== v.label);
   $("#cost-panel").innerHTML = per.length ? `
@@ -661,7 +669,15 @@ function markerItems(sid, m) {
   const claims = S.claimsBySentence.get(sid);
   if (!claims) return { status: "pending", items: keys.map((k) => ({ claim: null, key: k, verdict: null })) };
   const items = [];
-  for (const c of claims) for (const k of c.reference_keys) if (keys.includes(k)) items.push({ claim: c, key: k, verdict: S.verdicts.get(pid(c.id, k)) });
+  for (const c of claims) {
+    for (const k of c.reference_keys) {
+      if (!keys.includes(k)) continue;
+      const id = pid(c.id, k);
+      const verdict = S.verdicts.get(id);
+      if (S.duplicates.has(id) || (verdict && verdict.duplicate_of)) continue; // restates a sibling verdict
+      items.push({ claim: c, key: k, verdict });
+    }
+  }
   const labels = items.filter((x) => x.verdict).map((x) => x.verdict.label);
   const pending = items.length === 0 || items.some((x) => !x.verdict);
   const worst = SEVERITY.find((l) => labels.includes(l));
@@ -822,18 +838,38 @@ function renderCitation(sid, m) {
   if (!items.length || items.every((x) => !x.claim)) {
     return `${head}<div class="card"><p class="muted"><span class="spinner"></span> Extracting the claim behind this citation…</p></div>`;
   }
-  return head + items.map(renderItem).join("");
+  // One card per cited work; each claim attached to it is a numbered section of that card.
+  const groups = new Map();
+  for (const item of items) {
+    if (!groups.has(item.key)) groups.set(item.key, []);
+    groups.get(item.key).push(item);
+  }
+  return head + Array.from(groups, ([key, group]) => renderReferenceCard(key, group)).join("");
 }
 
-function renderItem({ claim, key, verdict }) {
+function renderReferenceCard(key, group) {
   const ref = S.refs.get(key) || { key, label: key };
   const link = refLink(ref);
   const title = ref.title || ref.raw || key;
   const statusBadge = ref.fulltext_status ? `<span class="badge ${ref.fulltext_status}">${esc(TEXT_STATUS[ref.fulltext_status] || ref.fulltext_status)}</span>` : "";
-  const refHtml = `
+  const claims = group.filter((x) => x.claim);
+  const count = claims.length > 1 ? `<span>${claims.length} claims checked</span>` : "";
+  return `<div class="card">
     <div class="ref-title">[${esc(ref.label || key)}] ${link ? `<a href="${esc(link)}" target="_blank" rel="noopener">${esc(title)}</a>` : esc(title)}</div>
     <div class="ref-meta">${ref.year ? `<span>${esc(ref.year)}</span>` : ""}${statusBadge}
-      ${ref.retracted ? `<span class="badge" style="color:var(--bad);background:var(--bad-bg)">Retracted</span>` : ""}</div>`;
+      ${ref.retracted ? `<span class="badge" style="color:var(--bad);background:var(--bad-bg)">Retracted</span>` : ""}${count}</div>
+    ${claims.map((item, i) => renderClaimSection(item, ref, i, claims.length)).join("")}
+  </div>`;
+}
+
+function renderPill(label, confidence) {
+  const info = LABELS[label];
+  return `<span class="verdict-pill v-${label}"><span aria-hidden="true">${info.icon}</span> ${esc(info.text)}</span>
+    <span class="confidence">${pct(confidence)} confidence</span>`;
+}
+
+function renderClaimSection({ claim, key, verdict }, ref, index, total) {
+  const heading = total > 1 ? `<div class="claim-index">Claim ${index + 1} of ${total}</div>` : "";
   const claimText = verdict?.attributed_claim || claim.claim_text;
   const claimHtml = `
     <div class="field"><div class="field-name">Claim checked</div>
@@ -843,13 +879,20 @@ function renderItem({ claim, key, verdict }) {
 
   if (!verdict) {
     const escalating = S.escalating.has(pid(claim.id, key));
-    return `<div class="card">${refHtml}${claimHtml}
+    return `<section class="claim-section">${heading}${claimHtml}
       <div class="verdict-line"><span class="verdict-pill v-pending"><span class="spinner"></span>
-        ${escalating ? "Getting a second opinion from Nemotron Ultra…" : "Checking against the cited paper…"}</span></div></div>`;
+        ${escalating ? "Getting a second opinion from Nemotron Ultra…" : "Checking against the cited paper…"}</span></div></section>`;
   }
 
-  const label = LABELS[verdict.label];
-  const escalated = verdict.escalated ? `<span class="badge escalated" title="First check: ${esc(LABELS[verdict.original_label]?.text || "")} (${pct(verdict.original_confidence)})">Escalated to Nemotron Ultra</span>` : "";
+  // One verdict per claim. When Ultra re-checked it, show how the verdict was reached.
+  const verdictHtml = verdict.escalated && verdict.original_label
+    ? `<ol class="trail" aria-label="How this verdict was reached">
+        <li><div class="trail-step">First check · Nemotron Super, from retrieved passages</div>
+          <div class="verdict-line">${renderPill(verdict.original_label, verdict.original_confidence)}</div></li>
+        <li><div class="trail-step">Second opinion · Nemotron Ultra, read the full paper${verdict.original_label === verdict.label ? " (agreed)" : ""}</div>
+          <div class="verdict-line">${renderPill(verdict.label, verdict.confidence)}</div></li>
+      </ol>`
+    : `<div class="verdict-line">${renderPill(verdict.label, verdict.confidence)}</div>`;
   const needsCheck = verdict.label !== "supported"
     ? `<div class="human-check ${["contradicted", "not_found"].includes(verdict.label) ? "bad" : ""}">Needs human check</div>` : "";
   const modes = verdict.failure_modes || [];
@@ -872,17 +915,13 @@ function renderItem({ claim, key, verdict }) {
     evidence = `<p class="muted">No passage in the cited work supports this claim.</p>`;
   }
 
-  return `<div class="card">
-    ${refHtml}
+  return `<section class="claim-section">
+    ${heading}
     ${claimHtml}
-    <div class="verdict-line">
-      <span class="verdict-pill v-${verdict.label}"><span aria-hidden="true">${label.icon}</span> ${esc(label.text)}</span>
-      <span class="confidence">${pct(verdict.confidence)} confidence</span>
-      ${escalated}
-    </div>
+    ${verdictHtml}
     ${needsCheck}
     ${chips}
     <div class="field"><div class="field-name">From the cited paper</div>${evidence}</div>
     <div class="field"><div class="field-name">Why</div><div class="explanation">${esc(verdict.explanation)}</div></div>
-  </div>`;
+  </section>`;
 }

@@ -254,6 +254,31 @@ def needs_escalation(verdict: Verdict, claim: Claim, ref: Reference) -> bool:
     )
 
 
+_REF_IDS_RE = re.compile(r"\[?\b(R\d+(?:\s*,\s*R\d+)*)\b\]?")
+
+
+def humanize_reference_ids(verdict: Verdict, sentence: CitingSentence, ctx: JudgeContext) -> Verdict:
+    """Replace the prompt's internal ids ("[R4]", "R3, R4") with the paper's own citation labels."""
+    _, id_map = render_sentence(sentence, ctx.paper.text)
+    numeric = ctx.paper.citation_style == "numeric"
+
+    def label(rid: str) -> Optional[str]:
+        key = id_map.get(rid)
+        ref = ctx.references.get(key) if key else None
+        return (ref.label if ref and ref.label else key) if key else None
+
+    def repl(m: re.Match) -> str:
+        labels = [label(r.strip()) for r in m.group(1).split(",")]
+        if not all(labels):
+            return m.group(0)
+        return f"[{', '.join(labels)}]" if numeric else f"({'; '.join(labels)})"
+
+    return verdict.model_copy(update={
+        "explanation": _REF_IDS_RE.sub(repl, verdict.explanation),
+        "attributed_claim": _REF_IDS_RE.sub(repl, verdict.attributed_claim),
+    })
+
+
 def _search_texts(ref: Reference, full_text: Optional[str]) -> list[str]:
     return [t for t in (full_text, ref.abstract) if t]
 
@@ -292,7 +317,8 @@ async def judge_pair(claim: Claim, ref: Reference, evidence: Optional[Evidence],
             flags=["judge_error"], model_used=model,
         )
     full_text = read_reference_text(ref) if ref.fulltext_status == "full" else None
-    return apply_rules(out, claim, ref, model, _search_texts(ref, full_text))
+    verdict = apply_rules(out, claim, ref, model, _search_texts(ref, full_text))
+    return humanize_reference_ids(verdict, sentence, ctx)
 
 
 async def escalate_pair(
@@ -312,6 +338,7 @@ async def escalate_pair(
         log.warning("escalation %s / %s failed: %s", claim.id, ref.key, exc)
         return first.model_copy(update={"flags": [*first.flags, "escalation_failed"]})
     verdict = apply_rules(out, claim, ref, model, _search_texts(ref, read_reference_text(ref)))
+    verdict = humanize_reference_ids(verdict, sentence, ctx)
     verdict.escalated = True
     verdict.original_label = first.label
     verdict.original_confidence = first.confidence

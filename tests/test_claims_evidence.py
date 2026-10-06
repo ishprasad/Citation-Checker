@@ -293,3 +293,94 @@ def test_query_instruction(monkeypatch):
     assert query_text("X works") == "Instruct: Find support\nQuery: X works"
     monkeypatch.setattr(evidence_mod, "get_settings", lambda: replace(settings, embed_query_instruction=""))
     assert query_text("X works") == "X works"
+
+
+# ------------------------------------------------------------------ near-duplicate merge
+
+from app.pipeline.claims import merge_near_duplicates  # noqa: E402
+
+
+def _c(i, text, keys=("k",), claim_type="method", numbers=()):
+    return Claim(id=f"s1.c{i}", citing_sentence_id="s1", claim_text=text, reference_keys=list(keys),
+                 claim_type=claim_type, numbers=list(numbers))
+
+
+@pytest.mark.parametrize(
+    "claims, expected",
+    [
+        # Restatements merge; the more specific wording is kept.
+        ([_c(1, "Adam is an optimizer"), _c(2, "Adam is used for model optimization")],
+         ["Adam is used for model optimization"]),
+        # A claim fully subsumed by a more specific one (words and numbers) merges into it.
+        ([_c(1, "X improves accuracy", claim_type="finding"),
+          _c(2, "X improves accuracy on ImageNet by 12%", claim_type="finding", numbers=["12%"])],
+         ["X improves accuracy on ImageNet by 12%"]),
+        # Different numbers are different statements (each can drift on its own).
+        ([_c(1, "InstructGPT has a 350M model", numbers=["350M"]), _c(2, "InstructGPT has a 1.3B model", numbers=["1.3B"])],
+         ["InstructGPT has a 350M model", "InstructGPT has a 1.3B model"]),
+        # Different references never merge.
+        ([_c(1, "X improves accuracy", keys=("a",)), _c(2, "X improves accuracy", keys=("b",))],
+         ["X improves accuracy", "X improves accuracy"]),
+        # Different statements about the same reference stay separate.
+        ([_c(1, "GPT is a generic multi-task learner"), _c(2, "Transformer is an architecture")],
+         ["GPT is a generic multi-task learner", "Transformer is an architecture"]),
+        ([_c(1, "Scaling improves sample efficiency", claim_type="finding"),
+          _c(2, "Scaling improves performance", claim_type="finding")],
+         ["Scaling improves sample efficiency", "Scaling improves performance"]),
+    ],
+)
+def test_merge_near_duplicates(claims, expected):
+    merged = merge_near_duplicates(claims)
+    assert [c.claim_text for c in merged] == expected
+    assert [c.id for c in merged] == [f"s1.c{i}" for i in range(1, len(merged) + 1)]
+
+
+def test_extraction_merges_restated_claims(monkeypatch):
+    monkeypatch.setattr(llm, "extract", _fake_extract({"citations": [
+        {"reference_ids": ["R1"], "claims": [
+            {"claim_text": "X improves accuracy by 12%", "claim_type": "finding"},
+            {"claim_text": "X improves the accuracy by 12%", "claim_type": "finding"}]},
+        {"reference_ids": ["R2", "R3"], "claims": [
+            {"claim_text": "X generalizes to clinical data", "claim_type": "finding"}]},
+    ]}))
+    claims = asyncio.run(extract_sentence_claims(S1, PAPER, {}))
+    assert [(c.id, c.claim_text) for c in claims] == [
+        ("s1.c1", "X improves the accuracy by 12%"), ("s1.c2", "X generalizes to clinical data")]
+
+
+from app.models import Verdict  # noqa: E402
+from app.pipeline.claims import mark_duplicate_verdicts  # noqa: E402
+
+
+def _v(claim_id, key, label, attributed, confidence=0.9, escalated=False):
+    return Verdict(claim_id=claim_id, reference_key=key, label=label, confidence=confidence,
+                   attributed_claim=attributed, escalated=escalated)
+
+
+def test_mark_duplicate_verdicts_keeps_the_most_cautious():
+    claims = {
+        "s4.c2": _c(2, "Adam is an optimizer", keys=("adam",)).model_copy(update={"id": "s4.c2", "citing_sentence_id": "s4"}),
+        "s4.c3": _c(3, "A feedforward dimension of 4x is used", keys=("adam",)).model_copy(update={"id": "s4.c3", "citing_sentence_id": "s4"}),
+        "s5.c1": _c(1, "Adam is an optimizer", keys=("adam",)).model_copy(update={"id": "s5.c1", "citing_sentence_id": "s5"}),
+    }
+    verdicts = [
+        _v("s4.c2", "adam", "supported", "Adam is an optimizer", 0.95),
+        # The judge narrowed the misattributed claim to the same statement: a duplicate.
+        _v("s4.c3", "adam", "overstated", "Adam is used for model optimization", 0.8, escalated=True),
+        # Same statement in a different sentence is a separate citation.
+        _v("s5.c1", "adam", "supported", "Adam is an optimizer"),
+    ]
+    out = {v.claim_id: v for v in mark_duplicate_verdicts(verdicts, claims)}
+    # The more cautious verdict (overstated) is kept; the supported restatement points at it.
+    assert out["s4.c3"].duplicate_of is None
+    assert out["s4.c2"].duplicate_of == "s4.c3|adam"
+    assert out["s5.c1"].duplicate_of is None
+    assert verdicts[0].duplicate_of is None  # inputs untouched
+
+
+def test_mark_duplicate_verdicts_keeps_distinct_statements():
+    claims = {cid: _c(i, t).model_copy(update={"id": cid}) for i, (cid, t) in enumerate(
+        [("s1.c1", "InstructGPT has a 350M model"), ("s1.c2", "InstructGPT has a 1.3B model")], start=1)}
+    verdicts = [_v("s1.c1", "k", "overstated", "InstructGPT has a 350M model"),
+                _v("s1.c2", "k", "supported", "InstructGPT has a 1.3B model")]
+    assert [v.duplicate_of for v in mark_duplicate_verdicts(verdicts, claims)] == [None, None]

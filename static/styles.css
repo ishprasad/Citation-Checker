@@ -355,3 +355,15 @@ a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset:
   .stages { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .report, .paper-head, .progress, .topbar-row { padding-left: 16px; padding-right: 16px; }
 }
+
+/* One card per cited work; claims and the escalation trail inside it. */
+.claim-section { margin-top: 12px; }
+.claim-section + .claim-section { margin-top: 16px; padding-top: 14px; border-top: 1px dashed var(--border-strong); }
+.claim-index { font: 700 11.5px var(--sans); letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); }
+.trail { list-style: none; margin: 12px 0 0; padding: 0 0 0 14px; border-left: 2px solid var(--border-strong); display: grid; gap: 8px; }
+.trail li { position: relative; }
+.trail li::before { content: ""; position: absolute; left: -20px; top: 5px; width: 10px; height: 10px; border-radius: 50%; background: var(--surface); border: 2px solid var(--border-strong); }
+.trail li:last-child::before { border-color: var(--accent); background: var(--accent); }
+.trail li:first-child .verdict-pill { opacity: 0.75; }
+.trail-step { font-size: 12px; color: var(--muted); }
+.trail .verdict-line { margin-top: 3px; }

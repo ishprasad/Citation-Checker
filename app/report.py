@@ -73,7 +73,11 @@ def build_report(store: JobStore, job: Job, include_text: bool = True) -> dict[s
     resolved = data["resolved"]
     references = [resolved.get(r.key, r) for r in ingest.paper.references]
     checked_refs = [r for r in references if r.key in needed and r.key in resolved]
-    verdicts = sorted(data["verdicts"], key=_sort_key)
+    # Verdicts that restate another verdict for the same sentence and reference are left out
+    # (listed under "duplicates" so clients know those pairs are merged, not pending).
+    verdicts = sorted((v for v in data["verdicts"] if not v.duplicate_of), key=_sort_key)
+    duplicates = [{"pair_id": f"{v.claim_id}|{v.reference_key}", "duplicate_of": v.duplicate_of}
+                  for v in data["verdicts"] if v.duplicate_of]
     claims = [c for s in ingest.sentences for c in data["claims_by_sentence"].get(s.id, [])]
 
     paper = ingest.paper.model_dump(mode="json", exclude={"references"})
@@ -87,6 +91,7 @@ def build_report(store: JobStore, job: Job, include_text: bool = True) -> dict[s
         "sentences": [{**s.model_dump(mode="json"), "checked": s.id in checked_ids} for s in ingest.sentences],
         "claims": [c.model_dump(mode="json") for c in claims],
         "verdicts": [v.model_dump(mode="json") for v in verdicts],
+        "duplicates": duplicates,
         "summary": summarize(job, checked_refs, verdicts),
     }
 

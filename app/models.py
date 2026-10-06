@@ -204,6 +204,9 @@ class Verdict(BaseModel):
     original_label: Optional[VerdictLabel] = None  # judge label before escalation
     original_confidence: Optional[float] = None
     model_used: str = ""
+    # Set when this verdict restates another verdict for the same sentence and reference
+    # (pair id "claim_id|reference_key" of the verdict that is kept); hidden from reports.
+    duplicate_of: Optional[str] = None
 
 
 class ModelUsage(BaseModel):

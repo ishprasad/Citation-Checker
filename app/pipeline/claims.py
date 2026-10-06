@@ -18,7 +18,7 @@ import openai
 from pydantic import BaseModel, Field
 
 from app import llm
-from app.models import CitingSentence, Claim, ClaimType, Paper, Reference
+from app.models import CitingSentence, Claim, ClaimType, Paper, Reference, Verdict
 from app.pipeline.textutil import number_strings
 from app.prompts import load_prompt
 
@@ -221,12 +221,75 @@ async def extract_sentence_claims(
             )
         )
 
+    claims = merge_near_duplicates(claims)
     covered = {k for c in claims for k in c.reference_keys}
     uncovered = [k for k in sentence.reference_keys if k not in covered]
     if uncovered:
         log.info("sentence %s: no claim for %s; adding background claims", sentence.id, uncovered)
         claims.extend(fallback_claims(sentence, paper, uncovered, len(claims) + 1))
     return claims
+
+
+# ----------------------------------------------------------------------------
+# Near-duplicate claims
+# ----------------------------------------------------------------------------
+
+_SUFFIXES = ("izations", "ization", "isations", "isation", "ations", "ation", "izers", "izer", "ings", "ing",
+             "ers", "er", "ies", "ied", "es", "ed", "ly", "s")
+_TYPE_RANK = {"finding": 3, "definition": 2, "method": 1, "background": 0}
+MERGE_JACCARD = 0.6
+
+
+def _stem(word: str) -> str:
+    for suffix in _SUFFIXES:
+        if word.endswith(suffix) and len(word) - len(suffix) >= 4:
+            return word[: -len(suffix)]
+    return word
+
+
+def content_stems(text: str) -> frozenset[str]:
+    return frozenset(_stem(w) for w in _WORD_RE.findall(text.lower()) if w not in _FILLER and len(w) > 1)
+
+
+def _same_statement(a: Claim, b: Claim) -> bool:
+    """Same references, and either the same statement (same numbers, near-identical content
+    words) or one claim fully subsumes the other (its words and numbers)."""
+    if set(a.reference_keys) != set(b.reference_keys):
+        return False
+    sa, sb = content_stems(a.claim_text), content_stems(b.claim_text)
+    if not sa or not sb:
+        return False
+    na, nb = set(a.numbers), set(b.numbers)
+    if (sa <= sb and na <= nb) or (sb <= sa and nb <= na):
+        return True
+    return na == nb and len(sa & sb) / len(sa | sb) >= MERGE_JACCARD
+
+
+def merge_near_duplicates(claims: list[Claim]) -> list[Claim]:
+    """Keep one claim per statement, so each citation gets one card and one verdict.
+
+    Small models often restate a claim ("Adam is an optimizer" / "Adam is used for model
+    optimization"). Of a group of such claims the most specific one is kept: the most
+    numbers, the most specific type, then the most content words. Claims stating different
+    numbers ("a 350M model" / "a 1.3B model") are never merged, so each number can still
+    be checked for drift.
+    """
+    kept: list[Claim] = []
+    for claim in claims:
+        match = next((i for i, k in enumerate(kept) if _same_statement(k, claim)), None)
+        if match is None:
+            kept.append(claim)
+            continue
+        current = kept[match]
+        rank = lambda c: (  # noqa: E731
+            len(c.numbers), _TYPE_RANK.get(c.claim_type, 0), len(content_stems(c.claim_text)), len(c.claim_text)
+        )
+        if rank(claim) > rank(current):
+            kept[match] = claim
+        log.info("sentence %s: merged near-duplicate claims %r and %r",
+                 claim.citing_sentence_id, current.claim_text, claim.claim_text)
+    # Renumber so ids stay dense and stable for a given extraction.
+    return [c.model_copy(update={"id": f"{c.citing_sentence_id}.c{i}"}) for i, c in enumerate(kept, start=1)]
 
 
 async def extract_claims(
@@ -248,3 +311,42 @@ async def extract_claims(
 
     per_sentence = await asyncio.gather(*(run(s) for s in sentences))
     return [c for claims in per_sentence for c in claims]
+
+
+# Most severe first: when duplicates disagree, keep the verdict that asks for a human check.
+_SEVERITY = ("contradicted", "not_found", "overstated", "unverifiable", "supported")
+
+
+def mark_duplicate_verdicts(verdicts: list[Verdict], claims: dict[str, Claim]) -> list[Verdict]:
+    """Collapse verdicts that restate each other for the same sentence and reference.
+
+    Extraction merges near-duplicate claims, but the judge can also narrow a misattributed
+    claim to the same statement as a sibling ("A feedforward dimension of 4x is used [Adam]"
+    becomes "Adam is used for model optimization"). The judge's attributed claim is what was
+    actually checked, so duplicates are found on that. The most cautious verdict is kept
+    (most severe label, then highest confidence); the others get `duplicate_of`.
+    """
+    out = [v.model_copy(update={"duplicate_of": None}) for v in verdicts]
+    groups: dict[tuple[str, str], list[int]] = {}
+    for i, v in enumerate(out):
+        claim = claims.get(v.claim_id)
+        if claim is not None:
+            groups.setdefault((claim.citing_sentence_id, v.reference_key), []).append(i)
+
+    def as_claim(v: Verdict) -> Claim:
+        text = v.attributed_claim or claims[v.claim_id].claim_text
+        return Claim(id=v.claim_id, citing_sentence_id="", claim_text=text, reference_keys=[v.reference_key],
+                     numbers=number_strings(text))
+
+    def rank(v: Verdict) -> tuple:
+        return (_SEVERITY.index(v.label), -v.confidence, not v.escalated, v.claim_id)
+
+    for members in groups.values():
+        kept: list[int] = []
+        for i in sorted(members, key=lambda i: rank(out[i])):
+            twin = next((k for k in kept if _same_statement(as_claim(out[k]), as_claim(out[i]))), None)
+            if twin is None:
+                kept.append(i)
+            else:
+                out[i].duplicate_of = f"{out[twin].claim_id}|{out[twin].reference_key}"
+    return out

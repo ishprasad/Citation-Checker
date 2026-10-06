@@ -39,7 +39,7 @@ from app.models import (
     Reference,
     Verdict,
 )
-from app.pipeline.claims import extract_claims
+from app.pipeline.claims import extract_claims, mark_duplicate_verdicts
 from app.pipeline.detectors import apply_detectors, detect
 from app.pipeline.evidence import EvidenceRetriever
 from app.pipeline.ingest import IngestError, ingest_arxiv
@@ -404,6 +404,7 @@ class JobRunner:
         except llm.TokenBudgetExceeded:
             scores = None
         final = apply_detectors(verdicts, claims, references, evidence, abstract_scores=scores)
+        final = mark_duplicate_verdicts(final, claims)
         for v in final:
             pid = pair_id(v.claim_id, v.reference_key)
             before = current.get(pid)

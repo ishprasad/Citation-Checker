@@ -272,3 +272,13 @@ def test_signals_are_kept():
                              source_scope="pilot study of 24 mice")
     v = apply_rules(o, FINDING, FULL_REF, "super", [SOURCE])
     assert v.signals.scope_broader_than_source and v.signals.source_scope == "pilot study of 24 mice"
+
+
+def test_reference_ids_are_replaced_with_citation_labels(monkeypatch, setup):
+    ctx, evidence = setup
+    ctx.references["r1"] = ctx.references["r1"].model_copy(update={"label": "1"})
+    monkeypatch.setattr(llm, "judge", _fake([out(
+        "supported", quote="tumor volume by 31%",
+        explanation="The marker [R1] is attached to the compound; R1 reports this.")]))
+    [v] = asyncio.run(judge_all([FINDING], evidence, ctx))
+    assert v.explanation == "The marker [1] is attached to the compound; [1] reports this."
