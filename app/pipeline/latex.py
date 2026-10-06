@@ -281,6 +281,10 @@ REF_KINDS = {
     "app": "Appendix", "appendix": "Appendix", "alg": "Algorithm", "thm": "Theorem",
     "lem": "Lemma", "def": "Definition", "prop": "Proposition", "cor": "Corollary",
 }
+_ASSIGNMENT_RE = re.compile(
+    r"\s*=\s*[-+]?(?:\d+(?:\.\d*)?|\.\d+)\s*(?:pt|em|ex|mm|cm|in|sp|bp|pc|dd|cc|mu|fil{1,3}|\\[A-Za-z]+)?"
+    r"(?:\s*(?:plus|minus)\s*[-+]?[\d.]+\s*(?:pt|em|ex|fil{1,3})?)*"
+)
 FRONT_MATTER_HINTS = ("author", "affil", "address", "email", "institut", "keyword", "orcid")
 REF_COMMANDS = {"ref", "eqref", "autoref", "cref", "Cref", "pageref", "nameref", "Autoref", "vref"}
 
@@ -612,6 +616,10 @@ class LatexConverter:
                 if arg is None or not src[self._skip_ws(src, i)] == "{":
                     return i
                 i = j
+        # TeX parameter assignments ("\looseness=-1", "\parskip=0pt"): drop the value too.
+        assignment = _ASSIGNMENT_RE.match(src, i)
+        if assignment:
+            return assignment.end()
         # Unknown command: drop the command, keep its arguments' content.
         _, i = self._opt_args(src, i, 1)
         return i
@@ -694,6 +702,8 @@ class LatexConverter:
             return i
         if env in LIST_ENVS or env in {"quote", "quotation", "center"}:
             self.para()
+            if env in LIST_ENVS:  # enumitem options: \begin{itemize}[leftmargin=10pt]
+                _, i = self._opt_args(src, i, 1)
         if env in ENV_ARGS:
             _, i = self._opt_args(src, i, 1)
             for _ in range(ENV_ARGS[env]):

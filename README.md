@@ -2,7 +2,7 @@
 
 For every citation in a research paper, Citation Checker asks one question: does the cited source actually say what the citing author claims it says? It runs on NVIDIA Nemotron models served through Nebius Token Factory.
 
-> Work in progress. See `CITATION_CHECKER_BRIEF.md` for the full plan. Done so far: milestones 1–7 (through the API, job orchestration and SSE), plus four extra failure-mode detectors (scaffold and LLM wrapper, arXiv LaTeX ingest, reference resolution and full-text fetching, claim extraction and evidence retrieval, judging with quote verification and escalation, failure-mode detectors).
+> Work in progress. See `CITATION_CHECKER_BRIEF.md` for the full plan. Done so far: milestones 1–8 (through the API, job orchestration, SSE and the UI), plus four extra failure-mode detectors (scaffold and LLM wrapper, arXiv LaTeX ingest, reference resolution and full-text fetching, claim extraction and evidence retrieval, judging with quote verification and escalation, failure-mode detectors).
 
 ## Setup
 
@@ -143,3 +143,21 @@ Stages overlap so results stream early:
 - A final pass re-runs the detectors that need paper-level context.
 
 Every intermediate result is stored in SQLite. When the server restarts it resumes unfinished jobs, skipping finished work; this was tested by killing the server mid-job. Expanding a quick check only processes the new sentences. A failure in one citation becomes an `unverifiable` verdict and never fails the job. Hitting the token budget stops the job and marks it `partial`, keeping its results.
+
+## UI (`static/`)
+
+The UI is plain HTML, CSS and JavaScript, with no build step and no CDN. Run `uvicorn app.main:app` and open http://localhost:8000.
+
+- **Start.** Enter an arXiv ID or any arxiv.org link, or drop a PDF. Choose a quick check (the first 20 citing sentences) or a full check, or try the demo paper.
+- **Progress.** The report opens as soon as the paper is parsed. A six-stage tracker fills in live from the event stream (for example "Judging claims: 37 / 84"). Citation markers change from "being checked" to their verdict as results arrive, and the coverage line appears once reference resolution finishes.
+- **Report.** The paper text is on the left. Each citation is coloured by verdict *and* has its own underline style and glyph (✓ supported, ! overstated, ✕ contradicted, ? not found, – could not be verified), so colour is never the only cue. The detail panel on the right shows the citing sentence and, for each cited work:
+  - the claim checked;
+  - a link to the cited paper and whether its full text was available;
+  - the verdict and confidence;
+  - failure-mode chips with notes;
+  - the cited paper's text with the supporting quote highlighted;
+  - an "Escalated to Nemotron Ultra" badge and a "Needs human check" banner where relevant.
+
+  With nothing selected, the panel shows a legend and the list of citations that need a human check.
+- **Top bar.** Verdict counts double as filters. There's also a search box (over sentences, claims, reference titles and explanations), a "Show only issues" toggle, and "Next issue" (or press `j`). Export gives Markdown or JSON. A cost panel shows tokens and estimated cost per model, plus how many verdicts needed the large model.
+- **Layout.** Light and dark themes follow `prefers-color-scheme`. The layout is two-column at laptop widths and single-column below 900px. The URL (`#/job/<id>`) reopens a report after a reload.

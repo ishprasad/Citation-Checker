@@ -4,11 +4,107 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Citation Checker</title>
+  <meta name="description" content="Check whether cited sources say what a paper claims they say.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232b59c3'/%3E%3Cpath d='M9 11h8M9 16h14M9 21h10' stroke='white' stroke-width='2.4' stroke-linecap='round'/%3E%3Cpath d='M21 9.5l1.6 1.6 3-3.2' stroke='%237fe0a8' stroke-width='2.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
-  <main>
-    <h1>Citation Checker</h1>
-    <p>Does the cited source actually say what the citing author claims? The interface is coming in a later milestone.</p>
+  <!-- State 1: start -->
+  <main id="start" class="start" hidden>
+    <section class="start-card" aria-labelledby="start-title">
+      <h1 id="start-title">Citation Checker</h1>
+      <p class="lede">Does the cited source actually say what the paper claims it says?</p>
+      <p class="intro">
+        For every citation, the checker extracts the claim, finds the cited paper, reads the relevant passage and
+        reports whether it supports the claim, with the exact quote. Problems are flagged for a human to review.
+      </p>
+
+      <form id="start-form" class="start-form" novalidate>
+        <label for="arxiv-input" class="field-label">arXiv ID or link</label>
+        <div class="input-row">
+          <input id="arxiv-input" name="arxiv" type="text" inputmode="url" autocomplete="off" spellcheck="false"
+                 placeholder="e.g. 2310.06825 or https://arxiv.org/abs/2310.06825">
+        </div>
+        <p class="hint">arXiv IDs give the most accurate results: the checker reads the paper's LaTeX source and
+          bibliography directly, so every citation maps to the right reference.</p>
+
+        <div id="drop-zone" class="drop-zone" tabindex="0" role="button" aria-labelledby="drop-label" aria-describedby="drop-hint">
+          <input id="pdf-input" type="file" accept="application/pdf,.pdf" hidden>
+          <span class="drop-icon" aria-hidden="true">⇪</span>
+          <span id="drop-label">Or drop a PDF here, or click to choose one</span>
+          <span id="drop-hint" class="drop-hint">PDF, up to 25 MB</span>
+        </div>
+
+        <fieldset class="mode">
+          <legend class="field-label">Check</legend>
+          <label class="mode-option">
+            <input type="radio" name="mode" value="quick" checked>
+            <span><strong>Quick check</strong><small>The first 20 citations, in about a minute</small></span>
+          </label>
+          <label class="mode-option">
+            <input type="radio" name="mode" value="full">
+            <span><strong>Full check</strong><small>Every citation in the paper</small></span>
+          </label>
+        </fieldset>
+
+        <p id="start-error" class="form-error" role="alert" hidden></p>
+
+        <div class="start-actions">
+          <button type="submit" class="btn primary" id="start-submit">Check citations</button>
+          <button type="button" class="btn ghost" id="demo-button">Try the demo paper</button>
+        </div>
+      </form>
+
+      <p class="privacy">Uploaded papers are processed only for this check.</p>
+    </section>
+    <footer class="start-footer">
+      Powered by NVIDIA Nemotron on Nebius Token Factory: Nano extracts claims, Super judges them,
+      Ultra reads the full cited paper when a verdict needs a second look.
+    </footer>
   </main>
+
+  <!-- States 2 and 3: progress and report -->
+  <div id="job" class="job" hidden>
+    <header class="topbar">
+      <div class="topbar-row">
+        <a href="#/" class="brand" title="Check another paper">Citation Checker</a>
+        <div class="summary" id="summary" role="group" aria-label="Filter by verdict"></div>
+        <div class="tools">
+          <label class="search">
+            <span class="visually-hidden">Search citations</span>
+            <input id="search" type="search" placeholder="Search citations" autocomplete="off">
+          </label>
+          <label class="toggle">
+            <input type="checkbox" id="issues-only"> <span>Show only issues</span>
+          </label>
+          <button type="button" class="btn small" id="next-issue" title="Jump to the next citation that needs a human check">Next issue ↓</button>
+          <div class="menu">
+            <button type="button" class="btn small" id="export-button" aria-haspopup="true" aria-expanded="false">Export</button>
+            <div class="menu-panel" id="export-menu" hidden>
+              <a id="export-md" href="#" download>Markdown report</a>
+              <a id="export-json" href="#" download>JSON (all data)</a>
+            </div>
+          </div>
+          <div class="menu">
+            <button type="button" class="btn small cost-button" id="cost-button" aria-haspopup="true" aria-expanded="false">
+              <span id="cost-summary">Cost</span>
+            </button>
+            <div class="menu-panel cost-panel" id="cost-panel" hidden></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="paper-head" id="paper-head" aria-live="polite"></section>
+    <section class="progress" id="progress" aria-label="Progress"></section>
+
+    <div class="report">
+      <article class="paper" id="paper" aria-label="Paper text"></article>
+      <aside class="detail" id="detail" aria-live="polite"></aside>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" hidden></div>
 </body>
 </html>
