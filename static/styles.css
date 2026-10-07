@@ -135,6 +135,24 @@ a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset:
 .mode-option input { margin-top: 4px; accent-color: var(--accent); }
 .mode-option strong { display: block; font-size: 14px; }
 .mode-option small { display: block; color: var(--muted); font-size: 12.5px; }
+.mode-option.disabled { opacity: 0.6; cursor: not-allowed; }
+.preview {
+  margin: -6px 0 16px; padding: 10px 12px; border-radius: 8px; background: var(--surface-2);
+  border: 1px solid var(--border); font-size: 13.5px;
+}
+.preview.muted-box { color: var(--muted); }
+.preview-title { font: 600 15px/1.35 var(--serif); color: var(--text); }
+.preview-meta { margin-top: 3px; font-size: 12.5px; color: var(--muted); }
+.preview-note { margin-top: 6px; padding: 6px 8px; border-radius: 6px; background: var(--warn-bg); font-size: 12.5px; }
+.passcode-row { margin-top: 14px; }
+.passcode-row input, .inline-passcode {
+  font: 14px/1.4 var(--sans); padding: 8px 10px; border-radius: 8px;
+  border: 1px solid var(--border-strong); background: var(--bg); color: var(--text);
+}
+.passcode-row input { width: 100%; }
+.inline-passcode { width: 120px; padding: 4px 8px; font-size: 13px; border-radius: 7px; }
+.expand-action { display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-left: 8px; }
+.expand-action .btn { margin-left: 0; }
 .form-error { margin: 14px 0 0; padding: 10px 12px; border-radius: 8px; background: var(--bad-bg); color: var(--bad); font-size: 14px; }
 .start-actions { display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap; }
 .privacy { margin: 18px 0 0; font-size: 12.5px; color: var(--faint); }
@@ -220,7 +238,9 @@ a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset:
 .stage.done .stage-icon::after { content: "✓"; font-weight: 700; }
 .progress.compact .stages { display: none; }
 .progress-line { font-size: 13px; color: var(--muted); display: flex; gap: 10px; align-items: center; }
-.progress:not(.compact) .progress-line { display: none; }
+.progress:not(.compact) .progress-line:not(.eta) { display: none; }
+.progress-line.eta { margin-bottom: 8px; }
+.notice .muted { color: var(--muted); }
 @keyframes spin { to { transform: rotate(360deg); } }
 
 /* ------------------------------------------------------------------ report */

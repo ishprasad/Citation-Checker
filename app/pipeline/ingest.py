@@ -6,6 +6,7 @@ for now `NoLatexSource` is raised with the PDF bytes attached.
 
 from __future__ import annotations
 
+import asyncio
 import gzip
 import io
 import logging
@@ -35,6 +36,8 @@ log = logging.getLogger(__name__)
 SOURCE_EXTENSIONS = (".tex", ".bbl", ".bib", ".sty", ".ltx")
 MAX_SOURCE_FILE_BYTES = 5 * 1024 * 1024
 ATOM = "{http://www.w3.org/2005/Atom}"
+# Bump when parsing changes, so papers cached by the job runner are parsed again.
+INGEST_VERSION = 1
 
 
 class IngestError(Exception):
@@ -384,7 +387,7 @@ async def ingest_arxiv(raw_id: str) -> IngestResult:
     files = unpack_source(data)
     log.info("arXiv %s: %d source files", versioned, len(files))
 
-    paper, sentences = parse_latex_project(files)
+    paper, sentences = await asyncio.to_thread(parse_latex_project, files)  # CPU-bound; keep the loop free
     paper.id = f"arxiv:{versioned}"
     paper.arxiv_id = versioned
     paper.title = meta.title

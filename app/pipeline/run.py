@@ -21,8 +21,10 @@ from __future__ import annotations
 import asyncio
 import json
 import logging
+import re
 import uuid
 from collections import defaultdict
+from datetime import datetime, timezone
 from typing import Any, Optional, TypeVar
 
 from pydantic import BaseModel
@@ -42,7 +44,7 @@ from app.models import (
 from app.pipeline.claims import extract_claims, mark_duplicate_verdicts
 from app.pipeline.detectors import apply_detectors, detect
 from app.pipeline.evidence import EvidenceRetriever
-from app.pipeline.ingest import IngestError, ingest_arxiv
+from app.pipeline.ingest import INGEST_VERSION, IngestError, ingest_arxiv
 from app.pipeline.judge import (
     JUDGE_FAILED_EXPLANATION,
     JudgeContext,
@@ -56,6 +58,25 @@ log = logging.getLogger(__name__)
 
 M = TypeVar("M", bound=BaseModel)
 FINISHED = ("done", "partial", "failed")
+
+# Bump when judging changes enough that earlier results should not be served from the cache.
+PIPELINE_VERSION = 1
+# Parsed arXiv papers are shared across checks under this pseudo job id in the artifacts table.
+PAPER_CACHE = "_papers"
+
+# Duration of an uncached check, fitted on real runs (three papers, 49-141 citation pairs,
+# 140-310 s): a fixed part (downloads, start-up) plus a cost per (citing sentence, reference) pair.
+ESTIMATE_BASE_SECONDS = 80
+ESTIMATE_SECONDS_PER_PAIR = 1.6
+
+
+def estimate_seconds(sentences: list[CitingSentence]) -> int:
+    pairs = sum(len(s.reference_keys) for s in sentences)
+    return round(ESTIMATE_BASE_SECONDS + ESTIMATE_SECONDS_PER_PAIR * pairs) if pairs else 0
+
+
+def _utcnow() -> datetime:
+    return datetime.now(timezone.utc)
 
 
 class JobBusy(Exception):
@@ -136,11 +157,66 @@ class JobRunner:
         self.bus = bus or EventBus()
         self.slots = asyncio.Semaphore(settings.max_concurrent_jobs)
         self.tasks: dict[str, asyncio.Task] = {}
+        self._prepare_locks: dict[str, asyncio.Lock] = defaultdict(asyncio.Lock)
 
     # -- public API ---------------------------------------------------------------
 
-    def create_job(self, arxiv_id: str, mode: str = "quick") -> Job:
-        job = Job(id=uuid.uuid4().hex[:12], mode=mode, arxiv_id=arxiv_id, source="arxiv")
+    async def prepare_arxiv(self, arxiv_id: str) -> tuple[IngestResult, bool]:
+        """Download and parse an arXiv paper once; later checks of the same version reuse it.
+
+        `arxiv_id` must be normalized. Returns (result, whether it came from the cache).
+        """
+        async with self._prepare_locks[arxiv_id]:
+            cached = self.cached_paper(arxiv_id)
+            if cached is not None:
+                return cached, True
+            result = await ingest_arxiv(arxiv_id)
+            versioned = result.paper.arxiv_id or arxiv_id
+            self.store.put(PAPER_CACHE, "ingest", _paper_key(versioned), result)
+            if versioned != arxiv_id:
+                self.store.db.put_artifact(PAPER_CACHE, "alias", arxiv_id, json.dumps(versioned))
+            return result, False
+
+    def cached_paper(self, arxiv_id: str) -> Optional[IngestResult]:
+        """The parsed paper if it is cached. An unversioned ID maps to the version fetched last time."""
+        versioned = arxiv_id if re.search(r"v\d+$", arxiv_id) else self._alias(arxiv_id)
+        if not versioned:
+            return None
+        return self.store.get(PAPER_CACHE, "ingest", _paper_key(versioned), IngestResult)
+
+    def _alias(self, arxiv_id: str) -> Optional[str]:
+        data = self.store.db.get_artifact(PAPER_CACHE, "alias", arxiv_id)
+        return json.loads(data) if data else None
+
+    def reusable_job(self, paper_id: str, mode: str) -> Optional[Job]:
+        """An earlier check of the same paper version that already answers a request for `mode`.
+
+        A full check answers a quick request too, and so does a quick check of a paper short
+        enough that it covered every citation. Finished checks win over running ones, so a
+        second visitor gets the report instantly, or joins the live check of the first.
+        """
+        jobs = [Job.model_validate_json(d) for d in self.store.db.jobs_with_status(("done", "running", "queued"))]
+
+        def complete(j: Job) -> bool:
+            return j.mode == "full" or (j.sentences_total > 0 and j.sentences_checked >= j.sentences_total)
+
+        covering = [
+            j for j in jobs
+            if j.source == "arxiv" and j.paper_id == paper_id and j.pipeline_version == PIPELINE_VERSION
+            and (mode == "quick" or complete(j))
+        ]
+        finished = [j for j in covering if j.status == "done"]
+        return max(finished or covering, key=lambda j: (complete(j), j.created_at), default=None)
+
+    def active_jobs(self) -> int:
+        return sum(not task.done() for task in self.tasks.values())
+
+    def create_job(self, arxiv_id: str, mode: str = "quick", ingest: Optional[IngestResult] = None) -> Job:
+        job = Job(id=uuid.uuid4().hex[:12], mode=mode, arxiv_id=arxiv_id, source="arxiv",
+                  pipeline_version=PIPELINE_VERSION)
+        if ingest is not None:
+            self._describe(job, ingest)
+            self.store.put(job.id, "ingest", "paper", ingest)
         self.store.save_job(job)
         self.start(job.id)
         return job
@@ -199,6 +275,7 @@ class JobRunner:
         job.mode = "full"
         job.status = "queued"
         job.message = None
+        job.estimate_seconds = job.rest_estimate_seconds
         self.store.save_job(job)
         self.start(job.id)
         return job
@@ -244,6 +321,10 @@ class JobRunner:
     def _status(self, job: Job, status: str, message: Optional[str] = None) -> None:
         job.status = status
         job.message = message
+        if status == "running":
+            job.started_at, job.finished_at = _utcnow(), None
+        elif status in FINISHED:
+            job.finished_at = _utcnow()
         job.usage = llm.get_llm().usage_summary(job.id)
         self._save(job)
         self.bus.publish(job.id, "status", {"status": status, "message": message})
@@ -289,9 +370,24 @@ class JobRunner:
             if result is None:
                 raise IngestError("The demo paper is not available. Run scripts/plant_errors.py to create it.")
         else:
-            result = await ingest_arxiv(job.arxiv_id)
+            result, _ = await self.prepare_arxiv(job.arxiv_id)
         self.store.put(job.id, "ingest", "paper", result)
         return result
+
+    def _describe(self, job: Job, result: IngestResult) -> None:
+        """Fill in what is known about the check once the paper is parsed."""
+        settings = get_settings()
+        paper = result.paper
+        checked = result.sentences[: settings.quick_check_max_citations] if job.mode == "quick" else result.sentences
+        if job.source == "arxiv" and paper.arxiv_id:
+            job.arxiv_id = paper.arxiv_id
+        job.paper_id, job.title = paper.id, paper.title
+        job.references_total = len(paper.references)
+        job.sentences_total, job.sentences_checked = len(result.sentences), len(checked)
+        if job.estimate_seconds is None:
+            job.estimate_seconds = estimate_seconds(checked)
+            if job.mode == "quick":
+                job.rest_estimate_seconds = estimate_seconds(result.sentences[len(checked):])
 
     async def _pipeline(self, job: Job, pending: list[asyncio.Task]) -> None:
         settings = get_settings()
@@ -300,8 +396,7 @@ class JobRunner:
         sentences = result.sentences
         if job.mode == "quick":
             sentences = sentences[: settings.quick_check_max_citations]
-        job.paper_id, job.title = paper.id, paper.title
-        job.sentences_total, job.sentences_checked = len(result.sentences), len(sentences)
+        self._describe(job, result)
         self._progress(job, "parse", done=1, total=1, state="done")
         self.bus.publish(job.id, "paper", {"title": paper.title, "paper_id": paper.id, "notes": paper.notes,
                                            "sentences_total": job.sentences_total,
@@ -468,6 +563,10 @@ async def _cancel(tasks: list[asyncio.Task]) -> None:
         if not task.done():
             task.cancel()
     await asyncio.gather(*tasks, return_exceptions=True)
+
+
+def _paper_key(versioned_arxiv_id: str) -> str:
+    return f"{versioned_arxiv_id}|parser{INGEST_VERSION}"
 
 
 def _reference_summary(ref: Reference) -> dict:

@@ -74,10 +74,12 @@ class Settings:
     max_references: int = 150
     max_pdf_mb: int = 25
     max_jobs_per_ip_per_hour: int = 5
+    max_previews_per_ip_per_hour: int = 30  # paper look-ups that download from arXiv (cache hits are free)
     max_concurrent_jobs: int = 3
     max_tokens_per_job: int = 0
     judge_mode_password: str = ""
     grobid_url: str = ""
+    trust_proxy_headers: bool = False  # use X-Forwarded-For for rate limiting (only behind a trusted proxy)
 
     def model_for(self, role: str) -> str:
         model = self.models.get(role, "")
@@ -144,8 +146,10 @@ def get_settings() -> Settings:
         max_references=_env_int("MAX_REFERENCES", 150),
         max_pdf_mb=_env_int("MAX_PDF_MB", 25),
         max_jobs_per_ip_per_hour=_env_int("MAX_JOBS_PER_IP_PER_HOUR", 5),
+        max_previews_per_ip_per_hour=_env_int("MAX_PREVIEWS_PER_IP_PER_HOUR", 30),
         max_concurrent_jobs=_env_int("MAX_CONCURRENT_JOBS", 3),
         max_tokens_per_job=_env_int("MAX_TOKENS_PER_JOB", 0),
         judge_mode_password=_env("JUDGE_MODE_PASSWORD"),
         grobid_url=_env("GROBID_URL"),
+        trust_proxy_headers=_env("TRUST_PROXY_HEADERS", "false").lower() in ("1", "true", "yes", "on"),
     )

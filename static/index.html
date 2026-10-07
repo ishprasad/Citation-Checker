@@ -28,6 +28,7 @@
         </div>
         <p class="hint">arXiv IDs give the most accurate results: the checker reads the paper's LaTeX source and
           bibliography directly, so every citation maps to the right reference.</p>
+        <div id="preview" class="preview" aria-live="polite" hidden></div>
 
         <div id="drop-zone" class="drop-zone" tabindex="0" role="button" aria-labelledby="drop-label" aria-describedby="drop-hint">
           <input id="pdf-input" type="file" accept="application/pdf,.pdf" hidden>
@@ -40,13 +41,18 @@
           <legend class="field-label">Check</legend>
           <label class="mode-option">
             <input type="radio" name="mode" value="quick" checked>
-            <span><strong>Quick check</strong><small>The first 20 citations, in about a minute</small></span>
+            <span><strong>Quick check</strong><small id="quick-note">The first 20 citing sentences</small></span>
           </label>
-          <label class="mode-option">
+          <label class="mode-option" id="full-option">
             <input type="radio" name="mode" value="full">
-            <span><strong>Full check</strong><small>Every citation in the paper</small></span>
+            <span><strong>Full check</strong><small id="full-note">Every citation in the paper</small></span>
           </label>
         </fieldset>
+
+        <div id="passcode-row" class="passcode-row" hidden>
+          <label for="passcode-input" class="field-label">Passcode for full checks</label>
+          <input id="passcode-input" type="password" autocomplete="off" placeholder="From the Citation Checker team">
+        </div>
 
         <p id="start-error" class="form-error" role="alert" hidden></p>
 

@@ -260,5 +260,11 @@ class Job(BaseModel):
     paper_id: Optional[str] = None
     sentences_total: int = 0  # citing sentences in the paper
     sentences_checked: int = 0  # citing sentences included in this check
+    references_total: int = 0  # entries in the paper's bibliography
+    pipeline_version: int = 0  # results from an older pipeline are not reused for new requests
+    estimate_seconds: Optional[int] = None  # expected duration of this check when nothing is cached
+    rest_estimate_seconds: Optional[int] = None  # expected duration of "Check the rest" for a quick check
+    started_at: Optional[datetime] = None  # start of the latest run (a check can run again when expanded)
+    finished_at: Optional[datetime] = None
     usage: UsageSummary = Field(default_factory=UsageSummary)
     message: Optional[str] = None

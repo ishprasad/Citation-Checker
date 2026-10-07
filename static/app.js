@@ -82,9 +82,30 @@ async function api(path, options = {}) {
   try { body = await res.json(); } catch { /* empty or non-JSON */ }
   if (!res.ok) {
     const detail = body && (typeof body.detail === "string" ? body.detail : JSON.stringify(body.detail));
-    throw new Error(detail || `Request failed (${res.status})`);
+    const err = new Error(detail || `Request failed (${res.status})`);
+    err.status = res.status;
+    err.code = body?.code || null;
+    throw err;
   }
   return body;
+}
+
+function minutesText(seconds) {
+  const minutes = Math.max(1, Math.round(seconds / 60));
+  return minutes === 1 ? "about a minute" : `about ${minutes} minutes`;
+}
+const capFirst = (s) => (s ? s[0].toUpperCase() + s.slice(1) : s);
+
+// Server limits (GET /api/health); defaults until it answers.
+const CONFIG = { quick_check_max_citations: 20, max_references: 150, max_pdf_mb: 25, passcode_required: false };
+
+async function loadConfig() {
+  try {
+    const health = await api("/api/health");
+    Object.assign(CONFIG, health.limits || {});
+  } catch { /* keep defaults */ }
+  updateModeNotes();
+  if (!$("#job").hidden && S.job) renderHead();
 }
 
 function toast(message) {
@@ -149,11 +170,15 @@ document.addEventListener("DOMContentLoaded", () => {
   initStart();
   initJobView();
   route();
+  loadConfig();
 });
 
 // ---------------------------------------------------------------- start page
 
 let pdfFile = null;
+// Preview of the paper in the input box (GET /api/preview): size, time estimates, earlier checks.
+const P = { data: null, forValue: "", timer: null, seq: 0 };
+const ARXIV_LIKE = /\d{4}\.\d{4,5}|[a-z-]+(?:\.[a-z]{2})?\/\d{7}/i;
 
 function showStart() {
   teardown();
@@ -162,7 +187,90 @@ function showStart() {
   $("#start").hidden = false;
   document.title = "Citation Checker";
   setStartBusy(false);
+  P.forValue = ""; // earlier checks may have finished since; look again
+  schedulePreview(0);
   $("#arxiv-input").focus();
+}
+
+function clearPreview() {
+  clearTimeout(P.timer);
+  P.seq += 1;
+  P.data = null;
+  P.forValue = "";
+  $("#preview").hidden = true;
+  updateModeNotes();
+}
+
+function schedulePreview(delay = 500) {
+  clearTimeout(P.timer);
+  const value = $("#arxiv-input").value.trim();
+  if (!value || !ARXIV_LIKE.test(value)) { clearPreview(); return; }
+  if (value === P.forValue) return;
+  P.timer = setTimeout(() => fetchPreview(value), delay);
+}
+
+async function fetchPreview(value) {
+  const seq = ++P.seq;
+  P.forValue = value;
+  P.data = null;
+  renderPreview({ loading: true });
+  try {
+    const data = await api(`/api/preview?arxiv_id=${encodeURIComponent(value)}`);
+    if (seq !== P.seq) return;
+    P.data = data;
+    renderPreview({ data });
+  } catch (err) {
+    if (seq !== P.seq) return;
+    renderPreview({ error: err.message });
+  }
+  updateModeNotes();
+}
+
+function renderPreview({ loading, error, data }) {
+  const el = $("#preview");
+  el.hidden = false;
+  el.classList.toggle("muted-box", !data);
+  if (loading) { el.innerHTML = `<span class="spinner"></span> Looking up the paper on arXiv…`; return; }
+  if (error) { el.innerHTML = esc(error); return; }
+  const authors = data.authors?.length ? (data.authors.length > 3 ? `${data.authors.slice(0, 3).join(", ")}, et al.` : data.authors.join(", ")) : "";
+  el.innerHTML = `
+    <div class="preview-title">${esc(data.title || `arXiv:${data.arxiv_id}`)}</div>
+    <div class="preview-meta">${[esc(authors), `arXiv:${esc(data.arxiv_id)}`,
+      `${data.citing_sentences} citing sentences`, `${data.references} references`].filter(Boolean).join(" · ")}</div>
+    ${data.full.note ? `<div class="preview-note">${esc(data.full.note)}</div>` : ""}`;
+}
+
+function existingText(existing) {
+  if (!existing) return null;
+  return existing.status === "done" ? "Checked before · opens instantly" : "Being checked right now · opens the live check";
+}
+
+function updateModeNotes() {
+  const data = P.data;
+  const quickInput = $("input[name=mode][value=quick]");
+  const fullInput = $("input[name=mode][value=full]");
+  let quickNote = `The first ${CONFIG.quick_check_max_citations} citing sentences`;
+  let fullNote = "Every citation in the paper";
+  fullInput.disabled = false;
+  if (data) {
+    const n = data.citing_sentences;
+    quickNote = existingText(data.quick.existing) || (data.quick.sentences >= n
+      ? `All ${n} citing sentences · ${minutesText(data.quick.estimate_seconds)}`
+      : `First ${data.quick.sentences} of ${n} citing sentences · ${minutesText(data.quick.estimate_seconds)}`);
+    if (!data.full.allowed) {
+      fullNote = `Not available for papers with more than ${CONFIG.max_references} references`;
+      fullInput.disabled = true;
+      if (fullInput.checked) quickInput.checked = true;
+    } else {
+      fullNote = existingText(data.full.existing) || `All ${n} citing sentences · ${minutesText(data.full.estimate_seconds)}`;
+    }
+  }
+  $("#quick-note").textContent = quickNote;
+  $("#full-note").textContent = fullNote;
+  $("#full-option").classList.toggle("disabled", fullInput.disabled);
+  const full = fullInput.checked;
+  const reusable = data?.full.existing?.status === "done";
+  $("#passcode-row").hidden = !(full && CONFIG.passcode_required && !reusable && !pdfFile);
 }
 
 function setStartError(message) {
@@ -171,10 +279,10 @@ function setStartError(message) {
   el.hidden = !message;
 }
 
-function setStartBusy(busy) {
+function setStartBusy(busy, label = "Starting…") {
   $("#start-submit").disabled = busy;
   $("#demo-button").disabled = busy;
-  $("#start-submit").textContent = busy ? "Starting…" : "Check citations";
+  $("#start-submit").textContent = busy ? label : "Check citations";
 }
 
 function setPdf(file) {
@@ -182,7 +290,7 @@ function setPdf(file) {
   const zone = $("#drop-zone");
   zone.classList.toggle("has-file", !!file);
   $("#drop-label").textContent = file ? `${file.name} (${(file.size / 1e6).toFixed(1)} MB)` : "Or drop a PDF here, or click to choose one";
-  if (file) $("#arxiv-input").value = "";
+  if (file) { $("#arxiv-input").value = ""; clearPreview(); }
 }
 
 function initStart() {
@@ -205,7 +313,12 @@ function initStart() {
     setStartError("");
     setPdf(file);
   });
-  $("#arxiv-input").addEventListener("input", () => { if ($("#arxiv-input").value.trim()) setPdf(null); setStartError(""); });
+  $("#arxiv-input").addEventListener("input", () => {
+    if ($("#arxiv-input").value.trim()) setPdf(null);
+    setStartError("");
+    schedulePreview();
+  });
+  $$("input[name=mode]").forEach((input) => input.addEventListener("change", () => { setStartError(""); updateModeNotes(); }));
 
   $("#start-form").addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -217,7 +330,7 @@ function initStart() {
       $("#arxiv-input").focus();
       return;
     }
-    setStartBusy(true);
+    setStartBusy(true, pdfFile || P.data ? "Starting…" : "Fetching the paper…");
     try {
       let result;
       if (pdfFile) {
@@ -229,13 +342,16 @@ function initStart() {
         result = await api("/api/jobs", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ arxiv_id: arxiv, mode }),
+          body: JSON.stringify({ arxiv_id: arxiv, mode, passcode: $("#passcode-input").value.trim() || undefined }),
         });
       }
       location.hash = `#/job/${result.id}`;
+      if (result.cached) toast("This paper was checked before, so its report opens right away.");
     } catch (err) {
       setStartError(err.message);
       setStartBusy(false);
+      if (err.code === "passcode") { $("#passcode-row").hidden = false; $("#passcode-input").focus(); }
+      if (err.code === "too_many_references") { $("input[name=mode][value=quick]").checked = true; updateModeNotes(); }
     }
   });
 
@@ -463,10 +579,20 @@ function loadReport(force = false) {
 }
 
 async function expandJob() {
+  const passcode = $("#expand-passcode")?.value.trim() || "";
+  if (CONFIG.passcode_required && !passcode) {
+    toast("Full checks need the passcode from the Citation Checker team.");
+    $("#expand-passcode")?.focus();
+    return;
+  }
   try {
-    const result = await api(`/api/jobs/${S.jobId}/expand`, { method: "POST" });
+    const result = await api(`/api/jobs/${S.jobId}/expand`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ passcode: passcode || undefined }),
+    });
     S.job = result.job;
-    toast("Checking the rest of the paper…");
+    toast(`Checking the rest of the paper${S.job.estimate_seconds ? `: ${minutesText(S.job.estimate_seconds)}` : "…"}`);
     S.selected = null;
     await loadReport(true);
     connect();
@@ -513,9 +639,16 @@ function renderHead() {
   for (const note of p?.notes || []) notices.push(`<div class="notice warn">${esc(note)}</div>`);
   if (job.source === "demo" && S.demo) notices.unshift(renderDemoNotice());
   if (job.mode === "quick" && job.sentences_total > job.sentences_checked && job.sentences_checked) {
-    const done = FINISHED.has(job.status);
-    notices.push(`<div class="notice">Quick check: ${job.sentences_checked} of ${job.sentences_total} citing sentences checked.
-      ${done ? `<button class="btn small" type="button" data-expand>Check the rest</button>` : ""}</div>`);
+    let action = "";
+    if (FINISHED.has(job.status) && job.references_total > CONFIG.max_references) {
+      action = `<span class="muted">A full check is not available for papers with more than ${CONFIG.max_references} references.</span>`;
+    } else if (FINISHED.has(job.status)) {
+      action = `<span class="expand-action">
+        ${CONFIG.passcode_required ? `<input type="password" id="expand-passcode" class="inline-passcode" placeholder="Passcode" aria-label="Passcode for full checks" autocomplete="off">` : ""}
+        <button class="btn small" type="button" data-expand>Check the rest</button>
+        ${job.rest_estimate_seconds ? `<span class="muted">${esc(minutesText(job.rest_estimate_seconds))}</span>` : ""}</span>`;
+    }
+    notices.push(`<div class="notice quick-notice">Quick check: ${job.sentences_checked} of ${job.sentences_total} citing sentences checked. ${action}</div>`);
   }
   const cov = S.coverage && S.coverage.total ? `
     <div class="coverage">
@@ -525,11 +658,21 @@ function renderHead() {
         Citations to those references are marked “Could not be verified” when the available text cannot settle the claim.</p>
       </details>
     </div>` : "";
+  const typed = $("#expand-passcode")?.value || ""; // keep a half-typed passcode across re-renders
   el.innerHTML = `
     <h1>${esc(title)}</h1>
     <div class="paper-meta">${[esc(authors), link, esc(parsed)].filter(Boolean).join(" · ")}</div>
     ${cov}
     ${notices.length ? `<div class="notices">${notices.join("")}</div>` : ""}`;
+  if (typed && $("#expand-passcode")) $("#expand-passcode").value = typed;
+}
+
+function timeLeftText(job) {
+  if (job.status !== "running" || !job.estimate_seconds) return "";
+  const started = job.started_at ? Date.parse(job.started_at) : NaN;
+  if (Number.isNaN(started)) return `Usually takes ${minutesText(job.estimate_seconds)}`;
+  const left = job.estimate_seconds - (Date.now() - started) / 1000;
+  return left > 45 ? `${capFirst(minutesText(left))} left (estimate)` : "Almost done…";
 }
 
 function renderProgress() {
@@ -559,7 +702,7 @@ function renderProgress() {
     ? `<div class="progress-line">${job.status === "done" ? "Check complete" : job.status === "partial" ? "Check stopped early" : "Check failed"}
         · ${verdictCount} citation verdicts · ${escalated} escalated to Ultra
         <button class="btn link" type="button" data-toggle-stages>${S.showStages ? "Hide" : "Show"} stages</button></div>`
-    : "";
+    : timeLeftText(job) ? `<div class="progress-line eta">${esc(timeLeftText(job))}</div>` : "";
   el.innerHTML = `${line}<div class="stages">${stages}</div>`;
 }
 

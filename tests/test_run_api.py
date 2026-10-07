@@ -41,6 +41,8 @@ class Fakes:
         self.fail_pair: str | None = None
         self.budget_on_judge = False
         self.ingest_error: str | None = None
+        self.ingest_exc: Exception | None = None
+        self.ingested: list[str] = []
 
 
 @pytest.fixture
@@ -55,6 +57,9 @@ def env(monkeypatch, tmp_path):
     fakes = Fakes()
 
     async def ingest(arxiv_id):
+        fakes.ingested.append(arxiv_id)
+        if fakes.ingest_exc:
+            raise fakes.ingest_exc
         if fakes.ingest_error:
             raise IngestError(fakes.ingest_error)
         return fixture_ingest()
@@ -217,11 +222,24 @@ def test_ingest_error_fails_job_with_message(env):
 # ------------------------------------------------------------------------------ API
 
 
+API_SETTINGS = dict(quick_check_max_citations=3, max_references=150, max_jobs_per_ip_per_hour=50,
+                    max_previews_per_ip_per_hour=50, max_concurrent_jobs=3, judge_mode_password="",
+                    trust_proxy_headers=False)
+
+
+def api_settings(**overrides):
+    return replace(get_settings(), **{**API_SETTINGS, **overrides})
+
+
 @pytest.fixture
-def client(env):
+def client(env, monkeypatch):
     fakes, store = env
     set_runner(JobRunner(store=store, bus=EventBus()))
+    import app.main as main_mod
     from app.main import app
+
+    settings = api_settings()  # independent of the developer's .env
+    monkeypatch.setattr(main_mod, "get_settings", lambda: settings)
 
     with TestClient(app) as c:
         yield c, fakes
@@ -367,3 +385,207 @@ def test_api_demo_unavailable(client, monkeypatch, tmp_path):
     c, _ = client
     r = c.post("/api/demo")
     assert r.status_code == 501 and "plant_errors" in r.json()["detail"]
+
+
+# --------------------------------------------------------------- live judging (section 10)
+
+
+def test_estimate_seconds_grows_with_citation_pairs():
+    sentences = fixture_ingest().sentences
+    assert run_mod.estimate_seconds([]) == 0
+    one, all_ = run_mod.estimate_seconds(sentences[:1]), run_mod.estimate_seconds(sentences)
+    assert one == round(run_mod.ESTIMATE_BASE_SECONDS + 2 * run_mod.ESTIMATE_SECONDS_PER_PAIR)
+    assert all_ > one
+
+
+def test_rate_limiter_sliding_window():
+    from app.limits import RateLimiter
+
+    now = [1000.0]
+    limiter = RateLimiter(clock=lambda: now[0])
+    for _ in range(2):
+        assert limiter.retry_after("ip", 2) is None
+        limiter.record("ip")
+    wait = limiter.retry_after("ip", 2)
+    assert wait is not None and 3500 < wait <= 3601
+    assert limiter.retry_after("other", 2) is None and limiter.retry_after("ip", 0) is None
+    now[0] += 3601
+    assert limiter.retry_after("ip", 2) is None
+
+
+def test_passcode_and_client_ip():
+    from types import SimpleNamespace
+
+    from app.limits import client_ip, minutes_text, passcode_ok
+
+    assert passcode_ok(api_settings(), None)
+    locked = api_settings(judge_mode_password="s3cret")
+    assert passcode_ok(locked, " s3cret ") and not passcode_ok(locked, "nope") and not passcode_ok(locked, None)
+    request = SimpleNamespace(headers={"x-forwarded-for": "1.2.3.4, 10.0.0.1"}, client=SimpleNamespace(host="10.0.0.1"))
+    assert client_ip(request, api_settings()) == "10.0.0.1"
+    assert client_ip(request, api_settings(trust_proxy_headers=True)) == "1.2.3.4"
+    assert (minutes_text(40), minutes_text(300)) == ("about a minute", "about 5 minutes")
+
+
+def test_prepare_caches_parsed_paper_by_version(env):
+    fakes, store = env
+
+    async def scenario():
+        runner = JobRunner(store=store, bus=EventBus())
+        first, cached1 = await runner.prepare_arxiv("2101.00001")
+        again, cached2 = await runner.prepare_arxiv("2101.00001")  # alias -> v1
+        versioned, cached3 = await runner.prepare_arxiv("2101.00001v1")
+        return cached1, cached2, cached3, again.paper.arxiv_id
+
+    assert asyncio.run(scenario()) == (False, True, True, "2101.00001v1")
+    assert fakes.ingested == ["2101.00001"]
+
+
+def test_api_preview(client):
+    c, fakes = client
+    r = c.get("/api/preview", params={"arxiv_id": "arXiv:2101.00001"})
+    assert r.status_code == 200
+    body = r.json()
+    assert body["arxiv_id"] == "2101.00001v1" and body["title"] == "Fixture Paper"
+    assert (body["references"], body["citing_sentences"]) == (3, 7)
+    assert body["quick"]["sentences"] == 3 and body["full"]["sentences"] == 7
+    assert 0 < body["quick"]["estimate_seconds"] < body["full"]["estimate_seconds"]
+    assert body["full"]["allowed"] and body["quick"]["existing"] is None and not body["passcode_required"]
+    assert c.get("/api/preview", params={"arxiv_id": "hello"}).status_code == 400
+    assert fakes.ingested == ["2101.00001"]
+
+    # Starting a check afterwards reuses the parsed paper.
+    r = c.post("/api/jobs", json={"arxiv_id": "2101.00001", "mode": "quick"})
+    assert r.status_code == 201 and fakes.ingested == ["2101.00001"]
+    job = r.json()["job"]
+    assert job["arxiv_id"] == "2101.00001v1" and job["references_total"] == 3
+    assert job["estimate_seconds"] == body["quick"]["estimate_seconds"]
+    assert job["rest_estimate_seconds"] == run_mod.estimate_seconds(fixture_ingest().sentences[3:])
+    _wait_done(c, r.json()["id"])
+    existing = c.get("/api/preview", params={"arxiv_id": "2101.00001"}).json()["quick"]["existing"]
+    assert existing == {"id": r.json()["id"], "status": "done", "mode": "quick"}
+
+
+def test_api_reuses_finished_checks(client):
+    c, fakes = client
+    quick = c.post("/api/jobs", json={"arxiv_id": "2101.00001v1", "mode": "quick"}).json()
+    _wait_done(c, quick["id"])
+    fakes.extracted.clear()
+
+    again = c.post("/api/jobs", json={"arxiv_id": "https://arxiv.org/abs/2101.00001v1"})
+    assert again.status_code == 200 and again.json()["cached"] and again.json()["id"] == quick["id"]
+    assert fakes.extracted == []
+
+    full = c.post("/api/jobs", json={"arxiv_id": "2101.00001v1", "mode": "full"})
+    assert full.status_code == 201 and full.json()["id"] != quick["id"]  # a quick check does not answer a full one
+    _wait_done(c, full.json()["id"])
+    # Now a full check exists, and it answers quick requests too.
+    assert c.post("/api/jobs", json={"arxiv_id": "2101.00001v1"}).json()["id"] == full.json()["id"]
+    fresh = c.post("/api/jobs", json={"arxiv_id": "2101.00001v1", "fresh": True})
+    assert fresh.status_code == 201 and fresh.json()["id"] not in (quick["id"], full.json()["id"])
+    _wait_done(c, fresh.json()["id"])
+
+
+def test_api_passcode_gates_full_checks(client, monkeypatch):
+    c, _ = client
+    import app.main as main_mod
+
+    monkeypatch.setattr(main_mod, "get_settings", lambda: api_settings(judge_mode_password="s3cret"))
+    assert c.get("/api/health").json()["limits"]["passcode_required"] is True
+    r = c.post("/api/jobs", json={"arxiv_id": "2101.00001v1", "mode": "full"})
+    assert r.status_code == 403 and r.json()["code"] == "passcode" and "Quick checks are open" in r.json()["detail"]
+    r = c.post("/api/jobs", json={"arxiv_id": "2101.00001v1", "mode": "full", "passcode": "wrong"})
+    assert r.status_code == 403 and "does not match" in r.json()["detail"]
+
+    quick = c.post("/api/jobs", json={"arxiv_id": "2101.00001v1", "mode": "quick"})
+    assert quick.status_code == 201
+    job_id = quick.json()["id"]
+    _wait_done(c, job_id)
+    assert c.post(f"/api/jobs/{job_id}/expand").status_code == 403
+    r = c.post(f"/api/jobs/{job_id}/expand", json={"passcode": "s3cret"})
+    assert r.status_code == 200 and r.json()["job"]["mode"] == "full"
+    assert r.json()["job"]["estimate_seconds"] == r.json()["job"]["rest_estimate_seconds"]
+    _wait_done(c, job_id)
+
+
+def test_api_too_many_references(client, monkeypatch):
+    c, _ = client
+    import app.main as main_mod
+
+    monkeypatch.setattr(main_mod, "get_settings", lambda: api_settings(max_references=2))
+    preview = c.get("/api/preview", params={"arxiv_id": "2101.00001v1"}).json()
+    assert preview["full"]["allowed"] is False and "3 references" in preview["full"]["note"]
+    r = c.post("/api/jobs", json={"arxiv_id": "2101.00001v1", "mode": "full"})
+    assert r.status_code == 422 and r.json()["code"] == "too_many_references" and "quick check" in r.json()["detail"]
+    quick = c.post("/api/jobs", json={"arxiv_id": "2101.00001v1", "mode": "quick"})
+    assert quick.status_code == 201
+    _wait_done(c, quick.json()["id"])
+    assert c.post(f"/api/jobs/{quick.json()['id']}/expand").json()["code"] == "too_many_references"
+
+
+def test_api_rate_limits(client, monkeypatch):
+    c, _ = client
+    import app.main as main_mod
+
+    monkeypatch.setattr(main_mod, "get_settings", lambda: api_settings(max_jobs_per_ip_per_hour=1))
+    first = c.post("/api/jobs", json={"arxiv_id": "2101.00001v1"})
+    assert first.status_code == 201
+    _wait_done(c, first.json()["id"])
+    # Reopening a cached result is free; new work is not.
+    assert c.post("/api/jobs", json={"arxiv_id": "2101.00001v1"}).status_code == 200
+    r = c.post("/api/jobs", json={"arxiv_id": "2101.00001v1", "fresh": True})
+    assert r.status_code == 429 and r.json()["code"] == "rate_limited" and int(r.headers["retry-after"]) > 0
+    assert "in the last hour" in r.json()["detail"]
+
+    monkeypatch.setattr(main_mod, "get_settings", lambda: api_settings())
+    monkeypatch.setattr(run_mod.get_runner(), "active_jobs", lambda: 3)
+    r = c.post("/api/jobs", json={"arxiv_id": "2101.00001v1", "fresh": True})
+    assert r.status_code == 429 and r.json()["code"] == "busy" and "busy with 3 other papers" in r.json()["detail"]
+
+
+def test_api_preview_rate_limit_counts_only_downloads(client, monkeypatch):
+    c, fakes = client
+    import app.main as main_mod
+
+    monkeypatch.setattr(main_mod, "get_settings", lambda: api_settings(max_previews_per_ip_per_hour=1))
+    for _ in range(3):  # one download, then cache hits
+        assert c.get("/api/preview", params={"arxiv_id": "2101.00001v1"}).status_code == 200
+    r = c.get("/api/preview", params={"arxiv_id": "2101.00002v1"})
+    assert r.status_code == 429 and fakes.ingested == ["2101.00001v1"]
+
+
+@pytest.mark.parametrize(
+    "exc, status, code",
+    [
+        ("no_latex", 422, "no_latex"),
+        ("missing", 404, "not_found"),
+        ("network", 502, "upstream"),
+    ],
+)
+def test_api_ingest_errors(client, exc, status, code):
+    import httpx
+
+    from app.pipeline.ingest import InvalidArxivId, NoLatexSource
+
+    c, fakes = client
+    fakes.ingest_exc = {
+        "no_latex": NoLatexSource("PDF only"),
+        "missing": InvalidArxivId("arXiv has no paper with ID 2101.00001."),
+        "network": httpx.ConnectError("down"),
+    }[exc]
+    r = c.post("/api/jobs", json={"arxiv_id": "2101.00001"})
+    assert r.status_code == status and r.json()["code"] == code
+    assert c.get("/api/preview", params={"arxiv_id": "2101.00001"}).status_code == status
+
+
+def test_api_quick_check_covering_everything_answers_full_requests(client, monkeypatch):
+    c, _ = client
+    import app.main as main_mod
+
+    monkeypatch.setattr(run_mod, "get_settings", lambda: api_settings(quick_check_max_citations=50))
+    monkeypatch.setattr(main_mod, "get_settings", lambda: api_settings(quick_check_max_citations=50))
+    quick = c.post("/api/jobs", json={"arxiv_id": "2101.00001v1", "mode": "quick"}).json()
+    assert quick["job"]["sentences_checked"] == quick["job"]["sentences_total"] == 7
+    _wait_done(c, quick["id"])
+    full = c.post("/api/jobs", json={"arxiv_id": "2101.00001v1", "mode": "full"})
+    assert full.status_code == 200 and full.json()["id"] == quick["id"]
