@@ -2,25 +2,83 @@
 
 For every citation in a research paper, Citation Checker asks one question: does the cited source actually say what the citing author claims it says? It runs on NVIDIA Nemotron models served through Nebius Token Factory.
 
-> Work in progress. See `CITATION_CHECKER_BRIEF.md` for the full plan. Done so far: milestones 1–9 (through the UI, demo mode and evaluation), plus four extra failure-mode detectors (scaffold and LLM wrapper, arXiv LaTeX ingest, reference resolution and full-text fetching, claim extraction and evidence retrieval, judging with quote verification and escalation, failure-mode detectors).
+Give it an arXiv ID, an arxiv.org link or a PDF. For each citation it extracts the claim, finds and reads the cited paper, and reports whether the cited text supports the claim, with the exact quote. Anything that is not clearly supported is marked "Needs human check", never "wrong".
 
-## Setup
+## Quick start
+
+```bash
+pip install -r requirements.txt
+cp .env.example .env            # add NEBIUS_API_KEY (and CONTACT_EMAIL for the polite API pools)
+python scripts/list_models.py   # copy the exact Nemotron / embedding model IDs into .env
+python scripts/smoke_test.py    # one call to each configured model
+uvicorn app.main:app            # open http://localhost:8000 and click "Try the demo paper"
+```
+
+The demo works without an API key: it shows the bundled recording of a full check (`demo/snapshot.json`).
+
+**Docker.**
+
+```bash
+docker compose up --build                 # app on :8000, cache in a named volume
+docker compose --profile grobid up        # also start GROBID; then set GROBID_URL=http://grobid:8070
+```
+
+Or without Compose: `docker build -t citation-checker .` and `docker run --env-file .env -p 8000:8000 -v citation-cache:/app/.cache citation-checker`. Run a single container (one worker): jobs, rate limits and live progress live in the process, and finished work in SQLite under `.cache/`.
+
+**Developer scripts.**
 
 ```bash
 pip install -r requirements-dev.txt
-cp .env.example .env          # then add NEBIUS_API_KEY
-python scripts/list_models.py # copy the exact Nemotron / embedding model IDs into .env
-python scripts/smoke_test.py  # one call to each configured model, with token usage
+python -m pytest                           # 250+ tests; no network, no model calls
 python scripts/ingest_paper.py 1706.03762  # parse a paper: references and citing sentences
 python scripts/resolve_refs.py 1706.03762  # find every cited paper, fetch its text, print coverage
 python scripts/sample_claims.py 2310.06825 # extracted claims and top evidence passages for a few citations
 python scripts/check_paper.py 2310.06825   # whole pipeline: verdicts, quotes, escalations, token usage
 python scripts/plant_errors.py             # build the demo paper (planted errors) and its ground truth
 python scripts/evaluate.py --snapshot      # score a check of the demo paper; bundle it for offline demos
-uvicorn app.main:app --reload
 ```
 
-Run the tests with `python -m pytest`. The tests use a fake client and do not call the API.
+## Architecture
+
+```mermaid
+flowchart LR
+    subgraph Input
+        A[arXiv ID / link] --> L[LaTeX source]
+        A -. no usable source .-> P[PDF]
+        U[PDF upload] --> P
+    end
+    L --> I[Ingest: text with offsets,<br/>citing sentences, bibliography]
+    P --> G{GROBID_URL set?}
+    G -- yes --> GR[GROBID TEI] --> I
+    G -- no / fails --> PP[Layout parser<br/>PyMuPDF] --> I
+    I --> R[Resolve references<br/>arXiv, OpenAlex, Crossref<br/>+ full text, retractions]
+    I --> X[Extract claims<br/>Nemotron Nano]
+    R --> E[Retrieve evidence<br/>Qwen3 embeddings]
+    X --> E
+    E --> J[Judge<br/>Nemotron Super]
+    J -->|low confidence, accusatory label,<br/>unverified quote| U2[Escalate with full paper<br/>Nemotron Ultra]
+    J --> D[Detectors + code rules]
+    U2 --> D
+    D --> S[(SQLite: jobs, artifacts,<br/>model-call cache)]
+    S --> API[FastAPI + SSE] --> UI[Browser UI:<br/>annotated paper, evidence, cost]
+```
+
+Stages overlap: claim extraction starts while references download, and each (claim, reference) pair is judged as soon as its reference is ready, so verdicts stream into the UI from the first minute. Every intermediate result is persisted, so a restarted server resumes unfinished checks and "Check the rest" reuses all completed work.
+
+## Two-minute demo script
+
+| Time | Do | Say |
+|---|---|---|
+| 0:00 | Start page. | "Citations are how science builds on itself, and nobody checks them. A citation can point to a paper that says something weaker, different, or nothing at all. Citation Checker reads every cited paper and checks the claim." |
+| 0:15 | Click **Try the demo paper**. | "This is the Chain-of-Thought paper with ten errors we planted: changed numbers, inflated scope, a removed hedge, swapped citations. It caught nine of ten." Point at the banner score. |
+| 0:30 | Click **Next issue** to a planted citation swap. | "The claim is about GSM8K, but the citation was swapped to an unrelated paper. The checker flags 'Possibly the wrong reference' and names the paper in the bibliography that actually fits." |
+| 0:45 | Open a number-drift citation; point at the highlighted quote. | "Every verdict comes with a verbatim quote, verified in code against the cited text. Here the claim says 86.9%; the cited work says 54.3%." |
+| 1:00 | Open an escalated citation; then the **cost** panel. | "Nemotron Nano extracts claims, Super judges them, and only hard cases go to Ultra with the full paper: 30 of 147 verdicts here, and Ultra changed 13 of them, mostly false alarms. A full check of 70 citations costs about a dollar." |
+| 1:15 | Back to start; paste a judge's arXiv link. | "Now your paper." The preview shows its size and "about 3 minutes". Start a **quick check**; verdicts start appearing while it runs. Point at the coverage line: "Full text for 41 of 60 references; the rest are limited by open access, and we say so." |
+| 1:45 | Show a PDF report (prepared in advance). | "Journal PDFs work too, with an honest note when citation matching is weak." |
+| 1:55 | — | "Nothing is called an error: anything not clearly supported is marked for a human to check, with the evidence side by side." |
+
+Before presenting: run the demo once (or rely on the snapshot), and run your planned live paper once so its downloads are cached.
 
 ## Model roles
 
@@ -52,6 +110,30 @@ For an arXiv ID, the app downloads the paper's LaTeX source rather than the PDF.
 - **Citation markers.** Markers are rendered the way the paper shows them: numeric (`[3, 5]`, `Lee et al. [2]`) or author-year (`(Kaplan et al., 2020)`, `Brown et al. (2020)`).
 - **Sentences.** `app/pipeline/sentences.py` splits sentences without breaking on abbreviations such as `et al.`, `e.g.` and `Fig.`, and keeps each citation marker attached to its sentence.
 
+## Ingest (PDF: `app/pipeline/pdfparse.py`, optional GROBID)
+
+PDFs are used for uploads, and automatically for arXiv papers without usable LaTeX source (the report header then says "Parsed from PDF; citation matching may be less accurate"). The uploaded file is parsed in the request and not stored; only the text needed for the report is kept.
+
+- **GROBID (optional).** With `GROBID_URL` set, the PDF goes to GROBID's full-text service, whose TEI output links every in-text citation to its bibliography entry (`app/pipeline/grobid.py`). If GROBID fails or finds no citations, the built-in parser takes over.
+- **Built-in layout parser.** PyMuPDF layout blocks become paragraphs and headings (by font size, weight, small caps and numbering). Page headers and footers, the journal masthead, sidebars, footnotes, figure and table text (PyMuPDF table detection plus a shape check), captions and back matter (funding, author contributions, competing interests) are dropped. Paragraphs split by a column or page break are joined, and line-end hyphenation is repaired without breaking compounds ("chain-of-thought", "self-attention", "e-cigarettes").
+- **References.** Entries are split by printed labels (`[12]`, `12.`) or by the hanging indent of author-year styles, and parsed for authors, title, year, DOI and arXiv ID. Handled styles: ACL/NeurIPS natbib, plainnat, IEEE, APA, Vancouver, Nature and LNCS. Years are never read out of arXiv IDs, DOIs or URLs.
+- **In-text citations.** Bracketed numbers with ranges and lists (`[2-4]`, `[2, 4]`), superscript numbers (Nature, medical journals), parenthesised numbers, and author-year mentions both parenthetical (`(Smith et al., 2020a; Lee, 2019)`, organisations such as `(BIG-bench collaboration, 2021)`) and textual (`Lee and Park (2019a)`). Author-year mentions are matched by first-author surname, year and suffix, with the second author breaking ties.
+- **Honesty.** If fewer than half of the in-text citations match a reference entry, the report says so; a PDF without a reference list or without extractable text (scanned) gets a plain message instead of a thin report.
+
+Accuracy against the LaTeX parse of the same papers, and on journal PDFs:
+
+| Paper (layout) | Citing sentences found | In-text citations mapped |
+|---|---|---|
+| Attention Is All You Need (NeurIPS, numeric) | 36 of 36 | 35 / 35 |
+| Mistral 7B (numeric) | 13 of 13 | 29 / 29 |
+| Chain-of-Thought (NeurIPS, author-year) | 70 of 70 | 83 / 83 |
+| LoRA (ICLR, author-year, small caps) | 65 of 70 | 62 / 63 |
+| Nature Communications (superscript) | 57 | 60 / 60 |
+| PLOS ONE (Vancouver, `[n]`) | 40 | 54 / 54 |
+| Frontiers in Psychology (APA) | 55 | 118 / 120 |
+
+For the first four, "found" counts LaTeX citing sentences with a matching PDF sentence. LoRA's misses are citations the paper itself prints without a year ("Radford et al., b") and sentences broken up by inline equations.
+
 ## Reference resolution (`app/pipeline/references.py`)
 
 Each reference is matched to a real paper, and its text is fetched using free APIs only.
@@ -66,7 +148,7 @@ Each reference is matched to a real paper, and its text is fetched using free AP
 
   PDF text comes from PyMuPDF, with hyphenation and ligatures repaired. The cited paper's own reference list is stored next to its text, for the secondary-citation detector.
 - **Retractions.** The app uses OpenAlex `is_retracted` and Crossref `updated-by` entries with `type: "retraction"`. Crossref includes Retraction Watch data. If neither source has a record, `retracted` stays `null`.
-- **Caching and politeness.** Every HTTP response and every resolved reference is cached under `.cache/`. Requests carry a `mailto` User-Agent, and arXiv requests are spaced 3 seconds apart. A transient download failure degrades to the abstract and is not cached, so the next run retries.
+- **Caching and politeness.** Every HTTP response and every resolved reference is cached under `.cache/`. Requests carry a `mailto` User-Agent, and arXiv requests are spaced 3 seconds apart. A transient download failure degrades to the abstract and is not cached, so the next run retries. When arXiv's search API rate-limits the preprint look-up, it is skipped for 10 minutes instead of retried per reference (papers outside CS, maths and physics rarely have an arXiv preprint anyway).
 
 Coverage on real papers:
 
@@ -132,8 +214,9 @@ After judging, each verdict can carry one or more failure-mode tags, each with a
 
 | Method | Path | Purpose |
 |---|---|---|
-| `POST` | `/api/jobs` | Start a check. Send `{"arxiv_id": "...", "mode": "quick" \| "full"}`; `arxiv_id` can be a bare ID, a versioned ID, an old-style ID or any arxiv.org URL. A multipart PDF upload (`file`, `mode`) is validated (content type, `%PDF-` magic bytes, `MAX_PDF_MB`); PDF parsing arrives in milestone 11. |
-| `POST` | `/api/jobs/{id}/expand` | Upgrade a finished quick check to a full check, reusing everything already computed. |
+| `GET` | `/api/preview?arxiv_id=` | What a check involves, before it starts: title, citing sentences, references, time estimate per mode, whether a full check is allowed, and any earlier check that can be reopened. |
+| `POST` | `/api/jobs` | Start a check. Send `{"arxiv_id": "...", "mode": "quick" \| "full", "passcode": "...", "fresh": false}`; `arxiv_id` can be a bare ID, a versioned ID, an old-style ID or any arxiv.org URL. Or upload a PDF as multipart (`file`, `mode`, `passcode`), validated by content type, `%PDF-` magic bytes and `MAX_PDF_MB`. An earlier check of the same arXiv version is reopened instantly (`"cached": true`). |
+| `POST` | `/api/jobs/{id}/expand` | Upgrade a finished quick check to a full check, reusing everything already computed. Body: `{"passcode": "..."}` when one is configured. |
 | `GET` | `/api/jobs/{id}` | Status, per-stage progress and live token usage. |
 | `GET` | `/api/jobs/{id}/events` | Server-sent events. First a `snapshot` of everything so far, then `progress`, `paper`, `reference`, `coverage`, `claims`, `escalating`, `verdict`, `status` and finally `done`. |
 | `GET` | `/api/jobs/{id}/report` | Full report JSON: paper text with offsets, references, sentences, claims, verdicts, and a summary (label counts, failure modes, escalation stats, coverage line). |
@@ -145,6 +228,25 @@ Stages overlap so results stream early:
 - A final pass re-runs the detectors that need paper-level context.
 
 Every intermediate result is stored in SQLite. When the server restarts it resumes unfinished jobs, skipping finished work; this was tested by killing the server mid-job. Expanding a quick check only processes the new sentences. A failure in one citation becomes an `unverifiable` verdict and never fails the job. Hitting the token budget stops the job and marks it `partial`, keeping its results.
+
+## Live judging: quick checks, estimates, caching and limits
+
+- **Quick check (default).** The first `QUICK_CHECK_MAX_CITATIONS` (20) citing sentences, resolving only the references they cite. "Check the rest" upgrades it to a full check and reuses everything.
+- **Before starting.** The start page looks the paper up as you type and shows its title, size and an estimated time per mode. The estimate is 80 s plus 1.6 s per (sentence, reference) pair, fitted on real uncached runs; cached papers finish sooner. While a check runs, the progress view shows the time left.
+- **Result cache.** Parsed papers are cached per versioned arXiv ID. A second request for the same version reopens the finished check instantly, or joins it while it is still running. `"fresh": true` forces a new run.
+- **Limits** (all in `.env`; refusals carry a readable `detail` and a machine `code`):
+
+| Setting | Default | Effect |
+|---|---|---|
+| `MAX_REFERENCES` | 150 | Full checks of papers with more references get 422 `too_many_references`; the quick check stays available. |
+| `MAX_CONCURRENT_JOBS` | 3 | More simultaneous checks get 429 `busy`. |
+| `MAX_JOBS_PER_IP_PER_HOUR` | 5 | New checks per IP; 429 `rate_limited` with `Retry-After`. Reopening a cached result is free. |
+| `MAX_PREVIEWS_PER_IP_PER_HOUR` | 30 | Uncached paper look-ups (arXiv downloads) per IP. |
+| `MAX_TOKENS_PER_JOB` | 0 (suggested 5,000,000) | Stops a check at its budget and keeps the results so far (status `partial`). |
+| `JUDGE_MODE_PASSWORD` | empty | If set, full checks and "Check the rest" need this passcode; quick checks, cached results and the demo stay open. |
+| `MAX_PDF_MB` | 25 | Upload size limit. |
+| `TRUST_PROXY_HEADERS` | false | Behind a trusted reverse proxy, rate-limit by `X-Forwarded-For`. |
+| `GROBID_URL` | empty | Use a GROBID server for PDF parsing. |
 
 ## UI (`static/`)
 
@@ -214,3 +316,12 @@ Calibration was done on this paper, so these are development-set numbers; a seco
 
 - **Escalation:** 30 of 147 verdicts went to Nemotron Ultra, which changed the label in 13.
 - **Cost:** a full check costs about $1.16 (1.65M tokens) the first time. Repeat runs are served from the cache in about 30 seconds.
+
+## Limitations and future work
+
+- **Held-out evaluation.** The numbers above are from the paper the judge was calibrated on. Next: 6–8 papers across 3–4 fields (including biomedical and social-science PDFs), about 10 planted errors each, flags reviewed by hand, scored without further tuning.
+- **Judge robustness.** Self-consistency voting for accusatory labels (three judge runs, flag on 2-of-3 agreement, disagreement escalates), and reasoning on for extraction only on sentences with several citation markers.
+- **Fine-tuning.** Token Factory does not offer Nemotron fine-tuning today. With more labelled data (roughly 50–100 papers, 3k–8k claim/reference pairs, split by citing and cited paper), a Nano-sized judge could be distilled from Ultra verdicts on full text plus human labels, making full checks much cheaper.
+- **Scanned PDFs.** Image-only PDFs are refused today; Nemotron Nano Omni (`MODEL_VISION`) could read the pages.
+- **Coverage.** Only open-access text is read; paywalled publishers are out of scope, and verdicts on abstract-only references are limited accordingly (the coverage line says how many).
+- **Not built for the hackathon:** user accounts, multi-paper batch checks, persistent rate limits across restarts, and multi-worker deployment (jobs and live events live in one process).

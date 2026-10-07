@@ -325,3 +325,23 @@ def test_transient_arxiv_failure_degrades_and_is_not_cached(network):
     net.fail_arxiv_downloads = False
     [lee] = asyncio.run(resolve_references([REFS[0]]))
     assert lee.fulltext_status == "full"  # retried because the degraded result was not cached
+
+
+def test_arxiv_twin_search_backs_off_when_rate_limited(monkeypatch):
+    calls = []
+
+    async def no_openalex(title):
+        return []
+
+    async def limited(url, namespace, **kwargs):
+        calls.append(url)
+        request = httpx.Request("GET", url)
+        raise httpx.HTTPStatusError("429", request=request, response=httpx.Response(429, request=request))
+
+    monkeypatch.setattr(refs_mod, "openalex_search", no_openalex)
+    monkeypatch.setattr(refs_mod, "fetch_cached", limited)
+    monkeypatch.setattr(refs_mod, "_arxiv_search_paused_until", 0.0)
+    title = "Knowledge and attitudes towards e-cigarette use in Lebanon and their associated factors in adults"
+    assert asyncio.run(refs_mod.find_arxiv_twin(title)) is None  # a refusal is "no preprint", not a failure
+    assert asyncio.run(refs_mod.find_arxiv_twin(title)) is None
+    assert len(calls) == 1  # paused after the first refusal

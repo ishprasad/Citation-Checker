@@ -23,6 +23,7 @@ import inspect
 import json
 import logging
 import re
+import time
 import unicodedata
 from dataclasses import dataclass, field
 from difflib import SequenceMatcher
@@ -287,24 +288,37 @@ async def crossref_search(query: str) -> list[dict]:
 
 
 ARXIV_TWIN_THRESHOLD = 0.93
+# The arXiv search API rate-limits title queries hard. After a refusal, skip twin searches for a
+# while: most papers without open text (e.g. in medicine) have no arXiv preprint anyway.
+ARXIV_SEARCH_COOLDOWN = 600.0
+_arxiv_search_paused_until = 0.0
 
 
 async def find_arxiv_twin(title: str) -> Optional[str]:
     """arXiv ID of a preprint with (nearly) the same title: OpenAlex first, then the arXiv API."""
+    global _arxiv_search_paused_until
     for work in await openalex_search(title):
         cand = candidate_from_openalex(work)
         if cand.arxiv_id and title_similarity(title, cand.title) >= ARXIV_TWIN_THRESHOLD:
             return cand.arxiv_id
     words = normalize_title(title)
-    if len(words) < 12:
+    if len(words) < 12 or time.monotonic() < _arxiv_search_paused_until:
         return None
-    data = await fetch_cached(
-        "https://export.arxiv.org/api/query",
-        "arxiv_meta",
-        params={"search_query": f'ti:"{words}"', "max_results": "3"},
-        suffix=".xml",
-        allow_missing=True,
-    )
+    try:
+        data = await fetch_cached(
+            "https://export.arxiv.org/api/query",
+            "arxiv_meta",
+            params={"search_query": f'ti:"{words}"', "max_results": "3"},
+            suffix=".xml",
+            allow_missing=True,
+        )
+    except (httpx.HTTPError, DownloadTooLarge) as exc:
+        if isinstance(exc, httpx.HTTPStatusError) and exc.response.status_code == 429:
+            _arxiv_search_paused_until = time.monotonic() + ARXIV_SEARCH_COOLDOWN
+            log.warning("arXiv search is rate-limiting; skipping preprint look-ups for %d s", ARXIV_SEARCH_COOLDOWN)
+        else:
+            log.info("arXiv preprint search failed for %r: %s", title[:60], exc)
+        return None
     for arxiv_id, meta in (parse_arxiv_feed(data) if data else {}).items():
         if title_similarity(title, meta.title) >= ARXIV_TWIN_THRESHOLD:
             return arxiv_id

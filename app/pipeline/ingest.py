@@ -1,7 +1,7 @@
 """Ingest: arXiv ID -> LaTeX source -> Paper (plain text with offsets), references, citing sentences.
 
-PDF ingestion (uploads, and arXiv papers without LaTeX source) arrives in a later milestone;
-for now `NoLatexSource` is raised with the PDF bytes attached.
+PDFs (uploads, and arXiv papers without usable LaTeX source) go through `ingest_pdf`:
+GROBID when configured, otherwise the built-in layout parser in `pdfparse`.
 """
 
 from __future__ import annotations
@@ -16,9 +16,11 @@ import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from typing import Optional
 
+from app.config import get_settings
 from app.http import fetch_cached
 from app.models import IngestResult, Paper, Reference
 from app.pipeline import bibliography as bib
+from app.pipeline.grobid import GrobidError, grobid_parse
 from app.pipeline.latex import (
     CITE_MARKER_COMMANDS,
     LatexConverter,
@@ -29,6 +31,7 @@ from app.pipeline.latex import (
     latex_to_plain,
     split_document,
 )
+from app.pipeline.pdfparse import PdfParseError, parse_pdf
 from app.pipeline.sentences import build_sections, citing_sentences
 
 log = logging.getLogger(__name__)
@@ -37,7 +40,7 @@ SOURCE_EXTENSIONS = (".tex", ".bbl", ".bib", ".sty", ".ltx")
 MAX_SOURCE_FILE_BYTES = 5 * 1024 * 1024
 ATOM = "{http://www.w3.org/2005/Atom}"
 # Bump when parsing changes, so papers cached by the job runner are parsed again.
-INGEST_VERSION = 1
+INGEST_VERSION = 2
 
 
 class IngestError(Exception):
@@ -384,13 +387,56 @@ async def ingest_arxiv(raw_id: str) -> IngestResult:
     meta = await fetch_arxiv_metadata(arxiv_id)
     versioned = arxiv_id if re.search(r"v\d+$", arxiv_id) else meta.id
     data = await fetch_cached(f"https://arxiv.org/e-print/{versioned}", "arxiv_src", suffix=".eprint")
-    files = unpack_source(data)
-    log.info("arXiv %s: %d source files", versioned, len(files))
-
-    paper, sentences = await asyncio.to_thread(parse_latex_project, files)  # CPU-bound; keep the loop free
+    try:
+        files = unpack_source(data)
+        log.info("arXiv %s: %d source files", versioned, len(files))
+        paper, sentences = await asyncio.to_thread(parse_latex_project, files)  # CPU-bound; keep the loop free
+    except NoLatexSource as exc:
+        log.info("arXiv %s: no LaTeX source; reading the PDF", versioned)
+        result = await ingest_pdf(exc.pdf, PDF_FALLBACK_NOTE)
+        paper, sentences = result.paper, result.sentences
+    except IngestError as exc:  # source present but unusable (no main .tex): the PDF still works
+        log.info("arXiv %s: LaTeX source unusable (%s); reading the PDF", versioned, exc)
+        pdf = await fetch_cached(f"https://arxiv.org/pdf/{versioned}", "arxiv_pdf", suffix=".pdf")
+        result = await ingest_pdf(pdf, PDF_FALLBACK_NOTE)
+        paper, sentences = result.paper, result.sentences
+    paper.source = "arxiv"
     paper.id = f"arxiv:{versioned}"
     paper.arxiv_id = versioned
     paper.title = meta.title
     paper.authors = meta.authors
     paper.abstract = meta.abstract
+    return IngestResult(paper=paper, sentences=sentences)
+
+
+# ----------------------------------------------------------------------------
+# PDF
+# ----------------------------------------------------------------------------
+
+PDF_FALLBACK_NOTE = "arXiv has no usable LaTeX source for this paper, so it was read from the PDF."
+
+
+async def ingest_pdf(data: bytes, note: Optional[str] = None) -> IngestResult:
+    """PDF bytes -> IngestResult (id, source and metadata are left to the caller).
+
+    GROBID is used when GROBID_URL is set and finds citations; otherwise the built-in parser.
+    """
+    settings = get_settings()
+    paper = sentences = None
+    if settings.grobid_url:
+        try:
+            paper, sentences = await grobid_parse(data, settings.grobid_url)
+            if not sentences:
+                log.info("GROBID found no citing sentences; using the built-in PDF parser")
+                paper = None
+        except GrobidError as exc:
+            log.warning("GROBID failed (%s); using the built-in PDF parser", exc)
+            paper = None
+    if paper is None:
+        try:
+            paper, sentences = await asyncio.to_thread(parse_pdf, data)
+        except PdfParseError as exc:
+            raise IngestError(str(exc)) from exc
+    if note:
+        paper.notes.insert(0, note)
     return IngestResult(paper=paper, sentences=sentences)

@@ -270,7 +270,7 @@ function updateModeNotes() {
   $("#full-option").classList.toggle("disabled", fullInput.disabled);
   const full = fullInput.checked;
   const reusable = data?.full.existing?.status === "done";
-  $("#passcode-row").hidden = !(full && CONFIG.passcode_required && !reusable && !pdfFile);
+  $("#passcode-row").hidden = !(full && CONFIG.passcode_required && (!reusable || pdfFile));
 }
 
 function setStartError(message) {
@@ -330,13 +330,14 @@ function initStart() {
       $("#arxiv-input").focus();
       return;
     }
-    setStartBusy(true, pdfFile || P.data ? "Starting…" : "Fetching the paper…");
+    setStartBusy(true, pdfFile ? "Reading the PDF…" : P.data ? "Starting…" : "Fetching the paper…");
     try {
       let result;
       if (pdfFile) {
         const form = new FormData();
         form.append("file", pdfFile);
         form.append("mode", mode);
+        if ($("#passcode-input").value.trim()) form.append("passcode", $("#passcode-input").value.trim());
         result = await api("/api/jobs", { method: "POST", body: form });
       } else {
         result = await api("/api/jobs", {

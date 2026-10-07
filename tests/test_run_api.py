@@ -296,7 +296,7 @@ def test_api_job_lifecycle(client):
         (dict(json={"arxiv_id": "2101.00001", "mode": "slow"}), 422, "arxiv_id"),
         (dict(files={"file": ("a.pdf", b"hello", "application/pdf")}), 415, "does not look like a PDF"),
         (dict(files={"file": ("a.txt", b"%PDF-1.4", "text/plain")}), 415, "Only PDF"),
-        (dict(files={"file": ("a.pdf", b"%PDF-1.4 x", "application/pdf")}), 501, "not supported yet"),
+        (dict(files={"file": ("a.pdf", b"%PDF-1.4 x", "application/pdf")}), 422, "PDF"),
     ],
 )
 def test_api_input_validation(client, kwargs, status, fragment):
@@ -557,7 +557,7 @@ def test_api_preview_rate_limit_counts_only_downloads(client, monkeypatch):
 @pytest.mark.parametrize(
     "exc, status, code",
     [
-        ("no_latex", 422, "no_latex"),
+        ("unusable", 422, "ingest_failed"),
         ("missing", 404, "not_found"),
         ("network", 502, "upstream"),
     ],
@@ -565,11 +565,11 @@ def test_api_preview_rate_limit_counts_only_downloads(client, monkeypatch):
 def test_api_ingest_errors(client, exc, status, code):
     import httpx
 
-    from app.pipeline.ingest import InvalidArxivId, NoLatexSource
+    from app.pipeline.ingest import InvalidArxivId
 
     c, fakes = client
     fakes.ingest_exc = {
-        "no_latex": NoLatexSource("PDF only"),
+        "unusable": IngestError("This PDF has almost no extractable text. It may be a scanned document."),
         "missing": InvalidArxivId("arXiv has no paper with ID 2101.00001."),
         "network": httpx.ConnectError("down"),
     }[exc]
@@ -589,3 +589,29 @@ def test_api_quick_check_covering_everything_answers_full_requests(client, monke
     _wait_done(c, quick["id"])
     full = c.post("/api/jobs", json={"arxiv_id": "2101.00001v1", "mode": "full"})
     assert full.status_code == 200 and full.json()["id"] == quick["id"]
+
+
+def test_api_pdf_upload_runs_a_check(client, monkeypatch):
+    from .test_pdf import author_year_pdf
+
+    c, fakes = client
+    r = c.post("/api/jobs", files={"file": ("widgets.pdf", author_year_pdf(), "application/pdf")}, data={"mode": "quick"})
+    assert r.status_code == 201, r.text
+    job = r.json()["job"]
+    assert job["source"] == "pdf" and job["arxiv_id"] is None and job["title"] == "Sparse Widgets Improve Gadget Throughput"
+    done = _wait_done(c, r.json()["id"])
+    assert done["status"] == "done" and fakes.ingested == []  # parsed in the request, not by the arXiv path
+    report = c.get(f"/api/jobs/{r.json()['id']}/report").json()
+    assert report["paper"]["parsed_from"] == "pdf" and report["paper"]["id"].startswith("pdf:")
+    assert len(report["verdicts"]) == 4
+
+    # Full checks of uploads need the passcode too.
+    import app.main as main_mod
+
+    monkeypatch.setattr(main_mod, "get_settings", lambda: api_settings(judge_mode_password="s3cret"))
+    r = c.post("/api/jobs", files={"file": ("w.pdf", author_year_pdf(), "application/pdf")}, data={"mode": "full"})
+    assert r.status_code == 403
+    r = c.post("/api/jobs", files={"file": ("w.pdf", author_year_pdf(), "application/pdf")},
+               data={"mode": "full", "passcode": "s3cret"})
+    assert r.status_code == 201
+    _wait_done(c, r.json()["id"])

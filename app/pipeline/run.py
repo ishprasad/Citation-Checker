@@ -211,8 +211,10 @@ class JobRunner:
     def active_jobs(self) -> int:
         return sum(not task.done() for task in self.tasks.values())
 
-    def create_job(self, arxiv_id: str, mode: str = "quick", ingest: Optional[IngestResult] = None) -> Job:
-        job = Job(id=uuid.uuid4().hex[:12], mode=mode, arxiv_id=arxiv_id, source="arxiv",
+    def create_job(self, arxiv_id: Optional[str], mode: str = "quick", ingest: Optional[IngestResult] = None,
+                   source: str = "arxiv") -> Job:
+        """Start a check. Uploaded PDFs (`source="pdf"`) must come with their parsed `ingest`."""
+        job = Job(id=uuid.uuid4().hex[:12], mode=mode, arxiv_id=arxiv_id, source=source,
                   pipeline_version=PIPELINE_VERSION)
         if ingest is not None:
             self._describe(job, ingest)
@@ -369,6 +371,8 @@ class JobRunner:
             result = demo.load_demo_paper()
             if result is None:
                 raise IngestError("The demo paper is not available. Run scripts/plant_errors.py to create it.")
+        elif job.source == "pdf":  # uploads are parsed before the job exists; the file itself is not kept
+            raise IngestError("The uploaded PDF is no longer available. Please upload it again.")
         else:
             result, _ = await self.prepare_arxiv(job.arxiv_id)
         self.store.put(job.id, "ingest", "paper", result)

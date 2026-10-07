@@ -3,9 +3,11 @@
 from __future__ import annotations
 
 import asyncio
+import hashlib
 import json
 import logging
 from contextlib import asynccontextmanager
+from pathlib import Path
 from typing import Any, AsyncIterator, Literal, Optional, Union
 
 import httpx
@@ -19,7 +21,7 @@ from app.config import ROOT_DIR, Settings, get_settings
 from app.http import DownloadTooLarge
 from app.limits import RateLimiter, client_ip, minutes_text, passcode_ok
 from app.models import IngestResult, Job
-from app.pipeline.ingest import IngestError, InvalidArxivId, NoLatexSource, normalize_arxiv_id
+from app.pipeline.ingest import IngestError, InvalidArxivId, ingest_pdf, normalize_arxiv_id
 from app.pipeline.run import FINISHED, JobBusy, estimate_seconds, get_runner
 from app.report import build_report, export_markdown, snapshot
 
@@ -139,9 +141,6 @@ async def _prepare(request: Request, arxiv_id: str) -> Union[IngestResult, JSONR
     limiter.record(ip)
     try:
         result, _ = await runner.prepare_arxiv(arxiv_id)
-    except NoLatexSource:
-        return _error(422, "arXiv has only a PDF for this paper, no LaTeX source. "
-                           "PDF-only papers are not supported yet.", code="no_latex")
     except InvalidArxivId as exc:
         return _error(404, str(exc), code="not_found")
     except IngestError as exc:
@@ -244,8 +243,29 @@ async def _create_pdf_job(request: Request):
         return _error(413, f"PDFs are limited to {settings.max_pdf_mb} MB.")
     if not data.startswith(b"%PDF-"):
         return _error(415, "This file does not look like a PDF.")
-    # PDF ingestion is milestone 11; validation is in place so the route contract is stable.
-    return _error(501, "PDF uploads are not supported yet. Please use an arXiv ID or link for now.")
+    if mode == "full":
+        refused = _passcode_error(settings, form.get("passcode"))
+        if refused:
+            return refused
+    refused = _admit(request, settings)
+    if refused:
+        return refused
+    try:
+        result = await ingest_pdf(data)
+    except IngestError as exc:
+        return _error(422, str(exc), code="ingest_failed")
+    if mode == "full":
+        refused = _too_many_references(settings, len(result.paper.references))
+        if refused:
+            return refused
+    paper = result.paper
+    paper.id = "pdf:" + hashlib.sha256(data).hexdigest()[:16]
+    if not paper.title:
+        paper.title = Path(getattr(upload, "filename", "") or "Uploaded paper").stem
+    # The PDF itself is not stored; only the parsed text needed for the report.
+    job = get_runner().create_job(None, mode, ingest=result, source="pdf")
+    request.app.state.job_limiter.record(client_ip(request, settings))
+    return {"id": job.id, "job": _job_view(job), "cached": False}
 
 
 @app.post("/api/jobs/{job_id}/expand")

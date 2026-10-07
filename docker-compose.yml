@@ -1,0 +1,22 @@
+# docker compose up --build            -> app on http://localhost:8000
+# docker compose --profile grobid up   -> also starts GROBID for better PDF parsing
+#                                         (then set GROBID_URL=http://grobid:8070 in .env)
+services:
+  app:
+    build: .
+    env_file: .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - citation-cache:/app/.cache
+    restart: unless-stopped
+
+  grobid:
+    image: lfoppiano/grobid:0.8.1
+    profiles: ["grobid"]
+    ports:
+      - "8070:8070"
+    restart: unless-stopped
+
+volumes:
+  citation-cache:
