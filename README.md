@@ -311,3 +311,7 @@ Calibration was done on this paper, so these are development-set numbers; a seco
 - **Scanned PDFs.** Image-only PDFs are refused today; Nemotron Nano Omni (`MODEL_VISION`) could read the pages.
 - **Coverage.** Only open-access text is read; paywalled publishers are out of scope, and verdicts on abstract-only references are limited accordingly (the coverage line says how many).
 - **Not built for the hackathon:** user accounts, multi-paper batch checks, persistent rate limits across restarts, and multi-worker deployment (jobs and live events live in one process).
+
+## License
+
+The code is released under the [MIT License](LICENSE). The bundled demo data in `demo/` contains the text of a third-party paper (Wei et al., *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models*, arXiv:2201.11903, with deliberately planted errors) and excerpts of the works it cites. These remain under their authors' own licences and are not covered by the MIT License.
