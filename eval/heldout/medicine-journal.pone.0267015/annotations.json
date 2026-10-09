@@ -1,0 +1,35 @@
+{
+  "paper": "medicine-journal.pone.0267015",
+  "annotations": [
+    {
+      "sentence_id": "s1",
+      "reference_key": "r3",
+      "verdict": "false_alarm",
+      "note": "The source states the stillbirth target as a global average of 8 per 1000 total births; 'less than 8' is a wording nuance of the same SDG/ENAP target, cited as part of a group [1-3]."
+    },
+    {
+      "sentence_id": "s2",
+      "reference_key": "r4",
+      "verdict": "false_alarm",
+      "note": "Caused by the checker: the PDF splits the reference's DOI across a line break ('journal.pmed. 1002151'), the truncated DOI resolved to an unrelated tuberculosis review, and that wrong paper was flagged as off-topic. The real reference (Leslie et al., PLoS Med 2016) was never checked."
+    },
+    {
+      "sentence_id": "s18",
+      "reference_key": "r24",
+      "verdict": "debatable",
+      "note": "64.1% and 24.7% do not appear in the cited Nepal study's text, but the checker's text of cited papers omits table contents, and the proportions may be in a table or derived from one."
+    },
+    {
+      "sentence_id": "s24",
+      "reference_key": "r31",
+      "verdict": "debatable",
+      "note": "The cited Ethiopian study says care quality 'might differ' with equipment, workload and provider commitment; the sentence's 'common occurrences in low income countries' is the citing authors' generalisation, cited jointly with [30]."
+    },
+    {
+      "sentence_id": "s25",
+      "reference_key": "r17",
+      "verdict": "debatable",
+      "note": "Supply-chain strengthening is supported; the cited paper (northern Uganda scale-up) describes renovating specific operating theatres, not upgrading public and private facilities for clean and safe delivery in the region."
+    }
+  ]
+}

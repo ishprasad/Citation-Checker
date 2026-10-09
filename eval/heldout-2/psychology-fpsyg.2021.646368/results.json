@@ -1,0 +1,412 @@
+{
+  "slug": "psychology-fpsyg.2021.646368",
+  "field": "Psychology",
+  "title": "Association of Sleep Duration and Screen Time With Anxiety of Pregnant Women During the COVID-19 Pandemic",
+  "job_id": "0c12f7ef39fd",
+  "scored_at": "2026-10-09T17:00:12+00:00",
+  "planted": 7,
+  "checked": 7,
+  "caught": 7,
+  "recall": 1.0,
+  "label_accuracy": 0.8571428571428571,
+  "expected_mode_rate": 0.8571428571428571,
+  "untouched_verdicts": 41,
+  "other_flags": 9,
+  "other_flags_preexisting": 8,
+  "precision": 0.4375,
+  "precision_excluding_preexisting": 0.875,
+  "by_mutation": {
+    "scope_inflation": {
+      "planted": 5,
+      "caught": 5
+    },
+    "citation_swap": {
+      "planted": 1,
+      "caught": 1
+    },
+    "number_change": {
+      "planted": 1,
+      "caught": 1
+    }
+  },
+  "flagged_citations": 9,
+  "review": {
+    "genuine": 5,
+    "false_alarm": 2,
+    "debatable": 2,
+    "unreviewed": 0
+  },
+  "review_details": {
+    "genuine": [
+      {
+        "sentence_id": "s14",
+        "reference_key": "r32",
+        "note": "The anxiety cut-off of 49/50 belongs to the Zung Self-Rating Anxiety Scale; Wu et al. used the EPDS (0-30, anxiety subscale 0-9) and give no such cut-off."
+      },
+      {
+        "sentence_id": "s18",
+        "reference_key": "r32",
+        "note": "Cited for the screen-time grouping (8 h or more as the highest group), but Wu et al. never mention screen time."
+      },
+      {
+        "sentence_id": "s19",
+        "reference_key": "r13",
+        "note": "Kang et al. report clusters of mental health disturbance among Wuhan medical and nursing staff, not an anxiety prevalence of 29.4%; the figure does not appear anywhere in the full text, tables included."
+      },
+      {
+        "sentence_id": "s20",
+        "reference_key": "r3",
+        "note": "Berthelot et al. report 10.9% of the pandemic cohort with clinically significant anxiety and depression symptoms; the 12.6% anxiety prevalence attributed to them does not appear in the text, tables included."
+      },
+      {
+        "sentence_id": "s22",
+        "reference_key": "r19",
+        "note": "Same as s4: Liu et al. report 24.5% in Wuhan, not 20.5% (Chongqing 10.4% is right)."
+      }
+    ],
+    "false_alarm": [
+      {
+        "sentence_id": "s31",
+        "reference_key": "r30",
+        "note": "The sentence offers the citing authors' own 'plausible explanation'; the review supports its premise that health misinformation on social media induces fear and anxiety."
+      },
+      {
+        "sentence_id": "s32",
+        "reference_key": "r31",
+        "note": "Joint citation with Cao et al. (adolescents); Wu et al. studied Chinese college freshmen aged about 18 and found screen time over 2 h/day associated with anxiety, which fits the sentence."
+      }
+    ],
+    "debatable": [
+      {
+        "sentence_id": "s6",
+        "reference_key": "r34",
+        "note": "Yonkers et al. report PTSD in about 8% of pregnant women and discuss co-occurring depression; 'mental health problems are common' is a fair but broad gloss of a PTSD-specific paper."
+      },
+      {
+        "sentence_id": "s8",
+        "reference_key": "r7",
+        "note": "Corbett et al. report over half of pregnant women with significant health anxiety and major behaviour changes after social-distancing instructions, early in the pandemic; the sentence turns this into lifestyle changes from long-term lockdown causing the anxiety, a causal link the source does not draw."
+      }
+    ],
+    "unreviewed": []
+  },
+  "precision_reviewed": 0.8571428571428571,
+  "summary_line": "Caught 7 of 7 planted errors · 2 false alarms · 5 real citation problems found in the original paper",
+  "details": [
+    {
+      "id": "p1",
+      "sentence_id": "s2",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"in every population and setting\" before the citation",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [
+        "scope_inflation"
+      ],
+      "expected_mode_found": true,
+      "escalated": false
+    },
+    {
+      "id": "p2",
+      "sentence_id": "s5",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"without exception\" before the citation",
+      "checked": true,
+      "caught": true,
+      "label_correct": false,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": true
+    },
+    {
+      "id": "p3",
+      "sentence_id": "s9",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Berthelot et al., 2020) with (Zhang et al., 2020) (\"Changes in contact patterns shape the dynamics of the COVID-19 outbreak in China\") (similarity 0.37 vs 0.64 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p4",
+      "sentence_id": "s11",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"universally, in all cases\" before the citation",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [
+        "hypothesis_as_finding",
+        "scope_inflation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p5",
+      "sentence_id": "s25",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"without exception\" before the citation",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [
+        "scope_inflation"
+      ],
+      "expected_mode_found": true,
+      "escalated": false
+    },
+    {
+      "id": "p6",
+      "sentence_id": "s27",
+      "mutation": "number_change",
+      "description": "Changed \"34%\" to \"54%\"",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [
+        "number_drift",
+        "scope_inflation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p7",
+      "sentence_id": "s29",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"in every population and setting\" before the citation",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [
+        "scope_inflation"
+      ],
+      "expected_mode_found": true,
+      "escalated": false
+    }
+  ],
+  "verdicts": 52,
+  "escalation": {
+    "verdicts": 52,
+    "escalated": 14,
+    "label_changed": 1,
+    "transitions": {
+      "supported->overstated": 1
+    }
+  },
+  "coverage": {
+    "total": 36,
+    "full": 19,
+    "abstract_only": 8,
+    "unavailable": 9,
+    "retracted": 0,
+    "line": "Full text found for 19 of 36 references · abstract only for 8 · unavailable for 9."
+  },
+  "usage": {
+    "per_model": [
+      {
+        "model": "Qwen/Qwen3-Embedding-8B",
+        "role": "embed",
+        "calls": 5,
+        "cached_calls": 0,
+        "prompt_tokens": 254,
+        "completion_tokens": 0,
+        "estimated_cost_usd": 3e-06
+      },
+      {
+        "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+        "role": "escalate",
+        "calls": 15,
+        "cached_calls": 8,
+        "prompt_tokens": 151239,
+        "completion_tokens": 29896,
+        "estimated_cost_usd": 0.240927
+      },
+      {
+        "model": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+        "role": "extract",
+        "calls": 34,
+        "cached_calls": 19,
+        "prompt_tokens": 63694,
+        "completion_tokens": 3781,
+        "estimated_cost_usd": 0.004729
+      },
+      {
+        "model": "nvidia/nemotron-3-super-120b-a12b",
+        "role": "judge",
+        "calls": 40,
+        "cached_calls": 18,
+        "prompt_tokens": 208853,
+        "completion_tokens": 51684,
+        "estimated_cost_usd": 0.109172
+      }
+    ],
+    "total_prompt_tokens": 424040,
+    "total_completion_tokens": 85361,
+    "total_estimated_cost_usd": 0.354831
+  },
+  "baseline_cost_usd": 0.314,
+  "old_pipeline": {
+    "commit": "da5f9e3",
+    "job_id": "2a3fab4f2d2f",
+    "cost_usd": 0.292186,
+    "planted": 7,
+    "checked": 7,
+    "caught": 7,
+    "recall": 1.0,
+    "label_accuracy": 0.8571428571428571,
+    "expected_mode_rate": 0.8571428571428571,
+    "untouched_verdicts": 40,
+    "other_flags": 14,
+    "other_flags_preexisting": 12,
+    "precision": 0.3333333333333333,
+    "precision_excluding_preexisting": 0.7777777777777778,
+    "by_mutation": {
+      "scope_inflation": {
+        "planted": 5,
+        "caught": 5
+      },
+      "citation_swap": {
+        "planted": 1,
+        "caught": 1
+      },
+      "number_change": {
+        "planted": 1,
+        "caught": 1
+      }
+    },
+    "flagged_citations": 14,
+    "review": {
+      "genuine": 7,
+      "false_alarm": 2,
+      "debatable": 5,
+      "unreviewed": 0
+    },
+    "review_details": {
+      "genuine": [
+        {
+          "sentence_id": "s12",
+          "reference_key": "r6",
+          "note": "A review of commercial video games and cognitive functions is cited for sedentary lifestyle causing adverse health outcomes and poor sleep; it covers neither. Probably the wrong reference (flagged as off-topic by the old pipeline only)."
+        },
+        {
+          "sentence_id": "s14",
+          "reference_key": "r32",
+          "note": "The anxiety cut-off of 49/50 belongs to the Zung Self-Rating Anxiety Scale; Wu et al. used the EPDS (0-30, anxiety subscale 0-9) and give no such cut-off."
+        },
+        {
+          "sentence_id": "s18",
+          "reference_key": "r32",
+          "note": "Cited for the screen-time grouping (8 h or more as the highest group), but Wu et al. never mention screen time."
+        },
+        {
+          "sentence_id": "s19",
+          "reference_key": "r13",
+          "note": "Kang et al. report clusters of mental health disturbance among Wuhan medical and nursing staff, not an anxiety prevalence of 29.4%; the figure does not appear anywhere in the full text, tables included."
+        },
+        {
+          "sentence_id": "s20",
+          "reference_key": "r3",
+          "note": "Berthelot et al. report 10.9% of the pandemic cohort with clinically significant anxiety and depression symptoms; the 12.6% anxiety prevalence attributed to them does not appear in the text, tables included."
+        },
+        {
+          "sentence_id": "s22",
+          "reference_key": "r19",
+          "note": "Same as s4: Liu et al. report 24.5% in Wuhan, not 20.5% (Chongqing 10.4% is right)."
+        },
+        {
+          "sentence_id": "s4",
+          "reference_key": "r19",
+          "note": "Liu et al. report 24.5% of pregnant women in Wuhan felt anxious (vs 10.4% in Chongqing); the citing paper says 20.5%. Flagged only by the old pipeline; the current judge accepted 20.5 as 'at least about'."
+        }
+      ],
+      "false_alarm": [
+        {
+          "sentence_id": "s31",
+          "reference_key": "r30",
+          "note": "The sentence offers the citing authors' own 'plausible explanation'; the review supports its premise that health misinformation on social media induces fear and anxiety."
+        },
+        {
+          "sentence_id": "s32",
+          "reference_key": "r31",
+          "note": "Joint citation with Cao et al. (adolescents); Wu et al. studied Chinese college freshmen aged about 18 and found screen time over 2 h/day associated with anxiety, which fits the sentence."
+        }
+      ],
+      "debatable": [
+        {
+          "sentence_id": "s10",
+          "reference_key": "r32",
+          "note": "Wu et al. list underweight, full-time employment and middle income among risk factors; 'economic burden' is a loose rendering of middle income."
+        },
+        {
+          "sentence_id": "s16",
+          "reference_key": "r4",
+          "note": "Cai et al. link sleep under 6 h to gestational diabetes, one adverse perinatal outcome; 'adverse perinatal outcomes' generalises a little."
+        },
+        {
+          "sentence_id": "s28",
+          "reference_key": "r16",
+          "note": "Leone et al. compare sleep before and during the lockdown and report associations; 'COVID-19 induces' is causal shorthand for lockdown-associated changes."
+        },
+        {
+          "sentence_id": "s6",
+          "reference_key": "r34",
+          "note": "Yonkers et al. report PTSD in about 8% of pregnant women and discuss co-occurring depression; 'mental health problems are common' is a fair but broad gloss of a PTSD-specific paper."
+        },
+        {
+          "sentence_id": "s8",
+          "reference_key": "r7",
+          "note": "Corbett et al. report over half of pregnant women with significant health anxiety and major behaviour changes after social-distancing instructions, early in the pandemic; the sentence turns this into lifestyle changes from long-term lockdown causing the anxiety, a causal link the source does not draw."
+        }
+      ],
+      "unreviewed": []
+    },
+    "precision_reviewed": 0.875,
+    "caught_ids": [
+      "p1",
+      "p2",
+      "p3",
+      "p4",
+      "p5",
+      "p6",
+      "p7"
+    ]
+  },
+  "caught_ids": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p6",
+    "p7"
+  ]
+}

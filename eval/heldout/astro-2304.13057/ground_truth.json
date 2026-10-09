@@ -1,0 +1,335 @@
+{
+  "arxiv_id": "2304.13057v1",
+  "title": "On the evolution of the size of Lyman alpha halos across cosmic time: no change in the circumgalactic gas distribution when probed by line emission",
+  "field": "Physics: astronomy and astrophysics",
+  "source": "10.1093/mnras/stad1264",
+  "planted": [
+    {
+      "id": "p1",
+      "sentence_id": "s4",
+      "reference_keys": [
+        "leclercq2017"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [KCWI, 51] with [39] (\"The MUSE Hubble Ultra Deep Field Survey. VIII. Extended Lyman-α haloes around high-z star-forming galaxies\") (similarity 0.24 vs 0.83 for the original)",
+      "original": "More recent results using integral field spectrographs (IFSs), such as the Multi-Unit Spectroscopic Explorer [MUSE, 2] on the Very Large Telescope (VLT) and the Keck Cosmic Web Imager [KCWI, 51] on Keck, have clearly detected Lyα halo emission around high-z galaxies.",
+      "mutated": "More recent results using integral field spectrographs (IFSs), such as the Multi-Unit Spectroscopic Explorer [MUSE, 2] on the Very Large Telescope (VLT) and the Keck Cosmic Web Imager [39] on Keck, have clearly detected Lyα halo emission around high-z galaxies.",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p2",
+      "sentence_id": "s5",
+      "reference_keys": [
+        "erb2018a"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"without exception\" before the citation",
+      "original": "Using sensitive IFSs allows the detection of individual halos [see e.g. 16].",
+      "mutated": "Using sensitive IFSs allows the detection of individual halos without exception [see e.g. 16].",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p3",
+      "sentence_id": "s10",
+      "reference_keys": [
+        "morrissey2018"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [54] with [51] (\"The Keck Cosmic Web Imager Integral Field Spectrograph\") (similarity 0.40 vs 0.83 for the original)",
+      "original": "[54] present the median-stacked Lyα surface brightness profiles of 968 spectroscopically selected Lyα emitting galaxies (LAEs) at redshifts 1.9 < z < 3.5 in the early data of the Hobby-Eberly Telescope Dark Energy Experiment (HETDEX).",
+      "mutated": "[51] present the median-stacked Lyα surface brightness profiles of 968 spectroscopically selected Lyα emitting galaxies (LAEs) at redshifts 1.9 < z < 3.5 in the early data of the Hobby-Eberly Telescope Dark Energy Experiment (HETDEX).",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p4",
+      "sentence_id": "s15",
+      "reference_keys": [
+        "rasekh2021"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"universally, in all cases\" before the citation",
+      "original": "The centroids of Lyα emission and its position angle also significantly differ from the stellar UV emission [60].",
+      "mutated": "The centroids of Lyα emission and its position angle also significantly differ from the stellar UV emission universally, in all cases [60].",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p5",
+      "sentence_id": "s29",
+      "reference_keys": [
+        "yang2017b"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [19] with [66] (\"Lyα and UV Sizes of Green Pea Galaxies\") (similarity 0.20 vs 0.44 for the original)",
+      "original": "We therefore use the correction factor given in [19] to correct for this: where r = pixfrac / scale and the pixfrac is set to 1 in this case.",
+      "mutated": "We therefore use the correction factor given in [66] to correct for this: where r = pixfrac / scale and the pixfrac is set to 1 in this case.",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p6",
+      "sentence_id": "s33",
+      "reference_keys": [
+        "pillepich2019"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [20] with [58] (\"First results from the TNG50 simulation: the evolution of stellar and gaseous discs across cosmic time\") (similarity 0.27 vs 0.50 for the original)",
+      "original": "In order to get a line-map of Hα emission we need to subtract the stellar continuum contribution from the narrowband observations which we do by using the following expression [20]: where Fb and Wb are the flux and width of the broadband – F814W, and Fn and Wn are the flux and width of the narrowband.",
+      "mutated": "In order to get a line-map of Hα emission we need to subtract the stellar continuum contribution from the narrowband observations which we do by using the following expression [58]: where Fb and Wb are the flux and width of the broadband – F814W, and Fn and Wn are the flux and width of the narrowband.",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p7",
+      "sentence_id": "s36",
+      "reference_keys": [
+        "kusakabe2022"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [41] with [37] (\"The MUSE eXtremely Deep Field: Individual detections of Lyα haloes around rest-frame UV-selected galaxies at z~2.9-4.4\") (similarity 0.26 vs 0.86 for the original)",
+      "original": "The stellar population spectra are taken from the spectral synthesis code Starburst99 [41] and are matched to the nebular metallicity of the galaxy, as measured by the O3N2 metallicity indicator [44, see Table §], as closely as possible without interpolating between models.",
+      "mutated": "The stellar population spectra are taken from the spectral synthesis code Starburst99 [37] and are matched to the nebular metallicity of the galaxy, as measured by the O3N2 metallicity indicator [44, see Table §], as closely as possible without interpolating between models.",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p8",
+      "sentence_id": "s38",
+      "reference_keys": [
+        "tumlinson2013"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [42] with [64] (\"THE COS-HALOS SURVEY: RATIONALE, DESIGN, AND A CENSUS OF CIRCUMGALACTIC NEUTRAL HYDROGEN\") (similarity 0.29 vs 0.80 for the original)",
+      "original": "We correct our linefluxes for dust absorption using the PyNeb [42] reddening correction module.",
+      "mutated": "We correct our linefluxes for dust absorption using the PyNeb [64] reddening correction module.",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p9",
+      "sentence_id": "s48",
+      "reference_keys": [
+        "laursen2013c"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"in every population and setting\" before the citation",
+      "original": "However, this scenario requires very specific gas and dust conditions to work—specifically requiring the medium to be very static relative to the Lyα radiation, since a velocity offset between the clumps and the Lyα photons would allow them to penetrate into the dense dusty clumps and be efficiently extincted [for details see 38].",
+      "mutated": "However, this scenario requires very specific gas and dust conditions to work—specifically requiring the medium to be very static relative to the Lyα radiation, since a velocity offset between the clumps and the Lyα photons would allow them to penetrate into the dense dusty clumps and be efficiently extincted in every population and setting [for details see 38].",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p10",
+      "sentence_id": "s67",
+      "reference_keys": [
+        "fruchter2002"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [8] with [19] (\"Drizzle: A Method for the Linear Reconstruction of Undersampled Images\") (similarity 0.32 vs 0.68 for the original)",
+      "original": "[8] examined the relative importance of different source regions for Lyα emission in synthetic galaxies drawn from the TNG50 [52, 58] simulation of IllustrisTNG galaxies.",
+      "mutated": "[19] examined the relative importance of different source regions for Lyα emission in synthetic galaxies drawn from the TNG50 [52, 58] simulation of IllustrisTNG galaxies.",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    }
+  ],
+  "baseline_flags": [
+    [
+      "s12",
+      "hayes2009b",
+      "overstated"
+    ],
+    [
+      "s14",
+      "bridge2017a",
+      "not_found"
+    ],
+    [
+      "s16",
+      "hayes2013",
+      "overstated"
+    ],
+    [
+      "s16",
+      "rasekh2021",
+      "overstated"
+    ],
+    [
+      "s18",
+      "leclercq2017",
+      "overstated"
+    ],
+    [
+      "s19",
+      "wisotzki2016",
+      "contradicted"
+    ],
+    [
+      "s20",
+      "borthakur2015",
+      "overstated"
+    ],
+    [
+      "s20",
+      "heckman2017",
+      "overstated"
+    ],
+    [
+      "s20",
+      "tumlinson2013",
+      "overstated"
+    ],
+    [
+      "s21",
+      "rasekh2021",
+      "not_found"
+    ],
+    [
+      "s22",
+      "leclercq2017",
+      "overstated"
+    ],
+    [
+      "s26",
+      "leclercq2017",
+      "not_found"
+    ],
+    [
+      "s26",
+      "steidel2011",
+      "not_found"
+    ],
+    [
+      "s3",
+      "steidel2011",
+      "contradicted"
+    ],
+    [
+      "s44",
+      "duval2016a",
+      "not_found"
+    ],
+    [
+      "s44",
+      "rasekh2021",
+      "not_found"
+    ],
+    [
+      "s50",
+      "leclercq2017",
+      "overstated"
+    ],
+    [
+      "s51",
+      "leclercq2017",
+      "not_found"
+    ],
+    [
+      "s56",
+      "izotov2016b",
+      "contradicted"
+    ],
+    [
+      "s57",
+      "leitherer1999a",
+      "overstated"
+    ],
+    [
+      "s6",
+      "leclercq2017",
+      "overstated"
+    ],
+    [
+      "s6",
+      "leclercq2020",
+      "overstated"
+    ],
+    [
+      "s6",
+      "wisotzki2016",
+      "overstated"
+    ],
+    [
+      "s61",
+      "leclercq2017",
+      "not_found"
+    ],
+    [
+      "s64",
+      "flury2022",
+      "not_found"
+    ],
+    [
+      "s64",
+      "izotov2018c",
+      "not_found"
+    ],
+    [
+      "s71",
+      "hayes2014",
+      "overstated"
+    ],
+    [
+      "s8",
+      "feldmeier2013",
+      "contradicted"
+    ],
+    [
+      "s8",
+      "momose2014",
+      "not_found"
+    ],
+    [
+      "s8",
+      "momose2016",
+      "not_found"
+    ],
+    [
+      "s9",
+      "chen2021",
+      "not_found"
+    ]
+  ]
+}

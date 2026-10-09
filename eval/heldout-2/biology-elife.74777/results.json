@@ -1,0 +1,430 @@
+{
+  "slug": "biology-elife.74777",
+  "field": "Biology / neuroscience",
+  "title": "Diverse ancestry whole-genome sequencing association study identifies TBX5 and PTK7 as susceptibility genes for posterior urethral valves",
+  "job_id": "4a1681485aed",
+  "scored_at": "2026-10-09T17:00:12+00:00",
+  "planted": 10,
+  "checked": 10,
+  "caught": 10,
+  "recall": 1.0,
+  "label_accuracy": 1.0,
+  "expected_mode_rate": 0.8,
+  "untouched_verdicts": 154,
+  "other_flags": 10,
+  "other_flags_preexisting": 10,
+  "precision": 0.5,
+  "precision_excluding_preexisting": 1.0,
+  "by_mutation": {
+    "citation_swap": {
+      "planted": 9,
+      "caught": 9
+    },
+    "number_change": {
+      "planted": 1,
+      "caught": 1
+    }
+  },
+  "flagged_citations": 10,
+  "review": {
+    "genuine": 0,
+    "false_alarm": 10,
+    "debatable": 0,
+    "unreviewed": 0
+  },
+  "review_details": {
+    "genuine": [],
+    "false_alarm": [
+      {
+        "sentence_id": "s12",
+        "reference_key": "r26",
+        "note": "Joint citation [26, 27]: this WGS study shows improved power and precision for rare variants; the multiple-ancestry part is carried by [27]."
+      },
+      {
+        "sentence_id": "s12",
+        "reference_key": "r27",
+        "note": "The review recommends whole-genome sequencing for diverse samples and notes that cross-ancestry analysis improves fine-mapping resolution, which supports the sentence (hedged with 'may permit')."
+      },
+      {
+        "sentence_id": "s17",
+        "reference_key": "r32",
+        "note": "Data-source citation for Hi-C in H1-derived mesendoderm cells, which this study generated; the BMP4 detail describes the differentiation protocol and does not change the attribution."
+      },
+      {
+        "sentence_id": "s19",
+        "reference_key": "r34",
+        "note": "Data-source citation: the Roadmap Epigenomics Consortium provides the chromatin-state annotations the authors used (the 25-state model on imputed marks is part of the Roadmap resource); it need not mention the variant."
+      },
+      {
+        "sentence_id": "s23",
+        "reference_key": "r38",
+        "note": "Only the abstract was available: low-coverage WGS detects many more CNVs than arrays; the high-coverage and balanced-rearrangement parts are carried by the co-cited [39]."
+      },
+      {
+        "sentence_id": "s27",
+        "reference_key": "r52",
+        "note": "The marker [52] closes the first clause (mixed-ancestry analyses boost power), which the cited work states; the clause on the collapsing approach that follows the marker is the citing authors' own."
+      },
+      {
+        "sentence_id": "s31",
+        "reference_key": "r58",
+        "note": "Colon carcinoma kinase-4 (CCK-4) is PTK7's original name, so this is the original report of PTK7 in colon cancer; the off-topic tag (current pipeline, abstract only) is wrong."
+      },
+      {
+        "sentence_id": "s37",
+        "reference_key": "r76",
+        "note": "The 8p23 inversion is associated with lupus in this study, an example of SVs associated with autoimmune disease, as the sentence says (with [75])."
+      },
+      {
+        "sentence_id": "s4",
+        "reference_key": "r4",
+        "note": "Only the abstract was available: 22.8% of PUV patients progressed to ESRD and none after age 34; 'a quarter ... before the age of 30' is a fair rounding, co-cited with [3]."
+      },
+      {
+        "sentence_id": "s82",
+        "reference_key": "r24",
+        "note": "The sample-size and allele-frequency criteria describe the NCBI curated SV dataset (nstd186), which includes gnomAD; they are not claims about gnomAD (the number-drift tag compares unrelated numbers)."
+      }
+    ],
+    "debatable": [],
+    "unreviewed": []
+  },
+  "precision_reviewed": 0.5,
+  "summary_line": "Caught 10 of 10 planted errors · 10 false alarms",
+  "details": [
+    {
+      "id": "p1",
+      "sentence_id": "s6",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [11] with [91] (\"qqman: an R package for visualizing GWAS results using Q-Q and manhattan plots\") (similarity 0.23 vs 0.67 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p2",
+      "sentence_id": "s20",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [30] with [71] (\"Human inversions and their functional consequences\") (similarity 0.23 vs 0.86 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p3",
+      "sentence_id": "s21",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [35] with [59] (\"Ptk7 and Mcc, Unfancied Components in Non-Canonical Wnt Signaling and Cancer\") (similarity 0.20 vs 0.80 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p4",
+      "sentence_id": "s22",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [37] with [11] (\"Rare Variants in BNC2 Are Implicated in Autosomal-Dominant Congenital Lower Urinary-Tract Obstruction\") (similarity 0.32 vs 0.83 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": true
+    },
+    {
+      "id": "p5",
+      "sentence_id": "s53",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [93] with [13] (\"LRIG2 Mutations Cause Urofacial Syndrome\") (similarity 0.24 vs 0.86 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p6",
+      "sentence_id": "s55",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [25] with [15] (\"Loss-of-function variants in myocardin cause congenital megabladder in humans and mice\") (similarity 0.23 vs 0.60 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p7",
+      "sentence_id": "s68",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [30] with [61] (\"Variants identified in PTK7 associated with neural tube defects\") (similarity 0.22 vs 0.82 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p8",
+      "sentence_id": "s69",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [35] with [57] (\"PTK7 Faces the Wnt in Development and Disease\") (similarity 0.22 vs 0.80 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p9",
+      "sentence_id": "s77",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [107] with [62] (\"ptk7 mutant zebrafish models of congenital and idiopathic scoliosis implicate dysregulated Wnt signalling in disease\") (similarity 0.27 vs 0.77 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p10",
+      "sentence_id": "s83",
+      "mutation": "number_change",
+      "description": "Changed \"1000\" to \"1600\"",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": true
+    }
+  ],
+  "verdicts": 178,
+  "escalation": {
+    "verdicts": 178,
+    "escalated": 30,
+    "label_changed": 10,
+    "transitions": {
+      "unverifiable->supported": 5,
+      "not_found->supported": 2,
+      "unverifiable->not_found": 2,
+      "unverifiable->overstated": 1
+    }
+  },
+  "coverage": {
+    "total": 107,
+    "full": 56,
+    "abstract_only": 24,
+    "unavailable": 27,
+    "retracted": 0,
+    "line": "Full text found for 56 of 107 references · abstract only for 24 · unavailable for 27."
+  },
+  "usage": {
+    "per_model": [
+      {
+        "model": "Qwen/Qwen3-Embedding-8B",
+        "role": "embed",
+        "calls": 3,
+        "cached_calls": 0,
+        "prompt_tokens": 188,
+        "completion_tokens": 0,
+        "estimated_cost_usd": 2e-06
+      },
+      {
+        "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+        "role": "escalate",
+        "calls": 31,
+        "cached_calls": 19,
+        "prompt_tokens": 457751,
+        "completion_tokens": 87879,
+        "estimated_cost_usd": 0.721388
+      },
+      {
+        "model": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+        "role": "extract",
+        "calls": 84,
+        "cached_calls": 80,
+        "prompt_tokens": 158562,
+        "completion_tokens": 11391,
+        "estimated_cost_usd": 0.012248
+      },
+      {
+        "model": "nvidia/nemotron-3-super-120b-a12b",
+        "role": "judge",
+        "calls": 136,
+        "cached_calls": 117,
+        "prompt_tokens": 709758,
+        "completion_tokens": 189854,
+        "estimated_cost_usd": 0.383796
+      }
+    ],
+    "total_prompt_tokens": 1326259,
+    "total_completion_tokens": 289124,
+    "total_estimated_cost_usd": 1.117434
+  },
+  "baseline_cost_usd": 0.972,
+  "old_pipeline": {
+    "commit": "da5f9e3",
+    "job_id": "1d0f58f6c46e",
+    "cost_usd": 0.957838,
+    "planted": 10,
+    "checked": 10,
+    "caught": 9,
+    "recall": 0.9,
+    "label_accuracy": 0.3,
+    "expected_mode_rate": 0.8,
+    "untouched_verdicts": 158,
+    "other_flags": 9,
+    "other_flags_preexisting": 4,
+    "precision": 0.5,
+    "precision_excluding_preexisting": 0.6428571428571429,
+    "by_mutation": {
+      "citation_swap": {
+        "planted": 9,
+        "caught": 9
+      },
+      "number_change": {
+        "planted": 1,
+        "caught": 0
+      }
+    },
+    "flagged_citations": 8,
+    "review": {
+      "genuine": 0,
+      "false_alarm": 8,
+      "debatable": 0,
+      "unreviewed": 0
+    },
+    "review_details": {
+      "genuine": [],
+      "false_alarm": [
+        {
+          "sentence_id": "s12",
+          "reference_key": "r27",
+          "note": "The review recommends whole-genome sequencing for diverse samples and notes that cross-ancestry analysis improves fine-mapping resolution, which supports the sentence (hedged with 'may permit')."
+        },
+        {
+          "sentence_id": "s15",
+          "reference_key": "r30",
+          "note": "Resource citation: JASPAR is the database of TF binding profiles the authors consulted; it need not mention their variant."
+        },
+        {
+          "sentence_id": "s19",
+          "reference_key": "r34",
+          "note": "Data-source citation: the Roadmap Epigenomics Consortium provides the chromatin-state annotations the authors used (the 25-state model on imputed marks is part of the Roadmap resource); it need not mention the variant."
+        },
+        {
+          "sentence_id": "s23",
+          "reference_key": "r39",
+          "note": "The cited work states that genome sequencing gives higher resolution for small CNVs and shows a balanced translocation detected from reads, supporting the sentence."
+        },
+        {
+          "sentence_id": "s27",
+          "reference_key": "r52",
+          "note": "The marker [52] closes the first clause (mixed-ancestry analyses boost power), which the cited work states; the clause on the collapsing approach that follows the marker is the citing authors' own."
+        },
+        {
+          "sentence_id": "s35",
+          "reference_key": "r22",
+          "note": "Verbitsky et al.'s table gives 46 of 141 PUV cases (32.6%) with rare exonic CNVs of 100 kb or more, the figure quoted; the current pipeline read the table, the old one could not and compared with a different statistic."
+        },
+        {
+          "sentence_id": "s5",
+          "reference_key": "r6",
+          "note": "Only the abstract of this embryology review was available; the mesonephric-duct and urogenital-membrane theories it alludes to ('abundant theories') are the classic ones the sentence names. The old pipeline's overstatement reading rests on the abstract alone."
+        },
+        {
+          "sentence_id": "s70",
+          "reference_key": "r36",
+          "note": "Data-source citation: the GWAS Catalog study GCST002890 is this prostate cancer GWAS; the paper need not mention its catalogue accession."
+        }
+      ],
+      "debatable": [],
+      "unreviewed": []
+    },
+    "precision_reviewed": 0.5294117647058824,
+    "caught_ids": [
+      "p1",
+      "p2",
+      "p3",
+      "p4",
+      "p5",
+      "p6",
+      "p7",
+      "p8",
+      "p9"
+    ]
+  },
+  "caught_ids": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p6",
+    "p7",
+    "p8",
+    "p9",
+    "p10"
+  ]
+}

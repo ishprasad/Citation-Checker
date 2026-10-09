@@ -1,0 +1,41 @@
+{
+  "paper": "ml-2208.01063",
+  "annotations": [
+    {
+      "sentence_id": "s2",
+      "reference_key": "nielsen_chuang",
+      "verdict": "false_alarm",
+      "note": "Identification citation: quantum phase estimation cited to the standard textbook, which presents the algorithm. Requiring the words 'Hamiltonian diagonalization' is too literal."
+    },
+    {
+      "sentence_id": "s7",
+      "reference_key": "Neuhauser1994",
+      "verdict": "false_alarm",
+      "note": "Filter diagonalization (small Hamiltonian matrix built from real-time-propagated states) is exactly the classical ancestor of solving generalized eigenproblems from real-time evolution; cited in a group of four. 'Possibly the wrong reference' is wrong."
+    },
+    {
+      "sentence_id": "s15",
+      "reference_key": "LCU",
+      "verdict": "debatable",
+      "note": "The cited work analyses the success and failure probability of LCU constructions; the 'flagged state' and 'target amplitude' framing is the citing paper's own application."
+    },
+    {
+      "sentence_id": "s17",
+      "reference_key": "Higham1998",
+      "verdict": "false_alarm",
+      "note": "Cited for why ill-conditioned generalized eigenproblems are numerically unstable, which is the cited work's subject (condition numbers and backward error of GEPs); the truncation rule itself is the citing authors' method."
+    },
+    {
+      "sentence_id": "s19",
+      "reference_key": "orthogonalpoly",
+      "verdict": "false_alarm",
+      "note": "Caused by the checker: the reference is a 2020 Springer workshop volume ('Orthogonal Polynomials: 2nd AIMS-Volkswagen Stiftung Workshop'), but the resolver matched the generic title to a different survey called 'Orthogonal Polynomials', which was then checked."
+    },
+    {
+      "sentence_id": "s30",
+      "reference_key": "LCU",
+      "verdict": "false_alarm",
+      "note": "Childs and Wiebe do give the success probability of LCU; 'where Ex specifies the center of spectral decay' is the citing paper's own notation for its application, not a claim about the source."
+    }
+  ]
+}

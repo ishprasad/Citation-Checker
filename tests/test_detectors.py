@@ -53,6 +53,11 @@ def make(label="overstated", quote=None, context=None, verified=True, **signals)
         ("6.7B", "6B", False),
         ("28.4", "28.41", True),
         ("12%", "12x", None),  # not comparable
+        ("18", "18.7", True),  # the claim truncates the source ("1-18 kpc" for 1.0-18.7)
+        ("10", "10.8", True),
+        ("19", "18.7", True),  # rounding
+        ("17.5", "15.6", False),
+        ("18", "17.2", False),  # truncation only shortens the source value
     ],
 )
 def test_numbers_match(a, b, expected):
@@ -81,6 +86,17 @@ def test_number_drift_requires_judge_same_quantity_and_grounding():
     rounding = make(quote="Tumor volume fell by 30.9% in mice.",
                     numbers=[NumberComparison(claim_value="31%", source_value="30.9%", same_quantity=True)])
     assert "number_drift" not in detect(rounding, CLAIM, REF, NO_SIDECAR).failure_modes
+
+
+def test_number_drift_ignores_numbers_from_neighbouring_sentences():
+    # "High-redshift galaxies have larger ratios than this [39]": the judge's attributed claim
+    # quotes the 2-4 ratio of the previous sentence, which is only what [39] is compared against.
+    claim = CLAIM.model_copy(update={"claim_text": "High-redshift galaxies observed by R1 have larger ratios than this"})
+    v = make(label="supported", quote="the median size ratio is 10.8",
+             numbers=[NumberComparison(claim_value="2-4", source_value="10.8", same_quantity=True)])
+    v = v.model_copy(update={"attributed_claim": "Galaxies in [39] have ratios larger than the 2-4 found by [66]."})
+    out = detect(v, claim, REF, NO_SIDECAR)
+    assert "number_drift" not in out.failure_modes and out.label == "supported"
 
 
 def test_number_drift_downgrades_supported():

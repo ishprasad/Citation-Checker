@@ -1,0 +1,59 @@
+{
+  "paper": "biology-elife.86333",
+  "annotations": [
+    {
+      "sentence_id": "s1",
+      "reference_key": "r16",
+      "verdict": "false_alarm",
+      "note": "The review documents SARS-CoV-2 pathogenesis in the respiratory tract in depth, the 'well studied' part; that much less is known about neurological consequences is the citing authors' framing of the field."
+    },
+    {
+      "sentence_id": "s4",
+      "reference_key": "r3",
+      "verdict": "debatable",
+      "note": "Only the abstract was available: Brison et al. show glutamate excitotoxicity drives paralysis and neuronal loss in mice infected with an HCoV-OC43 mutant; the cytokine mechanism is not in the abstract and may come from the co-cited Jacomy et al."
+    },
+    {
+      "sentence_id": "s5",
+      "reference_key": "r2",
+      "verdict": "debatable",
+      "note": "The review describes leukocyte infiltration and neuroinflammation with SARS-CoV-2 in the CNS; the general mechanism (peripheral cytokines recruiting leukocytes across the BBB) is textbook knowledge not stated in these terms in the review."
+    },
+    {
+      "sentence_id": "s7",
+      "reference_key": "r31",
+      "verdict": "debatable",
+      "note": "Hedged speculation ('it is possible ... may'): Meinhardt et al. show olfactory CNS entry and neuroinflammation, the premise, but say nothing about cognitive decline or AD; the co-cited Mhatre et al. (2015) predates SARS-CoV-2."
+    },
+    {
+      "sentence_id": "s12",
+      "reference_key": "r25",
+      "verdict": "false_alarm",
+      "note": "Lee et al. show virus-induced senescence with a SASP of cytokines and matrix-degrading proteases; the telomere-shortening remark is general background, not attributed to them."
+    },
+    {
+      "sentence_id": "s13",
+      "reference_key": "r29",
+      "verdict": "debatable",
+      "note": "The review supports IL-8's role in attracting neutrophils but does not mention endothelial cell migration; a partly supported list."
+    },
+    {
+      "sentence_id": "s17",
+      "reference_key": "r14",
+      "verdict": "false_alarm",
+      "note": "Eu et al. discuss NGF supporting neuron survival and the NGF hypothesis of Alzheimer's disease, which is what the sentence says."
+    },
+    {
+      "sentence_id": "s28",
+      "reference_key": "r33",
+      "verdict": "false_alarm",
+      "note": "The review describes the NLRP3 inflammasome, caspase-1, IL-1β/IL-18 and gasdermin D pyroptosis cascade the citation is attached to; the TREM1 and SARS-CoV-2 link is the citing authors' hypothesis ('may impact')."
+    },
+    {
+      "sentence_id": "s32",
+      "reference_key": "r5",
+      "verdict": "genuine",
+      "note": "'As described previously (Burks et al., 2021)' for the HALO image-analysis method, but the reference is a review on routes of SARS-CoV-2 into the CNS with no methods section; the method is not described there."
+    }
+  ]
+}

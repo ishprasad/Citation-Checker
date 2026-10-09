@@ -1,0 +1,225 @@
+{
+  "arxiv_id": "2208.03661v3",
+  "title": "Quasi-local studies of the particle surfaces and their stability in general spacetimes",
+  "field": "Physics: astronomy and astrophysics",
+  "source": "10.1140/epjc/s10052-022-11143-w",
+  "planted": [
+    {
+      "id": "p1",
+      "sentence_id": "s2",
+      "reference_keys": [
+        "Shiromizu:2017ego"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [11] with [33] (\"Area bound for a surface in a strong gravity region\") (similarity 0.31 vs 0.75 for the original)",
+      "original": "Up to date, there are many studies on the black hole shadow [7, 8, 9, 10] and the accretion disk [11].",
+      "mutated": "Up to date, there are many studies on the black hole shadow [7, 8, 9, 10] and the accretion disk [33].",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p2",
+      "sentence_id": "s4",
+      "reference_keys": [
+        "Kobialko:2021aqg"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [11] with [38] (\"Killing tensors and photon surfaces in foliated spacetimes\") (similarity 0.25 vs 0.56 for the original)",
+      "original": "On the other hand, the timelike stable circular orbits determine the position of the accretion disk and the ISCO is the boundary of the accretion disk [11].",
+      "mutated": "On the other hand, the timelike stable circular orbits determine the position of the accretion disk and the ISCO is the boundary of the accretion disk [38].",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p3",
+      "sentence_id": "s10",
+      "reference_keys": [
+        "Abramowicz:2011xu"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [31] with [11] (\"Foundations of Black Hole Accretion Disk Theory\") (similarity 0.28 vs 0.47 for the original)",
+      "original": "This problem has been solved by [31] which based on the geometry of a codimension-2 surface.",
+      "mutated": "This problem has been solved by [11] which based on the geometry of a codimension-2 surface.",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p4",
+      "sentence_id": "s12",
+      "reference_keys": [
+        "Koga:2019uqd"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"universally, in all cases\" before the citation",
+      "original": "Unlike the work studied the stability of the photon surface [39, 40], we give a quasi-local definition of the stability of the particle surface in general spacetime.",
+      "mutated": "Unlike the work studied the stability of the photon surface universally, in all cases [39, 40], we give a quasi-local definition of the stability of the particle surface in general spacetime.",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p5",
+      "sentence_id": "s19",
+      "reference_keys": [
+        "Claudel:2000yi"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"without exception\" before the citation",
+      "original": "The umbilical condition, i.e., σab=0, can be only used to get the photon surface in spherical symmetric spacetime [32].",
+      "mutated": "The umbilical condition, i.e., σab=0, can be only used to get the photon surface in spherical symmetric spacetime without exception [32].",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p6",
+      "sentence_id": "s20",
+      "reference_keys": [
+        "Cao:2019vlu"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"in every population and setting\" before the citation",
+      "original": "It should be noted that our condition is based on a hypersurface, not a codimension-2 surface [31].",
+      "mutated": "It should be noted that our condition is based on a hypersurface, not a codimension-2 surface in every population and setting [31].",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p7",
+      "sentence_id": "s21",
+      "reference_keys": [
+        "EventHorizonTelescope:2019pgp"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [16] with [3] (\"First M87 Event Horizon Telescope Results. V. Physical Origin of the Asymmetric Ring\") (similarity 0.31 vs 0.57 for the original)",
+      "original": "For a timelike circular orbit, from the normalized condition of the timelike geodesic, i.e., k^aka=-1, we have Then, combining the eq.(§), (§), (§) and (§), we can get which is consistent with the result in [16].",
+      "mutated": "For a timelike circular orbit, from the normalized condition of the timelike geodesic, i.e., k^aka=-1, we have Then, combining the eq.(§), (§), (§) and (§), we can get which is consistent with the result in [3].",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p8",
+      "sentence_id": "s23",
+      "reference_keys": [
+        "Berenstein:2020vlp"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"without exception\" before the citation",
+      "original": "It is well-known that ISCO satisfies that the second derivative of the effective potential is zero [42, 43].",
+      "mutated": "It is well-known that ISCO satisfies that the second derivative of the effective potential is zero without exception [42, 43].",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p9",
+      "sentence_id": "s34",
+      "reference_keys": [
+        "EventHorizonTelescope:2019uob"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [32] with [5] (\"First M87 Event Horizon Telescope Results. II. Array and Instrumentation\") (similarity 0.30 vs 0.71 for the original)",
+      "original": "For a photon surface in Vaidya spacetime, from the normalized condition of the null geodesic, i.e., kak^a=0, we have From eq.(§) and (§), we have and Combining eq.(§), (§) and (§), we have This is the equation of the photon surface in Vaidya spacetime and it is consistent with the result in [32].",
+      "mutated": "For a photon surface in Vaidya spacetime, from the normalized condition of the null geodesic, i.e., kak^a=0, we have From eq.(§) and (§), we have and Combining eq.(§), (§) and (§), we have This is the equation of the photon surface in Vaidya spacetime and it is consistent with the result in [5].",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p10",
+      "sentence_id": "s46",
+      "reference_keys": [
+        "EventHorizonTelescope:2019ths"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [31] with [4] (\"First M87 Event Horizon Telescope Results. IV. Imaging the Central Supermassive Black Hole\") (similarity 0.37 vs 0.71 for the original)",
+      "original": "The similar question in the study of photon surface has been solved by [31] which is based on a codimension-2 surface.",
+      "mutated": "The similar question in the study of photon surface has been solved by [4] which is based on a codimension-2 surface.",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    }
+  ],
+  "baseline_flags": [
+    [
+      "s24",
+      "Cardoso:2008bp",
+      "not_found"
+    ],
+    [
+      "s28",
+      "Claudel:2000yi",
+      "not_found"
+    ],
+    [
+      "s3",
+      "Virbhadra:1999nm",
+      "not_found"
+    ],
+    [
+      "s30",
+      "Claudel:2000yi",
+      "not_found"
+    ],
+    [
+      "s32",
+      "Song:2021ziq",
+      "not_found"
+    ],
+    [
+      "s35",
+      "Cederbaum:2019vwv",
+      "overstated"
+    ],
+    [
+      "s39",
+      "Mishra:2019trb",
+      "not_found"
+    ],
+    [
+      "s45",
+      "Song:2021ziq",
+      "not_found"
+    ],
+    [
+      "s8",
+      "Claudel:2000yi",
+      "overstated"
+    ]
+  ]
+}

@@ -60,7 +60,7 @@ M = TypeVar("M", bound=BaseModel)
 FINISHED = ("done", "partial", "failed")
 
 # Bump when judging changes enough that earlier results should not be served from the cache.
-PIPELINE_VERSION = 1
+PIPELINE_VERSION = 2
 # Parsed arXiv papers are shared across checks under this pseudo job id in the artifacts table.
 PAPER_CACHE = "_papers"
 

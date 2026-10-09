@@ -1,0 +1,77 @@
+{
+  "paper": "psych-plos-journal.pone.0264257",
+  "annotations": [
+    {
+      "sentence_id": "s3",
+      "reference_key": "r3",
+      "verdict": "debatable",
+      "note": "The source says enumerating all deaths, compared with historically expected mortality, gives a picture of excess death with direct and indirect burdens; the citing sentence swaps in 'the 0.28% crude mortality rate', which is not in the source (possibly from the co-cited [4])."
+    },
+    {
+      "sentence_id": "s5",
+      "reference_key": "r7",
+      "verdict": "genuine",
+      "note": "A study of PTSD, emotion dysregulation and alcohol use among US college students is cited for Syria entering its third COVID-19 wave; it has nothing on Syria or COVID-19. Probably the wrong reference (only the abstract was available, off-topic tag from both pipelines)."
+    },
+    {
+      "sentence_id": "s9",
+      "reference_key": "r24",
+      "verdict": "debatable",
+      "note": "A garbled sentence defining fear of COVID-19 as a prolonged worry or negative emotional reaction; Van Bavel et al. discuss fear and threat perception in pandemics but give no such definition."
+    },
+    {
+      "sentence_id": "s10",
+      "reference_key": "r25",
+      "verdict": "debatable",
+      "note": "The original Fear of COVID-19 Scale paper (Iranian sample) is a fair example of researchers assessing fear of COVID-19, but on its own it does not show assessments 'in different regions of the world' or identification of triggers."
+    },
+    {
+      "sentence_id": "s15",
+      "reference_key": "r43",
+      "verdict": "false_alarm",
+      "note": "The Greek validation study states that no optimal cut-off had been proposed before it and proposes one, so at the time it was the only such study, as the sentence says."
+    },
+    {
+      "sentence_id": "s22",
+      "reference_key": "r51",
+      "verdict": "false_alarm",
+      "note": "Caused by the checker: the resolver matched Kline's SEM textbook to a journal book review with the same title (DOI 10.15353/cgjsc.v1i1.3787) and checked the review; the thresholds are standard and are in the book."
+    },
+    {
+      "sentence_id": "s26",
+      "reference_key": "r28",
+      "verdict": "false_alarm",
+      "note": "Group citation for a range of Cronbach's alpha values (0.82-0.88) across four studies; the original FCV-19S paper reports 0.82, the lower end."
+    },
+    {
+      "sentence_id": "s26",
+      "reference_key": "r58",
+      "verdict": "false_alarm",
+      "note": "The Italian validation reports alpha = 0.871, within the cited range across studies."
+    },
+    {
+      "sentence_id": "s26",
+      "reference_key": "r59",
+      "verdict": "false_alarm",
+      "note": "The Turkish adaptation reports alpha = .847 (and the original .82), within the range; this reference duplicates [42] in the citing paper's own bibliography."
+    },
+    {
+      "sentence_id": "s26",
+      "reference_key": "r42",
+      "verdict": "false_alarm",
+      "note": "Same Turkish adaptation as [59] (listed twice by the citing paper); alpha = .847 lies within the cited range."
+    },
+    {
+      "sentence_id": "s33",
+      "reference_key": "r65",
+      "verdict": "false_alarm",
+      "note": "The source documents fleeing health workers, few ventilators and bombed hospitals; 'Syrians must feel constant fear for their lives' is the citing authors' inference, clearly marked as such ('must')."
+    },
+    {
+      "sentence_id": "s34",
+      "reference_key": "r67",
+      "verdict": "debatable",
+      "note": "The source reports severe shortages (about 1 mental health professional per 100,000) and expects most people with mental illness to go untreated; the exact figures (90% unattended, 80 psychiatrists) may come from the co-cited [66]."
+    }
+  ]
+}

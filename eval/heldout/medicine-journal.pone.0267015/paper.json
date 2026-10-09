@@ -1,0 +1,2008 @@
+{
+  "paper": {
+    "id": "heldout:pdf:7ecb36e404ce8a54:e65c33a7",
+    "title": "Perinatal care in Western Uganda: Prevalence and factors associated with appropriate care among women attending three district hospitals",
+    "authors": [
+      "Mercy Muwema",
+      "Dan K. Kaye",
+      "Grace Edwards",
+      "Gorrette Nalwadda",
+      "Joanita Nangendo",
+      "Jaffer Okiring",
+      "Wilson Mwanja",
+      "Elizabeth N. Ekong",
+      "Joan N. Kalyango",
+      "Joaniter I. Nankabirwa"
+    ],
+    "abstract": "",
+    "source": "pdf",
+    "arxiv_id": null,
+    "parsed_from": "pdf",
+    "citation_style": "numeric",
+    "text": "Abstract\n\nBackground\n\nPerinatal mortality remains high globally and remains an important indicator of the quality of a health care system. To reduce this mortality, it is important to provide the recommended care during the perinatal period. We assessed the prevalence and factors associated with appropriate perinatal care (antenatal, intrapartum, and postpartum) in Bunyoro region, Uganda. Results from this study provide valuable information on the perinatal care services and highlight areas of improvement for better perinatal outcomes.\n\nMethods\n\nA cross sectional survey was conducted among postpartum mothers attending care at three district hospitals in Bunyoro. Following consent, a questionnaire was administered to capture the participants’ demographics and data on care received was extracted from their antenatal, labour, delivery, and postpartum records using a pre-tested structured tool. The care received by women was assessed against the standard protocol established by World Health Organization (WHO). Poisson regression with robust standard errors was used to assess factors associated with appropriate postpartum care.\n\nResults\n\nA total of 872 mothers receiving care at the participating hospitals between March and June 2020 were enrolled in the study. The mean age of the mothers was 25 years (SD = 5.95). None of the mothers received appropriate antenatal or intrapartum care, and only 3.8% of the participants received appropriate postpartum care. Factors significantly associated with appropriate postpartum care included mothers being >35 years of age (adjusted prevalence ratio [aPR] = 11.9, 95% confidence interval [CI] 2.8–51.4) and parity, with low parity (2–3) and multiparous (>3) mothers less likely to receive appropriate care than prime gravidas (aPR = 0.3, 95% CI 0.1–0.9 and aPR = 0.3, 95% CI 0.1–0.8 respectively).\n\nConclusions\n\nAntenatal, intrapartum, and postpartum care received by mothers in this region remains below the standard recommended by WHO, and innovative strategies across the continuum of perinatal care need to be devised to prevent mortality among the mothers. The quality of care also needs to be balanced for all mothers irrespective of the age and parity.\n\nIntroduction\n\nImprovement in the quality of perinatal care is essential in reducing maternal and neonatal mortality, and is required in order to meet the Sustainable Development Goal three target aimed at: 1) reducing the maternal mortality ratio (MMR) to less than 70 deaths/100,000 live births by 2030; 2) reducing the neonatal mortality rate (NMR) to less than 7/1000 live births by 2035; and 3) reducing the number of still births to less than 8 still births/1000 total births [1– 3]. Sub Saharan Africa bears the highest burden of adverse maternal and neonatal outcomes, contributing 55% of the global stillbirths [4], 66% of the global maternal mortality [5], and 46% of the neonatal mortality [6]. In these same settings, countries also struggle with achieving the set standards of quality care for pregnant women [38].\n\nUganda is one of the countries that face challenges in provision of quality perinatal care [7– 11]. According to the latest 2016 Uganda Demographic and Health Survey (DHS), only 60% of the women surveyed had attended the recommended four antenatal visits during the pregnancy leading to their most recent birth, and less than one third had their first visit during the first trimester of pregnancy [7]. In addition, only 39% of the women had had a urine sample taken, and even though 74% of childbirths were attended by skilled health personnel, only 54% of the women and 56% of the newborns received a postnatal check within 2 days of delivery. In an independent study evaluating antenatal care among 299 mothers in eastern Uganda 53% of the mothers did not have essential tests conducted, 62% were not offered sulphadoxine pyrimethamine (SP) for intermittent treatment of malaria (IPTp), and 72% were not offered folic/ ferrous sulphate supplement [8]. Similar findings were reported in other studies across the country [9–11]. Furthermore, education, occupation, age, parity, being wealthy and caesarian section as a mode of delivery were found to be associated with perinatal care [12–14].\n\nBunyoro, a region in western Uganda is being supported by a number of quality improvement projects in order to reduce the risk of maternal and infant mortality including: 1) the Clinton Health Access Initiative (CHAI) that has continued to equip and build the capacity of the health system to ably manage, deliver and sustain improvements in reproductive, maternal, new born, child and adolescent health programming since 2007 [15]; 2) the Ministry of Health reproductive, maternal, and child health improvement project (URMCHIP) which aims at improving the utilization of essential reproductive, maternal, newborn, child and adolescent health services [16]; and 3) Saving Mothers Giving Life project (SMGL), a health system strengthening project that ran from 2012 to 2014. The SMGL’s aim was to address the three delays in health care including the delay in decision to seek care, in reaching care, and in receiving adequate and appropriate health care [17]. Despite this support, the region registered the nation’s lowest scores on several indicators of maternal health care in the 2016 DHS survey with the number of mothers attending the recommended four antenatal visits at 44.5%, proportion of women who had a urine sample examined during antenatal visits at 27.5%, and proportion of women who had no post-natal checks within 48 hours of delivery at 63.8% [7].\n\nSince the last national evaluation of maternal care as part of the 2016 DHS survey, the World Health Organization (WHO) has updated its guidelines on maternal health care [18]. These new WHO guidelines were adopted and rolled out in Uganda in 2018 [19], however, no survey has evaluated the quality of care especially in the underperforming regions of the country since their role out. This study assessed the prevalence and factors associated with appropriate perinatal care at the three district hospitals in Bunyoro region. The study findings document the current quality of maternal care in the region following the support received from the different implementing partners (URMCHIP and CHAI) and change in the national guidelines.\n\nMaterials and methods\n\nStudy design and setting\n\nA facility based cross-sectional study was conducted between March and June 2020 in three public district hospitals of Bunyoro region, Uganda. The region is comprised of eight districts that include Kakumiro, Kibaale, Kagadi, Kikuube, Hoima, Masindi, Buliisa, and Kiryandongo [20]. The region’s population was estimated at 2,028,500 million people in the 2014 National Demographic and Population Census [21]. Bunyoro region has one of the highest fertility rates (7.5) in the country, and has a high proportion of both teenage pregnancies (10.6%) and early marriages (19%) [22]. The region has three district hospitals (Kagadi, Kiryandongo and Masindi). A district hospital is the highest-level public health facility in any given district and covers a catchment population of approximately 500,000 people. The district hospital offers preventive, promotive, and both in and out patient curative services in all areas of child and adult medicine [23]. It is also responsible for supervising and planning for all the lower-level facilities within the district. An average of 300 deliveries are registered at these hospitals in any given month.\n\nStudy population\n\nPostpartum mothers in the three participating district hospitals were screened at discharge for eligibility to join the study. A mother was eligible for inclusion if: 1) she attended antenatal care in the study hospitals; 2) she gave birth in the study hospitals; 3) delivery was conducted by a skilled health professional; 4) she provided written informed consent to participate in the study; and 5) she had a health record indicating care received during the antenatal, intrapartum and postpartum periods.\n\nSample size and sampling\n\nWe hypothesized that the quality of care would be different between educated and less educated mothers and therefore computed sample size using formula for comparison of two proportions. The estimated proportions among less educated (64.1%) and educated women (24.7%) were based on a study done in Nepal [24]. We further assumed 5% level of significance, 80% power, design effect of 2 to cater for clustering at health facility level, and non-response of 10% which gave an estimated sample size of 755 mothers. Using probability sampling proportionate to size, we determined the mothers to be enrolled from each hospital and used consecutive sampling within each of the hospitals.\n\nStudy variables\n\nThe variables of the study included antenatal care, intrapartum care, and postpartum care. Antenatal care was assessed as the number of antenatal contacts, initiation of antenatal care, examinations during every contact, tests conducted, preventive drugs, ultrasound scan, tetanus toxoid, and health education. The intrapartum care aspects assessed included use of a partograph, monitoring the fetal heart rate, monitoring progress of labour (cervical dilatation, descent of presenting part, and uterine contractions), and monitoring of the maternal blood pressure and maternal pulse rates. Finally for postpartum care, the monitoring of the uterine contraction, vaginal bleeding, fundal height, blood pressure, pulse rate, temperature, and urine voiding were assessed as the parameters of care.\n\nData collection\n\nAt each hospital, data was collected by qualified midwives fluent in the local language of the area (Runyoro) and not directly involved in the patient care. Postpartum mothers were identified using the ward registers and screened for eligibility to join the study. Following the consent process, a questionnaire was administered to collect socio-demographic data from participants. Data on care received at the different stages of perinatal care was extracted from their hospital notes using a pre-tested structured data extraction tool designed using the Open Data Kit (ODK) software. Data extracted included the participants’ information on preventive medications received, any health education, diagnostic tests and results, and examinations received by the mothers during their pregnancy.\n\nData management and analysis\n\nData collected was downloaded into a CSV file format for cleaning, and exported to STATA version 13 for analysis. Outcomes of interest were assessed using the standard protocols established by WHO recommendations on antenatal care [18], intrapartum care [25], and postpartum care [26]. Care which reached the standard recommended by the WHO was coded as “yes” and given a score of 1 while “no” and score 0 was used for care that did not reach the recommended standards. The standard of care was grouped into three categories: 1) “no care” which was defined as a total care score of zero (the minimum possible score); 2) “appropriate care” which was defined as a total score of 8 for antenatal, 6 for intrapartum care, and 7 for postpartum care (the maximum possible score); and 3) “inappropriate care” which referred to the range of scores between the minimum and maximum total care scores.\n\nLevels of care were summarized and presented as proportions with 95% confidence inter-vals, stratified by the hospital. Modified poisson regression with robust standard errors was used to assess for factors associated with appropriate postpartum care. At bivariate analysis, all variables that had p-value of less than or equal to 0.20 were considered for multivariate analysis and logical model building was used to generate the final model. Education level and health facilities attended were confounding this model while the mother’s income is a known confounder and all three were included in the final model even when not statistically significant. The measures of associations are presented as prevalence ratio (PR) with their 95% confidence intervals and p-values. A p-value of <0.05 is considered significant.\n\nEthical considerations\n\nEthical approval to conduct the study was obtained from the Makerere University School of Medicine Research and Ethics Committee (REC REF# 2019–137) and the Uganda National Council for Science and Technology (HS483ES). Written informed consent to participate in the study was obtained from all participants prior to enrolment in the study, and unique identifiers and not personal names were used for participant identification.\n\nResults Description of the study population\n\nA total of 3,320 women were screened for eligibility to join the study, and 872 (26.3%) were enrolled. The commonest reason for exclusion was having not attended antenatal care at the study hospitals (2,371, 96.9%). Other reasons for exclusion included patients being referred to study hospitals from lower facilities due to intrapartum complications, mothers arriving at the facility after birth (birth before arrival (BBA)) and declining consent to participate in the study. Fig 1 provides details of the participants flow stratified by health facility.\n\nThe mean age of the participants was 25 years (SD = 5.95). Majority of the participants were married or in a stable relationship (n = 782, 89.7%), and more than half (n = 453, 52%) had never received any education. Although many of the participants had two or more children (n = 615, 70.5%), almost all (n = 846, 97%) earned less than 500,000 Uganda Shillings ($140) per month. Table 1 provides details of the characteristics of the study participants stratified by health facility.\n\nPrevalence of appropriate perinatal care\n\nThe majority of the participant’s care was classified as inappropriate care with 863 (99.0%) mothers receiving inappropriate care in the antenatal phase, 690 (79.1%) receiving inappropriate care in the intrapartum phase, and 795, (91.2%) receiving inappropriate care in the postpartum phase of care (Table 2). None of the participant’s care in the antenatal or intra-partum period met the criteria of appropriate care. Appropriate care was only observed in the postpartum phase of care with 33/872 (3.8%) mothers’ care meeting the WHO criteria for appropriate care. Kagadi hospital which contributed 329 (37.7%) of the study participants had no mother fulfilling the criteria for appropriate care in any of the three phases of care (Table 2). Masindi and Kiryandongo hospitals contributed almost equally to the proportion of participants that received appropriate care in the postpartum phase (51.5% versus 48.5% respectively p = 0.807). Of the 872 mothers enrolled, nine (1.0%) received no care in the antenatal phase, 182 (20.9%) received no care in the intrapartum phase, and 44 (5.1%) received no care in the postpartum phase of care.\n\nAlthough overall prevalence of inappropriate care was high, the majority of the participants received at least 1 dose of tetanus toxoid (85%), received health education at least once during antenatal care (87.7%), had their labour monitored using a partograph (71.4%), had their partograph use initiated in the active first stage (78.3%), and had their vital signs assessed 24 hours after delivery (61.1%). The commonest components contributing to inappropriate antenatal care included: 1) mothers receiving less than the recommended eight antenatal visits (863, 99%); 2) initiating care after the 1st trimester (799, 91.6%); 3) missing the recommended physical exams (blood pressure, weight, checking for pallor, fetal heart rate, fundal height exam and checking for fetal lie and position) during the visits (858, 98.4%); 4) missing the recommended laboratory tests during the antenatal contacts (872, 100%); and 5) no ultrasound scan before 24 weeks of amenorrhea (797, 91.4%) (Table 3). For labour and delivery, none of the mothers had the fetal heart, contractions, and pulse rate monitored every 30 minutes and only 23 (2.4%) mothers had cervical dilation, descent of presenting part, and maternal blood pressure monitored every 4 hours. Finally, the commonest factors contributing to inappropriate care in the postpartum phase included lack of an abdominal examination within 24 hours after delivery (807, 92.6%), and absence of vaginal examination/urine voiding assessment within 24 hours post-delivery (794, 91.1%).\n\nFactors associated with appropriate perinatal care\n\nFactors significantly associated with appropriate care at multivariable analysis included maternal age and parity of the mother. The proportion of mothers having appropriate care increased with increasing maternal age (aPR = 2.7, 95% CI 0.9–8.5, p = 0.09 for mothers aged 20–35 years: and aPR = 11.9, 95% CI 2.8–51.4, p<0.001 for mothers >35 years). On the other hand, the proportion of mothers with appropriate care reduced with increasing parity. The prevalence of appropriate care was 70% lower in mothers with two-three children and those with more than three children compared to prime gravidas (aPR = 0.3 95% CI 0.1–0.9, p = 0.03, and aPR = 0.3 95% CI 0.1–0.8, p = 0.02 respectively). Mothers who sought care from Kiryandongo were more likely to receive appropriate care than those from Masindi although the association is of borderline significance (aPR = 1.9 95% CI 0.9–3.7, p = 0.06). Although the education level of the mother has previously been associated with the level of care they receive during the perinatal period [7, 27], the association was not significant in this study. Table 4 provides the details of the factors associated with appropriate postpartum care.\n\nDiscussion\n\nImproved perinatal care is essential in reducing maternal deaths and improving birth out-comes. In this study we described the prevalence and factors associated with appropriate perinatal care in Bunyoro region, Uganda. The study found that no participant received appropriate care in the antenatal and intrapartum periods of care, and only four in every one hundred participants received appropriate care in the postpartum period. Increasing maternal age and reducing parity were significantly associated with appropriate care.\n\nAppropriate perinatal care in this setting is still limited and the study findings show that the performance of the region regarding the set minimum standards for perinatal care are still below the national averages [7]. In this study no mother received appropriate care in the antenatal and intrapartum period and only a few mothers received appropriate care in the postpartum period. Poor perinatal care increases the risk of poor maternal and birth outcomes [12], and the findings from this study could explain the high maternal mortality rates observed in the region [29]. Although health care providers schedule antenatal contacts for mothers, the time of initiating antenatal care and the total number of antenatal visits one has during a pregnancy are individual driven factors and represent the level of health care utilization in the region which has been shown to be consistently low [7, 22, 29], the other factors contributing to inappropriate care are health system driven suggesting poor health service delivery in the region. The incomplete/inappropriate records, missed physical examinations, and missed laboratory tests as observed in this study may lead to delays in appropriate decision making, timely interventions, and communication among the care providers which may cost both the lives of the mother and the baby.\n\nThe high levels of inappropriate care observed in the region may be attributed to shortage of resources like medical supplies, equipment, drugs, and staffing in hospitals as well as differences in competences of the health care providers, which are common occurrences in low income countries [30, 31]. The degree of this shortage and difference in competences may vary from facility to facility which creates a difference in care provision. However, in this setting several projects have been established to address the gaps in care due to shortage of resources by establishing effective, low-cost interventions. As part of the SMGL initiative and in collaboration with the Uganda Ministry of Health, the region received upgrade for number of public and private facilities to provide clean and safe basic delivery services and had its supply chains for essential supplies and medicines strengthened [17]. These efforts were supplemented by the Clinton Health Access Initiative and the URMCHIP that have equipped the health facilities in the region to ably manage, deliver and sustain improvement in reproductive, maternal, new born, child and adolescent Health in the region [15, 16]. With these interventions it is anticipated that shortages of resources would be limited in the country. In other low income countries, use of clinical mentorship, training, facility quality improvement teams, and quality of care reviews have been used to improve the quality of perinatal care with positive results over the study periods [32–34]. Similarly, in Uganda, SMGL implemented facility infrastructure upgrades, procured essential medical equipment, supplies and medications, trained and mentored health care providers, recruited health care providers, and strengthened maternal and perinatal mortality surveillance in parts of this region. As a result, availability of facility electricity and water increased, use of partograph in monitoring labour increased, and the proportion of facilities with no stock outs also increased [27]. Sustainability of such interventions beyond the study periods maybe important to consider for continued improvement.\n\nIncreasing maternal age was significantly associated with appropriate care with a clear dose effect relationship observed. Maternal age has been linked to demand for services, with increased age being able to demand for better services than those with lower age [7]. Findings from this study could attest to this explanation. The good care provided to older women in this study may lead to reduced adverse birth outcomes that are common in this age group [36].\n\nReducing parity was significantly associated with appropriate care. Mothers below 20 years of age are perceived to be at risk of having pregnancy related complications [37–40], which explains why mothers of that age group in this study could have received appropriate care. As a result, primigravida mothers could have had improved maternal and birth outcomes.\n\nMuch as higher education and income are associated with better care, this study did not find them significantly associated with appropriate postpartum care. The difference in findings may be attributed to the fact that the study sites were public hospitals where care is provided free of charge and mothers do not have to pay for most of the services. In addition, mothers with higher education and income are likely to seek private services instead of general services that are often provided to most of the mothers in public hospitals [7]. This could result in having less complications during childbirth.\n\nThis study had some limitations. First, it was a cross sectional study that merely provided a snapshot of the care processes in these facilities. Conducting a follow up study with both observational and extracted data could have provided a better assessment of the quality of care received by mothers. However, the findings are still valid as they highlight gaps and make suggestions on what could be done differently, which provides a basis for further studies. Secondly, this study extracted the data on care from patient records. It is possible that information recorded did not exactly reflect the care provided to mothers during these periods of care. In addition, there is no data on direct observation of the care processes which would have explained or validated the data extracted from the patient records. The source of data also makes it hard to appreciate the in-depth factors affecting care including personal factors like beliefs, values, experiences, and ability to access services as well as determine the usage of the data in patient care. However, exit interviews were held with mothers and care providers to understand the nature of care provided. Thirdly, the study excluded women who were referred for childbirth from other facilities and did not attend antenatal care in the study hospitals. This could have reduced the study’s ability to assess care provided to postpartum women by other facilities in this region. Therefore, findings of this study may not be entirely generalizable to Bunyoro region. Lastly, the study did not capture information on type of pregnancy and existing co-morbidities which could have influenced the nature of care provided to mothers.\n\nConclusion\n\nIn summary, we found that antenatal, intrapartum and postpartum care provided to mothers was below the standard recommended by WHO and Ministry of Health in Bunyoro, Uganda. Increased age and reduced parity influenced the extent to which mothers were cared for during the postpartum period. Therefore building the capacity of healthcare providers on the recommended perinatal care; as well as provision of required supplies, equipment and drugs; and provision of appropriate infrastructure by government could motivate health care providers to provide quality care. Mothers also can be empowered through health education to demand for care. There is need to develop sustainable strategies that could produce lasting impact on the quality of care. Developing an appropriate tool for assessing quality of care in this setting may also help researchers in assessing quality of care in similar settings.\n\nAcknowledgments\n\nWe are thankful to all mothers who agreed to participate in the study, the health facility and perinatal unit leadership that made access to women and their records possible, and the research assistants who ensured that quality data is obtained. Special appreciation is given to the study site supervisors who ensured that data is timely accessed and collected. Lastly, we appreciate the district health officers for allowing this study to be conducted in their districts.",
+    "sections": [
+      {
+        "title": "Abstract",
+        "text": "Abstract\n\n",
+        "start": 0,
+        "end": 10
+      },
+      {
+        "title": "Background",
+        "text": "Background\n\nPerinatal mortality remains high globally and remains an important indicator of the quality of a health care system. To reduce this mortality, it is important to provide the recommended care during the perinatal period. We assessed the prevalence and factors associated with appropriate perinatal care (antenatal, intrapartum, and postpartum) in Bunyoro region, Uganda. Results from this study provide valuable information on the perinatal care services and highlight areas of improvement for better perinatal outcomes.\n\n",
+        "start": 10,
+        "end": 543
+      },
+      {
+        "title": "Methods",
+        "text": "Methods\n\nA cross sectional survey was conducted among postpartum mothers attending care at three district hospitals in Bunyoro. Following consent, a questionnaire was administered to capture the participants’ demographics and data on care received was extracted from their antenatal, labour, delivery, and postpartum records using a pre-tested structured tool. The care received by women was assessed against the standard protocol established by World Health Organization (WHO). Poisson regression with robust standard errors was used to assess factors associated with appropriate postpartum care.\n\n",
+        "start": 543,
+        "end": 1142
+      },
+      {
+        "title": "Results",
+        "text": "Results\n\nA total of 872 mothers receiving care at the participating hospitals between March and June 2020 were enrolled in the study. The mean age of the mothers was 25 years (SD = 5.95). None of the mothers received appropriate antenatal or intrapartum care, and only 3.8% of the participants received appropriate postpartum care. Factors significantly associated with appropriate postpartum care included mothers being >35 years of age (adjusted prevalence ratio [aPR] = 11.9, 95% confidence interval [CI] 2.8–51.4) and parity, with low parity (2–3) and multiparous (>3) mothers less likely to receive appropriate care than prime gravidas (aPR = 0.3, 95% CI 0.1–0.9 and aPR = 0.3, 95% CI 0.1–0.8 respectively).\n\n",
+        "start": 1142,
+        "end": 1856
+      },
+      {
+        "title": "Conclusions",
+        "text": "Conclusions\n\nAntenatal, intrapartum, and postpartum care received by mothers in this region remains below the standard recommended by WHO, and innovative strategies across the continuum of perinatal care need to be devised to prevent mortality among the mothers. The quality of care also needs to be balanced for all mothers irrespective of the age and parity.\n\n",
+        "start": 1856,
+        "end": 2218
+      },
+      {
+        "title": "Introduction",
+        "text": "Introduction\n\nImprovement in the quality of perinatal care is essential in reducing maternal and neonatal mortality, and is required in order to meet the Sustainable Development Goal three target aimed at: 1) reducing the maternal mortality ratio (MMR) to less than 70 deaths/100,000 live births by 2030; 2) reducing the neonatal mortality rate (NMR) to less than 7/1000 live births by 2035; and 3) reducing the number of still births to less than 8 still births/1000 total births [1– 3]. Sub Saharan Africa bears the highest burden of adverse maternal and neonatal outcomes, contributing 55% of the global stillbirths [4], 66% of the global maternal mortality [5], and 46% of the neonatal mortality [6]. In these same settings, countries also struggle with achieving the set standards of quality care for pregnant women [38].\n\nUganda is one of the countries that face challenges in provision of quality perinatal care [7– 11]. According to the latest 2016 Uganda Demographic and Health Survey (DHS), only 60% of the women surveyed had attended the recommended four antenatal visits during the pregnancy leading to their most recent birth, and less than one third had their first visit during the first trimester of pregnancy [7]. In addition, only 39% of the women had had a urine sample taken, and even though 74% of childbirths were attended by skilled health personnel, only 54% of the women and 56% of the newborns received a postnatal check within 2 days of delivery. In an independent study evaluating antenatal care among 299 mothers in eastern Uganda 53% of the mothers did not have essential tests conducted, 62% were not offered sulphadoxine pyrimethamine (SP) for intermittent treatment of malaria (IPTp), and 72% were not offered folic/ ferrous sulphate supplement [8]. Similar findings were reported in other studies across the country [9–11]. Furthermore, education, occupation, age, parity, being wealthy and caesarian section as a mode of delivery were found to be associated with perinatal care [12–14].\n\nBunyoro, a region in western Uganda is being supported by a number of quality improvement projects in order to reduce the risk of maternal and infant mortality including: 1) the Clinton Health Access Initiative (CHAI) that has continued to equip and build the capacity of the health system to ably manage, deliver and sustain improvements in reproductive, maternal, new born, child and adolescent health programming since 2007 [15]; 2) the Ministry of Health reproductive, maternal, and child health improvement project (URMCHIP) which aims at improving the utilization of essential reproductive, maternal, newborn, child and adolescent health services [16]; and 3) Saving Mothers Giving Life project (SMGL), a health system strengthening project that ran from 2012 to 2014. The SMGL’s aim was to address the three delays in health care including the delay in decision to seek care, in reaching care, and in receiving adequate and appropriate health care [17]. Despite this support, the region registered the nation’s lowest scores on several indicators of maternal health care in the 2016 DHS survey with the number of mothers attending the recommended four antenatal visits at 44.5%, proportion of women who had a urine sample examined during antenatal visits at 27.5%, and proportion of women who had no post-natal checks within 48 hours of delivery at 63.8% [7].\n\nSince the last national evaluation of maternal care as part of the 2016 DHS survey, the World Health Organization (WHO) has updated its guidelines on maternal health care [18]. These new WHO guidelines were adopted and rolled out in Uganda in 2018 [19], however, no survey has evaluated the quality of care especially in the underperforming regions of the country since their role out. This study assessed the prevalence and factors associated with appropriate perinatal care at the three district hospitals in Bunyoro region. The study findings document the current quality of maternal care in the region following the support received from the different implementing partners (URMCHIP and CHAI) and change in the national guidelines.\n\n",
+        "start": 2218,
+        "end": 6346
+      },
+      {
+        "title": "Materials and methods",
+        "text": "Materials and methods\n\n",
+        "start": 6346,
+        "end": 6369
+      },
+      {
+        "title": "Study design and setting",
+        "text": "Study design and setting\n\nA facility based cross-sectional study was conducted between March and June 2020 in three public district hospitals of Bunyoro region, Uganda. The region is comprised of eight districts that include Kakumiro, Kibaale, Kagadi, Kikuube, Hoima, Masindi, Buliisa, and Kiryandongo [20]. The region’s population was estimated at 2,028,500 million people in the 2014 National Demographic and Population Census [21]. Bunyoro region has one of the highest fertility rates (7.5) in the country, and has a high proportion of both teenage pregnancies (10.6%) and early marriages (19%) [22]. The region has three district hospitals (Kagadi, Kiryandongo and Masindi). A district hospital is the highest-level public health facility in any given district and covers a catchment population of approximately 500,000 people. The district hospital offers preventive, promotive, and both in and out patient curative services in all areas of child and adult medicine [23]. It is also responsible for supervising and planning for all the lower-level facilities within the district. An average of 300 deliveries are registered at these hospitals in any given month.\n\n",
+        "start": 6369,
+        "end": 7539
+      },
+      {
+        "title": "Study population",
+        "text": "Study population\n\nPostpartum mothers in the three participating district hospitals were screened at discharge for eligibility to join the study. A mother was eligible for inclusion if: 1) she attended antenatal care in the study hospitals; 2) she gave birth in the study hospitals; 3) delivery was conducted by a skilled health professional; 4) she provided written informed consent to participate in the study; and 5) she had a health record indicating care received during the antenatal, intrapartum and postpartum periods.\n\n",
+        "start": 7539,
+        "end": 8066
+      },
+      {
+        "title": "Sample size and sampling",
+        "text": "Sample size and sampling\n\nWe hypothesized that the quality of care would be different between educated and less educated mothers and therefore computed sample size using formula for comparison of two proportions. The estimated proportions among less educated (64.1%) and educated women (24.7%) were based on a study done in Nepal [24]. We further assumed 5% level of significance, 80% power, design effect of 2 to cater for clustering at health facility level, and non-response of 10% which gave an estimated sample size of 755 mothers. Using probability sampling proportionate to size, we determined the mothers to be enrolled from each hospital and used consecutive sampling within each of the hospitals.\n\n",
+        "start": 8066,
+        "end": 8774
+      },
+      {
+        "title": "Study variables",
+        "text": "Study variables\n\nThe variables of the study included antenatal care, intrapartum care, and postpartum care. Antenatal care was assessed as the number of antenatal contacts, initiation of antenatal care, examinations during every contact, tests conducted, preventive drugs, ultrasound scan, tetanus toxoid, and health education. The intrapartum care aspects assessed included use of a partograph, monitoring the fetal heart rate, monitoring progress of labour (cervical dilatation, descent of presenting part, and uterine contractions), and monitoring of the maternal blood pressure and maternal pulse rates. Finally for postpartum care, the monitoring of the uterine contraction, vaginal bleeding, fundal height, blood pressure, pulse rate, temperature, and urine voiding were assessed as the parameters of care.\n\n",
+        "start": 8774,
+        "end": 9588
+      },
+      {
+        "title": "Data collection",
+        "text": "Data collection\n\nAt each hospital, data was collected by qualified midwives fluent in the local language of the area (Runyoro) and not directly involved in the patient care. Postpartum mothers were identified using the ward registers and screened for eligibility to join the study. Following the consent process, a questionnaire was administered to collect socio-demographic data from participants. Data on care received at the different stages of perinatal care was extracted from their hospital notes using a pre-tested structured data extraction tool designed using the Open Data Kit (ODK) software. Data extracted included the participants’ information on preventive medications received, any health education, diagnostic tests and results, and examinations received by the mothers during their pregnancy.\n\n",
+        "start": 9588,
+        "end": 10399
+      },
+      {
+        "title": "Data management and analysis",
+        "text": "Data management and analysis\n\nData collected was downloaded into a CSV file format for cleaning, and exported to STATA version 13 for analysis. Outcomes of interest were assessed using the standard protocols established by WHO recommendations on antenatal care [18], intrapartum care [25], and postpartum care [26]. Care which reached the standard recommended by the WHO was coded as “yes” and given a score of 1 while “no” and score 0 was used for care that did not reach the recommended standards. The standard of care was grouped into three categories: 1) “no care” which was defined as a total care score of zero (the minimum possible score); 2) “appropriate care” which was defined as a total score of 8 for antenatal, 6 for intrapartum care, and 7 for postpartum care (the maximum possible score); and 3) “inappropriate care” which referred to the range of scores between the minimum and maximum total care scores.\n\nLevels of care were summarized and presented as proportions with 95% confidence inter-vals, stratified by the hospital. Modified poisson regression with robust standard errors was used to assess for factors associated with appropriate postpartum care. At bivariate analysis, all variables that had p-value of less than or equal to 0.20 were considered for multivariate analysis and logical model building was used to generate the final model. Education level and health facilities attended were confounding this model while the mother’s income is a known confounder and all three were included in the final model even when not statistically significant. The measures of associations are presented as prevalence ratio (PR) with their 95% confidence intervals and p-values. A p-value of <0.05 is considered significant.\n\n",
+        "start": 10399,
+        "end": 12140
+      },
+      {
+        "title": "Ethical considerations",
+        "text": "Ethical considerations\n\nEthical approval to conduct the study was obtained from the Makerere University School of Medicine Research and Ethics Committee (REC REF# 2019–137) and the Uganda National Council for Science and Technology (HS483ES). Written informed consent to participate in the study was obtained from all participants prior to enrolment in the study, and unique identifiers and not personal names were used for participant identification.\n\n",
+        "start": 12140,
+        "end": 12593
+      },
+      {
+        "title": "Results Description of the study population",
+        "text": "Results Description of the study population\n\nA total of 3,320 women were screened for eligibility to join the study, and 872 (26.3%) were enrolled. The commonest reason for exclusion was having not attended antenatal care at the study hospitals (2,371, 96.9%). Other reasons for exclusion included patients being referred to study hospitals from lower facilities due to intrapartum complications, mothers arriving at the facility after birth (birth before arrival (BBA)) and declining consent to participate in the study. Fig 1 provides details of the participants flow stratified by health facility.\n\nThe mean age of the participants was 25 years (SD = 5.95). Majority of the participants were married or in a stable relationship (n = 782, 89.7%), and more than half (n = 453, 52%) had never received any education. Although many of the participants had two or more children (n = 615, 70.5%), almost all (n = 846, 97%) earned less than 500,000 Uganda Shillings ($140) per month. Table 1 provides details of the characteristics of the study participants stratified by health facility.\n\n",
+        "start": 12593,
+        "end": 13679
+      },
+      {
+        "title": "Prevalence of appropriate perinatal care",
+        "text": "Prevalence of appropriate perinatal care\n\nThe majority of the participant’s care was classified as inappropriate care with 863 (99.0%) mothers receiving inappropriate care in the antenatal phase, 690 (79.1%) receiving inappropriate care in the intrapartum phase, and 795, (91.2%) receiving inappropriate care in the postpartum phase of care (Table 2). None of the participant’s care in the antenatal or intra-partum period met the criteria of appropriate care. Appropriate care was only observed in the postpartum phase of care with 33/872 (3.8%) mothers’ care meeting the WHO criteria for appropriate care. Kagadi hospital which contributed 329 (37.7%) of the study participants had no mother fulfilling the criteria for appropriate care in any of the three phases of care (Table 2). Masindi and Kiryandongo hospitals contributed almost equally to the proportion of participants that received appropriate care in the postpartum phase (51.5% versus 48.5% respectively p = 0.807). Of the 872 mothers enrolled, nine (1.0%) received no care in the antenatal phase, 182 (20.9%) received no care in the intrapartum phase, and 44 (5.1%) received no care in the postpartum phase of care.\n\nAlthough overall prevalence of inappropriate care was high, the majority of the participants received at least 1 dose of tetanus toxoid (85%), received health education at least once during antenatal care (87.7%), had their labour monitored using a partograph (71.4%), had their partograph use initiated in the active first stage (78.3%), and had their vital signs assessed 24 hours after delivery (61.1%). The commonest components contributing to inappropriate antenatal care included: 1) mothers receiving less than the recommended eight antenatal visits (863, 99%); 2) initiating care after the 1st trimester (799, 91.6%); 3) missing the recommended physical exams (blood pressure, weight, checking for pallor, fetal heart rate, fundal height exam and checking for fetal lie and position) during the visits (858, 98.4%); 4) missing the recommended laboratory tests during the antenatal contacts (872, 100%); and 5) no ultrasound scan before 24 weeks of amenorrhea (797, 91.4%) (Table 3). For labour and delivery, none of the mothers had the fetal heart, contractions, and pulse rate monitored every 30 minutes and only 23 (2.4%) mothers had cervical dilation, descent of presenting part, and maternal blood pressure monitored every 4 hours. Finally, the commonest factors contributing to inappropriate care in the postpartum phase included lack of an abdominal examination within 24 hours after delivery (807, 92.6%), and absence of vaginal examination/urine voiding assessment within 24 hours post-delivery (794, 91.1%).\n\n",
+        "start": 13679,
+        "end": 16387
+      },
+      {
+        "title": "Factors associated with appropriate perinatal care",
+        "text": "Factors associated with appropriate perinatal care\n\nFactors significantly associated with appropriate care at multivariable analysis included maternal age and parity of the mother. The proportion of mothers having appropriate care increased with increasing maternal age (aPR = 2.7, 95% CI 0.9–8.5, p = 0.09 for mothers aged 20–35 years: and aPR = 11.9, 95% CI 2.8–51.4, p<0.001 for mothers >35 years). On the other hand, the proportion of mothers with appropriate care reduced with increasing parity. The prevalence of appropriate care was 70% lower in mothers with two-three children and those with more than three children compared to prime gravidas (aPR = 0.3 95% CI 0.1–0.9, p = 0.03, and aPR = 0.3 95% CI 0.1–0.8, p = 0.02 respectively). Mothers who sought care from Kiryandongo were more likely to receive appropriate care than those from Masindi although the association is of borderline significance (aPR = 1.9 95% CI 0.9–3.7, p = 0.06). Although the education level of the mother has previously been associated with the level of care they receive during the perinatal period [7, 27], the association was not significant in this study. Table 4 provides the details of the factors associated with appropriate postpartum care.\n\n",
+        "start": 16387,
+        "end": 17621
+      },
+      {
+        "title": "Discussion",
+        "text": "Discussion\n\nImproved perinatal care is essential in reducing maternal deaths and improving birth out-comes. In this study we described the prevalence and factors associated with appropriate perinatal care in Bunyoro region, Uganda. The study found that no participant received appropriate care in the antenatal and intrapartum periods of care, and only four in every one hundred participants received appropriate care in the postpartum period. Increasing maternal age and reducing parity were significantly associated with appropriate care.\n\nAppropriate perinatal care in this setting is still limited and the study findings show that the performance of the region regarding the set minimum standards for perinatal care are still below the national averages [7]. In this study no mother received appropriate care in the antenatal and intrapartum period and only a few mothers received appropriate care in the postpartum period. Poor perinatal care increases the risk of poor maternal and birth outcomes [12], and the findings from this study could explain the high maternal mortality rates observed in the region [29]. Although health care providers schedule antenatal contacts for mothers, the time of initiating antenatal care and the total number of antenatal visits one has during a pregnancy are individual driven factors and represent the level of health care utilization in the region which has been shown to be consistently low [7, 22, 29], the other factors contributing to inappropriate care are health system driven suggesting poor health service delivery in the region. The incomplete/inappropriate records, missed physical examinations, and missed laboratory tests as observed in this study may lead to delays in appropriate decision making, timely interventions, and communication among the care providers which may cost both the lives of the mother and the baby.\n\nThe high levels of inappropriate care observed in the region may be attributed to shortage of resources like medical supplies, equipment, drugs, and staffing in hospitals as well as differences in competences of the health care providers, which are common occurrences in low income countries [30, 31]. The degree of this shortage and difference in competences may vary from facility to facility which creates a difference in care provision. However, in this setting several projects have been established to address the gaps in care due to shortage of resources by establishing effective, low-cost interventions. As part of the SMGL initiative and in collaboration with the Uganda Ministry of Health, the region received upgrade for number of public and private facilities to provide clean and safe basic delivery services and had its supply chains for essential supplies and medicines strengthened [17]. These efforts were supplemented by the Clinton Health Access Initiative and the URMCHIP that have equipped the health facilities in the region to ably manage, deliver and sustain improvement in reproductive, maternal, new born, child and adolescent Health in the region [15, 16]. With these interventions it is anticipated that shortages of resources would be limited in the country. In other low income countries, use of clinical mentorship, training, facility quality improvement teams, and quality of care reviews have been used to improve the quality of perinatal care with positive results over the study periods [32–34]. Similarly, in Uganda, SMGL implemented facility infrastructure upgrades, procured essential medical equipment, supplies and medications, trained and mentored health care providers, recruited health care providers, and strengthened maternal and perinatal mortality surveillance in parts of this region. As a result, availability of facility electricity and water increased, use of partograph in monitoring labour increased, and the proportion of facilities with no stock outs also increased [27]. Sustainability of such interventions beyond the study periods maybe important to consider for continued improvement.\n\nIncreasing maternal age was significantly associated with appropriate care with a clear dose effect relationship observed. Maternal age has been linked to demand for services, with increased age being able to demand for better services than those with lower age [7]. Findings from this study could attest to this explanation. The good care provided to older women in this study may lead to reduced adverse birth outcomes that are common in this age group [36].\n\nReducing parity was significantly associated with appropriate care. Mothers below 20 years of age are perceived to be at risk of having pregnancy related complications [37–40], which explains why mothers of that age group in this study could have received appropriate care. As a result, primigravida mothers could have had improved maternal and birth outcomes.\n\nMuch as higher education and income are associated with better care, this study did not find them significantly associated with appropriate postpartum care. The difference in findings may be attributed to the fact that the study sites were public hospitals where care is provided free of charge and mothers do not have to pay for most of the services. In addition, mothers with higher education and income are likely to seek private services instead of general services that are often provided to most of the mothers in public hospitals [7]. This could result in having less complications during childbirth.\n\nThis study had some limitations. First, it was a cross sectional study that merely provided a snapshot of the care processes in these facilities. Conducting a follow up study with both observational and extracted data could have provided a better assessment of the quality of care received by mothers. However, the findings are still valid as they highlight gaps and make suggestions on what could be done differently, which provides a basis for further studies. Secondly, this study extracted the data on care from patient records. It is possible that information recorded did not exactly reflect the care provided to mothers during these periods of care. In addition, there is no data on direct observation of the care processes which would have explained or validated the data extracted from the patient records. The source of data also makes it hard to appreciate the in-depth factors affecting care including personal factors like beliefs, values, experiences, and ability to access services as well as determine the usage of the data in patient care. However, exit interviews were held with mothers and care providers to understand the nature of care provided. Thirdly, the study excluded women who were referred for childbirth from other facilities and did not attend antenatal care in the study hospitals. This could have reduced the study’s ability to assess care provided to postpartum women by other facilities in this region. Therefore, findings of this study may not be entirely generalizable to Bunyoro region. Lastly, the study did not capture information on type of pregnancy and existing co-morbidities which could have influenced the nature of care provided to mothers.\n\n",
+        "start": 17621,
+        "end": 24768
+      },
+      {
+        "title": "Conclusion",
+        "text": "Conclusion\n\nIn summary, we found that antenatal, intrapartum and postpartum care provided to mothers was below the standard recommended by WHO and Ministry of Health in Bunyoro, Uganda. Increased age and reduced parity influenced the extent to which mothers were cared for during the postpartum period. Therefore building the capacity of healthcare providers on the recommended perinatal care; as well as provision of required supplies, equipment and drugs; and provision of appropriate infrastructure by government could motivate health care providers to provide quality care. Mothers also can be empowered through health education to demand for care. There is need to develop sustainable strategies that could produce lasting impact on the quality of care. Developing an appropriate tool for assessing quality of care in this setting may also help researchers in assessing quality of care in similar settings.\n\n",
+        "start": 24768,
+        "end": 25681
+      },
+      {
+        "title": "Acknowledgments",
+        "text": "Acknowledgments\n\nWe are thankful to all mothers who agreed to participate in the study, the health facility and perinatal unit leadership that made access to women and their records possible, and the research assistants who ensured that quality data is obtained. Special appreciation is given to the study site supervisors who ensured that data is timely accessed and collected. Lastly, we appreciate the district health officers for allowing this study to be conducted in their districts.",
+        "start": 25681,
+        "end": 26170
+      }
+    ],
+    "references": [
+      {
+        "key": "r1",
+        "label": "1",
+        "raw": "Jolivet RR, Moran A, O’Connor M, Chou D, Bhardwaj N, Newby H, et al. Ending preventable maternal mortality: phase II of a multi-step process to develop a monitoring framework, 2016–2030. BMC Pregnancy and Childbirth 2018;18.",
+        "title": "Ending preventable maternal mortality: phase II of a multi-step process to develop a monitoring framework, 2016–2030",
+        "authors": [
+          "Jolivet RR",
+          "Moran A",
+          "O’Connor M",
+          "Chou D",
+          "Bhardwaj N",
+          "Newby H"
+        ],
+        "year": 2018,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r2",
+        "label": "2",
+        "raw": "WHO. Every newborn: An action plan to end preventable deaths. Geneva; 2014.",
+        "title": "Every newborn: An action plan to end preventable deaths",
+        "authors": [
+          "WHO"
+        ],
+        "year": 2014,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r3",
+        "label": "3",
+        "raw": "Sharma G, Mathai M, Dickson KE, Weeks A, Hofmeyr GJ, Lavender T, et al. Quality care during labour and birth: a multicountry analysis of health system bottlenecks and potential solutions. BMC Pregnancy and Childbirth 2015; 15 (Suppl 2).",
+        "title": "Quality care during labour and birth: a multicountry analysis of health system bottlenecks and potential solutions",
+        "authors": [
+          "Sharma G",
+          "Mathai M",
+          "Dickson KE",
+          "Weeks A",
+          "Hofmeyr GJ",
+          "Lavender T"
+        ],
+        "year": 2015,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r4",
+        "label": "4",
+        "raw": "Leslie HH, Fink G, Nsona H, Kruk ME. Obstetric Facility Quality and Newborn Mortality in Malawi: A Cross-Sectional Study. PLoS Med 2016; 13(10):e1002151. https://doi.org/10.1371/journal.pmed. 1002151 PMID: 27755547",
+        "title": "Obstetric Facility Quality and Newborn Mortality in Malawi: A Cross-Sectional Study",
+        "authors": [
+          "Leslie HH",
+          "Fink G",
+          "Nsona H",
+          "Kruk ME"
+        ],
+        "year": 2016,
+        "doi": "10.1371/journal.pmed",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1371/journal.pmed.",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r5",
+        "label": "5",
+        "raw": "WHO. Maternal Mortality 2019 [updated 19 September 2019. Available from: https://www.who.int/ news-room/fact-sheets/detail/maternal-mortality.",
+        "title": "Maternal Mortality 2019 [updated 19 September 2019",
+        "authors": [
+          "WHO"
+        ],
+        "year": 2019,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://www.who.int/",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r6",
+        "label": "6",
+        "raw": "WHO. Newborns: improving survival and well-being 2020 [updated 19 September 2020. Available from: https://www.who.int/news-room/fact-sheets/detail/newborns-reducing-mortality.",
+        "title": "Newborns: improving survival and well-being 2020 [updated 19 September 2020",
+        "authors": [
+          "WHO"
+        ],
+        "year": 2020,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://www.who.int/news-room/fact-sheets/detail/newborns-reducing-mortality.",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r7",
+        "label": "7",
+        "raw": "Uganda Bureau of Statistics (UBOS). Uganda Demographic and Health Survey 2016 Kampala, Uganda; Rockville, Maryland, USA: UBOS; 2016 [Available from: https://dhsprogram.com/pubs/pdf/ FR333/FR333.pdf.",
+        "title": "Uganda Demographic and Health Survey 2016 Kampala, Uganda; Rockville, Maryland, USA: UBOS; 2016 [Available from: https://dhsprogram.com/pubs/pdf/ FR333/FR333.pdf",
+        "authors": [
+          "Uganda Bureau of Statistics (UBOS)"
+        ],
+        "year": 2016,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://dhsprogram.com/pubs/pdf/",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r8",
+        "label": "8",
+        "raw": "Tetui M, Ekirapa K, Bua J, Mutebi A, Tweheyo R, Waiswa P. Quality of Antenatal care services in eastern Uganda: implications for interventions. Pan African Medical Journal. 2012;13. PMID: 23308332",
+        "title": "Quality of Antenatal care services in eastern Uganda: implications for interventions",
+        "authors": [
+          "Tetui M",
+          "Ekirapa K",
+          "Bua J",
+          "Mutebi A",
+          "Tweheyo R",
+          "Waiswa P"
+        ],
+        "year": 2012,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r9",
+        "label": "9",
+        "raw": "Kigenyi O, Tefera G, Nabiwemba E, Orach GC. Quality of intrapartum care at Mulago national referral hospital, Uganda: clients’ perspective. BMC Pregnancy and Childbirth. 2013;13.",
+        "title": "Quality of intrapartum care at Mulago national referral hospital, Uganda: clients’ perspective",
+        "authors": [
+          "Kigenyi O",
+          "Tefera G",
+          "Nabiwemba E",
+          "Orach GC"
+        ],
+        "year": 2013,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r10",
+        "label": "10",
+        "raw": "Kyaddondo D, Mugerwa K, Byamugisha J, Oladapo OT, Bohren MA. Expectations and needs of Ugandan women for improved quality of childbirth care in health facilities: A qualitative study. International Journal of Gynaecology and Obstetrics 2017; 139(Suppl 1):38–46. https://doi.org/10.1002/ijgo.12405 PMID: 29226329",
+        "title": "Expectations and needs of Ugandan women for improved quality of childbirth care in health facilities: A qualitative study",
+        "authors": [
+          "Kyaddondo D",
+          "Mugerwa K",
+          "Byamugisha J",
+          "Oladapo OT",
+          "Bohren MA"
+        ],
+        "year": 2017,
+        "doi": "10.1002/ijgo.12405",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1002/ijgo.12405",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r11",
+        "label": "11",
+        "raw": "Wilunda C, Oyerinde K, Putoto G, Lochoro P, Dall’Oglio G, Manenti F, et al. Availability, utilisation and quality of maternal and neonatal health care services in Karamoja region, Uganda: a health facility-based survey. Reproductive Health 2015;12.",
+        "title": "Availability, utilisation and quality of maternal and neonatal health care services in Karamoja region, Uganda: a health facility-based survey",
+        "authors": [
+          "Wilunda C",
+          "Oyerinde K",
+          "Putoto G",
+          "Lochoro P",
+          "Dall’Oglio G",
+          "Manenti F"
+        ],
+        "year": 2015,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r12",
+        "label": "12",
+        "raw": "Agaba P, Magadi M, Onukwugha F, Misinde C. Factors associated with the Timing and Number of Antenatal care visits among unmarried compared to married youth in Uganda between 2006 and 2016. Social Sciences. 2021; 10(474).",
+        "title": "Factors associated with the Timing and Number of Antenatal care visits among unmarried compared to married youth in Uganda between 2006 and 2016",
+        "authors": [
+          "Agaba P",
+          "Magadi M",
+          "Onukwugha F",
+          "Misinde C"
+        ],
+        "year": 2021,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r13",
+        "label": "13",
+        "raw": "Dey T, Ononge S, Weeks A, Benova L. Immediate postnatal care following childbirth in Ugandan health facilities: an analysis of Demographic and Health Surveys between 2001 and 2016. BMJ Global Health. 2021; 6(e004230). https://doi.org/10.1136/bmjgh-2020-004230 PMID: 33888487",
+        "title": "Immediate postnatal care following childbirth in Ugandan health facilities: an analysis of Demographic and Health Surveys between 2001 and 2016",
+        "authors": [
+          "Dey T",
+          "Ononge S",
+          "Weeks A",
+          "Benova L"
+        ],
+        "year": 2021,
+        "doi": "10.1136/bmjgh-2020-004230",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1136/bmjgh-2020-004230",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r14",
+        "label": "14",
+        "raw": "Sserwanja Q, Mukunya D, Musaba WM, Kawuki J, Kitutu EF. Factors associated with health facility utilization during childbirth among 15 to 49 year old women in Uganda: evidence from Uganda demographic health survey 2016. BMC Health Services Research. 2021; 21(1160). https://doi.org/10.1186/s12913- 021-07179-5 PMID: 34702251",
+        "title": "Factors associated with health facility utilization during childbirth among 15 to 49 year old women in Uganda: evidence from Uganda demographic health survey 2016",
+        "authors": [
+          "Sserwanja Q",
+          "Mukunya D",
+          "Musaba WM",
+          "Kawuki J",
+          "Kitutu EF"
+        ],
+        "year": 2021,
+        "doi": "10.1186/s12913-",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1186/s12913-",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r15",
+        "label": "15",
+        "raw": "Clinton Health Access Initiative (CHAI). Annual Report 2018 Boston, MA USA2018 [updated 19 September 2020. Available from: https://www.clintonhealthaccess.org/wp-content/uploads/2019/12/CHAI- ANNUAL-REPORT.pdf.",
+        "title": "Annual Report 2018 Boston, MA USA2018 [updated 19 September 2020",
+        "authors": [
+          "Clinton Health Access Initiative (CHAI)"
+        ],
+        "year": 2020,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://www.clintonhealthaccess.org/wp-content/uploads/2019/12/CHAI-",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r16",
+        "label": "16",
+        "raw": "Ministry of Health. Resettlement Policy Framework for Uganda Reproductive, Maternal, Neonatal, and Child Health Improvement Project [Report]. Kampala2016 [updated May 2016. Available from: https:// www.health.go.ug/cause/resettlement-policy-framework-for-uganda-reproductive-maternal-neonatal-and-child-health-improvement-project/.",
+        "title": "Resettlement Policy Framework for Uganda Reproductive, Maternal, Neonatal, and Child Health Improvement Project [Report]",
+        "authors": [
+          "Ministry of Health"
+        ],
+        "year": 2016,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r17",
+        "label": "17",
+        "raw": "Sensalire S, Isabirye P, Karamagi E, Byabagambi J, Rahimzai M, Calnan J. Saving Mothers, Giving Life Approach for Strengthening Health Systems to Reduce Maternal and Newborn Deaths in 7 Scaleup Districts in Northern Uganda. Global Health: Science and Practice. 2019; 7(1):S168–S87.",
+        "title": "Saving Mothers, Giving Life Approach for Strengthening Health Systems to Reduce Maternal and Newborn Deaths in 7 Scaleup Districts in Northern Uganda",
+        "authors": [
+          "Sensalire S",
+          "Isabirye P",
+          "Karamagi E",
+          "Byabagambi J",
+          "Rahimzai M",
+          "Calnan J"
+        ],
+        "year": 2019,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r18",
+        "label": "18",
+        "raw": "WHO. WHO recommendations on antenatal care for a positive pregnancy experience. Geneva: WHO;",
+        "title": "WHO recommendations on antenatal care for a positive pregnancy experience",
+        "authors": [
+          "WHO"
+        ],
+        "year": null,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r19",
+        "label": "19",
+        "raw": "Ssetaala A, Nabawanuka J, Matovu G, Nakiragga N, Namugga J, Nalubega P, et al. Components of antenatal care received by women in fishing communities on Lake Victoria, Uganda; a cross sectional survey. BMC Health Services Research. 2020;20.",
+        "title": "Components of antenatal care received by women in fishing communities on Lake Victoria, Uganda; a cross sectional survey",
+        "authors": [
+          "Ssetaala A",
+          "Nabawanuka J",
+          "Matovu G",
+          "Nakiragga N",
+          "Namugga J",
+          "Nalubega P"
+        ],
+        "year": 2020,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r20",
+        "label": "20",
+        "raw": "Uganda Bureau of Statistics (UBOS). 2020 Statistical Abstract 2020 [Available from: https://www.ubos. org/wp-content/uploads/publications/11_2020STATISTICAL__ABSTRACT_2020.pdf.",
+        "title": "2020 Statistical Abstract 2020 [Available from: https://www.ubos",
+        "authors": [
+          "Uganda Bureau of Statistics (UBOS)"
+        ],
+        "year": 2020,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://www.ubos.",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r21",
+        "label": "21",
+        "raw": "Uganda Bureau of Statistics (UBOS). The National Population and Housing Census 2014—National Analytical Report Kampala: UBOS; 2017 [Available from: https://www.ubos.org/wp-content/uploads/ publications/03_20182014_National_Census_Main_Report.pdf.",
+        "title": "The National Population and Housing Census 2014—National Analytical Report Kampala: UBOS; 2017 [Available from: https://www.ubos.org/wp-content/uploads/ publications/03_20182014_National_Census_Main_Report.pdf",
+        "authors": [
+          "Uganda Bureau of Statistics (UBOS)"
+        ],
+        "year": 2017,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://www.ubos.org/wp-content/uploads/",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r22",
+        "label": "22",
+        "raw": "Uganda Bureau of Statistics (UBOS). The National Population and Housing Census 2014 –Health status and associated factors. Thematic Report Series [Report]. Kampala: UBOS; 2017 [updated November 2017. Available from: https://uganda.unfpa.org/sites/default/files/pub-pdf/Health%20Monograph% 2010-01-2018%20With%20Covers.pdf.",
+        "title": "The National Population and Housing Census 2014 –Health status and associated factors",
+        "authors": [
+          "Uganda Bureau of Statistics (UBOS)"
+        ],
+        "year": 2018,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://uganda.unfpa.org/sites/default/files/pub-pdf/Health%20Monograph%",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r23",
+        "label": "23",
+        "raw": "Ministry of Health. Guidelines for designation, establishment, and upgrading of health units. Criteria for Designation of Levels of Services Delivery of Health Units. Kampala: MoH; 2011.",
+        "title": "Guidelines for designation, establishment, and upgrading of health units",
+        "authors": [
+          "Ministry of Health"
+        ],
+        "year": 2011,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r24",
+        "label": "24",
+        "raw": "Joshi C, Torvaldsen S, Hodgson R, Hayen A. Factors associated with the use and quality of antenatal care in Nepal: a population-based study using the demographic and health survey data. BMC Pregnancy and Childbirth. 2014;14.",
+        "title": "Factors associated with the use and quality of antenatal care in Nepal: a population-based study using the demographic and health survey data",
+        "authors": [
+          "Joshi C",
+          "Torvaldsen S",
+          "Hodgson R",
+          "Hayen A"
+        ],
+        "year": 2014,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r25",
+        "label": "25",
+        "raw": "WHO. WHO recommendations Intrapartum care for a positive childbirth experience. Geneva: WHO;",
+        "title": "WHO recommendations Intrapartum care for a positive childbirth experience",
+        "authors": [
+          "WHO"
+        ],
+        "year": null,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r26",
+        "label": "26",
+        "raw": "WHO. WHO recommendations on Postnatal care of the mother and newborn. Geneva: WHO; 2013.",
+        "title": "WHO recommendations on Postnatal care of the mother and newborn",
+        "authors": [
+          "WHO"
+        ],
+        "year": 2013,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r27",
+        "label": "27",
+        "raw": "Muyunda B, Makasa M, Jacobs C, Musonda P, Michelo C. Higher education attainment associated with optimal antenatal care visits among childbearing women in Zambia. Frontiers in Public Health. 2016; 4 (127). https://doi.org/10.3389/fpubh.2016.00127 PMID: 27379228",
+        "title": "Higher education attainment associated with optimal antenatal care visits among childbearing women in Zambia",
+        "authors": [
+          "Muyunda B",
+          "Makasa M",
+          "Jacobs C",
+          "Musonda P",
+          "Michelo C"
+        ],
+        "year": 2016,
+        "doi": "10.3389/fpubh.2016.00127",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.3389/fpubh.2016.00127",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r28",
+        "label": "28",
+        "raw": "Chou BV, Walker N, Kanyangarara M. Estimating the global impact of poor quality of care on maternal and neonatal outcomes in 81 low and middle income countries: a modeling study. PLOS Medicine. 2019; 16(12):e1002990. https://doi.org/10.1371/journal.pmed.1002990 PMID: 31851685",
+        "title": "Estimating the global impact of poor quality of care on maternal and neonatal outcomes in 81 low and middle income countries: a modeling study",
+        "authors": [
+          "Chou BV",
+          "Walker N",
+          "Kanyangarara M"
+        ],
+        "year": 2019,
+        "doi": "10.1371/journal.pmed.1002990",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1371/journal.pmed.1002990",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r29",
+        "label": "29",
+        "raw": "Serbanescu F, Golderg H, Danel I, Wuhib T, Marum L, Obiero W, et al. Rapid reduction of maternal mortality in Uganda and Zambia through the saving mothers, giving life initiative: results of year 1 evaluation. BMC Pregnancy and Childbirth 2017;17.",
+        "title": "Rapid reduction of maternal mortality in Uganda and Zambia through the saving mothers, giving life initiative: results of year 1 evaluation",
+        "authors": [
+          "Serbanescu F",
+          "Golderg H",
+          "Danel I",
+          "Wuhib T",
+          "Marum L",
+          "Obiero W"
+        ],
+        "year": 2017,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r30",
+        "label": "30",
+        "raw": "Mukisa J, Grant I, Magala J, Ssemata A, Lumala ZP, Byamugisha J. Level of Partograph completion and healthcare workers’ perspectives on its use in Mulago National Referral and teaching hospital, Kampala, Uganda. BMC Health Services Research. 2019;19.",
+        "title": "Level of Partograph completion and healthcare workers’ perspectives on its use in Mulago National Referral and teaching hospital, Kampala, Uganda",
+        "authors": [
+          "Mukisa J",
+          "Grant I",
+          "Magala J",
+          "Ssemata A",
+          "Lumala ZP",
+          "Byamugisha J"
+        ],
+        "year": 2019,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r31",
+        "label": "31",
+        "raw": "Kassaw A, Debie A, Geberu MD. Quality of Prenatal Care and Associated Factors among Pregnant Women at Public Health Facilities of Wogera District, Northwest Ethiopia. Journal of Pregnancy. 2020;2020. https://doi.org/10.1155/2020/9592124 PMID: 32411469",
+        "title": "Quality of Prenatal Care and Associated Factors among Pregnant Women at Public Health Facilities of Wogera District, Northwest Ethiopia",
+        "authors": [
+          "Kassaw A",
+          "Debie A",
+          "Geberu MD"
+        ],
+        "year": 2020,
+        "doi": "10.1155/2020/9592124",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1155/2020/9592124",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r32",
+        "label": "32",
+        "raw": "Manzi A, Nyirazinyoye L, Ntaganira J, Hema M, Bigiriman E, Mukanzabikeshimana L, et al. Beyond coverage: improving the quality of antenatal care delivery through integrated mentorship and quality improvement at health centers in rural Rwanda. BMC Health Services Research. 2018; 18(136). https:// doi.org/10.1186/s12913-018-2939-7 PMID: 29471830",
+        "title": "Beyond coverage: improving the quality of antenatal care delivery through integrated mentorship and quality improvement at health centers in rural Rwanda",
+        "authors": [
+          "Manzi A",
+          "Nyirazinyoye L",
+          "Ntaganira J",
+          "Hema M",
+          "Bigiriman E",
+          "Mukanzabikeshimana L"
+        ],
+        "year": 2018,
+        "doi": "10.1186/s12913-018-2939-7",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r33",
+        "label": "33",
+        "raw": "Walker D, Otieno P, Butrick E, Namazzi G, Achola K, Merai R, et al. Effect of a quality improvement package for intrapartum and immediate newborn care on fresh stillbirth and neonatal mortality among preterm and low-birthweight babies in Kenya and Uganda: a cluster-randomised facility-based trial. Lancet Global Health. 2020; 8(e1061-70). https://doi.org/10.1016/S2214-109X(20)30232-1 PMID: 32710862",
+        "title": "Effect of a quality improvement package for intrapartum and immediate newborn care on fresh stillbirth and neonatal mortality among preterm and low-birthweight babies in Kenya and Uganda: a cluster-randomised facility-based trial",
+        "authors": [
+          "Walker D",
+          "Otieno P",
+          "Butrick E",
+          "Namazzi G",
+          "Achola K",
+          "Merai R"
+        ],
+        "year": 2020,
+        "doi": "10.1016/S2214-109X(20)30232-1",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1016/S2214-109X(20)30232-1",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r34",
+        "label": "34",
+        "raw": "Duysburgh E, Kerstens B, Kouanda S, KaboreṔC, Yugbare BD, Gichangi P, et al. Opportunities to improve postpartum care for mothers and infants: design of context-specific packages of postpartum interventions in rural districts in four sub-Saharan African countries. BMC Pregnancy and Childbirth. 2015; 15(131). https://doi.org/10.1186/s12884-015-0562-8 PMID: 26038100",
+        "title": "Opportunities to improve postpartum care for mothers and infants: design of context-specific packages of postpartum interventions in rural districts in four sub-Saharan African countries",
+        "authors": [
+          "Duysburgh E",
+          "Kerstens B",
+          "Kouanda S",
+          "KaboreṔC",
+          "Yugbare BD",
+          "Gichangi P"
+        ],
+        "year": 2015,
+        "doi": "10.1186/s12884-015-0562-8",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1186/s12884-015-0562-8",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r35",
+        "label": "35",
+        "raw": "Morof D, Serbanescu F, Goodwin MM, Hamer HD, Asiimwe RA, Hamomba L, et al. Addressing the Third Delay in SavingMothers,Giving Life Districts in Uganda and Zambia: Ensuring Adequate and Appropriate Facility-Based Maternal and Perinatal Health Care. Global Health: Science and Practice. 2019; 7(Suppl 1):S85–S103.",
+        "title": "Addressing the Third Delay in SavingMothers,Giving Life Districts in Uganda and Zambia: Ensuring Adequate and Appropriate Facility-Based Maternal and Perinatal Health Care",
+        "authors": [
+          "Morof D",
+          "Serbanescu F",
+          "Goodwin MM",
+          "Hamer HD",
+          "Asiimwe RA",
+          "Hamomba L"
+        ],
+        "year": 2019,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r36",
+        "label": "36",
+        "raw": "Sheen JJ, Wright D, Goffman D, Kern-Goldberger AR, Booker W, Siddiq Z, et al. Maternal age and risk for adverse outcomes. American Journal of Obstetrics and Gynaecology. 2019; 219(4).",
+        "title": "Maternal age and risk for adverse outcomes",
+        "authors": [
+          "Sheen JJ",
+          "Wright D",
+          "Goffman D",
+          "Kern-Goldberger AR",
+          "Booker W",
+          "Siddiq Z"
+        ],
+        "year": 2019,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r37",
+        "label": "37",
+        "raw": "Beraki GG, Tesfamariam H, Gebremichael A, Yohannes B, Haile K, Tewelde S, et al. Knowledge on postnatal care among postpartum mothers during discharge in maternity hospitals in Asmara: a cross-sectional study. BMC Pregnancy and Childbirth. 2020;20.",
+        "title": "Knowledge on postnatal care among postpartum mothers during discharge in maternity hospitals in Asmara: a cross-sectional study",
+        "authors": [
+          "Beraki GG",
+          "Tesfamariam H",
+          "Gebremichael A",
+          "Yohannes B",
+          "Haile K",
+          "Tewelde S"
+        ],
+        "year": 2020,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r38",
+        "label": "38",
+        "raw": "Kassa MG, Arowojolu O, Odukogbe AA, Yalew WA. Adverse neonatal outcomes in adolescent pregnancy in Northwest Ethiopia. PLOS ONE. 2019; 14(6). https://doi.org/10.1371/journal.pone.0218259 PMID: 31194833",
+        "title": "Adverse neonatal outcomes in adolescent pregnancy in Northwest Ethiopia",
+        "authors": [
+          "Kassa MG",
+          "Arowojolu O",
+          "Odukogbe AA",
+          "Yalew WA"
+        ],
+        "year": 2019,
+        "doi": "10.1371/journal.pone.0218259",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1371/journal.pone.0218259",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r39",
+        "label": "39",
+        "raw": "Akibu M, Tsegaye W, Megersa T, Nurgi S. Prevalence and Determinants of Complete Postnatal Care Service Utilization in Northern Shoa, Ethiopia. Journal of Pregnancy. 2018; 2018:7. https://doi.org/10. 1155/2018/8625437 PMID: 30186633",
+        "title": "Prevalence and Determinants of Complete Postnatal Care Service Utilization in Northern Shoa, Ethiopia",
+        "authors": [
+          "Akibu M",
+          "Tsegaye W",
+          "Megersa T",
+          "Nurgi S"
+        ],
+        "year": 2018,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r40",
+        "label": "40",
+        "raw": "Martıńez-Galiano MJ, Hernandez-Martinez A, Rodrıǵuez-Almagro J, Delgado-Rodrıǵuez M, Goḿez- Salgado J. Relationship between parity and the problems that appear in the postpartum period. Scientific Reports. 2019;9.",
+        "title": "Relationship between parity and the problems that appear in the postpartum period",
+        "authors": [
+          "Martıńez-Galiano MJ",
+          "Hernandez-Martinez A",
+          "Rodrıǵuez-Almagro J",
+          "Delgado-Rodrıǵuez M",
+          "Goḿez- Salgado J"
+        ],
+        "year": 2019,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      }
+    ],
+    "citation_keys_total": 40,
+    "citation_keys_mapped": 40,
+    "notes": []
+  },
+  "sentences": [
+    {
+      "id": "s1",
+      "text": "Improvement in the quality of perinatal care is essential in reducing maternal and neonatal mortality, and is required in order to meet the Sustainable Development Goal three target aimed at: 1) reducing the maternal mortality ratio (MMR) to less than 70 deaths/100,000 live births by 2030; 2) reducing the neonatal mortality rate (NMR) to less than 7/1000 live births by 2035; and 3) reducing the number of still births to less than 8 still births/1000 total births [1– 3].",
+      "section": "Introduction",
+      "start": 2232,
+      "end": 2706,
+      "reference_keys": [
+        "r1",
+        "r2",
+        "r3"
+      ],
+      "marker_spans": [
+        [
+          2699,
+          2705
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r1",
+          "r2",
+          "r3"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "Sub Saharan Africa bears the highest burden of adverse maternal and neonatal outcomes, contributing 55% of the global stillbirths [4], 66% of the global maternal mortality [5], and 46% of the neonatal mortality [6]."
+    },
+    {
+      "id": "s2",
+      "text": "Sub Saharan Africa bears the highest burden of adverse maternal and neonatal outcomes, contributing 55% of the global stillbirths [4], 66% of the global maternal mortality [5], and 46% of the neonatal mortality [6].",
+      "section": "Introduction",
+      "start": 2707,
+      "end": 2922,
+      "reference_keys": [
+        "r4",
+        "r5",
+        "r6"
+      ],
+      "marker_spans": [
+        [
+          2837,
+          2840
+        ],
+        [
+          2879,
+          2882
+        ],
+        [
+          2918,
+          2921
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r4"
+        ],
+        [
+          "r5"
+        ],
+        [
+          "r6"
+        ]
+      ],
+      "context_before": "Improvement in the quality of perinatal care is essential in reducing maternal and neonatal mortality, and is required in order to meet the Sustainable Development Goal three target aimed at: 1) reducing the maternal mortality ratio (MMR) to less than 70 deaths/100,000 live births by 2030; 2) reducing the neonatal mortality rate (NMR) to less than 7/1000 live births by 2035; and 3) reducing the number of still births to less than 8 still births/1000 total births [1– 3].",
+      "context_after": "In these same settings, countries also struggle with achieving the set standards of quality care for pregnant women [38]."
+    },
+    {
+      "id": "s3",
+      "text": "In these same settings, countries also struggle with achieving the set standards of quality care for pregnant women [38].",
+      "section": "Introduction",
+      "start": 2923,
+      "end": 3044,
+      "reference_keys": [
+        "r38"
+      ],
+      "marker_spans": [
+        [
+          3039,
+          3043
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r38"
+        ]
+      ],
+      "context_before": "Sub Saharan Africa bears the highest burden of adverse maternal and neonatal outcomes, contributing 55% of the global stillbirths [4], 66% of the global maternal mortality [5], and 46% of the neonatal mortality [6].",
+      "context_after": ""
+    },
+    {
+      "id": "s4",
+      "text": "Uganda is one of the countries that face challenges in provision of quality perinatal care [7– 11].",
+      "section": "Introduction",
+      "start": 3046,
+      "end": 3145,
+      "reference_keys": [
+        "r7",
+        "r8",
+        "r9",
+        "r10",
+        "r11"
+      ],
+      "marker_spans": [
+        [
+          3137,
+          3144
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r7",
+          "r8",
+          "r9",
+          "r10",
+          "r11"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "According to the latest 2016 Uganda Demographic and Health Survey (DHS), only 60% of the women surveyed had attended the recommended four antenatal visits during the pregnancy leading to their most recent birth, and less than one third had their first visit during the first trimester of pregnancy [7]."
+    },
+    {
+      "id": "s5",
+      "text": "According to the latest 2016 Uganda Demographic and Health Survey (DHS), only 60% of the women surveyed had attended the recommended four antenatal visits during the pregnancy leading to their most recent birth, and less than one third had their first visit during the first trimester of pregnancy [7].",
+      "section": "Introduction",
+      "start": 3146,
+      "end": 3448,
+      "reference_keys": [
+        "r7"
+      ],
+      "marker_spans": [
+        [
+          3444,
+          3447
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r7"
+        ]
+      ],
+      "context_before": "Uganda is one of the countries that face challenges in provision of quality perinatal care [7– 11].",
+      "context_after": "In addition, only 39% of the women had had a urine sample taken, and even though 74% of childbirths were attended by skilled health personnel, only 54% of the women and 56% of the newborns received a postnatal check within 2 days of delivery."
+    },
+    {
+      "id": "s6",
+      "text": "In an independent study evaluating antenatal care among 299 mothers in eastern Uganda 53% of the mothers did not have essential tests conducted, 62% were not offered sulphadoxine pyrimethamine (SP) for intermittent treatment of malaria (IPTp), and 72% were not offered folic/ ferrous sulphate supplement [8].",
+      "section": "Introduction",
+      "start": 3692,
+      "end": 4000,
+      "reference_keys": [
+        "r8"
+      ],
+      "marker_spans": [
+        [
+          3996,
+          3999
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r8"
+        ]
+      ],
+      "context_before": "In addition, only 39% of the women had had a urine sample taken, and even though 74% of childbirths were attended by skilled health personnel, only 54% of the women and 56% of the newborns received a postnatal check within 2 days of delivery.",
+      "context_after": "Similar findings were reported in other studies across the country [9–11]."
+    },
+    {
+      "id": "s7",
+      "text": "Similar findings were reported in other studies across the country [9–11].",
+      "section": "Introduction",
+      "start": 4001,
+      "end": 4075,
+      "reference_keys": [
+        "r9",
+        "r10",
+        "r11"
+      ],
+      "marker_spans": [
+        [
+          4068,
+          4074
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r9",
+          "r10",
+          "r11"
+        ]
+      ],
+      "context_before": "In an independent study evaluating antenatal care among 299 mothers in eastern Uganda 53% of the mothers did not have essential tests conducted, 62% were not offered sulphadoxine pyrimethamine (SP) for intermittent treatment of malaria (IPTp), and 72% were not offered folic/ ferrous sulphate supplement [8].",
+      "context_after": "Furthermore, education, occupation, age, parity, being wealthy and caesarian section as a mode of delivery were found to be associated with perinatal care [12–14]."
+    },
+    {
+      "id": "s8",
+      "text": "Furthermore, education, occupation, age, parity, being wealthy and caesarian section as a mode of delivery were found to be associated with perinatal care [12–14].",
+      "section": "Introduction",
+      "start": 4076,
+      "end": 4239,
+      "reference_keys": [
+        "r12",
+        "r13",
+        "r14"
+      ],
+      "marker_spans": [
+        [
+          4231,
+          4238
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r12",
+          "r13",
+          "r14"
+        ]
+      ],
+      "context_before": "Similar findings were reported in other studies across the country [9–11].",
+      "context_after": ""
+    },
+    {
+      "id": "s9",
+      "text": "Bunyoro, a region in western Uganda is being supported by a number of quality improvement projects in order to reduce the risk of maternal and infant mortality including: 1) the Clinton Health Access Initiative (CHAI) that has continued to equip and build the capacity of the health system to ably manage, deliver and sustain improvements in reproductive, maternal, new born, child and adolescent health programming since 2007 [15]; 2) the Ministry of Health reproductive, maternal, and child health improvement project (URMCHIP) which aims at improving the utilization of essential reproductive, maternal, newborn, child and adolescent health services [16]; and 3) Saving Mothers Giving Life project (SMGL), a health system strengthening project that ran from 2012 to 2014.",
+      "section": "Introduction",
+      "start": 4241,
+      "end": 5015,
+      "reference_keys": [
+        "r15",
+        "r16"
+      ],
+      "marker_spans": [
+        [
+          4668,
+          4672
+        ],
+        [
+          4894,
+          4898
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r15"
+        ],
+        [
+          "r16"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "The SMGL’s aim was to address the three delays in health care including the delay in decision to seek care, in reaching care, and in receiving adequate and appropriate health care [17]."
+    },
+    {
+      "id": "s10",
+      "text": "The SMGL’s aim was to address the three delays in health care including the delay in decision to seek care, in reaching care, and in receiving adequate and appropriate health care [17].",
+      "section": "Introduction",
+      "start": 5016,
+      "end": 5201,
+      "reference_keys": [
+        "r17"
+      ],
+      "marker_spans": [
+        [
+          5196,
+          5200
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r17"
+        ]
+      ],
+      "context_before": "Bunyoro, a region in western Uganda is being supported by a number of quality improvement projects in order to reduce the risk of maternal and infant mortality including: 1) the Clinton Health Access Initiative (CHAI) that has continued to equip and build the capacity of the health system to ably manage, deliver and sustain improvements in reproductive, maternal, new born, child and adolescent health programming since 2007 [15]; 2) the Ministry of Health reproductive, maternal, and child health improvement project (URMCHIP) which aims at improving the utilization of essential reproductive, maternal, newborn, child and adolescent health services [16]; and 3) Saving Mothers Giving Life project (SMGL), a health system strengthening project that ran from 2012 to 2014.",
+      "context_after": "Despite this support, the region registered the nation’s lowest scores on several indicators of maternal health care in the 2016 DHS survey with the number of mothers attending the recommended four antenatal visits at 44.5%, proportion of women who had a urine sample examined during antenatal visits at 27.5%, and proportion of women who had no post-natal checks within 48 hours of delivery at 63.8% [7]."
+    },
+    {
+      "id": "s11",
+      "text": "Despite this support, the region registered the nation’s lowest scores on several indicators of maternal health care in the 2016 DHS survey with the number of mothers attending the recommended four antenatal visits at 44.5%, proportion of women who had a urine sample examined during antenatal visits at 27.5%, and proportion of women who had no post-natal checks within 48 hours of delivery at 63.8% [7].",
+      "section": "Introduction",
+      "start": 5202,
+      "end": 5607,
+      "reference_keys": [
+        "r7"
+      ],
+      "marker_spans": [
+        [
+          5603,
+          5606
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r7"
+        ]
+      ],
+      "context_before": "The SMGL’s aim was to address the three delays in health care including the delay in decision to seek care, in reaching care, and in receiving adequate and appropriate health care [17].",
+      "context_after": ""
+    },
+    {
+      "id": "s12",
+      "text": "Since the last national evaluation of maternal care as part of the 2016 DHS survey, the World Health Organization (WHO) has updated its guidelines on maternal health care [18].",
+      "section": "Introduction",
+      "start": 5609,
+      "end": 5785,
+      "reference_keys": [
+        "r18"
+      ],
+      "marker_spans": [
+        [
+          5780,
+          5784
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r18"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "These new WHO guidelines were adopted and rolled out in Uganda in 2018 [19], however, no survey has evaluated the quality of care especially in the underperforming regions of the country since their role out."
+    },
+    {
+      "id": "s13",
+      "text": "These new WHO guidelines were adopted and rolled out in Uganda in 2018 [19], however, no survey has evaluated the quality of care especially in the underperforming regions of the country since their role out.",
+      "section": "Introduction",
+      "start": 5786,
+      "end": 5994,
+      "reference_keys": [
+        "r19"
+      ],
+      "marker_spans": [
+        [
+          5857,
+          5861
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r19"
+        ]
+      ],
+      "context_before": "Since the last national evaluation of maternal care as part of the 2016 DHS survey, the World Health Organization (WHO) has updated its guidelines on maternal health care [18].",
+      "context_after": "This study assessed the prevalence and factors associated with appropriate perinatal care at the three district hospitals in Bunyoro region."
+    },
+    {
+      "id": "s14",
+      "text": "The region is comprised of eight districts that include Kakumiro, Kibaale, Kagadi, Kikuube, Hoima, Masindi, Buliisa, and Kiryandongo [20].",
+      "section": "Study design and setting",
+      "start": 6538,
+      "end": 6676,
+      "reference_keys": [
+        "r20"
+      ],
+      "marker_spans": [
+        [
+          6671,
+          6675
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r20"
+        ]
+      ],
+      "context_before": "A facility based cross-sectional study was conducted between March and June 2020 in three public district hospitals of Bunyoro region, Uganda.",
+      "context_after": "The region’s population was estimated at 2,028,500 million people in the 2014 National Demographic and Population Census [21]."
+    },
+    {
+      "id": "s15",
+      "text": "The region’s population was estimated at 2,028,500 million people in the 2014 National Demographic and Population Census [21].",
+      "section": "Study design and setting",
+      "start": 6677,
+      "end": 6803,
+      "reference_keys": [
+        "r21"
+      ],
+      "marker_spans": [
+        [
+          6798,
+          6802
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r21"
+        ]
+      ],
+      "context_before": "The region is comprised of eight districts that include Kakumiro, Kibaale, Kagadi, Kikuube, Hoima, Masindi, Buliisa, and Kiryandongo [20].",
+      "context_after": "Bunyoro region has one of the highest fertility rates (7.5) in the country, and has a high proportion of both teenage pregnancies (10.6%) and early marriages (19%) [22]."
+    },
+    {
+      "id": "s16",
+      "text": "Bunyoro region has one of the highest fertility rates (7.5) in the country, and has a high proportion of both teenage pregnancies (10.6%) and early marriages (19%) [22].",
+      "section": "Study design and setting",
+      "start": 6804,
+      "end": 6973,
+      "reference_keys": [
+        "r22"
+      ],
+      "marker_spans": [
+        [
+          6968,
+          6972
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r22"
+        ]
+      ],
+      "context_before": "The region’s population was estimated at 2,028,500 million people in the 2014 National Demographic and Population Census [21].",
+      "context_after": "The region has three district hospitals (Kagadi, Kiryandongo and Masindi)."
+    },
+    {
+      "id": "s17",
+      "text": "The district hospital offers preventive, promotive, and both in and out patient curative services in all areas of child and adult medicine [23].",
+      "section": "Study design and setting",
+      "start": 7202,
+      "end": 7346,
+      "reference_keys": [
+        "r23"
+      ],
+      "marker_spans": [
+        [
+          7341,
+          7345
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r23"
+        ]
+      ],
+      "context_before": "A district hospital is the highest-level public health facility in any given district and covers a catchment population of approximately 500,000 people.",
+      "context_after": "It is also responsible for supervising and planning for all the lower-level facilities within the district."
+    },
+    {
+      "id": "s18",
+      "text": "The estimated proportions among less educated (64.1%) and educated women (24.7%) were based on a study done in Nepal [24].",
+      "section": "Sample size and sampling",
+      "start": 8279,
+      "end": 8401,
+      "reference_keys": [
+        "r24"
+      ],
+      "marker_spans": [
+        [
+          8396,
+          8400
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r24"
+        ]
+      ],
+      "context_before": "We hypothesized that the quality of care would be different between educated and less educated mothers and therefore computed sample size using formula for comparison of two proportions.",
+      "context_after": "We further assumed 5% level of significance, 80% power, design effect of 2 to cater for clustering at health facility level, and non-response of 10% which gave an estimated sample size of 755 mothers."
+    },
+    {
+      "id": "s19",
+      "text": "Outcomes of interest were assessed using the standard protocols established by WHO recommendations on antenatal care [18], intrapartum care [25], and postpartum care [26].",
+      "section": "Data management and analysis",
+      "start": 10543,
+      "end": 10714,
+      "reference_keys": [
+        "r18",
+        "r25",
+        "r26"
+      ],
+      "marker_spans": [
+        [
+          10660,
+          10664
+        ],
+        [
+          10683,
+          10687
+        ],
+        [
+          10709,
+          10713
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r18"
+        ],
+        [
+          "r25"
+        ],
+        [
+          "r26"
+        ]
+      ],
+      "context_before": "Data collected was downloaded into a CSV file format for cleaning, and exported to STATA version 13 for analysis.",
+      "context_after": "Care which reached the standard recommended by the WHO was coded as “yes” and given a score of 1 while “no” and score 0 was used for care that did not reach the recommended standards."
+    },
+    {
+      "id": "s20",
+      "text": "Although the education level of the mother has previously been associated with the level of care they receive during the perinatal period [7, 27], the association was not significant in this study.",
+      "section": "Factors associated with appropriate perinatal care",
+      "start": 17333,
+      "end": 17530,
+      "reference_keys": [
+        "r7",
+        "r27"
+      ],
+      "marker_spans": [
+        [
+          17471,
+          17478
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r7",
+          "r27"
+        ]
+      ],
+      "context_before": "Mothers who sought care from Kiryandongo were more likely to receive appropriate care than those from Masindi although the association is of borderline significance (aPR = 1.9 95% CI 0.9–3.7, p = 0.06).",
+      "context_after": "Table 4 provides the details of the factors associated with appropriate postpartum care."
+    },
+    {
+      "id": "s21",
+      "text": "Appropriate perinatal care in this setting is still limited and the study findings show that the performance of the region regarding the set minimum standards for perinatal care are still below the national averages [7].",
+      "section": "Discussion",
+      "start": 18163,
+      "end": 18383,
+      "reference_keys": [
+        "r7"
+      ],
+      "marker_spans": [
+        [
+          18379,
+          18382
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r7"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "In this study no mother received appropriate care in the antenatal and intrapartum period and only a few mothers received appropriate care in the postpartum period."
+    },
+    {
+      "id": "s22",
+      "text": "Poor perinatal care increases the risk of poor maternal and birth outcomes [12], and the findings from this study could explain the high maternal mortality rates observed in the region [29].",
+      "section": "Discussion",
+      "start": 18549,
+      "end": 18739,
+      "reference_keys": [
+        "r29",
+        "r12"
+      ],
+      "marker_spans": [
+        [
+          18624,
+          18628
+        ],
+        [
+          18734,
+          18738
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r12"
+        ],
+        [
+          "r29"
+        ]
+      ],
+      "context_before": "In this study no mother received appropriate care in the antenatal and intrapartum period and only a few mothers received appropriate care in the postpartum period.",
+      "context_after": "Although health care providers schedule antenatal contacts for mothers, the time of initiating antenatal care and the total number of antenatal visits one has during a pregnancy are individual driven factors and represent the level of health care utilization in the region which has been shown to be consistently low [7, 22, 29], the other factors contributing to inappropriate care are health system driven suggesting poor health service delivery in the region."
+    },
+    {
+      "id": "s23",
+      "text": "Although health care providers schedule antenatal contacts for mothers, the time of initiating antenatal care and the total number of antenatal visits one has during a pregnancy are individual driven factors and represent the level of health care utilization in the region which has been shown to be consistently low [7, 22, 29], the other factors contributing to inappropriate care are health system driven suggesting poor health service delivery in the region.",
+      "section": "Discussion",
+      "start": 18740,
+      "end": 19202,
+      "reference_keys": [
+        "r7",
+        "r22",
+        "r29"
+      ],
+      "marker_spans": [
+        [
+          19057,
+          19068
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r7",
+          "r22",
+          "r29"
+        ]
+      ],
+      "context_before": "Poor perinatal care increases the risk of poor maternal and birth outcomes [12], and the findings from this study could explain the high maternal mortality rates observed in the region [29].",
+      "context_after": "The incomplete/inappropriate records, missed physical examinations, and missed laboratory tests as observed in this study may lead to delays in appropriate decision making, timely interventions, and communication among the care providers which may cost both the lives of the mother and the baby."
+    },
+    {
+      "id": "s24",
+      "text": "The high levels of inappropriate care observed in the region may be attributed to shortage of resources like medical supplies, equipment, drugs, and staffing in hospitals as well as differences in competences of the health care providers, which are common occurrences in low income countries [30, 31].",
+      "section": "Discussion",
+      "start": 19500,
+      "end": 19801,
+      "reference_keys": [
+        "r30",
+        "r31"
+      ],
+      "marker_spans": [
+        [
+          19792,
+          19800
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r30",
+          "r31"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "The degree of this shortage and difference in competences may vary from facility to facility which creates a difference in care provision."
+    },
+    {
+      "id": "s25",
+      "text": "As part of the SMGL initiative and in collaboration with the Uganda Ministry of Health, the region received upgrade for number of public and private facilities to provide clean and safe basic delivery services and had its supply chains for essential supplies and medicines strengthened [17].",
+      "section": "Discussion",
+      "start": 20113,
+      "end": 20404,
+      "reference_keys": [
+        "r17"
+      ],
+      "marker_spans": [
+        [
+          20399,
+          20403
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r17"
+        ]
+      ],
+      "context_before": "However, in this setting several projects have been established to address the gaps in care due to shortage of resources by establishing effective, low-cost interventions.",
+      "context_after": "These efforts were supplemented by the Clinton Health Access Initiative and the URMCHIP that have equipped the health facilities in the region to ably manage, deliver and sustain improvement in reproductive, maternal, new born, child and adolescent Health in the region [15, 16]."
+    },
+    {
+      "id": "s26",
+      "text": "These efforts were supplemented by the Clinton Health Access Initiative and the URMCHIP that have equipped the health facilities in the region to ably manage, deliver and sustain improvement in reproductive, maternal, new born, child and adolescent Health in the region [15, 16].",
+      "section": "Discussion",
+      "start": 20405,
+      "end": 20684,
+      "reference_keys": [
+        "r15",
+        "r16"
+      ],
+      "marker_spans": [
+        [
+          20675,
+          20683
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r15",
+          "r16"
+        ]
+      ],
+      "context_before": "As part of the SMGL initiative and in collaboration with the Uganda Ministry of Health, the region received upgrade for number of public and private facilities to provide clean and safe basic delivery services and had its supply chains for essential supplies and medicines strengthened [17].",
+      "context_after": "With these interventions it is anticipated that shortages of resources would be limited in the country."
+    },
+    {
+      "id": "s27",
+      "text": "In other low income countries, use of clinical mentorship, training, facility quality improvement teams, and quality of care reviews have been used to improve the quality of perinatal care with positive results over the study periods [32–34].",
+      "section": "Discussion",
+      "start": 20789,
+      "end": 21031,
+      "reference_keys": [
+        "r32",
+        "r33",
+        "r34"
+      ],
+      "marker_spans": [
+        [
+          21023,
+          21030
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r32",
+          "r33",
+          "r34"
+        ]
+      ],
+      "context_before": "With these interventions it is anticipated that shortages of resources would be limited in the country.",
+      "context_after": "Similarly, in Uganda, SMGL implemented facility infrastructure upgrades, procured essential medical equipment, supplies and medications, trained and mentored health care providers, recruited health care providers, and strengthened maternal and perinatal mortality surveillance in parts of this region."
+    },
+    {
+      "id": "s28",
+      "text": "As a result, availability of facility electricity and water increased, use of partograph in monitoring labour increased, and the proportion of facilities with no stock outs also increased [27].",
+      "section": "Discussion",
+      "start": 21334,
+      "end": 21527,
+      "reference_keys": [
+        "r27"
+      ],
+      "marker_spans": [
+        [
+          21522,
+          21526
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r27"
+        ]
+      ],
+      "context_before": "Similarly, in Uganda, SMGL implemented facility infrastructure upgrades, procured essential medical equipment, supplies and medications, trained and mentored health care providers, recruited health care providers, and strengthened maternal and perinatal mortality surveillance in parts of this region.",
+      "context_after": "Sustainability of such interventions beyond the study periods maybe important to consider for continued improvement."
+    },
+    {
+      "id": "s29",
+      "text": "Maternal age has been linked to demand for services, with increased age being able to demand for better services than those with lower age [7].",
+      "section": "Discussion",
+      "start": 21769,
+      "end": 21912,
+      "reference_keys": [
+        "r7"
+      ],
+      "marker_spans": [
+        [
+          21908,
+          21911
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r7"
+        ]
+      ],
+      "context_before": "Increasing maternal age was significantly associated with appropriate care with a clear dose effect relationship observed.",
+      "context_after": "Findings from this study could attest to this explanation."
+    },
+    {
+      "id": "s30",
+      "text": "The good care provided to older women in this study may lead to reduced adverse birth outcomes that are common in this age group [36].",
+      "section": "Discussion",
+      "start": 21972,
+      "end": 22106,
+      "reference_keys": [
+        "r36"
+      ],
+      "marker_spans": [
+        [
+          22101,
+          22105
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r36"
+        ]
+      ],
+      "context_before": "Findings from this study could attest to this explanation.",
+      "context_after": ""
+    },
+    {
+      "id": "s31",
+      "text": "Mothers below 20 years of age are perceived to be at risk of having pregnancy related complications [37–40], which explains why mothers of that age group in this study could have received appropriate care.",
+      "section": "Discussion",
+      "start": 22176,
+      "end": 22381,
+      "reference_keys": [
+        "r37",
+        "r38",
+        "r39",
+        "r40"
+      ],
+      "marker_spans": [
+        [
+          22276,
+          22283
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r37",
+          "r38",
+          "r39",
+          "r40"
+        ]
+      ],
+      "context_before": "Reducing parity was significantly associated with appropriate care.",
+      "context_after": "As a result, primigravida mothers could have had improved maternal and birth outcomes."
+    },
+    {
+      "id": "s32",
+      "text": "In addition, mothers with higher education and income are likely to seek private services instead of general services that are often provided to most of the mothers in public hospitals [7].",
+      "section": "Discussion",
+      "start": 22822,
+      "end": 23011,
+      "reference_keys": [
+        "r7"
+      ],
+      "marker_spans": [
+        [
+          23007,
+          23010
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r7"
+        ]
+      ],
+      "context_before": "The difference in findings may be attributed to the fact that the study sites were public hospitals where care is provided free of charge and mothers do not have to pay for most of the services.",
+      "context_after": "This could result in having less complications during childbirth."
+    }
+  ]
+}

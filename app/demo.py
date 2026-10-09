@@ -40,8 +40,10 @@ class PlantedError(BaseModel):
 
 
 class GroundTruth(BaseModel):
-    arxiv_id: str
+    arxiv_id: str = ""  # empty for papers read from a PDF
     title: str
+    field: str = ""  # research field (held-out evaluation set)
+    source: str = ""  # where the paper came from: arXiv ID, DOI or URL
     planted: list[PlantedError]
     # Citations flagged when checking the unmodified paper: (sentence_id, reference_key, label).
     baseline_flags: list[tuple[str, str, str]] = Field(default_factory=list)
@@ -58,11 +60,12 @@ def load_ground_truth() -> Optional[GroundTruth]:
     return _load_ground_truth(GROUND_TRUTH_PATH.stat().st_mtime)
 
 
-def load_annotations() -> dict[tuple[str, str], dict[str, str]]:
+def load_annotations(path: Optional[Path] = None) -> dict[tuple[str, str], dict[str, str]]:
     """Human review of flags on untouched citations: (sentence_id, reference_key) -> annotation."""
-    if not ANNOTATIONS_PATH.exists():
+    path = path or ANNOTATIONS_PATH
+    if not path.exists():
         return {}
-    data = json.loads(ANNOTATIONS_PATH.read_text(encoding="utf-8"))
+    data = json.loads(path.read_text(encoding="utf-8"))
     return {(a["sentence_id"], a["reference_key"]): a for a in data["annotations"]}
 
 
@@ -134,8 +137,9 @@ def score(
     review: dict[str, list[dict[str, str]]] = {"genuine": [], "false_alarm": [], "debatable": [], "unreviewed": []}
     for sid, key in flagged_citations:
         a = annotations.get((sid, key))
-        review[a["verdict"] if a else "unreviewed"].append({"sentence_id": sid, "reference_key": key,
-                                                            "note": a.get("note", "") if a else ""})
+        verdict = a.get("verdict") if a else None
+        review[verdict if verdict in review else "unreviewed"].append(
+            {"sentence_id": sid, "reference_key": key, "note": a.get("note", "") if a else ""})
 
     caught = sum(d["caught"] for d in details)
     checked = sum(d["checked"] for d in details)

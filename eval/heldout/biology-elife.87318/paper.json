@@ -1,0 +1,1670 @@
+{
+  "paper": {
+    "id": "heldout:pdf:17b9fde36f1a01ac:868e343b",
+    "title": "Primaquine in glucose-6-phosphate dehydrogenase deficiency: an adaptive pharmacometric assessment of ascending dose regimens in healthy volunteers",
+    "authors": [],
+    "abstract": "",
+    "source": "pdf",
+    "arxiv_id": null,
+    "parsed_from": "pdf",
+    "citation_style": "author_year",
+    "text": "Abstract\n\nBackground\n\nPrimaquine is an 8-aminoquinoline antimalarial. It is the only widely available treatment to prevent relapses of Plasmodium vivax malaria. The 8-aminoquinolines cause dose dependent haemolysis in glucose-6-phosphate dehydrogenase deficient (G6PDd) individuals. G6PDd is common in malaria endemic areas but testing is often not available. As a consequence primaquine is underused.\n\nMethods\n\nWe conducted a pharmacometric study to characterise the relationship between primaquine dose and haemolysis in G6PDd. The aim was to explore shorter and safer primaquine radical cure regimens compared to the currently recommended 8-weekly regimen (0.75 mg/kg once weekly), potentially obviating the need for G6PD testing. Hemizygous G6PDd healthy adult Thai and Burmese male volunteers were admitted to the Hospital for Tropical Diseases in Bangkok. In Part 1, volunteers were given ascending dose primaquine regimens whereby daily doses were increased from 7.5 mg up to 45 mg over 15 to 20 days. In Part 2, a single primaquine 45 mg dose was given.\n\nReviewed Preprint\n\nRevised by authors after peer\n\nResults\n\n24 volunteers were enrolled in Part 1, and 16 in Part 2 (13 participated in both studies). In three volunteers, the ascending dose regimen was stopped because of haemolysis (n=1) and asymptomatic increases in transaminases (n=2; one was hepatitis E positive). Otherwise the ascending regimens were well tolerated with no drug-related serious adverse events. In Part 1, the median haemoglobin concentration decline was 3.7 g/dL (range: 2.1 to 5.9; relative decline of 26% [range: 15 to 40%]). Primaquine doses up to 0.87 mg/kg/day were tolerated subsequently without clinically significant further falls in haemoglobin. In Part 2, the median haemoglobin concentration decline was 1.7 g/dL (range 0.9 to 4.1; relative fall of 12% [range: 7 to 30% decrease]). The ascending dose primaquine regimens gave 7 times more drug but resulted in only double the haemoglobin decline.\n\nConclusions and Interpretation\n\nIn patients with Southeast Asian G6PDd variants full radical cure treatment can be given in under three weeks compared with the current 8 week regimen.\n\nThis manuscript addresses an important question, that in countries endemic for P vivax the need to administer a primaquine (PQ) course adequate to prevent relapse in G6PD deficient persons poses a real dilemma. On one hand PQ will cause haemolysis; on the other hand, without PQ the chance of relapse is very high. As a result, out of fear of severe haemolysis, PQ has been under-used. This manuscript is convincing that regimen (1) can be used successfully to deliver within 3 weeks, under hospital conditions, the dose of PQ required to prevent P vivax relapse.\n\nIntroduction\n\nOver the past 70 years primaquine has been the only drug widely available to prevent relapses of Plasmodium vivax and P. ovale malaria (radical cure). Primaquine has been given to hundreds of millions of patients in single doses to prevent P. falciparum transmission, in 5 to 14 day courses for radical cure of vivax and ovale malarias, and during mass treatments (Ashley et al., 2014 ). The main adverse effect of primaquine, and the other 8-aminoquinoline antimalarials, is dose-dependent oxidant haemolysis in individuals with glucose-6-phosphate dehydrogenase (G6PD) deficiency (Luzzatto et al., 2020 ; Recht et al., 2014 ). As G6PD deficiency is common in malaria endemic regions, primaquine is underused because reliable point-of-care testing for G6PD deficiency is usually not available (Commons, 2023) and prescribers are naturally reluctant to risk causing potentially severe, life threatening haemolysis (Yilma et al., 2023 ).\n\nOutside sub-Saharan Africa Plasmodium vivax is the main cause of malaria in most endemic regions, and in these regions relapse is often the main cause of illness (Commons et al., 2020 ). Relapsing infections cause significant morbidity and, in higher transmission settings, mortality in young children, mediated mainly by chronic anaemia (Douglas et al., 2014 ; Commons et al., 2019 ). Relapses are also an important source of P. vivax transmission. The under use of primaquine therefore contributes to substantial morbidity and mortality and to the failure to control and eliminate vivax malaria in endemic areas.\n\nG6PD deficiency is the most common red blood cell enzyme deficiency of humans (Luzzatto et al., 2020 ). G6PD deficiency occurs mainly in malaria endemic or historically endemic regions in every population and setting (Howes et al., 2012 ). Mutations in the G6PD gene on the X chromosome confer reduced enzyme stability. This results in impaired erythrocyte defences against oxidant stresses and thereby increases the risk of haemolysis of older G6PD depleted erythrocytes. More severe G6PD deficiency variants are associated with greater drug induced haemolysis as a broader erythrocyte age range is G6PD depleted (Piomelli et al., 1968 ). The substantial haemolytic risk from 8-aminoquinoline antimalarials means that the standard 7-14 day radical cure primaquine regimens are contraindicated in G6PD deficiency (World Health Organization, 2015) Seminal clinical investigations were conducted over 50 years ago in adults with the African Avariant of G6PD deficiency. These showed that although oxidant haemolysis was inevitable, it affected predominantly the older erythrocytes. Continued primaquine administration to G6PD deficient subjects resulted in “resistance” to the haemolytic effect. The selective haemolysis of the older red cells resulted in a compensatory increase in the number of reticulocytes. Thus, the red cell population became progressively younger and increasingly resistant to oxidant stress, so overall haemolysis decreased and a steady state was reached. This suggested a therapeutic strategy of controlled haemolysis which would limit the degree of anaemia by allowing time for the compensatory erythropoetic response (Alving et al., 1960 ; Kellermeyer et al., 1962 ). This mechanistic understanding provided the rationale for the once weekly primaquine regimen of 0.75 mg base/kg for 8 weeks, currently recommended by the World Health Organisation in patients with G6PD deficiency (World Health Organization, 2015). However, the safety of this regimen in more severe G6PD deficiency variants was never established. A small cohort study of the weekly primaquine regimen in 18 G6PD deficient (17 had the 871G>A [Viangchan] variant) and 57 G6PD normal adult vivax malaria patients in Cambodia suggested that single 45 mg doses may not be safe in the more severe G6PD deficiency variants (Kheng et al., 2015 ). A quarter of the G6PD deficient patients had a >25% fall in haemoglobin (compared to none in the G6PD normal group) and one patient required a blood transfusion for a symptomatic fall in haemoglobin fall from 10 to 7.5 g/dL.\n\nOver the past fifty years there has been substantial variation in national policies and practices. Some countries (e.g. Iran, Myanmar), which did not have G6PD testing available in endemic areas, have recommended the once weekly primaquine regimen as standard practice for all vivax malaria cases. Other countries have recommended giving the 14 day daily courses of primaquine without testing, although this recommendation is often not followed. To develop an alternative shorter and potentially safer approach to primaquine dosing in G6PD deficiency, we conducted a two part adaptive pharmacometric study in Thailand with the goal of characterising the doseresponse relationship for primaquine induced haemolysis in healthy G6PD deficient volunteers.\n\nResults\n\nStudy population\n\nOf 215 potential subjects (either identified through hospital records or screened at the walk-in clinic for G6PD deficiency), 27 male hemizygote G6PD deficient volunteers were enrolled to the two studies between November 2018 and August 2022. In subjects who were interested in participating in the study, there were 2 screening failures (1 unidentified G6PD genotype and 1 elevated AST/ALT), see CONSORT diagrams in Appendix 1 .\n\nThe COVID-19 pandemic interrupted the end of Part 1 and delayed finishing the study by two years, resulting in a substantially longer interval between test regimens than planned. After the lockdowns, fewer than anticipated Part 1 participants could be recontacted for Part 2, so three additional volunteers were recruited. The volunteer baseline summary characteristics are shown in Table 1 . All volunteers had low to unmeasurable blood G6PD enzyme activity. The most common G6PD deficiency genetic variant was Viangchan (871G>A, n=12), as it is in much of the eastern Greater Mekong subregion universally, in all cases (Bancone et al., 2019 ). This was followed by Canton (1376G>T, n=5) and Mahidol (487G>A, n=4). A large proportion of subjects had screening reticulocyte counts over 2.5%, i.e. above the normal range (8/24 in Part 1 and 3/16 in Part 2). The intermediate CYP2D6 metaboliser genotype (homozygous *10) with an activity score of 0.5, was identified in 8/27 (30%) of the volunteers (Caudle et al., 2020 ).\n\nAscending dose primaquine (Part 1)\n\nOf 24 volunteers assigned ascending dose primaquine regimens, 23 were included in the analysis (Appendix 1 figure 1). Volunteer number 18 was withdrawn from the study after 3 days of receiving 10 mg of primaquine daily because of severe low back pain which resulted from a MRI confirmed prolapsed intervertebral disc that improved with symptomatic treatment. He was not followed up and did not participate in Part 2. As this was considered unrelated to drug administration and the total primaquine dose received was very low, his data were excluded from the primary outcome analysis. There were no changes in his haemoglobin over the three days of primaquine dosing. The remaining 23 subjects in the primary analysis population received ascending primaquine dose regimens of between 11 and 20 days duration.\n\nAdverse events resulting in study withdrawal\n\nPrimaquine was generally well tolerated. There were no serious adverse events or complications. In three subjects (13%), the ascending dose primaquine regimen was stopped; one for excessive haemolysis and two because of abnormal liver function tests (elevated transaminases).\n\nAfter receiving 11 doses of a 16-day regimen, subject 11 (G6PD Union) reached a fractional haemoglobin fall from baseline of 39.5% (8.9 g/dL vs. 14.7 g/dL at baseline), associated with marked fatigue. This decrease met the stopping rule for study withdrawal (dose limiting toxicity, see Appendix 2 ). He developed a substantial compensatory reticulocytosis (15%). Over the next five days, his haemoglobin remained at ∼ 9 g/dL (nadir observed haemoglobin was 8.8 g/dL corresponding to a 40% decrease from baseline) and rose thereafter to 13.0 g/dL (day 28) and 14.9 g/dL by day 49 (Appendix 5 figure 1). The haemoglobinuria Hillmen score peaked at 4 on day 10 and was 3 on day 12, dropping back to 1 on day 13 (Appendix 5 figure 2).\n\nVolunteer 7, who was receiving a 20-day regimen, developed asymptomatic rises in ALT of 207 U/L (>5 times ULN, grade 3) and AST of 89 U/L (>2 times ULN, grade 1) on day 16, associated with a raised LDH (512 IU/L) and a normal direct (0.3 mg/dL) and indirect (0.5 mg/dL) bilirubin. He was hepatitis B immune, hepatitis A IgM negative, but hepatitis E IgM positive with a borderline IgG result, consistent with early hepatitis E infection. A liver ultrasound showed slightly increased liver echogenicity consistent with a mild fatty liver and/or mild hepatic parenchymal disease. His primaquine dosing was stopped on Day 15. His increases in AST and ALT were considered most likely a result of asymptomatic hepatitis E and not primaquine. His haemoglobin was 11 g/dL at the time of withdrawal (baseline: 14.3 g/dL; 23% fall); he was subsequently lost to follow up.\n\nVolunteer 14 (16-day regimen) also developed asymptomatic rises in ALT to reach plasma concentrations of 423 U/L (>10 ULN, grade 3) and AST of 229 U/L (>5 times ULN, grade 3) on day 11, associated with a raised LDH (608 IU/L) mildly raised direct (0.4 mg/dL) but normal indirect (0.9 mg/dL) bilirubin. He was also hepatitis B immune, and was hepatitis A and E antibody negative, but had a mild fatty liver on ultrasound. Primaquine dosing was stopped on Day 11. By Day 28, the ALT was 87 IU/L and the AST was 36 IU/L. As no other cause could be found, his increases in AST and ALT were considered to be probably related to primaquine. His day 11 haemoglobin was also 11 g/dL (baseline: 13.9; 21% fall).\n\nAdverse events resulting in dose adjustments\n\nIn a further three subjects, the intended ascending dose regimen was not completed as they had haemoglobin falls of 30 and 40% relative to baseline. Subject 13 (16 day regimen assigned) did not escalate from 30 mg to 45 mg on day 15 but stayed at 30 mg until day 16 (33 and 34% fall from baseline haemoglobin on days 15 and 16, respectively). Subject 23 (15 day regimen) was given an additional day at 30 mg on day 12 (day 11 haemoglobin fell 32% from baseline) and escalated to 45 mg on day 14. Subject 24 (15 day regimen) remained at 22.5 mg per day from day 7 to day 15 (instead of escalating to 30 and then 45 mg per day) as his haemoglobin reduction from baseline stayed between 30 and 33%.\n\nHaemolysis and reticulocyte response\n\nThe median absolute fall in haemoglobin from baseline was 3.7 g/dL (range: 2.1 to 5.9), corresponding to a median relative decrease of 26% (range: 15 to 40), Figure 1 panels b and d. The median day of haemoglobin nadir was 16 days after starting primaquine (range: 11 to 20). There was substantial variation between individuals, including between those with the same G6PD genotype who received the same regimens. For example, volunteer 15 (G6PD Viangchan) received 6.8 mg/kg total dose of primaquine over 15 days and his haemoglobin dropped around 25% (baseline was 13.6 g/dL; nadir of 10.1 g/dL was reached approximately by day 11) whereas volunteer 20 (also G6PD Viangchan) received 5.4 mg/kg over 15 days (slightly faster escalation using the same doses but he was 12 kg heavier), and his haemoglobin fell around 40% (baseline was 15.0 g/dL; nadir of 9.2 g/dL was reached by day 15), see Appendix 6 . None of the subjects had a fall of haemoglobin below 8 g/dL and none developed frank haemoglobinuria (Hillmen score ≥6). Peak reticulocytosis occurred at approximately the same time as the haemoglobin nadir (day 16; range: 11 to 20), with a median peak reticulocyte count of 10.3% (range: 4.2 to 16.8), Figure 1 panel c. It took approximately 2 weeks for the reticulocyte counts to re-normalise.\n\nPart 2: single 45 mg primaquine dose\n\nFollowing a single 45 mg base equivalent dose of primaquine (mg base/kg doses ranged from 0.52 to 0.87), there was a marked fall in haemoglobin concentrations reaching a median observed nadir on day 6 (range: day 4 to 7). The median fall from baseline was 1.7 g/dL (range: 0.9 to 4.1 g/dL decrease), corresponding to a median relative decrease of 12% (range: 7 to 30% decrease), see Figure 2. The largest daily falls in haemoglobin following the single dose were on day 3 (median fall in haemoglobin on day 3 was 0.73 g/dL, Figure 3 ).\n\nThe reticulocyte response was characterised by a gradual rise with most volunteers having their observed peak reticulocyte proportions on day 7 (range day 4 to 14). The largest fall in haemoglobin, and greatest rise in reticulocyte count occurred in subject 13 who was G6PD Canton (absolute fall of 4.1 g/dL: baseline haemoglobin was 13.6 g/dL, the nadir haemoglobin was 9.5 g/dL on day 7; relative fall of 30%). He did not participate in Part 1 so there are no ascending dose data with which to compare.\n\nComparison of ascending and single dose primaquine regimens\n\nFigure 3 shows the maximum observed absolute and relative falls in haemoglobin concentration as a function of the total primaquine dose received across the two studies. Overall, the median fall in the single dose cohort was nearly half that of the median fall in the ascending dose group, whereas the median total dose in the single dose cohort was only 14% of the median total dose in the ascending dose cohort. Although the subjects receiving a single 45 mg dose of primaquine had smaller absolute falls in haemoglobin, they experienced earlier and greater daily falls (bottom panels of Figure 3 ). The greatest median falls in haemoglobin in Part 1 were on days 6 and 7 (0.55 and 0.57 g/dL reductions, respectively), whereas the median fall on day 3 (day with the largest median fall) in the single dose cohort was 0.73 g/dL. Two subjects receiving the 45 mg single dose had daily haemoglobin falls of nearly 2 g/dL.\n\nHaemolysis dose-response relationship\n\nWe summarised each ascending dose regimen in Part 1 by the cumulative dose of primaquine received by day 10. This summary exposure statistic was chosen following graphical visualisation of the haemoglobin data, which showed that the most substantial haemolysis had occurred by day 10 of the study (Figure 1b , note that the nadir haemoglobin was observed after day 10 in all volunteers). In the 23 volunteers, the day 10 cumulative dose varied from 1.7 mg/kg to 3.5 mg/kg, with a median value of 2.6 mg/kg.\n\nThe day 10 cumulative dose was predictive of both the maximum absolute fall in haemoglobin with respect to the baseline value (1.2 g/dL fall per mg/kg increase [95%CI: 0.5 to 1.8]; p=0.001, r = 0.40), and the maximum relative fall in haemoglobin with respect to the baseline value (7.9% fall per mg/kg increase [95%CI: 4.4 to 11.3]; p=0.0002; r = 0.49), but not of the average daily fall over days 5 to 10 (0.06 g/dL per day [95%CI: 0.14 to -0.03]). Figure 4 panels a-c show the doseresponse data coloured by G6PD variant. For Part 2 the mg/kg dose was not associated significantly with either the absolute, relative or the mean daily falls in haemoglobin, although for all three outcomes the point estimates were in the expected direction (greater mg/kg dose resulting in larger falls), Figure 2 panels d-f.\n\nIn an additional exploratory analysis, there was no evidence of substantial differences in haemolysis between the different G6PD variants (although the sample size is very small). There was some evidence that subjects with higher baseline haemoglobin concentrations had larger relative falls. There was no evidence for an association between the homozygous *10 CYP2D6 genotype associated with reduced primaquine bioactivation and haemolysis (i.e. no evidence that these subjects haemolysed less than the other subjects).\n\nEffect on total plasma bilirubin and LDH\n\nThe falls in haemoglobin were associated with predictable biochemical changes indicative of haemolysis. There were rises in plasma concentrations of the intraerythrocytic enzyme LDH and in total bilirubin reflecting haem metabolism. The more rapid fall in haemoglobin associated with the single 45 mg primaquine dose was associated with larger normalised rises in total bilirubin consistent with greater haemolysis (Figure 5 and Appendix 7 ).\n\nLiver transaminases, creatinine, haptoglobin, and methaemoglobin\n\nIn both studies, there was no evidence for a relationship between primaquine dose (Part 1: cumulative day 10 total mg/kg dose; Part 2: single mg/kg dose) and maximum observed fold change in serum AST, ALT or plasma creatinine, or the maximum observed absolute decrease in plasma haptoglobin (Appendix 8 ). There were no clinically significant rises in blood methaemoglobin in any of the study participants (Figure 6 panels a-b). In part 1, the day 10 cumulative dose was negatively associated with the peak observed methaemoglobin concentration (Figure 6 panel c, p=0.02) with a similar negative trend was also observed in part 2 (Figure 6 panel d; p=0.06). There was no association between having a poor metaboliser CYP2D6 genotype (*10 homozygous versus other genotypes) and peak blood methaemoglobin concentration.\n\nDiscussion\n\nThe 8-aminoquinoline antimalarials are the only drugs which prevent relapses of vivax or ovale malaria (radical cure). Significant haemolysis from radical cure regimens cannot be avoided in G6PD deficiency but, using the rapidly eliminated primaquine, it can be attenuated. Ascending dose primaquine regimens in G6PD deficient malaria patients exploit the same pharmacodynamic principle underling the current once weekly treatment recommendation (Alving et al., 1960 ). They aim to provide controlled haemolysis while allowing for steady reconstitution of the red cell population with increasingly younger, and therefore “oxidant resistant” erythrocytes (Kellermeyer et al., 1962 ). As G6PD testing is usually unavailable in malaria endemic areas, the prescriber treating vivax or ovale malaria is currently faced with the therapeutic dilemma of either not giving the drug, and failing to prevent relapses with their attendant substantial morbidity, or giving it and causing iatrogenic haemolysis in G6PD deficient patients. The net result is that radical cure primaquine regimens are often not prescribed, even though they would be well tolerated and safe in the majority of patients who are G6PD normal. Primaquine underuse is a major contributor to global vivax malaria morbidity.\n\nThe currently recommended 8 week radical cure regimen for G6PD deficient patients attenuates the fall in haemoglobin, but it still risks significant haemolysis, particularly with the first 0.75 mg/kg dose (Kheng et al., 2015 ). This regimen has not been well evaluated in patients with severe G6PD deficiency variants who are at greatest risk, and it requires good adherence for 8 weeks. As much of the oxidant haemolysis occurs after the first doses, failure to complete the eight week course (which is likely to be common) therefore incurs most of the haemolytic risk without providing the full benefit.\n\nIn this study the single 45 mg dose resulted in a median fall in haemoglobin concentration of 1.7 g/dL, which was nearly half the median fall observed with the full ascending dose regimen. In comparison, the ascending dose regimens gave a seven times higher total dose. These ascending dose primaquine regimens were relatively well tolerated in adult male volunteers with Southeast Asian variants of G6PD deficiency. Although these G6PD variants are generally regarded as moderate in severity, there is wide variation in the phenotype between variants and also between individuals with the same genotype. The ascending primaquine dose regimens are still associated with a significant haemolytic risk. Thus, in considering the radical cure treatment of vivax malaria, the risks of relapse, often on multiple occasions with consequent anaemia, must be balanced against the predictable haemolysis that will result from the oxidative effects of the 8-aminoquinoline radical cure regimen (Commons et al., 2020 , 2019 ). In the Southeast Asian region approximately half the vivax malaria cases will be followed by at least one relapse if radical curative treatment is not given. Many factors need to be incorporated in the assessment of both population and individual risk from haemolysis. Acute kidney injury only results from fulminant haemolysis. The main risk is dangerous anaemia. At a population level the overall risks are lower than predicted from gene frequencies because severe variants of G6PD deficiency protect against vivax malaria, although whether they affect the risk of relapse is not known (Douglas, 2014). At an individual level the haemolytic risk depends on the G6PD genotype, the degree of exposure to the putative oxidative 8-aminoquinoline metabolites, and also the degree of pre-existing anaemia. Vivax malaria causes anaemia, but as the haemolytic component of the malarial anaemia also results in loss of older, more deficient erythrocytes, so the fractional reduction in erythrocytes resulting from the oxidant drug in acute malaria is correspondingly less. Finally, chronic anaemias associated with haemolysis (e.g. hookworm, recurrent malaria) result in a younger red cell populations with right shifted oxygen dissociation curves and thus increased oxygen delivery. As a result, the pathological consequences of causing severe anaemia (haemoglobin concentration <5g/dL) depend whether the patient was already significantly anaemic and why they were anaemic.\n\nIn this exploratory study, in which there were cautious stopping rules, 3 out of 23 (13%) of the volunteers did not complete the regimen because of drug toxicity; one had significant haemolysis and two had asymptomatic hepatitis. Hepatitis is a rare adverse effect of primaquine (Recht et al., 2014 ). Asymptomatic hepatitis E is well documented and more common than symptomatic disease (Kamar et al., 2012 ). Three volunteers were not escalated to higher primaquine doses as intended because of significant falls in haemoglobin. Such falls in haemoglobin were expected by design in this exploratory adaptive study. In none of the volunteers did haemoglobin concentrations fall below 8 g/dL. The extent of haemolysis varied substantially between volunteers, even within the same genotype. Higher baseline haemoglobin values tended to be followed by greater falls. Taken together with the high baseline reticulocytosis, this suggests that subjects with G6PD deficiency have variably shortened red cell survival, and thus variably sized populations of erythrocytes vulnerable to oxidant haemolysis.\n\nOne of the important advantages of primaquine (half-life approximately 5-7 hours) relative to its slowly eliminated analogue tafenoquine (half-life approximately 15 days) is that the treatment can be stopped as soon as there are signs or symptoms of haemolytic toxicity. Despite the use of primaquine for nearly 70 years and administration of hundreds of millions of treatments there have been very few reported deaths from haemolytic toxicity (Recht et al., 2014 ; Yilma et al., 2023 ). Very large mass treatments with primaquine have been used in malaria elimination campaigns involving millions of people in China, Nicaragua, Turkmenistan, Azerbaijan, Tajikistan, Afghanistan and North Korea without exception (Hsiang et al., 2013 ; Kondrashin et al., 2014 ). In the latter four countries an interrupted regimen involved giving four days of primaquine, stopping for three days and then completing a further ten days. Subjects with significant haemolysis could stop the drug at any time. Serious toxicity was very rare, despite the high prevalences of G6PD deficiency in some of the regions. In West and Central Asia the severe G6PD Mediterranean variant would have been the most prevalent genotype.\n\nIn G6PD deficient patients with acute malaria, the disease itself causes haemolytic anaemia (White, 2018 ), and the consequent preferential loss of older erythrocytes ameliorates the adverse impact of oxidant drugs. On the other hand, compensatory reticulocytosis might be inhibited but limited experience with weekly primaquine shows a robust reticulocyte response post treatment (Puaprasert et al., 2018). Differences in haemolytic response between healthy volunteers and malaria patients are likely to be small as the illness usually resolves within a few days with effective treatment, while the ascending dose regimen would still be using the lowest dose.\n\nThe main limitation of this therapeutic approach is its complexity. This could be addressed by preparation of blister packed primaquine allowing easy dose transition. The G6PD deficiency genotypes studied here are representative of those present in the Southeast Asian region, and can be regarded as of moderate severity, with the African Agenotype (in which the currently recommended once weekly dosing regimen was developed) being at the less severe end of the spectrum, and the common Mediterranean G6PD genotype being at the more severe end. The safety of this regimen in patients with severe G6PD deficiency cannot be predicted based on these data. From a therapeutic perspective, as G6PD testing is usually not available, the individual patient risk assessment must take into account the factors described earlier (i.e. the prevalence of G6PD deficiency and its likely severity, the sex of the patient, the degree of anaemia, and the probability of relapse), and also an assessment of the patients’ understanding of the risks and when to stop treatment, and the likelihood and feasibility of accessing health care if there is severe haemolysis.\n\nIn summary, shorter course ascending dose vivax malaria radical cure regimens in G6PD deficient subjects offer the prospect of an effective treatment which does not incur prohibitive haemolytic toxicity and in some areas could obviate the need to test for G6PD deficiency.\n\nMethods and Materials\n\nTrial design\n\nThe overall objective of this study was to try and identify radical cure primaquine regimens that would be safer in G6PD deficiency. This required titration of the daily primaquine doses against haemolysis balancing the need to provide a radical curative dose of primaquine within a reasonable time-frame whilst minimising the inevitable haemolysis.\n\nThis was a two part study, conducted in the Hospital for Tropical Diseases in Bangkok, of primaquine in hemizygote G6PD deficient male healthy volunteers. Part 1 evaluated the tolerability, safety and haematological consequences of ascending doses of primaquine and was adaptive. The primaquine regimen was titrated based on the incremental haemoglobin changes observed in the previous participants, continuous safety evaluation by the investigators, and a set of guiding prespecified rules. This iterative adaptive approach accumulated information to refine the successive regimens. The primary consideration throughout the trial was participant safety. In Part 2 of the study, after a wash-out period of at least 6 months, a single 45 mg (base equivalent) primaquine dose was given, and the volunteers were monitored as in Part 1.\n\nStudy site and participants\n\nThe study took place in the Clinical Therapeutics Unit volunteer ward in the Hospital for Tropical Diseases, Faculty of Tropical Medicine, Mahidol University, Bangkok, Thailand. The recruitment and follow up periods were from November 2018 to October 2020 (Part 1) and June to September 2022 (Part 2). This coincided with and was disrupted by the COVID-19 pandemic. A COVID-19 mitigation plan was implemented when local lockdown was lifted.\n\nHealthy male volunteers were recruited if they provided written informed consent, had a G6PD enzyme activity <30% of the population median value determined by a validated quantitative spectrophotometric G6PD assay, a genotype confirmed G6PD variant (according to a previously published method (Hsiang, 2013)), and were aged between 18 and 65 years with a screening haemoglobin concentration >11 g/dL. Detailed exclusion criteria are provided in Appendix 3 .\n\nTrial procedures\n\nEnrolment and primaquine dosing\n\nThe risks and the rationale of the study were detailed to potential volunteers and it was explained that they could withdraw from the study at any time if they wished. Primaquine phosphate (Thailand Government Pharmaceutical Organisation, Bangkok, Thailand) was provided as tablets containing either 5 or 15 mg primaquine base equivalent. A tablet cutter was used to split the tablets (smallest dose increment was 2.5 mg base equivalent). Primaquine was given orally following a standardised light snack and subjects were observed closely for the first 4 hours.\n\nPart 1\n\nWe recruited in cohorts of five volunteers, with an interval of two weeks between cohorts to allow sufficient time to analyse the data and determine the next primaquine regimen. The overall goal was to increase the daily primaquine doses and cause gradual haemolysis which was offset by concomitant reticulocytosis. This would steadily reduce the age of the red cell population and thereby avoid precipitous symptomatic falls in the haemoglobin concentration (Alving et al., 1960 ; Kellermeyer et al., 1962 ). The cumulative total primaquine dose given needed to be sufficient to provide a radical curative effect in the treatment of vivax malaria (i.e. between 5 and 7 mg base/kg) (Commons et al., 2023 ).\n\nCareful monitoring was done throughout to assess the degree of haemolysis and adjust or stop the dosing, as required. The dose regimens in this exploratory investigation (Part 1) were adapted as follows.\n\nThe primaquine regimen given to the first five volunteers consisted of four cycles of 5 days daily primaquine dosing (i.e. total 20 days). The ascending doses were 7.5, 15, 22.5 and 30 mg base equivalent, respectively. This initial dose regimen was chosen on the basis of a mathematical model of primaquine induced haemolysis in G6PD deficiency using earlier data from vivax malaria patients who had received single 45 mg primaquine doses (Watson et al., 2017 ; Kheng et al., 2015 ). Subjects proceeded to the next higher dose cycle if they satisfied several prospectively defined safety criteria (Appendix 2 ). In this first round the total primaquine dose was 375 mg base equivalent. The results of the first five volunteers were reviewed and the dosing regimens adjusted. This iterative process of review and adjustment continued thereafter. The once daily dosing in each cycle was increased in increments of 2.5 mg or 7.5 mg (not adjusted for body weight). Once it became clear this rate of dose increase was generally well tolerated, the number of days per cycle was reduced to 3 or 4 days in subsequent subjects to test regimens of shorter duration with faster dose escalation. Subjects were reviewed clinically before each dose increase.\n\nPart 2\n\nIn Part 2, a single dose of 45 mg primaquine base equivalent was administered, with similar careful monitoring for one week.\n\nMonitoring procedures/evaluations\n\nIn both studies, volunteers were observed closely. In Part 1, all volunteers were admitted to the ward for 28 days with a subsequent follow-up visit on day 49. For Part 2, at least 6 months later, volunteers were re-admitted for 24 hours on day 0, reviewed daily until day 7, and then again on day 14.\n\nAt enrolment all volunteers underwent a detailed clinical examination. Thereafter, at each assessment volunteers were asked how they felt, whether they had any adverse effects, had their vital signs measured, and two blood samples were taken for measurement of haemoglobin concentration (HemoCue®, Ängelholm, Sweden). The average of the two results was recorded. Methaemoglobin (%) was measured non-invasively at least once daily using a Masimo Rad 57 oximeter®, and urine colour was recorded twice daily. Haemoglobinuria was assessed visually using a modified Hillmen score (Hillmen et al., 2004 ).\n\nWright-Giemsa stained and new methylene blue stained blood films were prepared for red cell morphology, and manual reticulocyte and Heinz body counts, respectively. In Part 1 these were done daily from day 0 (day of first primaquine dose) until day 20, and then on days 22, 24, 26, and 28, and finally on day 49. In Part 2 they were done at every visit. Other laboratory investigations included a full blood count (CBC) and reticulocyte count, routine biochemistry (including LDH and haptoglobin), plasma haemoglobin, and plasma primaquine and carboxyprimaquine concentrations. In Part 1 these were done at screening and then every 3-5 days (start of each new cycle, i.e. dosing increment); in Part 2 they were done at screening, and on days 3, 7 and 14.\n\nThe G6PD deficiency variants were genotyped as described previously (Bancone et al., 2019 ; Boonyuen et al., 2021 ). Haemoglobin electrophoresis and genotyping of the common cytochrome P450 2D6 (CYP2D6) genotypes found in SE Asia was also performed (Puaprasert et al., 2018 ). Presumptive alpha-thalassaemia trait (which is very common in Thailand) was defined as a mean cell volume less than 80 fl or a mean cell haemoglobin < 27 pg, and HbA2 ≤4.4. Additional laboratory measurements were taken if unplanned dose adjustments were necessary, or there was a clinical indication.\n\nSafety monitoring and stopping rules for Part 1\n\nThe pre-specified rules for adjusting primaquine dose regimens across cohorts in Part 1 are illustrated in Appendix 2 figure 1, and the rules for increasing primaquine doses for each enrolled subject are shown in Appendix 2 figure 2. The overall aim was to titrate dosing in order to obtain small daily falls in haemoglobin of between 0.1 and 0.2 g/dL. For a given subject, primaquine doses were increased only if the haemoglobin concentration was >9 g/dL, was greater than 70% of baseline, the urine Hillmen score was ≤5, and the subject felt well and had no symptoms of anaemia.\n\nWe defined haemolysis which would result in stopping primaquine (study withdrawal), as any one of the following:\n\n>40% fall in haemoglobin from baseline; a haemoglobin below 8 g/dL (irrespective of symptoms); a fall in haemoglobin associated with clinically significant signs of haemolysis: jaundice, passing dark urine (Hillmen score ≥6), evidence of acute renal injury (≥2 fold increase in serum creatinine from baseline), or hyperkalaemia (serum potassium >5.2 mmol/L).\n\nAny individual whose laboratory tests met these criteria remained in hospital and was monitored closely until resolution of signs and symptoms, and haemoglobin concentrations had reached at least 10 g/dL. Blood transfusion was available at any time if needed if volunteers had a symptomatic fall in haemoglobin to below 8g/dL.\n\nAn Independent Drug Safety Monitoring Board was established to review the data after each cohort had completed their follow up and gave feedback before the next cohort was allowed to proceed. For both studies, adverse events were recorded and graded using the Common Toxicity Criteria v 5.0 for grading adverse events.\n\nSample size\n\nAs this was an exploratory proof-of-concept, adaptive dose optimisation pharmacometric and safety study in healthy G6PD deficient males, there was no formal sample size calculation. We reasoned that if the tested primaquine regimens were well tolerated in 20 volunteers (i.e. 4 cohorts), this would provide preliminary evidence for the safety and the feasibility of this approach. In addition the rich longitudinal data could then be used to develop an intra-host model to design optimal ascending regimens (Watson et al., 2017 ).\n\nStatistical analysis\n\nAll data analysis was done in R version 4.2.2. The baseline value for each continuous measurement was defined as the mean of the screening and day 0 measurement. Haemoglobin was measured using HemoCue® (daily, two samples) and using a laboratory processed complete blood count (CBC, every 4-5 days). The daily mean haemoglobin concentration was calculated as the mean of the HemoCue derived haemoglobin (the mean of the two samples) and the haemoglobin concentration from the CBC (if no CBC was done then just the mean HemoCue value). The baseline haemoglobin was then calculated as the mean of the values at screening and on day 0. The doseresponse models were linear models fit using maximum likelihood.\n\nData Sharing Statement\n\nAll analysis code and data are available via an accompanying github repository: https://github.com / jwatowatson/Primaquine-Challenge.\n\nAcknowledgements\n\nWe are very grateful to the volunteers who participated in this study. We thank the staff of the Clinical Therapeutics unit and the laboratories in the Hospital for Tropical Diseases, Bangkok, which provided essential monitoring. We thank the Independent Drug Safety Monitoring Board members: Professor Asim Beg (chair), Dr Bushra Moiz, and Professor Rajitha Wickremasinghe. This study was funded by the MRC “Assessing the tolerability of a potentially safer radical curative regimen of primaquine in healthy volunteers with glucose 6 phosphate dehydrogenase” (MR/R015252/1, grant held by WRT). NJW is a Principal Research Fellow funded by the Wellcome Trust (093956/Z/10/C). JAW is a Sir Henry Dale Fellow funded by the Wellcome Trust (223253/Z/21/Z).\n\nThis research was partly funded by Wellcome. A CC BY or equivalent licence is applied to the author accepted manuscript arising from this submission, in accordance with the grant’s open access conditions.\n\nOrganization World Health Guidelines for the treatment of malaria\n\nYilma D, Groves ES, Brito-Sousa JD, Monteiro WM, Chu C, Thriemer K, Commons RJ, Lacerda MVG, Price RN, Douglas NM (2023) Severe Hemolysis during Primaquine Radical Cure of Plasmodium vivax Malaria: Two Systematic Reviews and Individual Patient Data Descriptive Analyses The American Journal of Tropical Medicine and Hygiene https://doi.org/10 .4269/ajtmh.23-0280\n\nArticle and author information\n\nSasithon Pukrittayakamee\n\nClinical Therapeutics Unit, Faculty of Tropical Medicine, Mahidol University, Bangkok, 10400, Thailand, Mahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical Medicine, Mahidol University, Bangkok, 10400, Thailand\n\nPodjanee Jittamala\n\nClinical Therapeutics Unit, Faculty of Tropical Medicine, Mahidol University, Bangkok, 10400, Thailand, Mahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical Medicine, Mahidol University, Bangkok, 10400, Thailand\n\nJames A Watson\n\nOxford University Clinical Research Unit, Hospital for Tropical Diseases, Ho Chi Minh City, Vietnam, Centre for Tropical Medicine and Global Health, Nuffield Department of Medicine, University of Oxford, New Richards Building, Old Road Campus, Roosevelt Drive, Oxford, OX3 7LG, UK ORCID iD: 0000-0001-5524-0325\n\nBorimas Hanboonkunupakarn\n\nClinical Therapeutics Unit, Faculty of Tropical Medicine, Mahidol University, Bangkok, 10400, Thailand, Mahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical Medicine, Mahidol University, Bangkok, 10400, Thailand\n\nPawanrat Leungsinsiri\n\nClinical Therapeutics Unit, Faculty of Tropical Medicine, Mahidol University, Bangkok, 10400, Thailand\n\nKittiyod Poovorawan\n\nClinical Therapeutics Unit, Faculty of Tropical Medicine, Mahidol University, Bangkok, 10400, Thailand, Mahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical Medicine, Mahidol University, Bangkok, 10400, Thailand\n\nKesinee Chotivanich\n\nClinical Therapeutics Unit, Faculty of Tropical Medicine, Mahidol University, Bangkok, 10400, Thailand, Mahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical Medicine, Mahidol University, Bangkok, 10400, Thailand\n\nGermana Bancone\n\nCentre for Tropical Medicine and Global Health, Nuffield Department of Medicine, University of Oxford, New Richards Building, Old Road Campus, Roosevelt Drive, Oxford, OX3 7LG, UK, Shoklo Malaria Research Unit, Mahidol–Oxford Tropical Medicine Research Unit, Faculty of Tropical Medicine, Mahidol University, Mae Sot, Thailand ORCID iD: 0000-0003-4550-0431\n\nCindy S Chu\n\nCentre for Tropical Medicine and Global Health, Nuffield Department of Medicine, University of Oxford, New Richards Building, Old Road Campus, Roosevelt Drive, Oxford, OX3 7LG, UK, Shoklo Malaria Research Unit, Mahidol–Oxford Tropical Medicine Research Unit, Faculty of Tropical Medicine, Mahidol University, Mae Sot, Thailand\n\nMallika Imwong\n\nDepartment of Molecular Tropical Medicine and Genetics, Faculty of Tropical Medicine, Mahidol University, Bangkok, Thailand\n\nNicholas PJ Day\n\nMahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical Medicine, Mahidol University, Bangkok, 10400, Thailand, Oxford University Clinical Research Unit, Hospital for Tropical Diseases, Ho Chi Minh City, Vietnam\n\nWalter RJ Taylor\n\nMahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical Medicine, Mahidol University, Bangkok, 10400, Thailand, Oxford University Clinical Research Unit, Hospital for Tropical Diseases, Ho Chi Minh City, Vietnam\n\nNicholas J White\n\nMahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical Medicine, Mahidol University, Bangkok, 10400, Thailand, Oxford University Clinical Research Unit, Hospital for Tropical Diseases, Ho Chi Minh City, Vietnam For correspondence: nickw@tropmedres.ac\n\nCopyright\n\n© 2023, Pukrittayakamee et al.\n\nThis article is distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use and redistribution provided that the original author and source are credited.\n\nEditors\n\nJoint Public Review:\n\nIn countries endemic for P vivax the need to administer a primaquine (PQ) course adequate to prevent relapse in G6PD deficient persons poses a real dilemma. On one hand PQ will cause haemolysis; on the other hand, without PQ the chance of relapse is very high. As a result, out of fear of severe haemolysis, PQ has been under-used.\n\nIn view of the above, the authors have investigated in well-informed volunteers, who were kept under close medical supervision in hospital throughout the study, two different schedules of PQ administration: (1) escalating doses (to a total of 5-7 mg/kg); (2) single 45 mg dose (0.75 mg/kg).\n\nIt is shown convincingly that regimen (1) can be used successfully to deliver within 3 weeks, under hospital conditions, the dose of PQ required to prevent P vivax relapse.\n\nAs expected, with both regimens acute haemolytic anaemia (AHA) developed in all cases. With regimen (2), not surprisingly, the fall in Hb was less, although it was abrupt. With regimen (1) the average fall in Hb was about 4 G. Only in one subject the fall in Hb mandated termination of the study.\n\nSince the data from the Chicago group some sixty years ago, there has been no paper reporting a systematic daily analysis of AHA in so many closely monitored subjects with G6PD deficiency. The individual patient data in the Supplementary material are most informative and more than precious.\n\nComments on the revised version:\n\nIn my view this important paper is further improved in this revised version (R2), particularly with respect to clarity in the discussion. All the points I had previously raised have been tackled.\n\nAuthor Response\n\nThe following is the authors’ response to the previous reviews\n\nReviewer #1 (Public Review):\n\nIn countries endemic for P vivax the need to administer a primaquine (PQ) course adequate to prevent relapse in G6PD deficient persons poses a real dilemma. On one hand PQ will cause haemolysis; on the other hand, without PQ the chance of relapse is very high. As a result, out of fear of severe haemolysis, PQ has been under-used.\n\nIn view of the above, the Authors have investigated in well-informed volunteers, who were kept under close medical supervision in hospital throughout the study, two different schedules of PQ administration: (1) escalating doses (to a total of 5-7 mg/kg); (2) single 45 mg dose (0.75 mg/kg).\n\nIt is shown convincingly that regimen (1) can be used successfully to deliver within 3 weeks, under hospital conditions, the dose of PQ required to prevent P vivax relapse.\n\nAs expected, with both regimens acute haemolytic anaemia (AHA) developed in all cases. With regimen (2), not surprisingly, the fall in Hb was less, although it was abrupt. With regimen (1) the average fall in Hb was about 4 G. Only in one subject the fall in Hb mandated termination of the study.\n\nSince the data from the Chicago group some sixty years ago, there has been no paper reporting a systematic daily analysis of AHA in so many closely monitored subjects with G6PD deficiency. The individual patient data in the Supplementary material are most informative and more than precious.\n\nHaving said this, I do have some general comments.\n\n1. Through their remarkable Part 1 study, the Authors clearly wish to set the stage for a revision of the currently recommended PQ regimen for G6PD deficient patients. They have shown that 5-7 mg/kg can be administered within 3 weeks, whereas the currently recommended regimen provides 6 mg/kg over no less than 8 weeks.\n\nWe state in the abstract: “The aim was to explore shorter and safer primaquine radical cure regimens compared to the currently recommended 8-weekly regimen (0.75 mg/kg once weekly), potentially obviating the need for G6PD testing”. This is the primary goal of the study.\n\n1. Part 2 aims to show that, as was known already, even a single PQ dose of 0.75 mg/kg causes a significant degree of haemolysis: G6PD deficiency-related haemolysis is characteristically markedly dose-dependent. Although they do not state it explicitly in these words (I think they should), the Authors want to make it clear that the currently recommended regimen does cause AHA.\n\nWe also wanted to compare the extent of haemolysis following single dose with the extent of haemolysis following the ascending dose regimens, in the same patients.\n\n1. Regulatory agencies like to classify a drug regimen as either SAFE or NOT-SAFE; they also like to decide who is 'at risk' and who is 'not at risk'. A wealth of data, including those in this manuscript, show that it is not correct to say that a G6PD deficient person when taking PQ is at risk of haemolysis: he or she will definitely have haemolysis. As for SAFETY, it will depend on the clinical situation when PQ is started and on the severity of the AHA that will develop.\n\nWe agree completely. Haemolysis following primaquine is inevitable. What matters is the rate and extent of haemolysis, and the compensatory response. Importantly the extent of the haemolysis, even within a specific genotype and for a given drug dose, appears to be highly variable.\n\nThe above three issues are all present in the discussion, but I think they ought to be stated more clearly.\n\nWe have tried to clarify these points in a revised discussion.\n\nFinally, by the Authors' own statement on page 15, the main limitation is the complexity of this approach. The authors suggest that blister packed PQ may help; but to me the real complexity is managing patients in the field versus the painstaking hospital care in the hands of experts, of which volunteers in this study have had the benefit. It is not surprising that a fall in Hb of 4 g/dl is well tolerated by most non-anaemic men; but patients with P vivax in the field may often have mild to moderate to severe anaemia; and certainly they will not have their Hb, retics and bilirubin checked every day. In crude approximation, we are talking of a fall in Hb of 4 G with regimen (1), as against a fall in Hb of 2 G with regimen (2), that is part of the currently recommended regimen: it stands to reason that, in terms of safety, the latter is generally preferable (even though some degree of fall in Hb will recur with each weekly dose). In my view, these difficult points should be discussed deliberately.\n\nAs above we have tried to clarify these important points in a revised discussion\n\nReviewer #1 (Recommendations For The Authors):\n\nPage 2 para 3. The decreased haemolysis upon continued PQ administration (that originally was named the 'resistance phase' is explained by two additive factors. First, the reticulocytosis (cells with higher G6PD activity pour into circulation from the bone marrow); second, the early doses of PQ has caused selective haemolysis of the oldest red cells, that had the lowest G6PD activity. This dual phenomenon is hinted at, but I think it should be stated clearly.\n\nThank you. We have added to the Introduction (fourth paragraph in revised version):\n\n“Continued primaquine administration to G6PD deficient subjects resulted in \"resistance\" to the haemolytic effect. The selective haemolysis of the older red cells resulted in a compensatory increase in the number of reticulocytes. Thus, the red cell population became progressively younger and increasing resistant to oxidant stress, so overall haemolysis decreased and a steady state was reached.”\n\nPage 4 and elsewhere. In the 'Hillmen scale' for haemoglobinuria a value >6 was named a 'paroxysm'; but any value of 2 and above is already frank haemoglobinuria. Incidentally, the chart was published not in ref 17, but in NEJM 350:552, 2004.\n\nWe have changed the reference (now ref 19) to the 2004 paper by Hillmen. We used the value of 6 as clinical criterion for stopping primaquine. While >2 is detectable in dilute urine, >6 refers to clearly red/black urine.\n\nIn Table 1 and throughout the paper I am surprised that retics are given as %: absolute retic counts are more informative.\n\nWe showed these as % counts as the majority of measurements were taken from blood slide readings where it is not possible to get an absolute count.\n\nPage 10, Attenuated hemolysis with continued or recurrent doses of PQ was shown convincingly for G6PD A-. There is also one report in which the time course of AHA was extensively investigated upon deliberate administration of PQ to a subject with G6PD Mediterranean (Blood 25: 92, 1965): there was little or no evidence for a 'resistance phase'.\n\nWe agree that this suggests it might not be possible to attenuate haemolysis with the Mediterranean variant (or variants of similar severity) as even the youngest circulating red cells may be susceptible to haemolysis. More evidence is needed.\n\nS6, S7. Reticulocytes remain high until PQ is stopped; they return to normal some 17 days after stopping PQ. This should be stated in the main text.\n\nThis has been added to the main text (section “Haemolysis and reticulocyte response”):\n\n“It took around 2 weeks for the reticulocyte counts to re-normalise.”\n\nIn subject 11 haemoglobinuria was slight on day 12; what was it before?\n\nWe have changed the caption of this Figure (Appendix 5) to:\n\n“Day 10 urine sample from subject 11 showing slight haemoglobinuria (Hillmen score of 4). The subject had a maximum Hillmen score varying between 2 and 3 on days 4 to 9.”\n\nI found individual patient data in S5 and S6 most interesting, especially since the G6PD variant was identified in each case. It would be helpful if in each case the total PQ dose were also shown, and in the interest of visual comparability the abscissa scale ought to be the same for all cases.\n\nWe have amended Figures S5 and S6 to make them consistent with each other (now Appendix 5). We also amended the figures showing the individual subject data for consistency.",
+    "sections": [
+      {
+        "title": "Abstract",
+        "text": "Abstract\n\n",
+        "start": 0,
+        "end": 10
+      },
+      {
+        "title": "Background",
+        "text": "Background\n\nPrimaquine is an 8-aminoquinoline antimalarial. It is the only widely available treatment to prevent relapses of Plasmodium vivax malaria. The 8-aminoquinolines cause dose dependent haemolysis in glucose-6-phosphate dehydrogenase deficient (G6PDd) individuals. G6PDd is common in malaria endemic areas but testing is often not available. As a consequence primaquine is underused.\n\n",
+        "start": 10,
+        "end": 403
+      },
+      {
+        "title": "Methods",
+        "text": "Methods\n\nWe conducted a pharmacometric study to characterise the relationship between primaquine dose and haemolysis in G6PDd. The aim was to explore shorter and safer primaquine radical cure regimens compared to the currently recommended 8-weekly regimen (0.75 mg/kg once weekly), potentially obviating the need for G6PD testing. Hemizygous G6PDd healthy adult Thai and Burmese male volunteers were admitted to the Hospital for Tropical Diseases in Bangkok. In Part 1, volunteers were given ascending dose primaquine regimens whereby daily doses were increased from 7.5 mg up to 45 mg over 15 to 20 days. In Part 2, a single primaquine 45 mg dose was given.\n\n",
+        "start": 403,
+        "end": 1063
+      },
+      {
+        "title": "Reviewed Preprint",
+        "text": "Reviewed Preprint\n\nRevised by authors after peer\n\n",
+        "start": 1063,
+        "end": 1113
+      },
+      {
+        "title": "Results",
+        "text": "Results\n\n24 volunteers were enrolled in Part 1, and 16 in Part 2 (13 participated in both studies). In three volunteers, the ascending dose regimen was stopped because of haemolysis (n=1) and asymptomatic increases in transaminases (n=2; one was hepatitis E positive). Otherwise the ascending regimens were well tolerated with no drug-related serious adverse events. In Part 1, the median haemoglobin concentration decline was 3.7 g/dL (range: 2.1 to 5.9; relative decline of 26% [range: 15 to 40%]). Primaquine doses up to 0.87 mg/kg/day were tolerated subsequently without clinically significant further falls in haemoglobin. In Part 2, the median haemoglobin concentration decline was 1.7 g/dL (range 0.9 to 4.1; relative fall of 12% [range: 7 to 30% decrease]). The ascending dose primaquine regimens gave 7 times more drug but resulted in only double the haemoglobin decline.\n\n",
+        "start": 1113,
+        "end": 1995
+      },
+      {
+        "title": "Conclusions and Interpretation",
+        "text": "Conclusions and Interpretation\n\nIn patients with Southeast Asian G6PDd variants full radical cure treatment can be given in under three weeks compared with the current 8 week regimen.\n\nThis manuscript addresses an important question, that in countries endemic for P vivax the need to administer a primaquine (PQ) course adequate to prevent relapse in G6PD deficient persons poses a real dilemma. On one hand PQ will cause haemolysis; on the other hand, without PQ the chance of relapse is very high. As a result, out of fear of severe haemolysis, PQ has been under-used. This manuscript is convincing that regimen (1) can be used successfully to deliver within 3 weeks, under hospital conditions, the dose of PQ required to prevent P vivax relapse.\n\n",
+        "start": 1995,
+        "end": 2745
+      },
+      {
+        "title": "Introduction",
+        "text": "Introduction\n\nOver the past 70 years primaquine has been the only drug widely available to prevent relapses of Plasmodium vivax and P. ovale malaria (radical cure). Primaquine has been given to hundreds of millions of patients in single doses to prevent P. falciparum transmission, in 5 to 14 day courses for radical cure of vivax and ovale malarias, and during mass treatments (Ashley et al., 2014 ). The main adverse effect of primaquine, and the other 8-aminoquinoline antimalarials, is dose-dependent oxidant haemolysis in individuals with glucose-6-phosphate dehydrogenase (G6PD) deficiency (Luzzatto et al., 2020 ; Recht et al., 2014 ). As G6PD deficiency is common in malaria endemic regions, primaquine is underused because reliable point-of-care testing for G6PD deficiency is usually not available (Commons, 2023) and prescribers are naturally reluctant to risk causing potentially severe, life threatening haemolysis (Yilma et al., 2023 ).\n\nOutside sub-Saharan Africa Plasmodium vivax is the main cause of malaria in most endemic regions, and in these regions relapse is often the main cause of illness (Commons et al., 2020 ). Relapsing infections cause significant morbidity and, in higher transmission settings, mortality in young children, mediated mainly by chronic anaemia (Douglas et al., 2014 ; Commons et al., 2019 ). Relapses are also an important source of P. vivax transmission. The under use of primaquine therefore contributes to substantial morbidity and mortality and to the failure to control and eliminate vivax malaria in endemic areas.\n\nG6PD deficiency is the most common red blood cell enzyme deficiency of humans (Luzzatto et al., 2020 ). G6PD deficiency occurs mainly in malaria endemic or historically endemic regions in every population and setting (Howes et al., 2012 ). Mutations in the G6PD gene on the X chromosome confer reduced enzyme stability. This results in impaired erythrocyte defences against oxidant stresses and thereby increases the risk of haemolysis of older G6PD depleted erythrocytes. More severe G6PD deficiency variants are associated with greater drug induced haemolysis as a broader erythrocyte age range is G6PD depleted (Piomelli et al., 1968 ). The substantial haemolytic risk from 8-aminoquinoline antimalarials means that the standard 7-14 day radical cure primaquine regimens are contraindicated in G6PD deficiency (World Health Organization, 2015) Seminal clinical investigations were conducted over 50 years ago in adults with the African Avariant of G6PD deficiency. These showed that although oxidant haemolysis was inevitable, it affected predominantly the older erythrocytes. Continued primaquine administration to G6PD deficient subjects resulted in “resistance” to the haemolytic effect. The selective haemolysis of the older red cells resulted in a compensatory increase in the number of reticulocytes. Thus, the red cell population became progressively younger and increasingly resistant to oxidant stress, so overall haemolysis decreased and a steady state was reached. This suggested a therapeutic strategy of controlled haemolysis which would limit the degree of anaemia by allowing time for the compensatory erythropoetic response (Alving et al., 1960 ; Kellermeyer et al., 1962 ). This mechanistic understanding provided the rationale for the once weekly primaquine regimen of 0.75 mg base/kg for 8 weeks, currently recommended by the World Health Organisation in patients with G6PD deficiency (World Health Organization, 2015). However, the safety of this regimen in more severe G6PD deficiency variants was never established. A small cohort study of the weekly primaquine regimen in 18 G6PD deficient (17 had the 871G>A [Viangchan] variant) and 57 G6PD normal adult vivax malaria patients in Cambodia suggested that single 45 mg doses may not be safe in the more severe G6PD deficiency variants (Kheng et al., 2015 ). A quarter of the G6PD deficient patients had a >25% fall in haemoglobin (compared to none in the G6PD normal group) and one patient required a blood transfusion for a symptomatic fall in haemoglobin fall from 10 to 7.5 g/dL.\n\nOver the past fifty years there has been substantial variation in national policies and practices. Some countries (e.g. Iran, Myanmar), which did not have G6PD testing available in endemic areas, have recommended the once weekly primaquine regimen as standard practice for all vivax malaria cases. Other countries have recommended giving the 14 day daily courses of primaquine without testing, although this recommendation is often not followed. To develop an alternative shorter and potentially safer approach to primaquine dosing in G6PD deficiency, we conducted a two part adaptive pharmacometric study in Thailand with the goal of characterising the doseresponse relationship for primaquine induced haemolysis in healthy G6PD deficient volunteers.\n\n",
+        "start": 2745,
+        "end": 7625
+      },
+      {
+        "title": "Results",
+        "text": "Results\n\n",
+        "start": 7625,
+        "end": 7634
+      },
+      {
+        "title": "Study population",
+        "text": "Study population\n\nOf 215 potential subjects (either identified through hospital records or screened at the walk-in clinic for G6PD deficiency), 27 male hemizygote G6PD deficient volunteers were enrolled to the two studies between November 2018 and August 2022. In subjects who were interested in participating in the study, there were 2 screening failures (1 unidentified G6PD genotype and 1 elevated AST/ALT), see CONSORT diagrams in Appendix 1 .\n\nThe COVID-19 pandemic interrupted the end of Part 1 and delayed finishing the study by two years, resulting in a substantially longer interval between test regimens than planned. After the lockdowns, fewer than anticipated Part 1 participants could be recontacted for Part 2, so three additional volunteers were recruited. The volunteer baseline summary characteristics are shown in Table 1 . All volunteers had low to unmeasurable blood G6PD enzyme activity. The most common G6PD deficiency genetic variant was Viangchan (871G>A, n=12), as it is in much of the eastern Greater Mekong subregion universally, in all cases (Bancone et al., 2019 ). This was followed by Canton (1376G>T, n=5) and Mahidol (487G>A, n=4). A large proportion of subjects had screening reticulocyte counts over 2.5%, i.e. above the normal range (8/24 in Part 1 and 3/16 in Part 2). The intermediate CYP2D6 metaboliser genotype (homozygous *10) with an activity score of 0.5, was identified in 8/27 (30%) of the volunteers (Caudle et al., 2020 ).\n\n",
+        "start": 7634,
+        "end": 9105
+      },
+      {
+        "title": "Ascending dose primaquine (Part 1)",
+        "text": "Ascending dose primaquine (Part 1)\n\nOf 24 volunteers assigned ascending dose primaquine regimens, 23 were included in the analysis (Appendix 1 figure 1). Volunteer number 18 was withdrawn from the study after 3 days of receiving 10 mg of primaquine daily because of severe low back pain which resulted from a MRI confirmed prolapsed intervertebral disc that improved with symptomatic treatment. He was not followed up and did not participate in Part 2. As this was considered unrelated to drug administration and the total primaquine dose received was very low, his data were excluded from the primary outcome analysis. There were no changes in his haemoglobin over the three days of primaquine dosing. The remaining 23 subjects in the primary analysis population received ascending primaquine dose regimens of between 11 and 20 days duration.\n\n",
+        "start": 9105,
+        "end": 9950
+      },
+      {
+        "title": "Adverse events resulting in study withdrawal",
+        "text": "Adverse events resulting in study withdrawal\n\nPrimaquine was generally well tolerated. There were no serious adverse events or complications. In three subjects (13%), the ascending dose primaquine regimen was stopped; one for excessive haemolysis and two because of abnormal liver function tests (elevated transaminases).\n\nAfter receiving 11 doses of a 16-day regimen, subject 11 (G6PD Union) reached a fractional haemoglobin fall from baseline of 39.5% (8.9 g/dL vs. 14.7 g/dL at baseline), associated with marked fatigue. This decrease met the stopping rule for study withdrawal (dose limiting toxicity, see Appendix 2 ). He developed a substantial compensatory reticulocytosis (15%). Over the next five days, his haemoglobin remained at ∼ 9 g/dL (nadir observed haemoglobin was 8.8 g/dL corresponding to a 40% decrease from baseline) and rose thereafter to 13.0 g/dL (day 28) and 14.9 g/dL by day 49 (Appendix 5 figure 1). The haemoglobinuria Hillmen score peaked at 4 on day 10 and was 3 on day 12, dropping back to 1 on day 13 (Appendix 5 figure 2).\n\nVolunteer 7, who was receiving a 20-day regimen, developed asymptomatic rises in ALT of 207 U/L (>5 times ULN, grade 3) and AST of 89 U/L (>2 times ULN, grade 1) on day 16, associated with a raised LDH (512 IU/L) and a normal direct (0.3 mg/dL) and indirect (0.5 mg/dL) bilirubin. He was hepatitis B immune, hepatitis A IgM negative, but hepatitis E IgM positive with a borderline IgG result, consistent with early hepatitis E infection. A liver ultrasound showed slightly increased liver echogenicity consistent with a mild fatty liver and/or mild hepatic parenchymal disease. His primaquine dosing was stopped on Day 15. His increases in AST and ALT were considered most likely a result of asymptomatic hepatitis E and not primaquine. His haemoglobin was 11 g/dL at the time of withdrawal (baseline: 14.3 g/dL; 23% fall); he was subsequently lost to follow up.\n\nVolunteer 14 (16-day regimen) also developed asymptomatic rises in ALT to reach plasma concentrations of 423 U/L (>10 ULN, grade 3) and AST of 229 U/L (>5 times ULN, grade 3) on day 11, associated with a raised LDH (608 IU/L) mildly raised direct (0.4 mg/dL) but normal indirect (0.9 mg/dL) bilirubin. He was also hepatitis B immune, and was hepatitis A and E antibody negative, but had a mild fatty liver on ultrasound. Primaquine dosing was stopped on Day 11. By Day 28, the ALT was 87 IU/L and the AST was 36 IU/L. As no other cause could be found, his increases in AST and ALT were considered to be probably related to primaquine. His day 11 haemoglobin was also 11 g/dL (baseline: 13.9; 21% fall).\n\n",
+        "start": 9950,
+        "end": 12574
+      },
+      {
+        "title": "Adverse events resulting in dose adjustments",
+        "text": "Adverse events resulting in dose adjustments\n\nIn a further three subjects, the intended ascending dose regimen was not completed as they had haemoglobin falls of 30 and 40% relative to baseline. Subject 13 (16 day regimen assigned) did not escalate from 30 mg to 45 mg on day 15 but stayed at 30 mg until day 16 (33 and 34% fall from baseline haemoglobin on days 15 and 16, respectively). Subject 23 (15 day regimen) was given an additional day at 30 mg on day 12 (day 11 haemoglobin fell 32% from baseline) and escalated to 45 mg on day 14. Subject 24 (15 day regimen) remained at 22.5 mg per day from day 7 to day 15 (instead of escalating to 30 and then 45 mg per day) as his haemoglobin reduction from baseline stayed between 30 and 33%.\n\n",
+        "start": 12574,
+        "end": 13317
+      },
+      {
+        "title": "Haemolysis and reticulocyte response",
+        "text": "Haemolysis and reticulocyte response\n\nThe median absolute fall in haemoglobin from baseline was 3.7 g/dL (range: 2.1 to 5.9), corresponding to a median relative decrease of 26% (range: 15 to 40), Figure 1 panels b and d. The median day of haemoglobin nadir was 16 days after starting primaquine (range: 11 to 20). There was substantial variation between individuals, including between those with the same G6PD genotype who received the same regimens. For example, volunteer 15 (G6PD Viangchan) received 6.8 mg/kg total dose of primaquine over 15 days and his haemoglobin dropped around 25% (baseline was 13.6 g/dL; nadir of 10.1 g/dL was reached approximately by day 11) whereas volunteer 20 (also G6PD Viangchan) received 5.4 mg/kg over 15 days (slightly faster escalation using the same doses but he was 12 kg heavier), and his haemoglobin fell around 40% (baseline was 15.0 g/dL; nadir of 9.2 g/dL was reached by day 15), see Appendix 6 . None of the subjects had a fall of haemoglobin below 8 g/dL and none developed frank haemoglobinuria (Hillmen score ≥6). Peak reticulocytosis occurred at approximately the same time as the haemoglobin nadir (day 16; range: 11 to 20), with a median peak reticulocyte count of 10.3% (range: 4.2 to 16.8), Figure 1 panel c. It took approximately 2 weeks for the reticulocyte counts to re-normalise.\n\n",
+        "start": 13317,
+        "end": 14656
+      },
+      {
+        "title": "Part 2: single 45 mg primaquine dose",
+        "text": "Part 2: single 45 mg primaquine dose\n\nFollowing a single 45 mg base equivalent dose of primaquine (mg base/kg doses ranged from 0.52 to 0.87), there was a marked fall in haemoglobin concentrations reaching a median observed nadir on day 6 (range: day 4 to 7). The median fall from baseline was 1.7 g/dL (range: 0.9 to 4.1 g/dL decrease), corresponding to a median relative decrease of 12% (range: 7 to 30% decrease), see Figure 2. The largest daily falls in haemoglobin following the single dose were on day 3 (median fall in haemoglobin on day 3 was 0.73 g/dL, Figure 3 ).\n\nThe reticulocyte response was characterised by a gradual rise with most volunteers having their observed peak reticulocyte proportions on day 7 (range day 4 to 14). The largest fall in haemoglobin, and greatest rise in reticulocyte count occurred in subject 13 who was G6PD Canton (absolute fall of 4.1 g/dL: baseline haemoglobin was 13.6 g/dL, the nadir haemoglobin was 9.5 g/dL on day 7; relative fall of 30%). He did not participate in Part 1 so there are no ascending dose data with which to compare.\n\n",
+        "start": 14656,
+        "end": 15737
+      },
+      {
+        "title": "Comparison of ascending and single dose primaquine regimens",
+        "text": "Comparison of ascending and single dose primaquine regimens\n\nFigure 3 shows the maximum observed absolute and relative falls in haemoglobin concentration as a function of the total primaquine dose received across the two studies. Overall, the median fall in the single dose cohort was nearly half that of the median fall in the ascending dose group, whereas the median total dose in the single dose cohort was only 14% of the median total dose in the ascending dose cohort. Although the subjects receiving a single 45 mg dose of primaquine had smaller absolute falls in haemoglobin, they experienced earlier and greater daily falls (bottom panels of Figure 3 ). The greatest median falls in haemoglobin in Part 1 were on days 6 and 7 (0.55 and 0.57 g/dL reductions, respectively), whereas the median fall on day 3 (day with the largest median fall) in the single dose cohort was 0.73 g/dL. Two subjects receiving the 45 mg single dose had daily haemoglobin falls of nearly 2 g/dL.\n\n",
+        "start": 15737,
+        "end": 16719
+      },
+      {
+        "title": "Haemolysis dose-response relationship",
+        "text": "Haemolysis dose-response relationship\n\nWe summarised each ascending dose regimen in Part 1 by the cumulative dose of primaquine received by day 10. This summary exposure statistic was chosen following graphical visualisation of the haemoglobin data, which showed that the most substantial haemolysis had occurred by day 10 of the study (Figure 1b , note that the nadir haemoglobin was observed after day 10 in all volunteers). In the 23 volunteers, the day 10 cumulative dose varied from 1.7 mg/kg to 3.5 mg/kg, with a median value of 2.6 mg/kg.\n\nThe day 10 cumulative dose was predictive of both the maximum absolute fall in haemoglobin with respect to the baseline value (1.2 g/dL fall per mg/kg increase [95%CI: 0.5 to 1.8]; p=0.001, r = 0.40), and the maximum relative fall in haemoglobin with respect to the baseline value (7.9% fall per mg/kg increase [95%CI: 4.4 to 11.3]; p=0.0002; r = 0.49), but not of the average daily fall over days 5 to 10 (0.06 g/dL per day [95%CI: 0.14 to -0.03]). Figure 4 panels a-c show the doseresponse data coloured by G6PD variant. For Part 2 the mg/kg dose was not associated significantly with either the absolute, relative or the mean daily falls in haemoglobin, although for all three outcomes the point estimates were in the expected direction (greater mg/kg dose resulting in larger falls), Figure 2 panels d-f.\n\nIn an additional exploratory analysis, there was no evidence of substantial differences in haemolysis between the different G6PD variants (although the sample size is very small). There was some evidence that subjects with higher baseline haemoglobin concentrations had larger relative falls. There was no evidence for an association between the homozygous *10 CYP2D6 genotype associated with reduced primaquine bioactivation and haemolysis (i.e. no evidence that these subjects haemolysed less than the other subjects).\n\n",
+        "start": 16719,
+        "end": 18598
+      },
+      {
+        "title": "Effect on total plasma bilirubin and LDH",
+        "text": "Effect on total plasma bilirubin and LDH\n\nThe falls in haemoglobin were associated with predictable biochemical changes indicative of haemolysis. There were rises in plasma concentrations of the intraerythrocytic enzyme LDH and in total bilirubin reflecting haem metabolism. The more rapid fall in haemoglobin associated with the single 45 mg primaquine dose was associated with larger normalised rises in total bilirubin consistent with greater haemolysis (Figure 5 and Appendix 7 ).\n\n",
+        "start": 18598,
+        "end": 19084
+      },
+      {
+        "title": "Liver transaminases, creatinine, haptoglobin, and methaemoglobin",
+        "text": "Liver transaminases, creatinine, haptoglobin, and methaemoglobin\n\nIn both studies, there was no evidence for a relationship between primaquine dose (Part 1: cumulative day 10 total mg/kg dose; Part 2: single mg/kg dose) and maximum observed fold change in serum AST, ALT or plasma creatinine, or the maximum observed absolute decrease in plasma haptoglobin (Appendix 8 ). There were no clinically significant rises in blood methaemoglobin in any of the study participants (Figure 6 panels a-b). In part 1, the day 10 cumulative dose was negatively associated with the peak observed methaemoglobin concentration (Figure 6 panel c, p=0.02) with a similar negative trend was also observed in part 2 (Figure 6 panel d; p=0.06). There was no association between having a poor metaboliser CYP2D6 genotype (*10 homozygous versus other genotypes) and peak blood methaemoglobin concentration.\n\n",
+        "start": 19084,
+        "end": 19969
+      },
+      {
+        "title": "Discussion",
+        "text": "Discussion\n\nThe 8-aminoquinoline antimalarials are the only drugs which prevent relapses of vivax or ovale malaria (radical cure). Significant haemolysis from radical cure regimens cannot be avoided in G6PD deficiency but, using the rapidly eliminated primaquine, it can be attenuated. Ascending dose primaquine regimens in G6PD deficient malaria patients exploit the same pharmacodynamic principle underling the current once weekly treatment recommendation (Alving et al., 1960 ). They aim to provide controlled haemolysis while allowing for steady reconstitution of the red cell population with increasingly younger, and therefore “oxidant resistant” erythrocytes (Kellermeyer et al., 1962 ). As G6PD testing is usually unavailable in malaria endemic areas, the prescriber treating vivax or ovale malaria is currently faced with the therapeutic dilemma of either not giving the drug, and failing to prevent relapses with their attendant substantial morbidity, or giving it and causing iatrogenic haemolysis in G6PD deficient patients. The net result is that radical cure primaquine regimens are often not prescribed, even though they would be well tolerated and safe in the majority of patients who are G6PD normal. Primaquine underuse is a major contributor to global vivax malaria morbidity.\n\nThe currently recommended 8 week radical cure regimen for G6PD deficient patients attenuates the fall in haemoglobin, but it still risks significant haemolysis, particularly with the first 0.75 mg/kg dose (Kheng et al., 2015 ). This regimen has not been well evaluated in patients with severe G6PD deficiency variants who are at greatest risk, and it requires good adherence for 8 weeks. As much of the oxidant haemolysis occurs after the first doses, failure to complete the eight week course (which is likely to be common) therefore incurs most of the haemolytic risk without providing the full benefit.\n\nIn this study the single 45 mg dose resulted in a median fall in haemoglobin concentration of 1.7 g/dL, which was nearly half the median fall observed with the full ascending dose regimen. In comparison, the ascending dose regimens gave a seven times higher total dose. These ascending dose primaquine regimens were relatively well tolerated in adult male volunteers with Southeast Asian variants of G6PD deficiency. Although these G6PD variants are generally regarded as moderate in severity, there is wide variation in the phenotype between variants and also between individuals with the same genotype. The ascending primaquine dose regimens are still associated with a significant haemolytic risk. Thus, in considering the radical cure treatment of vivax malaria, the risks of relapse, often on multiple occasions with consequent anaemia, must be balanced against the predictable haemolysis that will result from the oxidative effects of the 8-aminoquinoline radical cure regimen (Commons et al., 2020 , 2019 ). In the Southeast Asian region approximately half the vivax malaria cases will be followed by at least one relapse if radical curative treatment is not given. Many factors need to be incorporated in the assessment of both population and individual risk from haemolysis. Acute kidney injury only results from fulminant haemolysis. The main risk is dangerous anaemia. At a population level the overall risks are lower than predicted from gene frequencies because severe variants of G6PD deficiency protect against vivax malaria, although whether they affect the risk of relapse is not known (Douglas, 2014). At an individual level the haemolytic risk depends on the G6PD genotype, the degree of exposure to the putative oxidative 8-aminoquinoline metabolites, and also the degree of pre-existing anaemia. Vivax malaria causes anaemia, but as the haemolytic component of the malarial anaemia also results in loss of older, more deficient erythrocytes, so the fractional reduction in erythrocytes resulting from the oxidant drug in acute malaria is correspondingly less. Finally, chronic anaemias associated with haemolysis (e.g. hookworm, recurrent malaria) result in a younger red cell populations with right shifted oxygen dissociation curves and thus increased oxygen delivery. As a result, the pathological consequences of causing severe anaemia (haemoglobin concentration <5g/dL) depend whether the patient was already significantly anaemic and why they were anaemic.\n\nIn this exploratory study, in which there were cautious stopping rules, 3 out of 23 (13%) of the volunteers did not complete the regimen because of drug toxicity; one had significant haemolysis and two had asymptomatic hepatitis. Hepatitis is a rare adverse effect of primaquine (Recht et al., 2014 ). Asymptomatic hepatitis E is well documented and more common than symptomatic disease (Kamar et al., 2012 ). Three volunteers were not escalated to higher primaquine doses as intended because of significant falls in haemoglobin. Such falls in haemoglobin were expected by design in this exploratory adaptive study. In none of the volunteers did haemoglobin concentrations fall below 8 g/dL. The extent of haemolysis varied substantially between volunteers, even within the same genotype. Higher baseline haemoglobin values tended to be followed by greater falls. Taken together with the high baseline reticulocytosis, this suggests that subjects with G6PD deficiency have variably shortened red cell survival, and thus variably sized populations of erythrocytes vulnerable to oxidant haemolysis.\n\nOne of the important advantages of primaquine (half-life approximately 5-7 hours) relative to its slowly eliminated analogue tafenoquine (half-life approximately 15 days) is that the treatment can be stopped as soon as there are signs or symptoms of haemolytic toxicity. Despite the use of primaquine for nearly 70 years and administration of hundreds of millions of treatments there have been very few reported deaths from haemolytic toxicity (Recht et al., 2014 ; Yilma et al., 2023 ). Very large mass treatments with primaquine have been used in malaria elimination campaigns involving millions of people in China, Nicaragua, Turkmenistan, Azerbaijan, Tajikistan, Afghanistan and North Korea without exception (Hsiang et al., 2013 ; Kondrashin et al., 2014 ). In the latter four countries an interrupted regimen involved giving four days of primaquine, stopping for three days and then completing a further ten days. Subjects with significant haemolysis could stop the drug at any time. Serious toxicity was very rare, despite the high prevalences of G6PD deficiency in some of the regions. In West and Central Asia the severe G6PD Mediterranean variant would have been the most prevalent genotype.\n\nIn G6PD deficient patients with acute malaria, the disease itself causes haemolytic anaemia (White, 2018 ), and the consequent preferential loss of older erythrocytes ameliorates the adverse impact of oxidant drugs. On the other hand, compensatory reticulocytosis might be inhibited but limited experience with weekly primaquine shows a robust reticulocyte response post treatment (Puaprasert et al., 2018). Differences in haemolytic response between healthy volunteers and malaria patients are likely to be small as the illness usually resolves within a few days with effective treatment, while the ascending dose regimen would still be using the lowest dose.\n\nThe main limitation of this therapeutic approach is its complexity. This could be addressed by preparation of blister packed primaquine allowing easy dose transition. The G6PD deficiency genotypes studied here are representative of those present in the Southeast Asian region, and can be regarded as of moderate severity, with the African Agenotype (in which the currently recommended once weekly dosing regimen was developed) being at the less severe end of the spectrum, and the common Mediterranean G6PD genotype being at the more severe end. The safety of this regimen in patients with severe G6PD deficiency cannot be predicted based on these data. From a therapeutic perspective, as G6PD testing is usually not available, the individual patient risk assessment must take into account the factors described earlier (i.e. the prevalence of G6PD deficiency and its likely severity, the sex of the patient, the degree of anaemia, and the probability of relapse), and also an assessment of the patients’ understanding of the risks and when to stop treatment, and the likelihood and feasibility of accessing health care if there is severe haemolysis.\n\nIn summary, shorter course ascending dose vivax malaria radical cure regimens in G6PD deficient subjects offer the prospect of an effective treatment which does not incur prohibitive haemolytic toxicity and in some areas could obviate the need to test for G6PD deficiency.\n\n",
+        "start": 19969,
+        "end": 28747
+      },
+      {
+        "title": "Methods and Materials",
+        "text": "Methods and Materials\n\n",
+        "start": 28747,
+        "end": 28770
+      },
+      {
+        "title": "Trial design",
+        "text": "Trial design\n\nThe overall objective of this study was to try and identify radical cure primaquine regimens that would be safer in G6PD deficiency. This required titration of the daily primaquine doses against haemolysis balancing the need to provide a radical curative dose of primaquine within a reasonable time-frame whilst minimising the inevitable haemolysis.\n\nThis was a two part study, conducted in the Hospital for Tropical Diseases in Bangkok, of primaquine in hemizygote G6PD deficient male healthy volunteers. Part 1 evaluated the tolerability, safety and haematological consequences of ascending doses of primaquine and was adaptive. The primaquine regimen was titrated based on the incremental haemoglobin changes observed in the previous participants, continuous safety evaluation by the investigators, and a set of guiding prespecified rules. This iterative adaptive approach accumulated information to refine the successive regimens. The primary consideration throughout the trial was participant safety. In Part 2 of the study, after a wash-out period of at least 6 months, a single 45 mg (base equivalent) primaquine dose was given, and the volunteers were monitored as in Part 1.\n\n",
+        "start": 28770,
+        "end": 29969
+      },
+      {
+        "title": "Study site and participants",
+        "text": "Study site and participants\n\nThe study took place in the Clinical Therapeutics Unit volunteer ward in the Hospital for Tropical Diseases, Faculty of Tropical Medicine, Mahidol University, Bangkok, Thailand. The recruitment and follow up periods were from November 2018 to October 2020 (Part 1) and June to September 2022 (Part 2). This coincided with and was disrupted by the COVID-19 pandemic. A COVID-19 mitigation plan was implemented when local lockdown was lifted.\n\nHealthy male volunteers were recruited if they provided written informed consent, had a G6PD enzyme activity <30% of the population median value determined by a validated quantitative spectrophotometric G6PD assay, a genotype confirmed G6PD variant (according to a previously published method (Hsiang, 2013)), and were aged between 18 and 65 years with a screening haemoglobin concentration >11 g/dL. Detailed exclusion criteria are provided in Appendix 3 .\n\n",
+        "start": 29969,
+        "end": 30899
+      },
+      {
+        "title": "Trial procedures",
+        "text": "Trial procedures\n\n",
+        "start": 30899,
+        "end": 30917
+      },
+      {
+        "title": "Enrolment and primaquine dosing",
+        "text": "Enrolment and primaquine dosing\n\nThe risks and the rationale of the study were detailed to potential volunteers and it was explained that they could withdraw from the study at any time if they wished. Primaquine phosphate (Thailand Government Pharmaceutical Organisation, Bangkok, Thailand) was provided as tablets containing either 5 or 15 mg primaquine base equivalent. A tablet cutter was used to split the tablets (smallest dose increment was 2.5 mg base equivalent). Primaquine was given orally following a standardised light snack and subjects were observed closely for the first 4 hours.\n\n",
+        "start": 30917,
+        "end": 31513
+      },
+      {
+        "title": "Part 1",
+        "text": "Part 1\n\nWe recruited in cohorts of five volunteers, with an interval of two weeks between cohorts to allow sufficient time to analyse the data and determine the next primaquine regimen. The overall goal was to increase the daily primaquine doses and cause gradual haemolysis which was offset by concomitant reticulocytosis. This would steadily reduce the age of the red cell population and thereby avoid precipitous symptomatic falls in the haemoglobin concentration (Alving et al., 1960 ; Kellermeyer et al., 1962 ). The cumulative total primaquine dose given needed to be sufficient to provide a radical curative effect in the treatment of vivax malaria (i.e. between 5 and 7 mg base/kg) (Commons et al., 2023 ).\n\nCareful monitoring was done throughout to assess the degree of haemolysis and adjust or stop the dosing, as required. The dose regimens in this exploratory investigation (Part 1) were adapted as follows.\n\nThe primaquine regimen given to the first five volunteers consisted of four cycles of 5 days daily primaquine dosing (i.e. total 20 days). The ascending doses were 7.5, 15, 22.5 and 30 mg base equivalent, respectively. This initial dose regimen was chosen on the basis of a mathematical model of primaquine induced haemolysis in G6PD deficiency using earlier data from vivax malaria patients who had received single 45 mg primaquine doses (Watson et al., 2017 ; Kheng et al., 2015 ). Subjects proceeded to the next higher dose cycle if they satisfied several prospectively defined safety criteria (Appendix 2 ). In this first round the total primaquine dose was 375 mg base equivalent. The results of the first five volunteers were reviewed and the dosing regimens adjusted. This iterative process of review and adjustment continued thereafter. The once daily dosing in each cycle was increased in increments of 2.5 mg or 7.5 mg (not adjusted for body weight). Once it became clear this rate of dose increase was generally well tolerated, the number of days per cycle was reduced to 3 or 4 days in subsequent subjects to test regimens of shorter duration with faster dose escalation. Subjects were reviewed clinically before each dose increase.\n\n",
+        "start": 31513,
+        "end": 33680
+      },
+      {
+        "title": "Part 2",
+        "text": "Part 2\n\nIn Part 2, a single dose of 45 mg primaquine base equivalent was administered, with similar careful monitoring for one week.\n\n",
+        "start": 33680,
+        "end": 33814
+      },
+      {
+        "title": "Monitoring procedures/evaluations",
+        "text": "Monitoring procedures/evaluations\n\nIn both studies, volunteers were observed closely. In Part 1, all volunteers were admitted to the ward for 28 days with a subsequent follow-up visit on day 49. For Part 2, at least 6 months later, volunteers were re-admitted for 24 hours on day 0, reviewed daily until day 7, and then again on day 14.\n\nAt enrolment all volunteers underwent a detailed clinical examination. Thereafter, at each assessment volunteers were asked how they felt, whether they had any adverse effects, had their vital signs measured, and two blood samples were taken for measurement of haemoglobin concentration (HemoCue®, Ängelholm, Sweden). The average of the two results was recorded. Methaemoglobin (%) was measured non-invasively at least once daily using a Masimo Rad 57 oximeter®, and urine colour was recorded twice daily. Haemoglobinuria was assessed visually using a modified Hillmen score (Hillmen et al., 2004 ).\n\nWright-Giemsa stained and new methylene blue stained blood films were prepared for red cell morphology, and manual reticulocyte and Heinz body counts, respectively. In Part 1 these were done daily from day 0 (day of first primaquine dose) until day 20, and then on days 22, 24, 26, and 28, and finally on day 49. In Part 2 they were done at every visit. Other laboratory investigations included a full blood count (CBC) and reticulocyte count, routine biochemistry (including LDH and haptoglobin), plasma haemoglobin, and plasma primaquine and carboxyprimaquine concentrations. In Part 1 these were done at screening and then every 3-5 days (start of each new cycle, i.e. dosing increment); in Part 2 they were done at screening, and on days 3, 7 and 14.\n\nThe G6PD deficiency variants were genotyped as described previously (Bancone et al., 2019 ; Boonyuen et al., 2021 ). Haemoglobin electrophoresis and genotyping of the common cytochrome P450 2D6 (CYP2D6) genotypes found in SE Asia was also performed (Puaprasert et al., 2018 ). Presumptive alpha-thalassaemia trait (which is very common in Thailand) was defined as a mean cell volume less than 80 fl or a mean cell haemoglobin < 27 pg, and HbA2 ≤4.4. Additional laboratory measurements were taken if unplanned dose adjustments were necessary, or there was a clinical indication.\n\n",
+        "start": 33814,
+        "end": 36088
+      },
+      {
+        "title": "Safety monitoring and stopping rules for Part 1",
+        "text": "Safety monitoring and stopping rules for Part 1\n\nThe pre-specified rules for adjusting primaquine dose regimens across cohorts in Part 1 are illustrated in Appendix 2 figure 1, and the rules for increasing primaquine doses for each enrolled subject are shown in Appendix 2 figure 2. The overall aim was to titrate dosing in order to obtain small daily falls in haemoglobin of between 0.1 and 0.2 g/dL. For a given subject, primaquine doses were increased only if the haemoglobin concentration was >9 g/dL, was greater than 70% of baseline, the urine Hillmen score was ≤5, and the subject felt well and had no symptoms of anaemia.\n\nWe defined haemolysis which would result in stopping primaquine (study withdrawal), as any one of the following:\n\n>40% fall in haemoglobin from baseline; a haemoglobin below 8 g/dL (irrespective of symptoms); a fall in haemoglobin associated with clinically significant signs of haemolysis: jaundice, passing dark urine (Hillmen score ≥6), evidence of acute renal injury (≥2 fold increase in serum creatinine from baseline), or hyperkalaemia (serum potassium >5.2 mmol/L).\n\nAny individual whose laboratory tests met these criteria remained in hospital and was monitored closely until resolution of signs and symptoms, and haemoglobin concentrations had reached at least 10 g/dL. Blood transfusion was available at any time if needed if volunteers had a symptomatic fall in haemoglobin to below 8g/dL.\n\nAn Independent Drug Safety Monitoring Board was established to review the data after each cohort had completed their follow up and gave feedback before the next cohort was allowed to proceed. For both studies, adverse events were recorded and graded using the Common Toxicity Criteria v 5.0 for grading adverse events.\n\n",
+        "start": 36088,
+        "end": 37841
+      },
+      {
+        "title": "Sample size",
+        "text": "Sample size\n\nAs this was an exploratory proof-of-concept, adaptive dose optimisation pharmacometric and safety study in healthy G6PD deficient males, there was no formal sample size calculation. We reasoned that if the tested primaquine regimens were well tolerated in 20 volunteers (i.e. 4 cohorts), this would provide preliminary evidence for the safety and the feasibility of this approach. In addition the rich longitudinal data could then be used to develop an intra-host model to design optimal ascending regimens (Watson et al., 2017 ).\n\n",
+        "start": 37841,
+        "end": 38386
+      },
+      {
+        "title": "Statistical analysis",
+        "text": "Statistical analysis\n\nAll data analysis was done in R version 4.2.2. The baseline value for each continuous measurement was defined as the mean of the screening and day 0 measurement. Haemoglobin was measured using HemoCue® (daily, two samples) and using a laboratory processed complete blood count (CBC, every 4-5 days). The daily mean haemoglobin concentration was calculated as the mean of the HemoCue derived haemoglobin (the mean of the two samples) and the haemoglobin concentration from the CBC (if no CBC was done then just the mean HemoCue value). The baseline haemoglobin was then calculated as the mean of the values at screening and on day 0. The doseresponse models were linear models fit using maximum likelihood.\n\n",
+        "start": 38386,
+        "end": 39115
+      },
+      {
+        "title": "Data Sharing Statement",
+        "text": "Data Sharing Statement\n\nAll analysis code and data are available via an accompanying github repository: https://github.com / jwatowatson/Primaquine-Challenge.\n\n",
+        "start": 39115,
+        "end": 39275
+      },
+      {
+        "title": "Acknowledgements",
+        "text": "Acknowledgements\n\nWe are very grateful to the volunteers who participated in this study. We thank the staff of the Clinical Therapeutics unit and the laboratories in the Hospital for Tropical Diseases, Bangkok, which provided essential monitoring. We thank the Independent Drug Safety Monitoring Board members: Professor Asim Beg (chair), Dr Bushra Moiz, and Professor Rajitha Wickremasinghe. This study was funded by the MRC “Assessing the tolerability of a potentially safer radical curative regimen of primaquine in healthy volunteers with glucose 6 phosphate dehydrogenase” (MR/R015252/1, grant held by WRT). NJW is a Principal Research Fellow funded by the Wellcome Trust (093956/Z/10/C). JAW is a Sir Henry Dale Fellow funded by the Wellcome Trust (223253/Z/21/Z).\n\nThis research was partly funded by Wellcome. A CC BY or equivalent licence is applied to the author accepted manuscript arising from this submission, in accordance with the grant’s open access conditions.\n\n",
+        "start": 39275,
+        "end": 40253
+      },
+      {
+        "title": "Organization World Health Guidelines for the treatment of malaria",
+        "text": "Organization World Health Guidelines for the treatment of malaria\n\nYilma D, Groves ES, Brito-Sousa JD, Monteiro WM, Chu C, Thriemer K, Commons RJ, Lacerda MVG, Price RN, Douglas NM (2023) Severe Hemolysis during Primaquine Radical Cure of Plasmodium vivax Malaria: Two Systematic Reviews and Individual Patient Data Descriptive Analyses The American Journal of Tropical Medicine and Hygiene https://doi.org/10 .4269/ajtmh.23-0280\n\n",
+        "start": 40253,
+        "end": 40684
+      },
+      {
+        "title": "Article and author information",
+        "text": "Article and author information\n\n",
+        "start": 40684,
+        "end": 40716
+      },
+      {
+        "title": "Sasithon Pukrittayakamee",
+        "text": "Sasithon Pukrittayakamee\n\nClinical Therapeutics Unit, Faculty of Tropical Medicine, Mahidol University, Bangkok, 10400, Thailand, Mahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical Medicine, Mahidol University, Bangkok, 10400, Thailand\n\n",
+        "start": 40716,
+        "end": 40970
+      },
+      {
+        "title": "Podjanee Jittamala",
+        "text": "Podjanee Jittamala\n\nClinical Therapeutics Unit, Faculty of Tropical Medicine, Mahidol University, Bangkok, 10400, Thailand, Mahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical Medicine, Mahidol University, Bangkok, 10400, Thailand\n\n",
+        "start": 40970,
+        "end": 41218
+      },
+      {
+        "title": "James A Watson",
+        "text": "James A Watson\n\nOxford University Clinical Research Unit, Hospital for Tropical Diseases, Ho Chi Minh City, Vietnam, Centre for Tropical Medicine and Global Health, Nuffield Department of Medicine, University of Oxford, New Richards Building, Old Road Campus, Roosevelt Drive, Oxford, OX3 7LG, UK ORCID iD: 0000-0001-5524-0325\n\n",
+        "start": 41218,
+        "end": 41546
+      },
+      {
+        "title": "Borimas Hanboonkunupakarn",
+        "text": "Borimas Hanboonkunupakarn\n\nClinical Therapeutics Unit, Faculty of Tropical Medicine, Mahidol University, Bangkok, 10400, Thailand, Mahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical Medicine, Mahidol University, Bangkok, 10400, Thailand\n\n",
+        "start": 41546,
+        "end": 41801
+      },
+      {
+        "title": "Pawanrat Leungsinsiri",
+        "text": "Pawanrat Leungsinsiri\n\nClinical Therapeutics Unit, Faculty of Tropical Medicine, Mahidol University, Bangkok, 10400, Thailand\n\n",
+        "start": 41801,
+        "end": 41928
+      },
+      {
+        "title": "Kittiyod Poovorawan",
+        "text": "Kittiyod Poovorawan\n\nClinical Therapeutics Unit, Faculty of Tropical Medicine, Mahidol University, Bangkok, 10400, Thailand, Mahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical Medicine, Mahidol University, Bangkok, 10400, Thailand\n\n",
+        "start": 41928,
+        "end": 42177
+      },
+      {
+        "title": "Kesinee Chotivanich",
+        "text": "Kesinee Chotivanich\n\nClinical Therapeutics Unit, Faculty of Tropical Medicine, Mahidol University, Bangkok, 10400, Thailand, Mahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical Medicine, Mahidol University, Bangkok, 10400, Thailand\n\n",
+        "start": 42177,
+        "end": 42426
+      },
+      {
+        "title": "Germana Bancone",
+        "text": "Germana Bancone\n\nCentre for Tropical Medicine and Global Health, Nuffield Department of Medicine, University of Oxford, New Richards Building, Old Road Campus, Roosevelt Drive, Oxford, OX3 7LG, UK, Shoklo Malaria Research Unit, Mahidol–Oxford Tropical Medicine Research Unit, Faculty of Tropical Medicine, Mahidol University, Mae Sot, Thailand ORCID iD: 0000-0003-4550-0431\n\n",
+        "start": 42426,
+        "end": 42801
+      },
+      {
+        "title": "Cindy S Chu",
+        "text": "Cindy S Chu\n\nCentre for Tropical Medicine and Global Health, Nuffield Department of Medicine, University of Oxford, New Richards Building, Old Road Campus, Roosevelt Drive, Oxford, OX3 7LG, UK, Shoklo Malaria Research Unit, Mahidol–Oxford Tropical Medicine Research Unit, Faculty of Tropical Medicine, Mahidol University, Mae Sot, Thailand\n\n",
+        "start": 42801,
+        "end": 43142
+      },
+      {
+        "title": "Mallika Imwong",
+        "text": "Mallika Imwong\n\nDepartment of Molecular Tropical Medicine and Genetics, Faculty of Tropical Medicine, Mahidol University, Bangkok, Thailand\n\n",
+        "start": 43142,
+        "end": 43283
+      },
+      {
+        "title": "Nicholas PJ Day",
+        "text": "Nicholas PJ Day\n\nMahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical Medicine, Mahidol University, Bangkok, 10400, Thailand, Oxford University Clinical Research Unit, Hospital for Tropical Diseases, Ho Chi Minh City, Vietnam\n\n",
+        "start": 43283,
+        "end": 43525
+      },
+      {
+        "title": "Walter RJ Taylor",
+        "text": "Walter RJ Taylor\n\nMahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical Medicine, Mahidol University, Bangkok, 10400, Thailand, Oxford University Clinical Research Unit, Hospital for Tropical Diseases, Ho Chi Minh City, Vietnam\n\n",
+        "start": 43525,
+        "end": 43768
+      },
+      {
+        "title": "Nicholas J White",
+        "text": "Nicholas J White\n\nMahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical Medicine, Mahidol University, Bangkok, 10400, Thailand, Oxford University Clinical Research Unit, Hospital for Tropical Diseases, Ho Chi Minh City, Vietnam For correspondence: nickw@tropmedres.ac\n\n",
+        "start": 43768,
+        "end": 44051
+      },
+      {
+        "title": "Copyright",
+        "text": "Copyright\n\n© 2023, Pukrittayakamee et al.\n\nThis article is distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use and redistribution provided that the original author and source are credited.\n\n",
+        "start": 44051,
+        "end": 44293
+      },
+      {
+        "title": "Editors",
+        "text": "Editors\n\n",
+        "start": 44293,
+        "end": 44302
+      },
+      {
+        "title": "Joint Public Review:",
+        "text": "Joint Public Review:\n\nIn countries endemic for P vivax the need to administer a primaquine (PQ) course adequate to prevent relapse in G6PD deficient persons poses a real dilemma. On one hand PQ will cause haemolysis; on the other hand, without PQ the chance of relapse is very high. As a result, out of fear of severe haemolysis, PQ has been under-used.\n\nIn view of the above, the authors have investigated in well-informed volunteers, who were kept under close medical supervision in hospital throughout the study, two different schedules of PQ administration: (1) escalating doses (to a total of 5-7 mg/kg); (2) single 45 mg dose (0.75 mg/kg).\n\nIt is shown convincingly that regimen (1) can be used successfully to deliver within 3 weeks, under hospital conditions, the dose of PQ required to prevent P vivax relapse.\n\nAs expected, with both regimens acute haemolytic anaemia (AHA) developed in all cases. With regimen (2), not surprisingly, the fall in Hb was less, although it was abrupt. With regimen (1) the average fall in Hb was about 4 G. Only in one subject the fall in Hb mandated termination of the study.\n\nSince the data from the Chicago group some sixty years ago, there has been no paper reporting a systematic daily analysis of AHA in so many closely monitored subjects with G6PD deficiency. The individual patient data in the Supplementary material are most informative and more than precious.\n\nComments on the revised version:\n\nIn my view this important paper is further improved in this revised version (R2), particularly with respect to clarity in the discussion. All the points I had previously raised have been tackled.\n\n",
+        "start": 44302,
+        "end": 45945
+      },
+      {
+        "title": "Author Response",
+        "text": "Author Response\n\nThe following is the authors’ response to the previous reviews\n\n",
+        "start": 45945,
+        "end": 46026
+      },
+      {
+        "title": "Reviewer #1 (Public Review):",
+        "text": "Reviewer #1 (Public Review):\n\nIn countries endemic for P vivax the need to administer a primaquine (PQ) course adequate to prevent relapse in G6PD deficient persons poses a real dilemma. On one hand PQ will cause haemolysis; on the other hand, without PQ the chance of relapse is very high. As a result, out of fear of severe haemolysis, PQ has been under-used.\n\nIn view of the above, the Authors have investigated in well-informed volunteers, who were kept under close medical supervision in hospital throughout the study, two different schedules of PQ administration: (1) escalating doses (to a total of 5-7 mg/kg); (2) single 45 mg dose (0.75 mg/kg).\n\nIt is shown convincingly that regimen (1) can be used successfully to deliver within 3 weeks, under hospital conditions, the dose of PQ required to prevent P vivax relapse.\n\nAs expected, with both regimens acute haemolytic anaemia (AHA) developed in all cases. With regimen (2), not surprisingly, the fall in Hb was less, although it was abrupt. With regimen (1) the average fall in Hb was about 4 G. Only in one subject the fall in Hb mandated termination of the study.\n\nSince the data from the Chicago group some sixty years ago, there has been no paper reporting a systematic daily analysis of AHA in so many closely monitored subjects with G6PD deficiency. The individual patient data in the Supplementary material are most informative and more than precious.\n\nHaving said this, I do have some general comments.\n\n1. Through their remarkable Part 1 study, the Authors clearly wish to set the stage for a revision of the currently recommended PQ regimen for G6PD deficient patients. They have shown that 5-7 mg/kg can be administered within 3 weeks, whereas the currently recommended regimen provides 6 mg/kg over no less than 8 weeks.\n\nWe state in the abstract: “The aim was to explore shorter and safer primaquine radical cure regimens compared to the currently recommended 8-weekly regimen (0.75 mg/kg once weekly), potentially obviating the need for G6PD testing”. This is the primary goal of the study.\n\n1. Part 2 aims to show that, as was known already, even a single PQ dose of 0.75 mg/kg causes a significant degree of haemolysis: G6PD deficiency-related haemolysis is characteristically markedly dose-dependent. Although they do not state it explicitly in these words (I think they should), the Authors want to make it clear that the currently recommended regimen does cause AHA.\n\nWe also wanted to compare the extent of haemolysis following single dose with the extent of haemolysis following the ascending dose regimens, in the same patients.\n\n1. Regulatory agencies like to classify a drug regimen as either SAFE or NOT-SAFE; they also like to decide who is 'at risk' and who is 'not at risk'. A wealth of data, including those in this manuscript, show that it is not correct to say that a G6PD deficient person when taking PQ is at risk of haemolysis: he or she will definitely have haemolysis. As for SAFETY, it will depend on the clinical situation when PQ is started and on the severity of the AHA that will develop.\n\nWe agree completely. Haemolysis following primaquine is inevitable. What matters is the rate and extent of haemolysis, and the compensatory response. Importantly the extent of the haemolysis, even within a specific genotype and for a given drug dose, appears to be highly variable.\n\nThe above three issues are all present in the discussion, but I think they ought to be stated more clearly.\n\nWe have tried to clarify these points in a revised discussion.\n\nFinally, by the Authors' own statement on page 15, the main limitation is the complexity of this approach. The authors suggest that blister packed PQ may help; but to me the real complexity is managing patients in the field versus the painstaking hospital care in the hands of experts, of which volunteers in this study have had the benefit. It is not surprising that a fall in Hb of 4 g/dl is well tolerated by most non-anaemic men; but patients with P vivax in the field may often have mild to moderate to severe anaemia; and certainly they will not have their Hb, retics and bilirubin checked every day. In crude approximation, we are talking of a fall in Hb of 4 G with regimen (1), as against a fall in Hb of 2 G with regimen (2), that is part of the currently recommended regimen: it stands to reason that, in terms of safety, the latter is generally preferable (even though some degree of fall in Hb will recur with each weekly dose). In my view, these difficult points should be discussed deliberately.\n\nAs above we have tried to clarify these important points in a revised discussion\n\n",
+        "start": 46026,
+        "end": 50667
+      },
+      {
+        "title": "Reviewer #1 (Recommendations For The Authors):",
+        "text": "Reviewer #1 (Recommendations For The Authors):\n\nPage 2 para 3. The decreased haemolysis upon continued PQ administration (that originally was named the 'resistance phase' is explained by two additive factors. First, the reticulocytosis (cells with higher G6PD activity pour into circulation from the bone marrow); second, the early doses of PQ has caused selective haemolysis of the oldest red cells, that had the lowest G6PD activity. This dual phenomenon is hinted at, but I think it should be stated clearly.\n\nThank you. We have added to the Introduction (fourth paragraph in revised version):\n\n“Continued primaquine administration to G6PD deficient subjects resulted in \"resistance\" to the haemolytic effect. The selective haemolysis of the older red cells resulted in a compensatory increase in the number of reticulocytes. Thus, the red cell population became progressively younger and increasing resistant to oxidant stress, so overall haemolysis decreased and a steady state was reached.”\n\nPage 4 and elsewhere. In the 'Hillmen scale' for haemoglobinuria a value >6 was named a 'paroxysm'; but any value of 2 and above is already frank haemoglobinuria. Incidentally, the chart was published not in ref 17, but in NEJM 350:552, 2004.\n\nWe have changed the reference (now ref 19) to the 2004 paper by Hillmen. We used the value of 6 as clinical criterion for stopping primaquine. While >2 is detectable in dilute urine, >6 refers to clearly red/black urine.\n\nIn Table 1 and throughout the paper I am surprised that retics are given as %: absolute retic counts are more informative.\n\nWe showed these as % counts as the majority of measurements were taken from blood slide readings where it is not possible to get an absolute count.\n\nPage 10, Attenuated hemolysis with continued or recurrent doses of PQ was shown convincingly for G6PD A-. There is also one report in which the time course of AHA was extensively investigated upon deliberate administration of PQ to a subject with G6PD Mediterranean (Blood 25: 92, 1965): there was little or no evidence for a 'resistance phase'.\n\nWe agree that this suggests it might not be possible to attenuate haemolysis with the Mediterranean variant (or variants of similar severity) as even the youngest circulating red cells may be susceptible to haemolysis. More evidence is needed.\n\nS6, S7. Reticulocytes remain high until PQ is stopped; they return to normal some 17 days after stopping PQ. This should be stated in the main text.\n\nThis has been added to the main text (section “Haemolysis and reticulocyte response”):\n\n“It took around 2 weeks for the reticulocyte counts to re-normalise.”\n\nIn subject 11 haemoglobinuria was slight on day 12; what was it before?\n\nWe have changed the caption of this Figure (Appendix 5) to:\n\n“Day 10 urine sample from subject 11 showing slight haemoglobinuria (Hillmen score of 4). The subject had a maximum Hillmen score varying between 2 and 3 on days 4 to 9.”\n\nI found individual patient data in S5 and S6 most interesting, especially since the G6PD variant was identified in each case. It would be helpful if in each case the total PQ dose were also shown, and in the interest of visual comparability the abscissa scale ought to be the same for all cases.\n\nWe have amended Figures S5 and S6 to make them consistent with each other (now Appendix 5). We also amended the figures showing the individual subject data for consistency.",
+        "start": 50667,
+        "end": 54080
+      }
+    ],
+    "references": [
+      {
+        "key": "r1",
+        "label": "Alving et al., 1960",
+        "raw": "Alving AS, Johnson CF, Tarlov AR, Brewer GJ, Kellermeyer RW, Carson PE (1960) Mitigation of the haemolytic effect of primaquine and enhancement of its action against exoerythrocytic forms of the Chesson strain of Plasmodium vivax by intermittent regimens of drug administration: a preliminary report Bulletin of the World Health Organization 22:621–631",
+        "title": "Mitigation of the haemolytic effect of primaquine and enhancement of its action against exoerythrocytic forms of the Chesson strain of Plasmodium vivax by intermittent regimens of drug administration: a preliminary report Bulletin of the World Health Organization 22:621–631",
+        "authors": [
+          "Alving AS",
+          "Johnson CF",
+          "Tarlov AR",
+          "Brewer GJ",
+          "Kellermeyer RW",
+          "Carson PE"
+        ],
+        "year": 1960,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r2",
+        "label": "Ashley et al., 2014",
+        "raw": "Ashley EA, Recht J, White NJ (2014) Primaquine: the risks and the benefits Malaria Journal 13:1–7",
+        "title": "Primaquine: the risks and the benefits Malaria Journal 13:1–7",
+        "authors": [
+          "Ashley EA",
+          "Recht J",
+          "White NJ"
+        ],
+        "year": 2014,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r3",
+        "label": "Awab, 2021",
+        "raw": "Awab GR et al. (2021) Protective effect of Mediterranean-type glucose-6-phosphate dehydrogenase deficiency against Plasmodium vivax malaria Elife 2",
+        "title": "Protective effect of Mediterranean-type glucose-6-phosphate dehydrogenase deficiency against Plasmodium vivax malaria Elife 2",
+        "authors": [
+          "Awab GR"
+        ],
+        "year": 2021,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r4",
+        "label": "Bancone, 2019",
+        "raw": "Bancone G et al. (2019) Molecular characterization and mapping of glucose-6-phosphate dehydrogenase (G6PD) mutations in the Greater Mekong Subregion Malaria Journal 18 https://doi.org/10.1186/s12936-019-2652-y",
+        "title": "Molecular characterization and mapping of glucose-6-phosphate dehydrogenase (G6PD) mutations in the Greater Mekong Subregion Malaria Journal 18 https://doi.org/10.1186/s12936-019-2652-y",
+        "authors": [
+          "Bancone G"
+        ],
+        "year": 2019,
+        "doi": "10.1186/s12936-019-2652-y",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1186/s12936-019-2652-y",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r5",
+        "label": "Boonyuen, 2021",
+        "raw": "Boonyuen U et al. (2021) Glucose-6-phosphate dehydrogenase mutations in malaria endemic area of Thailand by multiplexed high-resolution melting curve analysis Malaria Journal 20 https://doi.org/10.1186/s12936-021-03731-0",
+        "title": "Glucose-6-phosphate dehydrogenase mutations in malaria endemic area of Thailand by multiplexed high-resolution melting curve analysis Malaria Journal 20 https://doi.org/10.1186/s12936-021-03731-0",
+        "authors": [
+          "Boonyuen U"
+        ],
+        "year": 2021,
+        "doi": "10.1186/s12936-021-03731-0",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1186/s12936-021-03731-0",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r6",
+        "label": "Caudle, 2020",
+        "raw": "Caudle KE et al. (2020) Standardizing CYP2D6 Genotype to Phenotype Translation: Consensus Recommendations from the Clinical Pharmacogenetics Implementation Consortium and Dutch Pharmacogenetics Working Group Clinical and Translational Science 13:116–124 https://doi.org/10.1111/cts.12692",
+        "title": "Standardizing CYP2D6 Genotype to Phenotype Translation: Consensus Recommendations from the Clinical Pharmacogenetics Implementation Consortium and Dutch Pharmacogenetics Working Group Clinical and Translational Science 13:116–124 https://doi.org/10.1111/cts.12692",
+        "authors": [
+          "Caudle KE"
+        ],
+        "year": 2020,
+        "doi": "10.1111/cts.12692",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1111/cts.12692",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r7",
+        "label": "Commons, 2023",
+        "raw": "Commons RJ et al. (2023) Effect of Primaquine Dose on the Risk of Recurrence in Patients with Uncomplicated Plasmodium Vivax: A Systematic Review and Individual Patient Data Meta-Analysis Lancet Infectious Diseases",
+        "title": "Effect of Primaquine Dose on the Risk of Recurrence in Patients with Uncomplicated Plasmodium Vivax: A Systematic Review and Individual Patient Data Meta-Analysis Lancet Infectious Diseases",
+        "authors": [
+          "Commons RJ"
+        ],
+        "year": 2023,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r8",
+        "label": "Commons, 2019",
+        "raw": "Commons RJ et al. (2019) The haematological consequences of Plasmodium vivax malaria after chloroquine treatment with and without primaquine: a WorldWide Antimalarial Resistance Network systematic review and individual patient data meta-analysis BMC Medicine 17",
+        "title": "The haematological consequences of Plasmodium vivax malaria after chloroquine treatment with and without primaquine: a WorldWide Antimalarial Resistance Network systematic review and individual patient data meta-analysis BMC Medicine 17",
+        "authors": [
+          "Commons RJ"
+        ],
+        "year": 2019,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r9",
+        "label": "Commons et al., 2020",
+        "raw": "Commons RJ, Simpson JA, Watson J, White NJ, Price RN (2020) Estimating the proportion of Plasmodium vivax recurrences caused by relapse: A systematic review and meta-analysis Am J Trop Med Hyg 103:1094–1099",
+        "title": "Estimating the proportion of Plasmodium vivax recurrences caused by relapse: A systematic review and meta-analysis Am J Trop Med Hyg 103:1094–1099",
+        "authors": [
+          "Commons RJ",
+          "Simpson JA",
+          "Watson J",
+          "White NJ",
+          "Price RN"
+        ],
+        "year": 2020,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r10",
+        "label": "Douglas, 2014",
+        "raw": "Douglas NM et al. (2014) Mortality attributable to Plasmodium vivaxmalaria: a clinical audit from Papua, Indonesia BMC Medicine 12 https://doi.org/10.1186/s12916-014-0217-z",
+        "title": "Mortality attributable to Plasmodium vivaxmalaria: a clinical audit from Papua, Indonesia BMC Medicine 12 https://doi.org/10.1186/s12916-014-0217-z",
+        "authors": [
+          "Douglas NM"
+        ],
+        "year": 2014,
+        "doi": "10.1186/s12916-014-0217-z",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1186/s12916-014-0217-z",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r11",
+        "label": "Hillmen, 2004",
+        "raw": "Hillmen P et al. (2004) Effect of Eculizumab on Hemolysis and Transfusion Requirements in Patients with Paroxysmal Nocturnal Hemoglobinuria New England Journal of Medicine 350:552–559 https://doi.org/10.1056/NEJMoa031688",
+        "title": "Effect of Eculizumab on Hemolysis and Transfusion Requirements in Patients with Paroxysmal Nocturnal Hemoglobinuria New England Journal of Medicine 350:552–559 https://doi.org/10.1056/NEJMoa031688",
+        "authors": [
+          "Hillmen P"
+        ],
+        "year": 2004,
+        "doi": "10.1056/NEJMoa031688",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1056/NEJMoa031688",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r12",
+        "label": "Howes, 2012",
+        "raw": "Howes RE et al. (2012) G6PD deficiency prevalence and estimates of affected populations in malaria endemic countries: a geostatistical model-based map PLoS Med 9",
+        "title": "G6PD deficiency prevalence and estimates of affected populations in malaria endemic countries: a geostatistical model-based map PLoS Med 9",
+        "authors": [
+          "Howes RE"
+        ],
+        "year": 2012,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r13",
+        "label": "Hsiang, 2013",
+        "raw": "Hsiang MS et al. (2013) Mass drug administration for the control and elimination of Plasmodium vivax malaria: an ecological study from Jiangsu province, China Malaria Journal 12",
+        "title": "Mass drug administration for the control and elimination of Plasmodium vivax malaria: an ecological study from Jiangsu province, China Malaria Journal 12",
+        "authors": [
+          "Hsiang MS"
+        ],
+        "year": 2013,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r14",
+        "label": "Kamar et al., 2012",
+        "raw": "Kamar N, Bendall R, Legrand-Abravanel F, Xia NS, Ijaz S, Izopet J, Dalton HR (2012) Hepatitis E The Lancet 379:2477–2488",
+        "title": "Hepatitis E The Lancet 379:2477–2488",
+        "authors": [
+          "Kamar N",
+          "Bendall R",
+          "Legrand-Abravanel F",
+          "Xia NS",
+          "Ijaz S",
+          "Izopet J",
+          "Dalton HR"
+        ],
+        "year": 2012,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r15",
+        "label": "Kellermeyer et al., 1962",
+        "raw": "Kellermeyer RW, Tarlov AR, Brewer GJ, Carson PE, Alving AS (1962) Hemolytic effect of therapeutic drugs. Clinical considerations of the primaquine-type hemolysis JAMA 180:388–394",
+        "title": "Hemolytic effect of therapeutic drugs",
+        "authors": [
+          "Kellermeyer RW",
+          "Tarlov AR",
+          "Brewer GJ",
+          "Carson PE",
+          "Alving AS"
+        ],
+        "year": 1962,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r16",
+        "label": "Kheng, 2015",
+        "raw": "Kheng S et al. (2015) Tolerability and safety of weekly primaquine against relapse of Plasmodium vivax in Cambodians with glucose-6-phosphate dehydrogenase deficiency BMC Medicine 13:1–10",
+        "title": "Tolerability and safety of weekly primaquine against relapse of Plasmodium vivax in Cambodians with glucose-6-phosphate dehydrogenase deficiency BMC Medicine 13:1–10",
+        "authors": [
+          "Kheng S"
+        ],
+        "year": 2015,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r17",
+        "label": "Kondrashin et al., 2014",
+        "raw": "Kondrashin A, Baranova AM, Ashley EA, Recht J, White NJ, Sergiev VP (2014) Mass primaquine treatment to eliminate vivax malaria: lessons from the past Malar J 13",
+        "title": "Mass primaquine treatment to eliminate vivax malaria: lessons from the past Malar J 13",
+        "authors": [
+          "Kondrashin A",
+          "Baranova AM",
+          "Ashley EA",
+          "Recht J",
+          "White NJ",
+          "Sergiev VP"
+        ],
+        "year": 2014,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r19",
+        "label": "Luzzatto et al., 2020",
+        "raw": "Luzzatto L, Ally M, Notaro R (2020) Glucose-6-phosphate dehydrogenase deficiency Blood 136:1225–1240",
+        "title": "Glucose-6-phosphate dehydrogenase deficiency Blood 136:1225–1240",
+        "authors": [
+          "Luzzatto L",
+          "Ally M",
+          "Notaro R"
+        ],
+        "year": 2020,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r21",
+        "label": "Piomelli et al., 1968",
+        "raw": "Piomelli S, Corash LM, Davenport DD, Miraglia J, Amorosi EL (1968) In vivo lability of glucose- 6-phosphate dehydrogenase in GdAand GdMediterranean deficiency J Clin Invest 47:940– 948",
+        "title": "In vivo lability of glucose- 6-phosphate dehydrogenase in GdAand GdMediterranean deficiency J Clin Invest 47:940– 948",
+        "authors": [
+          "Piomelli S",
+          "Corash LM",
+          "Davenport DD",
+          "Miraglia J",
+          "Amorosi EL"
+        ],
+        "year": 1968,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r22",
+        "label": "Puaprasert et al., 2018",
+        "raw": "Puaprasert K, Chu C, Saralamba N, Day NPJ, Nosten F, White NJ, Dondorp AM, Imwong M (2018) Real time PCR detection of common CYP2D6 genetic variants and its application in a Karen population study Malaria Journal 17",
+        "title": "Real time PCR detection of common CYP2D6 genetic variants and its application in a Karen population study Malaria Journal 17",
+        "authors": [
+          "Puaprasert K",
+          "Chu C",
+          "Saralamba N",
+          "Day NPJ",
+          "Nosten F",
+          "White NJ",
+          "Dondorp AM",
+          "Imwong M"
+        ],
+        "year": 2018,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r23",
+        "label": "Recht et al., 2014",
+        "raw": "Recht J, Ashley E, White N, Organization WH, Unit MOR (2014) Safety of 8-aminoquinoline antimalarial medicines World Health Organization",
+        "title": "Safety of 8-aminoquinoline antimalarial medicines World Health Organization",
+        "authors": [
+          "Recht J",
+          "Ashley E",
+          "White N",
+          "Organization WH",
+          "Unit MOR"
+        ],
+        "year": 2014,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r24",
+        "label": "Recht et al., 2018",
+        "raw": "Recht J, Ashley EA, White NJ (2018) Use of primaquine and glucose-6-phosphate dehydrogenase deficiency testing: divergent policies and practices in malaria endemic countries PLoS Neglected Tropical Diseases 12",
+        "title": "Use of primaquine and glucose-6-phosphate dehydrogenase deficiency testing: divergent policies and practices in malaria endemic countries PLoS Neglected Tropical Diseases 12",
+        "authors": [
+          "Recht J",
+          "Ashley EA",
+          "White NJ"
+        ],
+        "year": 2018,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r25",
+        "label": "Watson et al., 2017",
+        "raw": "Watson J, Taylor WR, Menard D, Kheng S, White NJ (2017) Modelling primaquine-induced haemolysis in G6PD deficiency eLife 2 https://doi.org/10.7554/eLife.23061",
+        "title": "Modelling primaquine-induced haemolysis in G6PD deficiency eLife 2 https://doi.org/10.7554/eLife.23061",
+        "authors": [
+          "Watson J",
+          "Taylor WR",
+          "Menard D",
+          "Kheng S",
+          "White NJ"
+        ],
+        "year": 2017,
+        "doi": "10.7554/eLife.23061",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.7554/eLife.23061",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r26",
+        "label": "White, 2018",
+        "raw": "White NJ (2018) Anaemia and malaria Malaria Journal 17",
+        "title": "Anaemia and malaria Malaria Journal 17",
+        "authors": [
+          "White NJ"
+        ],
+        "year": 2018,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      }
+    ],
+    "citation_keys_total": 28,
+    "citation_keys_mapped": 24,
+    "notes": []
+  },
+  "sentences": [
+    {
+      "id": "s1",
+      "text": "Primaquine has been given to hundreds of millions of patients in single doses to prevent P. falciparum transmission, in 5 to 14 day courses for radical cure of vivax and ovale malarias, and during mass treatments (Ashley et al., 2014 ).",
+      "section": "Introduction",
+      "start": 2910,
+      "end": 3146,
+      "reference_keys": [
+        "r2"
+      ],
+      "marker_spans": [
+        [
+          3123,
+          3145
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r2"
+        ]
+      ],
+      "context_before": "Over the past 70 years primaquine has been the only drug widely available to prevent relapses of Plasmodium vivax and P. ovale malaria (radical cure).",
+      "context_after": "The main adverse effect of primaquine, and the other 8-aminoquinoline antimalarials, is dose-dependent oxidant haemolysis in individuals with glucose-6-phosphate dehydrogenase (G6PD) deficiency (Luzzatto et al., 2020 ; Recht et al., 2014 )."
+    },
+    {
+      "id": "s2",
+      "text": "The main adverse effect of primaquine, and the other 8-aminoquinoline antimalarials, is dose-dependent oxidant haemolysis in individuals with glucose-6-phosphate dehydrogenase (G6PD) deficiency (Luzzatto et al., 2020 ; Recht et al., 2014 ).",
+      "section": "Introduction",
+      "start": 3147,
+      "end": 3387,
+      "reference_keys": [
+        "r19",
+        "r23"
+      ],
+      "marker_spans": [
+        [
+          3341,
+          3386
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r19",
+          "r23"
+        ]
+      ],
+      "context_before": "Primaquine has been given to hundreds of millions of patients in single doses to prevent P. falciparum transmission, in 5 to 14 day courses for radical cure of vivax and ovale malarias, and during mass treatments (Ashley et al., 2014 ).",
+      "context_after": "As G6PD deficiency is common in malaria endemic regions, primaquine is underused because reliable point-of-care testing for G6PD deficiency is usually not available (Commons, 2023) and prescribers are naturally reluctant to risk causing potentially severe, life threatening haemolysis (Yilma et al., 2023 )."
+    },
+    {
+      "id": "s3",
+      "text": "As G6PD deficiency is common in malaria endemic regions, primaquine is underused because reliable point-of-care testing for G6PD deficiency is usually not available (Commons, 2023) and prescribers are naturally reluctant to risk causing potentially severe, life threatening haemolysis (Yilma et al., 2023 ).",
+      "section": "Introduction",
+      "start": 3388,
+      "end": 3695,
+      "reference_keys": [
+        "r7"
+      ],
+      "marker_spans": [
+        [
+          3553,
+          3568
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r7"
+        ]
+      ],
+      "context_before": "The main adverse effect of primaquine, and the other 8-aminoquinoline antimalarials, is dose-dependent oxidant haemolysis in individuals with glucose-6-phosphate dehydrogenase (G6PD) deficiency (Luzzatto et al., 2020 ; Recht et al., 2014 ).",
+      "context_after": ""
+    },
+    {
+      "id": "s4",
+      "text": "Outside sub-Saharan Africa Plasmodium vivax is the main cause of malaria in most endemic regions, and in these regions relapse is often the main cause of illness (Commons et al., 2020 ).",
+      "section": "Introduction",
+      "start": 3697,
+      "end": 3883,
+      "reference_keys": [
+        "r9"
+      ],
+      "marker_spans": [
+        [
+          3859,
+          3882
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r9"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "Relapsing infections cause significant morbidity and, in higher transmission settings, mortality in young children, mediated mainly by chronic anaemia (Douglas et al., 2014 ; Commons et al., 2019 )."
+    },
+    {
+      "id": "s5",
+      "text": "Relapsing infections cause significant morbidity and, in higher transmission settings, mortality in young children, mediated mainly by chronic anaemia (Douglas et al., 2014 ; Commons et al., 2019 ).",
+      "section": "Introduction",
+      "start": 3884,
+      "end": 4082,
+      "reference_keys": [
+        "r10",
+        "r8"
+      ],
+      "marker_spans": [
+        [
+          4035,
+          4081
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r10",
+          "r8"
+        ]
+      ],
+      "context_before": "Outside sub-Saharan Africa Plasmodium vivax is the main cause of malaria in most endemic regions, and in these regions relapse is often the main cause of illness (Commons et al., 2020 ).",
+      "context_after": "Relapses are also an important source of P. vivax transmission."
+    },
+    {
+      "id": "s6",
+      "text": "G6PD deficiency is the most common red blood cell enzyme deficiency of humans (Luzzatto et al., 2020 ).",
+      "section": "Introduction",
+      "start": 4313,
+      "end": 4416,
+      "reference_keys": [
+        "r19"
+      ],
+      "marker_spans": [
+        [
+          4391,
+          4415
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r19"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "G6PD deficiency occurs mainly in malaria endemic or historically endemic regions in every population and setting (Howes et al., 2012 )."
+    },
+    {
+      "id": "s7",
+      "text": "G6PD deficiency occurs mainly in malaria endemic or historically endemic regions in every population and setting (Howes et al., 2012 ).",
+      "section": "Introduction",
+      "start": 4417,
+      "end": 4552,
+      "reference_keys": [
+        "r12"
+      ],
+      "marker_spans": [
+        [
+          4530,
+          4551
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r12"
+        ]
+      ],
+      "context_before": "G6PD deficiency is the most common red blood cell enzyme deficiency of humans (Luzzatto et al., 2020 ).",
+      "context_after": "Mutations in the G6PD gene on the X chromosome confer reduced enzyme stability."
+    },
+    {
+      "id": "s8",
+      "text": "More severe G6PD deficiency variants are associated with greater drug induced haemolysis as a broader erythrocyte age range is G6PD depleted (Piomelli et al., 1968 ).",
+      "section": "Introduction",
+      "start": 4786,
+      "end": 4952,
+      "reference_keys": [
+        "r21"
+      ],
+      "marker_spans": [
+        [
+          4927,
+          4951
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r21"
+        ]
+      ],
+      "context_before": "This results in impaired erythrocyte defences against oxidant stresses and thereby increases the risk of haemolysis of older G6PD depleted erythrocytes.",
+      "context_after": "The substantial haemolytic risk from 8-aminoquinoline antimalarials means that the standard 7-14 day radical cure primaquine regimens are contraindicated in G6PD deficiency (World Health Organization, 2015) Seminal clinical investigations were conducted over 50 years ago in adults with the African Avariant of G6PD deficiency."
+    },
+    {
+      "id": "s9",
+      "text": "This suggested a therapeutic strategy of controlled haemolysis which would limit the degree of anaemia by allowing time for the compensatory erythropoetic response (Alving et al., 1960 ; Kellermeyer et al., 1962 ).",
+      "section": "Introduction",
+      "start": 5792,
+      "end": 6006,
+      "reference_keys": [
+        "r1",
+        "r15"
+      ],
+      "marker_spans": [
+        [
+          5956,
+          6005
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r1",
+          "r15"
+        ]
+      ],
+      "context_before": "Thus, the red cell population became progressively younger and increasingly resistant to oxidant stress, so overall haemolysis decreased and a steady state was reached.",
+      "context_after": "This mechanistic understanding provided the rationale for the once weekly primaquine regimen of 0.75 mg base/kg for 8 weeks, currently recommended by the World Health Organisation in patients with G6PD deficiency (World Health Organization, 2015)."
+    },
+    {
+      "id": "s10",
+      "text": "A small cohort study of the weekly primaquine regimen in 18 G6PD deficient (17 had the 871G>A [Viangchan] variant) and 57 G6PD normal adult vivax malaria patients in Cambodia suggested that single 45 mg doses may not be safe in the more severe G6PD deficiency variants (Kheng et al., 2015 ).",
+      "section": "Introduction",
+      "start": 6354,
+      "end": 6645,
+      "reference_keys": [
+        "r16"
+      ],
+      "marker_spans": [
+        [
+          6623,
+          6644
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r16"
+        ]
+      ],
+      "context_before": "However, the safety of this regimen in more severe G6PD deficiency variants was never established.",
+      "context_after": "A quarter of the G6PD deficient patients had a >25% fall in haemoglobin (compared to none in the G6PD normal group) and one patient required a blood transfusion for a symptomatic fall in haemoglobin fall from 10 to 7.5 g/dL."
+    },
+    {
+      "id": "s11",
+      "text": "The most common G6PD deficiency genetic variant was Viangchan (871G>A, n=12), as it is in much of the eastern Greater Mekong subregion universally, in all cases (Bancone et al., 2019 ).",
+      "section": "Study population",
+      "start": 8543,
+      "end": 8728,
+      "reference_keys": [
+        "r4"
+      ],
+      "marker_spans": [
+        [
+          8704,
+          8727
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r4"
+        ]
+      ],
+      "context_before": "All volunteers had low to unmeasurable blood G6PD enzyme activity.",
+      "context_after": "This was followed by Canton (1376G>T, n=5) and Mahidol (487G>A, n=4)."
+    },
+    {
+      "id": "s12",
+      "text": "The intermediate CYP2D6 metaboliser genotype (homozygous *10) with an activity score of 0.5, was identified in 8/27 (30%) of the volunteers (Caudle et al., 2020 ).",
+      "section": "Study population",
+      "start": 8940,
+      "end": 9103,
+      "reference_keys": [
+        "r6"
+      ],
+      "marker_spans": [
+        [
+          9080,
+          9102
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r6"
+        ]
+      ],
+      "context_before": "A large proportion of subjects had screening reticulocyte counts over 2.5%, i.e. above the normal range (8/24 in Part 1 and 3/16 in Part 2).",
+      "context_after": ""
+    },
+    {
+      "id": "s13",
+      "text": "Ascending dose primaquine regimens in G6PD deficient malaria patients exploit the same pharmacodynamic principle underling the current once weekly treatment recommendation (Alving et al., 1960 ).",
+      "section": "Discussion",
+      "start": 20255,
+      "end": 20450,
+      "reference_keys": [
+        "r1"
+      ],
+      "marker_spans": [
+        [
+          20427,
+          20449
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r1"
+        ]
+      ],
+      "context_before": "Significant haemolysis from radical cure regimens cannot be avoided in G6PD deficiency but, using the rapidly eliminated primaquine, it can be attenuated.",
+      "context_after": "They aim to provide controlled haemolysis while allowing for steady reconstitution of the red cell population with increasingly younger, and therefore “oxidant resistant” erythrocytes (Kellermeyer et al., 1962 )."
+    },
+    {
+      "id": "s14",
+      "text": "They aim to provide controlled haemolysis while allowing for steady reconstitution of the red cell population with increasingly younger, and therefore “oxidant resistant” erythrocytes (Kellermeyer et al., 1962 ).",
+      "section": "Discussion",
+      "start": 20451,
+      "end": 20663,
+      "reference_keys": [
+        "r15"
+      ],
+      "marker_spans": [
+        [
+          20635,
+          20662
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r15"
+        ]
+      ],
+      "context_before": "Ascending dose primaquine regimens in G6PD deficient malaria patients exploit the same pharmacodynamic principle underling the current once weekly treatment recommendation (Alving et al., 1960 ).",
+      "context_after": "As G6PD testing is usually unavailable in malaria endemic areas, the prescriber treating vivax or ovale malaria is currently faced with the therapeutic dilemma of either not giving the drug, and failing to prevent relapses with their attendant substantial morbidity, or giving it and causing iatrogenic haemolysis in G6PD deficient patients."
+    },
+    {
+      "id": "s15",
+      "text": "The currently recommended 8 week radical cure regimen for G6PD deficient patients attenuates the fall in haemoglobin, but it still risks significant haemolysis, particularly with the first 0.75 mg/kg dose (Kheng et al., 2015 ).",
+      "section": "Discussion",
+      "start": 21266,
+      "end": 21493,
+      "reference_keys": [
+        "r16"
+      ],
+      "marker_spans": [
+        [
+          21471,
+          21492
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r16"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "This regimen has not been well evaluated in patients with severe G6PD deficiency variants who are at greatest risk, and it requires good adherence for 8 weeks."
+    },
+    {
+      "id": "s16",
+      "text": "Thus, in considering the radical cure treatment of vivax malaria, the risks of relapse, often on multiple occasions with consequent anaemia, must be balanced against the predictable haemolysis that will result from the oxidative effects of the 8-aminoquinoline radical cure regimen (Commons et al., 2020 , 2019 ).",
+      "section": "Discussion",
+      "start": 22574,
+      "end": 22887,
+      "reference_keys": [
+        "r9",
+        "r8"
+      ],
+      "marker_spans": [
+        [
+          22856,
+          22886
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r9",
+          "r8"
+        ]
+      ],
+      "context_before": "The ascending primaquine dose regimens are still associated with a significant haemolytic risk.",
+      "context_after": "In the Southeast Asian region approximately half the vivax malaria cases will be followed by at least one relapse if radical curative treatment is not given."
+    },
+    {
+      "id": "s17",
+      "text": "At a population level the overall risks are lower than predicted from gene frequencies because severe variants of G6PD deficiency protect against vivax malaria, although whether they affect the risk of relapse is not known (Douglas, 2014).",
+      "section": "Discussion",
+      "start": 23253,
+      "end": 23492,
+      "reference_keys": [
+        "r10"
+      ],
+      "marker_spans": [
+        [
+          23476,
+          23491
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r10"
+        ]
+      ],
+      "context_before": "The main risk is dangerous anaemia.",
+      "context_after": "At an individual level the haemolytic risk depends on the G6PD genotype, the degree of exposure to the putative oxidative 8-aminoquinoline metabolites, and also the degree of pre-existing anaemia."
+    },
+    {
+      "id": "s18",
+      "text": "Hepatitis is a rare adverse effect of primaquine (Recht et al., 2014 ).",
+      "section": "Discussion",
+      "start": 24588,
+      "end": 24659,
+      "reference_keys": [
+        "r23"
+      ],
+      "marker_spans": [
+        [
+          24637,
+          24658
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r23"
+        ]
+      ],
+      "context_before": "In this exploratory study, in which there were cautious stopping rules, 3 out of 23 (13%) of the volunteers did not complete the regimen because of drug toxicity; one had significant haemolysis and two had asymptomatic hepatitis.",
+      "context_after": "Asymptomatic hepatitis E is well documented and more common than symptomatic disease (Kamar et al., 2012 )."
+    },
+    {
+      "id": "s19",
+      "text": "Asymptomatic hepatitis E is well documented and more common than symptomatic disease (Kamar et al., 2012 ).",
+      "section": "Discussion",
+      "start": 24660,
+      "end": 24767,
+      "reference_keys": [
+        "r14"
+      ],
+      "marker_spans": [
+        [
+          24745,
+          24766
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r14"
+        ]
+      ],
+      "context_before": "Hepatitis is a rare adverse effect of primaquine (Recht et al., 2014 ).",
+      "context_after": "Three volunteers were not escalated to higher primaquine doses as intended because of significant falls in haemoglobin."
+    },
+    {
+      "id": "s20",
+      "text": "Despite the use of primaquine for nearly 70 years and administration of hundreds of millions of treatments there have been very few reported deaths from haemolytic toxicity (Recht et al., 2014 ; Yilma et al., 2023 ).",
+      "section": "Discussion",
+      "start": 25727,
+      "end": 25943,
+      "reference_keys": [
+        "r23"
+      ],
+      "marker_spans": [
+        [
+          25900,
+          25942
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r23"
+        ]
+      ],
+      "context_before": "One of the important advantages of primaquine (half-life approximately 5-7 hours) relative to its slowly eliminated analogue tafenoquine (half-life approximately 15 days) is that the treatment can be stopped as soon as there are signs or symptoms of haemolytic toxicity.",
+      "context_after": "Very large mass treatments with primaquine have been used in malaria elimination campaigns involving millions of people in China, Nicaragua, Turkmenistan, Azerbaijan, Tajikistan, Afghanistan and North Korea without exception (Hsiang et al., 2013 ; Kondrashin et al., 2014 )."
+    },
+    {
+      "id": "s21",
+      "text": "Very large mass treatments with primaquine have been used in malaria elimination campaigns involving millions of people in China, Nicaragua, Turkmenistan, Azerbaijan, Tajikistan, Afghanistan and North Korea without exception (Hsiang et al., 2013 ; Kondrashin et al., 2014 ).",
+      "section": "Discussion",
+      "start": 25944,
+      "end": 26218,
+      "reference_keys": [
+        "r13",
+        "r17"
+      ],
+      "marker_spans": [
+        [
+          26169,
+          26217
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r13",
+          "r17"
+        ]
+      ],
+      "context_before": "Despite the use of primaquine for nearly 70 years and administration of hundreds of millions of treatments there have been very few reported deaths from haemolytic toxicity (Recht et al., 2014 ; Yilma et al., 2023 ).",
+      "context_after": "In the latter four countries an interrupted regimen involved giving four days of primaquine, stopping for three days and then completing a further ten days."
+    },
+    {
+      "id": "s22",
+      "text": "In G6PD deficient patients with acute malaria, the disease itself causes haemolytic anaemia (White, 2018 ), and the consequent preferential loss of older erythrocytes ameliorates the adverse impact of oxidant drugs.",
+      "section": "Discussion",
+      "start": 26659,
+      "end": 26874,
+      "reference_keys": [
+        "r26"
+      ],
+      "marker_spans": [
+        [
+          26751,
+          26765
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r26"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "On the other hand, compensatory reticulocytosis might be inhibited but limited experience with weekly primaquine shows a robust reticulocyte response post treatment (Puaprasert et al., 2018)."
+    },
+    {
+      "id": "s23",
+      "text": "On the other hand, compensatory reticulocytosis might be inhibited but limited experience with weekly primaquine shows a robust reticulocyte response post treatment (Puaprasert et al., 2018).",
+      "section": "Discussion",
+      "start": 26875,
+      "end": 27066,
+      "reference_keys": [
+        "r22"
+      ],
+      "marker_spans": [
+        [
+          27040,
+          27065
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r22"
+        ]
+      ],
+      "context_before": "In G6PD deficient patients with acute malaria, the disease itself causes haemolytic anaemia (White, 2018 ), and the consequent preferential loss of older erythrocytes ameliorates the adverse impact of oxidant drugs.",
+      "context_after": "Differences in haemolytic response between healthy volunteers and malaria patients are likely to be small as the illness usually resolves within a few days with effective treatment, while the ascending dose regimen would still be using the lowest dose."
+    },
+    {
+      "id": "s24",
+      "text": "Healthy male volunteers were recruited if they provided written informed consent, had a G6PD enzyme activity <30% of the population median value determined by a validated quantitative spectrophotometric G6PD assay, a genotype confirmed G6PD variant (according to a previously published method (Hsiang, 2013)), and were aged between 18 and 65 years with a screening haemoglobin concentration >11 g/dL.",
+      "section": "Study site and participants",
+      "start": 30440,
+      "end": 30840,
+      "reference_keys": [
+        "r13"
+      ],
+      "marker_spans": [
+        [
+          30733,
+          30747
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r13"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "Detailed exclusion criteria are provided in Appendix 3 ."
+    },
+    {
+      "id": "s25",
+      "text": "This would steadily reduce the age of the red cell population and thereby avoid precipitous symptomatic falls in the haemoglobin concentration (Alving et al., 1960 ; Kellermeyer et al., 1962 ).",
+      "section": "Part 1",
+      "start": 31837,
+      "end": 32030,
+      "reference_keys": [
+        "r1",
+        "r15"
+      ],
+      "marker_spans": [
+        [
+          31980,
+          32029
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r1",
+          "r15"
+        ]
+      ],
+      "context_before": "The overall goal was to increase the daily primaquine doses and cause gradual haemolysis which was offset by concomitant reticulocytosis.",
+      "context_after": "The cumulative total primaquine dose given needed to be sufficient to provide a radical curative effect in the treatment of vivax malaria (i.e. between 5 and 7 mg base/kg) (Commons et al., 2023 )."
+    },
+    {
+      "id": "s26",
+      "text": "The cumulative total primaquine dose given needed to be sufficient to provide a radical curative effect in the treatment of vivax malaria (i.e. between 5 and 7 mg base/kg) (Commons et al., 2023 ).",
+      "section": "Part 1",
+      "start": 32031,
+      "end": 32227,
+      "reference_keys": [
+        "r7"
+      ],
+      "marker_spans": [
+        [
+          32203,
+          32226
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r7"
+        ]
+      ],
+      "context_before": "This would steadily reduce the age of the red cell population and thereby avoid precipitous symptomatic falls in the haemoglobin concentration (Alving et al., 1960 ; Kellermeyer et al., 1962 ).",
+      "context_after": ""
+    },
+    {
+      "id": "s27",
+      "text": "This initial dose regimen was chosen on the basis of a mathematical model of primaquine induced haemolysis in G6PD deficiency using earlier data from vivax malaria patients who had received single 45 mg primaquine doses (Watson et al., 2017 ; Kheng et al., 2015 ).",
+      "section": "Part 1",
+      "start": 32653,
+      "end": 32917,
+      "reference_keys": [
+        "r25",
+        "r16"
+      ],
+      "marker_spans": [
+        [
+          32873,
+          32916
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r25",
+          "r16"
+        ]
+      ],
+      "context_before": "The ascending doses were 7.5, 15, 22.5 and 30 mg base equivalent, respectively.",
+      "context_after": "Subjects proceeded to the next higher dose cycle if they satisfied several prospectively defined safety criteria (Appendix 2 )."
+    },
+    {
+      "id": "s28",
+      "text": "Haemoglobinuria was assessed visually using a modified Hillmen score (Hillmen et al., 2004 ).",
+      "section": "Monitoring procedures/evaluations",
+      "start": 34658,
+      "end": 34751,
+      "reference_keys": [
+        "r11"
+      ],
+      "marker_spans": [
+        [
+          34727,
+          34750
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r11"
+        ]
+      ],
+      "context_before": "Methaemoglobin (%) was measured non-invasively at least once daily using a Masimo Rad 57 oximeter®, and urine colour was recorded twice daily.",
+      "context_after": ""
+    },
+    {
+      "id": "s29",
+      "text": "The G6PD deficiency variants were genotyped as described previously (Bancone et al., 2019 ; Boonyuen et al., 2021 ).",
+      "section": "Monitoring procedures/evaluations",
+      "start": 35509,
+      "end": 35625,
+      "reference_keys": [
+        "r4",
+        "r5"
+      ],
+      "marker_spans": [
+        [
+          35577,
+          35624
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r4",
+          "r5"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "Haemoglobin electrophoresis and genotyping of the common cytochrome P450 2D6 (CYP2D6) genotypes found in SE Asia was also performed (Puaprasert et al., 2018 )."
+    },
+    {
+      "id": "s30",
+      "text": "Haemoglobin electrophoresis and genotyping of the common cytochrome P450 2D6 (CYP2D6) genotypes found in SE Asia was also performed (Puaprasert et al., 2018 ).",
+      "section": "Monitoring procedures/evaluations",
+      "start": 35626,
+      "end": 35785,
+      "reference_keys": [
+        "r22"
+      ],
+      "marker_spans": [
+        [
+          35758,
+          35784
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r22"
+        ]
+      ],
+      "context_before": "The G6PD deficiency variants were genotyped as described previously (Bancone et al., 2019 ; Boonyuen et al., 2021 ).",
+      "context_after": "Presumptive alpha-thalassaemia trait (which is very common in Thailand) was defined as a mean cell volume less than 80 fl or a mean cell haemoglobin < 27 pg, and HbA2 ≤4.4."
+    },
+    {
+      "id": "s31",
+      "text": "In addition the rich longitudinal data could then be used to develop an intra-host model to design optimal ascending regimens (Watson et al., 2017 ).",
+      "section": "Sample size",
+      "start": 38235,
+      "end": 38384,
+      "reference_keys": [
+        "r25"
+      ],
+      "marker_spans": [
+        [
+          38361,
+          38383
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r25"
+        ]
+      ],
+      "context_before": "We reasoned that if the tested primaquine regimens were well tolerated in 20 volunteers (i.e. 4 cohorts), this would provide preliminary evidence for the safety and the feasibility of this approach.",
+      "context_after": ""
+    }
+  ]
+}

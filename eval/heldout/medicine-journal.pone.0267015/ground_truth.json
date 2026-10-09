@@ -1,0 +1,91 @@
+{
+  "arxiv_id": "",
+  "title": "Perinatal care in Western Uganda: Prevalence and factors associated with appropriate care among women attending three district hospitals",
+  "field": "Medicine",
+  "source": "10.1371/journal.pone.0267015",
+  "planted": [
+    {
+      "id": "p1",
+      "sentence_id": "s3",
+      "reference_keys": [
+        "r38"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [3] with [38] (\"Adverse neonatal outcomes of adolescent pregnancy in Northwest Ethiopia\") (similarity 0.44 vs 0.61 for the original)",
+      "original": "In these same settings, countries also struggle with achieving the set standards of quality care for pregnant women [3].",
+      "mutated": "In these same settings, countries also struggle with achieving the set standards of quality care for pregnant women [38].",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p2",
+      "sentence_id": "s22",
+      "reference_keys": [
+        "r12"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [28] with [12] (\"Factors Associated with the Timing and Number of Antenatal Care Visits among Unmarried Compared to Married Youth in Uganda between 2006 and 2016\") (similarity 0.46 vs 0.63 for the original)",
+      "original": "Poor perinatal care increases the risk of poor maternal and birth outcomes [28], and the findings from this study could explain the high maternal mortality rates observed in the region [29].",
+      "mutated": "Poor perinatal care increases the risk of poor maternal and birth outcomes [12], and the findings from this study could explain the high maternal mortality rates observed in the region [29].",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p3",
+      "sentence_id": "s28",
+      "reference_keys": [
+        "r27"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [35] with [27] (\"Higher Educational Attainment Associated with Optimal Antenatal Care Visits among Childbearing Women in Zambia\") (similarity 0.41 vs 0.64 for the original)",
+      "original": "As a result, availability of facility electricity and water increased, use of partograph in monitoring labour increased, and the proportion of facilities with no stock outs also increased [35].",
+      "mutated": "As a result, availability of facility electricity and water increased, use of partograph in monitoring labour increased, and the proportion of facilities with no stock outs also increased [27].",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    }
+  ],
+  "baseline_flags": [
+    [
+      "s1",
+      "r3",
+      "overstated"
+    ],
+    [
+      "s18",
+      "r24",
+      "not_found"
+    ],
+    [
+      "s2",
+      "r4",
+      "unverifiable"
+    ],
+    [
+      "s22",
+      "r29",
+      "not_found"
+    ],
+    [
+      "s24",
+      "r31",
+      "overstated"
+    ],
+    [
+      "s25",
+      "r17",
+      "overstated"
+    ]
+  ]
+}

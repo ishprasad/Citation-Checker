@@ -1,0 +1,193 @@
+{
+  "arxiv_id": "",
+  "title": "Recapitulation of pathophysiological features of AD in SARS-CoV-2-infected subjects",
+  "field": "Biology / neuroscience",
+  "source": "10.7554/elife.86333",
+  "planted": [
+    {
+      "id": "p1",
+      "sentence_id": "s2",
+      "reference_keys": [
+        "r18"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"in every population and setting\" before the citation",
+      "original": "Previous evidence tentatively suggests that SARS-CoV-2 may be neuroinvasive, leading to a vast array of neurological symptoms, including anosmia, ageusia, cognitive functions, and cerebrovascular disorders (Desforges et al., 2014; Hingorani et al., 2022).",
+      "mutated": "Previous evidence tentatively suggests that SARS-CoV-2 may be neuroinvasive, leading to a vast array of neurological symptoms, including anosmia, ageusia, cognitive functions, and cerebrovascular disorders in every population and setting (Desforges et al., 2014; Hingorani et al., 2022).",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p2",
+      "sentence_id": "s9",
+      "reference_keys": [
+        "r24"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Kovacs and Gelpi, 2012) with (Lampart et al., 2022) (\"Clinical utility of inflammatory biomarkers in COVID-19 in direct comparison to other respiratory infections—A prospective cohort study\") (similarity 0.27 vs 0.57 for the original)",
+      "original": "Medical records indicate that all AD individuals have postmortem ABC scores indicative of AD (Supplementary file 2), where A is a measure of amyloid β deposition, B is a measure of neurofibrillary degeneration based on the Braak and Brook score, and C is scored based on neuritic plaques outlined by the Consortium to Establish a Registry for Alzheimer’s Disease diagnosis (CERAD) (Kovacs and Gelpi, 2012).",
+      "mutated": "Medical records indicate that all AD individuals have postmortem ABC scores indicative of AD (Supplementary file 2), where A is a measure of amyloid β deposition, B is a measure of neurofibrillary degeneration based on the Braak and Brook score, and C is scored based on neuritic plaques outlined by the Consortium to Establish a Registry for Alzheimer’s Disease diagnosis (CERAD) (Lampart et al., 2022).",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p3",
+      "sentence_id": "s10",
+      "reference_keys": [
+        "r24"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"universally, in all cases\" before the citation",
+      "original": "Blood specimens were collected and indicate several laboratory features of severe COVID-19 (Supplementary file 2), such as increased C-reactive protein (CRP) and interleukin-6 (IL-6) (Lampart et al., 2022).",
+      "mutated": "Blood specimens were collected and indicate several laboratory features of severe COVID-19 (Supplementary file 2), such as increased C-reactive protein (CRP) and interleukin-6 (IL-6) universally, in all cases (Lampart et al., 2022).",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p4",
+      "sentence_id": "s21",
+      "reference_keys": [
+        "r45"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Tröscher et al., 2019; Fischer-Smith, 2001) with (Varet et al., 2016) (\"SARTools: A DESeq2- and EdgeR-Based R Pipeline for Comprehensive Differential Analysis of RNA-Seq Data\") (similarity 0.14 vs 0.65 for the original)",
+      "original": "Microglia nodule formation is present in some neurodegenerative diseases, such as MS, and viral infections, such as herpes simplex virus (HSV) and human immunodeficiency virus (HIV) (Tröscher et al., 2019; Fischer-Smith, 2001).",
+      "mutated": "Microglia nodule formation is present in some neurodegenerative diseases, such as MS, and viral infections, such as herpes simplex virus (HSV) and human immunodeficiency virus (HIV) (Varet et al., 2016).",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p5",
+      "sentence_id": "s23",
+      "reference_keys": [
+        "r46"
+      ],
+      "mutation": "number_change",
+      "description": "Changed \"65\" to \"104\"",
+      "original": "Interestingly, a large retrospective study of patients 65 years or older revealed that patients with SARS-CoV-2 were at an increased risk for a new AD diagnosis within a year of their SARS-CoV-2 diagnosis, with the most significant risk seen among those 85 years and older (Wang et al., 2022).",
+      "mutated": "Interestingly, a large retrospective study of patients 104 years or older revealed that patients with SARS-CoV-2 were at an increased risk for a new AD diagnosis within a year of their SARS-CoV-2 diagnosis, with the most significant risk seen among those 85 years and older (Wang et al., 2022).",
+      "expected_labels": [
+        "overstated",
+        "contradicted",
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "number_drift"
+      ]
+    },
+    {
+      "id": "p6",
+      "sentence_id": "s24",
+      "reference_keys": [
+        "r37"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"in every population and setting\" before the citation",
+      "original": "It is important to note the possibility of vascular damage due to ventilation prior to death in SARS-CoV-2-infected individuals; however, vascular damage by SARS-CoV-2, as assessed by HIF-1α, is observed in non-human primates that were euthanized at designated end-of-life time points precluding breathing intervention (Rutkai et al., 2022).",
+      "mutated": "It is important to note the possibility of vascular damage due to ventilation prior to death in SARS-CoV-2-infected individuals; however, vascular damage by SARS-CoV-2, as assessed by HIF-1α, is observed in non-human primates that were euthanized at designated end-of-life time points precluding breathing intervention in every population and setting (Rutkai et al., 2022).",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p7",
+      "sentence_id": "s26",
+      "reference_keys": [
+        "r23"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Serrano et al., 2021) with (Krämer et al., 2014) (\"Causal analysis approaches in Ingenuity Pathway Analysis\") (similarity 0.22 vs 0.73 for the original)",
+      "original": "This finding is supported by other studies suggesting that SARS-CoV-2 is sporadically present in brain tissue (Serrano et al., 2021).",
+      "mutated": "This finding is supported by other studies suggesting that SARS-CoV-2 is sporadically present in brain tissue (Krämer et al., 2014).",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p8",
+      "sentence_id": "s34",
+      "reference_keys": [
+        "r41"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (QIAGEN Inc, version 73620684; Krämer et al., 2014) with (Sullivan and Fischer, 2021) (\"Age-Associated Neurological Complications of COVID-19: A Systematic Review and Meta-Analysis\") (similarity 0.19 vs 0.71 for the original)",
+      "original": "Biological pathways and key regulators impacted by disease were identified using QIAGEN IPA (QIAGEN Inc, version 73620684; Krämer et al., 2014).",
+      "mutated": "Biological pathways and key regulators impacted by disease were identified using QIAGEN IPA (Sullivan and Fischer, 2021).",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    }
+  ],
+  "baseline_flags": [
+    [
+      "s1",
+      "r16",
+      "not_found"
+    ],
+    [
+      "s13",
+      "r29",
+      "overstated"
+    ],
+    [
+      "s17",
+      "r14",
+      "overstated"
+    ],
+    [
+      "s2",
+      "r12",
+      "not_found"
+    ],
+    [
+      "s28",
+      "r33",
+      "overstated"
+    ],
+    [
+      "s32",
+      "r5",
+      "not_found"
+    ],
+    [
+      "s4",
+      "r3",
+      "overstated"
+    ],
+    [
+      "s5",
+      "r2",
+      "not_found"
+    ],
+    [
+      "s7",
+      "r31",
+      "not_found"
+    ]
+  ]
+}

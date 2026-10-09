@@ -1,0 +1,2729 @@
+{
+  "paper": {
+    "id": "heldout:pdf:1dcc5749901262e5:8f5f9737",
+    "title": "Fear among Syrians: A Proposed Cutoff Score for the Arabic Fear of COVID-19 Scale",
+    "authors": [
+      "Fatema Mohsen",
+      "Batoul Bakkar",
+      "Salma Khadem alsrouji",
+      "Esraa Abbas",
+      "Alma Najjar",
+      "Marah Marrawi",
+      "Youssef Latifeh"
+    ],
+    "abstract": "COVID-19 pandemic has led to psychological health issues one of which is fear. This study validates the Arabic version of the fear of COVID-19 scale and suggests a new cutoff score to measure fear of COVID-19 among the Syrian Population. A total of 3989 participants filled an online survey consisting of socio-demographic information, the fear of COVID-19 scale, the patient health questionnaire 9-item, and the generalized anxiety disorder 7-item. Receiver operating characteristic analysis was used to define cutoff scores for the fear of COVID-19 scale in relation to generalized anxiety disorder 7-item and the patient health questionnaire 9-item. The Cronbach α value of the Arabic fear of COVID-19 scale was 0.896, revealing good stability and internal consistency. The inter-item correlations were between [0.420–0.868] and the corrected item-total correlations were between [0.614– 0.768]. A cutoff point of 17.5 was deduced from the analysis. According to the deduced cutoff point, 2111(52.9%) were categorized as extreme fear cases. This cutoff score deduced from this study can be used for screening purposes to distinguish community members that may be prone to developing extreme fear of COVID-19. Therefore, early preventive and supportive measures can then be delivered.",
+    "source": "pdf",
+    "arxiv_id": null,
+    "parsed_from": "pdf",
+    "citation_style": "numeric",
+    "text": "Abstract\n\nCOVID-19 pandemic has led to psychological health issues one of which is fear. This study validates the Arabic version of the fear of COVID-19 scale and suggests a new cutoff score to measure fear of COVID-19 among the Syrian Population. A total of 3989 participants filled an online survey consisting of socio-demographic information, the fear of COVID-19 scale, the patient health questionnaire 9-item, and the generalized anxiety disorder 7-item. Receiver operating characteristic analysis was used to define cutoff scores for the fear of COVID-19 scale in relation to generalized anxiety disorder 7-item and the patient health questionnaire 9-item. The Cronbach α value of the Arabic fear of COVID-19 scale was 0.896, revealing good stability and internal consistency. The inter-item correlations were between [0.420–0.868] and the corrected item-total correlations were between [0.614– 0.768]. A cutoff point of 17.5 was deduced from the analysis. According to the deduced cutoff point, 2111(52.9%) were categorized as extreme fear cases. This cutoff score deduced from this study can be used for screening purposes to distinguish community members that may be prone to developing extreme fear of COVID-19. Therefore, early preventive and supportive measures can then be delivered.\n\nIntroduction\n\nThe novel Coronavirus disease-2019 (COVID-19) is a momentous danger to humanity’s health that has emerged as an outbreak. The first COVID-19 incident was noted in Wuhan, China in December 2019. This virus quickly crossed the borders, spreading all over the world, resulting in a never-ending pandemic burdened with the results of morbidity and mortality [1]. There are live updates of the latest cases, and deaths every second of the day, as well as official briefings, and prognostications about future cataclysmic events [2]. Enumeration of all deaths, compared to the 0.28% crude mortality rate, which will continue to rise as more infections and deaths occur, produces an image of excess death, capturing both the direct burden of the pandemic and its indirect mortality burden [3,4]. 22 March 2020 marked the first officially reported COVID-19 case in Syria [5]. The numbers have escalated since then with Syria now entering its third wave [6–8].\n\nAs the pandemic has embedded misconceptions around COVID-19, strict precautionary measures have been adopted by governments, such as physical distancing, self-isolation, and quarantine [9]. These measures were implemented to curtail the tide of the pandemic when no treatments or vaccines were available during the time of survey administration. During the Syrian lockdown, many streets have become ghost towns. Flights all over the globe have ceased. Business and medical conferences have been postponed to the unknown future. Mosques, museums, parks, schools, and universities have been closed and abandoned. Grocery and pharmacy stores are being cleared of over-the-counter medications, disinfectants, supplements, and herbal remedies. Households are stacked to the brim with groceries and toiletries, in preparation for a long draconian lockdown that may never end. National closures of businesses, public facilities, and entertainment have resulted in less currency in circulation. All the above have shocked the economy drastically. The effects of the mass media and governments have had a toll on society, probably for several years to come; their disruptive actions are eliciting more damage to people around the globe than COVID-19. As a major health issue, the COVID-19 pandemic has triggered a multilevel global crisis, affecting an individual’s physical and psychological mental health. Thus, researchers are expressing concerns related to COVID-19 adverse effects on society’s mental health and psychological well-being [10–22].\n\nOne of these psychological impacts is fear, a vital emotion necessary for an individual’s survival by arousing adaptive defense responses against potentially threatening events or danger [23]. The current threatening event is COVID-19, a prolonged worry or negative emotional reaction towards contracting COVID-19, morbidity, and mortality [24]. Added to the previous are the effects of the pandemic on our daily habits including unemployment, working from home, home-schooling, and lack of socializing. Fear is becoming a critical concern, as the pandemic continues to spread high infection, morbidity, and mortality cases. These concerns have pushed researchers to assess the fear of COVID-19 in different regions of the world and identify the possible triggers [25].\n\nFear may contribute to the development of mental health disorders or further deteriorate pre-existing psychiatric symptoms such as generalized anxiety disorders, depression, and posttraumatic stress disorder, and even suicide [12,26,27]. A recent study has developed the Fear of COVID-19 Scale (FCV-19S) as a means of boosting the medical practice that is dedicated to preventing the spread of COVID-19 cases and treating them [56]. The psychometric evidence of the FCV-19S demonstrated satisfactory results [29–35]. A few studies thereafter have validated the questionnaire in various languages and examined associations with socio-demographic characteristics [33,36–42]. However, only one study as of yet has proposed a cutoff score for the FCV-19S [43]. Given that Syria is one of the most vulnerable countries in the world to be tormented by mental health disorders due to both COVID-19 and war. The aim of the study is to assess the fear regarding COVID-19 among Syrians, validate the FCV-19S, and identify an appropriate cutoff score to differentiate individuals with normal fear of COVID-19 response from ones encountering extreme fear.\n\nMaterials and methods\n\nStudy design, setting, and participants\n\nA web-based cross-sectional study was conducted using an Arabic questionnaire over a period of 12 days between May 2 and May 14 of 2020. Inclusion criteria: Participants aged 18 and above, residents in Syria, and full completion of the survey. A convenience sampling method was used in the study. The questionnaire was uploaded over several popular social media apps. Once informed consent was received, participants filled in their socio-demographic information including sex, age, place of residence, education level, occupation, and economic status.\n\nThe socio-demographic questions in Arabic and English are displayed in S1 and S2 Tables. Participants were also asked about the history of chronic diseases. The total dataset of 3989 participants was used to validate the Arabic version of the FCV-19S.\n\nDevelopment of the arabic FCV-19S\n\nThe English FCV-19S was translated into Arabic through a forward-backward translation technique [28]. The FCV-19S was translated into Arabic by two medical translators who are fluent in both Arabic and English. The authors, who are fluent in Arabic and English, revised the Arabic translation and no errors were identified with the translation. The final copy of the Arabic translation was back-translated to English by another medical translator who was unacquainted with the original English FCV-19S. A comparison of the forward and backward scale translations to identify any differences and cultural convenience was done. A pilot study including 20 volunteers was undertaken to assess the scale’s reliability, clarity, relevance, and acceptability of the survey, who were eliminated from the statistical analysis to avoid bias. No modifications were required. The Arabic version of the FCV-19S is provided in S3 Table.\n\nMeasures\n\nThe FCV-19S (after translation) was used to evaluate the symptoms of fear. The FCV-19S is a one-dimensional scale that measures one’s fear level of COVID-19 it consists of 7 items. Each item is rated on a 5-point Likert scale with 1 representing strongly disagree and 5 representing strongly agree, providing a 7 to 35 total score range. The higher the score the greater the levels of fear of COVID-19 are universally, in all cases [41].\n\nThe Arabic Patient Health Questionnaire 9-item (PHQ-9) was used in the study to assess depression symptom severity [44]. Items on the PHQ-9 were scored over a 4-point Likert scale: 0 = not at all, 1 = several days, 2 = more than half the days, and 3 = nearly every day), providing a 0–27 severity score range. The scores were categorized into 5 groups: none (0–4), mild (5–9), moderate (10–14), moderately severe (15–19), and severe (20–27).\n\nThe Arabic Generalized Anxiety Disorder 7-item (GAD-7) was used in this study to assess anxiety symptom severity [16]. Items on the GAD-7 were scored over a 4-point Likert scale: 0 = not at all, 1 = several days, 2 = more than half the days, 3 = nearly every day, providing a 0–21 severity score range. The Gad-7 is a self-rated scale used to evaluate the severity of the 4 most common anxiety disorders (Generalized Anxiety Disorder, Panic Disorder, Social Phobia, and Post Traumatic Stress Disorder), a cutoff score of 0–4 indicates no anxiety symptoms. The scores were categorized into 4 groups: none (0–4), mild (5–9), moderate (10–14), and severe (15–21) [46].\n\nStatistical analysis\n\nDescriptive analysis, including frequencies, percentages, means, and standard deviations (SD) were applied. The Cronbach’s α test and inter-item correlation were used to assess the internal consistency, with satisfactory reliability set at \u0015 0.70 and between 0.20 and 0.40 respectively [47,48]. The corrected item-total correlation was used to assess the coherence of the FCV-19S (values > 0.4 are acceptable). The item factor loadings, average variance extracted (AVE), and composite reliability (CR) were used to assess the convergent validity of the FCV-19S. The\n\nHeterotrait-Monotrait (HTMT) was used to assess the discriminant validity of the FCV-19S. A CR value between 0.7 and 0.9, AVE value > 0.5, and discriminant validity < 0.85 were set for this study [49–51]. Cutoff scores were deduced from receiver operating characteristic (ROC) analysis for the FCV-19S scale in association with GAD-7 and PHQ-9 (external criteria). The Youden-Index was used to deduce the optimal cutoff score for the Arabic scale and to lower the risk of miscategorization. A dichotomous variable was created out of the total for both GAD-7 and PHQ-9 using the cutoff point of 10 to assess anxiety and depressive symptoms respectively [44,46]. After determining the cutoff points, participants with a total score above the deduced cutoff value were categorized as cases with extreme fear, while those below it were categorized under normal fear of COVID-19. The Statistical Package for Social Sciences version 25.0 (SPSS Inc., Chicago, IL, United States) was used.\n\nResults\n\nSocio-demographic characteristics of participants\n\nOf 5000 total participants invited to take part in the study, 4,430 gave informed consent. A final sample size of 3989 participants (response rate = 79.8%) met the inclusion criteria for the study. The 441 participants who did not meet the inclusion criteria were either below 18, residing outside Syria, or uncompleted survey. Most participants were female 2935 (73.5%), single 3096 (77.6%), students 2397 (60.1%), and residing in Damascus 1412 (35.4%). Ages ranged between 18 and 70 years. The major age group was 18–25 years 2870 (71.9%). A total of 416 (10.4%) and 1522 (38.1%) participants reported their economic status as under poor and moderate respectively. 556 (15.9%) mentioned a history of chronic diseases Table 1.\n\nValidity and cutoff Score analysis\n\nThe FCV-19S scores ranged between 7 and 35, the mode score was 14, and the mean score was 18.5 (± 6.009) Fig 1. Participants’ responses to the FCV-19S are shown in Table 2. The Cronbach α value of the Arabic FCV-19S was 0.896, revealing good stability and internal consistency. The inter-item correlations were between [0.420–0.868] and the corrected item-total correlations were between [0.614–0.768] Table 3. The CR value for all items of the FCV-19S was 0.934, exceeding the set threshold, deeming the CR unreliable. The AVE value for all items of the FCV-19S was good (0.672). The value 0.820 was a measure of reasonable discriminant validity of the FCV-19S.\n\nThe responses to the GAD-7 scale were categorized into two groups: non-anxious symptoms (score < 9) and anxious symptoms (9 < score \u0014 21). The responses to the PHQ-9 scale were categorized into two groups: non-depressed symptoms (score < 9) and depressed symptoms (9 < score \u0014 27) Table 4.\n\nROC analysis was used to evaluate the efficacy of the FCV-19S in predicting anxiety and depression factors. The proposed cutoff score was determined by the optimal sensitivity and specificity level, Table 5, revealing the following\n\n• Unsatisfactory predictive power for the FCV-19S in disclosure of anxiety symptoms assessed using GAD-7 was found. The best cutoff was at 18.5, with a sensitivity of 53% and specificity of 57.5%, as the area under the curve (AUC) was 0.560 with a statistical significance (p-value < 0.001), a confidence interval of 95% CI = [0.541, 0.578] Table 5 and Fig 2.\n\n• Unsatisfactory predictive power for the FCV-19S in disclosure of depressive symptoms assessed using PHQ-9 was found. The best cutoff was at 17.5 with a sensitivity of 55.1% and specificity of 49.6%, AUC = 0.520 was statistically significant (p-value < 0.001), a confidence interval of 95% CI = [0.502, 0.538] Table 5 and Fig 3.\n\nA cutoff point of 17.5 was deduced from the anxiety and depression ROC analysis. According to the deduced cutoff point, the majority 2111(52.9%) were categorized as cases with extreme fear Table 4.\n\nDiscussion\n\nThe current study was performed to validate the Arabic version of the FCV-19S and propose a cutoff to distinguish members of the population who reacted towards COVID-19 with extreme fear from those with a normal fear reaction. Deducing a cutoff is a pivotal and familiar practice among the field of psychiatry to differentiate those into either morbid cases or nonmorbid cases [52–56]. Identifying cases and non-cases with extreme fear will allow us to stratify those in need for further assessment by a specialist in psychiatry. Once assessed, appropriate management can be given if indicated. Although many studies have used the FCV-19S to assess fear among various populations, without a cutoff score we cannot further analyze the results and compare and interpret findings with different populations [57].\n\nOur study revealed a good internal consistency (Cronbach’s α = 0.896). Our finding was in line with other studies with a range of 0.82 to 0.88 [28,42,58,59]. The inter-item correlations were between [0.420–0.868] and the corrected item-total correlations were between [0.614– 0.768], whereas it was [0.35–0.66] and [0.57–0.74] respectively in a Saudi-Arabian study [60]. ROC curves were constructed to determine the FCV-19S cutoff point. A cutoff point of 17.5 was deduced, participants scoring \u0015 17.5 were categorized as having extreme fear of COVID-19, whereas participants scoring below this threshold were categorized as having normal fear of COVID-19. Only one study has defined a cutoff for the FCV-19S, with a threshold of 26.4 and higher [43].\n\nThis study revealed a weak discriminatory ability from the AUC outcomes, whereas its accuracy was moderate in a Greek study [61]. The low precision of AUC signifies that not all individuals with depression or anxiety symptoms have an unhealthy fear of COVID-19 and vice versa. This may be attributed to over a decade of conflict and the implications it induced on the mental health of the Syrian population [62]. Thus, Syrians have countless factors contributing to their depressive and anxiety symptoms unlike the majority of the globe. Also, the FCV-19S was designed to assess fear towards COVID-19 while the GAD-7 and PHQ-9 are not aimed at assessing depression and anxiety towards the COVID-19 pandemic.\n\nFear of COVID-19 may be a factor that impacts an individual’s protective behaviors, including vaccination uptake [67]. Therefore, one should have a certain level of fear but not extreme fear as individuals lack the perception to respond to threats faced [64]. Our study revealed a prevalence of 52.9% of Syrians was categorized as having extreme fear towards COVID-19. The prevalence of extreme fear among Syrians was higher in comparison with the Greeks (40.3%), despite their lower cutoff. The higher prevalence among Syrians can be attributed to the devastating impacts of war, driving the country into a prolonged economic recession. The devastating conflict has resulted in a Syrian healthcare system that is drastically unequipped to restrain such a pandemic. With many healthcare professionals fleeing the country, a low number of ventilators, and many hospitals bombarded to rubble, Syrians must feel constant fear for their lives [65].\n\nAll the above factors have exacted immense effects on the mental health of Syrians. The Syrian ministry of health provides 3 hospitals for substance abuse and mental illness: Ibn Rushd Hospital in Damascus, Ibn Sina Hospital in Rural Damascus, and Ibn Khaldoun Hospital in Aleppo. Ibn Khaldoun Hospital was bombarded on 25/12/2012, leaving only 2 working hospitals. Our study showed that 54.6% and 37.2% of Syrians are suffering from moderate to severe depressive and anxiety symptoms respectively. Grievously, 90% of cases are left unattended, untreated, and unmanaged, as only 80 psychiatrists are available in Syrian territories [66,67]. We must call on national and international organizations to aid us Syrians, reconstruct mental health services, and assist in providing skilled healthcare workers for the suffering people of Syria.\n\nLimitations\n\nThe existing study has countless limitations in its build. First, the sampling approach, convenience, may have affected the generalizability of the findings. Less educated and socially underprivileged participants were underrepresented. Second, to evaluate the representativeness of our sample, credible national Syrian data regarding demographic features of the population is required, which are currently not available. Third, the cross-sectional design limited the assessment of prospective effects of fear over time. Fourth, the proposed cutoff aimed to further make use of the scale to screen for cases with extreme fear but not for diagnostic purposes. Fifth, insufficiency of other scales assessing the same construct during the conduct of the study such as health anxiety and posttraumatic stress disorder. Sixth, the cutoff should ideally only be used on Syrian populations due to the characteristics of the participants in the study. Therefore, the proposed cutoff score must be used with attentiveness. Seventh, given the ongoing turmoil in Syria, the effects of wartime crisis perceptions concerning the COVID-19 pandemic adverse health, economic, and social ramifications on everyday life warrants further assessment.\n\nConclusion\n\nThis study assessed COVID-19-related fear among the Syrian population and determined a cutoff score of \u0015 17.5 with unsatisfactory predictive power for depression and anxiety. This cutoff score can be used for screening purposes to identify individuals most vulnerable to developing fear-related symptomatology. Therefore, require further assessment to identify high-risk individuals and deliver early preventive and/or supportive measures. However, the Syrian healthcare system is under constant strain due to the burdens of war and the COVID- 19 pandemic, and such measures may only exist in our imaginations.\n\nAcknowledgments\n\nWe thank the Syrian Private University for the support provided. We would like to also thank the participants in the study.",
+    "sections": [
+      {
+        "title": "Abstract",
+        "text": "Abstract\n\nCOVID-19 pandemic has led to psychological health issues one of which is fear. This study validates the Arabic version of the fear of COVID-19 scale and suggests a new cutoff score to measure fear of COVID-19 among the Syrian Population. A total of 3989 participants filled an online survey consisting of socio-demographic information, the fear of COVID-19 scale, the patient health questionnaire 9-item, and the generalized anxiety disorder 7-item. Receiver operating characteristic analysis was used to define cutoff scores for the fear of COVID-19 scale in relation to generalized anxiety disorder 7-item and the patient health questionnaire 9-item. The Cronbach α value of the Arabic fear of COVID-19 scale was 0.896, revealing good stability and internal consistency. The inter-item correlations were between [0.420–0.868] and the corrected item-total correlations were between [0.614– 0.768]. A cutoff point of 17.5 was deduced from the analysis. According to the deduced cutoff point, 2111(52.9%) were categorized as extreme fear cases. This cutoff score deduced from this study can be used for screening purposes to distinguish community members that may be prone to developing extreme fear of COVID-19. Therefore, early preventive and supportive measures can then be delivered.\n\n",
+        "start": 0,
+        "end": 1298
+      },
+      {
+        "title": "Introduction",
+        "text": "Introduction\n\nThe novel Coronavirus disease-2019 (COVID-19) is a momentous danger to humanity’s health that has emerged as an outbreak. The first COVID-19 incident was noted in Wuhan, China in December 2019. This virus quickly crossed the borders, spreading all over the world, resulting in a never-ending pandemic burdened with the results of morbidity and mortality [1]. There are live updates of the latest cases, and deaths every second of the day, as well as official briefings, and prognostications about future cataclysmic events [2]. Enumeration of all deaths, compared to the 0.28% crude mortality rate, which will continue to rise as more infections and deaths occur, produces an image of excess death, capturing both the direct burden of the pandemic and its indirect mortality burden [3,4]. 22 March 2020 marked the first officially reported COVID-19 case in Syria [5]. The numbers have escalated since then with Syria now entering its third wave [6–8].\n\nAs the pandemic has embedded misconceptions around COVID-19, strict precautionary measures have been adopted by governments, such as physical distancing, self-isolation, and quarantine [9]. These measures were implemented to curtail the tide of the pandemic when no treatments or vaccines were available during the time of survey administration. During the Syrian lockdown, many streets have become ghost towns. Flights all over the globe have ceased. Business and medical conferences have been postponed to the unknown future. Mosques, museums, parks, schools, and universities have been closed and abandoned. Grocery and pharmacy stores are being cleared of over-the-counter medications, disinfectants, supplements, and herbal remedies. Households are stacked to the brim with groceries and toiletries, in preparation for a long draconian lockdown that may never end. National closures of businesses, public facilities, and entertainment have resulted in less currency in circulation. All the above have shocked the economy drastically. The effects of the mass media and governments have had a toll on society, probably for several years to come; their disruptive actions are eliciting more damage to people around the globe than COVID-19. As a major health issue, the COVID-19 pandemic has triggered a multilevel global crisis, affecting an individual’s physical and psychological mental health. Thus, researchers are expressing concerns related to COVID-19 adverse effects on society’s mental health and psychological well-being [10–22].\n\nOne of these psychological impacts is fear, a vital emotion necessary for an individual’s survival by arousing adaptive defense responses against potentially threatening events or danger [23]. The current threatening event is COVID-19, a prolonged worry or negative emotional reaction towards contracting COVID-19, morbidity, and mortality [24]. Added to the previous are the effects of the pandemic on our daily habits including unemployment, working from home, home-schooling, and lack of socializing. Fear is becoming a critical concern, as the pandemic continues to spread high infection, morbidity, and mortality cases. These concerns have pushed researchers to assess the fear of COVID-19 in different regions of the world and identify the possible triggers [25].\n\nFear may contribute to the development of mental health disorders or further deteriorate pre-existing psychiatric symptoms such as generalized anxiety disorders, depression, and posttraumatic stress disorder, and even suicide [12,26,27]. A recent study has developed the Fear of COVID-19 Scale (FCV-19S) as a means of boosting the medical practice that is dedicated to preventing the spread of COVID-19 cases and treating them [56]. The psychometric evidence of the FCV-19S demonstrated satisfactory results [29–35]. A few studies thereafter have validated the questionnaire in various languages and examined associations with socio-demographic characteristics [33,36–42]. However, only one study as of yet has proposed a cutoff score for the FCV-19S [43]. Given that Syria is one of the most vulnerable countries in the world to be tormented by mental health disorders due to both COVID-19 and war. The aim of the study is to assess the fear regarding COVID-19 among Syrians, validate the FCV-19S, and identify an appropriate cutoff score to differentiate individuals with normal fear of COVID-19 response from ones encountering extreme fear.\n\n",
+        "start": 1298,
+        "end": 5724
+      },
+      {
+        "title": "Materials and methods",
+        "text": "Materials and methods\n\n",
+        "start": 5724,
+        "end": 5747
+      },
+      {
+        "title": "Study design, setting, and participants",
+        "text": "Study design, setting, and participants\n\nA web-based cross-sectional study was conducted using an Arabic questionnaire over a period of 12 days between May 2 and May 14 of 2020. Inclusion criteria: Participants aged 18 and above, residents in Syria, and full completion of the survey. A convenience sampling method was used in the study. The questionnaire was uploaded over several popular social media apps. Once informed consent was received, participants filled in their socio-demographic information including sex, age, place of residence, education level, occupation, and economic status.\n\nThe socio-demographic questions in Arabic and English are displayed in S1 and S2 Tables. Participants were also asked about the history of chronic diseases. The total dataset of 3989 participants was used to validate the Arabic version of the FCV-19S.\n\n",
+        "start": 5747,
+        "end": 6595
+      },
+      {
+        "title": "Development of the arabic FCV-19S",
+        "text": "Development of the arabic FCV-19S\n\nThe English FCV-19S was translated into Arabic through a forward-backward translation technique [28]. The FCV-19S was translated into Arabic by two medical translators who are fluent in both Arabic and English. The authors, who are fluent in Arabic and English, revised the Arabic translation and no errors were identified with the translation. The final copy of the Arabic translation was back-translated to English by another medical translator who was unacquainted with the original English FCV-19S. A comparison of the forward and backward scale translations to identify any differences and cultural convenience was done. A pilot study including 20 volunteers was undertaken to assess the scale’s reliability, clarity, relevance, and acceptability of the survey, who were eliminated from the statistical analysis to avoid bias. No modifications were required. The Arabic version of the FCV-19S is provided in S3 Table.\n\n",
+        "start": 6595,
+        "end": 7554
+      },
+      {
+        "title": "Measures",
+        "text": "Measures\n\nThe FCV-19S (after translation) was used to evaluate the symptoms of fear. The FCV-19S is a one-dimensional scale that measures one’s fear level of COVID-19 it consists of 7 items. Each item is rated on a 5-point Likert scale with 1 representing strongly disagree and 5 representing strongly agree, providing a 7 to 35 total score range. The higher the score the greater the levels of fear of COVID-19 are universally, in all cases [41].\n\nThe Arabic Patient Health Questionnaire 9-item (PHQ-9) was used in the study to assess depression symptom severity [44]. Items on the PHQ-9 were scored over a 4-point Likert scale: 0 = not at all, 1 = several days, 2 = more than half the days, and 3 = nearly every day), providing a 0–27 severity score range. The scores were categorized into 5 groups: none (0–4), mild (5–9), moderate (10–14), moderately severe (15–19), and severe (20–27).\n\nThe Arabic Generalized Anxiety Disorder 7-item (GAD-7) was used in this study to assess anxiety symptom severity [16]. Items on the GAD-7 were scored over a 4-point Likert scale: 0 = not at all, 1 = several days, 2 = more than half the days, 3 = nearly every day, providing a 0–21 severity score range. The Gad-7 is a self-rated scale used to evaluate the severity of the 4 most common anxiety disorders (Generalized Anxiety Disorder, Panic Disorder, Social Phobia, and Post Traumatic Stress Disorder), a cutoff score of 0–4 indicates no anxiety symptoms. The scores were categorized into 4 groups: none (0–4), mild (5–9), moderate (10–14), and severe (15–21) [46].\n\n",
+        "start": 7554,
+        "end": 9113
+      },
+      {
+        "title": "Statistical analysis",
+        "text": "Statistical analysis\n\nDescriptive analysis, including frequencies, percentages, means, and standard deviations (SD) were applied. The Cronbach’s α test and inter-item correlation were used to assess the internal consistency, with satisfactory reliability set at \u0015 0.70 and between 0.20 and 0.40 respectively [47,48]. The corrected item-total correlation was used to assess the coherence of the FCV-19S (values > 0.4 are acceptable). The item factor loadings, average variance extracted (AVE), and composite reliability (CR) were used to assess the convergent validity of the FCV-19S. The\n\nHeterotrait-Monotrait (HTMT) was used to assess the discriminant validity of the FCV-19S. A CR value between 0.7 and 0.9, AVE value > 0.5, and discriminant validity < 0.85 were set for this study [49–51]. Cutoff scores were deduced from receiver operating characteristic (ROC) analysis for the FCV-19S scale in association with GAD-7 and PHQ-9 (external criteria). The Youden-Index was used to deduce the optimal cutoff score for the Arabic scale and to lower the risk of miscategorization. A dichotomous variable was created out of the total for both GAD-7 and PHQ-9 using the cutoff point of 10 to assess anxiety and depressive symptoms respectively [44,46]. After determining the cutoff points, participants with a total score above the deduced cutoff value were categorized as cases with extreme fear, while those below it were categorized under normal fear of COVID-19. The Statistical Package for Social Sciences version 25.0 (SPSS Inc., Chicago, IL, United States) was used.\n\n",
+        "start": 9113,
+        "end": 10685
+      },
+      {
+        "title": "Results",
+        "text": "Results\n\n",
+        "start": 10685,
+        "end": 10694
+      },
+      {
+        "title": "Socio-demographic characteristics of participants",
+        "text": "Socio-demographic characteristics of participants\n\nOf 5000 total participants invited to take part in the study, 4,430 gave informed consent. A final sample size of 3989 participants (response rate = 79.8%) met the inclusion criteria for the study. The 441 participants who did not meet the inclusion criteria were either below 18, residing outside Syria, or uncompleted survey. Most participants were female 2935 (73.5%), single 3096 (77.6%), students 2397 (60.1%), and residing in Damascus 1412 (35.4%). Ages ranged between 18 and 70 years. The major age group was 18–25 years 2870 (71.9%). A total of 416 (10.4%) and 1522 (38.1%) participants reported their economic status as under poor and moderate respectively. 556 (15.9%) mentioned a history of chronic diseases Table 1.\n\n",
+        "start": 10694,
+        "end": 11474
+      },
+      {
+        "title": "Validity and cutoff Score analysis",
+        "text": "Validity and cutoff Score analysis\n\nThe FCV-19S scores ranged between 7 and 35, the mode score was 14, and the mean score was 18.5 (± 6.009) Fig 1. Participants’ responses to the FCV-19S are shown in Table 2. The Cronbach α value of the Arabic FCV-19S was 0.896, revealing good stability and internal consistency. The inter-item correlations were between [0.420–0.868] and the corrected item-total correlations were between [0.614–0.768] Table 3. The CR value for all items of the FCV-19S was 0.934, exceeding the set threshold, deeming the CR unreliable. The AVE value for all items of the FCV-19S was good (0.672). The value 0.820 was a measure of reasonable discriminant validity of the FCV-19S.\n\nThe responses to the GAD-7 scale were categorized into two groups: non-anxious symptoms (score < 9) and anxious symptoms (9 < score \u0014 21). The responses to the PHQ-9 scale were categorized into two groups: non-depressed symptoms (score < 9) and depressed symptoms (9 < score \u0014 27) Table 4.\n\nROC analysis was used to evaluate the efficacy of the FCV-19S in predicting anxiety and depression factors. The proposed cutoff score was determined by the optimal sensitivity and specificity level, Table 5, revealing the following\n\n• Unsatisfactory predictive power for the FCV-19S in disclosure of anxiety symptoms assessed using GAD-7 was found. The best cutoff was at 18.5, with a sensitivity of 53% and specificity of 57.5%, as the area under the curve (AUC) was 0.560 with a statistical significance (p-value < 0.001), a confidence interval of 95% CI = [0.541, 0.578] Table 5 and Fig 2.\n\n• Unsatisfactory predictive power for the FCV-19S in disclosure of depressive symptoms assessed using PHQ-9 was found. The best cutoff was at 17.5 with a sensitivity of 55.1% and specificity of 49.6%, AUC = 0.520 was statistically significant (p-value < 0.001), a confidence interval of 95% CI = [0.502, 0.538] Table 5 and Fig 3.\n\nA cutoff point of 17.5 was deduced from the anxiety and depression ROC analysis. According to the deduced cutoff point, the majority 2111(52.9%) were categorized as cases with extreme fear Table 4.\n\n",
+        "start": 11474,
+        "end": 13589
+      },
+      {
+        "title": "Discussion",
+        "text": "Discussion\n\nThe current study was performed to validate the Arabic version of the FCV-19S and propose a cutoff to distinguish members of the population who reacted towards COVID-19 with extreme fear from those with a normal fear reaction. Deducing a cutoff is a pivotal and familiar practice among the field of psychiatry to differentiate those into either morbid cases or nonmorbid cases [52–56]. Identifying cases and non-cases with extreme fear will allow us to stratify those in need for further assessment by a specialist in psychiatry. Once assessed, appropriate management can be given if indicated. Although many studies have used the FCV-19S to assess fear among various populations, without a cutoff score we cannot further analyze the results and compare and interpret findings with different populations [57].\n\nOur study revealed a good internal consistency (Cronbach’s α = 0.896). Our finding was in line with other studies with a range of 0.82 to 0.88 [28,42,58,59]. The inter-item correlations were between [0.420–0.868] and the corrected item-total correlations were between [0.614– 0.768], whereas it was [0.35–0.66] and [0.57–0.74] respectively in a Saudi-Arabian study [60]. ROC curves were constructed to determine the FCV-19S cutoff point. A cutoff point of 17.5 was deduced, participants scoring \u0015 17.5 were categorized as having extreme fear of COVID-19, whereas participants scoring below this threshold were categorized as having normal fear of COVID-19. Only one study has defined a cutoff for the FCV-19S, with a threshold of 26.4 and higher [43].\n\nThis study revealed a weak discriminatory ability from the AUC outcomes, whereas its accuracy was moderate in a Greek study [61]. The low precision of AUC signifies that not all individuals with depression or anxiety symptoms have an unhealthy fear of COVID-19 and vice versa. This may be attributed to over a decade of conflict and the implications it induced on the mental health of the Syrian population [62]. Thus, Syrians have countless factors contributing to their depressive and anxiety symptoms unlike the majority of the globe. Also, the FCV-19S was designed to assess fear towards COVID-19 while the GAD-7 and PHQ-9 are not aimed at assessing depression and anxiety towards the COVID-19 pandemic.\n\nFear of COVID-19 may be a factor that impacts an individual’s protective behaviors, including vaccination uptake [67]. Therefore, one should have a certain level of fear but not extreme fear as individuals lack the perception to respond to threats faced [64]. Our study revealed a prevalence of 52.9% of Syrians was categorized as having extreme fear towards COVID-19. The prevalence of extreme fear among Syrians was higher in comparison with the Greeks (40.3%), despite their lower cutoff. The higher prevalence among Syrians can be attributed to the devastating impacts of war, driving the country into a prolonged economic recession. The devastating conflict has resulted in a Syrian healthcare system that is drastically unequipped to restrain such a pandemic. With many healthcare professionals fleeing the country, a low number of ventilators, and many hospitals bombarded to rubble, Syrians must feel constant fear for their lives [65].\n\nAll the above factors have exacted immense effects on the mental health of Syrians. The Syrian ministry of health provides 3 hospitals for substance abuse and mental illness: Ibn Rushd Hospital in Damascus, Ibn Sina Hospital in Rural Damascus, and Ibn Khaldoun Hospital in Aleppo. Ibn Khaldoun Hospital was bombarded on 25/12/2012, leaving only 2 working hospitals. Our study showed that 54.6% and 37.2% of Syrians are suffering from moderate to severe depressive and anxiety symptoms respectively. Grievously, 90% of cases are left unattended, untreated, and unmanaged, as only 80 psychiatrists are available in Syrian territories [66,67]. We must call on national and international organizations to aid us Syrians, reconstruct mental health services, and assist in providing skilled healthcare workers for the suffering people of Syria.\n\n",
+        "start": 13589,
+        "end": 17660
+      },
+      {
+        "title": "Limitations",
+        "text": "Limitations\n\nThe existing study has countless limitations in its build. First, the sampling approach, convenience, may have affected the generalizability of the findings. Less educated and socially underprivileged participants were underrepresented. Second, to evaluate the representativeness of our sample, credible national Syrian data regarding demographic features of the population is required, which are currently not available. Third, the cross-sectional design limited the assessment of prospective effects of fear over time. Fourth, the proposed cutoff aimed to further make use of the scale to screen for cases with extreme fear but not for diagnostic purposes. Fifth, insufficiency of other scales assessing the same construct during the conduct of the study such as health anxiety and posttraumatic stress disorder. Sixth, the cutoff should ideally only be used on Syrian populations due to the characteristics of the participants in the study. Therefore, the proposed cutoff score must be used with attentiveness. Seventh, given the ongoing turmoil in Syria, the effects of wartime crisis perceptions concerning the COVID-19 pandemic adverse health, economic, and social ramifications on everyday life warrants further assessment.\n\n",
+        "start": 17660,
+        "end": 18905
+      },
+      {
+        "title": "Conclusion",
+        "text": "Conclusion\n\nThis study assessed COVID-19-related fear among the Syrian population and determined a cutoff score of \u0015 17.5 with unsatisfactory predictive power for depression and anxiety. This cutoff score can be used for screening purposes to identify individuals most vulnerable to developing fear-related symptomatology. Therefore, require further assessment to identify high-risk individuals and deliver early preventive and/or supportive measures. However, the Syrian healthcare system is under constant strain due to the burdens of war and the COVID- 19 pandemic, and such measures may only exist in our imaginations.\n\n",
+        "start": 18905,
+        "end": 19529
+      },
+      {
+        "title": "Acknowledgments",
+        "text": "Acknowledgments\n\nWe thank the Syrian Private University for the support provided. We would like to also thank the participants in the study.",
+        "start": 19529,
+        "end": 19669
+      }
+    ],
+    "references": [
+      {
+        "key": "r1",
+        "label": "1",
+        "raw": "WHO Coronavirus Disease (COVID-19) Dashboard. https://covid19.who.int/ (2020). Accessed.",
+        "title": "https://covid19.who.int/ (2020)",
+        "authors": [
+          "WHO Coronavirus Disease (COVID-19) Dashboard"
+        ],
+        "year": 2020,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://covid19.who.int/",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r2",
+        "label": "2",
+        "raw": "Worldometer: COVID-19 CORONAVIRUS PANDEMIC. https://www.worldometers.info/coronavirus/ Accessed 14/06/2021.",
+        "title": "https://www.worldometers.info/coronavirus/ Accessed 14/06/2021",
+        "authors": [
+          "Worldometer: COVID-19 CORONAVIRUS PANDEMIC"
+        ],
+        "year": 2021,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://www.worldometers.info/coronavirus/",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r3",
+        "label": "3",
+        "raw": "Setel P, AbouZahr C, Atuheire EB, Bratschi M, Cercone E, Chinganya O, et al. Mortality surveillance during the COVID-19 pandemic. Bulletin of the World Health Organization. 2020; 98(6):374. https://doi. org/10.2471/BLT.20.263194 PMID: 32514207",
+        "title": "Mortality surveillance during the COVID-19 pandemic",
+        "authors": [
+          "Setel P",
+          "AbouZahr C",
+          "Atuheire EB",
+          "Bratschi M",
+          "Cercone E",
+          "Chinganya O"
+        ],
+        "year": 2020,
+        "doi": "10.2471/BLT.20.263194",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r4",
+        "label": "4",
+        "raw": "https://www.worldometers.info/coronavirus/coronavirus-death-rate/.",
+        "title": null,
+        "authors": [],
+        "year": null,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://www.worldometers.info/coronavirus/coronavirus-death-rate/.",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r5",
+        "label": "5",
+        "raw": "McKernan B. Syria con rms rst Covid-19 case amid fears of catastrophic spread. The Guardian. 2020.",
+        "title": "The Guardian",
+        "authors": [
+          "McKernan B. Syria con rms rst Covid-19 case amid fears of catastrophic spread"
+        ],
+        "year": 2020,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r6",
+        "label": "6",
+        "raw": "Al-awsat A. Syria Grapples with Third COVID-19 Wave. Alsharq Al-awsat Tuesday, 2 March, 2021– 08:15.",
+        "title": "Alsharq Al-awsat Tuesday, 2 March, 2021– 08:15",
+        "authors": [
+          "Al-awsat A. Syria Grapples with Third COVID-19 Wave"
+        ],
+        "year": 2021,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r7",
+        "label": "7",
+        "raw": "Tripp JC, McDevitt-Murphy ME, Avery ML, Bracken KLJJodd. PTSD symptoms, emotion dysregulation, and alcohol-related consequences among college students with a trauma history. 2015; 11(2):107–17.",
+        "title": "PTSD symptoms, emotion dysregulation, and alcohol-related consequences among college students with a trauma history",
+        "authors": [
+          "Tripp JC",
+          "McDevitt-Murphy ME",
+          "Avery ML",
+          "Bracken KLJJodd"
+        ],
+        "year": 2015,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r8",
+        "label": "8",
+        "raw": "WHO: COVID-19 Humanitarian Update No. 23. https://reliefweb.int/report/syrian-arab-republic/syrian-arab-republic-covid-19-humanitarian-update-no-23-1-february-2021 (2021). Accessed.",
+        "title": "Accessed",
+        "authors": [
+          "WHO: COVID-19 Humanitarian Update No. 23. https://reliefweb.int/report/syrian-arab-republic/syrian-arab-republic-covid-19-humanitarian-update-no-23-1-february-2021"
+        ],
+        "year": 2021,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://reliefweb.int/report/syrian-arab-republic/syrian-arab-republic-covid-19-humanitarian-update-no-23-1-february-2021",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r9",
+        "label": "9",
+        "raw": "WHO: Coronavirus,Overview,Prevention and Symptoms. https://www.who.int/health-topics/ coronavirus#tab=tab_2 (2020). Accessed.",
+        "title": "https://www.who.int/health-topics/ coronavirus#tab=tab_2 (2020)",
+        "authors": [
+          "WHO: Coronavirus",
+          "Overview",
+          "Prevention",
+          "Symptoms"
+        ],
+        "year": 2020,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://www.who.int/health-topics/",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r10",
+        "label": "10",
+        "raw": "Rajkumar RP. COVID-19 and mental health: A review of the existing literature. Asian journal of psychiatry. 2020; 52:102066. https://doi.org/10.1016/j.ajp.2020.102066 PMID: 32302935",
+        "title": "COVID-19 and mental health: A review of the existing literature",
+        "authors": [
+          "Rajkumar RP"
+        ],
+        "year": 2020,
+        "doi": "10.1016/j.ajp.2020.102066",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1016/j.ajp.2020.102066",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r11",
+        "label": "11",
+        "raw": "Holmes EA O’Connor RC, Perry VH, Tracey I, Wessely S, Arseneault L, et al. Multidisciplinary research priorities for the COVID-19 pandemic: a call for action for mental health science. The Lancet Psychiatry.",
+        "title": "Multidisciplinary research priorities for the COVID-19 pandemic: a call for action for mental health science",
+        "authors": [
+          "Holmes EA O’Connor RC",
+          "Perry VH",
+          "Tracey I",
+          "Wessely S",
+          "Arseneault L"
+        ],
+        "year": null,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r12",
+        "label": "12",
+        "raw": "Ornell F, Schuch JB, Sordi AO, Kessler FHP. “Pandemic fear” and COVID-19: mental health burden and strategies. Brazilian Journal of Psychiatry. 2020; 42(3):232–5. https://doi.org/10.1590/1516-4446- 2020-0008 PMID: 32267343",
+        "title": "“Pandemic fear” and COVID-19: mental health burden and strategies",
+        "authors": [
+          "Ornell F",
+          "Schuch JB",
+          "Sordi AO",
+          "Kessler FHP"
+        ],
+        "year": 2020,
+        "doi": "10.1590/1516-4446-2020-0008",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1590/1516-4446-",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r13",
+        "label": "13",
+        "raw": "Fung XC, Siu AM, Potenza MN, O’brien KS, Latner JD, Chen C-Y, et al. Problematic use of internet-related activities and perceived weight stigma in schoolchildren: A longitudinal study across different epidemic periods of COVID-19 in China. 2021; 12:700. https://doi.org/10.3389/fpsyt.2021.675839 PMID: 34108898",
+        "title": "Problematic use of internet-related activities and perceived weight stigma in schoolchildren: A longitudinal study across different epidemic periods of COVID-19 in China",
+        "authors": [
+          "Fung XC",
+          "Siu AM",
+          "Potenza MN",
+          "O’brien KS",
+          "Latner JD",
+          "Chen C-Y"
+        ],
+        "year": 2021,
+        "doi": "10.3389/fpsyt.2021.675839",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.3389/fpsyt.2021.675839",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r14",
+        "label": "14",
+        "raw": "Malik S, Ullah I, Irfan M, Ahorsu DK, Lin C-Y, Pakpour AH, et al. Fear of COVID-19 and workplace phobia among Pakistani doctors: A survey study. 2021; 21(1):1–9. https://doi.org/10.1186/s12889-021- 10873-y PMID: 33931040",
+        "title": "Fear of COVID-19 and workplace phobia among Pakistani doctors: A survey study",
+        "authors": [
+          "Malik S",
+          "Ullah I",
+          "Irfan M",
+          "Ahorsu DK",
+          "Lin C-Y",
+          "Pakpour AH"
+        ],
+        "year": 2021,
+        "doi": "10.1186/s12889-021-10873-y",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1186/s12889-021-",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r15",
+        "label": "15",
+        "raw": "Mahmoudi H, Saffari M, Movahedi M, Sanaeinasab H, Rashidi-Jahan H, Pourgholami M, et al. A mediating role for mental health in associations between COVID-19-related self-stigma, PTSD, quality of life, and insomnia among patients recovered from COVID-19. 2021; 11(5):e02138. https://doi.org/10.1002/ brb3.2138 PMID: 33811451",
+        "title": "A mediating role for mental health in associations between COVID-19-related self-stigma, PTSD, quality of life, and insomnia among patients recovered from COVID-19",
+        "authors": [
+          "Mahmoudi H",
+          "Saffari M",
+          "Movahedi M",
+          "Sanaeinasab H",
+          "Rashidi-Jahan H",
+          "Pourgholami M"
+        ],
+        "year": 2021,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1002/",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r16",
+        "label": "16",
+        "raw": "Chen I-H, Chen C-Y, Pakpour AH, Griffiths MD, Lin C-Y, Li X-D, et al. Problematic internet-related behaviors mediate the associations between levels of internet engagement and distress among schoolchildren during COVID-19 lockdown: A longitudinal structural equation modeling study. 2021; 10 (1):135–48. https://doi.org/10.1556/2006.2021.00006 PMID: 33570506",
+        "title": "Problematic internet-related behaviors mediate the associations between levels of internet engagement and distress among schoolchildren during COVID-19 lockdown: A longitudinal structural equation modeling study",
+        "authors": [
+          "Chen I-H",
+          "Chen C-Y",
+          "Pakpour AH",
+          "Griffiths MD",
+          "Lin C-Y",
+          "Li X-D"
+        ],
+        "year": 2021,
+        "doi": "10.1556/2006.2021.00006",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1556/2006.2021.00006",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r17",
+        "label": "17",
+        "raw": "Pramukti I, Strong C, Sitthimongkol Y, Setiawan A, Pandin MGR, Yen C-F, et al. Anxiety and Suicidal Thoughts During the COVID-19 Pandemic: Cross-Country Comparative Study Among Indonesian, Taiwanese, and Thai University Students. 2020; 22(12):e24487. https://doi.org/10.2196/24487 PMID: 33296867",
+        "title": "Anxiety and Suicidal Thoughts During the COVID-19 Pandemic: Cross-Country Comparative Study Among Indonesian, Taiwanese, and Thai University Students",
+        "authors": [
+          "Pramukti I",
+          "Strong C",
+          "Sitthimongkol Y",
+          "Setiawan A",
+          "Pandin MGR",
+          "Yen C-F"
+        ],
+        "year": 2020,
+        "doi": "10.2196/24487",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.2196/24487",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r18",
+        "label": "18",
+        "raw": "Chen C-Y, Chen I-H, O’Brien KS, Latner JD, Lin C-YJIJoO. Psychological distress and internet-related behaviors between schoolchildren with and without overweight during the COVID-19 outbreak. 2021; 45(3):677–86.",
+        "title": "Psychological distress and internet-related behaviors between schoolchildren with and without overweight during the COVID-19 outbreak",
+        "authors": [
+          "Chen C-Y",
+          "Chen I-H",
+          "O’Brien KS",
+          "Latner JD",
+          "Lin C-YJIJoO"
+        ],
+        "year": 2021,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r19",
+        "label": "19",
+        "raw": "Ahorsu DK, Lin C-Y, Pakpour AHJG, Medicine G. The Association Between Health Status and Insomnia, Mental Health, and Preventive Behaviors: The Mediating Role of Fear of COVID-19. 2020; 6:2333721420966081. https://doi.org/10.1177/2333721420966081 PMID: 33195740",
+        "title": "2020; 6:2333721420966081",
+        "authors": [
+          "Ahorsu DK",
+          "Lin C-Y",
+          "Pakpour AHJG",
+          "Medicine G. The Association Between Health Status",
+          "Insomnia",
+          "Mental Health",
+          "Preventive Behaviors: The Mediating Role of Fear of COVID-19"
+        ],
+        "year": 2020,
+        "doi": "10.1177/2333721420966081",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1177/2333721420966081",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r20",
+        "label": "20",
+        "raw": "Chang K-C, Strong C, Pakpour AH, Griffiths MD, Lin C-YJJotFMA. Factors related to preventive COVID-19 infection behaviors among people with mental illness. 2020; 119(12):1772–80. https://doi. org/10.1016/j.jfma.2020.07.032 PMID: 32773260",
+        "title": "Factors related to preventive COVID-19 infection behaviors among people with mental illness",
+        "authors": [
+          "Chang K-C",
+          "Strong C",
+          "Pakpour AH",
+          "Griffiths MD",
+          "Lin C-YJJotFMA"
+        ],
+        "year": 2020,
+        "doi": "10.1016/j.jfma.2020.07.032",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r21",
+        "label": "21",
+        "raw": "Lin C-Y, Brostrom̈ A, Griffiths MD, Pakpour AHJIi. Investigating mediated effects of fear of COVID-19 and COVID-19 misunderstanding in the association between problematic social media use, psychological distress, and insomnia. 2020; 21:100345. https://doi.org/10.1016/j.invent.2020.100345 PMID: 32868992",
+        "title": "Investigating mediated effects of fear of COVID-19 and COVID-19 misunderstanding in the association between problematic social media use, psychological distress, and insomnia",
+        "authors": [
+          "Lin C-Y",
+          "Brostrom̈ A",
+          "Griffiths MD",
+          "Pakpour AHJIi"
+        ],
+        "year": 2020,
+        "doi": "10.1016/j.invent.2020.100345",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1016/j.invent.2020.100345",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r22",
+        "label": "22",
+        "raw": "Chen I-H, Chen C-Y, Pakpour AH, Griffiths MD, Lin C-YJJotAAoC, Psychiatry A. Internet-related behaviors and psychological distress among schoolchildren during COVID-19 school suspension. 2020; 59 (10):1099. https://doi.org/10.1016/j.jaac.2020.06.007 PMID: 32615153",
+        "title": "2020; 59 (10):1099",
+        "authors": [
+          "Chen I-H",
+          "Chen C-Y",
+          "Pakpour AH",
+          "Griffiths MD",
+          "Lin C-YJJotAAoC",
+          "Psychiatry A. Internet-related behaviors",
+          "psychological distress among schoolchildren during COVID-19 school suspension"
+        ],
+        "year": 2020,
+        "doi": "10.1016/j.jaac.2020.06.007",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1016/j.jaac.2020.06.007",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r23",
+        "label": "23",
+        "raw": "Hamm AO. Fear, anxiety, and their disorders from the perspective of psychophysiology. Psychophysiology. 2020; 57(2):e13474. https://doi.org/10.1111/psyp.13474 PMID: 31529522",
+        "title": "Fear, anxiety, and their disorders from the perspective of psychophysiology",
+        "authors": [
+          "Hamm AO"
+        ],
+        "year": 2020,
+        "doi": "10.1111/psyp.13474",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1111/psyp.13474",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r24",
+        "label": "24",
+        "raw": "Van Bavel JJ, Baicker K, Boggio PS, Capraro V, Cichocka A, Cikara M, et al. Using social and behavioural science to support COVID-19 pandemic response. Nature human behaviour. 2020; 4(5):460–",
+        "title": "Using social and behavioural science to support COVID-19 pandemic response",
+        "authors": [
+          "Van Bavel JJ",
+          "Baicker K",
+          "Boggio PS",
+          "Capraro V",
+          "Cichocka A",
+          "Cikara M"
+        ],
+        "year": 2020,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r25",
+        "label": "25",
+        "raw": "Ahorsu DK, Lin C-Y, Imani V, Saffari M, Griffiths MD, Pakpour AH. The Fear of COVID-19 Scale: Development and Initial Validation. International Journal of Mental Health and Addiction. 2020. https://doi.org/ 10.1007/s11469-020-00270-8 PMID: 32226353",
+        "title": "The Fear of COVID-19 Scale: Development and Initial Validation",
+        "authors": [
+          "Ahorsu DK",
+          "Lin C-Y",
+          "Imani V",
+          "Saffari M",
+          "Griffiths MD",
+          "Pakpour AH"
+        ],
+        "year": 2020,
+        "doi": "10.1007/s11469-020-00270-8",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r26",
+        "label": "26",
+        "raw": "Gunnell D, Appleby L, Arensman E, Hawton K, John A, Kapur N, et al. Suicide risk and prevention during the COVID-19 pandemic. The Lancet Psychiatry. 2020; 7(6):468–71. https://doi.org/10.1016/ S2215-0366(20)30171-1 PMID: 32330430",
+        "title": "Suicide risk and prevention during the COVID-19 pandemic",
+        "authors": [
+          "Gunnell D",
+          "Appleby L",
+          "Arensman E",
+          "Hawton K",
+          "John A",
+          "Kapur N"
+        ],
+        "year": 2020,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1016/",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r27",
+        "label": "27",
+        "raw": "Tso IF, Park S. Alarming levels of psychiatric symptoms and the role of loneliness during the COVID-19 epidemic: A case study of Hong Kong. Psychiatry research. 2020; 293:113423. https://doi.org/10.1016/ j.psychres.2020.113423 PMID: 32871487",
+        "title": "Alarming levels of psychiatric symptoms and the role of loneliness during the COVID-19 epidemic: A case study of Hong Kong",
+        "authors": [
+          "Tso IF",
+          "Park S"
+        ],
+        "year": 2020,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1016/",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r28",
+        "label": "28",
+        "raw": "Ahorsu DK, Lin C-Y, Imani V, Saffari M, Griffiths MD, Pakpour AH. The fear of COVID-19 scale: development and initial validation. International journal of mental health and addiction. 2020:1–9. https://doi. org/10.1007/s11469-020-00270-8 PMID: 32226353",
+        "title": "The fear of COVID-19 scale: development and initial validation",
+        "authors": [
+          "Ahorsu DK",
+          "Lin C-Y",
+          "Imani V",
+          "Saffari M",
+          "Griffiths MD",
+          "Pakpour AH"
+        ],
+        "year": 2020,
+        "doi": "10.1007/s11469-020-00270-8",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r29",
+        "label": "29",
+        "raw": "Chang K-C, Hou W-L, Pakpour AH, Lin C-Y, Griffiths MDJIJoMH, Addiction. Psychometric testing of three COVID-19-related scales among people with mental illness. 2020:1–13.",
+        "title": "Psychometric testing of three COVID-19-related scales among people with mental illness",
+        "authors": [
+          "Chang K-C",
+          "Hou W-L",
+          "Pakpour AH",
+          "Lin C-Y",
+          "Griffiths MDJIJoMH",
+          "Addiction"
+        ],
+        "year": 2020,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r30",
+        "label": "30",
+        "raw": "Pakpour AH, Griffiths MD, Chang K-C, Chen Y-P, Kuo Y-J, Lin C-YJB, behavior,, et al. Assessing the fear of COVID-19 among different populations: A response to Ransing et al.(2020). 2020; 89:524–5. https://doi.org/10.1016/j.bbi.2020.06.006 PMID: 32512132",
+        "title": "2020; 89:524–5",
+        "authors": [
+          "Pakpour AH",
+          "Griffiths MD",
+          "Chang K-C",
+          "Chen Y-P",
+          "Kuo Y-J",
+          "Lin C-YJB",
+          "behavior",
+          "Assessing the fear of COVID-19 among different populations: A response to Ransing"
+        ],
+        "year": 2020,
+        "doi": "10.1016/j.bbi.2020.06.006",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1016/j.bbi.2020.06.006",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r31",
+        "label": "31",
+        "raw": "Andrade EF, Pereira LJ, Oliveira APLd, Orlando DR, Alves DAG, Guilarducci JdS, et al. Perceived fear of COVID-19 infection according to sex, age and occupational risk using the Brazilian version of the Fear of COVID-19 Scale. 2020:1–10. https://doi.org/10.1080/07481187.2020.1809786 PMID: 32845795",
+        "title": "Perceived fear of COVID-19 infection according to sex, age and occupational risk using the Brazilian version of the Fear of COVID-19 Scale",
+        "authors": [
+          "Andrade EF",
+          "Pereira LJ",
+          "Oliveira APLd",
+          "Orlando DR",
+          "Alves DAG",
+          "Guilarducci JdS"
+        ],
+        "year": 2020,
+        "doi": "10.1080/07481187.2020.1809786",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1080/07481187.2020.1809786",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r32",
+        "label": "32",
+        "raw": "Haktanir A, Seki T, Dilmac¸ BJDS. Adaptation and evaluation of Turkish version of the fear of COVID-19 scale. 2020:1–9. https://doi.org/10.1080/07481187.2020.1773026 PMID: 32469627",
+        "title": "Adaptation and evaluation of Turkish version of the fear of COVID-19 scale",
+        "authors": [
+          "Haktanir A",
+          "Seki T",
+          "Dilmac¸ BJDS"
+        ],
+        "year": 2020,
+        "doi": "10.1080/07481187.2020.1773026",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1080/07481187.2020.1773026",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r33",
+        "label": "33",
+        "raw": "Caycho-Rodrıǵuez T, Vilca LW, Cervigni M, Gallegos M, Martino P, Portillo N, et al. Fear of COVID-19 scale: Validity, reliability and factorial invariance in Argentina’s general population. Death Studies. 2020:1–10. https://doi.org/10.1080/07481187.2020.1836071 PMID: 33118860",
+        "title": "Fear of COVID-19 scale: Validity, reliability and factorial invariance in Argentina’s general population",
+        "authors": [
+          "Caycho-Rodrıǵuez T",
+          "Vilca LW",
+          "Cervigni M",
+          "Gallegos M",
+          "Martino P",
+          "Portillo N"
+        ],
+        "year": 2020,
+        "doi": "10.1080/07481187.2020.1836071",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1080/07481187.2020.1836071",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r34",
+        "label": "34",
+        "raw": "Soares FR, Afonso RM, Martins AP, Pakpour AH, Rosa CPJDS. The fear of the COVID-19 Scale: validation in the Portuguese general population. 2021:1–7. https://doi.org/10.1080/07481187.2021. 1889722 PMID: 33630728",
+        "title": "The fear of the COVID-19 Scale: validation in the Portuguese general population",
+        "authors": [
+          "Soares FR",
+          "Afonso RM",
+          "Martins AP",
+          "Pakpour AH",
+          "Rosa CPJDS"
+        ],
+        "year": 2021,
+        "doi": "10.1080/07481187.2021.1889722",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1080/07481187.2021.",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r35",
+        "label": "35",
+        "raw": "Moreta-Herrera R, Loṕez-Calle C, Caycho-Rodrıǵuez T, Cabezas Guerra C, Gallegos M, Cervigni M, et al. Is it possible to find a bifactor structure in the Fear of COVID-19 Scale (FCV-19S)? Psychometric evidence in an Ecuadorian sample. 2021:1–11. https://doi.org/10.1080/07481187.2021.1914240 PMID: 33945438",
+        "title": "Is it possible to find a bifactor structure in the Fear of COVID-19 Scale (FCV-19S)? Psychometric evidence in an Ecuadorian sample",
+        "authors": [
+          "Moreta-Herrera R",
+          "Loṕez-Calle C",
+          "Caycho-Rodrıǵuez T",
+          "Cabezas Guerra C",
+          "Gallegos M",
+          "Cervigni M"
+        ],
+        "year": 2021,
+        "doi": "10.1080/07481187.2021.1914240",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1080/07481187.2021.1914240",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r36",
+        "label": "36",
+        "raw": "Giordani RCF, Zanoni da Silva M, Muhl C, Giolo SR. Fear of COVID-19 scale: Assessing fear of the coronavirus pandemic in Brazil. Journal of Health Psychology. 2020:1359105320982035. https://doi. org/10.1177/1359105320982035 PMID: 33327789",
+        "title": "Fear of COVID-19 scale: Assessing fear of the coronavirus pandemic in Brazil",
+        "authors": [
+          "Giordani RCF",
+          "Zanoni da Silva M",
+          "Muhl C",
+          "Giolo SR"
+        ],
+        "year": 2020,
+        "doi": "10.1177/1359105320982035",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r37",
+        "label": "37",
+        "raw": "Midorikawa H, Aiba M, Lebowitz A, Taguchi T, Shiratori Y, Ogawa T, et al. Confirming validity of The Fear of COVID-19 Scale in Japanese with a nationwide large-scale sample. PloS one. 2021; 16(2): e0246840. https://doi.org/10.1371/journal.pone.0246840 PMID: 33566868",
+        "title": "Confirming validity of The Fear of COVID-19 Scale in Japanese with a nationwide large-scale sample",
+        "authors": [
+          "Midorikawa H",
+          "Aiba M",
+          "Lebowitz A",
+          "Taguchi T",
+          "Shiratori Y",
+          "Ogawa T"
+        ],
+        "year": 2021,
+        "doi": "10.1371/journal.pone.0246840",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1371/journal.pone.0246840",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r38",
+        "label": "38",
+        "raw": "Elemo AS, Satici SA, Griffiths MD. The Fear of COVID-19 Scale: Psychometric Properties of the Ethiopian Amharic Version. International Journal of Mental Health and Addiction. 2020:1–12. https://doi.org/ 10.1007/s11469-020-00448-0 PMID: 33293906",
+        "title": "The Fear of COVID-19 Scale: Psychometric Properties of the Ethiopian Amharic Version",
+        "authors": [
+          "Elemo AS",
+          "Satici SA",
+          "Griffiths MD"
+        ],
+        "year": 2020,
+        "doi": "10.1007/s11469-020-00448-0",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r39",
+        "label": "39",
+        "raw": "Mertens G, Gerritsen L, Duijndam S, Salemink E, Engelhard IM. Fear of the coronavirus (COVID-19): Predictors in an online study conducted in March 2020. Journal of Anxiety Disorders. 2020; 74:102258. https://doi.org/10.1016/j.janxdis.2020.102258 PMID: 32569905",
+        "title": "Fear of the coronavirus (COVID-19): Predictors in an online study conducted in March 2020",
+        "authors": [
+          "Mertens G",
+          "Gerritsen L",
+          "Duijndam S",
+          "Salemink E",
+          "Engelhard IM"
+        ],
+        "year": 2020,
+        "doi": "10.1016/j.janxdis.2020.102258",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1016/j.janxdis.2020.102258",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r40",
+        "label": "40",
+        "raw": "Lin CY, Hou WL, Mamun MA, Aparecido da Silva J, Broche-Peŕez Y, Ullah I, et al. Fear of COVID-19 Scale (FCV-19S) across countries: Measurement invariance issues. Nursing Open. 2021. https://doi. org/10.1002/nop2.855 PMID: 33745219",
+        "title": "Fear of COVID-19 Scale (FCV-19S) across countries: Measurement invariance issues",
+        "authors": [
+          "Lin CY",
+          "Hou WL",
+          "Mamun MA",
+          "Aparecido da Silva J",
+          "Broche-Peŕez Y",
+          "Ullah I"
+        ],
+        "year": 2021,
+        "doi": "10.1002/nop2.855",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r41",
+        "label": "41",
+        "raw": "Alyami M, Henning M, Krag̈eloh CU, Alyami H. Psychometric evaluation of the Arabic version of the Fear of COVID-19 Scale. International journal of mental health and addiction. 2020:1–14. https://doi. org/10.1007/s11469-020-00316-x PMID: 32427217",
+        "title": "International journal of mental health and addiction",
+        "authors": [
+          "Alyami M",
+          "Henning M",
+          "Krag̈eloh CU",
+          "Alyami H. Psychometric evaluation of the Arabic version of the Fear of COVID-19 Scale"
+        ],
+        "year": 2020,
+        "doi": "10.1007/s11469-020-00316-x",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r42",
+        "label": "42",
+        "raw": "Satici B, Gocet-Tekin E, Deniz ME, Satici SA. Adaptation of the Fear of COVID-19 Scale: Its association with psychological distress and life satisfaction in Turkey. International Journal of Mental Health and Addiction. 2020:1–9. https://doi.org/10.1007/s11469-020-00294-0 PMID: 32395095",
+        "title": "Adaptation of the Fear of COVID-19 Scale: Its association with psychological distress and life satisfaction in Turkey",
+        "authors": [
+          "Satici B",
+          "Gocet-Tekin E",
+          "Deniz ME",
+          "Satici SA"
+        ],
+        "year": 2020,
+        "doi": "10.1007/s11469-020-00294-0",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1007/s11469-020-00294-0",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r43",
+        "label": "43",
+        "raw": "Nikopoulou V, Holeva V, Parlapani E, Karamouzi P, Voitsidis P, Porfyri G, et al. Mental Health Screening for COVID-19: a Proposed Cutoff Score for the Greek Version of the Fear of COVID-19 Scale (FCV- 19S). International Journal of Mental Health and Addiction. 2020:1–14. https://doi.org/10.1007/s11469- 020-00414-w PMID: 33199975",
+        "title": "Mental Health Screening for COVID-19: a Proposed Cutoff Score for the Greek Version of the Fear of COVID-19 Scale (FCV- 19S)",
+        "authors": [
+          "Nikopoulou V",
+          "Holeva V",
+          "Parlapani E",
+          "Karamouzi P",
+          "Voitsidis P",
+          "Porfyri G"
+        ],
+        "year": 2020,
+        "doi": "10.1007/s11469-020-00414-w",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1007/s11469-",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r44",
+        "label": "44",
+        "raw": "Sawaya H, Atoui M, Hamadeh A, Zeinoun P, Nahas Z. Adaptation and initial validation of the Patient Health Questionnaire–9 (PHQ-9) and the Generalized Anxiety Disorder–7 Questionnaire (GAD-7) in an Arabic speaking Lebanese psychiatric outpatient sample. Psychiatry research. 2016; 239:245–52. https://doi.org/10.1016/j.psychres.2016.03.030 PMID: 27031595",
+        "title": "Adaptation and initial validation of the Patient Health Questionnaire–9 (PHQ-9) and the Generalized Anxiety Disorder–7 Questionnaire (GAD-7) in an Arabic speaking Lebanese psychiatric outpatient sample",
+        "authors": [
+          "Sawaya H",
+          "Atoui M",
+          "Hamadeh A",
+          "Zeinoun P",
+          "Nahas Z"
+        ],
+        "year": 2016,
+        "doi": "10.1016/j.psychres.2016.03.030",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1016/j.psychres.2016.03.030",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r45",
+        "label": "45",
+        "raw": "AlHadi AN, AlAteeq DA, Al-Sharif E, Bawazeer HM, Alanazi H, AlShomrani AT, et al. An arabic translation, reliability, and validation of Patient Health Questionnaire in a Saudi sample. Annals of general psychiatry. 2017; 16(1):1–9.",
+        "title": "An arabic translation, reliability, and validation of Patient Health Questionnaire in a Saudi sample",
+        "authors": [
+          "AlHadi AN",
+          "AlAteeq DA",
+          "Al-Sharif E",
+          "Bawazeer HM",
+          "Alanazi H",
+          "AlShomrani AT"
+        ],
+        "year": 2017,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r46",
+        "label": "46",
+        "raw": "Loẅe B, Decker O, Mul̈ler S, Braḧler E, Schellberg D, Herzog W, et al. Validation and standardization of the Generalized Anxiety Disorder Screener (GAD-7) in the general population. Medical care. 2008:266–",
+        "title": "Validation and standardization of the Generalized Anxiety Disorder Screener (GAD-7) in the general population",
+        "authors": [
+          "Loẅe B",
+          "Decker O",
+          "Mul̈ler S",
+          "Braḧler E",
+          "Schellberg D",
+          "Herzog W"
+        ],
+        "year": 2008,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r47",
+        "label": "47",
+        "raw": "Cronbach LJ, Shavelson RJ. My current thoughts on coefficient alpha and successor procedures. Educational and psychological measurement. 2004; 64(3):391–418.",
+        "title": "My current thoughts on coefficient alpha and successor procedures",
+        "authors": [
+          "Cronbach LJ",
+          "Shavelson RJ"
+        ],
+        "year": 2004,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r48",
+        "label": "48",
+        "raw": "Piedmont RL. Inter-item Correlations. In: Michalos AC, editor. Encyclopedia of Quality of Life and Well- Being Research. Dordrecht: Springer Netherlands; 2014. p. 3303–4.",
+        "title": "Inter-item Correlations",
+        "authors": [
+          "Piedmont RL"
+        ],
+        "year": 2014,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r49",
+        "label": "49",
+        "raw": "Hair J.F., Hult G.T.M., C.M Ringle C.M, M S. A Primer on Partial Least Squares Structural Equation Modeling (PLS-SEM). SAGE. 2016.",
+        "title": null,
+        "authors": [
+          "Hair J.F",
+          "Hult G.T.M",
+          "C.M Ringle C.M",
+          "M S. A Primer on Partial Least Squares Structural Equation Modeling (PLS-SEM)"
+        ],
+        "year": 2016,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r50",
+        "label": "50",
+        "raw": "Fornell C, Larcker DF. Evaluating structural equation models with unobservable variables and measurement error. Journal of marketing research. 1981; 18(1):39–50.",
+        "title": "Evaluating structural equation models with unobservable variables and measurement error",
+        "authors": [
+          "Fornell C",
+          "Larcker DF"
+        ],
+        "year": 1981,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r51",
+        "label": "51",
+        "raw": "Kline RB. Principles and practice of structural equation modeling (3. Baskı). J New York, NY: Guilford.",
+        "title": "Principles and practice of structural equation modeling (3",
+        "authors": [
+          "Kline RB"
+        ],
+        "year": null,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r52",
+        "label": "52",
+        "raw": "Blanco V, Guisande MA, Sańchez MT, Otero P, Vaźquez FL. Spanish validation of the 10-item Connor–Davidson Resilience Scale (CD-RISC 10) with non-professional caregivers. Aging & mental health. 2019; 23(2):183–8. https://doi.org/10.1080/13607863.2017.1399340 PMID: 29116825",
+        "title": "Spanish validation of the 10-item Connor–Davidson Resilience Scale (CD-RISC 10) with non-professional caregivers",
+        "authors": [
+          "Blanco V",
+          "Guisande MA",
+          "Sańchez MT",
+          "Otero P",
+          "Vaźquez FL"
+        ],
+        "year": 2019,
+        "doi": "10.1080/13607863.2017.1399340",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1080/13607863.2017.1399340",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r53",
+        "label": "53",
+        "raw": "Ebrahimi A, Rief W, Mirshahzadeh P, Zanjani HA, Dehsorkhi HN, Roohafza H, et al. Psychometric properties of the Persian version of screening for Somatic Symptom Disorders-7 (SOMS-7). Iranian journal of psychiatry. 2018; 13(4):264. PMID: 30627200",
+        "title": "Psychometric properties of the Persian version of screening for Somatic Symptom Disorders-7 (SOMS-7)",
+        "authors": [
+          "Ebrahimi A",
+          "Rief W",
+          "Mirshahzadeh P",
+          "Zanjani HA",
+          "Dehsorkhi HN",
+          "Roohafza H"
+        ],
+        "year": 2018,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r54",
+        "label": "54",
+        "raw": "Lee SA. Measuring coronaphobia: the psychological basis of the Coronavirus Anxiety Scale. Dusunen Adam. 2020; 33(2):107–8.",
+        "title": "Measuring coronaphobia: the psychological basis of the Coronavirus Anxiety Scale",
+        "authors": [
+          "Lee SA"
+        ],
+        "year": 2020,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r55",
+        "label": "55",
+        "raw": "Oliveira MA, Bendo CB, Paiva SM, Vale MP, Serra-Negra JM. Determining cut-off points for the dental fear survey. The Scientific World Journal. 2015;2015. https://doi.org/10.1155/2015/983564 PMID: 26491721",
+        "title": "Determining cut-off points for the dental fear survey",
+        "authors": [
+          "Oliveira MA",
+          "Bendo CB",
+          "Paiva SM",
+          "Vale MP",
+          "Serra-Negra JM"
+        ],
+        "year": 2015,
+        "doi": "10.1155/2015/983564",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1155/2015/983564",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r56",
+        "label": "56",
+        "raw": "Silva TBF, Osoŕio FL, Loureiro SR. SDQ: discriminative validity and diagnostic potential. Frontiers in Psychology. 2015; 6(811). https://doi.org/10.3389/fpsyg.2015.00811 PMID: 26113840",
+        "title": "SDQ: discriminative validity and diagnostic potential",
+        "authors": [
+          "Silva TBF",
+          "Osoŕio FL",
+          "Loureiro SR"
+        ],
+        "year": 2015,
+        "doi": "10.3389/fpsyg.2015.00811",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.3389/fpsyg.2015.00811",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r57",
+        "label": "57",
+        "raw": "Cook DA, Beckman TJ. Current concepts in validity and reliability for psychometric instruments: theory and application. The American journal of medicine. 2006; 119(2):166. e7–. e16.",
+        "title": "Current concepts in validity and reliability for psychometric instruments: theory and application",
+        "authors": [
+          "Cook DA",
+          "Beckman TJ"
+        ],
+        "year": 2006,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r58",
+        "label": "58",
+        "raw": "Soraci P, Ferrari A, Abbiati FA, Del Fante E, De Pace R, Urso A, et al. Validation and Psychometric Evaluation of the Italian Version of the Fear of COVID-19 Scale. International Journal of Mental Health and Addiction. 2020. https://doi.org/10.1007/s11469-020-00277-1 PMID: 32372892",
+        "title": "Validation and Psychometric Evaluation of the Italian Version of the Fear of COVID-19 Scale",
+        "authors": [
+          "Soraci P",
+          "Ferrari A",
+          "Abbiati FA",
+          "Del Fante E",
+          "De Pace R",
+          "Urso A"
+        ],
+        "year": 2020,
+        "doi": "10.1007/s11469-020-00277-1",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1007/s11469-020-00277-1",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r59",
+        "label": "59",
+        "raw": "Satici B, Gocet-Tekin E, Deniz ME, Satici SA. Adaptation of the Fear of COVID-19 Scale: Its Association with Psychological Distress and Life Satisfaction in Turkey. International Journal of Mental Health and Addiction. 2020. https://doi.org/10.1007/s11469-020-00294-0 PMID: 32395095",
+        "title": "Adaptation of the Fear of COVID-19 Scale: Its Association with Psychological Distress and Life Satisfaction in Turkey",
+        "authors": [
+          "Satici B",
+          "Gocet-Tekin E",
+          "Deniz ME",
+          "Satici SA"
+        ],
+        "year": 2020,
+        "doi": "10.1007/s11469-020-00294-0",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1007/s11469-020-00294-0",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r60",
+        "label": "60",
+        "raw": "Alyami M, Henning M, Krag̈eloh CU, Alyami H. Psychometric Evaluation of the Arabic Version of the Fear of COVID-19 Scale. International Journal of Mental Health and Addiction. 2020. https://doi.org/10. 1007/s11469-020-00316-x PMID: 32427217",
+        "title": "International Journal of Mental Health and Addiction",
+        "authors": [
+          "Alyami M",
+          "Henning M",
+          "Krag̈eloh CU",
+          "Alyami H. Psychometric Evaluation of the Arabic Version of the Fear of COVID-19 Scale"
+        ],
+        "year": 2020,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r61",
+        "label": "61",
+        "raw": "Mandrekar JN. Receiver operating characteristic curve in diagnostic test assessment. Journal of Thoracic Oncology. 2010; 5(9):1315–6. https://doi.org/10.1097/JTO.0b013e3181ec173d PMID: 20736804",
+        "title": "Receiver operating characteristic curve in diagnostic test assessment",
+        "authors": [
+          "Mandrekar JN"
+        ],
+        "year": 2010,
+        "doi": "10.1097/JTO.0b013e3181ec173d",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1097/JTO.0b013e3181ec173d",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r62",
+        "label": "62",
+        "raw": "Kakaje A, Al Zohbi R, Hosam Aldeen O, Makki L, Alyousbashi A, Alhaffar MBA. Mental disorder and PTSD in Syria during wartime: a nationwide crisis. BMC Psychiatry. 2021; 21(1):2. https://doi.org/10. 1186/s12888-020-03002-3 PMID: 33388026",
+        "title": "Mental disorder and PTSD in Syria during wartime: a nationwide crisis",
+        "authors": [
+          "Kakaje A",
+          "Al Zohbi R",
+          "Hosam Aldeen O",
+          "Makki L",
+          "Alyousbashi A",
+          "Alhaffar MBA"
+        ],
+        "year": 2021,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r63",
+        "label": "63",
+        "raw": "Wang P-W, Ahorsu DK, Lin C-Y, Chen I-H, Yen C-F, Kuo Y-J, et al. Motivation to have covid-19 vaccination explained using an extended protection motivation theory among university students in china: The role of information sources. 2021; 9(4):380. https://doi.org/10.3390/vaccines9040380 PMID: 33924604",
+        "title": "Motivation to have covid-19 vaccination explained using an extended protection motivation theory among university students in china: The role of information sources",
+        "authors": [
+          "Wang P-W",
+          "Ahorsu DK",
+          "Lin C-Y",
+          "Chen I-H",
+          "Yen C-F",
+          "Kuo Y-J"
+        ],
+        "year": 2021,
+        "doi": "10.3390/vaccines9040380",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.3390/vaccines9040380",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r64",
+        "label": "64",
+        "raw": "Rippetoe PA, Rogers RWJJop, psychology s. Effects of components of protection-motivation theory on adaptive and maladaptive coping with a health threat. 1987; 52(3):596.",
+        "title": "Effects of components of protection-motivation theory on adaptive and maladaptive coping with a health threat",
+        "authors": [
+          "Rippetoe PA",
+          "Rogers RWJJop",
+          "psychology s"
+        ],
+        "year": 1987,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r65",
+        "label": "65",
+        "raw": "Gharibah M, Mehchy Z. COVID-19 pandemic: Syria’s response and healthcare capacity. 2020.",
+        "title": "COVID-19 pandemic: Syria’s response and healthcare capacity",
+        "authors": [
+          "Gharibah M",
+          "Mehchy Z"
+        ],
+        "year": 2020,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r66",
+        "label": "66",
+        "raw": "Hedar M. Mental health during the Syrian crisis: How Syrians are dealing with the psychological effects. Int’l Rev Red Cross. 2017; 99:927.",
+        "title": "Int’l Rev Red Cross",
+        "authors": [
+          "Hedar M. Mental health during the Syrian crisis: How Syrians are dealing with the psychological effects"
+        ],
+        "year": 2017,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r67",
+        "label": "67",
+        "raw": "Abou-Saleh M, Mobayed M. Mental health in Syria. International Psychiatry. 2013; 10(3):58–60. PMID: 31507735",
+        "title": "Mental health in Syria",
+        "authors": [
+          "Abou-Saleh M",
+          "Mobayed M"
+        ],
+        "year": 2013,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      }
+    ],
+    "citation_keys_total": 67,
+    "citation_keys_mapped": 67,
+    "notes": []
+  },
+  "sentences": [
+    {
+      "id": "s1",
+      "text": "This virus quickly crossed the borders, spreading all over the world, resulting in a never-ending pandemic burdened with the results of morbidity and mortality [1].",
+      "section": "Introduction",
+      "start": 1506,
+      "end": 1670,
+      "reference_keys": [
+        "r1"
+      ],
+      "marker_spans": [
+        [
+          1666,
+          1669
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r1"
+        ]
+      ],
+      "context_before": "The first COVID-19 incident was noted in Wuhan, China in December 2019.",
+      "context_after": "There are live updates of the latest cases, and deaths every second of the day, as well as official briefings, and prognostications about future cataclysmic events [2]."
+    },
+    {
+      "id": "s2",
+      "text": "There are live updates of the latest cases, and deaths every second of the day, as well as official briefings, and prognostications about future cataclysmic events [2].",
+      "section": "Introduction",
+      "start": 1671,
+      "end": 1839,
+      "reference_keys": [
+        "r2"
+      ],
+      "marker_spans": [
+        [
+          1835,
+          1838
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r2"
+        ]
+      ],
+      "context_before": "This virus quickly crossed the borders, spreading all over the world, resulting in a never-ending pandemic burdened with the results of morbidity and mortality [1].",
+      "context_after": "Enumeration of all deaths, compared to the 0.28% crude mortality rate, which will continue to rise as more infections and deaths occur, produces an image of excess death, capturing both the direct burden of the pandemic and its indirect mortality burden [3,4]."
+    },
+    {
+      "id": "s3",
+      "text": "Enumeration of all deaths, compared to the 0.28% crude mortality rate, which will continue to rise as more infections and deaths occur, produces an image of excess death, capturing both the direct burden of the pandemic and its indirect mortality burden [3,4].",
+      "section": "Introduction",
+      "start": 1840,
+      "end": 2100,
+      "reference_keys": [
+        "r3",
+        "r4"
+      ],
+      "marker_spans": [
+        [
+          2094,
+          2099
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r3",
+          "r4"
+        ]
+      ],
+      "context_before": "There are live updates of the latest cases, and deaths every second of the day, as well as official briefings, and prognostications about future cataclysmic events [2].",
+      "context_after": "22 March 2020 marked the first officially reported COVID-19 case in Syria [5]."
+    },
+    {
+      "id": "s4",
+      "text": "22 March 2020 marked the first officially reported COVID-19 case in Syria [5].",
+      "section": "Introduction",
+      "start": 2101,
+      "end": 2179,
+      "reference_keys": [
+        "r5"
+      ],
+      "marker_spans": [
+        [
+          2175,
+          2178
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r5"
+        ]
+      ],
+      "context_before": "Enumeration of all deaths, compared to the 0.28% crude mortality rate, which will continue to rise as more infections and deaths occur, produces an image of excess death, capturing both the direct burden of the pandemic and its indirect mortality burden [3,4].",
+      "context_after": "The numbers have escalated since then with Syria now entering its third wave [6–8]."
+    },
+    {
+      "id": "s5",
+      "text": "The numbers have escalated since then with Syria now entering its third wave [6–8].",
+      "section": "Introduction",
+      "start": 2180,
+      "end": 2263,
+      "reference_keys": [
+        "r6",
+        "r7",
+        "r8"
+      ],
+      "marker_spans": [
+        [
+          2257,
+          2262
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r6",
+          "r7",
+          "r8"
+        ]
+      ],
+      "context_before": "22 March 2020 marked the first officially reported COVID-19 case in Syria [5].",
+      "context_after": ""
+    },
+    {
+      "id": "s6",
+      "text": "As the pandemic has embedded misconceptions around COVID-19, strict precautionary measures have been adopted by governments, such as physical distancing, self-isolation, and quarantine [9].",
+      "section": "Introduction",
+      "start": 2265,
+      "end": 2454,
+      "reference_keys": [
+        "r9"
+      ],
+      "marker_spans": [
+        [
+          2450,
+          2453
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r9"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "These measures were implemented to curtail the tide of the pandemic when no treatments or vaccines were available during the time of survey administration."
+    },
+    {
+      "id": "s7",
+      "text": "Thus, researchers are expressing concerns related to COVID-19 adverse effects on society’s mental health and psychological well-being [10–22].",
+      "section": "Introduction",
+      "start": 3664,
+      "end": 3806,
+      "reference_keys": [
+        "r10",
+        "r11",
+        "r12",
+        "r13",
+        "r14",
+        "r15",
+        "r16",
+        "r17",
+        "r18",
+        "r19",
+        "r20",
+        "r21",
+        "r22"
+      ],
+      "marker_spans": [
+        [
+          3798,
+          3805
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r10",
+          "r11",
+          "r12",
+          "r13",
+          "r14",
+          "r15",
+          "r16",
+          "r17",
+          "r18",
+          "r19",
+          "r20",
+          "r21",
+          "r22"
+        ]
+      ],
+      "context_before": "As a major health issue, the COVID-19 pandemic has triggered a multilevel global crisis, affecting an individual’s physical and psychological mental health.",
+      "context_after": ""
+    },
+    {
+      "id": "s8",
+      "text": "One of these psychological impacts is fear, a vital emotion necessary for an individual’s survival by arousing adaptive defense responses against potentially threatening events or danger [23].",
+      "section": "Introduction",
+      "start": 3808,
+      "end": 4000,
+      "reference_keys": [
+        "r23"
+      ],
+      "marker_spans": [
+        [
+          3995,
+          3999
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r23"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "The current threatening event is COVID-19, a prolonged worry or negative emotional reaction towards contracting COVID-19, morbidity, and mortality [24]."
+    },
+    {
+      "id": "s9",
+      "text": "The current threatening event is COVID-19, a prolonged worry or negative emotional reaction towards contracting COVID-19, morbidity, and mortality [24].",
+      "section": "Introduction",
+      "start": 4001,
+      "end": 4153,
+      "reference_keys": [
+        "r24"
+      ],
+      "marker_spans": [
+        [
+          4148,
+          4152
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r24"
+        ]
+      ],
+      "context_before": "One of these psychological impacts is fear, a vital emotion necessary for an individual’s survival by arousing adaptive defense responses against potentially threatening events or danger [23].",
+      "context_after": "Added to the previous are the effects of the pandemic on our daily habits including unemployment, working from home, home-schooling, and lack of socializing."
+    },
+    {
+      "id": "s10",
+      "text": "These concerns have pushed researchers to assess the fear of COVID-19 in different regions of the world and identify the possible triggers [25].",
+      "section": "Introduction",
+      "start": 4433,
+      "end": 4577,
+      "reference_keys": [
+        "r25"
+      ],
+      "marker_spans": [
+        [
+          4572,
+          4576
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r25"
+        ]
+      ],
+      "context_before": "Fear is becoming a critical concern, as the pandemic continues to spread high infection, morbidity, and mortality cases.",
+      "context_after": ""
+    },
+    {
+      "id": "s11",
+      "text": "Fear may contribute to the development of mental health disorders or further deteriorate pre-existing psychiatric symptoms such as generalized anxiety disorders, depression, and posttraumatic stress disorder, and even suicide [12,26,27].",
+      "section": "Introduction",
+      "start": 4579,
+      "end": 4816,
+      "reference_keys": [
+        "r12",
+        "r26",
+        "r27"
+      ],
+      "marker_spans": [
+        [
+          4805,
+          4815
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r12",
+          "r26",
+          "r27"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "A recent study has developed the Fear of COVID-19 Scale (FCV-19S) as a means of boosting the medical practice that is dedicated to preventing the spread of COVID-19 cases and treating them [56]."
+    },
+    {
+      "id": "s12",
+      "text": "A recent study has developed the Fear of COVID-19 Scale (FCV-19S) as a means of boosting the medical practice that is dedicated to preventing the spread of COVID-19 cases and treating them [56].",
+      "section": "Introduction",
+      "start": 4817,
+      "end": 5011,
+      "reference_keys": [
+        "r56"
+      ],
+      "marker_spans": [
+        [
+          5006,
+          5010
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r56"
+        ]
+      ],
+      "context_before": "Fear may contribute to the development of mental health disorders or further deteriorate pre-existing psychiatric symptoms such as generalized anxiety disorders, depression, and posttraumatic stress disorder, and even suicide [12,26,27].",
+      "context_after": "The psychometric evidence of the FCV-19S demonstrated satisfactory results [29–35]."
+    },
+    {
+      "id": "s13",
+      "text": "The psychometric evidence of the FCV-19S demonstrated satisfactory results [29–35].",
+      "section": "Introduction",
+      "start": 5012,
+      "end": 5095,
+      "reference_keys": [
+        "r29",
+        "r30",
+        "r31",
+        "r32",
+        "r33",
+        "r34",
+        "r35"
+      ],
+      "marker_spans": [
+        [
+          5087,
+          5094
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r29",
+          "r30",
+          "r31",
+          "r32",
+          "r33",
+          "r34",
+          "r35"
+        ]
+      ],
+      "context_before": "A recent study has developed the Fear of COVID-19 Scale (FCV-19S) as a means of boosting the medical practice that is dedicated to preventing the spread of COVID-19 cases and treating them [56].",
+      "context_after": "A few studies thereafter have validated the questionnaire in various languages and examined associations with socio-demographic characteristics [33,36–42]."
+    },
+    {
+      "id": "s14",
+      "text": "A few studies thereafter have validated the questionnaire in various languages and examined associations with socio-demographic characteristics [33,36–42].",
+      "section": "Introduction",
+      "start": 5096,
+      "end": 5251,
+      "reference_keys": [
+        "r33",
+        "r36",
+        "r37",
+        "r38",
+        "r39",
+        "r40",
+        "r41",
+        "r42"
+      ],
+      "marker_spans": [
+        [
+          5240,
+          5250
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r33",
+          "r36",
+          "r37",
+          "r38",
+          "r39",
+          "r40",
+          "r41",
+          "r42"
+        ]
+      ],
+      "context_before": "The psychometric evidence of the FCV-19S demonstrated satisfactory results [29–35].",
+      "context_after": "However, only one study as of yet has proposed a cutoff score for the FCV-19S [43]."
+    },
+    {
+      "id": "s15",
+      "text": "However, only one study as of yet has proposed a cutoff score for the FCV-19S [43].",
+      "section": "Introduction",
+      "start": 5252,
+      "end": 5335,
+      "reference_keys": [
+        "r43"
+      ],
+      "marker_spans": [
+        [
+          5330,
+          5334
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r43"
+        ]
+      ],
+      "context_before": "A few studies thereafter have validated the questionnaire in various languages and examined associations with socio-demographic characteristics [33,36–42].",
+      "context_after": "Given that Syria is one of the most vulnerable countries in the world to be tormented by mental health disorders due to both COVID-19 and war."
+    },
+    {
+      "id": "s16",
+      "text": "The English FCV-19S was translated into Arabic through a forward-backward translation technique [28].",
+      "section": "Development of the arabic FCV-19S",
+      "start": 6630,
+      "end": 6731,
+      "reference_keys": [
+        "r28"
+      ],
+      "marker_spans": [
+        [
+          6726,
+          6730
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r28"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "The FCV-19S was translated into Arabic by two medical translators who are fluent in both Arabic and English."
+    },
+    {
+      "id": "s17",
+      "text": "The higher the score the greater the levels of fear of COVID-19 are universally, in all cases [41].",
+      "section": "Measures",
+      "start": 7902,
+      "end": 8001,
+      "reference_keys": [
+        "r41"
+      ],
+      "marker_spans": [
+        [
+          7996,
+          8000
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r41"
+        ]
+      ],
+      "context_before": "Each item is rated on a 5-point Likert scale with 1 representing strongly disagree and 5 representing strongly agree, providing a 7 to 35 total score range.",
+      "context_after": ""
+    },
+    {
+      "id": "s18",
+      "text": "The Arabic Patient Health Questionnaire 9-item (PHQ-9) was used in the study to assess depression symptom severity [44].",
+      "section": "Measures",
+      "start": 8003,
+      "end": 8123,
+      "reference_keys": [
+        "r44"
+      ],
+      "marker_spans": [
+        [
+          8118,
+          8122
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r44"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "Items on the PHQ-9 were scored over a 4-point Likert scale: 0 = not at all, 1 = several days, 2 = more than half the days, and 3 = nearly every day), providing a 0–27 severity score range."
+    },
+    {
+      "id": "s19",
+      "text": "The Arabic Generalized Anxiety Disorder 7-item (GAD-7) was used in this study to assess anxiety symptom severity [16].",
+      "section": "Measures",
+      "start": 8446,
+      "end": 8564,
+      "reference_keys": [
+        "r16"
+      ],
+      "marker_spans": [
+        [
+          8559,
+          8563
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r16"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "Items on the GAD-7 were scored over a 4-point Likert scale: 0 = not at all, 1 = several days, 2 = more than half the days, 3 = nearly every day, providing a 0–21 severity score range."
+    },
+    {
+      "id": "s20",
+      "text": "The scores were categorized into 4 groups: none (0–4), mild (5–9), moderate (10–14), and severe (15–21) [46].",
+      "section": "Measures",
+      "start": 9002,
+      "end": 9111,
+      "reference_keys": [
+        "r46"
+      ],
+      "marker_spans": [
+        [
+          9106,
+          9110
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r46"
+        ]
+      ],
+      "context_before": "The Gad-7 is a self-rated scale used to evaluate the severity of the 4 most common anxiety disorders (Generalized Anxiety Disorder, Panic Disorder, Social Phobia, and Post Traumatic Stress Disorder), a cutoff score of 0–4 indicates no anxiety symptoms.",
+      "context_after": ""
+    },
+    {
+      "id": "s21",
+      "text": "The Cronbach’s α test and inter-item correlation were used to assess the internal consistency, with satisfactory reliability set at \u0015 0.70 and between 0.20 and 0.40 respectively [47,48].",
+      "section": "Statistical analysis",
+      "start": 9243,
+      "end": 9429,
+      "reference_keys": [
+        "r47",
+        "r48"
+      ],
+      "marker_spans": [
+        [
+          9421,
+          9428
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r47",
+          "r48"
+        ]
+      ],
+      "context_before": "Descriptive analysis, including frequencies, percentages, means, and standard deviations (SD) were applied.",
+      "context_after": "The corrected item-total correlation was used to assess the coherence of the FCV-19S (values > 0.4 are acceptable)."
+    },
+    {
+      "id": "s22",
+      "text": "Heterotrait-Monotrait (HTMT) was used to assess the discriminant validity of the FCV-19S. A CR value between 0.7 and 0.9, AVE value > 0.5, and discriminant validity < 0.85 were set for this study [49–51].",
+      "section": "Statistical analysis",
+      "start": 9702,
+      "end": 9906,
+      "reference_keys": [
+        "r49",
+        "r50",
+        "r51"
+      ],
+      "marker_spans": [
+        [
+          9898,
+          9905
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r49",
+          "r50",
+          "r51"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "Cutoff scores were deduced from receiver operating characteristic (ROC) analysis for the FCV-19S scale in association with GAD-7 and PHQ-9 (external criteria)."
+    },
+    {
+      "id": "s23",
+      "text": "A dichotomous variable was created out of the total for both GAD-7 and PHQ-9 using the cutoff point of 10 to assess anxiety and depressive symptoms respectively [44,46].",
+      "section": "Statistical analysis",
+      "start": 10193,
+      "end": 10362,
+      "reference_keys": [
+        "r44",
+        "r46"
+      ],
+      "marker_spans": [
+        [
+          10354,
+          10361
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r44",
+          "r46"
+        ]
+      ],
+      "context_before": "The Youden-Index was used to deduce the optimal cutoff score for the Arabic scale and to lower the risk of miscategorization.",
+      "context_after": "After determining the cutoff points, participants with a total score above the deduced cutoff value were categorized as cases with extreme fear, while those below it were categorized under normal fear of COVID-19."
+    },
+    {
+      "id": "s24",
+      "text": "Deducing a cutoff is a pivotal and familiar practice among the field of psychiatry to differentiate those into either morbid cases or nonmorbid cases [52–56].",
+      "section": "Discussion",
+      "start": 13828,
+      "end": 13986,
+      "reference_keys": [
+        "r52",
+        "r53",
+        "r54",
+        "r55",
+        "r56"
+      ],
+      "marker_spans": [
+        [
+          13978,
+          13985
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r52",
+          "r53",
+          "r54",
+          "r55",
+          "r56"
+        ]
+      ],
+      "context_before": "The current study was performed to validate the Arabic version of the FCV-19S and propose a cutoff to distinguish members of the population who reacted towards COVID-19 with extreme fear from those with a normal fear reaction.",
+      "context_after": "Identifying cases and non-cases with extreme fear will allow us to stratify those in need for further assessment by a specialist in psychiatry."
+    },
+    {
+      "id": "s25",
+      "text": "Although many studies have used the FCV-19S to assess fear among various populations, without a cutoff score we cannot further analyze the results and compare and interpret findings with different populations [57].",
+      "section": "Discussion",
+      "start": 14196,
+      "end": 14410,
+      "reference_keys": [
+        "r57"
+      ],
+      "marker_spans": [
+        [
+          14405,
+          14409
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r57"
+        ]
+      ],
+      "context_before": "Once assessed, appropriate management can be given if indicated.",
+      "context_after": ""
+    },
+    {
+      "id": "s26",
+      "text": "Our finding was in line with other studies with a range of 0.82 to 0.88 [28,42,58,59].",
+      "section": "Discussion",
+      "start": 14483,
+      "end": 14569,
+      "reference_keys": [
+        "r28",
+        "r42",
+        "r58",
+        "r59"
+      ],
+      "marker_spans": [
+        [
+          14555,
+          14568
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r28",
+          "r42",
+          "r58",
+          "r59"
+        ]
+      ],
+      "context_before": "Our study revealed a good internal consistency (Cronbach’s α = 0.896).",
+      "context_after": "The inter-item correlations were between [0.420–0.868] and the corrected item-total correlations were between [0.614– 0.768], whereas it was [0.35–0.66] and [0.57–0.74] respectively in a Saudi-Arabian study [60]."
+    },
+    {
+      "id": "s27",
+      "text": "The inter-item correlations were between [0.420–0.868] and the corrected item-total correlations were between [0.614– 0.768], whereas it was [0.35–0.66] and [0.57–0.74] respectively in a Saudi-Arabian study [60].",
+      "section": "Discussion",
+      "start": 14570,
+      "end": 14782,
+      "reference_keys": [
+        "r60"
+      ],
+      "marker_spans": [
+        [
+          14777,
+          14781
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r60"
+        ]
+      ],
+      "context_before": "Our finding was in line with other studies with a range of 0.82 to 0.88 [28,42,58,59].",
+      "context_after": "ROC curves were constructed to determine the FCV-19S cutoff point."
+    },
+    {
+      "id": "s28",
+      "text": "Only one study has defined a cutoff for the FCV-19S, with a threshold of 26.4 and higher [43].",
+      "section": "Discussion",
+      "start": 15069,
+      "end": 15163,
+      "reference_keys": [
+        "r43"
+      ],
+      "marker_spans": [
+        [
+          15158,
+          15162
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r43"
+        ]
+      ],
+      "context_before": "A cutoff point of 17.5 was deduced, participants scoring \u0015 17.5 were categorized as having extreme fear of COVID-19, whereas participants scoring below this threshold were categorized as having normal fear of COVID-19.",
+      "context_after": ""
+    },
+    {
+      "id": "s29",
+      "text": "This study revealed a weak discriminatory ability from the AUC outcomes, whereas its accuracy was moderate in a Greek study [61].",
+      "section": "Discussion",
+      "start": 15165,
+      "end": 15294,
+      "reference_keys": [
+        "r61"
+      ],
+      "marker_spans": [
+        [
+          15289,
+          15293
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r61"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "The low precision of AUC signifies that not all individuals with depression or anxiety symptoms have an unhealthy fear of COVID-19 and vice versa."
+    },
+    {
+      "id": "s30",
+      "text": "This may be attributed to over a decade of conflict and the implications it induced on the mental health of the Syrian population [62].",
+      "section": "Discussion",
+      "start": 15442,
+      "end": 15577,
+      "reference_keys": [
+        "r62"
+      ],
+      "marker_spans": [
+        [
+          15572,
+          15576
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r62"
+        ]
+      ],
+      "context_before": "The low precision of AUC signifies that not all individuals with depression or anxiety symptoms have an unhealthy fear of COVID-19 and vice versa.",
+      "context_after": "Thus, Syrians have countless factors contributing to their depressive and anxiety symptoms unlike the majority of the globe."
+    },
+    {
+      "id": "s31",
+      "text": "Fear of COVID-19 may be a factor that impacts an individual’s protective behaviors, including vaccination uptake [67].",
+      "section": "Discussion",
+      "start": 15874,
+      "end": 15992,
+      "reference_keys": [
+        "r67"
+      ],
+      "marker_spans": [
+        [
+          15987,
+          15991
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r67"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "Therefore, one should have a certain level of fear but not extreme fear as individuals lack the perception to respond to threats faced [64]."
+    },
+    {
+      "id": "s32",
+      "text": "Therefore, one should have a certain level of fear but not extreme fear as individuals lack the perception to respond to threats faced [64].",
+      "section": "Discussion",
+      "start": 15993,
+      "end": 16133,
+      "reference_keys": [
+        "r64"
+      ],
+      "marker_spans": [
+        [
+          16128,
+          16132
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r64"
+        ]
+      ],
+      "context_before": "Fear of COVID-19 may be a factor that impacts an individual’s protective behaviors, including vaccination uptake [67].",
+      "context_after": "Our study revealed a prevalence of 52.9% of Syrians was categorized as having extreme fear towards COVID-19."
+    },
+    {
+      "id": "s33",
+      "text": "With many healthcare professionals fleeing the country, a low number of ventilators, and many hospitals bombarded to rubble, Syrians must feel constant fear for their lives [65].",
+      "section": "Discussion",
+      "start": 16640,
+      "end": 16818,
+      "reference_keys": [
+        "r65"
+      ],
+      "marker_spans": [
+        [
+          16813,
+          16817
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r65"
+        ]
+      ],
+      "context_before": "The devastating conflict has resulted in a Syrian healthcare system that is drastically unequipped to restrain such a pandemic.",
+      "context_after": ""
+    },
+    {
+      "id": "s34",
+      "text": "Grievously, 90% of cases are left unattended, untreated, and unmanaged, as only 80 psychiatrists are available in Syrian territories [66,67].",
+      "section": "Discussion",
+      "start": 17319,
+      "end": 17460,
+      "reference_keys": [
+        "r66",
+        "r67"
+      ],
+      "marker_spans": [
+        [
+          17452,
+          17459
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r66",
+          "r67"
+        ]
+      ],
+      "context_before": "Our study showed that 54.6% and 37.2% of Syrians are suffering from moderate to severe depressive and anxiety symptoms respectively.",
+      "context_after": "We must call on national and international organizations to aid us Syrians, reconstruct mental health services, and assist in providing skilled healthcare workers for the suffering people of Syria."
+    }
+  ]
+}

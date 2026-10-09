@@ -58,6 +58,7 @@ class Settings:
     db_path: Path
     contact_email: str
     prices: dict[str, ModelPrice]
+    openalex_api_key: str = ""  # free key: 10x the daily OpenAlex budget (sent only to api.openalex.org)
     arxiv_min_interval: float = 3.0  # seconds between requests to arxiv.org (arXiv's policy)
     escalate_max_chars: int = 300_000  # cited-paper text sent to the long-context model (~75k tokens)
     # Instruction prefix for retrieval queries (instruction-aware embedders such as Qwen3-Embedding).
@@ -110,6 +111,7 @@ def get_settings() -> Settings:
         cache_dir=cache_dir,
         db_path=db_path,
         contact_email=_env("CONTACT_EMAIL"),
+        openalex_api_key=_env("OPENALEX_API_KEY"),
         arxiv_min_interval=_env_float("ARXIV_MIN_INTERVAL", 3.0),
         escalate_max_chars=_env_int("ESCALATE_MAX_CHARS", 300_000),
         embed_query_instruction=(

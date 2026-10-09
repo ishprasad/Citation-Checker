@@ -1,0 +1,182 @@
+{
+  "slug": "medicine-journal.pone.0267015",
+  "field": "Medicine",
+  "title": "Perinatal care in Western Uganda: Prevalence and factors associated with appropriate care among women attending three district hospitals",
+  "job_id": "f246e98fe9b9",
+  "scored_at": "2026-10-08T17:31:04+00:00",
+  "planted": 3,
+  "checked": 3,
+  "caught": 3,
+  "recall": 1.0,
+  "label_accuracy": 0.3333333333333333,
+  "expected_mode_rate": 0.3333333333333333,
+  "untouched_verdicts": 57,
+  "other_flags": 5,
+  "other_flags_preexisting": 5,
+  "precision": 0.375,
+  "precision_excluding_preexisting": 1.0,
+  "by_mutation": {
+    "citation_swap": {
+      "planted": 3,
+      "caught": 3
+    }
+  },
+  "flagged_citations": 5,
+  "review": {
+    "genuine": 0,
+    "false_alarm": 2,
+    "debatable": 3,
+    "unreviewed": 0
+  },
+  "review_details": {
+    "genuine": [],
+    "false_alarm": [
+      {
+        "sentence_id": "s1",
+        "reference_key": "r3",
+        "note": "The source states the stillbirth target as a global average of 8 per 1000 total births; 'less than 8' is a wording nuance of the same SDG/ENAP target, cited as part of a group [1-3]."
+      },
+      {
+        "sentence_id": "s2",
+        "reference_key": "r4",
+        "note": "Caused by the checker: the PDF splits the reference's DOI across a line break ('journal.pmed. 1002151'), the truncated DOI resolved to an unrelated tuberculosis review, and that wrong paper was flagged as off-topic. The real reference (Leslie et al., PLoS Med 2016) was never checked."
+      }
+    ],
+    "debatable": [
+      {
+        "sentence_id": "s18",
+        "reference_key": "r24",
+        "note": "64.1% and 24.7% do not appear in the cited Nepal study's text, but the checker's text of cited papers omits table contents, and the proportions may be in a table or derived from one."
+      },
+      {
+        "sentence_id": "s24",
+        "reference_key": "r31",
+        "note": "The cited Ethiopian study says care quality 'might differ' with equipment, workload and provider commitment; the sentence's 'common occurrences in low income countries' is the citing authors' generalisation, cited jointly with [30]."
+      },
+      {
+        "sentence_id": "s25",
+        "reference_key": "r17",
+        "note": "Supply-chain strengthening is supported; the cited paper (northern Uganda scale-up) describes renovating specific operating theatres, not upgrading public and private facilities for clean and safe delivery in the region."
+      }
+    ],
+    "unreviewed": []
+  },
+  "precision_reviewed": 0.6,
+  "summary_line": "Caught 3 of 3 planted errors · 2 false alarms",
+  "details": [
+    {
+      "id": "p1",
+      "sentence_id": "s3",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [3] with [38] (\"Adverse neonatal outcomes of adolescent pregnancy in Northwest Ethiopia\") (similarity 0.44 vs 0.61 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": false,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [
+        "scope_inflation",
+        "secondary_citation"
+      ],
+      "expected_mode_found": false,
+      "escalated": false
+    },
+    {
+      "id": "p2",
+      "sentence_id": "s22",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [28] with [12] (\"Factors Associated with the Timing and Number of Antenatal Care Visits among Unmarried Compared to Married Youth in Uganda between 2006 and 2016\") (similarity 0.46 vs 0.63 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": false,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [
+        "correlation_as_causation",
+        "scope_inflation"
+      ],
+      "expected_mode_found": false,
+      "escalated": false
+    },
+    {
+      "id": "p3",
+      "sentence_id": "s28",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [35] with [27] (\"Higher Educational Attainment Associated with Optimal Antenatal Care Visits among Childbearing Women in Zambia\") (similarity 0.41 vs 0.64 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    }
+  ],
+  "verdicts": 61,
+  "escalation": {
+    "verdicts": 61,
+    "escalated": 3,
+    "label_changed": 1,
+    "transitions": {
+      "unverifiable->not_found": 1
+    }
+  },
+  "coverage": {
+    "total": 40,
+    "full": 22,
+    "abstract_only": 3,
+    "unavailable": 15,
+    "retracted": 0,
+    "line": "Full text found for 22 of 40 references · abstract only for 3 · unavailable for 15."
+  },
+  "usage": {
+    "per_model": [
+      {
+        "model": "Qwen/Qwen3-Embedding-8B",
+        "role": "embed",
+        "calls": 1,
+        "cached_calls": 0,
+        "prompt_tokens": 76,
+        "completion_tokens": 0,
+        "estimated_cost_usd": 1e-06
+      },
+      {
+        "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+        "role": "escalate",
+        "calls": 3,
+        "cached_calls": 2,
+        "prompt_tokens": 30064,
+        "completion_tokens": 8894,
+        "estimated_cost_usd": 0.056746
+      },
+      {
+        "model": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+        "role": "extract",
+        "calls": 32,
+        "cached_calls": 30,
+        "prompt_tokens": 60635,
+        "completion_tokens": 4131,
+        "estimated_cost_usd": 0.00463
+      },
+      {
+        "model": "nvidia/nemotron-3-super-120b-a12b",
+        "role": "judge",
+        "calls": 34,
+        "cached_calls": 29,
+        "prompt_tokens": 158651,
+        "completion_tokens": 48835,
+        "estimated_cost_usd": 0.091547
+      }
+    ],
+    "total_prompt_tokens": 249426,
+    "total_completion_tokens": 61860,
+    "total_estimated_cost_usd": 0.152924
+  },
+  "baseline_cost_usd": 0.138
+}

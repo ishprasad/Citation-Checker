@@ -1,0 +1,216 @@
+{
+  "arxiv_id": "",
+  "title": "Association of Sleep Duration and Screen Time With Anxiety of Pregnant Women During the COVID-19 Pandemic",
+  "field": "Psychology",
+  "source": "10.3389/fpsyg.2021.646368",
+  "planted": [
+    {
+      "id": "p1",
+      "sentence_id": "s2",
+      "reference_keys": [
+        "r1"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"in every population and setting\" before the citation",
+      "original": "More importantly, the unpredictability and seriousness of this disease, together with social isolation, synergistically contributes to mental disturbance among the general population (Azim et al., 2020; Bao et al., 2020).",
+      "mutated": "More importantly, the unpredictability and seriousness of this disease, together with social isolation, synergistically contributes to mental disturbance among the general population in every population and setting (Azim et al., 2020; Bao et al., 2020).",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p2",
+      "sentence_id": "s5",
+      "reference_keys": [
+        "r10"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"without exception\" before the citation",
+      "original": "One reason for this is that pregnant women are seriously worried about being infected by COVID-19, which might impact the health of their fetus (Favre et al., 2020; Gross et al., 2020).",
+      "mutated": "One reason for this is that pregnant women are seriously worried about being infected by COVID-19, which might impact the health of their fetus without exception (Favre et al., 2020; Gross et al., 2020).",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p3",
+      "sentence_id": "s9",
+      "reference_keys": [
+        "r36"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Berthelot et al., 2020) with (Zhang et al., 2020) (\"Changes in contact patterns shape the dynamics of the COVID-19 outbreak in China\") (similarity 0.37 vs 0.64 for the original)",
+      "original": "Similarly, among Canadian pregnant women, COVID- 19 markedly increased the prevalence of anxiety, especially for those with psychiatric history and low income (Berthelot et al., 2020).",
+      "mutated": "Similarly, among Canadian pregnant women, COVID- 19 markedly increased the prevalence of anxiety, especially for those with psychiatric history and low income (Zhang et al., 2020).",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p4",
+      "sentence_id": "s11",
+      "reference_keys": [
+        "r17"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"universally, in all cases\" before the citation",
+      "original": "Recently, data showed that sleep condition and sleep quality was associated with psychological stress (Lin et al., 2021).",
+      "mutated": "Recently, data showed that sleep condition and sleep quality was associated with psychological stress universally, in all cases (Lin et al., 2021).",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p5",
+      "sentence_id": "s25",
+      "reference_keys": [
+        "r27"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"without exception\" before the citation",
+      "original": "Sleep quality closely impacts the mental health of pregnant women (van der Zwan et al., 2017; Difrancesco et al., 2019), and sleep duration and anxiety interactively contribute to pregnancy complications (Tomfohr-Madsen et al., 2019).",
+      "mutated": "Sleep quality closely impacts the mental health of pregnant women (van der Zwan et al., 2017; Difrancesco et al., 2019), and sleep duration and anxiety interactively contribute to pregnancy complications without exception (Tomfohr-Madsen et al., 2019).",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p6",
+      "sentence_id": "s27",
+      "reference_keys": [
+        "r8"
+      ],
+      "mutation": "number_change",
+      "description": "Changed \"34%\" to \"54%\"",
+      "original": "A metaanalysis indicated that 34% population suffered from sleep disturbances (Deng et al., 2020).",
+      "mutated": "A metaanalysis indicated that 54% population suffered from sleep disturbances (Deng et al., 2020).",
+      "expected_labels": [
+        "overstated",
+        "contradicted",
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "number_drift"
+      ]
+    },
+    {
+      "id": "p7",
+      "sentence_id": "s29",
+      "reference_keys": [
+        "r17"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"in every population and setting\" before the citation",
+      "original": "Though the sleep condition and quality were associated with the mental health of pregnant women in Shenzhen (Lin et al., 2021), the participants in this study were restricted to Shenzhen, only from one city.",
+      "mutated": "Though the sleep condition and quality were associated with the mental health of pregnant women in Shenzhen in every population and setting (Lin et al., 2021), the participants in this study were restricted to Shenzhen, only from one city.",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    }
+  ],
+  "baseline_flags": [
+    [
+      "s10",
+      "r32",
+      "overstated"
+    ],
+    [
+      "s12",
+      "r6",
+      "unverifiable"
+    ],
+    [
+      "s14",
+      "r32",
+      "not_found"
+    ],
+    [
+      "s18",
+      "r32",
+      "not_found"
+    ],
+    [
+      "s19",
+      "r13",
+      "not_found"
+    ],
+    [
+      "s2",
+      "r2",
+      "overstated"
+    ],
+    [
+      "s20",
+      "r3",
+      "not_found"
+    ],
+    [
+      "s22",
+      "r19",
+      "contradicted"
+    ],
+    [
+      "s24",
+      "r23",
+      "overstated"
+    ],
+    [
+      "s25",
+      "r29",
+      "overstated"
+    ],
+    [
+      "s25",
+      "r9",
+      "overstated"
+    ],
+    [
+      "s28",
+      "r16",
+      "overstated"
+    ],
+    [
+      "s31",
+      "r30",
+      "not_found"
+    ],
+    [
+      "s32",
+      "r31",
+      "overstated"
+    ],
+    [
+      "s4",
+      "r19",
+      "overstated"
+    ],
+    [
+      "s5",
+      "r11",
+      "not_found"
+    ],
+    [
+      "s8",
+      "r7",
+      "overstated"
+    ]
+  ]
+}

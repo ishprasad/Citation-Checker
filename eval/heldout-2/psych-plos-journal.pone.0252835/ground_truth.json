@@ -1,0 +1,230 @@
+{
+  "arxiv_id": "",
+  "title": "Association between well-being and compliance with COVID-19 preventive measures by healthcare professionals: A cross-sectional study",
+  "field": "Psychology",
+  "source": "10.1371/journal.pone.0252835",
+  "planted": [
+    {
+      "id": "p1",
+      "sentence_id": "s9",
+      "reference_keys": [
+        "r10"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"universally, in all cases\" before the citation",
+      "original": "However, due to its proven efficacy in general infectious disease prevention and control, it is still critical to adopt good hand hygiene practices as a general preventive measure [10].",
+      "mutated": "However, due to its proven efficacy in general infectious disease prevention and control, it is still critical to adopt good hand hygiene practices as a general preventive measure universally, in all cases [10].",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p2",
+      "sentence_id": "s13",
+      "reference_keys": [
+        "r31"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [15] with [31] (\"COVID-19: Results of a national survey of United Kingdom healthcare professionals’ perceptions of current management strategy – A cross-sectional questionnaire study\") (similarity 0.31 vs 0.58 for the original)",
+      "original": "Questions addressing knowledge, attitude and practices (KAP) were adapted from the Health Belief Model which has been identified as a quick method to directly and quantitatively identify individual belief profiles that can help in addressing various public health preventive measures and promote education [15].",
+      "mutated": "Questions addressing knowledge, attitude and practices (KAP) were adapted from the Health Belief Model which has been identified as a quick method to directly and quantitatively identify individual belief profiles that can help in addressing various public health preventive measures and promote education [31].",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p3",
+      "sentence_id": "s17",
+      "reference_keys": [
+        "r22"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"universally, in all cases\" before the citation",
+      "original": "Experienced frontline HCW with higher education and training in COVID-19 showed a better KAP on perceived risk levels, indicating that increased awareness and education needs to be imparted to the general community in order for them to understand the risk factors of COVID-19 [22].",
+      "mutated": "Experienced frontline HCW with higher education and training in COVID-19 showed a better KAP on perceived risk levels, indicating that increased awareness and education needs to be imparted to the general community in order for them to understand the risk factors of COVID-19 universally, in all cases [22].",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p4",
+      "sentence_id": "s20",
+      "reference_keys": [
+        "r22"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [25] with [22] (\"COVID-19: a National Survey on perceived level of knowledge, attitude and practice among frontline healthcare Workers in Nepal\") (similarity 0.37 vs 0.73 for the original)",
+      "original": "Similar findings were observed in a North American and European study which found that protecting others, self and community were the most common motivations in engaging in social distancing [25].",
+      "mutated": "Similar findings were observed in a North American and European study which found that protecting others, self and community were the most common motivations in engaging in social distancing [22].",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p5",
+      "sentence_id": "s22",
+      "reference_keys": [
+        "r27"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"without exception\" before the citation",
+      "original": "Frequent hand washing and avoidance of shaking hands were the dominant practices seen in the general population in Southwest Ethiopia [27].",
+      "mutated": "Frequent hand washing and avoidance of shaking hands were the dominant practices seen in the general population in Southwest Ethiopia without exception [27].",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p6",
+      "sentence_id": "s26",
+      "reference_keys": [
+        "r30"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [31] with [30] (\"The effect of messaging and gender on intentions to wear a face covering to slow down COVID-19 transmission\") (similarity 0.40 vs 0.73 for the original)",
+      "original": "Our study saw multiple sources being used to obtain COVID-19 information similar to a survey being carried out among HCP in the United Kingdom [31].",
+      "mutated": "Our study saw multiple sources being used to obtain COVID-19 information similar to a survey being carried out among HCP in the United Kingdom [30].",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p7",
+      "sentence_id": "s28",
+      "reference_keys": [
+        "r10"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [33] with [10] (\"Effectiveness of hand hygiene practices in preventing influenza virus infection in the community setting: A systematic review\") (similarity 0.37 vs 0.71 for the original)",
+      "original": "A study in Italy [33] revealed that the healthcare workers perceive having 2.5 times higher risk of COVID-19 infection than the general population, similar to 1.9 times seen in our study.",
+      "mutated": "A study in Italy [10] revealed that the healthcare workers perceive having 2.5 times higher risk of COVID-19 infection than the general population, similar to 1.9 times seen in our study.",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p8",
+      "sentence_id": "s29",
+      "reference_keys": [
+        "r37"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [34] with [37] (\"A large-scale assessment of hand hygiene quality and the effectiveness of the “WHO 6-steps”\") (similarity 0.35 vs 0.80 for the original)",
+      "original": "However, this is contradictory to higher levels of depression and stress seen amongst HCWs that are assisting COVID-19 patients [34].",
+      "mutated": "However, this is contradictory to higher levels of depression and stress seen amongst HCWs that are assisting COVID-19 patients [37].",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p9",
+      "sentence_id": "s34",
+      "reference_keys": [
+        "r13"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [37] with [13] (\"The Psychological and Social Impact of Covid-19: New Perspectives of Well-Being\") (similarity 0.27 vs 0.68 for the original)",
+      "original": "This was noted in other studies where male staff tend to have a higher incidence of unsatisfactory hand washing than females [37] and physicians were more likely than nurses and allied health professionals to need external reminders for hand hygiene [38].",
+      "mutated": "This was noted in other studies where male staff tend to have a higher incidence of unsatisfactory hand washing than females [13] and physicians were more likely than nurses and allied health professionals to need external reminders for hand hygiene [38].",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p10",
+      "sentence_id": "s35",
+      "reference_keys": [
+        "r39"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"in every population and setting\" before the citation",
+      "original": "This was similar to findings from Hong Kong COVID-19 health information survey that found lower stress levels and less anxiety and depressive symptoms to be positively associated with perceived compliance towards social distancing measures in the general population [39].",
+      "mutated": "This was similar to findings from Hong Kong COVID-19 health information survey that found lower stress levels and less anxiety and depressive symptoms to be positively associated with perceived compliance towards social distancing measures in the general population in every population and setting [39].",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    }
+  ],
+  "baseline_flags": [
+    [
+      "s12",
+      "r13",
+      "not_found"
+    ],
+    [
+      "s12",
+      "r14",
+      "not_found"
+    ],
+    [
+      "s16",
+      "r21",
+      "not_found"
+    ],
+    [
+      "s18",
+      "r23",
+      "not_found"
+    ],
+    [
+      "s21",
+      "r26",
+      "overstated"
+    ],
+    [
+      "s24",
+      "r29",
+      "overstated"
+    ],
+    [
+      "s25",
+      "r30",
+      "overstated"
+    ],
+    [
+      "s30",
+      "r13",
+      "not_found"
+    ],
+    [
+      "s31",
+      "r35",
+      "overstated"
+    ],
+    [
+      "s4",
+      "r4",
+      "not_found"
+    ]
+  ]
+}

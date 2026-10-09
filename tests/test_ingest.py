@@ -103,10 +103,37 @@ def test_converter_skips_math_environments_and_keeps_inline_math():
 
 @pytest.mark.parametrize(
     "math, expected",
-    [(r"10^{-9}", "10^-9"), (r"12\%", "12%"), (r"\mathrm{BLEU}_{4} \approx 28.4", "BLEU4 ≈ 28.4"), (r"3\times", "3×")],
+    [(r"10^{-9}", "10^-9"), (r"12\%", "12%"), (r"\mathrm{BLEU}_{4} \approx 28.4", "BLEU4 ≈ 28.4"), (r"3\times", "3×"),
+     # Relations must survive: "z ≲ 0.2" read as "z 0.2" changes the claim.
+     (r"z\lesssim0.2", "z≲0.2"), (r"r \gtrsim 2", "r ≳ 2"), (r"z \sim 3", "z ∼ 3"), (r"10\,\mathrm{kpc}", "10 kpc"),
+     (r"10^{9}\,M_\odot", "10^9 M⊙")],
 )
 def test_simplify_math(math, expected):
     assert simplify_math(math) == expected
+
+
+def test_converter_thin_spaces_and_bbl_fields():
+    assert LatexConverter().convert(r"a scale of 5\,kpc").text == "a scale of 5 kpc"
+    # elsarticle-style .bbl entries wrap each field: \bibinfo{title}{...}
+    assert LatexConverter().convert(r"\bibinfo{author}{Isensee, F.}, \bibinfo{title}{nnU-Net}").text == "Isensee, F., nnU-Net"
+
+
+TABLE_SRC = r"""Intro.
+\begin{table}[t]\caption{Results per task.}
+\begin{tabular}{l|cc}\toprule
+\textbf{Task} & \multicolumn{2}{c}{Dice} \\ \cmidrule(lr){2-3}
+Liver & 95.2 & 1.1 \\[2pt]
+\rowcolor{gray} Lung & 69.4 & $\sim 3$ \\ \bottomrule
+\end{tabular}\end{table}
+After. \begin{tabular}{ll} a & b \\ c & d \end{tabular} End."""
+
+
+def test_cited_papers_keep_table_contents():
+    text = LatexConverter(keep_captions=True).convert(TABLE_SRC).text
+    assert text.split("\n\n") == ["Intro.", "Table: Results per task.",
+                                  "Task | Dice\nLiver | 95.2 | 1.1\nLung | 69.4 | ∼ 3", "After.", "a | b\nc | d", "End."]
+    # Citing papers are unchanged: floats are skipped.
+    assert LatexConverter().convert(TABLE_SRC).text.split("\n\n") == ["Intro.", "After.", "End."]
 
 
 # ------------------------------------------------------------------- fixture paper (numeric)

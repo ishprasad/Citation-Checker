@@ -206,12 +206,31 @@ def group_size(sentence: CitingSentence, key: str) -> int:
     return max(sizes) if sizes else 1
 
 
+def _words(text: str) -> str:
+    return " " + re.sub(r"[^0-9a-z]+", " ", text.lower()) + " "
+
+
+def named_resource_absent(name: Optional[str], sentence_text: str, texts: list[str]) -> bool:
+    """The sentence names a resource ("KCWI", "PyNeb") that the cited full text never mentions:
+    the citation cannot be identifying it, so the identification leniency does not apply.
+    Hyphenated or multi-word names count as mentioned when their first word is ("ImageNet-1k")."""
+    words = _words(name or "").strip()
+    if len(words.replace(" ", "")) < 3 or f" {words} " not in _words(sentence_text):
+        return False  # no specific name, or not actually in the sentence
+    haystack = _words(" ".join(texts))
+    first = words.split()[0]
+    return f" {words} " not in haystack and not (len(first) >= 4 and f" {first} " in haystack)
+
+
 def apply_rules(
-    out: JudgeOutput, claim: Claim, ref: Reference, model: str, search_texts: list[str], group: int = 1
+    out: JudgeOutput, claim: Claim, ref: Reference, model: str, search_texts: list[str], group: int = 1,
+    sentence_text: str = "",
 ) -> Verdict:
     label: VerdictLabel = out.label
     confidence = out.confidence
     flags: list[str] = []
+    resource_absent = ref.fulltext_status == "full" and named_resource_absent(
+        out.signals.named_resource, sentence_text, search_texts)
 
     if claim.claim_type == "background" and label not in ("supported", "unverifiable"):
         label = "unverifiable"
@@ -226,10 +245,16 @@ def apply_rules(
         # A citation that identifies a resource ("BIG-bench (BIG-bench collaboration, 2021): Date
         # Understanding, which involves ...") fails by pointing at the wrong source, which the
         # off-topic check catches. Missing incidental details (a licence, a subset, a one-line task
-        # description) are the citing authors' own and not a citation error. Contradictions and
-        # claims with numbers (model or dataset sizes) stay strict.
-        label = "unverifiable"
-        flags.append("identification_lenient")
+        # description) are the citing authors' own and not a citation error. Contradictions,
+        # claims with numbers (model or dataset sizes) and citations of a source that does not provide
+        # the resource at all (the judge's reading, or a named resource absent from the text) stay strict.
+        if resource_absent:
+            flags.append("named_resource_absent")
+        elif not out.signals.cited_work_provides_resource:
+            flags.append("resource_not_in_cited_work")
+        else:
+            label = "unverifiable"
+            flags.append("identification_lenient")
     if ref.fulltext_status == "abstract_only" and label == "not_found":
         label = "unverifiable"
         flags.append("abstract_only")
@@ -347,7 +372,8 @@ async def judge_pair(claim: Claim, ref: Reference, evidence: Optional[Evidence],
             flags=["judge_error"], model_used=model,
         )
     full_text = read_reference_text(ref) if ref.fulltext_status == "full" else None
-    verdict = apply_rules(out, claim, ref, model, _search_texts(ref, full_text), group_size(sentence, ref.key))
+    verdict = apply_rules(out, claim, ref, model, _search_texts(ref, full_text), group_size(sentence, ref.key),
+                          sentence.text)
     return humanize_reference_ids(verdict, sentence, ctx)
 
 
@@ -367,7 +393,8 @@ async def escalate_pair(
     except (llm.LLMError, openai.OpenAIError) as exc:
         log.warning("escalation %s / %s failed: %s", claim.id, ref.key, exc)
         return first.model_copy(update={"flags": [*first.flags, "escalation_failed"]})
-    verdict = apply_rules(out, claim, ref, model, _search_texts(ref, read_reference_text(ref)), group_size(sentence, ref.key))
+    verdict = apply_rules(out, claim, ref, model, _search_texts(ref, read_reference_text(ref)), group_size(sentence, ref.key),
+                          sentence.text)
     verdict = humanize_reference_ids(verdict, sentence, ctx)
     verdict.escalated = True
     verdict.original_label = first.label

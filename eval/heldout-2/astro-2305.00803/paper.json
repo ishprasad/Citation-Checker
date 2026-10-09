@@ -1,0 +1,3135 @@
+{
+  "paper": {
+    "id": "heldout:2305.00803v2:f530edc5",
+    "title": "Small Planets Around Cool Dwarfs: Enhanced Formation Efficiency of Super-Earths around M dwarfs",
+    "authors": [
+      "Yayaati Chachan",
+      "Eve J. Lee"
+    ],
+    "abstract": "Current measurements of planet population as a function of stellar mass show three seemingly contradictory signatures: close-in super-Earths are more prevalent around M dwarfs than FGK dwarfs; inner super-Earths are correlated with outer giants; and outer giants are less common around M dwarfs than FGK dwarfs. Here, we build a simple framework that combines the theory of pebble accretion with the measurements of dust masses in protoplanetary disks to reconcile all three observations. First, we show that cooler stars are more efficient at converting pebbles into planetary cores at short orbital periods. Second, when disks are massive enough to nucleate a heavy core at 5 AU, more than enough dust can drift in to assemble inner planets, establishing the correlation between inner planets and outer giants. Finally, while stars of varying masses are similarly capable of converting pebbles into cores at long orbital periods, hotter stars are much more likely to harbor more massive dust disks so that the giant planet occurrence rate rises around hotter stars. Our results are valid over a wide range of parameter space for a disk accretion rate that follows $\\dot{M}_\\star \\sim 10^{-8}\\,M_\\odot\\,{\\rm yr}^{-1}(M_\\star/M_\\odot)^2$. We predict a decline in mini-Neptune population (but not necessarily terrestrial planets) around stars lighter than $\\sim 0.3-0.5 M_\\odot$. Cold giants ($\\gtrsim$5 AU), if they exist, should remain correlated with inner planets even around lower mass stars.",
+    "source": "arxiv",
+    "arxiv_id": "2305.00803v2",
+    "parsed_from": "latex",
+    "citation_style": "author_year",
+    "text": "Abstract\n\nCurrent measurements of planet population as a function of stellar mass show three seemingly contradictory signatures: close-in super-Earths are more prevalent around M dwarfs than FGK dwarfs; inner super-Earths are correlated with outer giants; and outer giants are less common around M dwarfs than FGK dwarfs. Here, we build a simple framework that combines the theory of pebble accretion with the measurements of dust masses in protoplanetary disks to reconcile all three observations. First, we show that cooler stars are more efficient at converting pebbles into planetary cores at short orbital periods. Second, when disks are massive enough to nucleate a heavy core at 5 AU, more than enough dust can drift in to assemble inner planets, establishing the correlation between inner planets and outer giants. Finally, while stars of varying masses are similarly capable of converting pebbles into cores at long orbital periods, hotter stars are much more likely to harbor more massive dust disks so that the giant planet occurrence rate rises around hotter stars. Our results are valid over a wide range of parameter space for a disk accretion rate that follows M⋆ ∼ 10^-8 M⊙ yr^-1(M⋆/M⊙)^2. We predict a decline in mini-Neptune population (but not necessarily terrestrial planets) around stars lighter than ∼0.3–0.5M⊙. Cold giants (≳5 AU), if they exist, should remain correlated with inner planets even around lower mass stars.\n\nIntroduction\n\nSuper-Earths and mini-Neptunes are more likely to appear around M dwarfs, with their occurrence rate inside ∼50–100 days enhanced by factors of ∼3–10 as compared to those around FGK dwarfs (e.g., Dressing & Charbonneau, 2015; Mulders et al., 2015; Gaidos et al., 2016; Hsu et al., 2020). One way to explain this difference is to consider the lower binarity of M dwarfs compared to their more massive counterparts (e.g., Raghavan et al., 2010) as wide binaries can spuriously amplify the stellar brightness and dilute transit signals. Correcting for the effects of binaries however can only account for roughly half of the measured difference (Moe & Kratter, 2021).\n\nAnother difference between planetary systems around M vs. FGK dwarfs is the existence of gas giants. Unlike small planet statistics, gas giant occurrence rate of FGK dwarfs is boosted by factors of ∼2–3 as compared to M dwarfs (e.g., Clanton & Gaudi, 2014; Fulton et al., 2021). This general trend of gas giant appearing more commonly around more massive stars is corroborated in direct imaging surveys as well with a caveat that those surveys are sensitive to super-Jupiters around young stars (Birnstiel et al., 2011). Gas giants, when they exist, are much more likely to appear at intermediate distances ∼1–16 AU (Fulton et al., 2021). Recently, Mulders et al. (2021) argued that this outer giant acts as a barrier against the radial drift of pebbles which can effectively starve the inner disk from solids and thereby limiting the amount of pebbles available for the formation of planetary cores (see also Lambrechts et al., 2019).\n\nSuch hypothesis runs counter to the observations that show a correlation between outer gas giants and inner super-Earths (Zhu & Wu, 2018; Bryan et al., 2019; Herman et al., 2019; Rosenthal et al., 2022). In fact, the core assembly process by pebble accretion is notoriously lossy (e.g., Ormel, 2017; Ormel & Liu, 2018), so much so that for every pebble isolation mass ∼10M⊕ that is created at ∼10 AU, upwards of ∼100M⊕ worth of material can be drifted into the inner orbits while (but not after) the massive core assembles (Lin et al., 2018; Chachan et al., 2022). Furthermore, once the giant forms, the interplay between its secular resonance with planetesimals and aerodynamic drag could spell rapid transport of the latter, enriching the inner region with even more solid material (Dotter, 2016). (Footnote: Recent radial velocity follow-up to Kepler/K2 (Bonomo et al., 2023) and TESS planets (Van Zandt et al., 2023) report that giant planet occurrence rate around stars with inner planets is statistically consistent with that of field stars. Both studies call to attention the need for a larger sample so at present, we conclude that there is either a neutral or positive correlation between outer gas giants and inner super-Earths.)\n\nIn this work, we build a simple framework that combines the theory of pebble accretion with the measured distribution of protoplanetary disk masses to reconcile all three observations: the propensity of cooler stars to harbor more super-Earths; the correlation between inner super-Earths and outer giants; and the tendency for cooler stars to harbor less giants. We lay out the underlying theory in Section §. Results are presented in Section § and we provide a summary and predictions in Section §.\n\nTheory\n\nWe begin by defining the efficiency ε with which a protoplanet accretes pebbles: where M peb is the accretion rate of pebbles and M drift is the radial drift rate of pebbles at the protoplanet's location. We assume M drift = 2π r v r Σ d, St, where r is the cylindrical distance from the star, Σ d, St is the surface density of dust grains of Stokes number St and v r is their radial velocity (negative sign denotes inward drift), where the first term accounts for the particles' coupling to the inward accretion of gas: ν ≡ α t c s H g is the kinematic viscosity of the gas, α t is the Shakura-Sunyaev parameter, c s = k B T disk / μ m H is the sound speed, k B is the Boltzmann constant, T disk is the local disk temperature, μ = 2.3 is the mean molecular weight of the gas, m H is the mass of a hydrogen atom, H g ≡ c s / Ω K is the gas disk scale height, Ω K = GM⋆/r^3 is the Keplerian orbital frequency, G is the gravitational constant, and M⋆ is the mass of the central star. The second term of equation § accounts for the Nakagawa-Sekiya-Hayashi drift velocity from the gas headwind (Nakagawa et al., 1986): η ≡ -0.5 γ (c s / v K)^2 is a measure of the deviation in gas orbital velocity from the Keplerian velocity v K = r Ω K due to the radial pressure gradient in the gas disk with γ ≡ d lnP g / d lnr and P g is the gas pressure. We limit our analysis to St ≲ 1 so that (1+ St^2)^-1 → 1 within order unity.\n\nFollowing Lin et al. (2018, see also), the rate of pebble accretion can be written as where particles that come within R acc of the protoplanet at speed v acc will be accreted onto the core and Hd = H g[αt/(αt+ St)]^1/2 is the pebble disk scale height. When R acc < Hd, we are in three-dimensional (3D) accretion regime and under the condition that the pebble-protoplanet encounter time is longer than the settling time, the terminal velocity of the pebbles is approximately a quarter of the accretion velocity (Ormel & Klahr, 2010), which allows us to write R acc^2 v acc ∼ 4 G M p St / Ω K. The accretion rate in the 3D regime is therefore given by where M p is the mass of the protoplanet. When R acc > Hd (two-dimensional accretion) and v acc is dominated by the headwind velocity v hw = η v K (2D, hw), where q ≡ M p/M⋆. This condition is satisfied when (see the appendix of Lin et al. 2018; see also Perets & Murray-Clay 2011) In the same two-dimensional accretion but when v acc ∼ 3 Ω K R acc / 2 is dominated by Keplerian shear (2D, sh), whose condition is satisfied when (equation A5 of Lin et al. 2018) The two-dimensional accretion transitions from headwind- to shear-dominated regime when M p exceeds a transition mass equivalently, Combining everything together,\n\nWe define a mass averaged efficiency ε by integrating over a grain size distribution assuming Epstein drag so that St ∝ a and grain mass m ∝ St^3: where n( St) = dn/d St is the grain size distribution such that n( St)m( St) ∝ St^-0.5 for St <2α t/π (turbulent regime) and n( St)m( St) ∝ St^-0.75 for St >2α t/π (settling regime) as inferred from Birnstiel et al. (2011).\n\nThe upper limit on St is set by fragmentation from turbulent velocity dispersion where v f is the collision velocity at which grains fragment. Grains may drift before they reach Stf but this is not the limiting process for the vast majority of our parameter space. This effect only appears for low mass stars at α t = 10^-4, v f = 10 m/s, and P ≳ 10^3 days, where it makes a negligible difference to our results and is therefore left out of subsequent discussion. We integrate ε over St ∈ [10^-6, St f], where the lower limit of St is chosen to have enough dynamic range while also capturing the case where the radial inflow of particles is dominated by coupling to gas inflow (St < (3/2) α t / |γ|; see equation §). Once we obtain ε (M p), we calculate the dust mass required for a protoplanet to reach the pebble isolation mass M iso where the initial protoplanet mass M0 is taken to be a lunar mass (0.01 M⊕; Johansen & Lambrechts 2017). Choosing a stellar mass dependent M0 (e.g., Liu et al., 2020) has a negligible impact on our results (see § §). We limit our integration to M iso as at this point, the planet can perturb the surrounding disk gas to create a pebble trap exterior to its orbit (e.g., Lambrechts et al., 2014) and so pebble accretion halts. We adopt M iso derived by Bitsch et al. (2018), relevant for α t ≳ 10^-4:\n\nWe use the disk temperature profile of (Ida et al., 2016), which draws from the more detailed models in (Garaud & Lin, 2007) and (Oka et al., 2011) and agrees with numerical radiative-transfer calculations from (D'Alessio et al., 1998), within order unity numerical coefficients. In the viscously heated inner regions of the disk, the temperature T vis is given by where M⋆ is the rate of accretion onto the star. Observational constraints of M⋆ indicate that it increases with M⋆: where the power-law index B ranges from 1.5 and 3.1 and M1⊙ is the mass accretion rate onto a solar mass star. We choose B=2.0 which is the measured mean M⋆–M⋆ relationship and we vary M1⊙ between 10^-9 M⊙ yr^-1 and 10^-8 M⊙ yr^-1 which captures 30–70 percentile measured accretion rates for a solar mass star (e.g., Manara et al., 2022).\n\nHeating in the outer disk becomes dominated by stellar irradiation. In the limit where the disk is optically thick to stellar radiation and vertically isothermal (e.g., nearly optically thin to internal radiation), where L⋆ ∝ M⋆^A is the stellar luminosity and A=1.4–1.9 drawn from MIST models (Dotter, 2016; Choi et al., 2016) for pre-main sequence stars. We adopt A = 1.5 for our study. We can now define the disk temperature: where 2000 K sets the upper limit to the temperature due to the thermostating effect of dust sublimation (D'Alessio et al., 1998).\n\nTo evaluate γ, we need to evaluate a pressure profile P g = Σ g c s Ω K where Σ g is the disk gas surface density. We adopt the self-similar solution of viscously accreting disk Σ g ∝ ν^-1 ∝ Ω K α t^-1 c s^-2 (Lynden-Bell & Pringle, 1974; Hartmann et al., 1998) and P g ∝ Ω K^2 c s^-1. For T disk ∼ T vis, P g ∝ r^-51/20 so γ = -51/20. For T disk ∼ T irr, P g ∝ r^-39/14 so γ = -39/14. When T disk thermostats, P g ∝ Ω K^2 ∝ r^-3 and so γ = -3.\n\nWith the disk structure in hand, we illustrate in Figure § how the relevant regimes of accretion transition from 3D to 2D and from headwind- to shear-dominated as a function of orbital period, mass of the protoplanet M p, and α t. For illustrative purpose, we fix M⋆=0.5M⊙ and M1⊙=10^-8 M⊙ yr^-1. We choose to compare the regimes at the fragmentation limit St f as the grain mass distribution is top-heavy in logarithm of St (see equation §). First, we see a general broken power-law in all St, reflecting a transition from accretion-dominated (T vis) to irradiation-dominated (T irr) regimes from inner to outer orbits. At fixed M1⊙, the accretion-dominated regime widens at lower α t because a fixed disk accretion rate with lower turbulence implies larger Σ g which in turn raises the disk optical depth and therefore the midplane temperature. Repeating the calculation at higher stellar masses (not shown), we find the accretion-dominated regime widens to longer orbital periods because of the increase in accretion luminosity; irradiation power also increases with stellar mass but not as steeply.\n\nIn terms of the mode of pebble accretion, we see that all the different combinations are possible over a plausible parameter space. First, at low α t, pebble motions are always dominated by aerodynamic drift rather than the coupling to the viscous gas inflow. As α t increases however, St f drops and so the coupling to the gas motion starts to dominate. In general, as the protocore gains mass (and/or at high enough v f), pebble accretion becomes more shear-dominated rather than headwind-dominated as the core's gravity starts to dominate the aerodynamic drag. Larger core mass and smaller α t imply larger accretion radius but thinner particle disk scale height and so generally favor 2D accretion. In general, by the time the accretion is two-dimensional, we see that the accretion is shear-dominated with the exception of the lowest M p, lowest α t and at long orbital periods (see, e.g., top left panel of Figure §). The range of St, P, and M p for which the 2D accretion headwind regime is relevant is independent of M1 ⊙ (≲ 10^-8 M⊙ yr^-1 as the transition from 2D shear to 2D headwind happens in irradiated regions) and although it broadens slightly at lower stellar masses, it still occupies a small part of our parameter space.\n\nResults\n\nExpected Behaviors of Required Dust Mass\n\nBefore we present our numerical results, we derive how ε is expected to scale with M⋆ and orbital period P. We start with T disk:\n\nThe 2D headwind regime is applicable only for a small range of St and M p (see Figure §) and most of the mass is acquired in 2D shear and 3D accretion regimes. By the time the protocore reaches 2D shear accretion, St is large enough for radial drift to be dominated by aerodynamic drag and so from equation §, Since 2|γ|/3 > 1, there are three possibilities for 3D accretion:\n\nAn examination of Equations § and § at fixed orbital period P shows that accretion efficiency primarily depends on M⋆ via the disk aspect ratio c s / v K = H g / r. At a fixed P, c s / v K is lower around lower mass stars, which implies a higher pebble accretion rate (pebble disk is less puffy) and a pebble drift rate M drift that is either slower for lower M⋆ (St < 3 α t / 2 |γ|) or independent of M⋆ (St > 3 α t / 2 |γ|). Thus, the accretion efficiency is boosted for lower M⋆ as a result of lower c s / v K.\n\nThe second condition on ε 3D,vis in Equation § only occurs for a narrow range of St and so is not dominant. As a result, we will not consider it for subsequent analytical derivations. Since ε is more weighted towards larger grains that contain most of the mass, we now substitute St = Stf solely to derive the scaling relationship of ε with respect to physical parameters. As illustrated in Figure §, this is an adequate substitution to express the scaling relationships (not the absolute normalization) except near the transition between 3D and 2D accretion—because each St makes its transition at a spectrum of orbital periods—and where Stf crosses the turbulent vs. settling regime. We note that we use the full range of St in our numerical calculations.\n\nSubstituting St with Stf, using the temperature scaling for viscously-heated regions of the disk (Equation §, relevant for inner orbits), and writing v K in terms of M⋆ and P in Equations § and §, we find that and The scaling of ε with respect to P flips sign between 2D and 3D accretion because this dependence on the orbital period is primarily set by St rather than the disk aspect ratio in viscously heated regions (Stf ∝ P^3/5 compared to v K / c s ∝ P^-1/30). In the 2D accretion regime, larger Stf in the outer orbit implies a vigorous radial drift of pebbles, which makes it hard for the protocore to capture them. Under 3D accretion, larger Stf boosts M peb more so than M drift so that ε 3D,vis rises with P. In both cases, ε drops with M⋆ for all plausible range of B=1.5–3.1 because both M p/M⋆ and v K/c s decrease with M⋆. In particular, note the stronger than inversely linear dependence of ε 3D,vis on M⋆.\n\nMaking similar substitutions in Equations § and § but using the temperature scaling for irradiation dominated regions of the disk (Equation §), we obtain and Both ε 2D,irr and ε 3D, irr now fall off with P because v K/c s declines more rapidly with P in irradiated regions (v K/c s ∝ P^-4/21 in the irradiation region compared to v K/c s ∝ P^-1/30 in the viscous region). We also see the drop with M⋆, albeit more weakly compared to viscously-heated region for the entire range of A=1.4–1.9, due to the weaker dependence of T irr on M⋆.\n\nWhile M iso (and potentially M0) also depends on M⋆ and P, we expect its contribution to M disk → iso to be minimal compared to ε since equation § implies M dust → iso ∝ ln (M iso / M0) in the 3D regime and M dust → iso ∝ (M iso^1/3 - M0^1/3) in the 2D regime, both of which are weak dependencies.\n\nFigure § illustrates the overall behavior of M dust → iso as a function of orbital period over a range of α t, M⋆, and v f. Here, M dust → iso is calculated using the range of grain sizes present in fragmentation-limited regions of protoplanetary disks (St ∈ [10^-6, St f], see discussion around Equations §-§). Higher ε implies lower required dust mass to create M iso at a given orbital period so if ε decreases with P, the corresponding M dust → iso rises with P. In general, we see rising M dust → iso with P in the outer orbit where disk heating is dominated by stellar irradiation (c.f. equation §) and falling M dust → iso with P in the inner orbit where the disk is viscously heated (c.f. equation §). Exception arises at high v f and α t = 10^-4 in the inner orbit which is when the accretion turns to 2D (c.f. equation §). The dips in M dust → iso (for P in the range ∼200-1000 days, v f=1 m/s, α t=10^-3, middle column in Figure § and v f=10 m/s, α t=10^-2, right column in Figure §; for P ∼ 20 days, v f=3 m/s, α t=10^-3, middle row, bottom panel of Figure §) manifest due to both turbulent and settling regimes of St coming into effect (c.f. Figure §). Overall the required dust mass is larger for particles that more easily fragment (lower v f) since this limits the maximum St and pebble accretion is slower for smaller St. However, we see an exception at α t=10^-4 where the required dust mass becomes comparable and slightly larger for v f=10m/s compared to 3 m/s in the outer orbit as they are both under 2D accretion which is less efficient at higher St due to strong radial drift past the protocore (c.f. equation §).\n\nFraction of Disks that Can Create Inner Planets\n\nEven though the pebble accretion efficiency is higher for lower mass stars in all the different regimes we study (Equations §-§), the feasibility of forming planetary cores depends on the available pebble mass as well, which generally decreases around lower mass stars. We therefore compare our M dust → iso against the distribution of measured disk masses to compute the fraction of disks that have enough mass to create inner cores f pl, which we directly translate into the fraction of stars that have Kepler planets (e.g., Zhu et al., 2018; Yang et al., 2020), a metric that is distinct from the commonly quoted planet occurrence rate defined as the number of planets per star.\n\nUsing the measured disk masses tabulated by Manara et al. (2022), we build a cumulative distribution function (CDF) defined as the fraction of disks with masses greater than a given M disk (Figure §, left panel). The CDFs are divided into a range of stellar masses with the lower and upper limits of each interval set to (0.08, 0.20, 0.40, 0.60, 1.40, 2.00) M⊙, chosen to represent different stellar spectral types. These are evolved disks (≳1 Myr) but the formation of planetary cores will very well begin earlier (e.g., Najita & Kenyon, 2014; Manara et al., 2018) and so we multiply all disk masses by a factor of 3 so that the 3σ (99.7th percentile) value of disk mass in our sample matches the 3σ value of Class I disk masses measured by VLA in (Tobin et al., 2020). A factor of 3 increase in dust mass between Class II and Class I disks is also in agreement with existing results from comparison of different disk classes in various star forming regions (Hsu et al., 2020). See Appendix A for more details and the effects of our choices on the disk mass CDFs and f pl.\n\nFrom Figure §, we first note that at α t=10^-2, the required dust mass is often ≳ 10^3 M⊕, which is beyond the augmented masses of our disk sample and so we rule out α t=10^-2. For the remaining runs, we compute f pl for each stellar mass (taken as the midpoint of our stellar mass intervals) by plugging in the corresponding M dust → iso into the inverse function of the CDF. Given that the pebble accretion efficiency is generally 1–10% (see Figure §), planetary cores at each location act as inefficient filters of pebbles allowing for the growth of multiple cores. While quantifying the exact multiplicity of cores is beyond the scope of this paper, within our framework, we can state that the region of planet formation is dictated by where the total disk dust mass is above M dust,iso and so a system can potentially nucleate more cores if it contains larger initial dust mass reservoir. We therefore take the larger of the M dust → iso values corresponding to P = 30 and 100 days in order to capture the dust mass required to populate the inner disk with multiple planetary cores at least down to 30 days. Our qualitative results are not sensitive to the exact choice of this period range. The middle and the right panels of Figure § show the resulting f pl vs. M⋆ for α t = 10^-4 and 10^-3 respectively. At M1⊙ = 10^-8 M⊙ yr^-1, the fraction of disks that can create inner cores generally rises as stellar mass decreases from ∼ 1 M⊙ to ∼ 0.3 - 0.5M⊙, reflecting the increase in ε with smaller M⋆ for pebble accretion in viscously heated regions in the 3D regime (Equation §). (Footnote: The rise in f pl beyond 1 M⊙ is likely because of the poorly characterized disk mass CDF for massive stars due to limited sample size. The number of protostars in the different stellar mass bins are 90 (0.08-0.2 M⊙), 89 (0.2-0.4 M⊙), 84 (0.4-0.6 M⊙), 82 (0.6-1.4 M⊙), and 10 (1.4-2 M⊙).))\n\nThe trend tends to reverse at lower M⋆ because around these lower mass stars, even the inner orbits become irradiation-dominated and ε 3D,irr is much more weakly dependent on M⋆ (Equation §). The corresponding M dust → iso becomes near constant and since the disk mass distribution around lower M⋆ is more bottom-heavy, f pl decreases. We do not see this overturn in f pl at lower stellar masses when the viscous heating dominates at the relevant orbital periods (e.g., α t = 10^-4 and M1⊙ = 10^-8 M⊙ yr^-1). At M1⊙=10^-9 M⊙ yr^-1, f pl often rises with M⋆, because of the weak stellar mass dependence of ε in the 2D accretion regime (α t = 10^-4, Equation §) or in the irradiated region (α t = 10^-3, Equation §); the resulting M dust → iso is too similar compared to the difference in the disk mass CDFs, and thus f pl rises with stellar mass.\n\nWe compare our f pl with the the measured fraction of FGK stars with Kepler planets which ranges from ∼30±5% (Zhu et al., 2018) to ∼73±13% (Yang et al., 2020) where the difference arises from different samples of host stars and different models for correcting for intrinsic planet multiplicity and the correlation in periods and radii of adjacent planet pairs (see Yang et al., 2020, their Section 5.1). Under our scheme, all but one model can reproduce the fraction of stars harboring close-in Kepler planets (see Figure §).\n\nConnection with Outer Planets\n\nWe now compute M dust → iso and the fraction of disks that can create an isolation mass at 5 AU f pl,outer. For our parameters, this isolation mass is always ≳ 9–10M⊕ which is large enough to nucleate a gas giant at this distance, with the exact runaway mass subject to local opacity and metal content (e.g., Piso et al., 2015; Lee & Chiang, 2015; Venturini et al., 2015; Chachan et al., 2021). First, we verify that the amount of dust mass required to create this outer core (M outer) is larger than that required to create inner cores (M inner, top panel of Figure §). Since M dust → iso rises with orbital period in irradiated regions (Figure §), this condition is met by all our models for M⋆ < M⊙ and by most of them for M⋆ ≥ M⊙. When M inner < M outer, a disk that has enough dust mass (≥ M outer) to create outer giant planet cores will invariably create both inner and outer planets. This is in agreement with the previous results of Lin et al. (2018) and Chachan et al. (2022). The two models for which this is not true for Sun-like stars correspond to pebble accretion happening in the 3D regime in a viscously heated region that is large in extent or for Stf < 3 α t / 2 |γ| (α t = 10^-4 & 10^-3, M1⊙ = 10^-8 M⊙ yr^-1, v f = 1 m/s; light shade in Figure §). We note that the formation of outer giant cores at the measured occurrence rate is only feasible for the former of these two models.\n\nFurthermore, we see that f pl,outer rises with M⋆ (middle panel of Figure §) in agreement with the observed trends (e.g., Fulton et al., 2021). In almost all cases, the accretion is in the 2D, irradiation-dominated regime and although ε 2D,irr falls with M⋆ (Equation §), it is a weak dependence and the distribution of M disk is more top-heavy around more massive stars so that f pl,outer will be larger. Compared to the measured occurrence rate of outer gas giants from Fulton et al. (2021), our f pl,outer tends to be large. We note that we are simply calculating the fraction of disks with enough mass to create an isolation mass by pebble accretion. Accounting for the time required for the completion of pebble accretion and subsequent gas accretion to form planets ≳ 100 M⊕ would reduce our f pl,outer given finite disk lifetimes (Mamajek, 2009; Michel et al., 2021) and varying metal content (opacity), thus bringing it into better agreement with the measured occurrence rate of cold Jupiters. (Footnote: We note that our calculation provides the fraction of disks that can form giants whereas Fulton et al. (2021) measures the occurrence rate of giants. While observational measurements of the former are not yet available, the average cold giant multiplicity is estimated to be 1.27 ± 0.12 (Zhu, 2022), suggesting that average systems are expected to harbor single cold giant. It is therefore reasonable to assume that the cold giant planet occurrence rate is not too different from the fraction of stars with cold giant planets.)\n\nWe deduce the effect of filtering by an outer planet proposed by Mulders et al. (2021) by considering the inner disk to be decoupled from the outer disk once the outer planet reaches its isolation mass. Calculating the growth timescale t grow of an inner core (M iso/M peb) out of the solids that were drifted in (M solids=M dust → iso(5 AU) - M iso(5 AU)) and comparing t grow to the drain out timescale of M solids (t drain = r/v r) at P = 100 days (∼ the outer period at which current surveys are sensitive to super-Earths), we find that t grow < t drain in all the cases we consider (see bottom panel of Figure §), suggesting that the inner cores would be formed before all the solids disappear. We verify that filtering is only relevant when v f is smaller at short orbital periods, and so our result is consistent with the “No Snow Line” curve in Figure 1 of Mulders et al. 2021. While the silicate grains within the iceline are often considered to have lower v f than the ice-coated grains in the outer orbit (e.g., Pinilla et al., 2016; Drążkowska & Alibert, 2017), recent laboratory and theoretical studies suggest v f is more uniform (e.g., Musiolik & Wurm, 2019; Kimura et al., 2020).\n\nConsidering that both M inner / M outer and t grow / t drain (top and bottom panels of Figure §) are lower around lower mass stars, our results suggest that it is easier to form super-Earths interior to cold-giants around lower mass stars. Our calculation therefore predicts that the correlation between the inner super-Earths and outer giants that is observed for FGK stars persists and perhaps even strengthens for M dwarfs.\n\nDiscussion and Conclusion\n\nBy combining the theory of pebble accretion with the measured disk masses, we have demonstrated that the fraction of disks that can create inner planetary cores rises towards lower mass stars down to ∼ 0.3 - 0.5M⊙ over a plausible range of v f and α t for a typical disk accretion rate of M⋆ = 10^-8 M⊙ yr^-1(M⋆/M⊙)^2, in agreement with the observed enhancement in the occurrence rate of inner super-Earths around M dwarfs compared to FGK dwarfs (e.g., Dressing & Charbonneau, 2015; Mulders et al., 2015; Hsu et al., 2020). Since core formation by pebble accretion likely happens during the earlier stages of a disk's lifetime, M1 ⊙ ∼ 10^-8 M⊙ yr^-1 is a reasonable choice for the accretion rate of a solar mass star. We further showed that disks that have enough mass to create an isolation mass at 5 AU will be able to drift in more than enough solids to the inner disk to create small planets there, explaining the observed correlation between inner super-Earths and outer giants without exception (e.g., Zhu & Wu, 2018; Bryan et al., 2019). Unlike the inner planets, the fraction of disks that can create a large outer planet drops towards lower mass stars, in agreement with the observed reduction of cold Jupiter occurrence rate around cooler stars universally, in all cases (e.g., Clanton & Gaudi, 2014; Fulton et al., 2021). Our framework therefore provides a unifying solution that can reconcile all three observations, with a caveat that it is sensitive to the measurements of disk masses. More accurate and complete measurements of disk properties would be welcome to further verify and refine our calculations.\n\nIn general, we predict the fraction of disks that can create inner planets up to their isolation masses ≳1–2M⊕ to drop around stars M⋆ < 0.3–0.5M⊙; it remains possible to create smaller cores. Since this is about the mass below which short-period planets would emerge rocky (Lee & Connors, 2021; Lee et al., 2022), our model expects a fall in the occurrence rate of mini-Neptunes around low mass stars but not necessarily that of terrestrial planets, in line with recent observational evidence (e.g., Brady & Bean, 2022; Ment & Charbonneau, 2023). A caveat to this statement is that we have limited our analysis to pebble accretion which sets the initial mass of planetary cores. A more quantitative verification would require bridging this early stage of core formation to the final mass doubling effected by giant impacts in the late stage of disk evolution (e.g., Lee & Chiang, 2016; Dawson et al., 2016) since how much gas a planet ends up with is primarily determined by its final core mass (e.g., Lee, 2019).\n\nIf we consider a warmer giant (≲3 AU), our framework would expect a weakening of the inner and outer planet correlation as M dust → iso becomes similar between ∼100 days and ≲3 AU (and in some cases, the required dust mass to create the inner core can exceed), in qualitative agreement with Rosenthal et al. (2022). A distinct prediction of our calculation is that, as long as colder Juipters exist, their correlation with the inner super-Earths remains and potentially enhances even around M dwarfs.\n\nWe close with a comment on the effect of multiple outer giants. In our analysis, we have focused on a single giant, which is consistent with the estimated low average cold giant multiplicity 2.03±0.12 (Zhu, 2022). The same study reports 8 systems with 2 cold giants; furthermore, our solar system harbors two cold gas giants (Jupiter and Saturn). What is the expected effect of multiple cold giants in the context of our study? Given that the pebble accretion efficiency at the location of these giants is ∼10%, if M inner/M outer ≳ 0.8, having two giants can inhibit the assembly of isolation mass cores in the inner orbits, at least by pebble accretion. Qualitatively, this is consistent with the isotopic constraints suggesting Earth and Mars are mostly formed out of non-carbonaceous material (i.e., inner disk material) with only a trace amount of carbonaceous chondrites, which would have had to drift in from the outer orbits (e.g., Warren, 2011; Burkhardt et al., 2021). With pebble accretion minimized, the overall growth of planetary cores would also likely slow down, which may help explain why our solar system ended up with only small terrestrial planets rather than super-Earths/mini-Neptunes. In general, depending on M inner/M outer, multiple giants can significantly reduce the amount of solid that drift into the inner disk and limit the growth of planetary cores there. So under the framework presented here, we would expect a weakening correlation between multiple cold Jupiters and inner super-Earths/mini-Neptunes. Verifying this preliminary hypothesis by quantifying the effect of cold giant multiplicity is a subject of future work.\n\nacknowledgments\n\nWe thank the referee for a speedy and careful report that helped improve our paper. We also thank Madison Brady, Marta Bryan, Eugene Chiang, Paul Dalba, Rebekah Dawson, Beibei Liu, Max Moe, and Gijs Mulders for useful discussions and giving comments on an earlier version of this paper. E.J.L thanks Joanna Drążkowska and Francis Nimmo for useful exchanges on pebble trapping and solar system formation at the 2023 Gordon Research Conference.\n\nY.C. acknowledges support from the Natural Sciences and Engineering Research Council of Canada (NSERC) through the CITA National Fellowship and the Trottier Space Institute through the TSI Fellowship. E.J.L. gratefully acknowledges support by NSERC, by le Fonds de recherche du Québec – Nature et technologies (FRQNT), by the Trottier Space Institute, and by the William Dawson Scholarship from McGill University.\n\nfiguresection\n\nDisk mass CDF\n\nSince we need both disk dust mass and stellar mass for our study, we use Class II disk dust masses compiled by (Manara et al., 2022) from measurements of disk masses in different star forming regions from the literature. These disk masses are estimated from ALMA observations assuming that the emission is optically thin, the dust opacity is given by 2.3 (ν / 230 GHz) cm^2/g, and a single dust temperature of 20 K. We refer the reader to (Manara et al., 2022) for more details. We limit our sample to systems that have both measured disk masses (excluding upper limits) and stellar masses, which gives a sample size of 402.\n\nSince Class II disks are known to already have undergone significant dust evolution and to contain too little mass to form the observed planetary systems (Najita & Kenyon, 2014), we must look to disks at earlier stages in their evolution to obtain a better estimate of the initial dust mass. To do so, we turn to disk dust masses measured for Class I disks in the Orion molecular clouds using VLA (Tobin et al., 2020). The assumption of optically thin emission for calculating disk dust mass is more accurate at longer wavelengths and therefore VLA measurements provide better mass estimates. Restricting our sample to disks that are classified as Class I, have measured disk masses and protostellar luminosities, we end up with a sample size of 58.\n\nHowever, due to the more limited sensitivity of the VLA observations, their 3 σ detection limit corresponds to ∼ 20 M⊕ for a 0.1 L⊙ star. The shape of the disk mass CDFs for the Class I VLA sample and the Class I ALMA sample therefore cannot be matched through a constant scaling factor as the ALMA sample contains many low mass disks and therefore is significantly more bottom-heavy. Both samples can only be compared for the highest mass disks, where the two samples are more likely to be complete. Therefore, to estimate the multiplicative factor by which we should scale up the Class II disk masses from (Manara et al., 2022), we match the 3 σ (99.7th percentile) values of the disk masses from the two surveys, which gives a factor of ∼ 3. Our result is in agreement with (Tychoniec et al., 2020), who found that Class I disks are at least 3 times more massive than Class II disks in various star forming regions.\n\nWe have implicitly assumed that the scaling factor for disk masses between the Class I and II stages is the same for the entire range of stellar masses. However, if the M disk - M⋆ relation steepens with time (there is some evidence for this, see Pascucci et al., 2016; Ansdell et al., 2017; Manara et al., 2022), then the multiplicative factor ought to be larger for small M⋆. Since Class I disks are enshrouded by protostellar envelopes that contribute to the total luminosities, M⋆ is typically not known for Class I disks (which is why we use Class II disks to calculate our CDFs). We can crudely relate protostellar luminosities to stellar masses and apply a M⋆-dependent multiplicative factor to gauge the effect on our results.\n\nLinear regression on the Class I VLA data from (Tobin et al., 2020) yields M dust ∝ L bol^0.25. If L bol is primarily set by the pre-main sequence protostar's luminosity (i.e. L bol ∝ M⋆^1.5, as assumed in § §), then M dust ∝ M⋆^0.375. If L bol is set by accretion luminosity G M⋆ M⋆ / R instead, the two limiting power law indices for the L bol - M⋆ relation are (see Dunham et al. 2014 for a review): i) L bol ∝ M⋆^1/2 for isothermal core collapse (M⋆ ∝ M⋆^0, Shu 1977) and R ∝ M⋆^1/2 as for a pre-main sequence star (the radius-mass scaling here is derived assuming a fully convective star), and ii) L bol ∝ M⋆^2 for competitive accretion (M⋆ ∝ M i^2/3 M f, M i is the instantaneous mass and M f ∼ M⋆ is the final mass of the protostar, Bonnell et al. 2001; McKee & Offner 2010) and for R ∝ M⋆^0 if R is the size of the protostellar core and assumed independent of M⋆. These two limiting cases yield M dust ∝ M⋆^0.125 and M dust ∝ M⋆^0.5, both of which are significantly shallower than the M dust ∝ M⋆^1 relation we get for the (Manara et al., 2022) sample. Figure § shows the effect of scaling disk mass in different stellar bins by 3 × (M⋆, bin / 1.7 M⊙)^(β T - β M), where β T = 0.125 or 0.5 and β M ∼ 1 correspond to the power law indices characterizing M dust - M⋆ relation for the (Tobin et al., 2020) and (Manara et al., 2022) samples respectively and M⋆, bin is the mid-point of the stellar mass bin. The overall effect is to boost f pl for lower mass stars such that super-Earth occurrence rate rises even more sharply with decreasing M⋆. The fraction of disks f pl, outer that form a giant planet core at 5 au still rises with M⋆, albeit more gradually. However, the turnover in f pl for M⋆ ≲ 0.4 M⊙ is no longer present. Regardless, the sub-Earth isolation mass of cores in the inner disk around the lowest mass stars is small and may not grow into planets detectable as mini-Neptunes. Verifying this statement would require simulating orbital instabilities of systems of these isolation masses, which is a subject of future work.",
+    "sections": [
+      {
+        "title": "Abstract",
+        "text": "Abstract\n\nCurrent measurements of planet population as a function of stellar mass show three seemingly contradictory signatures: close-in super-Earths are more prevalent around M dwarfs than FGK dwarfs; inner super-Earths are correlated with outer giants; and outer giants are less common around M dwarfs than FGK dwarfs. Here, we build a simple framework that combines the theory of pebble accretion with the measurements of dust masses in protoplanetary disks to reconcile all three observations. First, we show that cooler stars are more efficient at converting pebbles into planetary cores at short orbital periods. Second, when disks are massive enough to nucleate a heavy core at 5 AU, more than enough dust can drift in to assemble inner planets, establishing the correlation between inner planets and outer giants. Finally, while stars of varying masses are similarly capable of converting pebbles into cores at long orbital periods, hotter stars are much more likely to harbor more massive dust disks so that the giant planet occurrence rate rises around hotter stars. Our results are valid over a wide range of parameter space for a disk accretion rate that follows M⋆ ∼ 10^-8 M⊙ yr^-1(M⋆/M⊙)^2. We predict a decline in mini-Neptune population (but not necessarily terrestrial planets) around stars lighter than ∼0.3–0.5M⊙. Cold giants (≳5 AU), if they exist, should remain correlated with inner planets even around lower mass stars.\n\n",
+        "start": 0,
+        "end": 1445
+      },
+      {
+        "title": "Introduction",
+        "text": "Introduction\n\nSuper-Earths and mini-Neptunes are more likely to appear around M dwarfs, with their occurrence rate inside ∼50–100 days enhanced by factors of ∼3–10 as compared to those around FGK dwarfs (e.g., Dressing & Charbonneau, 2015; Mulders et al., 2015; Gaidos et al., 2016; Hsu et al., 2020). One way to explain this difference is to consider the lower binarity of M dwarfs compared to their more massive counterparts (e.g., Raghavan et al., 2010) as wide binaries can spuriously amplify the stellar brightness and dilute transit signals. Correcting for the effects of binaries however can only account for roughly half of the measured difference (Moe & Kratter, 2021).\n\nAnother difference between planetary systems around M vs. FGK dwarfs is the existence of gas giants. Unlike small planet statistics, gas giant occurrence rate of FGK dwarfs is boosted by factors of ∼2–3 as compared to M dwarfs (e.g., Clanton & Gaudi, 2014; Fulton et al., 2021). This general trend of gas giant appearing more commonly around more massive stars is corroborated in direct imaging surveys as well with a caveat that those surveys are sensitive to super-Jupiters around young stars (Birnstiel et al., 2011). Gas giants, when they exist, are much more likely to appear at intermediate distances ∼1–16 AU (Fulton et al., 2021). Recently, Mulders et al. (2021) argued that this outer giant acts as a barrier against the radial drift of pebbles which can effectively starve the inner disk from solids and thereby limiting the amount of pebbles available for the formation of planetary cores (see also Lambrechts et al., 2019).\n\nSuch hypothesis runs counter to the observations that show a correlation between outer gas giants and inner super-Earths (Zhu & Wu, 2018; Bryan et al., 2019; Herman et al., 2019; Rosenthal et al., 2022). In fact, the core assembly process by pebble accretion is notoriously lossy (e.g., Ormel, 2017; Ormel & Liu, 2018), so much so that for every pebble isolation mass ∼10M⊕ that is created at ∼10 AU, upwards of ∼100M⊕ worth of material can be drifted into the inner orbits while (but not after) the massive core assembles (Lin et al., 2018; Chachan et al., 2022). Furthermore, once the giant forms, the interplay between its secular resonance with planetesimals and aerodynamic drag could spell rapid transport of the latter, enriching the inner region with even more solid material (Dotter, 2016). (Footnote: Recent radial velocity follow-up to Kepler/K2 (Bonomo et al., 2023) and TESS planets (Van Zandt et al., 2023) report that giant planet occurrence rate around stars with inner planets is statistically consistent with that of field stars. Both studies call to attention the need for a larger sample so at present, we conclude that there is either a neutral or positive correlation between outer gas giants and inner super-Earths.)\n\nIn this work, we build a simple framework that combines the theory of pebble accretion with the measured distribution of protoplanetary disk masses to reconcile all three observations: the propensity of cooler stars to harbor more super-Earths; the correlation between inner super-Earths and outer giants; and the tendency for cooler stars to harbor less giants. We lay out the underlying theory in Section §. Results are presented in Section § and we provide a summary and predictions in Section §.\n\n",
+        "start": 1445,
+        "end": 4804
+      },
+      {
+        "title": "Theory",
+        "text": "Theory\n\nWe begin by defining the efficiency ε with which a protoplanet accretes pebbles: where M peb is the accretion rate of pebbles and M drift is the radial drift rate of pebbles at the protoplanet's location. We assume M drift = 2π r v r Σ d, St, where r is the cylindrical distance from the star, Σ d, St is the surface density of dust grains of Stokes number St and v r is their radial velocity (negative sign denotes inward drift), where the first term accounts for the particles' coupling to the inward accretion of gas: ν ≡ α t c s H g is the kinematic viscosity of the gas, α t is the Shakura-Sunyaev parameter, c s = k B T disk / μ m H is the sound speed, k B is the Boltzmann constant, T disk is the local disk temperature, μ = 2.3 is the mean molecular weight of the gas, m H is the mass of a hydrogen atom, H g ≡ c s / Ω K is the gas disk scale height, Ω K = GM⋆/r^3 is the Keplerian orbital frequency, G is the gravitational constant, and M⋆ is the mass of the central star. The second term of equation § accounts for the Nakagawa-Sekiya-Hayashi drift velocity from the gas headwind (Nakagawa et al., 1986): η ≡ -0.5 γ (c s / v K)^2 is a measure of the deviation in gas orbital velocity from the Keplerian velocity v K = r Ω K due to the radial pressure gradient in the gas disk with γ ≡ d lnP g / d lnr and P g is the gas pressure. We limit our analysis to St ≲ 1 so that (1+ St^2)^-1 → 1 within order unity.\n\nFollowing Lin et al. (2018, see also), the rate of pebble accretion can be written as where particles that come within R acc of the protoplanet at speed v acc will be accreted onto the core and Hd = H g[αt/(αt+ St)]^1/2 is the pebble disk scale height. When R acc < Hd, we are in three-dimensional (3D) accretion regime and under the condition that the pebble-protoplanet encounter time is longer than the settling time, the terminal velocity of the pebbles is approximately a quarter of the accretion velocity (Ormel & Klahr, 2010), which allows us to write R acc^2 v acc ∼ 4 G M p St / Ω K. The accretion rate in the 3D regime is therefore given by where M p is the mass of the protoplanet. When R acc > Hd (two-dimensional accretion) and v acc is dominated by the headwind velocity v hw = η v K (2D, hw), where q ≡ M p/M⋆. This condition is satisfied when (see the appendix of Lin et al. 2018; see also Perets & Murray-Clay 2011) In the same two-dimensional accretion but when v acc ∼ 3 Ω K R acc / 2 is dominated by Keplerian shear (2D, sh), whose condition is satisfied when (equation A5 of Lin et al. 2018) The two-dimensional accretion transitions from headwind- to shear-dominated regime when M p exceeds a transition mass equivalently, Combining everything together,\n\nWe define a mass averaged efficiency ε by integrating over a grain size distribution assuming Epstein drag so that St ∝ a and grain mass m ∝ St^3: where n( St) = dn/d St is the grain size distribution such that n( St)m( St) ∝ St^-0.5 for St <2α t/π (turbulent regime) and n( St)m( St) ∝ St^-0.75 for St >2α t/π (settling regime) as inferred from Birnstiel et al. (2011).\n\nThe upper limit on St is set by fragmentation from turbulent velocity dispersion where v f is the collision velocity at which grains fragment. Grains may drift before they reach Stf but this is not the limiting process for the vast majority of our parameter space. This effect only appears for low mass stars at α t = 10^-4, v f = 10 m/s, and P ≳ 10^3 days, where it makes a negligible difference to our results and is therefore left out of subsequent discussion. We integrate ε over St ∈ [10^-6, St f], where the lower limit of St is chosen to have enough dynamic range while also capturing the case where the radial inflow of particles is dominated by coupling to gas inflow (St < (3/2) α t / |γ|; see equation §). Once we obtain ε (M p), we calculate the dust mass required for a protoplanet to reach the pebble isolation mass M iso where the initial protoplanet mass M0 is taken to be a lunar mass (0.01 M⊕; Johansen & Lambrechts 2017). Choosing a stellar mass dependent M0 (e.g., Liu et al., 2020) has a negligible impact on our results (see § §). We limit our integration to M iso as at this point, the planet can perturb the surrounding disk gas to create a pebble trap exterior to its orbit (e.g., Lambrechts et al., 2014) and so pebble accretion halts. We adopt M iso derived by Bitsch et al. (2018), relevant for α t ≳ 10^-4:\n\nWe use the disk temperature profile of (Ida et al., 2016), which draws from the more detailed models in (Garaud & Lin, 2007) and (Oka et al., 2011) and agrees with numerical radiative-transfer calculations from (D'Alessio et al., 1998), within order unity numerical coefficients. In the viscously heated inner regions of the disk, the temperature T vis is given by where M⋆ is the rate of accretion onto the star. Observational constraints of M⋆ indicate that it increases with M⋆: where the power-law index B ranges from 1.5 and 3.1 and M1⊙ is the mass accretion rate onto a solar mass star. We choose B=2.0 which is the measured mean M⋆–M⋆ relationship and we vary M1⊙ between 10^-9 M⊙ yr^-1 and 10^-8 M⊙ yr^-1 which captures 30–70 percentile measured accretion rates for a solar mass star (e.g., Manara et al., 2022).\n\nHeating in the outer disk becomes dominated by stellar irradiation. In the limit where the disk is optically thick to stellar radiation and vertically isothermal (e.g., nearly optically thin to internal radiation), where L⋆ ∝ M⋆^A is the stellar luminosity and A=1.4–1.9 drawn from MIST models (Dotter, 2016; Choi et al., 2016) for pre-main sequence stars. We adopt A = 1.5 for our study. We can now define the disk temperature: where 2000 K sets the upper limit to the temperature due to the thermostating effect of dust sublimation (D'Alessio et al., 1998).\n\nTo evaluate γ, we need to evaluate a pressure profile P g = Σ g c s Ω K where Σ g is the disk gas surface density. We adopt the self-similar solution of viscously accreting disk Σ g ∝ ν^-1 ∝ Ω K α t^-1 c s^-2 (Lynden-Bell & Pringle, 1974; Hartmann et al., 1998) and P g ∝ Ω K^2 c s^-1. For T disk ∼ T vis, P g ∝ r^-51/20 so γ = -51/20. For T disk ∼ T irr, P g ∝ r^-39/14 so γ = -39/14. When T disk thermostats, P g ∝ Ω K^2 ∝ r^-3 and so γ = -3.\n\nWith the disk structure in hand, we illustrate in Figure § how the relevant regimes of accretion transition from 3D to 2D and from headwind- to shear-dominated as a function of orbital period, mass of the protoplanet M p, and α t. For illustrative purpose, we fix M⋆=0.5M⊙ and M1⊙=10^-8 M⊙ yr^-1. We choose to compare the regimes at the fragmentation limit St f as the grain mass distribution is top-heavy in logarithm of St (see equation §). First, we see a general broken power-law in all St, reflecting a transition from accretion-dominated (T vis) to irradiation-dominated (T irr) regimes from inner to outer orbits. At fixed M1⊙, the accretion-dominated regime widens at lower α t because a fixed disk accretion rate with lower turbulence implies larger Σ g which in turn raises the disk optical depth and therefore the midplane temperature. Repeating the calculation at higher stellar masses (not shown), we find the accretion-dominated regime widens to longer orbital periods because of the increase in accretion luminosity; irradiation power also increases with stellar mass but not as steeply.\n\nIn terms of the mode of pebble accretion, we see that all the different combinations are possible over a plausible parameter space. First, at low α t, pebble motions are always dominated by aerodynamic drift rather than the coupling to the viscous gas inflow. As α t increases however, St f drops and so the coupling to the gas motion starts to dominate. In general, as the protocore gains mass (and/or at high enough v f), pebble accretion becomes more shear-dominated rather than headwind-dominated as the core's gravity starts to dominate the aerodynamic drag. Larger core mass and smaller α t imply larger accretion radius but thinner particle disk scale height and so generally favor 2D accretion. In general, by the time the accretion is two-dimensional, we see that the accretion is shear-dominated with the exception of the lowest M p, lowest α t and at long orbital periods (see, e.g., top left panel of Figure §). The range of St, P, and M p for which the 2D accretion headwind regime is relevant is independent of M1 ⊙ (≲ 10^-8 M⊙ yr^-1 as the transition from 2D shear to 2D headwind happens in irradiated regions) and although it broadens slightly at lower stellar masses, it still occupies a small part of our parameter space.\n\n",
+        "start": 4804,
+        "end": 13390
+      },
+      {
+        "title": "Results",
+        "text": "Results\n\n",
+        "start": 13390,
+        "end": 13399
+      },
+      {
+        "title": "Expected Behaviors of Required Dust Mass",
+        "text": "Expected Behaviors of Required Dust Mass\n\nBefore we present our numerical results, we derive how ε is expected to scale with M⋆ and orbital period P. We start with T disk:\n\nThe 2D headwind regime is applicable only for a small range of St and M p (see Figure §) and most of the mass is acquired in 2D shear and 3D accretion regimes. By the time the protocore reaches 2D shear accretion, St is large enough for radial drift to be dominated by aerodynamic drag and so from equation §, Since 2|γ|/3 > 1, there are three possibilities for 3D accretion:\n\nAn examination of Equations § and § at fixed orbital period P shows that accretion efficiency primarily depends on M⋆ via the disk aspect ratio c s / v K = H g / r. At a fixed P, c s / v K is lower around lower mass stars, which implies a higher pebble accretion rate (pebble disk is less puffy) and a pebble drift rate M drift that is either slower for lower M⋆ (St < 3 α t / 2 |γ|) or independent of M⋆ (St > 3 α t / 2 |γ|). Thus, the accretion efficiency is boosted for lower M⋆ as a result of lower c s / v K.\n\nThe second condition on ε 3D,vis in Equation § only occurs for a narrow range of St and so is not dominant. As a result, we will not consider it for subsequent analytical derivations. Since ε is more weighted towards larger grains that contain most of the mass, we now substitute St = Stf solely to derive the scaling relationship of ε with respect to physical parameters. As illustrated in Figure §, this is an adequate substitution to express the scaling relationships (not the absolute normalization) except near the transition between 3D and 2D accretion—because each St makes its transition at a spectrum of orbital periods—and where Stf crosses the turbulent vs. settling regime. We note that we use the full range of St in our numerical calculations.\n\nSubstituting St with Stf, using the temperature scaling for viscously-heated regions of the disk (Equation §, relevant for inner orbits), and writing v K in terms of M⋆ and P in Equations § and §, we find that and The scaling of ε with respect to P flips sign between 2D and 3D accretion because this dependence on the orbital period is primarily set by St rather than the disk aspect ratio in viscously heated regions (Stf ∝ P^3/5 compared to v K / c s ∝ P^-1/30). In the 2D accretion regime, larger Stf in the outer orbit implies a vigorous radial drift of pebbles, which makes it hard for the protocore to capture them. Under 3D accretion, larger Stf boosts M peb more so than M drift so that ε 3D,vis rises with P. In both cases, ε drops with M⋆ for all plausible range of B=1.5–3.1 because both M p/M⋆ and v K/c s decrease with M⋆. In particular, note the stronger than inversely linear dependence of ε 3D,vis on M⋆.\n\nMaking similar substitutions in Equations § and § but using the temperature scaling for irradiation dominated regions of the disk (Equation §), we obtain and Both ε 2D,irr and ε 3D, irr now fall off with P because v K/c s declines more rapidly with P in irradiated regions (v K/c s ∝ P^-4/21 in the irradiation region compared to v K/c s ∝ P^-1/30 in the viscous region). We also see the drop with M⋆, albeit more weakly compared to viscously-heated region for the entire range of A=1.4–1.9, due to the weaker dependence of T irr on M⋆.\n\nWhile M iso (and potentially M0) also depends on M⋆ and P, we expect its contribution to M disk → iso to be minimal compared to ε since equation § implies M dust → iso ∝ ln (M iso / M0) in the 3D regime and M dust → iso ∝ (M iso^1/3 - M0^1/3) in the 2D regime, both of which are weak dependencies.\n\nFigure § illustrates the overall behavior of M dust → iso as a function of orbital period over a range of α t, M⋆, and v f. Here, M dust → iso is calculated using the range of grain sizes present in fragmentation-limited regions of protoplanetary disks (St ∈ [10^-6, St f], see discussion around Equations §-§). Higher ε implies lower required dust mass to create M iso at a given orbital period so if ε decreases with P, the corresponding M dust → iso rises with P. In general, we see rising M dust → iso with P in the outer orbit where disk heating is dominated by stellar irradiation (c.f. equation §) and falling M dust → iso with P in the inner orbit where the disk is viscously heated (c.f. equation §). Exception arises at high v f and α t = 10^-4 in the inner orbit which is when the accretion turns to 2D (c.f. equation §). The dips in M dust → iso (for P in the range ∼200-1000 days, v f=1 m/s, α t=10^-3, middle column in Figure § and v f=10 m/s, α t=10^-2, right column in Figure §; for P ∼ 20 days, v f=3 m/s, α t=10^-3, middle row, bottom panel of Figure §) manifest due to both turbulent and settling regimes of St coming into effect (c.f. Figure §). Overall the required dust mass is larger for particles that more easily fragment (lower v f) since this limits the maximum St and pebble accretion is slower for smaller St. However, we see an exception at α t=10^-4 where the required dust mass becomes comparable and slightly larger for v f=10m/s compared to 3 m/s in the outer orbit as they are both under 2D accretion which is less efficient at higher St due to strong radial drift past the protocore (c.f. equation §).\n\n",
+        "start": 13399,
+        "end": 18622
+      },
+      {
+        "title": "Fraction of Disks that Can Create Inner Planets",
+        "text": "Fraction of Disks that Can Create Inner Planets\n\nEven though the pebble accretion efficiency is higher for lower mass stars in all the different regimes we study (Equations §-§), the feasibility of forming planetary cores depends on the available pebble mass as well, which generally decreases around lower mass stars. We therefore compare our M dust → iso against the distribution of measured disk masses to compute the fraction of disks that have enough mass to create inner cores f pl, which we directly translate into the fraction of stars that have Kepler planets (e.g., Zhu et al., 2018; Yang et al., 2020), a metric that is distinct from the commonly quoted planet occurrence rate defined as the number of planets per star.\n\nUsing the measured disk masses tabulated by Manara et al. (2022), we build a cumulative distribution function (CDF) defined as the fraction of disks with masses greater than a given M disk (Figure §, left panel). The CDFs are divided into a range of stellar masses with the lower and upper limits of each interval set to (0.08, 0.20, 0.40, 0.60, 1.40, 2.00) M⊙, chosen to represent different stellar spectral types. These are evolved disks (≳1 Myr) but the formation of planetary cores will very well begin earlier (e.g., Najita & Kenyon, 2014; Manara et al., 2018) and so we multiply all disk masses by a factor of 3 so that the 3σ (99.7th percentile) value of disk mass in our sample matches the 3σ value of Class I disk masses measured by VLA in (Tobin et al., 2020). A factor of 3 increase in dust mass between Class II and Class I disks is also in agreement with existing results from comparison of different disk classes in various star forming regions (Hsu et al., 2020). See Appendix A for more details and the effects of our choices on the disk mass CDFs and f pl.\n\nFrom Figure §, we first note that at α t=10^-2, the required dust mass is often ≳ 10^3 M⊕, which is beyond the augmented masses of our disk sample and so we rule out α t=10^-2. For the remaining runs, we compute f pl for each stellar mass (taken as the midpoint of our stellar mass intervals) by plugging in the corresponding M dust → iso into the inverse function of the CDF. Given that the pebble accretion efficiency is generally 1–10% (see Figure §), planetary cores at each location act as inefficient filters of pebbles allowing for the growth of multiple cores. While quantifying the exact multiplicity of cores is beyond the scope of this paper, within our framework, we can state that the region of planet formation is dictated by where the total disk dust mass is above M dust,iso and so a system can potentially nucleate more cores if it contains larger initial dust mass reservoir. We therefore take the larger of the M dust → iso values corresponding to P = 30 and 100 days in order to capture the dust mass required to populate the inner disk with multiple planetary cores at least down to 30 days. Our qualitative results are not sensitive to the exact choice of this period range. The middle and the right panels of Figure § show the resulting f pl vs. M⋆ for α t = 10^-4 and 10^-3 respectively. At M1⊙ = 10^-8 M⊙ yr^-1, the fraction of disks that can create inner cores generally rises as stellar mass decreases from ∼ 1 M⊙ to ∼ 0.3 - 0.5M⊙, reflecting the increase in ε with smaller M⋆ for pebble accretion in viscously heated regions in the 3D regime (Equation §). (Footnote: The rise in f pl beyond 1 M⊙ is likely because of the poorly characterized disk mass CDF for massive stars due to limited sample size. The number of protostars in the different stellar mass bins are 90 (0.08-0.2 M⊙), 89 (0.2-0.4 M⊙), 84 (0.4-0.6 M⊙), 82 (0.6-1.4 M⊙), and 10 (1.4-2 M⊙).))\n\nThe trend tends to reverse at lower M⋆ because around these lower mass stars, even the inner orbits become irradiation-dominated and ε 3D,irr is much more weakly dependent on M⋆ (Equation §). The corresponding M dust → iso becomes near constant and since the disk mass distribution around lower M⋆ is more bottom-heavy, f pl decreases. We do not see this overturn in f pl at lower stellar masses when the viscous heating dominates at the relevant orbital periods (e.g., α t = 10^-4 and M1⊙ = 10^-8 M⊙ yr^-1). At M1⊙=10^-9 M⊙ yr^-1, f pl often rises with M⋆, because of the weak stellar mass dependence of ε in the 2D accretion regime (α t = 10^-4, Equation §) or in the irradiated region (α t = 10^-3, Equation §); the resulting M dust → iso is too similar compared to the difference in the disk mass CDFs, and thus f pl rises with stellar mass.\n\nWe compare our f pl with the the measured fraction of FGK stars with Kepler planets which ranges from ∼30±5% (Zhu et al., 2018) to ∼73±13% (Yang et al., 2020) where the difference arises from different samples of host stars and different models for correcting for intrinsic planet multiplicity and the correlation in periods and radii of adjacent planet pairs (see Yang et al., 2020, their Section 5.1). Under our scheme, all but one model can reproduce the fraction of stars harboring close-in Kepler planets (see Figure §).\n\n",
+        "start": 18622,
+        "end": 23688
+      },
+      {
+        "title": "Connection with Outer Planets",
+        "text": "Connection with Outer Planets\n\nWe now compute M dust → iso and the fraction of disks that can create an isolation mass at 5 AU f pl,outer. For our parameters, this isolation mass is always ≳ 9–10M⊕ which is large enough to nucleate a gas giant at this distance, with the exact runaway mass subject to local opacity and metal content (e.g., Piso et al., 2015; Lee & Chiang, 2015; Venturini et al., 2015; Chachan et al., 2021). First, we verify that the amount of dust mass required to create this outer core (M outer) is larger than that required to create inner cores (M inner, top panel of Figure §). Since M dust → iso rises with orbital period in irradiated regions (Figure §), this condition is met by all our models for M⋆ < M⊙ and by most of them for M⋆ ≥ M⊙. When M inner < M outer, a disk that has enough dust mass (≥ M outer) to create outer giant planet cores will invariably create both inner and outer planets. This is in agreement with the previous results of Lin et al. (2018) and Chachan et al. (2022). The two models for which this is not true for Sun-like stars correspond to pebble accretion happening in the 3D regime in a viscously heated region that is large in extent or for Stf < 3 α t / 2 |γ| (α t = 10^-4 & 10^-3, M1⊙ = 10^-8 M⊙ yr^-1, v f = 1 m/s; light shade in Figure §). We note that the formation of outer giant cores at the measured occurrence rate is only feasible for the former of these two models.\n\nFurthermore, we see that f pl,outer rises with M⋆ (middle panel of Figure §) in agreement with the observed trends (e.g., Fulton et al., 2021). In almost all cases, the accretion is in the 2D, irradiation-dominated regime and although ε 2D,irr falls with M⋆ (Equation §), it is a weak dependence and the distribution of M disk is more top-heavy around more massive stars so that f pl,outer will be larger. Compared to the measured occurrence rate of outer gas giants from Fulton et al. (2021), our f pl,outer tends to be large. We note that we are simply calculating the fraction of disks with enough mass to create an isolation mass by pebble accretion. Accounting for the time required for the completion of pebble accretion and subsequent gas accretion to form planets ≳ 100 M⊕ would reduce our f pl,outer given finite disk lifetimes (Mamajek, 2009; Michel et al., 2021) and varying metal content (opacity), thus bringing it into better agreement with the measured occurrence rate of cold Jupiters. (Footnote: We note that our calculation provides the fraction of disks that can form giants whereas Fulton et al. (2021) measures the occurrence rate of giants. While observational measurements of the former are not yet available, the average cold giant multiplicity is estimated to be 1.27 ± 0.12 (Zhu, 2022), suggesting that average systems are expected to harbor single cold giant. It is therefore reasonable to assume that the cold giant planet occurrence rate is not too different from the fraction of stars with cold giant planets.)\n\nWe deduce the effect of filtering by an outer planet proposed by Mulders et al. (2021) by considering the inner disk to be decoupled from the outer disk once the outer planet reaches its isolation mass. Calculating the growth timescale t grow of an inner core (M iso/M peb) out of the solids that were drifted in (M solids=M dust → iso(5 AU) - M iso(5 AU)) and comparing t grow to the drain out timescale of M solids (t drain = r/v r) at P = 100 days (∼ the outer period at which current surveys are sensitive to super-Earths), we find that t grow < t drain in all the cases we consider (see bottom panel of Figure §), suggesting that the inner cores would be formed before all the solids disappear. We verify that filtering is only relevant when v f is smaller at short orbital periods, and so our result is consistent with the “No Snow Line” curve in Figure 1 of Mulders et al. 2021. While the silicate grains within the iceline are often considered to have lower v f than the ice-coated grains in the outer orbit (e.g., Pinilla et al., 2016; Drążkowska & Alibert, 2017), recent laboratory and theoretical studies suggest v f is more uniform (e.g., Musiolik & Wurm, 2019; Kimura et al., 2020).\n\nConsidering that both M inner / M outer and t grow / t drain (top and bottom panels of Figure §) are lower around lower mass stars, our results suggest that it is easier to form super-Earths interior to cold-giants around lower mass stars. Our calculation therefore predicts that the correlation between the inner super-Earths and outer giants that is observed for FGK stars persists and perhaps even strengthens for M dwarfs.\n\n",
+        "start": 23688,
+        "end": 28289
+      },
+      {
+        "title": "Discussion and Conclusion",
+        "text": "Discussion and Conclusion\n\nBy combining the theory of pebble accretion with the measured disk masses, we have demonstrated that the fraction of disks that can create inner planetary cores rises towards lower mass stars down to ∼ 0.3 - 0.5M⊙ over a plausible range of v f and α t for a typical disk accretion rate of M⋆ = 10^-8 M⊙ yr^-1(M⋆/M⊙)^2, in agreement with the observed enhancement in the occurrence rate of inner super-Earths around M dwarfs compared to FGK dwarfs (e.g., Dressing & Charbonneau, 2015; Mulders et al., 2015; Hsu et al., 2020). Since core formation by pebble accretion likely happens during the earlier stages of a disk's lifetime, M1 ⊙ ∼ 10^-8 M⊙ yr^-1 is a reasonable choice for the accretion rate of a solar mass star. We further showed that disks that have enough mass to create an isolation mass at 5 AU will be able to drift in more than enough solids to the inner disk to create small planets there, explaining the observed correlation between inner super-Earths and outer giants without exception (e.g., Zhu & Wu, 2018; Bryan et al., 2019). Unlike the inner planets, the fraction of disks that can create a large outer planet drops towards lower mass stars, in agreement with the observed reduction of cold Jupiter occurrence rate around cooler stars universally, in all cases (e.g., Clanton & Gaudi, 2014; Fulton et al., 2021). Our framework therefore provides a unifying solution that can reconcile all three observations, with a caveat that it is sensitive to the measurements of disk masses. More accurate and complete measurements of disk properties would be welcome to further verify and refine our calculations.\n\nIn general, we predict the fraction of disks that can create inner planets up to their isolation masses ≳1–2M⊕ to drop around stars M⋆ < 0.3–0.5M⊙; it remains possible to create smaller cores. Since this is about the mass below which short-period planets would emerge rocky (Lee & Connors, 2021; Lee et al., 2022), our model expects a fall in the occurrence rate of mini-Neptunes around low mass stars but not necessarily that of terrestrial planets, in line with recent observational evidence (e.g., Brady & Bean, 2022; Ment & Charbonneau, 2023). A caveat to this statement is that we have limited our analysis to pebble accretion which sets the initial mass of planetary cores. A more quantitative verification would require bridging this early stage of core formation to the final mass doubling effected by giant impacts in the late stage of disk evolution (e.g., Lee & Chiang, 2016; Dawson et al., 2016) since how much gas a planet ends up with is primarily determined by its final core mass (e.g., Lee, 2019).\n\nIf we consider a warmer giant (≲3 AU), our framework would expect a weakening of the inner and outer planet correlation as M dust → iso becomes similar between ∼100 days and ≲3 AU (and in some cases, the required dust mass to create the inner core can exceed), in qualitative agreement with Rosenthal et al. (2022). A distinct prediction of our calculation is that, as long as colder Juipters exist, their correlation with the inner super-Earths remains and potentially enhances even around M dwarfs.\n\nWe close with a comment on the effect of multiple outer giants. In our analysis, we have focused on a single giant, which is consistent with the estimated low average cold giant multiplicity 2.03±0.12 (Zhu, 2022). The same study reports 8 systems with 2 cold giants; furthermore, our solar system harbors two cold gas giants (Jupiter and Saturn). What is the expected effect of multiple cold giants in the context of our study? Given that the pebble accretion efficiency at the location of these giants is ∼10%, if M inner/M outer ≳ 0.8, having two giants can inhibit the assembly of isolation mass cores in the inner orbits, at least by pebble accretion. Qualitatively, this is consistent with the isotopic constraints suggesting Earth and Mars are mostly formed out of non-carbonaceous material (i.e., inner disk material) with only a trace amount of carbonaceous chondrites, which would have had to drift in from the outer orbits (e.g., Warren, 2011; Burkhardt et al., 2021). With pebble accretion minimized, the overall growth of planetary cores would also likely slow down, which may help explain why our solar system ended up with only small terrestrial planets rather than super-Earths/mini-Neptunes. In general, depending on M inner/M outer, multiple giants can significantly reduce the amount of solid that drift into the inner disk and limit the growth of planetary cores there. So under the framework presented here, we would expect a weakening correlation between multiple cold Jupiters and inner super-Earths/mini-Neptunes. Verifying this preliminary hypothesis by quantifying the effect of cold giant multiplicity is a subject of future work.\n\n",
+        "start": 28289,
+        "end": 33116
+      },
+      {
+        "title": "acknowledgments",
+        "text": "acknowledgments\n\nWe thank the referee for a speedy and careful report that helped improve our paper. We also thank Madison Brady, Marta Bryan, Eugene Chiang, Paul Dalba, Rebekah Dawson, Beibei Liu, Max Moe, and Gijs Mulders for useful discussions and giving comments on an earlier version of this paper. E.J.L thanks Joanna Drążkowska and Francis Nimmo for useful exchanges on pebble trapping and solar system formation at the 2023 Gordon Research Conference.\n\nY.C. acknowledges support from the Natural Sciences and Engineering Research Council of Canada (NSERC) through the CITA National Fellowship and the Trottier Space Institute through the TSI Fellowship. E.J.L. gratefully acknowledges support by NSERC, by le Fonds de recherche du Québec – Nature et technologies (FRQNT), by the Trottier Space Institute, and by the William Dawson Scholarship from McGill University.\n\nfiguresection\n\n",
+        "start": 33116,
+        "end": 34007
+      },
+      {
+        "title": "Disk mass CDF",
+        "text": "Disk mass CDF\n\nSince we need both disk dust mass and stellar mass for our study, we use Class II disk dust masses compiled by (Manara et al., 2022) from measurements of disk masses in different star forming regions from the literature. These disk masses are estimated from ALMA observations assuming that the emission is optically thin, the dust opacity is given by 2.3 (ν / 230 GHz) cm^2/g, and a single dust temperature of 20 K. We refer the reader to (Manara et al., 2022) for more details. We limit our sample to systems that have both measured disk masses (excluding upper limits) and stellar masses, which gives a sample size of 402.\n\nSince Class II disks are known to already have undergone significant dust evolution and to contain too little mass to form the observed planetary systems (Najita & Kenyon, 2014), we must look to disks at earlier stages in their evolution to obtain a better estimate of the initial dust mass. To do so, we turn to disk dust masses measured for Class I disks in the Orion molecular clouds using VLA (Tobin et al., 2020). The assumption of optically thin emission for calculating disk dust mass is more accurate at longer wavelengths and therefore VLA measurements provide better mass estimates. Restricting our sample to disks that are classified as Class I, have measured disk masses and protostellar luminosities, we end up with a sample size of 58.\n\nHowever, due to the more limited sensitivity of the VLA observations, their 3 σ detection limit corresponds to ∼ 20 M⊕ for a 0.1 L⊙ star. The shape of the disk mass CDFs for the Class I VLA sample and the Class I ALMA sample therefore cannot be matched through a constant scaling factor as the ALMA sample contains many low mass disks and therefore is significantly more bottom-heavy. Both samples can only be compared for the highest mass disks, where the two samples are more likely to be complete. Therefore, to estimate the multiplicative factor by which we should scale up the Class II disk masses from (Manara et al., 2022), we match the 3 σ (99.7th percentile) values of the disk masses from the two surveys, which gives a factor of ∼ 3. Our result is in agreement with (Tychoniec et al., 2020), who found that Class I disks are at least 3 times more massive than Class II disks in various star forming regions.\n\nWe have implicitly assumed that the scaling factor for disk masses between the Class I and II stages is the same for the entire range of stellar masses. However, if the M disk - M⋆ relation steepens with time (there is some evidence for this, see Pascucci et al., 2016; Ansdell et al., 2017; Manara et al., 2022), then the multiplicative factor ought to be larger for small M⋆. Since Class I disks are enshrouded by protostellar envelopes that contribute to the total luminosities, M⋆ is typically not known for Class I disks (which is why we use Class II disks to calculate our CDFs). We can crudely relate protostellar luminosities to stellar masses and apply a M⋆-dependent multiplicative factor to gauge the effect on our results.\n\nLinear regression on the Class I VLA data from (Tobin et al., 2020) yields M dust ∝ L bol^0.25. If L bol is primarily set by the pre-main sequence protostar's luminosity (i.e. L bol ∝ M⋆^1.5, as assumed in § §), then M dust ∝ M⋆^0.375. If L bol is set by accretion luminosity G M⋆ M⋆ / R instead, the two limiting power law indices for the L bol - M⋆ relation are (see Dunham et al. 2014 for a review): i) L bol ∝ M⋆^1/2 for isothermal core collapse (M⋆ ∝ M⋆^0, Shu 1977) and R ∝ M⋆^1/2 as for a pre-main sequence star (the radius-mass scaling here is derived assuming a fully convective star), and ii) L bol ∝ M⋆^2 for competitive accretion (M⋆ ∝ M i^2/3 M f, M i is the instantaneous mass and M f ∼ M⋆ is the final mass of the protostar, Bonnell et al. 2001; McKee & Offner 2010) and for R ∝ M⋆^0 if R is the size of the protostellar core and assumed independent of M⋆. These two limiting cases yield M dust ∝ M⋆^0.125 and M dust ∝ M⋆^0.5, both of which are significantly shallower than the M dust ∝ M⋆^1 relation we get for the (Manara et al., 2022) sample. Figure § shows the effect of scaling disk mass in different stellar bins by 3 × (M⋆, bin / 1.7 M⊙)^(β T - β M), where β T = 0.125 or 0.5 and β M ∼ 1 correspond to the power law indices characterizing M dust - M⋆ relation for the (Tobin et al., 2020) and (Manara et al., 2022) samples respectively and M⋆, bin is the mid-point of the stellar mass bin. The overall effect is to boost f pl for lower mass stars such that super-Earth occurrence rate rises even more sharply with decreasing M⋆. The fraction of disks f pl, outer that form a giant planet core at 5 au still rises with M⋆, albeit more gradually. However, the turnover in f pl for M⋆ ≲ 0.4 M⊙ is no longer present. Regardless, the sub-Earth isolation mass of cores in the inner disk around the lowest mass stars is small and may not grow into planets detectable as mini-Neptunes. Verifying this statement would require simulating orbital instabilities of systems of these isolation masses, which is a subject of future work.",
+        "start": 34007,
+        "end": 39099
+      }
+    ],
+    "references": [
+      {
+        "key": "Ansdell2017",
+        "label": "Ansdell et al., 2017",
+        "raw": "Ansdell, M., Williams, J. P., Manara, C. F., et al. 2017, , 153, 240, 10.3847/1538-3881/aa69c0",
+        "title": null,
+        "authors": [],
+        "year": 2017,
+        "doi": "10.3847/1538-3881/aa69c0",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Best23",
+        "label": "Best et al., 2023",
+        "raw": "Best, S., Sefilian, A. A., & Petrovich, C. 2023, arXiv e-prints, arXiv:2304.02045, 10.48550/arXiv.2304.02045",
+        "title": null,
+        "authors": [],
+        "year": 2023,
+        "doi": null,
+        "arxiv_id": "2304.02045",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Birnstiel11",
+        "label": "Birnstiel et al., 2011",
+        "raw": "Birnstiel, T., Ormel, C. W., & Dullemond, C. P. 2011, , 525, A11, 10.1051/0004-6361/201015228",
+        "title": null,
+        "authors": [],
+        "year": 2011,
+        "doi": "10.1051/0004-6361/201015228",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Bitsch18",
+        "label": "Bitsch et al., 2018",
+        "raw": "Bitsch, B., Morbidelli, A., Johansen, A., et al. 2018, , 612, A30, 10.1051/0004-6361/201731931",
+        "title": null,
+        "authors": [],
+        "year": 2018,
+        "doi": "10.1051/0004-6361/201731931",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Bonnell2001",
+        "label": "Bonnell et al., 2001",
+        "raw": "Bonnell, I. A., Bate, M. R., Clarke, C. J., & Pringle, J. E. 2001, , 323, 785, 10.1046/j.1365-8711.2001.04270.x",
+        "title": null,
+        "authors": [],
+        "year": 2001,
+        "doi": "10.1046/j.1365-8711.2001.04270.x",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Bonomo2023",
+        "label": "Bonomo et al., 2023",
+        "raw": "Bonomo, A. S., Dumusque, X., Massa, A., et al. 2023, arXiv e-prints, arXiv:2304.05773, 10.48550/arXiv.2304.05773",
+        "title": null,
+        "authors": [],
+        "year": 2023,
+        "doi": null,
+        "arxiv_id": "2304.05773",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Brady22",
+        "label": "Brady & Bean, 2022",
+        "raw": "Brady, M. T., & Bean, J. L. 2022, , 163, 255, 10.3847/1538-3881/ac64a0",
+        "title": null,
+        "authors": [],
+        "year": 2022,
+        "doi": "10.3847/1538-3881/ac64a0",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Bryan19",
+        "label": "Bryan et al., 2019",
+        "raw": "Bryan, M. L., Knutson, H. A., Lee, E. J., et al. 2019, , 157, 52, 10.3847/1538-3881/aaf57f",
+        "title": null,
+        "authors": [],
+        "year": 2019,
+        "doi": "10.3847/1538-3881/aaf57f",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Burkhardt21",
+        "label": "Burkhardt et al., 2021",
+        "raw": "Burkhardt, C., Spitzer, F., Morbidelli, A., et al. 2021, Science Advances, 7, eabj7601, 10.1126/sciadv.abj7601",
+        "title": null,
+        "authors": [],
+        "year": 2021,
+        "doi": "10.1126/sciadv.abj7601",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Chachan21",
+        "label": "Chachan et al., 2021",
+        "raw": "Chachan, Y., Lee, E. J., & Knutson, H. A. 2021, , 919, 63, 10.3847/1538-4357/ac0bb6",
+        "title": null,
+        "authors": [],
+        "year": 2021,
+        "doi": "10.3847/1538-4357/ac0bb6",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Chachan22",
+        "label": "Chachan et al., 2022",
+        "raw": "Chachan, Y., Dalba, P. A., Knutson, H. A., et al. 2022, , 926, 62, 10.3847/1538-4357/ac3ed6",
+        "title": null,
+        "authors": [],
+        "year": 2022,
+        "doi": "10.3847/1538-4357/ac3ed6",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Choi16",
+        "label": "Choi et al., 2016",
+        "raw": "Choi, J., Dotter, A., Conroy, C., et al. 2016, , 823, 102, 10.3847/0004-637X/823/2/102",
+        "title": null,
+        "authors": [],
+        "year": 2016,
+        "doi": "10.3847/0004-637X/823/2/102",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Clanton14",
+        "label": "Clanton & Gaudi, 2014",
+        "raw": "Clanton, C., & Gaudi, B. S. 2014, , 791, 91, 10.1088/0004-637X/791/2/91",
+        "title": null,
+        "authors": [],
+        "year": 2014,
+        "doi": "10.1088/0004-637X/791/2/91",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Dalessio98",
+        "label": "D'Alessio et al., 1998",
+        "raw": "D'Alessio, P., Cantö, J., Calvet, N., & Lizano, S. 1998, , 500, 411, 10.1086/305702",
+        "title": null,
+        "authors": [],
+        "year": 1998,
+        "doi": "10.1086/305702",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Dawson16",
+        "label": "Dawson et al., 2016",
+        "raw": "Dawson, R. I., Lee, E. J., & Chiang, E. 2016, , 822, 54, 10.3847/0004-637X/822/1/54",
+        "title": null,
+        "authors": [],
+        "year": 2016,
+        "doi": "10.3847/0004-637X/822/1/54",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Dotter16",
+        "label": "Dotter, 2016",
+        "raw": "Dotter, A. 2016, , 222, 8, 10.3847/0067-0049/222/1/8",
+        "title": null,
+        "authors": [],
+        "year": 2016,
+        "doi": "10.3847/0067-0049/222/1/8",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Dressing15",
+        "label": "Dressing & Charbonneau, 2015",
+        "raw": "Dressing, C. D., & Charbonneau, D. 2015, , 807, 45, 10.1088/0004-637X/807/1/45",
+        "title": null,
+        "authors": [],
+        "year": 2015,
+        "doi": "10.1088/0004-637X/807/1/45",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Drazkowska17",
+        "label": "Drążkowska & Alibert, 2017",
+        "raw": "Drążkowska, J., & Alibert, Y. 2017, , 608, A92, 10.1051/0004-6361/201731491",
+        "title": null,
+        "authors": [],
+        "year": 2017,
+        "doi": "10.1051/0004-6361/201731491",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Dunham2014",
+        "label": "Dunham et al., 2014",
+        "raw": "Dunham, M. M., Stutz, A. M., Allen, L. E., et al. 2014, in Protostars and Planets VI, ed. H. Beuther, R. S. Klessen, C. P. Dullemond, & T. Henning, 195–218, 10.2458/azuuapress9780816531240-ch009",
+        "title": null,
+        "authors": [],
+        "year": 2014,
+        "doi": "10.2458/azu_uapress_9780816531240-ch009",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Fulton21",
+        "label": "Fulton et al., 2021",
+        "raw": "Fulton, B. J., Rosenthal, L. J., Hirsch, L. A., et al. 2021, , 255, 14, 10.3847/1538-4365/abfcc1",
+        "title": null,
+        "authors": [],
+        "year": 2021,
+        "doi": "10.3847/1538-4365/abfcc1",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Gaidos2016",
+        "label": "Gaidos et al., 2016",
+        "raw": "Gaidos, E., Mann, A. W., Kraus, A. L., & Ireland, M. 2016, , 457, 2877, 10.1093/mnras/stw097",
+        "title": null,
+        "authors": [],
+        "year": 2016,
+        "doi": "10.1093/mnras/stw097",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Garaud07",
+        "label": "Garaud & Lin, 2007",
+        "raw": "Garaud, P., & Lin, D. N. C. 2007, , 654, 606, 10.1086/509041",
+        "title": null,
+        "authors": [],
+        "year": 2007,
+        "doi": "10.1086/509041",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Hartmann98",
+        "label": "Hartmann et al., 1998",
+        "raw": "Hartmann, L., Calvet, N., Gullbring, E., & D'Alessio, P. 1998, , 495, 385, 10.1086/305277",
+        "title": null,
+        "authors": [],
+        "year": 1998,
+        "doi": "10.1086/305277",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Herman19",
+        "label": "Herman et al., 2019",
+        "raw": "Herman, M. K., Zhu, W., & Wu, Y. 2019, , 157, 248, 10.3847/1538-3881/ab1f70",
+        "title": null,
+        "authors": [],
+        "year": 2019,
+        "doi": "10.3847/1538-3881/ab1f70",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Hsu20",
+        "label": "Hsu et al., 2020",
+        "raw": "Hsu, D. C., Ford, E. B., & Terrien, R. 2020, , 498, 2249, 10.1093/mnras/staa2391",
+        "title": null,
+        "authors": [],
+        "year": 2020,
+        "doi": "10.1093/mnras/staa2391",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Ida16",
+        "label": "Ida et al., 2016",
+        "raw": "Ida, S., Guillot, T., & Morbidelli, A. 2016, , 591, A72, 10.1051/0004-6361/201628099",
+        "title": null,
+        "authors": [],
+        "year": 2016,
+        "doi": "10.1051/0004-6361/201628099",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Johansen17",
+        "label": "Johansen & Lambrechts, 2017",
+        "raw": "Johansen, A., & Lambrechts, M. 2017, Annual Review of Earth and Planetary Sciences, 45, 359, 10.1146/annurev-earth-063016-020226",
+        "title": null,
+        "authors": [],
+        "year": 2017,
+        "doi": "10.1146/annurev-earth-063016-020226",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Kimura20",
+        "label": "Kimura et al., 2020",
+        "raw": "Kimura, H., Wada, K., Kobayashi, H., et al. 2020, , 498, 1801, 10.1093/mnras/staa2467",
+        "title": null,
+        "authors": [],
+        "year": 2020,
+        "doi": "10.1093/mnras/staa2467",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Lambrechts14",
+        "label": "Lambrechts et al., 2014",
+        "raw": "Lambrechts, M., Johansen, A., & Morbidelli, A. 2014, , 572, A35, 10.1051/0004-6361/201423814",
+        "title": null,
+        "authors": [],
+        "year": 2014,
+        "doi": "10.1051/0004-6361/201423814",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Lambrechts19",
+        "label": "Lambrechts et al., 2019",
+        "raw": "Lambrechts, M., Morbidelli, A., Jacobson, S. A., et al. 2019, , 627, A83, 10.1051/0004-6361/201834229",
+        "title": null,
+        "authors": [],
+        "year": 2019,
+        "doi": "10.1051/0004-6361/201834229",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Lee19",
+        "label": "Lee, 2019",
+        "raw": "Lee, E. J. 2019, , 878, 36, 10.3847/1538-4357/ab1b40",
+        "title": null,
+        "authors": [],
+        "year": 2019,
+        "doi": "10.3847/1538-4357/ab1b40",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Lee15",
+        "label": "Lee & Chiang, 2015",
+        "raw": "Lee, E. J., & Chiang, E. 2015, , 811, 41, 10.1088/0004-637X/811/1/41",
+        "title": null,
+        "authors": [],
+        "year": 2015,
+        "doi": "10.1088/0004-637X/811/1/41",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Lee16",
+        "label": "Lee & Chiang, 2016",
+        "raw": "—. 2016, , 817, 90, 10.3847/0004-637X/817/2/90",
+        "title": null,
+        "authors": [],
+        "year": 2016,
+        "doi": "10.3847/0004-637X/817/2/90",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Lee21",
+        "label": "Lee & Connors, 2021",
+        "raw": "Lee, E. J., & Connors, N. J. 2021, , 908, 32, 10.3847/1538-4357/abd6c7",
+        "title": null,
+        "authors": [],
+        "year": 2021,
+        "doi": "10.3847/1538-4357/abd6c7",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Lee22",
+        "label": "Lee et al., 2022",
+        "raw": "Lee, E. J., Karalis, A., & Thorngren, D. P. 2022, , 941, 186, 10.3847/1538-4357/ac9c66",
+        "title": null,
+        "authors": [],
+        "year": 2022,
+        "doi": "10.3847/1538-4357/ac9c66",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Lin18",
+        "label": "Lin et al., 2018",
+        "raw": "Lin, J. W., Lee, E. J., & Chiang, E. 2018, , 480, 4338, 10.1093/mnras/sty2159",
+        "title": null,
+        "authors": [],
+        "year": 2018,
+        "doi": "10.1093/mnras/sty2159",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Liu2020",
+        "label": "Liu et al., 2020",
+        "raw": "Liu, B., Lambrechts, M., Johansen, A., Pascucci, I., & Henning, T. 2020, , 638, A88, 10.1051/0004-6361/202037720",
+        "title": null,
+        "authors": [],
+        "year": 2020,
+        "doi": "10.1051/0004-6361/202037720",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Lynden-Bell74",
+        "label": "Lynden-Bell & Pringle, 1974",
+        "raw": "Lynden-Bell, D., & Pringle, J. E. 1974, , 168, 603, 10.1093/mnras/168.3.603",
+        "title": null,
+        "authors": [],
+        "year": 1974,
+        "doi": "10.1093/mnras/168.3.603",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Mamajek2009",
+        "label": "Mamajek, 2009",
+        "raw": "Mamajek, E. E. 2009, in American Institute of Physics Conference Series, Vol. 1158, Exoplanets and Disks: Their Formation and Diversity, ed. T. Usuda, M. Tamura, & M. Ishii, 3–10, 10.1063/1.3215910",
+        "title": null,
+        "authors": [],
+        "year": 2009,
+        "doi": "10.1063/1.3215910",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Manara22",
+        "label": "Manara et al., 2022",
+        "raw": "Manara, C. F., Ansdell, M., Rosotti, G. P., et al. 2022, arXiv e-prints, arXiv:2203.09930, 10.48550/arXiv.2203.09930",
+        "title": null,
+        "authors": [],
+        "year": 2022,
+        "doi": null,
+        "arxiv_id": "2203.09930",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Manara18",
+        "label": "Manara et al., 2018",
+        "raw": "Manara, C. F., Morbidelli, A., & Guillot, T. 2018, , 618, L3, 10.1051/0004-6361/201834076",
+        "title": null,
+        "authors": [],
+        "year": 2018,
+        "doi": "10.1051/0004-6361/201834076",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "McKee2010",
+        "label": "McKee & Offner, 2010",
+        "raw": "McKee, C. F., & Offner, S. S. R. 2010, , 716, 167, 10.1088/0004-637X/716/1/167",
+        "title": null,
+        "authors": [],
+        "year": 2010,
+        "doi": "10.1088/0004-637X/716/1/167",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Ment23",
+        "label": "Ment & Charbonneau, 2023",
+        "raw": "Ment, K., & Charbonneau, D. 2023, arXiv e-prints, arXiv:2302.04242, 10.48550/arXiv.2302.04242",
+        "title": null,
+        "authors": [],
+        "year": 2023,
+        "doi": null,
+        "arxiv_id": "2302.04242",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Michel21",
+        "label": "Michel et al., 2021",
+        "raw": "Michel, A., van der Marel, N., & Matthews, B. C. 2021, , 921, 72, 10.3847/1538-4357/ac1bbb",
+        "title": null,
+        "authors": [],
+        "year": 2021,
+        "doi": "10.3847/1538-4357/ac1bbb",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Moe21",
+        "label": "Moe & Kratter, 2021",
+        "raw": "Moe, M., & Kratter, K. M. 2021, , 507, 3593, 10.1093/mnras/stab2328",
+        "title": null,
+        "authors": [],
+        "year": 2021,
+        "doi": "10.1093/mnras/stab2328",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Mulders21",
+        "label": "Mulders et al., 2021",
+        "raw": "Mulders, G. D., Drążkowska, J., van der Marel, N., Ciesla, F. J., & Pascucci, I. 2021, , 920, L1, 10.3847/2041-8213/ac2947",
+        "title": null,
+        "authors": [],
+        "year": 2021,
+        "doi": "10.3847/2041-8213/ac2947",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Mulders15",
+        "label": "Mulders et al., 2015",
+        "raw": "Mulders, G. D., Pascucci, I., & Apai, D. 2015, , 798, 112, 10.1088/0004-637X/798/2/112",
+        "title": null,
+        "authors": [],
+        "year": 2015,
+        "doi": "10.1088/0004-637X/798/2/112",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Musiolik19",
+        "label": "Musiolik & Wurm, 2019",
+        "raw": "Musiolik, G., & Wurm, G. 2019, , 873, 58, 10.3847/1538-4357/ab0428",
+        "title": null,
+        "authors": [],
+        "year": 2019,
+        "doi": "10.3847/1538-4357/ab0428",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Najita14",
+        "label": "Najita & Kenyon, 2014",
+        "raw": "Najita, J. R., & Kenyon, S. J. 2014, , 445, 3315, 10.1093/mnras/stu1994",
+        "title": null,
+        "authors": [],
+        "year": 2014,
+        "doi": "10.1093/mnras/stu1994",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Nakagawa86",
+        "label": "Nakagawa et al., 1986",
+        "raw": "Nakagawa, Y., Sekiya, M., & Hayashi, C. 1986, , 67, 375, 10.1016/0019-1035(86)90121-1",
+        "title": null,
+        "authors": [],
+        "year": 1986,
+        "doi": "10.1016/0019-1035(86)90121-1",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Nielsen19",
+        "label": "Nielsen et al., 2019",
+        "raw": "Nielsen, E. L., De Rosa, R. J., Macintosh, B., et al. 2019, , 158, 13, 10.3847/1538-3881/ab16e9",
+        "title": null,
+        "authors": [],
+        "year": 2019,
+        "doi": "10.3847/1538-3881/ab16e9",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Oka11",
+        "label": "Oka et al., 2011",
+        "raw": "Oka, A., Nakamoto, T., & Ida, S. 2011, , 738, 141, 10.1088/0004-637X/738/2/141",
+        "title": null,
+        "authors": [],
+        "year": 2011,
+        "doi": "10.1088/0004-637X/738/2/141",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Ormel17",
+        "label": "Ormel, 2017",
+        "raw": "Ormel, C. W. 2017, in Astrophysics and Space Science Library, Vol. 445, Formation, Evolution, and Dynamics of Young Solar Systems, ed. M. Pessah & O. Gressel, 197, 10.1007/978-3-319-60609-5_7",
+        "title": null,
+        "authors": [],
+        "year": 2017,
+        "doi": "10.1007/978-3-319-60609-5\\_7",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Ormel10",
+        "label": "Ormel & Klahr, 2010",
+        "raw": "Ormel, C. W., & Klahr, H. H. 2010, , 520, A43, 10.1051/0004-6361/201014903",
+        "title": null,
+        "authors": [],
+        "year": 2010,
+        "doi": "10.1051/0004-6361/201014903",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Ormel18",
+        "label": "Ormel & Liu, 2018",
+        "raw": "Ormel, C. W., & Liu, B. 2018, , 615, A178, 10.1051/0004-6361/201732562",
+        "title": null,
+        "authors": [],
+        "year": 2018,
+        "doi": "10.1051/0004-6361/201732562",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Pascucci2016",
+        "label": "Pascucci et al., 2016",
+        "raw": "Pascucci, I., Testi, L., Herczeg, G. J., et al. 2016, , 831, 125, 10.3847/0004-637X/831/2/125",
+        "title": null,
+        "authors": [],
+        "year": 2016,
+        "doi": "10.3847/0004-637X/831/2/125",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Perets11",
+        "label": "Perets & Murray-Clay, 2011",
+        "raw": "Perets, H. B., & Murray-Clay, R. A. 2011, , 733, 56, 10.1088/0004-637X/733/1/56",
+        "title": null,
+        "authors": [],
+        "year": 2011,
+        "doi": "10.1088/0004-637X/733/1/56",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Pinilla16",
+        "label": "Pinilla et al., 2016",
+        "raw": "Pinilla, P., Klarmann, L., Birnstiel, T., et al. 2016, , 585, A35, 10.1051/0004-6361/201527131",
+        "title": null,
+        "authors": [],
+        "year": 2016,
+        "doi": "10.1051/0004-6361/201527131",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Piso15",
+        "label": "Piso et al., 2015",
+        "raw": "Piso, A.-M. A., Youdin, A. N., & Murray-Clay, R. A. 2015, , 800, 82, 10.1088/0004-637X/800/2/82",
+        "title": null,
+        "authors": [],
+        "year": 2015,
+        "doi": "10.1088/0004-637X/800/2/82",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Raghavan10",
+        "label": "Raghavan et al., 2010",
+        "raw": "Raghavan, D., McAlister, H. A., Henry, T. J., et al. 2010, , 190, 1, 10.1088/0067-0049/190/1/1",
+        "title": null,
+        "authors": [],
+        "year": 2010,
+        "doi": "10.1088/0067-0049/190/1/1",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Rosenthal22",
+        "label": "Rosenthal et al., 2022",
+        "raw": "Rosenthal, L. J., Knutson, H. A., Chachan, Y., et al. 2022, , 262, 1, 10.3847/1538-4365/ac7230",
+        "title": null,
+        "authors": [],
+        "year": 2022,
+        "doi": "10.3847/1538-4365/ac7230",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Shu1977",
+        "label": "Shu, 1977",
+        "raw": "Shu, F. H. 1977, , 214, 488, 10.1086/155274",
+        "title": null,
+        "authors": [],
+        "year": 1977,
+        "doi": "10.1086/155274",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Tobin20",
+        "label": "Tobin et al., 2020",
+        "raw": "Tobin, J. J., Sheehan, P. D., Megeath, S. T., et al. 2020, , 890, 130, 10.3847/1538-4357/ab6f64",
+        "title": null,
+        "authors": [],
+        "year": 2020,
+        "doi": "10.3847/1538-4357/ab6f64",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Tychoniec2020",
+        "label": "Tychoniec et al., 2020",
+        "raw": "Tychoniec, Ł., Manara, C. F., Rosotti, G. P., et al. 2020, , 640, A19, 10.1051/0004-6361/202037851",
+        "title": null,
+        "authors": [],
+        "year": 2020,
+        "doi": "10.1051/0004-6361/202037851",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "VanZandt2023",
+        "label": "Van Zandt et al., 2023",
+        "raw": "Van Zandt, J., Petigura, E. A., MacDougall, M., et al. 2023, , 165, 60, 10.3847/1538-3881/aca6ef",
+        "title": null,
+        "authors": [],
+        "year": 2023,
+        "doi": "10.3847/1538-3881/aca6ef",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Venturini15",
+        "label": "Venturini et al., 2015",
+        "raw": "Venturini, J., Alibert, Y., Benz, W., & Ikoma, M. 2015, , 576, A114, 10.1051/0004-6361/201424008",
+        "title": null,
+        "authors": [],
+        "year": 2015,
+        "doi": "10.1051/0004-6361/201424008",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Warren11",
+        "label": "Warren, 2011",
+        "raw": "Warren, P. H. 2011, Earth and Planetary Science Letters, 311, 93, 10.1016/j.epsl.2011.08.047",
+        "title": null,
+        "authors": [],
+        "year": 2011,
+        "doi": "10.1016/j.epsl.2011.08.047",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Yang20",
+        "label": "Yang et al., 2020",
+        "raw": "Yang, J.-Y., Xie, J.-W., & Zhou, J.-L. 2020, , 159, 164, 10.3847/1538-3881/ab7373",
+        "title": null,
+        "authors": [],
+        "year": 2020,
+        "doi": "10.3847/1538-3881/ab7373",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Zhu2022",
+        "label": "Zhu, 2022",
+        "raw": "Zhu, W. 2022, , 164, 5, 10.3847/1538-3881/ac6f59",
+        "title": null,
+        "authors": [],
+        "year": 2022,
+        "doi": "10.3847/1538-3881/ac6f59",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Zhu18_occur",
+        "label": "Zhu et al., 2018",
+        "raw": "Zhu, W., Petrovich, C., Wu, Y., Dong, S., & Xie, J. 2018, , 860, 101, 10.3847/1538-4357/aac6d5",
+        "title": null,
+        "authors": [],
+        "year": 2018,
+        "doi": "10.3847/1538-4357/aac6d5",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Zhu18",
+        "label": "Zhu & Wu, 2018",
+        "raw": "Zhu, W., & Wu, Y. 2018, , 156, 92, 10.3847/1538-3881/aad22a",
+        "title": null,
+        "authors": [],
+        "year": 2018,
+        "doi": "10.3847/1538-3881/aad22a",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      }
+    ],
+    "citation_keys_total": 71,
+    "citation_keys_mapped": 71,
+    "notes": []
+  },
+  "sentences": [
+    {
+      "id": "s1",
+      "text": "Super-Earths and mini-Neptunes are more likely to appear around M dwarfs, with their occurrence rate inside ∼50–100 days enhanced by factors of ∼3–10 as compared to those around FGK dwarfs (e.g., Dressing & Charbonneau, 2015; Mulders et al., 2015; Gaidos et al., 2016; Hsu et al., 2020).",
+      "section": "Introduction",
+      "start": 1459,
+      "end": 1746,
+      "reference_keys": [
+        "Dressing15",
+        "Mulders15",
+        "Gaidos2016",
+        "Hsu20"
+      ],
+      "marker_spans": [
+        [
+          1648,
+          1745
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Dressing15",
+          "Mulders15",
+          "Gaidos2016",
+          "Hsu20"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "One way to explain this difference is to consider the lower binarity of M dwarfs compared to their more massive counterparts (e.g., Raghavan et al., 2010) as wide binaries can spuriously amplify the stellar brightness and dilute transit signals."
+    },
+    {
+      "id": "s2",
+      "text": "One way to explain this difference is to consider the lower binarity of M dwarfs compared to their more massive counterparts (e.g., Raghavan et al., 2010) as wide binaries can spuriously amplify the stellar brightness and dilute transit signals.",
+      "section": "Introduction",
+      "start": 1747,
+      "end": 1992,
+      "reference_keys": [
+        "Raghavan10"
+      ],
+      "marker_spans": [
+        [
+          1872,
+          1901
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Raghavan10"
+        ]
+      ],
+      "context_before": "Super-Earths and mini-Neptunes are more likely to appear around M dwarfs, with their occurrence rate inside ∼50–100 days enhanced by factors of ∼3–10 as compared to those around FGK dwarfs (e.g., Dressing & Charbonneau, 2015; Mulders et al., 2015; Gaidos et al., 2016; Hsu et al., 2020).",
+      "context_after": "Correcting for the effects of binaries however can only account for roughly half of the measured difference (Moe & Kratter, 2021)."
+    },
+    {
+      "id": "s3",
+      "text": "Correcting for the effects of binaries however can only account for roughly half of the measured difference (Moe & Kratter, 2021).",
+      "section": "Introduction",
+      "start": 1993,
+      "end": 2123,
+      "reference_keys": [
+        "Moe21"
+      ],
+      "marker_spans": [
+        [
+          2101,
+          2122
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Moe21"
+        ]
+      ],
+      "context_before": "One way to explain this difference is to consider the lower binarity of M dwarfs compared to their more massive counterparts (e.g., Raghavan et al., 2010) as wide binaries can spuriously amplify the stellar brightness and dilute transit signals.",
+      "context_after": ""
+    },
+    {
+      "id": "s4",
+      "text": "Unlike small planet statistics, gas giant occurrence rate of FGK dwarfs is boosted by factors of ∼2–3 as compared to M dwarfs (e.g., Clanton & Gaudi, 2014; Fulton et al., 2021).",
+      "section": "Introduction",
+      "start": 2226,
+      "end": 2403,
+      "reference_keys": [
+        "Clanton14",
+        "Fulton21"
+      ],
+      "marker_spans": [
+        [
+          2352,
+          2402
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Clanton14",
+          "Fulton21"
+        ]
+      ],
+      "context_before": "Another difference between planetary systems around M vs. FGK dwarfs is the existence of gas giants.",
+      "context_after": "This general trend of gas giant appearing more commonly around more massive stars is corroborated in direct imaging surveys as well with a caveat that those surveys are sensitive to super-Jupiters around young stars (Birnstiel et al., 2011)."
+    },
+    {
+      "id": "s5",
+      "text": "This general trend of gas giant appearing more commonly around more massive stars is corroborated in direct imaging surveys as well with a caveat that those surveys are sensitive to super-Jupiters around young stars (Birnstiel et al., 2011).",
+      "section": "Introduction",
+      "start": 2404,
+      "end": 2645,
+      "reference_keys": [
+        "Birnstiel11"
+      ],
+      "marker_spans": [
+        [
+          2620,
+          2644
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Birnstiel11"
+        ]
+      ],
+      "context_before": "Unlike small planet statistics, gas giant occurrence rate of FGK dwarfs is boosted by factors of ∼2–3 as compared to M dwarfs (e.g., Clanton & Gaudi, 2014; Fulton et al., 2021).",
+      "context_after": "Gas giants, when they exist, are much more likely to appear at intermediate distances ∼1–16 AU (Fulton et al., 2021)."
+    },
+    {
+      "id": "s6",
+      "text": "Gas giants, when they exist, are much more likely to appear at intermediate distances ∼1–16 AU (Fulton et al., 2021).",
+      "section": "Introduction",
+      "start": 2646,
+      "end": 2763,
+      "reference_keys": [
+        "Fulton21"
+      ],
+      "marker_spans": [
+        [
+          2741,
+          2762
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Fulton21"
+        ]
+      ],
+      "context_before": "This general trend of gas giant appearing more commonly around more massive stars is corroborated in direct imaging surveys as well with a caveat that those surveys are sensitive to super-Jupiters around young stars (Birnstiel et al., 2011).",
+      "context_after": "Recently, Mulders et al. (2021) argued that this outer giant acts as a barrier against the radial drift of pebbles which can effectively starve the inner disk from solids and thereby limiting the amount of pebbles available for the formation of planetary cores (see also Lambrechts et al., 2019)."
+    },
+    {
+      "id": "s7",
+      "text": "Recently, Mulders et al. (2021) argued that this outer giant acts as a barrier against the radial drift of pebbles which can effectively starve the inner disk from solids and thereby limiting the amount of pebbles available for the formation of planetary cores (see also Lambrechts et al., 2019).",
+      "section": "Introduction",
+      "start": 2764,
+      "end": 3060,
+      "reference_keys": [
+        "Mulders21",
+        "Lambrechts19"
+      ],
+      "marker_spans": [
+        [
+          2774,
+          2795
+        ],
+        [
+          3025,
+          3059
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Mulders21"
+        ],
+        [
+          "Lambrechts19"
+        ]
+      ],
+      "context_before": "Gas giants, when they exist, are much more likely to appear at intermediate distances ∼1–16 AU (Fulton et al., 2021).",
+      "context_after": ""
+    },
+    {
+      "id": "s8",
+      "text": "Such hypothesis runs counter to the observations that show a correlation between outer gas giants and inner super-Earths (Zhu & Wu, 2018; Bryan et al., 2019; Herman et al., 2019; Rosenthal et al., 2022).",
+      "section": "Introduction",
+      "start": 3062,
+      "end": 3265,
+      "reference_keys": [
+        "Zhu18",
+        "Bryan19",
+        "Herman19",
+        "Rosenthal22"
+      ],
+      "marker_spans": [
+        [
+          3183,
+          3264
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Zhu18",
+          "Bryan19",
+          "Herman19",
+          "Rosenthal22"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "In fact, the core assembly process by pebble accretion is notoriously lossy (e.g., Ormel, 2017; Ormel & Liu, 2018), so much so that for every pebble isolation mass ∼10M⊕ that is created at ∼10 AU, upwards of ∼100M⊕ worth of material can be drifted into the inner orbits while (but not after) the massive core assembles (Lin et al., 2018; Chachan et al., 2022)."
+    },
+    {
+      "id": "s9",
+      "text": "In fact, the core assembly process by pebble accretion is notoriously lossy (e.g., Ormel, 2017; Ormel & Liu, 2018), so much so that for every pebble isolation mass ∼10M⊕ that is created at ∼10 AU, upwards of ∼100M⊕ worth of material can be drifted into the inner orbits while (but not after) the massive core assembles (Lin et al., 2018; Chachan et al., 2022).",
+      "section": "Introduction",
+      "start": 3266,
+      "end": 3626,
+      "reference_keys": [
+        "Ormel17",
+        "Ormel18",
+        "Lin18",
+        "Chachan22"
+      ],
+      "marker_spans": [
+        [
+          3342,
+          3380
+        ],
+        [
+          3585,
+          3625
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Ormel17",
+          "Ormel18"
+        ],
+        [
+          "Lin18",
+          "Chachan22"
+        ]
+      ],
+      "context_before": "Such hypothesis runs counter to the observations that show a correlation between outer gas giants and inner super-Earths (Zhu & Wu, 2018; Bryan et al., 2019; Herman et al., 2019; Rosenthal et al., 2022).",
+      "context_after": "Furthermore, once the giant forms, the interplay between its secular resonance with planetesimals and aerodynamic drag could spell rapid transport of the latter, enriching the inner region with even more solid material (Dotter, 2016)."
+    },
+    {
+      "id": "s10",
+      "text": "Furthermore, once the giant forms, the interplay between its secular resonance with planetesimals and aerodynamic drag could spell rapid transport of the latter, enriching the inner region with even more solid material (Dotter, 2016).",
+      "section": "Introduction",
+      "start": 3627,
+      "end": 3861,
+      "reference_keys": [
+        "Dotter16"
+      ],
+      "marker_spans": [
+        [
+          3846,
+          3860
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Dotter16"
+        ]
+      ],
+      "context_before": "In fact, the core assembly process by pebble accretion is notoriously lossy (e.g., Ormel, 2017; Ormel & Liu, 2018), so much so that for every pebble isolation mass ∼10M⊕ that is created at ∼10 AU, upwards of ∼100M⊕ worth of material can be drifted into the inner orbits while (but not after) the massive core assembles (Lin et al., 2018; Chachan et al., 2022).",
+      "context_after": "(Footnote: Recent radial velocity follow-up to Kepler/K2 (Bonomo et al., 2023) and TESS planets (Van Zandt et al., 2023) report that giant planet occurrence rate around stars with inner planets is statistically consistent with that of field stars."
+    },
+    {
+      "id": "s11",
+      "text": "(Footnote: Recent radial velocity follow-up to Kepler/K2 (Bonomo et al., 2023) and TESS planets (Van Zandt et al., 2023) report that giant planet occurrence rate around stars with inner planets is statistically consistent with that of field stars.",
+      "section": "Introduction",
+      "start": 3862,
+      "end": 4109,
+      "reference_keys": [
+        "Bonomo2023",
+        "VanZandt2023"
+      ],
+      "marker_spans": [
+        [
+          3919,
+          3940
+        ],
+        [
+          3958,
+          3982
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Bonomo2023"
+        ],
+        [
+          "VanZandt2023"
+        ]
+      ],
+      "context_before": "Furthermore, once the giant forms, the interplay between its secular resonance with planetesimals and aerodynamic drag could spell rapid transport of the latter, enriching the inner region with even more solid material (Dotter, 2016).",
+      "context_after": "Both studies call to attention the need for a larger sample so at present, we conclude that there is either a neutral or positive correlation between outer gas giants and inner super-Earths.)"
+    },
+    {
+      "id": "s12",
+      "text": "The second term of equation § accounts for the Nakagawa-Sekiya-Hayashi drift velocity from the gas headwind (Nakagawa et al., 1986): η ≡ -0.5 γ (c s / v K)^2 is a measure of the deviation in gas orbital velocity from the Keplerian velocity v K = r Ω K due to the radial pressure gradient in the gas disk with γ ≡ d lnP g / d lnr and P g is the gas pressure.",
+      "section": "Theory",
+      "start": 5794,
+      "end": 6151,
+      "reference_keys": [
+        "Nakagawa86"
+      ],
+      "marker_spans": [
+        [
+          5902,
+          5925
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Nakagawa86"
+        ]
+      ],
+      "context_before": "We assume M drift = 2π r v r Σ d, St, where r is the cylindrical distance from the star, Σ d, St is the surface density of dust grains of Stokes number St and v r is their radial velocity (negative sign denotes inward drift), where the first term accounts for the particles' coupling to the inward accretion of gas: ν ≡ α t c s H g is the kinematic viscosity of the gas, α t is the Shakura-Sunyaev parameter, c s = k B T disk / μ m H is the sound speed, k B is the Boltzmann constant, T disk is the local disk temperature, μ = 2.3 is the mean molecular weight of the gas, m H is the mass of a hydrogen atom, H g ≡ c s / Ω K is the gas disk scale height, Ω K = GM⋆/r^3 is the Keplerian orbital frequency, G is the gravitational constant, and M⋆ is the mass of the central star.",
+      "context_after": "We limit our analysis to St ≲ 1 so that (1+ St^2)^-1 → 1 within order unity."
+    },
+    {
+      "id": "s13",
+      "text": "Following Lin et al. (2018, see also), the rate of pebble accretion can be written as where particles that come within R acc of the protoplanet at speed v acc will be accreted onto the core and Hd = H g[αt/(αt+ St)]^1/2 is the pebble disk scale height.",
+      "section": "Theory",
+      "start": 6230,
+      "end": 6482,
+      "reference_keys": [
+        "Lin18"
+      ],
+      "marker_spans": [
+        [
+          6240,
+          6267
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Lin18"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "When R acc < Hd, we are in three-dimensional (3D) accretion regime and under the condition that the pebble-protoplanet encounter time is longer than the settling time, the terminal velocity of the pebbles is approximately a quarter of the accretion velocity (Ormel & Klahr, 2010), which allows us to write R acc^2 v acc ∼ 4 G M p St / Ω K. The accretion rate in the 3D regime is therefore given by where M p is the mass of the protoplanet."
+    },
+    {
+      "id": "s14",
+      "text": "When R acc < Hd, we are in three-dimensional (3D) accretion regime and under the condition that the pebble-protoplanet encounter time is longer than the settling time, the terminal velocity of the pebbles is approximately a quarter of the accretion velocity (Ormel & Klahr, 2010), which allows us to write R acc^2 v acc ∼ 4 G M p St / Ω K. The accretion rate in the 3D regime is therefore given by where M p is the mass of the protoplanet.",
+      "section": "Theory",
+      "start": 6483,
+      "end": 6922,
+      "reference_keys": [
+        "Ormel10"
+      ],
+      "marker_spans": [
+        [
+          6741,
+          6762
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Ormel10"
+        ]
+      ],
+      "context_before": "Following Lin et al. (2018, see also), the rate of pebble accretion can be written as where particles that come within R acc of the protoplanet at speed v acc will be accreted onto the core and Hd = H g[αt/(αt+ St)]^1/2 is the pebble disk scale height.",
+      "context_after": "When R acc > Hd (two-dimensional accretion) and v acc is dominated by the headwind velocity v hw = η v K (2D, hw), where q ≡ M p/M⋆."
+    },
+    {
+      "id": "s15",
+      "text": "This condition is satisfied when (see the appendix of Lin et al. 2018; see also Perets & Murray-Clay 2011) In the same two-dimensional accretion but when v acc ∼ 3 Ω K R acc / 2 is dominated by Keplerian shear (2D, sh), whose condition is satisfied when (equation A5 of Lin et al. 2018) The two-dimensional accretion transitions from headwind- to shear-dominated regime when M p exceeds a transition mass equivalently, Combining everything together,",
+      "section": "Theory",
+      "start": 7056,
+      "end": 7505,
+      "reference_keys": [
+        "Lin18",
+        "Perets11"
+      ],
+      "marker_spans": [
+        [
+          7110,
+          7125
+        ],
+        [
+          7136,
+          7161
+        ],
+        [
+          7326,
+          7341
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Lin18"
+        ],
+        [
+          "Perets11"
+        ],
+        [
+          "Lin18"
+        ]
+      ],
+      "context_before": "When R acc > Hd (two-dimensional accretion) and v acc is dominated by the headwind velocity v hw = η v K (2D, hw), where q ≡ M p/M⋆.",
+      "context_after": ""
+    },
+    {
+      "id": "s16",
+      "text": "We define a mass averaged efficiency ε by integrating over a grain size distribution assuming Epstein drag so that St ∝ a and grain mass m ∝ St^3: where n( St) = dn/d St is the grain size distribution such that n( St)m( St) ∝ St^-0.5 for St <2α t/π (turbulent regime) and n( St)m( St) ∝ St^-0.75 for St >2α t/π (settling regime) as inferred from Birnstiel et al. (2011).",
+      "section": "Theory",
+      "start": 7507,
+      "end": 7877,
+      "reference_keys": [
+        "Birnstiel11"
+      ],
+      "marker_spans": [
+        [
+          7853,
+          7876
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Birnstiel11"
+        ]
+      ],
+      "context_before": "",
+      "context_after": ""
+    },
+    {
+      "id": "s17",
+      "text": "Once we obtain ε (M p), we calculate the dust mass required for a protoplanet to reach the pebble isolation mass M iso where the initial protoplanet mass M0 is taken to be a lunar mass (0.01 M⊕; Johansen & Lambrechts 2017).",
+      "section": "Theory",
+      "start": 8596,
+      "end": 8819,
+      "reference_keys": [
+        "Johansen17"
+      ],
+      "marker_spans": [
+        [
+          8791,
+          8817
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Johansen17"
+        ]
+      ],
+      "context_before": "We integrate ε over St ∈ [10^-6, St f], where the lower limit of St is chosen to have enough dynamic range while also capturing the case where the radial inflow of particles is dominated by coupling to gas inflow (St < (3/2) α t / |γ|; see equation §).",
+      "context_after": "Choosing a stellar mass dependent M0 (e.g., Liu et al., 2020) has a negligible impact on our results (see § §)."
+    },
+    {
+      "id": "s18",
+      "text": "Choosing a stellar mass dependent M0 (e.g., Liu et al., 2020) has a negligible impact on our results (see § §).",
+      "section": "Theory",
+      "start": 8820,
+      "end": 8931,
+      "reference_keys": [
+        "Liu2020"
+      ],
+      "marker_spans": [
+        [
+          8857,
+          8881
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Liu2020"
+        ]
+      ],
+      "context_before": "Once we obtain ε (M p), we calculate the dust mass required for a protoplanet to reach the pebble isolation mass M iso where the initial protoplanet mass M0 is taken to be a lunar mass (0.01 M⊕; Johansen & Lambrechts 2017).",
+      "context_after": "We limit our integration to M iso as at this point, the planet can perturb the surrounding disk gas to create a pebble trap exterior to its orbit (e.g., Lambrechts et al., 2014) and so pebble accretion halts."
+    },
+    {
+      "id": "s19",
+      "text": "We limit our integration to M iso as at this point, the planet can perturb the surrounding disk gas to create a pebble trap exterior to its orbit (e.g., Lambrechts et al., 2014) and so pebble accretion halts.",
+      "section": "Theory",
+      "start": 8932,
+      "end": 9140,
+      "reference_keys": [
+        "Lambrechts14"
+      ],
+      "marker_spans": [
+        [
+          9078,
+          9109
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Lambrechts14"
+        ]
+      ],
+      "context_before": "Choosing a stellar mass dependent M0 (e.g., Liu et al., 2020) has a negligible impact on our results (see § §).",
+      "context_after": "We adopt M iso derived by Bitsch et al. (2018), relevant for α t ≳ 10^-4:"
+    },
+    {
+      "id": "s20",
+      "text": "We adopt M iso derived by Bitsch et al. (2018), relevant for α t ≳ 10^-4:",
+      "section": "Theory",
+      "start": 9141,
+      "end": 9214,
+      "reference_keys": [
+        "Bitsch18"
+      ],
+      "marker_spans": [
+        [
+          9167,
+          9187
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Bitsch18"
+        ]
+      ],
+      "context_before": "We limit our integration to M iso as at this point, the planet can perturb the surrounding disk gas to create a pebble trap exterior to its orbit (e.g., Lambrechts et al., 2014) and so pebble accretion halts.",
+      "context_after": ""
+    },
+    {
+      "id": "s21",
+      "text": "We use the disk temperature profile of (Ida et al., 2016), which draws from the more detailed models in (Garaud & Lin, 2007) and (Oka et al., 2011) and agrees with numerical radiative-transfer calculations from (D'Alessio et al., 1998), within order unity numerical coefficients.",
+      "section": "Theory",
+      "start": 9216,
+      "end": 9495,
+      "reference_keys": [
+        "Ida16",
+        "Garaud07",
+        "Oka11",
+        "Dalessio98"
+      ],
+      "marker_spans": [
+        [
+          9255,
+          9273
+        ],
+        [
+          9320,
+          9340
+        ],
+        [
+          9345,
+          9363
+        ],
+        [
+          9427,
+          9451
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Ida16"
+        ],
+        [
+          "Garaud07"
+        ],
+        [
+          "Oka11"
+        ],
+        [
+          "Dalessio98"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "In the viscously heated inner regions of the disk, the temperature T vis is given by where M⋆ is the rate of accretion onto the star."
+    },
+    {
+      "id": "s22",
+      "text": "We choose B=2.0 which is the measured mean M⋆–M⋆ relationship and we vary M1⊙ between 10^-9 M⊙ yr^-1 and 10^-8 M⊙ yr^-1 which captures 30–70 percentile measured accretion rates for a solar mass star (e.g., Manara et al., 2022).",
+      "section": "Theory",
+      "start": 9809,
+      "end": 10036,
+      "reference_keys": [
+        "Manara22"
+      ],
+      "marker_spans": [
+        [
+          10008,
+          10035
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Manara22"
+        ]
+      ],
+      "context_before": "Observational constraints of M⋆ indicate that it increases with M⋆: where the power-law index B ranges from 1.5 and 3.1 and M1⊙ is the mass accretion rate onto a solar mass star.",
+      "context_after": ""
+    },
+    {
+      "id": "s23",
+      "text": "In the limit where the disk is optically thick to stellar radiation and vertically isothermal (e.g., nearly optically thin to internal radiation), where L⋆ ∝ M⋆^A is the stellar luminosity and A=1.4–1.9 drawn from MIST models (Dotter, 2016; Choi et al., 2016) for pre-main sequence stars.",
+      "section": "Theory",
+      "start": 10106,
+      "end": 10394,
+      "reference_keys": [
+        "Dotter16",
+        "Choi16"
+      ],
+      "marker_spans": [
+        [
+          10332,
+          10365
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Dotter16",
+          "Choi16"
+        ]
+      ],
+      "context_before": "Heating in the outer disk becomes dominated by stellar irradiation.",
+      "context_after": "We adopt A = 1.5 for our study."
+    },
+    {
+      "id": "s24",
+      "text": "We can now define the disk temperature: where 2000 K sets the upper limit to the temperature due to the thermostating effect of dust sublimation (D'Alessio et al., 1998).",
+      "section": "Theory",
+      "start": 10427,
+      "end": 10597,
+      "reference_keys": [
+        "Dalessio98"
+      ],
+      "marker_spans": [
+        [
+          10572,
+          10596
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Dalessio98"
+        ]
+      ],
+      "context_before": "We adopt A = 1.5 for our study.",
+      "context_after": ""
+    },
+    {
+      "id": "s25",
+      "text": "We adopt the self-similar solution of viscously accreting disk Σ g ∝ ν^-1 ∝ Ω K α t^-1 c s^-2 (Lynden-Bell & Pringle, 1974; Hartmann et al., 1998) and P g ∝ Ω K^2 c s^-1.",
+      "section": "Theory",
+      "start": 10714,
+      "end": 10884,
+      "reference_keys": [
+        "Lynden-Bell74",
+        "Hartmann98"
+      ],
+      "marker_spans": [
+        [
+          10808,
+          10860
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Lynden-Bell74",
+          "Hartmann98"
+        ]
+      ],
+      "context_before": "To evaluate γ, we need to evaluate a pressure profile P g = Σ g c s Ω K where Σ g is the disk gas surface density.",
+      "context_after": "For T disk ∼ T vis, P g ∝ r^-51/20 so γ = -51/20."
+    },
+    {
+      "id": "s26",
+      "text": "We therefore compare our M dust → iso against the distribution of measured disk masses to compute the fraction of disks that have enough mass to create inner cores f pl, which we directly translate into the fraction of stars that have Kepler planets (e.g., Zhu et al., 2018; Yang et al., 2020), a metric that is distinct from the commonly quoted planet occurrence rate defined as the number of planets per star.",
+      "section": "Fraction of Disks that Can Create Inner Planets",
+      "start": 18941,
+      "end": 19352,
+      "reference_keys": [
+        "Zhu18_occur",
+        "Yang20"
+      ],
+      "marker_spans": [
+        [
+          19191,
+          19234
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Zhu18_occur",
+          "Yang20"
+        ]
+      ],
+      "context_before": "Even though the pebble accretion efficiency is higher for lower mass stars in all the different regimes we study (Equations §-§), the feasibility of forming planetary cores depends on the available pebble mass as well, which generally decreases around lower mass stars.",
+      "context_after": ""
+    },
+    {
+      "id": "s27",
+      "text": "Using the measured disk masses tabulated by Manara et al. (2022), we build a cumulative distribution function (CDF) defined as the fraction of disks with masses greater than a given M disk (Figure §, left panel).",
+      "section": "Fraction of Disks that Can Create Inner Planets",
+      "start": 19354,
+      "end": 19566,
+      "reference_keys": [
+        "Manara22"
+      ],
+      "marker_spans": [
+        [
+          19398,
+          19418
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Manara22"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "The CDFs are divided into a range of stellar masses with the lower and upper limits of each interval set to (0.08, 0.20, 0.40, 0.60, 1.40, 2.00) M⊙, chosen to represent different stellar spectral types."
+    },
+    {
+      "id": "s28",
+      "text": "These are evolved disks (≳1 Myr) but the formation of planetary cores will very well begin earlier (e.g., Najita & Kenyon, 2014; Manara et al., 2018) and so we multiply all disk masses by a factor of 3 so that the 3σ (99.7th percentile) value of disk mass in our sample matches the 3σ value of Class I disk masses measured by VLA in (Tobin et al., 2020).",
+      "section": "Fraction of Disks that Can Create Inner Planets",
+      "start": 19770,
+      "end": 20124,
+      "reference_keys": [
+        "Najita14",
+        "Manara18",
+        "Tobin20"
+      ],
+      "marker_spans": [
+        [
+          19869,
+          19919
+        ],
+        [
+          20103,
+          20123
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Najita14",
+          "Manara18"
+        ],
+        [
+          "Tobin20"
+        ]
+      ],
+      "context_before": "The CDFs are divided into a range of stellar masses with the lower and upper limits of each interval set to (0.08, 0.20, 0.40, 0.60, 1.40, 2.00) M⊙, chosen to represent different stellar spectral types.",
+      "context_after": "A factor of 3 increase in dust mass between Class II and Class I disks is also in agreement with existing results from comparison of different disk classes in various star forming regions (Hsu et al., 2020)."
+    },
+    {
+      "id": "s29",
+      "text": "A factor of 3 increase in dust mass between Class II and Class I disks is also in agreement with existing results from comparison of different disk classes in various star forming regions (Hsu et al., 2020).",
+      "section": "Fraction of Disks that Can Create Inner Planets",
+      "start": 20125,
+      "end": 20332,
+      "reference_keys": [
+        "Hsu20"
+      ],
+      "marker_spans": [
+        [
+          20313,
+          20331
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Hsu20"
+        ]
+      ],
+      "context_before": "These are evolved disks (≳1 Myr) but the formation of planetary cores will very well begin earlier (e.g., Najita & Kenyon, 2014; Manara et al., 2018) and so we multiply all disk masses by a factor of 3 so that the 3σ (99.7th percentile) value of disk mass in our sample matches the 3σ value of Class I disk masses measured by VLA in (Tobin et al., 2020).",
+      "context_after": "See Appendix A for more details and the effects of our choices on the disk mass CDFs and f pl."
+    },
+    {
+      "id": "s30",
+      "text": "We compare our f pl with the the measured fraction of FGK stars with Kepler planets which ranges from ∼30±5% (Zhu et al., 2018) to ∼73±13% (Yang et al., 2020) where the difference arises from different samples of host stars and different models for correcting for intrinsic planet multiplicity and the correlation in periods and radii of adjacent planet pairs (see Yang et al., 2020, their Section 5.1).",
+      "section": "Fraction of Disks that Can Create Inner Planets",
+      "start": 23161,
+      "end": 23564,
+      "reference_keys": [
+        "Zhu18_occur",
+        "Yang20"
+      ],
+      "marker_spans": [
+        [
+          23270,
+          23288
+        ],
+        [
+          23300,
+          23319
+        ],
+        [
+          23521,
+          23563
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Zhu18_occur"
+        ],
+        [
+          "Yang20"
+        ],
+        [
+          "Yang20"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "Under our scheme, all but one model can reproduce the fraction of stars harboring close-in Kepler planets (see Figure §)."
+    },
+    {
+      "id": "s31",
+      "text": "For our parameters, this isolation mass is always ≳ 9–10M⊕ which is large enough to nucleate a gas giant at this distance, with the exact runaway mass subject to local opacity and metal content (e.g., Piso et al., 2015; Lee & Chiang, 2015; Venturini et al., 2015; Chachan et al., 2021).",
+      "section": "Connection with Outer Planets",
+      "start": 23827,
+      "end": 24113,
+      "reference_keys": [
+        "Piso15",
+        "Lee15",
+        "Venturini15",
+        "Chachan21"
+      ],
+      "marker_spans": [
+        [
+          24021,
+          24112
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Piso15",
+          "Lee15",
+          "Venturini15",
+          "Chachan21"
+        ]
+      ],
+      "context_before": "We now compute M dust → iso and the fraction of disks that can create an isolation mass at 5 AU f pl,outer.",
+      "context_after": "First, we verify that the amount of dust mass required to create this outer core (M outer) is larger than that required to create inner cores (M inner, top panel of Figure §)."
+    },
+    {
+      "id": "s32",
+      "text": "This is in agreement with the previous results of Lin et al. (2018) and Chachan et al. (2022).",
+      "section": "Connection with Outer Planets",
+      "start": 24611,
+      "end": 24705,
+      "reference_keys": [
+        "Lin18",
+        "Chachan22"
+      ],
+      "marker_spans": [
+        [
+          24661,
+          24678
+        ],
+        [
+          24683,
+          24704
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Lin18"
+        ],
+        [
+          "Chachan22"
+        ]
+      ],
+      "context_before": "When M inner < M outer, a disk that has enough dust mass (≥ M outer) to create outer giant planet cores will invariably create both inner and outer planets.",
+      "context_after": "The two models for which this is not true for Sun-like stars correspond to pebble accretion happening in the 3D regime in a viscously heated region that is large in extent or for Stf < 3 α t / 2 |γ| (α t = 10^-4 & 10^-3, M1⊙ = 10^-8 M⊙ yr^-1, v f = 1 m/s; light shade in Figure §)."
+    },
+    {
+      "id": "s33",
+      "text": "Furthermore, we see that f pl,outer rises with M⋆ (middle panel of Figure §) in agreement with the observed trends (e.g., Fulton et al., 2021).",
+      "section": "Connection with Outer Planets",
+      "start": 25122,
+      "end": 25265,
+      "reference_keys": [
+        "Fulton21"
+      ],
+      "marker_spans": [
+        [
+          25237,
+          25264
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Fulton21"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "In almost all cases, the accretion is in the 2D, irradiation-dominated regime and although ε 2D,irr falls with M⋆ (Equation §), it is a weak dependence and the distribution of M disk is more top-heavy around more massive stars so that f pl,outer will be larger."
+    },
+    {
+      "id": "s34",
+      "text": "Compared to the measured occurrence rate of outer gas giants from Fulton et al. (2021), our f pl,outer tends to be large.",
+      "section": "Connection with Outer Planets",
+      "start": 25528,
+      "end": 25649,
+      "reference_keys": [
+        "Fulton21"
+      ],
+      "marker_spans": [
+        [
+          25594,
+          25614
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Fulton21"
+        ]
+      ],
+      "context_before": "In almost all cases, the accretion is in the 2D, irradiation-dominated regime and although ε 2D,irr falls with M⋆ (Equation §), it is a weak dependence and the distribution of M disk is more top-heavy around more massive stars so that f pl,outer will be larger.",
+      "context_after": "We note that we are simply calculating the fraction of disks with enough mass to create an isolation mass by pebble accretion."
+    },
+    {
+      "id": "s35",
+      "text": "Accounting for the time required for the completion of pebble accretion and subsequent gas accretion to form planets ≳ 100 M⊕ would reduce our f pl,outer given finite disk lifetimes (Mamajek, 2009; Michel et al., 2021) and varying metal content (opacity), thus bringing it into better agreement with the measured occurrence rate of cold Jupiters.",
+      "section": "Connection with Outer Planets",
+      "start": 25777,
+      "end": 26123,
+      "reference_keys": [
+        "Mamajek2009",
+        "Michel21"
+      ],
+      "marker_spans": [
+        [
+          25959,
+          25995
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Mamajek2009",
+          "Michel21"
+        ]
+      ],
+      "context_before": "We note that we are simply calculating the fraction of disks with enough mass to create an isolation mass by pebble accretion.",
+      "context_after": "(Footnote: We note that our calculation provides the fraction of disks that can form giants whereas Fulton et al. (2021) measures the occurrence rate of giants."
+    },
+    {
+      "id": "s36",
+      "text": "(Footnote: We note that our calculation provides the fraction of disks that can form giants whereas Fulton et al. (2021) measures the occurrence rate of giants.",
+      "section": "Connection with Outer Planets",
+      "start": 26124,
+      "end": 26284,
+      "reference_keys": [
+        "Fulton21"
+      ],
+      "marker_spans": [
+        [
+          26224,
+          26244
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Fulton21"
+        ]
+      ],
+      "context_before": "Accounting for the time required for the completion of pebble accretion and subsequent gas accretion to form planets ≳ 100 M⊕ would reduce our f pl,outer given finite disk lifetimes (Mamajek, 2009; Michel et al., 2021) and varying metal content (opacity), thus bringing it into better agreement with the measured occurrence rate of cold Jupiters.",
+      "context_after": "While observational measurements of the former are not yet available, the average cold giant multiplicity is estimated to be 1.27 ± 0.12 (Zhu, 2022), suggesting that average systems are expected to harbor single cold giant."
+    },
+    {
+      "id": "s37",
+      "text": "While observational measurements of the former are not yet available, the average cold giant multiplicity is estimated to be 1.27 ± 0.12 (Zhu, 2022), suggesting that average systems are expected to harbor single cold giant.",
+      "section": "Connection with Outer Planets",
+      "start": 26285,
+      "end": 26508,
+      "reference_keys": [
+        "Zhu2022"
+      ],
+      "marker_spans": [
+        [
+          26422,
+          26433
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Zhu2022"
+        ]
+      ],
+      "context_before": "(Footnote: We note that our calculation provides the fraction of disks that can form giants whereas Fulton et al. (2021) measures the occurrence rate of giants.",
+      "context_after": "It is therefore reasonable to assume that the cold giant planet occurrence rate is not too different from the fraction of stars with cold giant planets.)"
+    },
+    {
+      "id": "s38",
+      "text": "We deduce the effect of filtering by an outer planet proposed by Mulders et al. (2021) by considering the inner disk to be decoupled from the outer disk once the outer planet reaches its isolation mass.",
+      "section": "Connection with Outer Planets",
+      "start": 26664,
+      "end": 26866,
+      "reference_keys": [
+        "Mulders21"
+      ],
+      "marker_spans": [
+        [
+          26729,
+          26750
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Mulders21"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "Calculating the growth timescale t grow of an inner core (M iso/M peb) out of the solids that were drifted in (M solids=M dust → iso(5 AU) - M iso(5 AU)) and comparing t grow to the drain out timescale of M solids (t drain = r/v r) at P = 100 days (∼ the outer period at which current surveys are sensitive to super-Earths), we find that t grow < t drain in all the cases we consider (see bottom panel of Figure §), suggesting that the inner cores would be formed before all the solids disappear."
+    },
+    {
+      "id": "s39",
+      "text": "We verify that filtering is only relevant when v f is smaller at short orbital periods, and so our result is consistent with the “No Snow Line” curve in Figure 1 of Mulders et al. 2021.",
+      "section": "Connection with Outer Planets",
+      "start": 27364,
+      "end": 27549,
+      "reference_keys": [
+        "Mulders21"
+      ],
+      "marker_spans": [
+        [
+          27529,
+          27548
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Mulders21"
+        ]
+      ],
+      "context_before": "Calculating the growth timescale t grow of an inner core (M iso/M peb) out of the solids that were drifted in (M solids=M dust → iso(5 AU) - M iso(5 AU)) and comparing t grow to the drain out timescale of M solids (t drain = r/v r) at P = 100 days (∼ the outer period at which current surveys are sensitive to super-Earths), we find that t grow < t drain in all the cases we consider (see bottom panel of Figure §), suggesting that the inner cores would be formed before all the solids disappear.",
+      "context_after": "While the silicate grains within the iceline are often considered to have lower v f than the ice-coated grains in the outer orbit (e.g., Pinilla et al., 2016; Drążkowska & Alibert, 2017), recent laboratory and theoretical studies suggest v f is more uniform (e.g., Musiolik & Wurm, 2019; Kimura et al., 2020)."
+    },
+    {
+      "id": "s40",
+      "text": "While the silicate grains within the iceline are often considered to have lower v f than the ice-coated grains in the outer orbit (e.g., Pinilla et al., 2016; Drążkowska & Alibert, 2017), recent laboratory and theoretical studies suggest v f is more uniform (e.g., Musiolik & Wurm, 2019; Kimura et al., 2020).",
+      "section": "Connection with Outer Planets",
+      "start": 27550,
+      "end": 27859,
+      "reference_keys": [
+        "Pinilla16",
+        "Drazkowska17",
+        "Musiolik19",
+        "Kimura20"
+      ],
+      "marker_spans": [
+        [
+          27680,
+          27736
+        ],
+        [
+          27808,
+          27858
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Pinilla16",
+          "Drazkowska17"
+        ],
+        [
+          "Musiolik19",
+          "Kimura20"
+        ]
+      ],
+      "context_before": "We verify that filtering is only relevant when v f is smaller at short orbital periods, and so our result is consistent with the “No Snow Line” curve in Figure 1 of Mulders et al. 2021.",
+      "context_after": ""
+    },
+    {
+      "id": "s41",
+      "text": "By combining the theory of pebble accretion with the measured disk masses, we have demonstrated that the fraction of disks that can create inner planetary cores rises towards lower mass stars down to ∼ 0.3 - 0.5M⊙ over a plausible range of v f and α t for a typical disk accretion rate of M⋆ = 10^-8 M⊙ yr^-1(M⋆/M⊙)^2, in agreement with the observed enhancement in the occurrence rate of inner super-Earths around M dwarfs compared to FGK dwarfs (e.g., Dressing & Charbonneau, 2015; Mulders et al., 2015; Hsu et al., 2020).",
+      "section": "Discussion and Conclusion",
+      "start": 28316,
+      "end": 28839,
+      "reference_keys": [
+        "Dressing15",
+        "Mulders15",
+        "Hsu20"
+      ],
+      "marker_spans": [
+        [
+          28762,
+          28838
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Dressing15",
+          "Mulders15",
+          "Hsu20"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "Since core formation by pebble accretion likely happens during the earlier stages of a disk's lifetime, M1 ⊙ ∼ 10^-8 M⊙ yr^-1 is a reasonable choice for the accretion rate of a solar mass star."
+    },
+    {
+      "id": "s42",
+      "text": "We further showed that disks that have enough mass to create an isolation mass at 5 AU will be able to drift in more than enough solids to the inner disk to create small planets there, explaining the observed correlation between inner super-Earths and outer giants without exception (e.g., Zhu & Wu, 2018; Bryan et al., 2019).",
+      "section": "Discussion and Conclusion",
+      "start": 29034,
+      "end": 29360,
+      "reference_keys": [
+        "Zhu18",
+        "Bryan19"
+      ],
+      "marker_spans": [
+        [
+          29317,
+          29359
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Zhu18",
+          "Bryan19"
+        ]
+      ],
+      "context_before": "Since core formation by pebble accretion likely happens during the earlier stages of a disk's lifetime, M1 ⊙ ∼ 10^-8 M⊙ yr^-1 is a reasonable choice for the accretion rate of a solar mass star.",
+      "context_after": "Unlike the inner planets, the fraction of disks that can create a large outer planet drops towards lower mass stars, in agreement with the observed reduction of cold Jupiter occurrence rate around cooler stars universally, in all cases (e.g., Clanton & Gaudi, 2014; Fulton et al., 2021)."
+    },
+    {
+      "id": "s43",
+      "text": "Unlike the inner planets, the fraction of disks that can create a large outer planet drops towards lower mass stars, in agreement with the observed reduction of cold Jupiter occurrence rate around cooler stars universally, in all cases (e.g., Clanton & Gaudi, 2014; Fulton et al., 2021).",
+      "section": "Discussion and Conclusion",
+      "start": 29361,
+      "end": 29648,
+      "reference_keys": [
+        "Clanton14",
+        "Fulton21"
+      ],
+      "marker_spans": [
+        [
+          29597,
+          29647
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Clanton14",
+          "Fulton21"
+        ]
+      ],
+      "context_before": "We further showed that disks that have enough mass to create an isolation mass at 5 AU will be able to drift in more than enough solids to the inner disk to create small planets there, explaining the observed correlation between inner super-Earths and outer giants without exception (e.g., Zhu & Wu, 2018; Bryan et al., 2019).",
+      "context_after": "Our framework therefore provides a unifying solution that can reconcile all three observations, with a caveat that it is sensitive to the measurements of disk masses."
+    },
+    {
+      "id": "s44",
+      "text": "Since this is about the mass below which short-period planets would emerge rocky (Lee & Connors, 2021; Lee et al., 2022), our model expects a fall in the occurrence rate of mini-Neptunes around low mass stars but not necessarily that of terrestrial planets, in line with recent observational evidence (e.g., Brady & Bean, 2022; Ment & Charbonneau, 2023).",
+      "section": "Discussion and Conclusion",
+      "start": 30133,
+      "end": 30487,
+      "reference_keys": [
+        "Lee21",
+        "Lee22",
+        "Brady22",
+        "Ment23"
+      ],
+      "marker_spans": [
+        [
+          30214,
+          30253
+        ],
+        [
+          30434,
+          30486
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Lee21",
+          "Lee22"
+        ],
+        [
+          "Brady22",
+          "Ment23"
+        ]
+      ],
+      "context_before": "In general, we predict the fraction of disks that can create inner planets up to their isolation masses ≳1–2M⊕ to drop around stars M⋆ < 0.3–0.5M⊙; it remains possible to create smaller cores.",
+      "context_after": "A caveat to this statement is that we have limited our analysis to pebble accretion which sets the initial mass of planetary cores."
+    },
+    {
+      "id": "s45",
+      "text": "A more quantitative verification would require bridging this early stage of core formation to the final mass doubling effected by giant impacts in the late stage of disk evolution (e.g., Lee & Chiang, 2016; Dawson et al., 2016) since how much gas a planet ends up with is primarily determined by its final core mass (e.g., Lee, 2019).",
+      "section": "Discussion and Conclusion",
+      "start": 30620,
+      "end": 30954,
+      "reference_keys": [
+        "Lee16",
+        "Dawson16",
+        "Lee19"
+      ],
+      "marker_spans": [
+        [
+          30800,
+          30847
+        ],
+        [
+          30936,
+          30953
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Lee16",
+          "Dawson16"
+        ],
+        [
+          "Lee19"
+        ]
+      ],
+      "context_before": "A caveat to this statement is that we have limited our analysis to pebble accretion which sets the initial mass of planetary cores.",
+      "context_after": ""
+    },
+    {
+      "id": "s46",
+      "text": "If we consider a warmer giant (≲3 AU), our framework would expect a weakening of the inner and outer planet correlation as M dust → iso becomes similar between ∼100 days and ≲3 AU (and in some cases, the required dust mass to create the inner core can exceed), in qualitative agreement with Rosenthal et al. (2022).",
+      "section": "Discussion and Conclusion",
+      "start": 30956,
+      "end": 31271,
+      "reference_keys": [
+        "Rosenthal22"
+      ],
+      "marker_spans": [
+        [
+          31247,
+          31270
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Rosenthal22"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "A distinct prediction of our calculation is that, as long as colder Juipters exist, their correlation with the inner super-Earths remains and potentially enhances even around M dwarfs."
+    },
+    {
+      "id": "s47",
+      "text": "In our analysis, we have focused on a single giant, which is consistent with the estimated low average cold giant multiplicity 2.03±0.12 (Zhu, 2022).",
+      "section": "Discussion and Conclusion",
+      "start": 31522,
+      "end": 31671,
+      "reference_keys": [
+        "Zhu2022"
+      ],
+      "marker_spans": [
+        [
+          31659,
+          31670
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Zhu2022"
+        ]
+      ],
+      "context_before": "We close with a comment on the effect of multiple outer giants.",
+      "context_after": "The same study reports 8 systems with 2 cold giants; furthermore, our solar system harbors two cold gas giants (Jupiter and Saturn)."
+    },
+    {
+      "id": "s48",
+      "text": "Qualitatively, this is consistent with the isotopic constraints suggesting Earth and Mars are mostly formed out of non-carbonaceous material (i.e., inner disk material) with only a trace amount of carbonaceous chondrites, which would have had to drift in from the outer orbits (e.g., Warren, 2011; Burkhardt et al., 2021).",
+      "section": "Discussion and Conclusion",
+      "start": 32114,
+      "end": 32436,
+      "reference_keys": [
+        "Warren11",
+        "Burkhardt21"
+      ],
+      "marker_spans": [
+        [
+          32391,
+          32435
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Warren11",
+          "Burkhardt21"
+        ]
+      ],
+      "context_before": "Given that the pebble accretion efficiency at the location of these giants is ∼10%, if M inner/M outer ≳ 0.8, having two giants can inhibit the assembly of isolation mass cores in the inner orbits, at least by pebble accretion.",
+      "context_after": "With pebble accretion minimized, the overall growth of planetary cores would also likely slow down, which may help explain why our solar system ended up with only small terrestrial planets rather than super-Earths/mini-Neptunes."
+    },
+    {
+      "id": "s49",
+      "text": "Since we need both disk dust mass and stellar mass for our study, we use Class II disk dust masses compiled by (Manara et al., 2022) from measurements of disk masses in different star forming regions from the literature.",
+      "section": "Disk mass CDF",
+      "start": 34022,
+      "end": 34242,
+      "reference_keys": [
+        "Manara22"
+      ],
+      "marker_spans": [
+        [
+          34133,
+          34154
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Manara22"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "These disk masses are estimated from ALMA observations assuming that the emission is optically thin, the dust opacity is given by 2.3 (ν / 230 GHz) cm^2/g, and a single dust temperature of 20 K. We refer the reader to (Manara et al., 2022) for more details."
+    },
+    {
+      "id": "s50",
+      "text": "These disk masses are estimated from ALMA observations assuming that the emission is optically thin, the dust opacity is given by 2.3 (ν / 230 GHz) cm^2/g, and a single dust temperature of 20 K. We refer the reader to (Manara et al., 2022) for more details.",
+      "section": "Disk mass CDF",
+      "start": 34243,
+      "end": 34500,
+      "reference_keys": [
+        "Manara22"
+      ],
+      "marker_spans": [
+        [
+          34461,
+          34482
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Manara22"
+        ]
+      ],
+      "context_before": "Since we need both disk dust mass and stellar mass for our study, we use Class II disk dust masses compiled by (Manara et al., 2022) from measurements of disk masses in different star forming regions from the literature.",
+      "context_after": "We limit our sample to systems that have both measured disk masses (excluding upper limits) and stellar masses, which gives a sample size of 402."
+    },
+    {
+      "id": "s51",
+      "text": "Since Class II disks are known to already have undergone significant dust evolution and to contain too little mass to form the observed planetary systems (Najita & Kenyon, 2014), we must look to disks at earlier stages in their evolution to obtain a better estimate of the initial dust mass.",
+      "section": "Disk mass CDF",
+      "start": 34648,
+      "end": 34939,
+      "reference_keys": [
+        "Najita14"
+      ],
+      "marker_spans": [
+        [
+          34802,
+          34825
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Najita14"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "To do so, we turn to disk dust masses measured for Class I disks in the Orion molecular clouds using VLA (Tobin et al., 2020)."
+    },
+    {
+      "id": "s52",
+      "text": "To do so, we turn to disk dust masses measured for Class I disks in the Orion molecular clouds using VLA (Tobin et al., 2020).",
+      "section": "Disk mass CDF",
+      "start": 34940,
+      "end": 35066,
+      "reference_keys": [
+        "Tobin20"
+      ],
+      "marker_spans": [
+        [
+          35045,
+          35065
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Tobin20"
+        ]
+      ],
+      "context_before": "Since Class II disks are known to already have undergone significant dust evolution and to contain too little mass to form the observed planetary systems (Najita & Kenyon, 2014), we must look to disks at earlier stages in their evolution to obtain a better estimate of the initial dust mass.",
+      "context_after": "The assumption of optically thin emission for calculating disk dust mass is more accurate at longer wavelengths and therefore VLA measurements provide better mass estimates."
+    },
+    {
+      "id": "s53",
+      "text": "Therefore, to estimate the multiplicative factor by which we should scale up the Class II disk masses from (Manara et al., 2022), we match the 3 σ (99.7th percentile) values of the disk masses from the two surveys, which gives a factor of ∼ 3.",
+      "section": "Disk mass CDF",
+      "start": 35900,
+      "end": 36143,
+      "reference_keys": [
+        "Manara22"
+      ],
+      "marker_spans": [
+        [
+          36007,
+          36028
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Manara22"
+        ]
+      ],
+      "context_before": "Both samples can only be compared for the highest mass disks, where the two samples are more likely to be complete.",
+      "context_after": "Our result is in agreement with (Tychoniec et al., 2020), who found that Class I disks are at least 3 times more massive than Class II disks in various star forming regions."
+    },
+    {
+      "id": "s54",
+      "text": "Our result is in agreement with (Tychoniec et al., 2020), who found that Class I disks are at least 3 times more massive than Class II disks in various star forming regions.",
+      "section": "Disk mass CDF",
+      "start": 36144,
+      "end": 36317,
+      "reference_keys": [
+        "Tychoniec2020"
+      ],
+      "marker_spans": [
+        [
+          36176,
+          36200
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Tychoniec2020"
+        ]
+      ],
+      "context_before": "Therefore, to estimate the multiplicative factor by which we should scale up the Class II disk masses from (Manara et al., 2022), we match the 3 σ (99.7th percentile) values of the disk masses from the two surveys, which gives a factor of ∼ 3.",
+      "context_after": ""
+    },
+    {
+      "id": "s55",
+      "text": "However, if the M disk - M⋆ relation steepens with time (there is some evidence for this, see Pascucci et al., 2016; Ansdell et al., 2017; Manara et al., 2022), then the multiplicative factor ought to be larger for small M⋆.",
+      "section": "Disk mass CDF",
+      "start": 36472,
+      "end": 36696,
+      "reference_keys": [
+        "Pascucci2016",
+        "Ansdell2017",
+        "Manara22"
+      ],
+      "marker_spans": [
+        [
+          36528,
+          36631
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Pascucci2016",
+          "Ansdell2017",
+          "Manara22"
+        ]
+      ],
+      "context_before": "We have implicitly assumed that the scaling factor for disk masses between the Class I and II stages is the same for the entire range of stellar masses.",
+      "context_after": "Since Class I disks are enshrouded by protostellar envelopes that contribute to the total luminosities, M⋆ is typically not known for Class I disks (which is why we use Class II disks to calculate our CDFs)."
+    },
+    {
+      "id": "s56",
+      "text": "Linear regression on the Class I VLA data from (Tobin et al., 2020) yields M dust ∝ L bol^0.25.",
+      "section": "Disk mass CDF",
+      "start": 37055,
+      "end": 37150,
+      "reference_keys": [
+        "Tobin20"
+      ],
+      "marker_spans": [
+        [
+          37102,
+          37122
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Tobin20"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "If L bol is primarily set by the pre-main sequence protostar's luminosity (i.e. L bol ∝ M⋆^1.5, as assumed in § §), then M dust ∝ M⋆^0.375."
+    },
+    {
+      "id": "s57",
+      "text": "If L bol is set by accretion luminosity G M⋆ M⋆ / R instead, the two limiting power law indices for the L bol - M⋆ relation are (see Dunham et al. 2014 for a review): i) L bol ∝ M⋆^1/2 for isothermal core collapse (M⋆ ∝ M⋆^0, Shu 1977) and R ∝ M⋆^1/2 as for a pre-main sequence star (the radius-mass scaling here is derived assuming a fully convective star), and ii) L bol ∝ M⋆^2 for competitive accretion (M⋆ ∝ M i^2/3 M f, M i is the instantaneous mass and M f ∼ M⋆ is the final mass of the protostar, Bonnell et al. 2001; McKee & Offner 2010) and for R ∝ M⋆^0 if R is the size of the protostellar core and assumed independent of M⋆.",
+      "section": "Disk mass CDF",
+      "start": 37291,
+      "end": 37926,
+      "reference_keys": [
+        "Dunham2014",
+        "Shu1977",
+        "Bonnell2001",
+        "McKee2010"
+      ],
+      "marker_spans": [
+        [
+          37424,
+          37442
+        ],
+        [
+          37517,
+          37525
+        ],
+        [
+          37795,
+          37835
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Dunham2014"
+        ],
+        [
+          "Shu1977"
+        ],
+        [
+          "Bonnell2001",
+          "McKee2010"
+        ]
+      ],
+      "context_before": "If L bol is primarily set by the pre-main sequence protostar's luminosity (i.e. L bol ∝ M⋆^1.5, as assumed in § §), then M dust ∝ M⋆^0.375.",
+      "context_after": "These two limiting cases yield M dust ∝ M⋆^0.125 and M dust ∝ M⋆^0.5, both of which are significantly shallower than the M dust ∝ M⋆^1 relation we get for the (Manara et al., 2022) sample."
+    },
+    {
+      "id": "s58",
+      "text": "These two limiting cases yield M dust ∝ M⋆^0.125 and M dust ∝ M⋆^0.5, both of which are significantly shallower than the M dust ∝ M⋆^1 relation we get for the (Manara et al., 2022) sample.",
+      "section": "Disk mass CDF",
+      "start": 37927,
+      "end": 38115,
+      "reference_keys": [
+        "Manara22"
+      ],
+      "marker_spans": [
+        [
+          38086,
+          38107
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Manara22"
+        ]
+      ],
+      "context_before": "If L bol is set by accretion luminosity G M⋆ M⋆ / R instead, the two limiting power law indices for the L bol - M⋆ relation are (see Dunham et al. 2014 for a review): i) L bol ∝ M⋆^1/2 for isothermal core collapse (M⋆ ∝ M⋆^0, Shu 1977) and R ∝ M⋆^1/2 as for a pre-main sequence star (the radius-mass scaling here is derived assuming a fully convective star), and ii) L bol ∝ M⋆^2 for competitive accretion (M⋆ ∝ M i^2/3 M f, M i is the instantaneous mass and M f ∼ M⋆ is the final mass of the protostar, Bonnell et al. 2001; McKee & Offner 2010) and for R ∝ M⋆^0 if R is the size of the protostellar core and assumed independent of M⋆.",
+      "context_after": "Figure § shows the effect of scaling disk mass in different stellar bins by 3 × (M⋆, bin / 1.7 M⊙)^(β T - β M), where β T = 0.125 or 0.5 and β M ∼ 1 correspond to the power law indices characterizing M dust - M⋆ relation for the (Tobin et al., 2020) and (Manara et al., 2022) samples respectively and M⋆, bin is the mid-point of the stellar mass bin."
+    },
+    {
+      "id": "s59",
+      "text": "Figure § shows the effect of scaling disk mass in different stellar bins by 3 × (M⋆, bin / 1.7 M⊙)^(β T - β M), where β T = 0.125 or 0.5 and β M ∼ 1 correspond to the power law indices characterizing M dust - M⋆ relation for the (Tobin et al., 2020) and (Manara et al., 2022) samples respectively and M⋆, bin is the mid-point of the stellar mass bin.",
+      "section": "Disk mass CDF",
+      "start": 38116,
+      "end": 38466,
+      "reference_keys": [
+        "Tobin20",
+        "Manara22"
+      ],
+      "marker_spans": [
+        [
+          38345,
+          38365
+        ],
+        [
+          38370,
+          38391
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Tobin20"
+        ],
+        [
+          "Manara22"
+        ]
+      ],
+      "context_before": "These two limiting cases yield M dust ∝ M⋆^0.125 and M dust ∝ M⋆^0.5, both of which are significantly shallower than the M dust ∝ M⋆^1 relation we get for the (Manara et al., 2022) sample.",
+      "context_after": "The overall effect is to boost f pl for lower mass stars such that super-Earth occurrence rate rises even more sharply with decreasing M⋆."
+    }
+  ]
+}

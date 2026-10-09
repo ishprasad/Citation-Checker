@@ -8,7 +8,7 @@ from typing import Literal, Optional
 from pydantic import BaseModel, Field
 
 FulltextStatus = Literal["full", "abstract_only", "unavailable"]
-FulltextSource = Literal["arxiv_latex", "arxiv_pdf", "oa_pdf"]
+FulltextSource = Literal["arxiv_latex", "arxiv_pdf", "oa_pdf", "europepmc"]
 ClaimType = Literal["finding", "method", "definition", "background"]
 VerdictLabel = Literal["supported", "overstated", "not_found", "contradicted", "unverifiable"]
 FailureMode = Literal[
@@ -179,6 +179,11 @@ class JudgeSignals(BaseModel):
     source_relation: Relation = "none"  # how the cited passage links them
     source_statistics: SourceStatistics = "unclear"  # statistical support for the point in the source
     cited_work_on_topic: bool = True  # False if the cited work is not about the claim's topic at all
+    # Proper name of the resource the marker identifies ("KCWI", "GSM8K"), as written in the sentence.
+    named_resource: Optional[str] = None
+    # False if the marker points to a resource, method, data set or definition that the cited work
+    # does not introduce, describe, provide or use at all (the wrong source for it).
+    cited_work_provides_resource: bool = True
 
 
 class Verdict(BaseModel):

@@ -91,6 +91,24 @@ def test_numeric_pdf_ranges_lists_and_appendix_after_references():
     assert "Additional Results" in [sec.title for sec in paper.sections][-1]
 
 
+def test_bold_titles_in_references_do_not_end_the_list():
+    # eLife sets reference titles in bold: a short, mostly bold entry looks like a heading.
+    b = PdfBuilder()
+    b.title("Primaquine Safety in Widget Deficiency")
+    b.heading("1 Introduction")
+    b.paragraph("Anaemia is common in malaria (White, 2018). Severe haemolysis is rare but documented "
+                "(Yilma et al., 2023). Earlier trials used daily dosing (Alving et al., 1960).")
+    b.heading("References")
+    b.reference_parts([("Alving AS, Johnson CF, Tarlov AR (1960) ", False), ("Mitigation of the haemolytic effect", True)])
+    b.reference_parts([("White NJ (2018) ", False), ("Anaemia and malaria in children", True)])
+    b.reference_parts([("Yilma D, Groves ES, Douglas NM (2023) ", False), ("Severe hemolysis during primaquine", True)])
+    b.heading("Article and author information")
+    b.paragraph("Sasithon Pukrittayakamee works at the Clinical Therapeutics Unit of the Faculty of Tropical Medicine.")
+    paper, sentences = parse_pdf(b.bytes())
+    assert [r.label for r in paper.references] == ["Alving et al., 1960", "White, 2018", "Yilma et al., 2023"]
+    assert (paper.citation_keys_mapped, paper.citation_keys_total) == (3, 3)
+
+
 def test_weak_citation_matching_is_reported():
     paper, _ = parse_pdf(numeric_pdf(cite_missing=True))
     assert paper.citation_keys_total == 9 and paper.citation_keys_mapped == 4

@@ -1,0 +1,346 @@
+{
+  "arxiv_id": "2305.00803v2",
+  "title": "Small Planets Around Cool Dwarfs: Enhanced Formation Efficiency of Super-Earths around M dwarfs",
+  "field": "Physics: astronomy and astrophysics",
+  "source": "10.3847/2041-8213/ace257",
+  "planted": [
+    {
+      "id": "p1",
+      "sentence_id": "s5",
+      "reference_keys": [
+        "Birnstiel11"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Nielsen et al., 2019) with (Birnstiel et al., 2011) (\"Dust size distributions in coagulation/fragmentation equilibrium: numerical solutions and analytical fits\") (similarity 0.31 vs 0.61 for the original)",
+      "original": "This general trend of gas giant appearing more commonly around more massive stars is corroborated in direct imaging surveys as well with a caveat that those surveys are sensitive to super-Jupiters around young stars (Nielsen et al., 2019).",
+      "mutated": "This general trend of gas giant appearing more commonly around more massive stars is corroborated in direct imaging surveys as well with a caveat that those surveys are sensitive to super-Jupiters around young stars (Birnstiel et al., 2011).",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p2",
+      "sentence_id": "s6",
+      "reference_keys": [
+        "Fulton21"
+      ],
+      "mutation": "number_change",
+      "description": "Changed \"10\" to \"16\"",
+      "original": "Gas giants, when they exist, are much more likely to appear at intermediate distances ∼1–10 AU (Fulton et al., 2021).",
+      "mutated": "Gas giants, when they exist, are much more likely to appear at intermediate distances ∼1–16 AU (Fulton et al., 2021).",
+      "expected_labels": [
+        "overstated",
+        "contradicted",
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "number_drift"
+      ]
+    },
+    {
+      "id": "p3",
+      "sentence_id": "s10",
+      "reference_keys": [
+        "Dotter16"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Best et al., 2023) with (Dotter, 2016) (\"MESA ISOCHRONES AND STELLAR TRACKS (MIST) 0: METHODS FOR THE CONSTRUCTION OF STELLAR ISOCHRONES\") (similarity 0.27 vs 0.66 for the original)",
+      "original": "Furthermore, once the giant forms, the interplay between its secular resonance with planetesimals and aerodynamic drag could spell rapid transport of the latter, enriching the inner region with even more solid material (Best et al., 2023).",
+      "mutated": "Furthermore, once the giant forms, the interplay between its secular resonance with planetesimals and aerodynamic drag could spell rapid transport of the latter, enriching the inner region with even more solid material (Dotter, 2016).",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p4",
+      "sentence_id": "s28",
+      "reference_keys": [
+        "Manara18"
+      ],
+      "mutation": "hedge_removal",
+      "description": "Removed the hedge: \"could\" became \"will\"",
+      "original": "These are evolved disks (≳1 Myr) but the formation of planetary cores could very well begin earlier (e.g., Najita & Kenyon, 2014; Manara et al., 2018) and so we multiply all disk masses by a factor of 3 so that the 3σ (99.7th percentile) value of disk mass in our sample matches the 3σ value of Class I disk masses measured by VLA in (Tobin et al., 2020).",
+      "mutated": "These are evolved disks (≳1 Myr) but the formation of planetary cores will very well begin earlier (e.g., Najita & Kenyon, 2014; Manara et al., 2018) and so we multiply all disk masses by a factor of 3 so that the 3σ (99.7th percentile) value of disk mass in our sample matches the 3σ value of Class I disk masses measured by VLA in (Tobin et al., 2020).",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "hypothesis_as_finding"
+      ]
+    },
+    {
+      "id": "p5",
+      "sentence_id": "s29",
+      "reference_keys": [
+        "Hsu20"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (e.g., Tychoniec et al., 2020) with (Hsu et al., 2020) (\"Occurrence rates of planets orbiting M Stars: applying ABC to Kepler DR25, Gaia DR2, and 2MASS data\") (similarity 0.30 vs 0.72 for the original)",
+      "original": "A factor of 3 increase in dust mass between Class II and Class I disks is also in agreement with existing results from comparison of different disk classes in various star forming regions (e.g., Tychoniec et al., 2020).",
+      "mutated": "A factor of 3 increase in dust mass between Class II and Class I disks is also in agreement with existing results from comparison of different disk classes in various star forming regions (Hsu et al., 2020).",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p6",
+      "sentence_id": "s30",
+      "reference_keys": [
+        "Zhu18_occur"
+      ],
+      "mutation": "number_change",
+      "description": "Changed \"3%\" to \"5%\"",
+      "original": "We compare our f pl with the the measured fraction of FGK stars with Kepler planets which ranges from ∼30±3% (Zhu et al., 2018) to ∼73±13% (Yang et al., 2020) where the difference arises from different samples of host stars and different models for correcting for intrinsic planet multiplicity and the correlation in periods and radii of adjacent planet pairs (see Yang et al., 2020, their Section 5.1).",
+      "mutated": "We compare our f pl with the the measured fraction of FGK stars with Kepler planets which ranges from ∼30±5% (Zhu et al., 2018) to ∼73±13% (Yang et al., 2020) where the difference arises from different samples of host stars and different models for correcting for intrinsic planet multiplicity and the correlation in periods and radii of adjacent planet pairs (see Yang et al., 2020, their Section 5.1).",
+      "expected_labels": [
+        "overstated",
+        "contradicted",
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "number_drift"
+      ]
+    },
+    {
+      "id": "p7",
+      "sentence_id": "s35",
+      "reference_keys": [
+        "Mamajek2009"
+      ],
+      "mutation": "hedge_removal",
+      "description": "Removed the hedge: \"likely\" became \"(deleted)\"",
+      "original": "Accounting for the time required for the completion of pebble accretion and subsequent gas accretion to form planets ≳ 100 M⊕ would likely reduce our f pl,outer given finite disk lifetimes (Mamajek, 2009; Michel et al., 2021) and varying metal content (opacity), thus bringing it into better agreement with the measured occurrence rate of cold Jupiters.",
+      "mutated": "Accounting for the time required for the completion of pebble accretion and subsequent gas accretion to form planets ≳ 100 M⊕ would reduce our f pl,outer given finite disk lifetimes (Mamajek, 2009; Michel et al., 2021) and varying metal content (opacity), thus bringing it into better agreement with the measured occurrence rate of cold Jupiters.",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "hypothesis_as_finding"
+      ]
+    },
+    {
+      "id": "p8",
+      "sentence_id": "s42",
+      "reference_keys": [
+        "Zhu18"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"without exception\" before the citation",
+      "original": "We further showed that disks that have enough mass to create an isolation mass at 5 AU will be able to drift in more than enough solids to the inner disk to create small planets there, explaining the observed correlation between inner super-Earths and outer giants (e.g., Zhu & Wu, 2018; Bryan et al., 2019).",
+      "mutated": "We further showed that disks that have enough mass to create an isolation mass at 5 AU will be able to drift in more than enough solids to the inner disk to create small planets there, explaining the observed correlation between inner super-Earths and outer giants without exception (e.g., Zhu & Wu, 2018; Bryan et al., 2019).",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p9",
+      "sentence_id": "s43",
+      "reference_keys": [
+        "Clanton14"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"universally, in all cases\" before the citation",
+      "original": "Unlike the inner planets, the fraction of disks that can create a large outer planet drops towards lower mass stars, in agreement with the observed reduction of cold Jupiter occurrence rate around cooler stars (e.g., Clanton & Gaudi, 2014; Fulton et al., 2021).",
+      "mutated": "Unlike the inner planets, the fraction of disks that can create a large outer planet drops towards lower mass stars, in agreement with the observed reduction of cold Jupiter occurrence rate around cooler stars universally, in all cases (e.g., Clanton & Gaudi, 2014; Fulton et al., 2021).",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p10",
+      "sentence_id": "s47",
+      "reference_keys": [
+        "Zhu2022"
+      ],
+      "mutation": "number_change",
+      "description": "Changed \"1.27\" to \"2.03\"",
+      "original": "In our analysis, we have focused on a single giant, which is consistent with the estimated low average cold giant multiplicity 1.27±0.12 (Zhu, 2022).",
+      "mutated": "In our analysis, we have focused on a single giant, which is consistent with the estimated low average cold giant multiplicity 2.03±0.12 (Zhu, 2022).",
+      "expected_labels": [
+        "overstated",
+        "contradicted",
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "number_drift"
+      ]
+    }
+  ],
+  "baseline_flags": [
+    [
+      "s1",
+      "Dressing15",
+      "overstated"
+    ],
+    [
+      "s1",
+      "Gaidos2016",
+      "overstated"
+    ],
+    [
+      "s1",
+      "Hsu20",
+      "overstated"
+    ],
+    [
+      "s1",
+      "Mulders15",
+      "overstated"
+    ],
+    [
+      "s16",
+      "Birnstiel11",
+      "not_found"
+    ],
+    [
+      "s22",
+      "Manara22",
+      "not_found"
+    ],
+    [
+      "s22",
+      "Manara22",
+      "overstated"
+    ],
+    [
+      "s24",
+      "Dalessio98",
+      "overstated"
+    ],
+    [
+      "s25",
+      "Lynden-Bell74",
+      "overstated"
+    ],
+    [
+      "s31",
+      "Chachan21",
+      "overstated"
+    ],
+    [
+      "s31",
+      "Lee15",
+      "overstated"
+    ],
+    [
+      "s31",
+      "Piso15",
+      "overstated"
+    ],
+    [
+      "s31",
+      "Venturini15",
+      "overstated"
+    ],
+    [
+      "s32",
+      "Chachan22",
+      "overstated"
+    ],
+    [
+      "s32",
+      "Lin18",
+      "not_found"
+    ],
+    [
+      "s39",
+      "Mulders21",
+      "not_found"
+    ],
+    [
+      "s4",
+      "Fulton21",
+      "overstated"
+    ],
+    [
+      "s40",
+      "Kimura20",
+      "not_found"
+    ],
+    [
+      "s40",
+      "Musiolik19",
+      "not_found"
+    ],
+    [
+      "s41",
+      "Dressing15",
+      "overstated"
+    ],
+    [
+      "s45",
+      "Dawson16",
+      "not_found"
+    ],
+    [
+      "s45",
+      "Lee16",
+      "overstated"
+    ],
+    [
+      "s50",
+      "Manara22",
+      "overstated"
+    ],
+    [
+      "s52",
+      "Tobin20",
+      "not_found"
+    ],
+    [
+      "s56",
+      "Tobin20",
+      "not_found"
+    ],
+    [
+      "s57",
+      "Bonnell2001",
+      "not_found"
+    ],
+    [
+      "s58",
+      "Manara22",
+      "not_found"
+    ],
+    [
+      "s59",
+      "Manara22",
+      "not_found"
+    ],
+    [
+      "s59",
+      "Tobin20",
+      "not_found"
+    ],
+    [
+      "s7",
+      "Lambrechts19",
+      "overstated"
+    ],
+    [
+      "s9",
+      "Chachan22",
+      "overstated"
+    ],
+    [
+      "s9",
+      "Lin18",
+      "overstated"
+    ]
+  ]
+}

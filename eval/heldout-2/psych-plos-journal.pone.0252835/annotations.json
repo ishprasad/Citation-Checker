@@ -1,0 +1,71 @@
+{
+  "paper": "psych-plos-journal.pone.0252835",
+  "annotations": [
+    {
+      "sentence_id": "s4",
+      "reference_key": "r4",
+      "verdict": "false_alarm",
+      "note": "The CDC pandemic mitigation guidelines list hand hygiene and social-distancing measures among non-pharmaceutical interventions; whether distancing is filed under 'personal' or 'community' measures is a quibble."
+    },
+    {
+      "sentence_id": "s12",
+      "reference_key": "r13",
+      "verdict": "false_alarm",
+      "note": "In this garbled two-part sentence, the part this review supports is that COVID-19 affected everyone's well-being and especially exposed groups including health workers; the review says exactly that."
+    },
+    {
+      "sentence_id": "s12",
+      "reference_key": "r14",
+      "verdict": "false_alarm",
+      "note": "Joint citation [13, 14]: Xiong et al.'s review supports the general-population impact; the health-worker part is carried by [13]."
+    },
+    {
+      "sentence_id": "s16",
+      "reference_key": "r21",
+      "verdict": "debatable",
+      "note": "The Henan study reports 89% of healthcare workers with sufficient COVID-19 knowledge, but no breakdown for hygiene and distancing and no comparison with non-health workers; 'corroborated' is loose."
+    },
+    {
+      "sentence_id": "s18",
+      "reference_key": "r23",
+      "verdict": "genuine",
+      "note": "A meta-analysis of the Reasoned Action Approach (attitudes, norms and perceived control predicting health behaviour) is cited for knowledge being essential to prevention and positive behaviour; knowledge is not a construct it examines."
+    },
+    {
+      "sentence_id": "s21",
+      "reference_key": "r26",
+      "verdict": "debatable",
+      "note": "36.3% of Australian respondents named 'the right thing to do' as their main motivation for hand washing and avoiding crowds; if that was the most common answer, 'the main motivation' is a fair summary, but it is a minority of respondents."
+    },
+    {
+      "sentence_id": "s24",
+      "reference_key": "r29",
+      "verdict": "debatable",
+      "note": "Only the abstract was available: an influenza modelling study concluding that population-wide mask use could delay a pandemic and reduce the reproduction number, possibly enough to contain an outbreak; the sentence generalises from influenza and softens the hedges slightly."
+    },
+    {
+      "sentence_id": "s25",
+      "reference_key": "r30",
+      "verdict": "false_alarm",
+      "note": "Capraro & Barcelo explicitly conclude, combining their results with Jordan et al., that focusing on 'your community' promotes intentions to engage in several preventive behaviours; the sentence reports their conclusion."
+    },
+    {
+      "sentence_id": "s30",
+      "reference_key": "r13",
+      "verdict": "genuine",
+      "note": "Cited for a study among nurses finding a negative correlation between perceived stress and happiness, but the review describes no such study (it mentions nurses only for anxiety and distress figures)."
+    },
+    {
+      "sentence_id": "s31",
+      "reference_key": "r35",
+      "verdict": "debatable",
+      "note": "The study reports a significant association between job satisfaction and total positive mental health, but did not measure workplace environment; it only discusses its importance, so 'and so was the workplace environment' overstates that part."
+    },
+    {
+      "sentence_id": "s33",
+      "reference_key": "r36",
+      "verdict": "false_alarm",
+      "note": "Van Bavel et al. state that distancing threatens to aggravate loneliness and could have negative long-term health consequences, which is the sentence's point."
+    }
+  ]
+}

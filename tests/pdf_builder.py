@@ -51,6 +51,16 @@ class PdfBuilder:
             self.page.insert_text((x, self.y + size + i * size * 1.25), line, fontsize=size, fontname="helv")
         self.y += height
 
+    def reference_parts(self, parts: list[tuple[str, bool]], size: float = BODY) -> None:
+        """A one-line entry in mixed fonts, e.g. [("White NJ (2018) ", False), ("Title", True)]."""
+        self._room(size * 1.25 + 6)
+        x = LEFT
+        for text, bold in parts:
+            font = "hebo" if bold else "helv"
+            self.page.insert_text((x, self.y + size), text, fontsize=size, fontname=font)
+            x += pymupdf.get_text_length(text, fontname=font, fontsize=size)
+        self.y += size * 1.25 + 6
+
     def note(self, text: str, x: float, y: float, size: float = 7) -> None:
         """Free-standing small text, e.g. a journal sidebar or masthead."""
         self.page.insert_text((x, y), text, fontsize=size, fontname="helv")

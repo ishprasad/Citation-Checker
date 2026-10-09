@@ -1,0 +1,298 @@
+{
+  "slug": "psych-plos-journal.pone.0288609",
+  "field": "Psychology",
+  "title": "Respected but stigmatized: Healthcare workers caring for COVID-19 patients",
+  "job_id": "3d93337c80c1",
+  "scored_at": "2026-10-08T17:31:04+00:00",
+  "planted": 10,
+  "checked": 10,
+  "caught": 8,
+  "recall": 0.8,
+  "label_accuracy": 0.7,
+  "expected_mode_rate": 0.5,
+  "untouched_verdicts": 44,
+  "other_flags": 4,
+  "other_flags_preexisting": 4,
+  "precision": 0.6666666666666666,
+  "precision_excluding_preexisting": 1.0,
+  "by_mutation": {
+    "citation_swap": {
+      "planted": 5,
+      "caught": 4
+    },
+    "hedge_removal": {
+      "planted": 2,
+      "caught": 1
+    },
+    "number_change": {
+      "planted": 1,
+      "caught": 1
+    },
+    "scope_inflation": {
+      "planted": 2,
+      "caught": 2
+    }
+  },
+  "flagged_citations": 4,
+  "review": {
+    "genuine": 2,
+    "false_alarm": 1,
+    "debatable": 1,
+    "unreviewed": 0
+  },
+  "review_details": {
+    "genuine": [
+      {
+        "sentence_id": "s5",
+        "reference_key": "r5",
+        "note": "The cited study never defines stigma; it only lists manifestations (e.g. 'prejudice (devaluation of HCWs)') that it attributes to its own references [7, 8]. The general definition is not in the cited work."
+      },
+      {
+        "sentence_id": "s9",
+        "reference_key": "r9",
+        "note": "The cited Jordanian survey of depression and anxiety never mentions stigma (no occurrence in the full text), so it cannot support 'stigmatization can impact the mental health of HCWs'."
+      }
+    ],
+    "false_alarm": [
+      {
+        "sentence_id": "s9",
+        "reference_key": "r8",
+        "note": "The cited interview study says stigma 'still poses a threat to mental well-being' of hospital doctors. Doctors are healthcare workers; flagging the claim as broader than the source is pedantic."
+      }
+    ],
+    "debatable": [
+      {
+        "sentence_id": "s9",
+        "reference_key": "r11",
+        "note": "The cited work reports (citing another study) that perceived stigma is associated with anxiety and depression; PTSD and suicide are absent, but the sentence cites two works [10, 11] for that list, and 'can lead to' over an association is a mild overstatement."
+      }
+    ],
+    "unreviewed": []
+  },
+  "precision_reviewed": 0.9090909090909091,
+  "summary_line": "Caught 8 of 10 planted errors · 1 false alarm · 2 real citation problems found in the original paper",
+  "details": [
+    {
+      "id": "p1",
+      "sentence_id": "s3",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [3] with [9] (\"Mental health status of the general population, healthcare professionals, and university students during 2019 coronavirus disease outbreak in Jordan: A cross‐sectional study\") (similarity 0.43 vs 0.65 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p2",
+      "sentence_id": "s8",
+      "mutation": "hedge_removal",
+      "description": "Removed the hedge: \"may\" became \"will\"",
+      "checked": true,
+      "caught": false,
+      "label_correct": false,
+      "labels": [
+        "supported"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": false
+    },
+    {
+      "id": "p3",
+      "sentence_id": "s14",
+      "mutation": "number_change",
+      "description": "Changed \"28%\" to \"45%\"",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [
+        "number_drift"
+      ],
+      "expected_mode_found": true,
+      "escalated": false
+    },
+    {
+      "id": "p4",
+      "sentence_id": "s15",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [27] with [28] (\"Exploring the impact of COVID-19 on frontline health workers through a photovoice study in Kaduna, Kwara and Ogun States, Nigeria\") (similarity 0.37 vs 0.78 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": true
+    },
+    {
+      "id": "p5",
+      "sentence_id": "s18",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"in every population and setting\" before the citation",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [
+        "hypothesis_as_finding",
+        "scope_inflation"
+      ],
+      "expected_mode_found": true,
+      "escalated": false
+    },
+    {
+      "id": "p6",
+      "sentence_id": "s19",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"without exception\" before the citation",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [
+        "scope_inflation"
+      ],
+      "expected_mode_found": true,
+      "escalated": false
+    },
+    {
+      "id": "p7",
+      "sentence_id": "s24",
+      "mutation": "hedge_removal",
+      "description": "Removed the hedge: \"may\" became \"will\"",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [
+        "hypothesis_as_finding"
+      ],
+      "expected_mode_found": true,
+      "escalated": false
+    },
+    {
+      "id": "p8",
+      "sentence_id": "s27",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [38] with [15] (\"Mental Health of Physicians During COVID-19 Outbreak in Bangladesh: A Web-Based Cross-Sectional Survey\") (similarity 0.54 vs 0.81 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": true
+    },
+    {
+      "id": "p9",
+      "sentence_id": "s30",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [40] with [8] (\"“We All Really Need to just Take a Breath”: Composite Narratives of Hospital Doctors’ Well-Being during the COVID-19 Pandemic\") (similarity 0.49 vs 0.85 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": false,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [
+        "scope_inflation"
+      ],
+      "expected_mode_found": false,
+      "escalated": false
+    },
+    {
+      "id": "p10",
+      "sentence_id": "s32",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [28] with [19] (\"TB STIGMA – MEASUREMENT GUIDANCE\") (similarity 0.36 vs 0.61 for the original)",
+      "checked": true,
+      "caught": false,
+      "label_correct": false,
+      "labels": [
+        "unverifiable"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": true
+    }
+  ],
+  "verdicts": 58,
+  "escalation": {
+    "verdicts": 58,
+    "escalated": 9,
+    "label_changed": 0,
+    "transitions": {}
+  },
+  "coverage": {
+    "total": 40,
+    "full": 26,
+    "abstract_only": 1,
+    "unavailable": 13,
+    "retracted": 0,
+    "line": "Full text found for 26 of 40 references · abstract only for 1 · unavailable for 13."
+  },
+  "usage": {
+    "per_model": [
+      {
+        "model": "Qwen/Qwen3-Embedding-8B",
+        "role": "embed",
+        "calls": 6,
+        "cached_calls": 0,
+        "prompt_tokens": 381,
+        "completion_tokens": 0,
+        "estimated_cost_usd": 4e-06
+      },
+      {
+        "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+        "role": "escalate",
+        "calls": 9,
+        "cached_calls": 4,
+        "prompt_tokens": 143482,
+        "completion_tokens": 16780,
+        "estimated_cost_usd": 0.193822
+      },
+      {
+        "model": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+        "role": "extract",
+        "calls": 33,
+        "cached_calls": 19,
+        "prompt_tokens": 61676,
+        "completion_tokens": 3679,
+        "estimated_cost_usd": 0.004584
+      },
+      {
+        "model": "nvidia/nemotron-3-super-120b-a12b",
+        "role": "judge",
+        "calls": 39,
+        "cached_calls": 11,
+        "prompt_tokens": 182584,
+        "completion_tokens": 55697,
+        "estimated_cost_usd": 0.104902
+      }
+    ],
+    "total_prompt_tokens": 388123,
+    "total_completion_tokens": 76156,
+    "total_estimated_cost_usd": 0.303312
+  },
+  "baseline_cost_usd": 0.194
+}

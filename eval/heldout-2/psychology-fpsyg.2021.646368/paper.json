@@ -1,0 +1,1902 @@
+{
+  "paper": {
+    "id": "heldout:pdf:80e273b8d6d1a084:428df42d",
+    "title": "Association of Sleep Duration and Screen Time With Anxiety of Pregnant Women During the COVID-19 Pandemic",
+    "authors": [
+      "Kunming Tian"
+    ],
+    "abstract": "",
+    "source": "pdf",
+    "arxiv_id": null,
+    "parsed_from": "pdf",
+    "citation_style": "author_year",
+    "text": "Yuan Zhang 1†, Yuge Zhang 2†, Renli Deng 3†, Min Chen , Rong Cao , Shijiu Chen , Kuntao Chen , Zhiheng Jin , Xue Bai , Jingyan Tian , Baofeng Zhou  and Kunming Tian 1,10*\n\nThe COVID-19 pandemic has dramatically changed the patterns of lifestyle and posed psychological stress on pregnant women. However, the association of sleep duration and screen time with anxiety among pregnant women under the backdrop of the COVID-19 pandemic scenario has been poorly addressed. We conducted one large-scale, multicenter cross-sectional study which recruited 1794 pregnant women across middle and west China. Self-reported demographic characteristics, lifestyle, and mental health status were collected from 6th February to 8th May 2020. We investigated the association of sleep duration and screen time with the risk of anxiety by multivariable logistic regression analysis and linear regression analysis after adjusting potential confounders. The dose-response relationship of sleep duration and screen time with anxiety was visualized using a cubic spline plot. Our data revealed that almost 35% of pregnant women suffered from anxiety during the COVID-19 pandemic. Sleep duration was dose-dependently associated with a lower risk of anxiety among pregnant women (OR = 0.41, 95% CI: 0.27–0.63), while screen time exhibited a conversed effect (OR = 2.01, 95% CI:1.00–4.39). Notably, sleep duration (≥8 h/day) synergistically combined with screen time (3–7 h/day) to diminish the risk of anxiety (OR = 0.70, 95% CI: 0.50–0.99). Taken together, sleep duration and screen time were independently and jointly associated with anxiety (P < 0.05). Therefore, promoting a more active lifestyle and maintaining higher sleep quality could improve the mental health of pregnant women, especially under public health emergency.\n\nINTRODUCTION\n\nThe novel coronavirus disease (COVID-19) has spread to 188 countries and more than 100,000,000 people have suffered from COVID-19 Notably, the duration of the COVID-19 pandemic has the world on edge. Many countries adopted unprecedent strict quarantine and lockdown measures for effective control of COVID-19 (Zhang et al., 2020), which profoundly changed the pattern of lifestyle and contributed to sedentary behaviors. More importantly, the unpredictability and seriousness of this disease, together with social isolation, synergistically contributes to mental disturbance among the general population in every population and setting (Azim et al., 2020; Bao et al., 2020). As a vulnerable population due to dramatic physiological and immunological changes during gestation (Narang et al., 2020), the mental health of pregnant women has increasingly drawn concern (Thapa et al., 2020). A recent study found that COVID- 19 contributed to about 20.5% pregnant women suffering from anxiety symptoms in Wuhan (Liu et al., 2020). One reason for this is that pregnant women are seriously worried about being infected by COVID-19, which might impact the health of their fetus without exception (Favre et al., 2020; Gross et al., 2020). More importantly, mental health problems are common in pregnant women (Yonkers et al., 2014). Notably, psychological stress during the pregnancy period could lead to various pregnancy complications, such as preeclampsia and low birth weight (Littleton et al., 2007; Qiao et al., 2012). Given the adverse outcomes of mental disorders, psychological stress surveillance, and early intervention of the anxiety of pregnant women under the COVID-19 pandemic is crucial.\n\nRecently, a small sample cross-sectional study indicated that long-term lockdown and confinement at home elicited profound lifestyle changes, which are causing nearly half of pregnant women to suffer from anxiety (Corbett et al., 2020). Similarly, among Canadian pregnant women, COVID- 19 markedly increased the prevalence of anxiety, especially for those with psychiatric history and low income (Zhang et al., 2020). Furthermore, Wu et al. uncovered that pregnant women who are underweight, in employment, and have an economic burden were more likely to develop into anxiety in the Chinese population (Wu et al., 2020). Recently, data showed that sleep condition and sleep quality was associated with psychological stress universally, in all cases (Lin et al., 2021). Importantly, a sedentary lifestyle also can contribute to various adverse health outcomes and is associated with poor sleep (Cao et al., 2011; The, 2019; Choi et al., 2020; Leger et al., 2020; van de Vegte et al., 2020). Nevertheless, the impact of this dramatic lifestyle alteration caused by the COVID-19 pandemic on psychological disorders has been poorly explored.\n\nTo fill this knowledge gap, we conducted a multi-center, large sample investigation that contains 1794 pregnant women from eight hospitals across four provinces in China. Our purpose was to investigate the prevalence of anxiety and further determine the independent and interactive association of sleep duration and screen time with anxiety among pregnant women. Our study could optimize psychological intervention strategies and empower the society to maximize the maintenance of the mental health of pregnant women by adopting healthy lifestyles.\n\nMETHODS\n\nParticipants and Study Design\n\nWe designed the large-scale, multi-center, cross-sectional study which recruited pregnant women from eight hospitals of four geographically diverse areas (Hubei, Jiangxi, Shanxi, and Guizhou provinces) to determine the association of a COVID- 19-mediated lifestyle with anxiety across middle and west China. Participants, who were outpatients, were recruited from 6th February, 2020 to 8th May, 2020. We initially recruited 1872 participants, and those among them who had infectious diseases (n = 2) and psychological diseases (n = 6) were excluded. We also excluded people with missing information about mental status, sleep duration, and screen time (n = 30), and people with an answer time of more than 40 min or <5 min (n = 40). After exclusion, a total of 1794 participants were finally enrolled in our study. The research was approved by the Ethics Committee of Tongji Medical College, Huazhong University of Science and Technology.\n\nData Collection\n\nQuestionnaire We developed a questionnaire that consists of five parts: sociodemographic information, sleep quality, screen time, physical activity, and anxiety assessment. Considering the government guidance to minimize the face-to-face contact during this COVID-19 pandemic, we collected related information from an online crowdsourcing platform named Wenjuanxing (www.wjx.com). The respondents were invited to scan the survey link using a smartphone and self-administrate to finish the questionnaire according to the instructions if the pregnant women confirmed their willingness to participate the survey. Informed consent was obtained from the participants before their participation in the study. Upon analysis, all questionnaires were subjected to quality audit.\n\nMental Health Assessment Mental health was assessed using the 20 items Self-Rating Anxiety Scale. It composed of 20 items with four-point options (range: 1 = never, 2 = sometimes, 3 = often, 4 = very often) to capture the symptoms of anxiety. The SAS has been applied in Chinese populations in numerous studies, performing good validity and acceptable reliability (Kang et al., 2016; Ma et al., 2019; Wu et al., 2020). The Cronbach’s α of SAS in the current study was 0.756. The anxiety score was calculated from the sum score of the 20 items. The cut-offpoint for anxiety was above 49, thus participants were categorized into healthy population (≤49) and anxiety population (≥50) based on anxiety score (Wu et al., 2020).\n\nAssessment of Sleeping Duration and Screen-Time Information regarding sleep duration and screen time was collected by a self-reported questionnaire. Sleep duration (h/day) was determined by asking the following question: “When did you usually go to sleep at night and wake up in the morning during COVID-19 pandemic?” Sleeping time was categorized into four groups: <6, 6–7, 7–8, ≥8 h. Screen-time was assessed by the question regarding “How many hours a day on average did you spend on mobile phone/computer/TV?” All screen-based activities were then summed for a total daily screen time (h/day) which was divided as: ≤2, 3–4, 5–6, 7–8, ≥8 h.\n\nCommonly, 7–8 h is recognized as the better sleep duration for Chinese people. However, considering that the COVID-19 pandemic resulted in delayed and poor sleep patterns, and more time spent on social media (Deng et al., 2020), we set sleep duration for ≥8 h as the highest level. Sleep duration of <6 h was associated with a higher risk of adverse perinatal outcomes, therefore, <6 h was set as the lowest level for sleep duration (Cai et al., 2017). For screen time, previous research has found that screen time (>2 h) was associated with higher psychological stress (The, 2019). Therefore, we chose screen time (≤2 h) as the lowest level. Besides, given the calculated screen time in pregnant women during the COVID-19 pandemic, we divided the screen time of ≥8 as the highest group (Wu et al., 2020).\n\nCovariates Multiple covariates and potential confounders were controlled to measure the association of sleep duration and screen time with anxiety among pregnant women. These covariates included: prepregnant BMI, age, maternal type, occupation, gestational weeks, residence, psychologic situation during pandemic of COVID-19, timely prenatal examinations, cut offof health care products, household income during pandemic of COVID-19, rhythm of life during COVID-19, physical frequencies, screen time and sleep duration, education level, parity, pregnant complications, history of psychological diseases, and physical frequency. Given the fact that medical health workers and government employers have more responsibility for fighting COVID-19 in China and are more prone to have more higher risk to contact COVID- 19 patients, thus they suffered more psychological stress than the general population. The occupation of whom was divided into government employee and non-government employee. The potential mediated effect of occupation on the association of interest was taken into consideration. Moreover, the severity of the COVID-19 pandemic determines the levels of isolation, quarantine, and proactive social distancing, which are closely related with lifestyle pattern and generate different mental pressure to the pregnant women. So, the residence in different provinces was categorized into three degrees during the COVID- 19 pandemic according to the identified numbers of infected patients (low risk < 500; 500 < middle risk < 10,000; high risk > 10,000).\n\nStatistical Analysis All statistical analysis was performed by the SPSS (version 25.0, IBM, NY, USA) or R software (version 4.00, R core team). P-value was set at <0.05 as the threshold for statistical significance. In the descriptive analysis, the continuous and categorical variables were statistically described as Mean ± SD or n (%) in both the healthy population and anxiety group. The respondent characteristics in both the healthy group and anxiety group were analyzed through employing a t-test for continuous variables while a chi-square test was used for categorical variables.\n\nMultivariable logistic regression analysis was used to estimate the crude and adjusted odds ratios (ORs) and 95% confidence intervals (CIs), and the dose-response effect was further visualized by the cubic spline. Moreover, the potential interactive effect of the association between sleep duration and screen time and anxiety through factorial analysis after controlling the covariates was performed.\n\nStratified analyses were conducted by baseline characteristics [including age (<25, ≥25 years), BMI (<25, ≥25 kg/m), resident area (Hubei province, non-Hubei province), physical activity (≥2 times/week, <2 times/week), and education levels (less than undergraduate, undergraduate, and higher)].\n\nThe robustness of our results was assessed by sensitivity analyses, including (i) changing the confounder resident area as dichotomous variable (Hubei, non-Hubei); (ii) employing stratification analysis to control the potential confounders; (iii) conducting multiple linear regression analysis to further validate the relationship that sleep duration and screen time were closely associated with anxiety.\n\nRESULTS\n\nThe characteristics of participants by anxiety status were showed in Table 1. The prevalence of anxiety among pregnant women during the COVID-19 pandemic was 34.5% (620/1794) in the total sample with a mean age of 27.44 ± 4.18. We found that the pregnant women with anxiety were more likely to have an interrupted nutrition additive intake due to strict quarantine and lockdown measures compared to mental health subjects. However, anxiety was associated with less exercise frequency, shortened sleep duration, and longer screen time. Additionally, there was no significant difference for pregnant women with or without anxiety regarding BMI, education, resident area, occupation, household income during COVID-19 pandemic, and prenatal examination.\n\nOur data indicated that longer sleep duration was associated with lower anxiety while longer screen time was associated with higher anxiety. In the current study, the risk of anxiety exhibited a progressive decline trend with longer sleep duration (P trend <0.001) and sleep duration decreased an average of 50.2% compared to the reference group (<6 h/day) (OR = 0.41, 95% CI: 0.27–0.63) (Table 2). Conversely, screen time was significantly positively associated with anxiety (P trend <0.001) and the multivariate-adjusted OR (95% CI) >5 h/day was 2.01 (1.00–4.39), while the effect was less pronounced in people with screen time <5 h/day (Table 2). Furthermore, linear associations of sleep duration and screen time with anxiety were further presented by the spline curve in Figure 1. Cubic spline regression confirmed that the risk of anxiety might be higher with prolonged screen time and limited sleep duration. Notably, sleep duration (≥8 h/day) cooperated with screen time (3–7 h/day) and diminished the risk of anxiety (OR = 0.70 95% CI: 0.50–0.99) (Table 3).\n\nThe severity of COVID-19 in different provinces was hugely varied across China, among which Hubei province is the most severe one. Therefore, the robustness of the results was further validated after adjusted residence that was re-defined as a binary categorical variable (Hubei province and non-Hubei province) (Supplementary Table 1). Moreover, the results derived from the linear regression analysis also presented similar results (Supplementary Table 2).\n\nStratification analyses were subsequently conducted. There was a suggestion that the association between longer sleep duration and anxiety was stronger in individuals who were older than 25 years, without obesity, physically inactive, living in Hubei province, and those of higher education. However, no significant interactions were found with age, BMI, education, resident area, and physical activities (P for interaction > 0.05) (Table 4). The association between longer screen time and anxiety was stronger in individuals who were older than 25 years, without obesity, physically inactive, living in Hubei province, and those with higher education, however, no significant interactions were found with age, BMI, education, resident area, and physical activities (P for interaction > 0.05) (Table 5).\n\nDISCUSSION\n\nThe mental health of pregnant women has increasingly drawn concern. In this study, we observed that the prevalence of anxiety among pregnant women during the whole COVID-19 pandemic period in China was almost 35%. Furthermore, we found that a longer sleep duration (>6 h/day) was reversely associated with anxiety of pregnant women during the COVID-19 pandemic, while longer screen time (>5 h/day) was positively associated with anxiety. To our best knowledge, this is the first study to simultaneously explore the association of sleep duration and screen time with mental health under COVID-19 pandemic. These findings generated the implications for primary prevention of mental health problems by promoting healthy lifestyles among pregnant women.\n\nWe uncovered that the prevalence of anxiety among pregnant women during the COVID-19 pandemic in China was almost 35%, which was much higher than that of children (18.9%) (Xie et al., 2020) and health care workers in Wuhan (29.4%) (Kang et al., 2020), and of Singaporean (14.5%) (Tan et al., 2020). Regarding pregnant women in Canada who suffered from anxiety during the COVID-19 pandemic, the prevalence was 12.6%, which was also much lower compared with our study (Berthelot et al., 2020). This inconsistent data might be due to the fact that Berthelot et al. sub-divided psychiatric disorder into 13 subscale mental syndromes which might dilute the weight of anxiety in mental disorders, while our study focused on anxiety symptoms which might overestimate the weight/prevalence of anxiety. Moreover, Berthelot et al. recruited the participants ranging from 2nd April to 13th April 2020, a relatively short period which led to limited anxiety subjects, while we studied the anxiety status covering whole pandemic period in China. Conversely, Corbett et al. showed that ∼50.7% of pregnant women were continuously worried about their health during the pandemic period. This study only recruited 71 participants who were second or third trimester, whereas the participants recruited in our study were covering the whole pregnancy (Corbett et al., 2020). Several studies showed the prevalence of anxiety in Wuhan and Chongqing city was 20.5 and 10.4%, respectively (Liu et al., 2020). Taken together, the above studies indicated that the COVID-19 pandemic might elicit psychological problems.\n\nAgainst the unprecedented infectious disease pandemic in the past 100 years, the strict long-term lockdown at home and social distance were comprehensively/ubiquitously conducted. People underwent a rapid lifestyle transition from normal life to confined life, which elicited profound lifestyle changes (Corbett et al., 2020; Zhang et al., 2020) that made them spend more time on sleep and electronic products, which might cause potential influences on mental health during the COVID-19 pandemic. Wu et al. found that an exercise time of <7 h/week was associated with a 23% increase in depressive symptoms, which indicated that active lifestyle was closely related with mental health during the COVID-19 pandemic. However, no study has evaluated the association of sleep duration and screen time with anxiety among pregnant women under the COVID-19 pandemic scenario.\n\nCumulative data have indicated that both sleep quality and mental health are important for maintaining the health of pregnant women (Qiao et al., 2012; Loy et al., 2020). Sleep quality closely impacts the mental health of pregnant women (van der Zwan et al., 2017; Difrancesco et al., 2019), and sleep duration and anxiety interactively contribute to pregnancy complications without exception (Tomfohr-Madsen et al., 2019). Thus, the association of sleep duration with anxiety is warranted to further investigate under the public health emergency. Both cross-sectional and longitudinal studies have indicated that a sleep duration of <8 h/day and bad sleep quality can increase anxiety during pregnancy (Yu et al., 2017). However, previous evidence regarding the association of sleep duration with mental disorders was assessed under normal life. COVID-19 markedly raised mental disorder risk and changed the average person’s sleep pattern. A metaanalysis indicated that 54% population suffered from sleep disturbances (Deng et al., 2020). Importantly, COVID-19 induces a later and longer sleep pattern on weekdays, lower levels of social jetlag, and a delayed chronotype (Leone et al., 2020). Though the sleep condition and quality were associated with the mental health of pregnant women in Shenzhen in every population and setting (Lin et al., 2021), the participants in this study were restricted to Shenzhen, only from one city. To date, little is known regarding the association between sleep duration and mental health in a representative population. Our work conducted a large population and multi-central study to address this important concern, and we found that longer sleep duration might be dose-dependently associated with lower anxiety in pregnant women during the COVID-19 pandemic under our research scenario.\n\nScreen viewing is increasingly prevalent and has become a part of common sedentary behavior globally, which might cause mental disorders (The, 2019). Importantly, the association of a sedentary lifestyle and COVID-19-induced psychological stress among pregnant women has not yet been explored. Our study revealed that longer screen time was associated with increased risk of anxiety among pregnant women during the COVID-19 pandemic. The plausible explanation might be that longer screen time makes pregnant women exposed to more dubious information about rapidly increased numbers of infection rate and mortality, which resulted in fear and concern among them (Wang et al., 2019). Currently, the association of screen time with mental health mainly focuses on adolescents. In Chinese adolescents, a screen time of >2 h/day was significantly associated with anxiety (Cao et al., 2011; Wu et al., 2016). Importantly, this effect was more apparent when combined with insufficient physical activity (Cao et al., 2011). The notion of independent and jointed effects of screen time and physical activity with anxiety was further validated in Canadian adolescents (Herman et al., 2015). It is noteworthy that the above studies mainly focused on the combined effects of screen time and physical activity on mental disorders, while the interactive effect of screen time and sleep duration has yet not been addressed. Notably, sleep duration (>7 h/day) cooperated with screen time (3–6 h/day) to diminish the risk of anxiety. Our data could provide scientific evidence for guiding pregnant women toward being more active and less sedentary/screen-based in their daily life, especially under the public health emergency.\n\nSTRENGTHS AND LIMITATIONS\n\nWe conducted a large-scale and multi-center study that recruited heterogeneous 1794 participants from eight hospitals across middle and western China, which covered the high risk, middle risk, and low risk areas of COVID-19. The first study that investigated the mental health of pregnant women in China during COVID-19 pandemic failed to recruit people from Wuhan, the severest place of COVID-19 in China. By contrast, 1,050 subjects of our study were enrolled from Wuhan. Thus, our data could realistically reflect the mental health and changed lifestyle of participants during COVID-19 pandemic, which is an important strength of our study. Furthermore, we not only determined the independent association of sleep duration and screen time with anxiety, but also investigated the interactive association of sleep duration and screen time with anxiety among pregnant women. However, some limitations still should be disclosed. First, due to strict confinement and quarantine measures, we failed to collect information face-to-face, and all demographic data and mental health situations were self-reported, thus the report bias cannot be avoided. Second, the present study was a cross-sectional design, which made us fail to determine casual relationships of screen time and sleep duration with anxiety. Third, the screen time derived from our study was total screen viewing time, so we failed to determine the association between device-specific screen viewing time and anxiety. Moreover, the association of sleep quality with anxiety among pregnant women was not explored.\n\nCONCLUSION\n\nIn summary, longer sleep duration was associated with lower anxiety among pregnant women while screen time was positively associated with anxiety among pregnant women during the COVID-19 pandemic. However, further longitudinal research on the causal relationships between sleep duration and screen time with mental health are needed to verify the results.",
+    "sections": [
+      {
+        "title": "",
+        "text": "Yuan Zhang 1†, Yuge Zhang 2†, Renli Deng 3†, Min Chen , Rong Cao , Shijiu Chen , Kuntao Chen , Zhiheng Jin , Xue Bai , Jingyan Tian , Baofeng Zhou  and Kunming Tian 1,10*\n\nThe COVID-19 pandemic has dramatically changed the patterns of lifestyle and posed psychological stress on pregnant women. However, the association of sleep duration and screen time with anxiety among pregnant women under the backdrop of the COVID-19 pandemic scenario has been poorly addressed. We conducted one large-scale, multicenter cross-sectional study which recruited 1794 pregnant women across middle and west China. Self-reported demographic characteristics, lifestyle, and mental health status were collected from 6th February to 8th May 2020. We investigated the association of sleep duration and screen time with the risk of anxiety by multivariable logistic regression analysis and linear regression analysis after adjusting potential confounders. The dose-response relationship of sleep duration and screen time with anxiety was visualized using a cubic spline plot. Our data revealed that almost 35% of pregnant women suffered from anxiety during the COVID-19 pandemic. Sleep duration was dose-dependently associated with a lower risk of anxiety among pregnant women (OR = 0.41, 95% CI: 0.27–0.63), while screen time exhibited a conversed effect (OR = 2.01, 95% CI:1.00–4.39). Notably, sleep duration (≥8 h/day) synergistically combined with screen time (3–7 h/day) to diminish the risk of anxiety (OR = 0.70, 95% CI: 0.50–0.99). Taken together, sleep duration and screen time were independently and jointly associated with anxiety (P < 0.05). Therefore, promoting a more active lifestyle and maintaining higher sleep quality could improve the mental health of pregnant women, especially under public health emergency.\n\n",
+        "start": 0,
+        "end": 1808
+      },
+      {
+        "title": "INTRODUCTION",
+        "text": "INTRODUCTION\n\nThe novel coronavirus disease (COVID-19) has spread to 188 countries and more than 100,000,000 people have suffered from COVID-19 Notably, the duration of the COVID-19 pandemic has the world on edge. Many countries adopted unprecedent strict quarantine and lockdown measures for effective control of COVID-19 (Zhang et al., 2020), which profoundly changed the pattern of lifestyle and contributed to sedentary behaviors. More importantly, the unpredictability and seriousness of this disease, together with social isolation, synergistically contributes to mental disturbance among the general population in every population and setting (Azim et al., 2020; Bao et al., 2020). As a vulnerable population due to dramatic physiological and immunological changes during gestation (Narang et al., 2020), the mental health of pregnant women has increasingly drawn concern (Thapa et al., 2020). A recent study found that COVID- 19 contributed to about 20.5% pregnant women suffering from anxiety symptoms in Wuhan (Liu et al., 2020). One reason for this is that pregnant women are seriously worried about being infected by COVID-19, which might impact the health of their fetus without exception (Favre et al., 2020; Gross et al., 2020). More importantly, mental health problems are common in pregnant women (Yonkers et al., 2014). Notably, psychological stress during the pregnancy period could lead to various pregnancy complications, such as preeclampsia and low birth weight (Littleton et al., 2007; Qiao et al., 2012). Given the adverse outcomes of mental disorders, psychological stress surveillance, and early intervention of the anxiety of pregnant women under the COVID-19 pandemic is crucial.\n\nRecently, a small sample cross-sectional study indicated that long-term lockdown and confinement at home elicited profound lifestyle changes, which are causing nearly half of pregnant women to suffer from anxiety (Corbett et al., 2020). Similarly, among Canadian pregnant women, COVID- 19 markedly increased the prevalence of anxiety, especially for those with psychiatric history and low income (Zhang et al., 2020). Furthermore, Wu et al. uncovered that pregnant women who are underweight, in employment, and have an economic burden were more likely to develop into anxiety in the Chinese population (Wu et al., 2020). Recently, data showed that sleep condition and sleep quality was associated with psychological stress universally, in all cases (Lin et al., 2021). Importantly, a sedentary lifestyle also can contribute to various adverse health outcomes and is associated with poor sleep (Cao et al., 2011; The, 2019; Choi et al., 2020; Leger et al., 2020; van de Vegte et al., 2020). Nevertheless, the impact of this dramatic lifestyle alteration caused by the COVID-19 pandemic on psychological disorders has been poorly explored.\n\nTo fill this knowledge gap, we conducted a multi-center, large sample investigation that contains 1794 pregnant women from eight hospitals across four provinces in China. Our purpose was to investigate the prevalence of anxiety and further determine the independent and interactive association of sleep duration and screen time with anxiety among pregnant women. Our study could optimize psychological intervention strategies and empower the society to maximize the maintenance of the mental health of pregnant women by adopting healthy lifestyles.\n\n",
+        "start": 1808,
+        "end": 5207
+      },
+      {
+        "title": "METHODS",
+        "text": "METHODS\n\n",
+        "start": 5207,
+        "end": 5216
+      },
+      {
+        "title": "Participants and Study Design",
+        "text": "Participants and Study Design\n\nWe designed the large-scale, multi-center, cross-sectional study which recruited pregnant women from eight hospitals of four geographically diverse areas (Hubei, Jiangxi, Shanxi, and Guizhou provinces) to determine the association of a COVID- 19-mediated lifestyle with anxiety across middle and west China. Participants, who were outpatients, were recruited from 6th February, 2020 to 8th May, 2020. We initially recruited 1872 participants, and those among them who had infectious diseases (n = 2) and psychological diseases (n = 6) were excluded. We also excluded people with missing information about mental status, sleep duration, and screen time (n = 30), and people with an answer time of more than 40 min or <5 min (n = 40). After exclusion, a total of 1794 participants were finally enrolled in our study. The research was approved by the Ethics Committee of Tongji Medical College, Huazhong University of Science and Technology.\n\n",
+        "start": 5216,
+        "end": 6187
+      },
+      {
+        "title": "Data Collection",
+        "text": "Data Collection\n\nQuestionnaire We developed a questionnaire that consists of five parts: sociodemographic information, sleep quality, screen time, physical activity, and anxiety assessment. Considering the government guidance to minimize the face-to-face contact during this COVID-19 pandemic, we collected related information from an online crowdsourcing platform named Wenjuanxing (www.wjx.com). The respondents were invited to scan the survey link using a smartphone and self-administrate to finish the questionnaire according to the instructions if the pregnant women confirmed their willingness to participate the survey. Informed consent was obtained from the participants before their participation in the study. Upon analysis, all questionnaires were subjected to quality audit.\n\nMental Health Assessment Mental health was assessed using the 20 items Self-Rating Anxiety Scale. It composed of 20 items with four-point options (range: 1 = never, 2 = sometimes, 3 = often, 4 = very often) to capture the symptoms of anxiety. The SAS has been applied in Chinese populations in numerous studies, performing good validity and acceptable reliability (Kang et al., 2016; Ma et al., 2019; Wu et al., 2020). The Cronbach’s α of SAS in the current study was 0.756. The anxiety score was calculated from the sum score of the 20 items. The cut-offpoint for anxiety was above 49, thus participants were categorized into healthy population (≤49) and anxiety population (≥50) based on anxiety score (Wu et al., 2020).\n\nAssessment of Sleeping Duration and Screen-Time Information regarding sleep duration and screen time was collected by a self-reported questionnaire. Sleep duration (h/day) was determined by asking the following question: “When did you usually go to sleep at night and wake up in the morning during COVID-19 pandemic?” Sleeping time was categorized into four groups: <6, 6–7, 7–8, ≥8 h. Screen-time was assessed by the question regarding “How many hours a day on average did you spend on mobile phone/computer/TV?” All screen-based activities were then summed for a total daily screen time (h/day) which was divided as: ≤2, 3–4, 5–6, 7–8, ≥8 h.\n\nCommonly, 7–8 h is recognized as the better sleep duration for Chinese people. However, considering that the COVID-19 pandemic resulted in delayed and poor sleep patterns, and more time spent on social media (Deng et al., 2020), we set sleep duration for ≥8 h as the highest level. Sleep duration of <6 h was associated with a higher risk of adverse perinatal outcomes, therefore, <6 h was set as the lowest level for sleep duration (Cai et al., 2017). For screen time, previous research has found that screen time (>2 h) was associated with higher psychological stress (The, 2019). Therefore, we chose screen time (≤2 h) as the lowest level. Besides, given the calculated screen time in pregnant women during the COVID-19 pandemic, we divided the screen time of ≥8 as the highest group (Wu et al., 2020).\n\nCovariates Multiple covariates and potential confounders were controlled to measure the association of sleep duration and screen time with anxiety among pregnant women. These covariates included: prepregnant BMI, age, maternal type, occupation, gestational weeks, residence, psychologic situation during pandemic of COVID-19, timely prenatal examinations, cut offof health care products, household income during pandemic of COVID-19, rhythm of life during COVID-19, physical frequencies, screen time and sleep duration, education level, parity, pregnant complications, history of psychological diseases, and physical frequency. Given the fact that medical health workers and government employers have more responsibility for fighting COVID-19 in China and are more prone to have more higher risk to contact COVID- 19 patients, thus they suffered more psychological stress than the general population. The occupation of whom was divided into government employee and non-government employee. The potential mediated effect of occupation on the association of interest was taken into consideration. Moreover, the severity of the COVID-19 pandemic determines the levels of isolation, quarantine, and proactive social distancing, which are closely related with lifestyle pattern and generate different mental pressure to the pregnant women. So, the residence in different provinces was categorized into three degrees during the COVID- 19 pandemic according to the identified numbers of infected patients (low risk < 500; 500 < middle risk < 10,000; high risk > 10,000).\n\nStatistical Analysis All statistical analysis was performed by the SPSS (version 25.0, IBM, NY, USA) or R software (version 4.00, R core team). P-value was set at <0.05 as the threshold for statistical significance. In the descriptive analysis, the continuous and categorical variables were statistically described as Mean ± SD or n (%) in both the healthy population and anxiety group. The respondent characteristics in both the healthy group and anxiety group were analyzed through employing a t-test for continuous variables while a chi-square test was used for categorical variables.\n\nMultivariable logistic regression analysis was used to estimate the crude and adjusted odds ratios (ORs) and 95% confidence intervals (CIs), and the dose-response effect was further visualized by the cubic spline. Moreover, the potential interactive effect of the association between sleep duration and screen time and anxiety through factorial analysis after controlling the covariates was performed.\n\nStratified analyses were conducted by baseline characteristics [including age (<25, ≥25 years), BMI (<25, ≥25 kg/m), resident area (Hubei province, non-Hubei province), physical activity (≥2 times/week, <2 times/week), and education levels (less than undergraduate, undergraduate, and higher)].\n\nThe robustness of our results was assessed by sensitivity analyses, including (i) changing the confounder resident area as dichotomous variable (Hubei, non-Hubei); (ii) employing stratification analysis to control the potential confounders; (iii) conducting multiple linear regression analysis to further validate the relationship that sleep duration and screen time were closely associated with anxiety.\n\n",
+        "start": 6187,
+        "end": 12410
+      },
+      {
+        "title": "RESULTS",
+        "text": "RESULTS\n\nThe characteristics of participants by anxiety status were showed in Table 1. The prevalence of anxiety among pregnant women during the COVID-19 pandemic was 34.5% (620/1794) in the total sample with a mean age of 27.44 ± 4.18. We found that the pregnant women with anxiety were more likely to have an interrupted nutrition additive intake due to strict quarantine and lockdown measures compared to mental health subjects. However, anxiety was associated with less exercise frequency, shortened sleep duration, and longer screen time. Additionally, there was no significant difference for pregnant women with or without anxiety regarding BMI, education, resident area, occupation, household income during COVID-19 pandemic, and prenatal examination.\n\nOur data indicated that longer sleep duration was associated with lower anxiety while longer screen time was associated with higher anxiety. In the current study, the risk of anxiety exhibited a progressive decline trend with longer sleep duration (P trend <0.001) and sleep duration decreased an average of 50.2% compared to the reference group (<6 h/day) (OR = 0.41, 95% CI: 0.27–0.63) (Table 2). Conversely, screen time was significantly positively associated with anxiety (P trend <0.001) and the multivariate-adjusted OR (95% CI) >5 h/day was 2.01 (1.00–4.39), while the effect was less pronounced in people with screen time <5 h/day (Table 2). Furthermore, linear associations of sleep duration and screen time with anxiety were further presented by the spline curve in Figure 1. Cubic spline regression confirmed that the risk of anxiety might be higher with prolonged screen time and limited sleep duration. Notably, sleep duration (≥8 h/day) cooperated with screen time (3–7 h/day) and diminished the risk of anxiety (OR = 0.70 95% CI: 0.50–0.99) (Table 3).\n\nThe severity of COVID-19 in different provinces was hugely varied across China, among which Hubei province is the most severe one. Therefore, the robustness of the results was further validated after adjusted residence that was re-defined as a binary categorical variable (Hubei province and non-Hubei province) (Supplementary Table 1). Moreover, the results derived from the linear regression analysis also presented similar results (Supplementary Table 2).\n\nStratification analyses were subsequently conducted. There was a suggestion that the association between longer sleep duration and anxiety was stronger in individuals who were older than 25 years, without obesity, physically inactive, living in Hubei province, and those of higher education. However, no significant interactions were found with age, BMI, education, resident area, and physical activities (P for interaction > 0.05) (Table 4). The association between longer screen time and anxiety was stronger in individuals who were older than 25 years, without obesity, physically inactive, living in Hubei province, and those with higher education, however, no significant interactions were found with age, BMI, education, resident area, and physical activities (P for interaction > 0.05) (Table 5).\n\n",
+        "start": 12410,
+        "end": 15503
+      },
+      {
+        "title": "DISCUSSION",
+        "text": "DISCUSSION\n\nThe mental health of pregnant women has increasingly drawn concern. In this study, we observed that the prevalence of anxiety among pregnant women during the whole COVID-19 pandemic period in China was almost 35%. Furthermore, we found that a longer sleep duration (>6 h/day) was reversely associated with anxiety of pregnant women during the COVID-19 pandemic, while longer screen time (>5 h/day) was positively associated with anxiety. To our best knowledge, this is the first study to simultaneously explore the association of sleep duration and screen time with mental health under COVID-19 pandemic. These findings generated the implications for primary prevention of mental health problems by promoting healthy lifestyles among pregnant women.\n\nWe uncovered that the prevalence of anxiety among pregnant women during the COVID-19 pandemic in China was almost 35%, which was much higher than that of children (18.9%) (Xie et al., 2020) and health care workers in Wuhan (29.4%) (Kang et al., 2020), and of Singaporean (14.5%) (Tan et al., 2020). Regarding pregnant women in Canada who suffered from anxiety during the COVID-19 pandemic, the prevalence was 12.6%, which was also much lower compared with our study (Berthelot et al., 2020). This inconsistent data might be due to the fact that Berthelot et al. sub-divided psychiatric disorder into 13 subscale mental syndromes which might dilute the weight of anxiety in mental disorders, while our study focused on anxiety symptoms which might overestimate the weight/prevalence of anxiety. Moreover, Berthelot et al. recruited the participants ranging from 2nd April to 13th April 2020, a relatively short period which led to limited anxiety subjects, while we studied the anxiety status covering whole pandemic period in China. Conversely, Corbett et al. showed that ∼50.7% of pregnant women were continuously worried about their health during the pandemic period. This study only recruited 71 participants who were second or third trimester, whereas the participants recruited in our study were covering the whole pregnancy (Corbett et al., 2020). Several studies showed the prevalence of anxiety in Wuhan and Chongqing city was 20.5 and 10.4%, respectively (Liu et al., 2020). Taken together, the above studies indicated that the COVID-19 pandemic might elicit psychological problems.\n\nAgainst the unprecedented infectious disease pandemic in the past 100 years, the strict long-term lockdown at home and social distance were comprehensively/ubiquitously conducted. People underwent a rapid lifestyle transition from normal life to confined life, which elicited profound lifestyle changes (Corbett et al., 2020; Zhang et al., 2020) that made them spend more time on sleep and electronic products, which might cause potential influences on mental health during the COVID-19 pandemic. Wu et al. found that an exercise time of <7 h/week was associated with a 23% increase in depressive symptoms, which indicated that active lifestyle was closely related with mental health during the COVID-19 pandemic. However, no study has evaluated the association of sleep duration and screen time with anxiety among pregnant women under the COVID-19 pandemic scenario.\n\nCumulative data have indicated that both sleep quality and mental health are important for maintaining the health of pregnant women (Qiao et al., 2012; Loy et al., 2020). Sleep quality closely impacts the mental health of pregnant women (van der Zwan et al., 2017; Difrancesco et al., 2019), and sleep duration and anxiety interactively contribute to pregnancy complications without exception (Tomfohr-Madsen et al., 2019). Thus, the association of sleep duration with anxiety is warranted to further investigate under the public health emergency. Both cross-sectional and longitudinal studies have indicated that a sleep duration of <8 h/day and bad sleep quality can increase anxiety during pregnancy (Yu et al., 2017). However, previous evidence regarding the association of sleep duration with mental disorders was assessed under normal life. COVID-19 markedly raised mental disorder risk and changed the average person’s sleep pattern. A metaanalysis indicated that 54% population suffered from sleep disturbances (Deng et al., 2020). Importantly, COVID-19 induces a later and longer sleep pattern on weekdays, lower levels of social jetlag, and a delayed chronotype (Leone et al., 2020). Though the sleep condition and quality were associated with the mental health of pregnant women in Shenzhen in every population and setting (Lin et al., 2021), the participants in this study were restricted to Shenzhen, only from one city. To date, little is known regarding the association between sleep duration and mental health in a representative population. Our work conducted a large population and multi-central study to address this important concern, and we found that longer sleep duration might be dose-dependently associated with lower anxiety in pregnant women during the COVID-19 pandemic under our research scenario.\n\nScreen viewing is increasingly prevalent and has become a part of common sedentary behavior globally, which might cause mental disorders (The, 2019). Importantly, the association of a sedentary lifestyle and COVID-19-induced psychological stress among pregnant women has not yet been explored. Our study revealed that longer screen time was associated with increased risk of anxiety among pregnant women during the COVID-19 pandemic. The plausible explanation might be that longer screen time makes pregnant women exposed to more dubious information about rapidly increased numbers of infection rate and mortality, which resulted in fear and concern among them (Wang et al., 2019). Currently, the association of screen time with mental health mainly focuses on adolescents. In Chinese adolescents, a screen time of >2 h/day was significantly associated with anxiety (Cao et al., 2011; Wu et al., 2016). Importantly, this effect was more apparent when combined with insufficient physical activity (Cao et al., 2011). The notion of independent and jointed effects of screen time and physical activity with anxiety was further validated in Canadian adolescents (Herman et al., 2015). It is noteworthy that the above studies mainly focused on the combined effects of screen time and physical activity on mental disorders, while the interactive effect of screen time and sleep duration has yet not been addressed. Notably, sleep duration (>7 h/day) cooperated with screen time (3–6 h/day) to diminish the risk of anxiety. Our data could provide scientific evidence for guiding pregnant women toward being more active and less sedentary/screen-based in their daily life, especially under the public health emergency.\n\n",
+        "start": 15503,
+        "end": 22268
+      },
+      {
+        "title": "STRENGTHS AND LIMITATIONS",
+        "text": "STRENGTHS AND LIMITATIONS\n\nWe conducted a large-scale and multi-center study that recruited heterogeneous 1794 participants from eight hospitals across middle and western China, which covered the high risk, middle risk, and low risk areas of COVID-19. The first study that investigated the mental health of pregnant women in China during COVID-19 pandemic failed to recruit people from Wuhan, the severest place of COVID-19 in China. By contrast, 1,050 subjects of our study were enrolled from Wuhan. Thus, our data could realistically reflect the mental health and changed lifestyle of participants during COVID-19 pandemic, which is an important strength of our study. Furthermore, we not only determined the independent association of sleep duration and screen time with anxiety, but also investigated the interactive association of sleep duration and screen time with anxiety among pregnant women. However, some limitations still should be disclosed. First, due to strict confinement and quarantine measures, we failed to collect information face-to-face, and all demographic data and mental health situations were self-reported, thus the report bias cannot be avoided. Second, the present study was a cross-sectional design, which made us fail to determine casual relationships of screen time and sleep duration with anxiety. Third, the screen time derived from our study was total screen viewing time, so we failed to determine the association between device-specific screen viewing time and anxiety. Moreover, the association of sleep quality with anxiety among pregnant women was not explored.\n\n",
+        "start": 22268,
+        "end": 23871
+      },
+      {
+        "title": "CONCLUSION",
+        "text": "CONCLUSION\n\nIn summary, longer sleep duration was associated with lower anxiety among pregnant women while screen time was positively associated with anxiety among pregnant women during the COVID-19 pandemic. However, further longitudinal research on the causal relationships between sleep duration and screen time with mental health are needed to verify the results.",
+        "start": 23871,
+        "end": 24238
+      }
+    ],
+    "references": [
+      {
+        "key": "r1",
+        "label": "Azim et al., 2020",
+        "raw": "Azim, D., Kumar, S., Nasim, S., Arif, T. B., and Nanjiani, D. (2020). COVID-19 as a psychological contagion: a new Pandora’s box to close? Infect. Control. Hosp. Epidemiol. 41, 989–990. doi: 10.1017/ice.2020.127",
+        "title": "COVID-19 as a psychological contagion: a new Pandora’s box to close? Infect",
+        "authors": [
+          "Azim, D",
+          "Kumar, S",
+          "Nasim, S",
+          "Arif, T. B",
+          "Nanjiani, D"
+        ],
+        "year": 2020,
+        "doi": "10.1017/ice.2020.127",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r2",
+        "label": "Bao et al., 2020",
+        "raw": "Bao, Y., Sun, Y., Meng, S., Shi, J., and Lu, L. (2020). 2019-nCoV epidemic: address mental health care to empower society. Lancet 395, e37–e38. doi: 10.1016/S0140-6736(20)30309-3",
+        "title": "2019-nCoV epidemic: address mental health care to empower society",
+        "authors": [
+          "Bao, Y",
+          "Sun, Y",
+          "Meng, S",
+          "Shi, J",
+          "Lu, L"
+        ],
+        "year": 2020,
+        "doi": "10.1016/S0140-6736(20)30309-3",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r3",
+        "label": "Berthelot et al., 2020",
+        "raw": "Berthelot, N., Lemieux, R., Garon-Bissonnette, J., Drouin-Maziade, C., Martel, E., and Maziade, M. (2020). Uptrend in distress and psychiatric symptomatology in pregnant women during the coronavirus disease 2019 pandemic. Acta Obstet. Gynecol. Scand. 99, 848–855. doi: 10.1111/aogs.13925",
+        "title": "Uptrend in distress and psychiatric symptomatology in pregnant women during the coronavirus disease 2019 pandemic",
+        "authors": [
+          "Berthelot, N",
+          "Lemieux, R",
+          "Garon-Bissonnette, J",
+          "Drouin-Maziade, C",
+          "Martel, E",
+          "Maziade, M"
+        ],
+        "year": 2020,
+        "doi": "10.1111/aogs.13925",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r4",
+        "label": "Cai et al., 2017",
+        "raw": "Cai, S., Tan, S., Gluckman, P. D., Godfrey, K. M., Saw, S. M., Teoh, O. H., et al. (2017). Sleep quality and nocturnal sleep duration in pregnancy and risk of gestational diabetes mellitus. Sleep 40, 1–8. doi: 10.1093/sleep/zsw058",
+        "title": "Sleep quality and nocturnal sleep duration in pregnancy and risk of gestational diabetes mellitus",
+        "authors": [
+          "Cai, S",
+          "Tan, S",
+          "Gluckman, P. D",
+          "Godfrey, K. M",
+          "Saw, S. M",
+          "Teoh, O. H"
+        ],
+        "year": 2017,
+        "doi": "10.1093/sleep/zsw058",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r5",
+        "label": "Cao et al., 2011",
+        "raw": "Cao, H., Qian, Q., Weng, T., Yuan, C., Sun, Y., Wang, H., et al. (2011). Screen time, physical activity, and mental health among urban adolescents in China. Prev. Med. 53, 316–320. doi: 10.1016/j.ypmed.2011.09.002",
+        "title": "Screen time, physical activity, and mental health among urban adolescents in China",
+        "authors": [
+          "Cao, H",
+          "Qian, Q",
+          "Weng, T",
+          "Yuan, C",
+          "Sun, Y",
+          "Wang, H"
+        ],
+        "year": 2011,
+        "doi": "10.1016/j.ypmed.2011.09.002",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r6",
+        "label": "Choi et al., 2020",
+        "raw": "Choi, E., Shin, S. H., Ryu, J. K., Jung, K. I., Kim, S. Y., and Park, M. H. (2020). Commercial video games and cognitive functions: video game genres and modulating factors of cognitive enhancement. Behav. Brain Funct. 16:2. doi: 10.1186/s12993-020-0165-z",
+        "title": "Commercial video games and cognitive functions: video game genres and modulating factors of cognitive enhancement",
+        "authors": [
+          "Choi, E",
+          "Shin, S. H",
+          "Ryu, J. K",
+          "Jung, K. I",
+          "Kim, S. Y",
+          "Park, M. H"
+        ],
+        "year": 2020,
+        "doi": "10.1186/s12993-020-0165-z",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r7",
+        "label": "Corbett et al., 2020",
+        "raw": "Corbett, G. A., Milne, S. J., Hehir, M. P., Lindow, S. W., and O’Connell, M., P. (2020). Health anxiety and behavioural changes of pregnant women during the COVID-19 pandemic. Eur. J. Obstet. Gynecol. Reprod. Biol. 249, 96–97. doi: 10.1016/j.ejogrb.2020.04.022",
+        "title": "Health anxiety and behavioural changes of pregnant women during the COVID-19 pandemic",
+        "authors": [
+          "Corbett, G. A",
+          "Milne, S. J",
+          "Hehir, M. P",
+          "Lindow, S. W",
+          "O’Connell, M"
+        ],
+        "year": 2020,
+        "doi": "10.1016/j.ejogrb.2020.04.022",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r8",
+        "label": "Deng et al., 2020",
+        "raw": "Deng, J., Zhou, F., Hou, W., Silver, Z., Wong, C. Y., Chang, O., et al. (2020). The prevalence of depression, anxiety, and sleep disturbances in COVID-19 patients: a meta-analysis. Ann. N. Y. Acad. Sci. 1486, 90–111. doi: 10.1111/nyas.14506",
+        "title": "The prevalence of depression, anxiety, and sleep disturbances in COVID-19 patients: a meta-analysis",
+        "authors": [
+          "Deng, J",
+          "Zhou, F",
+          "Hou, W",
+          "Silver, Z",
+          "Wong, C. Y",
+          "Chang, O"
+        ],
+        "year": 2020,
+        "doi": "10.1111/nyas.14506",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r9",
+        "label": "Difrancesco et al., 2019",
+        "raw": "Difrancesco, S., Lamers, F., Riese, H., Merikangas, K. R., Beekman, A. T. F., van Hemert, A. M., et al. (2019). Sleep, circadian rhythm, and physical activity patterns in depressive and anxiety disorders: A 2-week ambulatory assessment study. Depress. Anxiety 36, 975–986. doi: 10.1002/da.22949",
+        "title": "Sleep, circadian rhythm, and physical activity patterns in depressive and anxiety disorders: A 2-week ambulatory assessment study",
+        "authors": [
+          "Difrancesco, S",
+          "Lamers, F",
+          "Riese, H",
+          "Merikangas, K. R",
+          "Beekman, A. T. F",
+          "van Hemert"
+        ],
+        "year": 2019,
+        "doi": "10.1002/da.22949",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r10",
+        "label": "Favre et al., 2020",
+        "raw": "Favre, G., Pomar, L., Qi, X. L., Nielsen-Saines, K., Musso, D., and Baud, D. (2020). Guidelines for pregnant women with suspected SARS-CoV-2 infection. Lancet Infect. Dis. 20, 652–653. doi: 10.1016/S1473-3099(20)30157-2",
+        "title": "Guidelines for pregnant women with suspected SARS-CoV-2 infection",
+        "authors": [
+          "Favre, G",
+          "Pomar, L",
+          "Qi, X. L",
+          "Nielsen-Saines, K",
+          "Musso, D",
+          "Baud, D"
+        ],
+        "year": 2020,
+        "doi": "10.1016/S1473-3099(20)30157-2",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r11",
+        "label": "Gross et al., 2020",
+        "raw": "Gross, R., Conzelmann, C., Muller, J. A., Stenger, S., Steinhart, K., Kirchhoff, F., et al. (2020). Detection of SARS-CoV-2 in human breastmilk. Lancet 395, 1757–1758. doi: 10.1016/S0140-6736(20)31181-8",
+        "title": "Detection of SARS-CoV-2 in human breastmilk",
+        "authors": [
+          "Gross, R",
+          "Conzelmann, C",
+          "Muller, J. A",
+          "Stenger, S",
+          "Steinhart, K",
+          "Kirchhoff, F"
+        ],
+        "year": 2020,
+        "doi": "10.1016/S0140-6736(20)31181-8",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r12",
+        "label": "Herman et al., 2015",
+        "raw": "Herman, K. M., Hopman, W. M., and Sabiston, C. M. (2015). Physical activity, screen time, and self-rated health and mental health in Canadian adolescents. Prev. Med. 73, 112–116. doi: 10.1016/j.ypmed.2015.01.030",
+        "title": "Physical activity, screen time, and self-rated health and mental health in Canadian adolescents",
+        "authors": [
+          "Herman, K. M",
+          "Hopman, W. M",
+          "Sabiston, C. M"
+        ],
+        "year": 2015,
+        "doi": "10.1016/j.ypmed.2015.01.030",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r13",
+        "label": "Kang et al., 2020",
+        "raw": "Kang, L., Ma, S., Chen, M., Yang, J., Wang, Y., Li, R., et al. (2020). Impact on mental health and perceptions of psychological care among medical and nursing staff in Wuhan during the 2019 novel coronavirus disease outbreak: a cross-sectional study. Brain Behav. Immun. 87, 11–17. doi: 10.1016/j.bbi.2020.03.028",
+        "title": "Impact on mental health and perceptions of psychological care among medical and nursing staff in Wuhan during the 2019 novel coronavirus disease outbreak: a cross-sectional study",
+        "authors": [
+          "Kang, L",
+          "Ma, S",
+          "Chen, M",
+          "Yang, J",
+          "Wang, Y",
+          "Li, R"
+        ],
+        "year": 2020,
+        "doi": "10.1016/j.bbi.2020.03.028",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r14",
+        "label": "Kang et al., 2016",
+        "raw": "Kang, Y. T., Yao, Y., Dou, J., Guo, X., Li, S. Y., Zhao, C. N., et al. (2016). Prevalence and risk factors of maternal anxiety in late pregnancy in China. Int. J. Environ. Res. Public Health 13:468. doi: 10.3390/ijerph13050468",
+        "title": "Prevalence and risk factors of maternal anxiety in late pregnancy in China",
+        "authors": [
+          "Kang, Y. T",
+          "Yao, Y",
+          "Dou, J",
+          "Guo, X",
+          "Li, S. Y",
+          "Zhao, C. N"
+        ],
+        "year": 2016,
+        "doi": "10.3390/ijerph13050468",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r15",
+        "label": "Leger et al., 2020",
+        "raw": "Leger, D., Beck, F., Fressard, L., Verger, P., Peretti-Watel, P., and Group, C. (2020). Poor sleep associated with overuse of media during the COVID-19 lockdown. Sleep 43:zsaa125. doi: 10.1093/sleep/zsaa125",
+        "title": "Poor sleep associated with overuse of media during the COVID-19 lockdown",
+        "authors": [
+          "Leger, D",
+          "Beck, F",
+          "Fressard, L",
+          "Verger, P",
+          "Peretti-Watel, P",
+          "Group, C"
+        ],
+        "year": 2020,
+        "doi": "10.1093/sleep/zsaa125",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r16",
+        "label": "Leone et al., 2020",
+        "raw": "Leone, M. J., Sigman, M., and Golombek, D. A. (2020). Effects of lockdown on human sleep and chronotype during the COVID-19 pandemic. Curr. Biol. 30, R930–R931. doi: 10.1016/j.cub.2020.07.015",
+        "title": "Effects of lockdown on human sleep and chronotype during the COVID-19 pandemic",
+        "authors": [
+          "Leone, M. J",
+          "Sigman, M",
+          "Golombek, D. A"
+        ],
+        "year": 2020,
+        "doi": "10.1016/j.cub.2020.07.015",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r17",
+        "label": "Lin et al., 2021",
+        "raw": "Lin, W., Wu, B., Chen, B., Lai, G., Huang, S., Li, S., et al. (2021). Sleep conditions associate with anxiety and depression symptoms among pregnant women during the epidemic of COVID-19 in Shenzhen. J. Affect. Disord. 281, 567–573. doi: 10.1016/j.jad.2020.11.114",
+        "title": "Sleep conditions associate with anxiety and depression symptoms among pregnant women during the epidemic of COVID-19 in Shenzhen",
+        "authors": [
+          "Lin, W",
+          "Wu, B",
+          "Chen, B",
+          "Lai, G",
+          "Huang, S",
+          "Li, S"
+        ],
+        "year": 2021,
+        "doi": "10.1016/j.jad.2020.11.114",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r18",
+        "label": "Littleton et al., 2007",
+        "raw": "Littleton, H. L., Breitkopf, C. R., and Berenson, A. B. (2007). Correlates of anxiety symptoms during pregnancy and association with perinatal outcomes: a metaanalysis. Am. J. Obstet. Gynecol. 196, 424–432. doi: 10.1016/j.ajog.2007.03.042",
+        "title": "Correlates of anxiety symptoms during pregnancy and association with perinatal outcomes: a metaanalysis",
+        "authors": [
+          "Littleton, H. L",
+          "Breitkopf, C. R",
+          "Berenson, A. B"
+        ],
+        "year": 2007,
+        "doi": "10.1016/j.ajog.2007.03.042",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r19",
+        "label": "Liu et al., 2020",
+        "raw": "Liu, X., Chen, M., Wang, Y., Sun, L., Zhang, J., Shi, Y., et al. (2020). Prenatal anxiety and obstetric decisions among pregnant women in Wuhan and Chongqing during the COVID-19 outbreak: a cross-sectional study. BJOG. 127, 1229–1240. doi: 10.1111/1471-0528.16381",
+        "title": "Prenatal anxiety and obstetric decisions among pregnant women in Wuhan and Chongqing during the COVID-19 outbreak: a cross-sectional study",
+        "authors": [
+          "Liu, X",
+          "Chen, M",
+          "Wang, Y",
+          "Sun, L",
+          "Zhang, J",
+          "Shi, Y"
+        ],
+        "year": 2020,
+        "doi": "10.1111/1471-0528.16381",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r20",
+        "label": "Loy et al., 2020",
+        "raw": "Loy, S. L., Cheung, Y. B., Cai, S., Colega, M. T., Godfrey, K. M., Chong, Y. S., et al. (2020). Maternal night-time eating and sleep duration in relation to length of gestation and preterm birth. Clin. Nutr. 39, 1935–1942. doi: 10.1016/j.clnu.2019.08.018",
+        "title": "Maternal night-time eating and sleep duration in relation to length of gestation and preterm birth",
+        "authors": [
+          "Loy, S. L",
+          "Cheung, Y. B",
+          "Cai, S",
+          "Colega, M. T",
+          "Godfrey, K. M",
+          "Chong, Y. S"
+        ],
+        "year": 2020,
+        "doi": "10.1016/j.clnu.2019.08.018",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r21",
+        "label": "Ma et al., 2019",
+        "raw": "Ma, X., Wang, Y., Hu, H., Tao, X. G., Zhang, Y., and Shi, H. (2019). The impact of resilience on prenatal anxiety and depression among pregnant women in Shanghai. J. Affect. Disord. 250, 57–64. doi: 10.1016/j.jad.2019.02.058",
+        "title": "The impact of resilience on prenatal anxiety and depression among pregnant women in Shanghai",
+        "authors": [
+          "Ma, X",
+          "Wang, Y",
+          "Hu, H",
+          "Tao, X. G",
+          "Zhang, Y",
+          "Shi, H"
+        ],
+        "year": 2019,
+        "doi": "10.1016/j.jad.2019.02.058",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r22",
+        "label": "Narang et al., 2020",
+        "raw": "Narang, K., Enninga, E. A. L., Gunaratne, M., Ibirogba, E. R., Trad, A. T. A., Elrefaei, A., et al. (2020). SARS-CoV-2 infection and COVID-19 during pregnancy: a multidisciplinary review. Mayo Clin. Proc. 95, 1750–1765. doi: 10.1016/j.mayocp.2020.05.011",
+        "title": "SARS-CoV-2 infection and COVID-19 during pregnancy: a multidisciplinary review",
+        "authors": [
+          "Narang, K",
+          "Enninga, E. A. L",
+          "Gunaratne, M",
+          "Ibirogba, E. R",
+          "Trad, A. T. A",
+          "Elrefaei, A"
+        ],
+        "year": 2020,
+        "doi": "10.1016/j.mayocp.2020.05.011",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r23",
+        "label": "Qiao et al., 2012",
+        "raw": "Qiao, Y., Wang, J., Li, J., and Wang, J. (2012). Effects of depressive and anxiety symptoms during pregnancy on pregnant, obstetric, and neonatal outcomes: a follow-up study. J. Obstet. Gynaecol. 32, 237–240. doi: 10.3109/01443615.2011.647736",
+        "title": "Effects of depressive and anxiety symptoms during pregnancy on pregnant, obstetric, and neonatal outcomes: a follow-up study",
+        "authors": [
+          "Qiao, Y",
+          "Wang, J",
+          "Li, J",
+          "Wang, J"
+        ],
+        "year": 2012,
+        "doi": "10.3109/01443615.2011.647736",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r24",
+        "label": "Tan et al., 2020",
+        "raw": "Tan, B., Chew, N., Lee, G., Jing, M., Goh, Y., Yeo, L. L. L., et al. (2020). Psychological impact of the COVID-19 pandemic on health care workers in Singapore. Ann. Intern. Med. 173, 317–320. doi: 10.7326/M20-1083",
+        "title": "Psychological impact of the COVID-19 pandemic on health care workers in Singapore",
+        "authors": [
+          "Tan, B",
+          "Chew, N",
+          "Lee, G",
+          "Jing, M",
+          "Goh, Y",
+          "Yeo, L. L. L"
+        ],
+        "year": 2020,
+        "doi": "10.7326/M20-1083",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r25",
+        "label": "Thapa et al., 2020",
+        "raw": "Thapa, S., Mainali, A., Schwank, S., and Acharya, G. (2020). Maternal mental health in the time of the COVID-19 pandemic. Acta Obstet. Gynecol. Scand. 99, 817–818. doi: 10.1111/aogs.13894",
+        "title": "Maternal mental health in the time of the COVID-19 pandemic",
+        "authors": [
+          "Thapa, S",
+          "Mainali, A",
+          "Schwank, S",
+          "Acharya, G"
+        ],
+        "year": 2020,
+        "doi": "10.1111/aogs.13894",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r26",
+        "label": "The, 2019",
+        "raw": "The, L. (2019). Social media, screen time, and young people’s mental health. Lancet 393:611. doi: 10.1016/S0140-6736(19)30358-7",
+        "title": "Social media, screen time, and young people’s mental health",
+        "authors": [
+          "The, L"
+        ],
+        "year": 2019,
+        "doi": "10.1016/S0140-6736(19)30358-7",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r27",
+        "label": "Tomfohr-Madsen et al., 2019",
+        "raw": "Tomfohr-Madsen, L., Cameron, E. E., Dunkel Schetter, C., Campbell, T., O’Beirne, M., Letourneau, N., et al. (2019). Pregnancy anxiety and preterm birth: the moderating role of sleep. Health Psychol. 38, 1025–1035. doi: 10.1037/hea0000792",
+        "title": "Pregnancy anxiety and preterm birth: the moderating role of sleep",
+        "authors": [
+          "Tomfohr-Madsen, L",
+          "Cameron, E. E",
+          "Dunkel Schetter",
+          "Campbell, T",
+          "O’Beirne, M",
+          "Letourneau, N"
+        ],
+        "year": 2019,
+        "doi": "10.1037/hea0000792",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r28",
+        "label": "Vegte et al., 2020",
+        "raw": "van de Vegte, Y. J., Said, M. A., Rienstra, M., van der Harst, P., and Verweij, N. (2020). Genome-wide association studies and Mendelian randomization analyses for leisure sedentary behaviours. Nat. Commun. 11:1770. doi: 10.1038/s41467-020-15553-w",
+        "title": "Genome-wide association studies and Mendelian randomization analyses for leisure sedentary behaviours",
+        "authors": [
+          "van de Vegte",
+          "Said, M. A",
+          "Rienstra, M",
+          "van der Harst",
+          "Verweij, N"
+        ],
+        "year": 2020,
+        "doi": "10.1038/s41467-020-15553-w",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r29",
+        "label": "Zwan et al., 2017",
+        "raw": "van der Zwan, J. E., de Vente, W., Tolvanen, M., Karlsson, H., Buil, J. M., Koot, H. M., et al. (2017). Longitudinal associations between sleep and anxiety during pregnancy, and the moderating effect of resilience, using parallel process latent growth curve models. Sleep Med. 40, 63–68. doi: 10.1016/j.sleep. 2017.08.023",
+        "title": "Longitudinal associations between sleep and anxiety during pregnancy, and the moderating effect of resilience, using parallel process latent growth curve models",
+        "authors": [
+          "van der Zwan",
+          "de Vente",
+          "Tolvanen, M",
+          "Karlsson, H",
+          "Buil, J. M",
+          "Koot, H. M"
+        ],
+        "year": 2017,
+        "doi": "10.1016/j.sleep.2017.08.023",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r30",
+        "label": "Wang et al., 2019",
+        "raw": "Wang, Y., McKee, M., Torbica, A., and Stuckler, D. (2019). Systematic literature review on the spread of health-related misinformation on social media. Soc. Sci. Med. 240:112552. doi: 10.1016/j.socscimed.2019.112552",
+        "title": "Systematic literature review on the spread of health-related misinformation on social media",
+        "authors": [
+          "Wang, Y",
+          "McKee, M",
+          "Torbica, A",
+          "Stuckler, D"
+        ],
+        "year": 2019,
+        "doi": "10.1016/j.socscimed.2019.112552",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r31",
+        "label": "Wu et al., 2016",
+        "raw": "Wu, X., Tao, S., Zhang, S., Zhang, Y., Chen, K., Yang, Y., et al. (2016). Impact of screen time on mental health problems progression in youth: a 1-year follow-up study. BMJ Open 6:e011533. doi: 10.1136/bmjopen-2016-011533",
+        "title": "Impact of screen time on mental health problems progression in youth: a 1-year follow-up study",
+        "authors": [
+          "Wu, X",
+          "Tao, S",
+          "Zhang, S",
+          "Zhang, Y",
+          "Chen, K",
+          "Yang, Y"
+        ],
+        "year": 2016,
+        "doi": "10.1136/bmjopen-2016-011533",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r32",
+        "label": "Wu et al., 2020",
+        "raw": "Wu, Y., Zhang, C., Liu, H., Duan, C., Li, C., Fan, J., et al. (2020). Perinatal depressive and anxiety symptoms of pregnant women along with COVID-19 outbreak in China. Am. J. Obstet. Gynecol. 223, 240.e1–240.e9. doi: 10.1016/j.ajog.2020.05.009",
+        "title": "Perinatal depressive and anxiety symptoms of pregnant women along with COVID-19 outbreak in China",
+        "authors": [
+          "Wu, Y",
+          "Zhang, C",
+          "Liu, H",
+          "Duan, C",
+          "Li, C",
+          "Fan, J"
+        ],
+        "year": 2020,
+        "doi": "10.1016/j.ajog.2020.05.009",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r33",
+        "label": "Xie et al., 2020",
+        "raw": "Xie, X., Qi, X., Zhou, Y., Zhu, K., Liu, Q., Zhang, J., et al. (2020). Perinatal depressive and anxiety symptoms of pregnant women along with COVID-19 outbreak in China. JAMA Pediatr. 174, 898–900. doi: 10.1001/jamapediatrics.2020.1619",
+        "title": "Perinatal depressive and anxiety symptoms of pregnant women along with COVID-19 outbreak in China",
+        "authors": [
+          "Xie, X",
+          "Qi, X",
+          "Zhou, Y",
+          "Zhu, K",
+          "Liu, Q",
+          "Zhang, J"
+        ],
+        "year": 2020,
+        "doi": "10.1001/jamapediatrics.2020.1619",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r34",
+        "label": "Yonkers et al., 2014",
+        "raw": "Yonkers, K. A., Smith, M. V., Forray, A., Epperson, C. N., Costello, D., Lin, H. Q., et al. (2014). Pregnant women with posttraumatic stress disorder and risk of preterm birth. JAMA Psychiatry 71, 897–904. doi: 10.1001/jamapsychiatry.2014.558",
+        "title": "Pregnant women with posttraumatic stress disorder and risk of preterm birth",
+        "authors": [
+          "Yonkers, K. A",
+          "Smith, M. V",
+          "Forray, A",
+          "Epperson, C. N",
+          "Costello, D",
+          "Lin, H. Q"
+        ],
+        "year": 2014,
+        "doi": "10.1001/jamapsychiatry.2014.558",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r35",
+        "label": "Yu et al., 2017",
+        "raw": "Yu, Y., Li, M., Pu, L., Wang, S., Wu, J., Ruan, L., et al. (2017). Sleep was associated with depression and anxiety status during pregnancy: a prospective longitudinal study. Arch. Womens Ment. Health 20, 695–701. doi: 10.1007/s00737-017-0754-5",
+        "title": "Sleep was associated with depression and anxiety status during pregnancy: a prospective longitudinal study",
+        "authors": [
+          "Yu, Y",
+          "Li, M",
+          "Pu, L",
+          "Wang, S",
+          "Wu, J",
+          "Ruan, L"
+        ],
+        "year": 2017,
+        "doi": "10.1007/s00737-017-0754-5",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r36",
+        "label": "Zhang et al., 2020",
+        "raw": "Zhang, J., Litvinova, M., Liang, Y., Wang, Y., Wang, W., Zhao, S., et al. (2020). Changes in contact patterns shape the dynamics of the COVID-19 outbreak in China. Science 368, 1481–1486. doi: 10.1126/science.abb8001",
+        "title": "Changes in contact patterns shape the dynamics of the COVID-19 outbreak in China",
+        "authors": [
+          "Zhang, J",
+          "Litvinova, M",
+          "Liang, Y",
+          "Wang, Y",
+          "Wang, W",
+          "Zhao, S"
+        ],
+        "year": 2020,
+        "doi": "10.1126/science.abb8001",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      }
+    ],
+    "citation_keys_total": 36,
+    "citation_keys_mapped": 36,
+    "notes": []
+  },
+  "sentences": [
+    {
+      "id": "s1",
+      "text": "Many countries adopted unprecedent strict quarantine and lockdown measures for effective control of COVID-19 (Zhang et al., 2020), which profoundly changed the pattern of lifestyle and contributed to sedentary behaviors.",
+      "section": "INTRODUCTION",
+      "start": 2022,
+      "end": 2242,
+      "reference_keys": [
+        "r36"
+      ],
+      "marker_spans": [
+        [
+          2131,
+          2151
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r36"
+        ]
+      ],
+      "context_before": "The novel coronavirus disease (COVID-19) has spread to 188 countries and more than 100,000,000 people have suffered from COVID-19 Notably, the duration of the COVID-19 pandemic has the world on edge.",
+      "context_after": "More importantly, the unpredictability and seriousness of this disease, together with social isolation, synergistically contributes to mental disturbance among the general population in every population and setting (Azim et al., 2020; Bao et al., 2020)."
+    },
+    {
+      "id": "s2",
+      "text": "More importantly, the unpredictability and seriousness of this disease, together with social isolation, synergistically contributes to mental disturbance among the general population in every population and setting (Azim et al., 2020; Bao et al., 2020).",
+      "section": "INTRODUCTION",
+      "start": 2243,
+      "end": 2496,
+      "reference_keys": [
+        "r1",
+        "r2"
+      ],
+      "marker_spans": [
+        [
+          2458,
+          2495
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r1",
+          "r2"
+        ]
+      ],
+      "context_before": "Many countries adopted unprecedent strict quarantine and lockdown measures for effective control of COVID-19 (Zhang et al., 2020), which profoundly changed the pattern of lifestyle and contributed to sedentary behaviors.",
+      "context_after": "As a vulnerable population due to dramatic physiological and immunological changes during gestation (Narang et al., 2020), the mental health of pregnant women has increasingly drawn concern (Thapa et al., 2020)."
+    },
+    {
+      "id": "s3",
+      "text": "As a vulnerable population due to dramatic physiological and immunological changes during gestation (Narang et al., 2020), the mental health of pregnant women has increasingly drawn concern (Thapa et al., 2020).",
+      "section": "INTRODUCTION",
+      "start": 2497,
+      "end": 2708,
+      "reference_keys": [
+        "r22",
+        "r25"
+      ],
+      "marker_spans": [
+        [
+          2597,
+          2618
+        ],
+        [
+          2687,
+          2707
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r22"
+        ],
+        [
+          "r25"
+        ]
+      ],
+      "context_before": "More importantly, the unpredictability and seriousness of this disease, together with social isolation, synergistically contributes to mental disturbance among the general population in every population and setting (Azim et al., 2020; Bao et al., 2020).",
+      "context_after": "A recent study found that COVID- 19 contributed to about 20.5% pregnant women suffering from anxiety symptoms in Wuhan (Liu et al., 2020)."
+    },
+    {
+      "id": "s4",
+      "text": "A recent study found that COVID- 19 contributed to about 20.5% pregnant women suffering from anxiety symptoms in Wuhan (Liu et al., 2020).",
+      "section": "INTRODUCTION",
+      "start": 2709,
+      "end": 2847,
+      "reference_keys": [
+        "r19"
+      ],
+      "marker_spans": [
+        [
+          2828,
+          2846
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r19"
+        ]
+      ],
+      "context_before": "As a vulnerable population due to dramatic physiological and immunological changes during gestation (Narang et al., 2020), the mental health of pregnant women has increasingly drawn concern (Thapa et al., 2020).",
+      "context_after": "One reason for this is that pregnant women are seriously worried about being infected by COVID-19, which might impact the health of their fetus without exception (Favre et al., 2020; Gross et al., 2020)."
+    },
+    {
+      "id": "s5",
+      "text": "One reason for this is that pregnant women are seriously worried about being infected by COVID-19, which might impact the health of their fetus without exception (Favre et al., 2020; Gross et al., 2020).",
+      "section": "INTRODUCTION",
+      "start": 2848,
+      "end": 3051,
+      "reference_keys": [
+        "r10",
+        "r11"
+      ],
+      "marker_spans": [
+        [
+          3010,
+          3050
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r10",
+          "r11"
+        ]
+      ],
+      "context_before": "A recent study found that COVID- 19 contributed to about 20.5% pregnant women suffering from anxiety symptoms in Wuhan (Liu et al., 2020).",
+      "context_after": "More importantly, mental health problems are common in pregnant women (Yonkers et al., 2014)."
+    },
+    {
+      "id": "s6",
+      "text": "More importantly, mental health problems are common in pregnant women (Yonkers et al., 2014).",
+      "section": "INTRODUCTION",
+      "start": 3052,
+      "end": 3145,
+      "reference_keys": [
+        "r34"
+      ],
+      "marker_spans": [
+        [
+          3122,
+          3144
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r34"
+        ]
+      ],
+      "context_before": "One reason for this is that pregnant women are seriously worried about being infected by COVID-19, which might impact the health of their fetus without exception (Favre et al., 2020; Gross et al., 2020).",
+      "context_after": "Notably, psychological stress during the pregnancy period could lead to various pregnancy complications, such as preeclampsia and low birth weight (Littleton et al., 2007; Qiao et al., 2012)."
+    },
+    {
+      "id": "s7",
+      "text": "Notably, psychological stress during the pregnancy period could lead to various pregnancy complications, such as preeclampsia and low birth weight (Littleton et al., 2007; Qiao et al., 2012).",
+      "section": "INTRODUCTION",
+      "start": 3146,
+      "end": 3337,
+      "reference_keys": [
+        "r18",
+        "r23"
+      ],
+      "marker_spans": [
+        [
+          3293,
+          3336
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r18",
+          "r23"
+        ]
+      ],
+      "context_before": "More importantly, mental health problems are common in pregnant women (Yonkers et al., 2014).",
+      "context_after": "Given the adverse outcomes of mental disorders, psychological stress surveillance, and early intervention of the anxiety of pregnant women under the COVID-19 pandemic is crucial."
+    },
+    {
+      "id": "s8",
+      "text": "Recently, a small sample cross-sectional study indicated that long-term lockdown and confinement at home elicited profound lifestyle changes, which are causing nearly half of pregnant women to suffer from anxiety (Corbett et al., 2020).",
+      "section": "INTRODUCTION",
+      "start": 3518,
+      "end": 3754,
+      "reference_keys": [
+        "r7"
+      ],
+      "marker_spans": [
+        [
+          3731,
+          3753
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r7"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "Similarly, among Canadian pregnant women, COVID- 19 markedly increased the prevalence of anxiety, especially for those with psychiatric history and low income (Zhang et al., 2020)."
+    },
+    {
+      "id": "s9",
+      "text": "Similarly, among Canadian pregnant women, COVID- 19 markedly increased the prevalence of anxiety, especially for those with psychiatric history and low income (Zhang et al., 2020).",
+      "section": "INTRODUCTION",
+      "start": 3755,
+      "end": 3935,
+      "reference_keys": [
+        "r36"
+      ],
+      "marker_spans": [
+        [
+          3914,
+          3934
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r36"
+        ]
+      ],
+      "context_before": "Recently, a small sample cross-sectional study indicated that long-term lockdown and confinement at home elicited profound lifestyle changes, which are causing nearly half of pregnant women to suffer from anxiety (Corbett et al., 2020).",
+      "context_after": "Furthermore, Wu et al. uncovered that pregnant women who are underweight, in employment, and have an economic burden were more likely to develop into anxiety in the Chinese population (Wu et al., 2020)."
+    },
+    {
+      "id": "s10",
+      "text": "Furthermore, Wu et al. uncovered that pregnant women who are underweight, in employment, and have an economic burden were more likely to develop into anxiety in the Chinese population (Wu et al., 2020).",
+      "section": "INTRODUCTION",
+      "start": 3936,
+      "end": 4138,
+      "reference_keys": [
+        "r32"
+      ],
+      "marker_spans": [
+        [
+          4120,
+          4137
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r32"
+        ]
+      ],
+      "context_before": "Similarly, among Canadian pregnant women, COVID- 19 markedly increased the prevalence of anxiety, especially for those with psychiatric history and low income (Zhang et al., 2020).",
+      "context_after": "Recently, data showed that sleep condition and sleep quality was associated with psychological stress universally, in all cases (Lin et al., 2021)."
+    },
+    {
+      "id": "s11",
+      "text": "Recently, data showed that sleep condition and sleep quality was associated with psychological stress universally, in all cases (Lin et al., 2021).",
+      "section": "INTRODUCTION",
+      "start": 4139,
+      "end": 4286,
+      "reference_keys": [
+        "r17"
+      ],
+      "marker_spans": [
+        [
+          4267,
+          4285
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r17"
+        ]
+      ],
+      "context_before": "Furthermore, Wu et al. uncovered that pregnant women who are underweight, in employment, and have an economic burden were more likely to develop into anxiety in the Chinese population (Wu et al., 2020).",
+      "context_after": "Importantly, a sedentary lifestyle also can contribute to various adverse health outcomes and is associated with poor sleep (Cao et al., 2011; The, 2019; Choi et al., 2020; Leger et al., 2020; van de Vegte et al., 2020)."
+    },
+    {
+      "id": "s12",
+      "text": "Importantly, a sedentary lifestyle also can contribute to various adverse health outcomes and is associated with poor sleep (Cao et al., 2011; The, 2019; Choi et al., 2020; Leger et al., 2020; van de Vegte et al., 2020).",
+      "section": "INTRODUCTION",
+      "start": 4287,
+      "end": 4507,
+      "reference_keys": [
+        "r5",
+        "r26",
+        "r6",
+        "r15",
+        "r28"
+      ],
+      "marker_spans": [
+        [
+          4411,
+          4506
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r5",
+          "r26",
+          "r6",
+          "r15",
+          "r28"
+        ]
+      ],
+      "context_before": "Recently, data showed that sleep condition and sleep quality was associated with psychological stress universally, in all cases (Lin et al., 2021).",
+      "context_after": "Nevertheless, the impact of this dramatic lifestyle alteration caused by the COVID-19 pandemic on psychological disorders has been poorly explored."
+    },
+    {
+      "id": "s13",
+      "text": "The SAS has been applied in Chinese populations in numerous studies, performing good validity and acceptable reliability (Kang et al., 2016; Ma et al., 2019; Wu et al., 2020).",
+      "section": "Data Collection",
+      "start": 7218,
+      "end": 7393,
+      "reference_keys": [
+        "r14",
+        "r21",
+        "r32"
+      ],
+      "marker_spans": [
+        [
+          7339,
+          7392
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r14",
+          "r21",
+          "r32"
+        ]
+      ],
+      "context_before": "It composed of 20 items with four-point options (range: 1 = never, 2 = sometimes, 3 = often, 4 = very often) to capture the symptoms of anxiety.",
+      "context_after": "The Cronbach’s α of SAS in the current study was 0.756."
+    },
+    {
+      "id": "s14",
+      "text": "The cut-offpoint for anxiety was above 49, thus participants were categorized into healthy population (≤49) and anxiety population (≥50) based on anxiety score (Wu et al., 2020).",
+      "section": "Data Collection",
+      "start": 7519,
+      "end": 7697,
+      "reference_keys": [
+        "r32"
+      ],
+      "marker_spans": [
+        [
+          7679,
+          7696
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r32"
+        ]
+      ],
+      "context_before": "The anxiety score was calculated from the sum score of the 20 items.",
+      "context_after": ""
+    },
+    {
+      "id": "s15",
+      "text": "However, considering that the COVID-19 pandemic resulted in delayed and poor sleep patterns, and more time spent on social media (Deng et al., 2020), we set sleep duration for ≥8 h as the highest level.",
+      "section": "Data Collection",
+      "start": 8423,
+      "end": 8625,
+      "reference_keys": [
+        "r8"
+      ],
+      "marker_spans": [
+        [
+          8552,
+          8571
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r8"
+        ]
+      ],
+      "context_before": "Commonly, 7–8 h is recognized as the better sleep duration for Chinese people.",
+      "context_after": "Sleep duration of <6 h was associated with a higher risk of adverse perinatal outcomes, therefore, <6 h was set as the lowest level for sleep duration (Cai et al., 2017)."
+    },
+    {
+      "id": "s16",
+      "text": "Sleep duration of <6 h was associated with a higher risk of adverse perinatal outcomes, therefore, <6 h was set as the lowest level for sleep duration (Cai et al., 2017).",
+      "section": "Data Collection",
+      "start": 8626,
+      "end": 8796,
+      "reference_keys": [
+        "r4"
+      ],
+      "marker_spans": [
+        [
+          8777,
+          8795
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r4"
+        ]
+      ],
+      "context_before": "However, considering that the COVID-19 pandemic resulted in delayed and poor sleep patterns, and more time spent on social media (Deng et al., 2020), we set sleep duration for ≥8 h as the highest level.",
+      "context_after": "For screen time, previous research has found that screen time (>2 h) was associated with higher psychological stress (The, 2019)."
+    },
+    {
+      "id": "s17",
+      "text": "For screen time, previous research has found that screen time (>2 h) was associated with higher psychological stress (The, 2019).",
+      "section": "Data Collection",
+      "start": 8797,
+      "end": 8926,
+      "reference_keys": [
+        "r26"
+      ],
+      "marker_spans": [
+        [
+          8914,
+          8925
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r26"
+        ]
+      ],
+      "context_before": "Sleep duration of <6 h was associated with a higher risk of adverse perinatal outcomes, therefore, <6 h was set as the lowest level for sleep duration (Cai et al., 2017).",
+      "context_after": "Therefore, we chose screen time (≤2 h) as the lowest level."
+    },
+    {
+      "id": "s18",
+      "text": "Besides, given the calculated screen time in pregnant women during the COVID-19 pandemic, we divided the screen time of ≥8 as the highest group (Wu et al., 2020).",
+      "section": "Data Collection",
+      "start": 8987,
+      "end": 9149,
+      "reference_keys": [
+        "r32"
+      ],
+      "marker_spans": [
+        [
+          9131,
+          9148
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r32"
+        ]
+      ],
+      "context_before": "Therefore, we chose screen time (≤2 h) as the lowest level.",
+      "context_after": ""
+    },
+    {
+      "id": "s19",
+      "text": "We uncovered that the prevalence of anxiety among pregnant women during the COVID-19 pandemic in China was almost 35%, which was much higher than that of children (18.9%) (Xie et al., 2020) and health care workers in Wuhan (29.4%) (Kang et al., 2020), and of Singaporean (14.5%) (Tan et al., 2020).",
+      "section": "DISCUSSION",
+      "start": 16266,
+      "end": 16564,
+      "reference_keys": [
+        "r33",
+        "r13",
+        "r24"
+      ],
+      "marker_spans": [
+        [
+          16437,
+          16455
+        ],
+        [
+          16497,
+          16516
+        ],
+        [
+          16545,
+          16563
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r33"
+        ],
+        [
+          "r13"
+        ],
+        [
+          "r24"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "Regarding pregnant women in Canada who suffered from anxiety during the COVID-19 pandemic, the prevalence was 12.6%, which was also much lower compared with our study (Berthelot et al., 2020)."
+    },
+    {
+      "id": "s20",
+      "text": "Regarding pregnant women in Canada who suffered from anxiety during the COVID-19 pandemic, the prevalence was 12.6%, which was also much lower compared with our study (Berthelot et al., 2020).",
+      "section": "DISCUSSION",
+      "start": 16565,
+      "end": 16757,
+      "reference_keys": [
+        "r3"
+      ],
+      "marker_spans": [
+        [
+          16732,
+          16756
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r3"
+        ]
+      ],
+      "context_before": "We uncovered that the prevalence of anxiety among pregnant women during the COVID-19 pandemic in China was almost 35%, which was much higher than that of children (18.9%) (Xie et al., 2020) and health care workers in Wuhan (29.4%) (Kang et al., 2020), and of Singaporean (14.5%) (Tan et al., 2020).",
+      "context_after": "This inconsistent data might be due to the fact that Berthelot et al. sub-divided psychiatric disorder into 13 subscale mental syndromes which might dilute the weight of anxiety in mental disorders, while our study focused on anxiety symptoms which might overestimate the weight/prevalence of anxiety."
+    },
+    {
+      "id": "s21",
+      "text": "This study only recruited 71 participants who were second or third trimester, whereas the participants recruited in our study were covering the whole pregnancy (Corbett et al., 2020).",
+      "section": "DISCUSSION",
+      "start": 17436,
+      "end": 17619,
+      "reference_keys": [
+        "r7"
+      ],
+      "marker_spans": [
+        [
+          17596,
+          17618
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r7"
+        ]
+      ],
+      "context_before": "Conversely, Corbett et al. showed that ∼50.7% of pregnant women were continuously worried about their health during the pandemic period.",
+      "context_after": "Several studies showed the prevalence of anxiety in Wuhan and Chongqing city was 20.5 and 10.4%, respectively (Liu et al., 2020)."
+    },
+    {
+      "id": "s22",
+      "text": "Several studies showed the prevalence of anxiety in Wuhan and Chongqing city was 20.5 and 10.4%, respectively (Liu et al., 2020).",
+      "section": "DISCUSSION",
+      "start": 17620,
+      "end": 17749,
+      "reference_keys": [
+        "r19"
+      ],
+      "marker_spans": [
+        [
+          17730,
+          17748
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r19"
+        ]
+      ],
+      "context_before": "This study only recruited 71 participants who were second or third trimester, whereas the participants recruited in our study were covering the whole pregnancy (Corbett et al., 2020).",
+      "context_after": "Taken together, the above studies indicated that the COVID-19 pandemic might elicit psychological problems."
+    },
+    {
+      "id": "s23",
+      "text": "People underwent a rapid lifestyle transition from normal life to confined life, which elicited profound lifestyle changes (Corbett et al., 2020; Zhang et al., 2020) that made them spend more time on sleep and electronic products, which might cause potential influences on mental health during the COVID-19 pandemic.",
+      "section": "DISCUSSION",
+      "start": 18039,
+      "end": 18355,
+      "reference_keys": [
+        "r7",
+        "r36"
+      ],
+      "marker_spans": [
+        [
+          18162,
+          18204
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r7",
+          "r36"
+        ]
+      ],
+      "context_before": "Against the unprecedented infectious disease pandemic in the past 100 years, the strict long-term lockdown at home and social distance were comprehensively/ubiquitously conducted.",
+      "context_after": "Wu et al. found that an exercise time of <7 h/week was associated with a 23% increase in depressive symptoms, which indicated that active lifestyle was closely related with mental health during the COVID-19 pandemic."
+    },
+    {
+      "id": "s24",
+      "text": "Cumulative data have indicated that both sleep quality and mental health are important for maintaining the health of pregnant women (Qiao et al., 2012; Loy et al., 2020).",
+      "section": "DISCUSSION",
+      "start": 18728,
+      "end": 18898,
+      "reference_keys": [
+        "r23",
+        "r20"
+      ],
+      "marker_spans": [
+        [
+          18860,
+          18897
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r23",
+          "r20"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "Sleep quality closely impacts the mental health of pregnant women (van der Zwan et al., 2017; Difrancesco et al., 2019), and sleep duration and anxiety interactively contribute to pregnancy complications without exception (Tomfohr-Madsen et al., 2019)."
+    },
+    {
+      "id": "s25",
+      "text": "Sleep quality closely impacts the mental health of pregnant women (van der Zwan et al., 2017; Difrancesco et al., 2019), and sleep duration and anxiety interactively contribute to pregnancy complications without exception (Tomfohr-Madsen et al., 2019).",
+      "section": "DISCUSSION",
+      "start": 18899,
+      "end": 19151,
+      "reference_keys": [
+        "r29",
+        "r9",
+        "r27"
+      ],
+      "marker_spans": [
+        [
+          18965,
+          19018
+        ],
+        [
+          19121,
+          19150
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r29",
+          "r9"
+        ],
+        [
+          "r27"
+        ]
+      ],
+      "context_before": "Cumulative data have indicated that both sleep quality and mental health are important for maintaining the health of pregnant women (Qiao et al., 2012; Loy et al., 2020).",
+      "context_after": "Thus, the association of sleep duration with anxiety is warranted to further investigate under the public health emergency."
+    },
+    {
+      "id": "s26",
+      "text": "Both cross-sectional and longitudinal studies have indicated that a sleep duration of <8 h/day and bad sleep quality can increase anxiety during pregnancy (Yu et al., 2017).",
+      "section": "DISCUSSION",
+      "start": 19276,
+      "end": 19449,
+      "reference_keys": [
+        "r35"
+      ],
+      "marker_spans": [
+        [
+          19431,
+          19448
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r35"
+        ]
+      ],
+      "context_before": "Thus, the association of sleep duration with anxiety is warranted to further investigate under the public health emergency.",
+      "context_after": "However, previous evidence regarding the association of sleep duration with mental disorders was assessed under normal life."
+    },
+    {
+      "id": "s27",
+      "text": "A metaanalysis indicated that 54% population suffered from sleep disturbances (Deng et al., 2020).",
+      "section": "DISCUSSION",
+      "start": 19669,
+      "end": 19767,
+      "reference_keys": [
+        "r8"
+      ],
+      "marker_spans": [
+        [
+          19747,
+          19766
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r8"
+        ]
+      ],
+      "context_before": "COVID-19 markedly raised mental disorder risk and changed the average person’s sleep pattern.",
+      "context_after": "Importantly, COVID-19 induces a later and longer sleep pattern on weekdays, lower levels of social jetlag, and a delayed chronotype (Leone et al., 2020)."
+    },
+    {
+      "id": "s28",
+      "text": "Importantly, COVID-19 induces a later and longer sleep pattern on weekdays, lower levels of social jetlag, and a delayed chronotype (Leone et al., 2020).",
+      "section": "DISCUSSION",
+      "start": 19768,
+      "end": 19921,
+      "reference_keys": [
+        "r16"
+      ],
+      "marker_spans": [
+        [
+          19900,
+          19920
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r16"
+        ]
+      ],
+      "context_before": "A metaanalysis indicated that 54% population suffered from sleep disturbances (Deng et al., 2020).",
+      "context_after": "Though the sleep condition and quality were associated with the mental health of pregnant women in Shenzhen in every population and setting (Lin et al., 2021), the participants in this study were restricted to Shenzhen, only from one city."
+    },
+    {
+      "id": "s29",
+      "text": "Though the sleep condition and quality were associated with the mental health of pregnant women in Shenzhen in every population and setting (Lin et al., 2021), the participants in this study were restricted to Shenzhen, only from one city.",
+      "section": "DISCUSSION",
+      "start": 19922,
+      "end": 20161,
+      "reference_keys": [
+        "r17"
+      ],
+      "marker_spans": [
+        [
+          20062,
+          20080
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r17"
+        ]
+      ],
+      "context_before": "Importantly, COVID-19 induces a later and longer sleep pattern on weekdays, lower levels of social jetlag, and a delayed chronotype (Leone et al., 2020).",
+      "context_after": "To date, little is known regarding the association between sleep duration and mental health in a representative population."
+    },
+    {
+      "id": "s30",
+      "text": "Screen viewing is increasingly prevalent and has become a part of common sedentary behavior globally, which might cause mental disorders (The, 2019).",
+      "section": "DISCUSSION",
+      "start": 20556,
+      "end": 20705,
+      "reference_keys": [
+        "r26"
+      ],
+      "marker_spans": [
+        [
+          20693,
+          20704
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r26"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "Importantly, the association of a sedentary lifestyle and COVID-19-induced psychological stress among pregnant women has not yet been explored."
+    },
+    {
+      "id": "s31",
+      "text": "The plausible explanation might be that longer screen time makes pregnant women exposed to more dubious information about rapidly increased numbers of infection rate and mortality, which resulted in fear and concern among them (Wang et al., 2019).",
+      "section": "DISCUSSION",
+      "start": 20990,
+      "end": 21237,
+      "reference_keys": [
+        "r30"
+      ],
+      "marker_spans": [
+        [
+          21217,
+          21236
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r30"
+        ]
+      ],
+      "context_before": "Our study revealed that longer screen time was associated with increased risk of anxiety among pregnant women during the COVID-19 pandemic.",
+      "context_after": "Currently, the association of screen time with mental health mainly focuses on adolescents."
+    },
+    {
+      "id": "s32",
+      "text": "In Chinese adolescents, a screen time of >2 h/day was significantly associated with anxiety (Cao et al., 2011; Wu et al., 2016).",
+      "section": "DISCUSSION",
+      "start": 21330,
+      "end": 21458,
+      "reference_keys": [
+        "r5",
+        "r31"
+      ],
+      "marker_spans": [
+        [
+          21422,
+          21457
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r5",
+          "r31"
+        ]
+      ],
+      "context_before": "Currently, the association of screen time with mental health mainly focuses on adolescents.",
+      "context_after": "Importantly, this effect was more apparent when combined with insufficient physical activity (Cao et al., 2011)."
+    },
+    {
+      "id": "s33",
+      "text": "Importantly, this effect was more apparent when combined with insufficient physical activity (Cao et al., 2011).",
+      "section": "DISCUSSION",
+      "start": 21459,
+      "end": 21571,
+      "reference_keys": [
+        "r5"
+      ],
+      "marker_spans": [
+        [
+          21552,
+          21570
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r5"
+        ]
+      ],
+      "context_before": "In Chinese adolescents, a screen time of >2 h/day was significantly associated with anxiety (Cao et al., 2011; Wu et al., 2016).",
+      "context_after": "The notion of independent and jointed effects of screen time and physical activity with anxiety was further validated in Canadian adolescents (Herman et al., 2015)."
+    },
+    {
+      "id": "s34",
+      "text": "The notion of independent and jointed effects of screen time and physical activity with anxiety was further validated in Canadian adolescents (Herman et al., 2015).",
+      "section": "DISCUSSION",
+      "start": 21572,
+      "end": 21736,
+      "reference_keys": [
+        "r12"
+      ],
+      "marker_spans": [
+        [
+          21714,
+          21735
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r12"
+        ]
+      ],
+      "context_before": "Importantly, this effect was more apparent when combined with insufficient physical activity (Cao et al., 2011).",
+      "context_after": "It is noteworthy that the above studies mainly focused on the combined effects of screen time and physical activity on mental disorders, while the interactive effect of screen time and sleep duration has yet not been addressed."
+    }
+  ]
+}

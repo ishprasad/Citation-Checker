@@ -1,0 +1,285 @@
+{
+  "arxiv_id": "",
+  "title": "Activities, Housing Situation and Other Factors Influencing Psychological Strain Experienced During the First COVID-19 Lockdown in Switzerland",
+  "field": "Psychology",
+  "source": "10.3389/fpsyg.2021.735293",
+  "planted": [
+    {
+      "id": "p1",
+      "sentence_id": "s12",
+      "reference_keys": [
+        "r47"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"universally, in all cases\" before the citation",
+      "original": "Pregnant women and women working in the health sector were particularly affected (Preis et al., 2020; Ceri and Cicek, 2021).",
+      "mutated": "Pregnant women and women working in the health sector were particularly affected universally, in all cases (Preis et al., 2020; Ceri and Cicek, 2021).",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p2",
+      "sentence_id": "s16",
+      "reference_keys": [
+        "r42"
+      ],
+      "mutation": "hedge_removal",
+      "description": "Removed the hedge: \"could\" became \"will\"",
+      "original": "Housing conditions are another factor that could potentially moderate the psychological strain caused by the COVID-19 pandemic (Passavanti et al., 2021).",
+      "mutated": "Housing conditions are another factor that will potentially moderate the psychological strain caused by the COVID-19 pandemic (Passavanti et al., 2021).",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "hypothesis_as_finding"
+      ]
+    },
+    {
+      "id": "p3",
+      "sentence_id": "s17",
+      "reference_keys": [
+        "r61"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"without exception\" before the citation",
+      "original": "Distancing measures and the closure of schools and workplaces as well as of locations for sports and leisure activities contribute to physical and social isolation, which has important implications concerning the role of housing conditions in supporting health and well-being (Tokazhanov et al., 2020).",
+      "mutated": "Distancing measures and the closure of schools and workplaces as well as of locations for sports and leisure activities contribute to physical and social isolation, which has important implications concerning the role of housing conditions in supporting health and well-being without exception (Tokazhanov et al., 2020).",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p4",
+      "sentence_id": "s35",
+      "reference_keys": [
+        "r65"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (c.f. Horton and Kleinman, 2007) with (Woods et al., 2020) (\"The COVID-19 pandemic and physical activity\") (similarity 0.22 vs 0.57 for the original)",
+      "original": "However, omitting cases with missing responses in one of the scale items was not an option since this could have biased the findings systematically (c.f. Horton and Kleinman, 2007), because persons suffering from strong psychological strain may eventually have problems to concentrate and may thus have failed to respond to the survey completely.",
+      "mutated": "However, omitting cases with missing responses in one of the scale items was not an option since this could have biased the findings systematically (Woods et al., 2020), because persons suffering from strong psychological strain may eventually have problems to concentrate and may thus have failed to respond to the survey completely.",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p5",
+      "sentence_id": "s48",
+      "reference_keys": [
+        "r14"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"in every population and setting\" before the citation",
+      "original": "However, similar to previous studies (e.g., Kuhn et al., 2021; Dale et al., 2021), the youngest age group was found to have the greatest increase in psychological strain.",
+      "mutated": "However, similar to previous studies in every population and setting (e.g., Kuhn et al., 2021; Dale et al., 2021), the youngest age group was found to have the greatest increase in psychological strain.",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p6",
+      "sentence_id": "s50",
+      "reference_keys": [
+        "r27"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Tokazhanov et al., 2020) with (Horton and Kleinman, 2007) (\"Much Ado About Nothing\") (similarity 0.22 vs 0.55 for the original)",
+      "original": "This finding adds to previously elucidated requirements that dwellings should meet to ensure people’s well-being (Tokazhanov et al., 2020).",
+      "mutated": "This finding adds to previously elucidated requirements that dwellings should meet to ensure people’s well-being (Horton and Kleinman, 2007).",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p7",
+      "sentence_id": "s51",
+      "reference_keys": [
+        "r3"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"universally, in all cases\" before the citation",
+      "original": "Corroborating previous studies (Amerio et al., 2020; Passavanti et al., 2021), our findings suggest that living in housing that is lacking in comfort and enjoyable outdoor space may exacerbate the mental burden of lockdown measures and complicate occupants’ lives during such times.",
+      "mutated": "Corroborating previous studies universally, in all cases (Amerio et al., 2020; Passavanti et al., 2021), our findings suggest that living in housing that is lacking in comfort and enjoyable outdoor space may exacerbate the mental burden of lockdown measures and complicate occupants’ lives during such times.",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p8",
+      "sentence_id": "s53",
+      "reference_keys": [
+        "r24"
+      ],
+      "mutation": "hedge_removal",
+      "description": "Removed the hedge: \"could\" became \"will\"",
+      "original": "One way to ensure that multiple perspectives are equally considered could be to include professionals with diverse backgrounds and fields of experience and expertise in the processes leading to more socially robust decisions (Hansmann, 2010; Seidl et al., 2013).",
+      "mutated": "One way to ensure that multiple perspectives are equally considered will be to include professionals with diverse backgrounds and fields of experience and expertise in the processes leading to more socially robust decisions (Hansmann, 2010; Seidl et al., 2013).",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "hypothesis_as_finding"
+      ]
+    },
+    {
+      "id": "p9",
+      "sentence_id": "s55",
+      "reference_keys": [
+        "r24"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Garre-Olmo et al., 2021) with (Hansmann, 2010) (\"“Sustainability Learning”: An Introduction to the Concept and Its Motivational Aspects\") (similarity 0.31 vs 0.51 for the original)",
+      "original": "The negative consequences of containment measures may increase with the length of their duration (Garre-Olmo et al., 2021).",
+      "mutated": "The negative consequences of containment measures may increase with the length of their duration (Hansmann, 2010).",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p10",
+      "sentence_id": "s57",
+      "reference_keys": [
+        "r49"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"in every population and setting\" before the citation",
+      "original": "Emerging studies in this regard suggest that children have suffered particularly strongly from COVID-19 countermeasures (Fore, 2020; Ravens-Sieberer et al., 2021), as confinement can make it difficult for them—as well as fragile elderly persons—to fulfill their basic need for social interaction (Maslow, 1954).",
+      "mutated": "Emerging studies in this regard suggest that children have suffered particularly strongly from COVID-19 countermeasures in every population and setting (Fore, 2020; Ravens-Sieberer et al., 2021), as confinement can make it difficult for them—as well as fragile elderly persons—to fulfill their basic need for social interaction (Maslow, 1954).",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    }
+  ],
+  "baseline_flags": [
+    [
+      "s11",
+      "r45",
+      "overstated"
+    ],
+    [
+      "s11",
+      "r51",
+      "overstated"
+    ],
+    [
+      "s11",
+      "r57",
+      "contradicted"
+    ],
+    [
+      "s12",
+      "r11",
+      "overstated"
+    ],
+    [
+      "s14",
+      "r31",
+      "overstated"
+    ],
+    [
+      "s18",
+      "r3",
+      "overstated"
+    ],
+    [
+      "s18",
+      "r42",
+      "not_found"
+    ],
+    [
+      "s23",
+      "r32",
+      "overstated"
+    ],
+    [
+      "s24",
+      "r21",
+      "overstated"
+    ],
+    [
+      "s24",
+      "r43",
+      "overstated"
+    ],
+    [
+      "s25",
+      "r14",
+      "overstated"
+    ],
+    [
+      "s32",
+      "r10",
+      "not_found"
+    ],
+    [
+      "s4",
+      "r14",
+      "overstated"
+    ],
+    [
+      "s42",
+      "r6",
+      "not_found"
+    ],
+    [
+      "s49",
+      "r67",
+      "not_found"
+    ],
+    [
+      "s49",
+      "r67",
+      "overstated"
+    ],
+    [
+      "s52",
+      "r17",
+      "not_found"
+    ],
+    [
+      "s56",
+      "r14",
+      "overstated"
+    ],
+    [
+      "s57",
+      "r17",
+      "overstated"
+    ],
+    [
+      "s6",
+      "r9",
+      "overstated"
+    ],
+    [
+      "s8",
+      "r10",
+      "overstated"
+    ]
+  ]
+}

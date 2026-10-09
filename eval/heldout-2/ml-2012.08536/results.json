@@ -1,0 +1,400 @@
+{
+  "slug": "ml-2012.08536",
+  "field": "Computer science: machine learning",
+  "title": "Numerical Implementation of Just-In-Time Decoding in Novel Lattice Slices Through the Three-Dimensional Surface Code",
+  "job_id": "fa5e07cc13a7",
+  "scored_at": "2026-10-09T17:00:12+00:00",
+  "planted": 9,
+  "checked": 9,
+  "caught": 8,
+  "recall": 0.8888888888888888,
+  "label_accuracy": 0.8888888888888888,
+  "expected_mode_rate": 0.4444444444444444,
+  "untouched_verdicts": 68,
+  "other_flags": 9,
+  "other_flags_preexisting": 9,
+  "precision": 0.47058823529411764,
+  "precision_excluding_preexisting": 1.0,
+  "by_mutation": {
+    "scope_inflation": {
+      "planted": 2,
+      "caught": 1
+    },
+    "citation_swap": {
+      "planted": 7,
+      "caught": 7
+    }
+  },
+  "flagged_citations": 9,
+  "review": {
+    "genuine": 1,
+    "false_alarm": 6,
+    "debatable": 2,
+    "unreviewed": 0
+  },
+  "review_details": {
+    "genuine": [
+      {
+        "sentence_id": "s40",
+        "reference_key": "vasmer_three-dimensional_2019",
+        "note": "Cited for d^3 spacetime scaling of constant-time universal operations in the 3D surface code, but the cited work states that a 3D surface code needs an unknown number of syndrome-extraction rounds and that single-shot decoding of its string-like Z errors seems unlikely; d^3 is established there only for 3D gauge colour codes."
+      }
+    ],
+    "false_alarm": [
+      {
+        "sentence_id": "s10",
+        "reference_key": "brown_fault-tolerant_2020",
+        "note": "Brown's paper performs a controlled-controlled-phase gate with three overlapping 2D surface codes over a time that scales with system size, using a just-in-time decoder, and proves a threshold; the sentence is accurate."
+      },
+      {
+        "sentence_id": "s18",
+        "reference_key": "bombin_dimensional_2016",
+        "note": "The citation credits the term 'dimension jumping' to Bombín's dimensional-jump paper; the surface-code version is Brown's, as the next sentence of the citing paper says."
+      },
+      {
+        "sentence_id": "s22",
+        "reference_key": "vasmer_three-dimensional_2019",
+        "note": "The cited work assigns the three codes' string-like logical operators to the x, y and z axes of the rectified lattice, i.e. they are perpendicular; the word itself does not appear, which is all the judge objected to."
+      },
+      {
+        "sentence_id": "s32",
+        "reference_key": "brown_fault-tolerant_2020",
+        "note": "The text the current pipeline read gives a threshold lower bound of ε ∼ 10^-17, matching the claim; the number-drift tag is a parsing error (PDF text '10−17' read as the number 10). The old pipeline read a different version giving 6·10^-15 and called it contradicted (version mismatch)."
+      },
+      {
+        "sentence_id": "s39",
+        "reference_key": "jochym-oconnor_four-dimensional_2021",
+        "note": "The cited work does report a 4D toric code with a transversal CCCZ; the flagged part ('it seems natural to ask if an equivalent process could be used...') is the citing authors' own open question."
+      },
+      {
+        "sentence_id": "s39",
+        "reference_key": "kubica_unfolding_2015",
+        "note": "Unfolding the color code shows a transversal d-qubit control-Z on a stack of d copies of the d-dimensional toric code, i.e. CCCZ for d = 4; that is a result regarding transversal CCCZ in the 4D surface code."
+      }
+    ],
+    "debatable": [
+      {
+        "sentence_id": "s10",
+        "reference_key": "bombin_topological_2007",
+        "note": "Group citation [5, 23, 24] for the 3D colour code: [5] introduces colour codes (in 2D only); the 3D colour code is in [23, 24]. A fair pointer to the code family, loosely placed."
+      },
+      {
+        "sentence_id": "s8",
+        "reference_key": "bombin_2d_2018",
+        "note": "Bombín does note the dimensional puzzle (constant-time universal operations in 3D, not in 2D), which is the qualitative point; the O(d^3)/O(d^4) spacetime costs and O(d) rounds are the citing authors' own elaboration and are not in the cited text."
+      }
+    ],
+    "unreviewed": []
+  },
+  "precision_reviewed": 0.6,
+  "summary_line": "Caught 8 of 9 planted errors · 6 false alarms · 1 real citation problem found in the original paper",
+  "details": [
+    {
+      "id": "p1",
+      "sentence_id": "s2",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"in every population and setting\" before the citation",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [
+        "scope_inflation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p2",
+      "sentence_id": "s7",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [21] with [9] (\"Quantum supremacy using a programmable superconducting processor\") (similarity 0.38 vs 0.64 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": true
+    },
+    {
+      "id": "p3",
+      "sentence_id": "s13",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [30] with [20] (\"Single-Shot Error Correction of Three-Dimensional Homological Product Codes\") (similarity 0.21 vs 0.37 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": true
+    },
+    {
+      "id": "p4",
+      "sentence_id": "s16",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"universally, in all cases\" before the citation",
+      "checked": true,
+      "caught": false,
+      "label_correct": false,
+      "labels": [
+        "supported"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": false
+    },
+    {
+      "id": "p5",
+      "sentence_id": "s17",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [29] with [18] (\"Single-Shot Fault-Tolerant Quantum Error Correction\") (similarity 0.39 vs 0.69 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": true
+    },
+    {
+      "id": "p6",
+      "sentence_id": "s19",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [17] with [10] (\"Demonstration of quantum volume 64 on a superconducting quantum computing system\") (similarity 0.49 vs 0.65 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p7",
+      "sentence_id": "s20",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [22] with [35] (\"Paths, Trees, and Flowers\") (similarity 0.31 vs 0.55 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p8",
+      "sentence_id": "s24",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [29] with [33] (\"Long-range quantum entanglement in noisy cluster states\") (similarity 0.47 vs 0.75 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": true
+    },
+    {
+      "id": "p9",
+      "sentence_id": "s34",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [49] with [23] (\"Topological Computation without Braiding\") (similarity 0.26 vs 0.42 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    }
+  ],
+  "verdicts": 84,
+  "escalation": {
+    "verdicts": 84,
+    "escalated": 19,
+    "label_changed": 1,
+    "transitions": {
+      "not_found->supported": 1
+    }
+  },
+  "coverage": {
+    "total": 50,
+    "full": 44,
+    "abstract_only": 2,
+    "unavailable": 4,
+    "retracted": 0,
+    "line": "Full text found for 44 of 50 references · abstract only for 2 · unavailable for 4."
+  },
+  "usage": {
+    "per_model": [
+      {
+        "model": "Qwen/Qwen3-Embedding-8B",
+        "role": "embed",
+        "calls": 4,
+        "cached_calls": 0,
+        "prompt_tokens": 261,
+        "completion_tokens": 0,
+        "estimated_cost_usd": 3e-06
+      },
+      {
+        "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+        "role": "escalate",
+        "calls": 20,
+        "cached_calls": 9,
+        "prompt_tokens": 403100,
+        "completion_tokens": 53676,
+        "estimated_cost_usd": 0.564128
+      },
+      {
+        "model": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+        "role": "extract",
+        "calls": 40,
+        "cached_calls": 33,
+        "prompt_tokens": 75028,
+        "completion_tokens": 4226,
+        "estimated_cost_usd": 0.005516
+      },
+      {
+        "model": "nvidia/nemotron-3-super-120b-a12b",
+        "role": "judge",
+        "calls": 80,
+        "cached_calls": 56,
+        "prompt_tokens": 437328,
+        "completion_tokens": 127127,
+        "estimated_cost_usd": 0.245613
+      }
+    ],
+    "total_prompt_tokens": 915717,
+    "total_completion_tokens": 185029,
+    "total_estimated_cost_usd": 0.81526
+  },
+  "baseline_cost_usd": 0.656,
+  "old_pipeline": {
+    "commit": "da5f9e3",
+    "job_id": "7e5a4abf052c",
+    "cost_usd": 1.090843,
+    "planted": 9,
+    "checked": 9,
+    "caught": 8,
+    "recall": 0.8888888888888888,
+    "label_accuracy": 0.8888888888888888,
+    "expected_mode_rate": 0.4444444444444444,
+    "untouched_verdicts": 68,
+    "other_flags": 8,
+    "other_flags_preexisting": 7,
+    "precision": 0.5,
+    "precision_excluding_preexisting": 0.8888888888888888,
+    "by_mutation": {
+      "scope_inflation": {
+        "planted": 2,
+        "caught": 2
+      },
+      "citation_swap": {
+        "planted": 7,
+        "caught": 6
+      }
+    },
+    "flagged_citations": 8,
+    "review": {
+      "genuine": 1,
+      "false_alarm": 5,
+      "debatable": 2,
+      "unreviewed": 0
+    },
+    "review_details": {
+      "genuine": [
+        {
+          "sentence_id": "s40",
+          "reference_key": "vasmer_three-dimensional_2019",
+          "note": "Cited for d^3 spacetime scaling of constant-time universal operations in the 3D surface code, but the cited work states that a 3D surface code needs an unknown number of syndrome-extraction rounds and that single-shot decoding of its string-like Z errors seems unlikely; d^3 is established there only for 3D gauge colour codes."
+        }
+      ],
+      "false_alarm": [
+        {
+          "sentence_id": "s18",
+          "reference_key": "bombin_dimensional_2016",
+          "note": "The citation credits the term 'dimension jumping' to Bombín's dimensional-jump paper; the surface-code version is Brown's, as the next sentence of the citing paper says."
+        },
+        {
+          "sentence_id": "s22",
+          "reference_key": "vasmer_three-dimensional_2019",
+          "note": "The cited work assigns the three codes' string-like logical operators to the x, y and z axes of the rectified lattice, i.e. they are perpendicular; the word itself does not appear, which is all the judge objected to."
+        },
+        {
+          "sentence_id": "s32",
+          "reference_key": "brown_fault-tolerant_2020",
+          "note": "The text the current pipeline read gives a threshold lower bound of ε ∼ 10^-17, matching the claim; the number-drift tag is a parsing error (PDF text '10−17' read as the number 10). The old pipeline read a different version giving 6·10^-15 and called it contradicted (version mismatch)."
+        },
+        {
+          "sentence_id": "s37",
+          "reference_key": "bombin_2d_2018",
+          "note": "The 'significant difference' is the citing authors' own comparison of their scheme with Bombín's proposal; the citation only identifies the proposal."
+        },
+        {
+          "sentence_id": "s39",
+          "reference_key": "kubica_unfolding_2015",
+          "note": "Unfolding the color code shows a transversal d-qubit control-Z on a stack of d copies of the d-dimensional toric code, i.e. CCCZ for d = 4; that is a result regarding transversal CCCZ in the 4D surface code."
+        }
+      ],
+      "debatable": [
+        {
+          "sentence_id": "s10",
+          "reference_key": "bombin_topological_2007",
+          "note": "Group citation [5, 23, 24] for the 3D colour code: [5] introduces colour codes (in 2D only); the 3D colour code is in [23, 24]. A fair pointer to the code family, loosely placed."
+        },
+        {
+          "sentence_id": "s8",
+          "reference_key": "bombin_2d_2018",
+          "note": "Bombín does note the dimensional puzzle (constant-time universal operations in 3D, not in 2D), which is the qualitative point; the O(d^3)/O(d^4) spacetime costs and O(d) rounds are the citing authors' own elaboration and are not in the cited text."
+        }
+      ],
+      "unreviewed": []
+    },
+    "precision_reviewed": 0.6428571428571429,
+    "caught_ids": [
+      "p1",
+      "p2",
+      "p3",
+      "p4",
+      "p5",
+      "p6",
+      "p7",
+      "p8"
+    ]
+  },
+  "caught_ids": [
+    "p1",
+    "p2",
+    "p3",
+    "p5",
+    "p6",
+    "p7",
+    "p8",
+    "p9"
+  ]
+}

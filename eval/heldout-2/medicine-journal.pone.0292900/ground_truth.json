@@ -1,0 +1,152 @@
+{
+  "arxiv_id": "",
+  "title": "Prevalence, attitudes, and practices of dietary supplements among middle-aged and older adults in Asir region, Saudi Arabia: A cross-sectional study",
+  "field": "Medicine",
+  "source": "10.1371/journal.pone.0292900",
+  "planted": [
+    {
+      "id": "p1",
+      "sentence_id": "s4",
+      "reference_keys": [
+        "r11"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [4] with [11] (\"Knowledge and use of dietary supplements by students of College of Medicine, University of Lagos, Idi-Araba, Lagos, Nigeria\") (similarity 0.37 vs 0.58 for the original)",
+      "original": "DS use in adults has been consistently reported to increase with age, income, and education [4].",
+      "mutated": "DS use in adults has been consistently reported to increase with age, income, and education [11].",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p2",
+      "sentence_id": "s12",
+      "reference_keys": [
+        "r8"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"universally, in all cases\" before the citation",
+      "original": "Besides these, a considerable number of people consuming DS do not seek any medical advice before taking them [8].",
+      "mutated": "Besides these, a considerable number of people consuming DS do not seek any medical advice before taking them universally, in all cases [8].",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p3",
+      "sentence_id": "s21",
+      "reference_keys": [
+        "r2"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"in every population and setting\" before the citation",
+      "original": "Similarly, findings of other studies reported that more than half of the participants were DS users and had positive DS attitudes [2, 23].",
+      "mutated": "Similarly, findings of other studies reported that more than half of the participants were DS users and had positive DS attitudes in every population and setting [2, 23].",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p4",
+      "sentence_id": "s34",
+      "reference_keys": [
+        "r34"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"without exception\" before the citation",
+      "original": "Similarly, El Khoury D and Antoine-Jonville reported that females composed a smaller proportion of supplement users than males [34].",
+      "mutated": "Similarly, El Khoury D and Antoine-Jonville reported that females composed a smaller proportion of supplement users than males without exception [34].",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p5",
+      "sentence_id": "s36",
+      "reference_keys": [
+        "r28"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [23] with [28] (\"Nutritional supplements: prevalence of use and contamination with doping agents\") (similarity 0.26 vs 0.45 for the original)",
+      "original": "In a study by Alhashem et al., it was observed that women and men varied in their attitudes toward DS usage, in which women had more DS positive attitudes than men, which is inconsistent with our results, where men were statistically significantly associated with higher positive DS attitudes than women among both middle-aged and older adults [23].",
+      "mutated": "In a study by Alhashem et al., it was observed that women and men varied in their attitudes toward DS usage, in which women had more DS positive attitudes than men, which is inconsistent with our results, where men were statistically significantly associated with higher positive DS attitudes than women among both middle-aged and older adults [28].",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p6",
+      "sentence_id": "s37",
+      "reference_keys": [
+        "r23"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"in every population and setting\" before the citation",
+      "original": "However, the same study revealed that single participants reported more positive attitudes toward DS than married subjects, with a statistically significant difference [23].",
+      "mutated": "However, the same study revealed that single participants reported more positive attitudes toward DS than married subjects, with a statistically significant difference in every population and setting [23].",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    }
+  ],
+  "baseline_flags": [
+    [
+      "s10",
+      "r7",
+      "overstated"
+    ],
+    [
+      "s13",
+      "r9",
+      "overstated"
+    ],
+    [
+      "s17",
+      "r19",
+      "not_found"
+    ],
+    [
+      "s21",
+      "r23",
+      "overstated"
+    ],
+    [
+      "s24",
+      "r20",
+      "overstated"
+    ],
+    [
+      "s24",
+      "r28",
+      "overstated"
+    ],
+    [
+      "s28",
+      "r26",
+      "overstated"
+    ],
+    [
+      "s31",
+      "r32",
+      "overstated"
+    ]
+  ]
+}

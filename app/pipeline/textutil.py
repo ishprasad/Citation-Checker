@@ -191,6 +191,10 @@ def numbers_match(claim: Number, source: Number) -> Optional[bool]:
         pass  # "175B" vs "175 billion" vs "175000000000"
     elif cu != su:
         return None
-    # The claim may round the source: "31%" for "30.9%", "2x" for "2.1x".
-    tolerance = 0.5 * 10 ** (-_decimals(claim.raw)) * SCALE.get(cu, 1.0)
-    return abs(cv - sv) <= tolerance + 1e-9 * max(abs(cv), abs(sv), 1.0)
+    # The claim may round the source ("31%" for "30.9%", "2x" for "2.1x") or truncate it
+    # ("18 kpc" for "18.7 kpc").
+    step = 10 ** (-_decimals(claim.raw)) * SCALE.get(cu, 1.0)
+    eps = 1e-9 * max(abs(cv), abs(sv), 1.0)
+    if abs(cv - sv) <= 0.5 * step + eps:
+        return True
+    return abs(cv) < abs(sv) and abs(cv - sv) < step - eps and (cv >= 0) == (sv >= 0)

@@ -1,0 +1,386 @@
+{
+  "slug": "biology-elife.86333",
+  "field": "Biology / neuroscience",
+  "title": "Recapitulation of pathophysiological features of AD in SARS-CoV-2-infected subjects",
+  "job_id": "8049a0b8a65c",
+  "scored_at": "2026-10-09T17:00:12+00:00",
+  "planted": 8,
+  "checked": 8,
+  "caught": 7,
+  "recall": 0.875,
+  "label_accuracy": 0.875,
+  "expected_mode_rate": 0.875,
+  "untouched_verdicts": 45,
+  "other_flags": 8,
+  "other_flags_preexisting": 8,
+  "precision": 0.4666666666666667,
+  "precision_excluding_preexisting": 1.0,
+  "by_mutation": {
+    "scope_inflation": {
+      "planted": 3,
+      "caught": 3
+    },
+    "citation_swap": {
+      "planted": 4,
+      "caught": 4
+    },
+    "number_change": {
+      "planted": 1,
+      "caught": 0
+    }
+  },
+  "flagged_citations": 8,
+  "review": {
+    "genuine": 1,
+    "false_alarm": 3,
+    "debatable": 4,
+    "unreviewed": 0
+  },
+  "review_details": {
+    "genuine": [
+      {
+        "sentence_id": "s32",
+        "reference_key": "r5",
+        "note": "'As described previously (Burks et al., 2021)' for the HALO image-analysis method, but the reference is a review on routes of SARS-CoV-2 into the CNS with no methods section; the method is not described there."
+      }
+    ],
+    "false_alarm": [
+      {
+        "sentence_id": "s1",
+        "reference_key": "r16",
+        "note": "The review documents SARS-CoV-2 pathogenesis in the respiratory tract in depth, the 'well studied' part; that much less is known about neurological consequences is the citing authors' framing of the field."
+      },
+      {
+        "sentence_id": "s17",
+        "reference_key": "r14",
+        "note": "Eu et al. discuss NGF supporting neuron survival and the NGF hypothesis of Alzheimer's disease, which is what the sentence says."
+      },
+      {
+        "sentence_id": "s28",
+        "reference_key": "r33",
+        "note": "The review describes the NLRP3 inflammasome, caspase-1, IL-1β/IL-18 and gasdermin D pyroptosis cascade the citation is attached to; the TREM1 and SARS-CoV-2 link is the citing authors' hypothesis ('may impact')."
+      }
+    ],
+    "debatable": [
+      {
+        "sentence_id": "s13",
+        "reference_key": "r29",
+        "note": "The review supports IL-8's role in attracting neutrophils but does not mention endothelial cell migration; a partly supported list."
+      },
+      {
+        "sentence_id": "s4",
+        "reference_key": "r3",
+        "note": "Only the abstract was available: Brison et al. show glutamate excitotoxicity drives paralysis and neuronal loss in mice infected with an HCoV-OC43 mutant; the cytokine mechanism is not in the abstract and may come from the co-cited Jacomy et al."
+      },
+      {
+        "sentence_id": "s5",
+        "reference_key": "r2",
+        "note": "The review describes leukocyte infiltration and neuroinflammation with SARS-CoV-2 in the CNS; the general mechanism (peripheral cytokines recruiting leukocytes across the BBB) is textbook knowledge not stated in these terms in the review."
+      },
+      {
+        "sentence_id": "s7",
+        "reference_key": "r31",
+        "note": "Hedged speculation ('it is possible ... may'): Meinhardt et al. show olfactory CNS entry and neuroinflammation, the premise, but say nothing about cognitive decline or AD; the co-cited Mhatre et al. (2015) predates SARS-CoV-2."
+      }
+    ],
+    "unreviewed": []
+  },
+  "precision_reviewed": 0.7272727272727273,
+  "summary_line": "Caught 7 of 8 planted errors · 3 false alarms · 1 real citation problem found in the original paper",
+  "details": [
+    {
+      "id": "p1",
+      "sentence_id": "s2",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"in every population and setting\" before the citation",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [
+        "scope_inflation"
+      ],
+      "expected_mode_found": true,
+      "escalated": false
+    },
+    {
+      "id": "p2",
+      "sentence_id": "s9",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Kovacs and Gelpi, 2012) with (Lampart et al., 2022) (\"Clinical utility of inflammatory biomarkers in COVID-19 in direct comparison to other respiratory infections—A prospective cohort study\") (similarity 0.27 vs 0.57 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p3",
+      "sentence_id": "s10",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"universally, in all cases\" before the citation",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [
+        "scope_inflation"
+      ],
+      "expected_mode_found": true,
+      "escalated": false
+    },
+    {
+      "id": "p4",
+      "sentence_id": "s21",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Tröscher et al., 2019; Fischer-Smith, 2001) with (Varet et al., 2016) (\"SARTools: A DESeq2- and EdgeR-Based R Pipeline for Comprehensive Differential Analysis of RNA-Seq Data\") (similarity 0.14 vs 0.65 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p5",
+      "sentence_id": "s23",
+      "mutation": "number_change",
+      "description": "Changed \"65\" to \"104\"",
+      "checked": true,
+      "caught": false,
+      "label_correct": false,
+      "labels": [
+        "unverifiable"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": false
+    },
+    {
+      "id": "p6",
+      "sentence_id": "s24",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"in every population and setting\" before the citation",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [
+        "scope_inflation"
+      ],
+      "expected_mode_found": true,
+      "escalated": false
+    },
+    {
+      "id": "p7",
+      "sentence_id": "s26",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Serrano et al., 2021) with (Krämer et al., 2014) (\"Causal analysis approaches in Ingenuity Pathway Analysis\") (similarity 0.22 vs 0.73 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p8",
+      "sentence_id": "s34",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (QIAGEN Inc, version 73620684; Krämer et al., 2014) with (Sullivan and Fischer, 2021) (\"Age-Associated Neurological Complications of COVID-19: A Systematic Review and Meta-Analysis\") (similarity 0.19 vs 0.71 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    }
+  ],
+  "verdicts": 57,
+  "escalation": {
+    "verdicts": 57,
+    "escalated": 15,
+    "label_changed": 2,
+    "transitions": {
+      "unverifiable->not_found": 2
+    }
+  },
+  "coverage": {
+    "total": 46,
+    "full": 23,
+    "abstract_only": 8,
+    "unavailable": 15,
+    "retracted": 0,
+    "line": "Full text found for 23 of 46 references · abstract only for 8 · unavailable for 15."
+  },
+  "usage": {
+    "per_model": [
+      {
+        "model": "Qwen/Qwen3-Embedding-8B",
+        "role": "embed",
+        "calls": 5,
+        "cached_calls": 0,
+        "prompt_tokens": 374,
+        "completion_tokens": 0,
+        "estimated_cost_usd": 4e-06
+      },
+      {
+        "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+        "role": "escalate",
+        "calls": 15,
+        "cached_calls": 6,
+        "prompt_tokens": 195361,
+        "completion_tokens": 34355,
+        "estimated_cost_usd": 0.298426
+      },
+      {
+        "model": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+        "role": "extract",
+        "calls": 34,
+        "cached_calls": 26,
+        "prompt_tokens": 64519,
+        "completion_tokens": 3848,
+        "estimated_cost_usd": 0.004795
+      },
+      {
+        "model": "nvidia/nemotron-3-super-120b-a12b",
+        "role": "judge",
+        "calls": 40,
+        "cached_calls": 21,
+        "prompt_tokens": 210164,
+        "completion_tokens": 55482,
+        "estimated_cost_usd": 0.112983
+      }
+    ],
+    "total_prompt_tokens": 470418,
+    "total_completion_tokens": 93685,
+    "total_estimated_cost_usd": 0.416208
+  },
+  "baseline_cost_usd": 0.315,
+  "old_pipeline": {
+    "commit": "da5f9e3",
+    "job_id": "d121e1827daf",
+    "cost_usd": 0.367408,
+    "planted": 8,
+    "checked": 8,
+    "caught": 7,
+    "recall": 0.875,
+    "label_accuracy": 0.75,
+    "expected_mode_rate": 0.75,
+    "untouched_verdicts": 55,
+    "other_flags": 7,
+    "other_flags_preexisting": 6,
+    "precision": 0.5,
+    "precision_excluding_preexisting": 0.875,
+    "by_mutation": {
+      "scope_inflation": {
+        "planted": 3,
+        "caught": 3
+      },
+      "citation_swap": {
+        "planted": 4,
+        "caught": 3
+      },
+      "number_change": {
+        "planted": 1,
+        "caught": 1
+      }
+    },
+    "flagged_citations": 7,
+    "review": {
+      "genuine": 0,
+      "false_alarm": 3,
+      "debatable": 4,
+      "unreviewed": 0
+    },
+    "review_details": {
+      "genuine": [],
+      "false_alarm": [
+        {
+          "sentence_id": "s1",
+          "reference_key": "r16",
+          "note": "The review documents SARS-CoV-2 pathogenesis in the respiratory tract in depth, the 'well studied' part; that much less is known about neurological consequences is the citing authors' framing of the field."
+        },
+        {
+          "sentence_id": "s12",
+          "reference_key": "r25",
+          "note": "Lee et al. show virus-induced senescence with a SASP of cytokines and matrix-degrading proteases; the telomere-shortening remark is general background, not attributed to them."
+        },
+        {
+          "sentence_id": "s28",
+          "reference_key": "r33",
+          "note": "The review describes the NLRP3 inflammasome, caspase-1, IL-1β/IL-18 and gasdermin D pyroptosis cascade the citation is attached to; the TREM1 and SARS-CoV-2 link is the citing authors' hypothesis ('may impact')."
+        }
+      ],
+      "debatable": [
+        {
+          "sentence_id": "s13",
+          "reference_key": "r29",
+          "note": "The review supports IL-8's role in attracting neutrophils but does not mention endothelial cell migration; a partly supported list."
+        },
+        {
+          "sentence_id": "s4",
+          "reference_key": "r3",
+          "note": "Only the abstract was available: Brison et al. show glutamate excitotoxicity drives paralysis and neuronal loss in mice infected with an HCoV-OC43 mutant; the cytokine mechanism is not in the abstract and may come from the co-cited Jacomy et al."
+        },
+        {
+          "sentence_id": "s5",
+          "reference_key": "r2",
+          "note": "The review describes leukocyte infiltration and neuroinflammation with SARS-CoV-2 in the CNS; the general mechanism (peripheral cytokines recruiting leukocytes across the BBB) is textbook knowledge not stated in these terms in the review."
+        },
+        {
+          "sentence_id": "s7",
+          "reference_key": "r31",
+          "note": "Hedged speculation ('it is possible ... may'): Meinhardt et al. show olfactory CNS entry and neuroinflammation, the premise, but say nothing about cognitive decline or AD; the co-cited Mhatre et al. (2015) predates SARS-CoV-2."
+        }
+      ],
+      "unreviewed": []
+    },
+    "precision_reviewed": 0.7,
+    "caught_ids": [
+      "p1",
+      "p2",
+      "p3",
+      "p5",
+      "p6",
+      "p7",
+      "p8"
+    ]
+  },
+  "caught_ids": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p6",
+    "p7",
+    "p8"
+  ]
+}

@@ -7,7 +7,7 @@ single hallucinated signal cannot put a chip on a citation:
   (population, dataset, setting) on an overstated/contradicted verdict.
 - number_drift: the judge paired a claim number with a source number as the same
   quantity; both numbers really occur in the claim and in the verified quote, and they
-  differ beyond the claim's rounding. A "supported" verdict with drift becomes
+  differ beyond the claim's rounding or truncation. A "supported" verdict with drift becomes
   "overstated".
 - hypothesis_as_finding: the source passage hedges (judge signal or hedge words in
   the quote) while the claim states the point as fact.
@@ -257,7 +257,9 @@ def detect(
             modes.append("scope_inflation")
             notes["scope_inflation"] = f"Claim scope: {s.claim_scope}. Source scope: {s.source_scope}."
 
-        # Number drift: judge-confirmed same quantity, numbers grounded in both texts.
+        # Number drift: judge-confirmed same quantity, numbers grounded in both texts. The claim
+        # number must come from the citing sentence's own claim: the judge's attributed claim may
+        # quote a value from a neighbouring sentence that the claim is only compared against.
         if source_texts:
             for cmp in s.numbers:
                 if not cmp.same_quantity:
@@ -265,7 +267,7 @@ def detect(
                 cn, sn = _first_number(cmp.claim_value), _first_number(cmp.source_value)
                 if cn is None or sn is None:
                     continue
-                if not _occurs(cn, claim_texts) or not _occurs(sn, source_texts):
+                if not _occurs(cn, [claim.claim_text]) or not _occurs(sn, source_texts):
                     continue
                 if numbers_match(cn, sn) is False:
                     modes.append("number_drift")

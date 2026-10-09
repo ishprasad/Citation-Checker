@@ -2,22 +2,14 @@
 
 from __future__ import annotations
 
-import importlib.util
-import sys
 from pathlib import Path
 
 import pytest
 
+from app import planting as plant
 from app.demo import GroundTruth, PlantedError, score
-from app.models import Claim, Verdict
+from app.models import Claim, IngestResult, Verdict
 from app.pipeline.ingest import parse_latex_project
-from app.models import IngestResult
-
-ROOT = Path(__file__).resolve().parent.parent
-spec = importlib.util.spec_from_file_location("plant_errors", ROOT / "scripts" / "plant_errors.py")
-plant = importlib.util.module_from_spec(spec)
-sys.modules["plant_errors"] = plant  # dataclasses look the module up by name
-spec.loader.exec_module(plant)
 
 FIXTURE = Path(__file__).parent / "fixtures" / "latex_numeric"
 
@@ -134,3 +126,19 @@ def test_score():
     assert reviewed["summary_line"] == "Caught 2 of 3 planted errors · 1 false alarm · 1 real citation problem found in the original paper"
     unreviewed = score(truth, verdicts, claims, annotations={("s5", "e"): {"verdict": "debatable", "note": ""}})
     assert unreviewed["review"]["unreviewed"] == 1 and unreviewed["precision_reviewed"] == pytest.approx(2 / 3)
+    # A review skeleton with empty verdicts counts as unreviewed instead of failing.
+    blank = score(truth, verdicts, claims, annotations={("s5", "e"): {"verdict": "", "note": ""}})
+    assert blank["review"]["unreviewed"] == 2
+
+
+def test_hedge_removal_keeps_grammar():
+    from app.models import CitingSentence
+
+    text = "This is most likely due to dust [1]. Results are likely robust [2]."
+    s1 = CitingSentence(id="s1", text=text[:35], start=0, end=35, reference_keys=["a"],
+                        marker_spans=[(31, 34)], marker_keys=[["a"]])
+    assert plant.hedge_candidates(s1, "a", 0, text) == []  # "most likely" -> "most" would be ungrammatical
+    s2 = CitingSentence(id="s2", text=text[36:], start=36, end=len(text), reference_keys=["b"],
+                        marker_spans=[(len(text) - 4, len(text) - 1)], marker_keys=[["b"]])
+    [c] = plant.hedge_candidates(s2, "b", 0, text)
+    assert text[c.edit.start:c.edit.end] == "likely "
