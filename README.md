@@ -66,7 +66,9 @@ Checking citations means many model calls of very different difficulty. Token Fa
 
 Token Factory does not offer Nemotron fine-tuning today; a distilled Nano-sized judge is listed under future work.
 
-## Ingest (arXiv LaTeX source)
+## Architecture
+
+### Ingest (arXiv LaTeX source)
 
 For an arXiv ID, the app downloads the paper's LaTeX source rather than the PDF. Citation commands and the compiled bibliography map every citation to its reference exactly, which PDF parsing cannot do.
 
@@ -76,7 +78,7 @@ For an arXiv ID, the app downloads the paper's LaTeX source rather than the PDF.
 - **Citation markers.** Markers are rendered the way the paper shows them: numeric (`[3, 5]`, `Lee et al. [2]`) or author-year (`(Kaplan et al., 2020)`, `Brown et al. (2020)`).
 - **Sentences.** `app/pipeline/sentences.py` splits sentences without breaking on abbreviations such as `et al.`, `e.g.` and `Fig.`, and keeps each citation marker attached to its sentence.
 
-## Ingest (PDF: `app/pipeline/pdfparse.py`, optional GROBID)
+### Ingest (PDF: `app/pipeline/pdfparse.py`, optional GROBID)
 
 PDFs are used for uploads, and automatically for arXiv papers without usable LaTeX source (the report header then says "Parsed from PDF; citation matching may be less accurate"). The uploaded file is parsed in the request and not stored; only the text needed for the report is kept.
 
@@ -100,7 +102,7 @@ Accuracy against the LaTeX parse of the same papers, and on journal PDFs:
 
 For the first four, "found" counts LaTeX citing sentences with a matching PDF sentence. LoRA's misses are citations the paper itself prints without a year ("Radford et al., b") and sentences broken up by inline equations.
 
-## Reference resolution (`app/pipeline/references.py`)
+### Reference resolution (`app/pipeline/references.py`)
 
 Each reference is matched to a real paper, and its text is fetched using free APIs only.
 
@@ -123,7 +125,7 @@ Coverage on real papers:
 | Attention Is All You Need | 32 of 40 | 8 | 0 |
 | Chain-of-Thought Prompting | 82 of 86 | 2 | 2 |
 
-## Claim extraction (`app/pipeline/claims.py`, Nemotron Nano)
+### Claim extraction (`app/pipeline/claims.py`, Nemotron Nano)
 
 Each citing sentence goes to the extraction model with its citation markers replaced by short ids (`[R1, R2]`), along with the neighbouring sentences and the citing paper's title. For each marker, the model writes what the sentence attributes to the cited work: the statements that work itself must contain for the citation to be accurate. Framing it this way stops a small model from attributing the citing authors' own results to the works they cite ("our changes to FlashAttention [R1] give a 2x speedup" yields only "FlashAttention is an implementation of attention").
 
@@ -135,11 +137,11 @@ Code checks guard the output:
 
 Reference titles are deliberately not shown to the model, because it tended to copy them into claims.
 
-## Evidence retrieval (`app/pipeline/evidence.py`, embeddings)
+### Evidence retrieval (`app/pipeline/evidence.py`, embeddings)
 
 Each cited paper is split into chunks of about 400 tokens with about 80 tokens of overlap, on sentence boundaries. Chunks never cross a section heading, and each keeps its heading and character offsets. For PDF text, only numbered headings or standard section names count as headings. Chunks are embedded once per reference (cached on disk). Claims are embedded with a retrieval instruction, which Qwen3-Embedding expects; set it with `EMBED_QUERY_INSTRUCTION`. Each (claim, reference) pair gets the top 5 chunks by cosine similarity, plus the abstract.
 
-## Judging (`app/pipeline/judge.py`, Nemotron Super) and escalation (Nemotron Ultra)
+### Judging (`app/pipeline/judge.py`, Nemotron Super) and escalation (Nemotron Ultra)
 
 For each (claim, reference) pair, the judge gets the citing sentence and its neighbours, the extracted claim (marked as a hint), and the retrieved passages. It returns a label (`supported`, `overstated`, `not_found`, `contradicted` or `unverifiable`), a confidence, a quote, a neutral explanation, and structured signals for the failure-mode detectors.
 
@@ -160,7 +162,7 @@ A verdict is escalated to Ultra, with the full text of the cited paper (up to `E
 
 Accusatory labels on abstract-only references are also escalated. Ultra's verdict replaces the judge's, and the original label is kept. In a 20-sentence run on the Chain-of-Thought paper, 8 of 46 verdicts were escalated and Ultra changed the label in 7. Most of those were `not_found` becoming `supported` or `overstated`, so escalation is mainly what removes false alarms.
 
-## Failure-mode detectors (`app/pipeline/detectors.py`)
+### Failure-mode detectors (`app/pipeline/detectors.py`)
 
 After judging, each verdict can carry one or more failure-mode tags, each with a short note for the UI. The judge returns structured signals for this, at no extra model cost. Every tag also needs rule-based evidence, so one mistaken signal can't put a tag on a citation.
 
@@ -176,7 +178,7 @@ After judging, each verdict can carry one or more failure-mode tags, each with a
 | `significance_inflation` | The claim says "significantly", "proven" or similar, the judge says the source reports the result as not significant, *and* the source text says so ("not significant", "p = 0.12", "n.s."). A `supported` verdict becomes `overstated`. It also fires when a claim says "statistically significant" about a result the source never tested. "Significantly" alone is common ML wording and isn't flagged. | 'The cited work reports this as not statistically significant ("p = 0.12")…' |
 | `corrected_source`, `expression_of_concern` | Crossref `updated-by` lists a correction, erratum or corrigendum, or an expression of concern, for the cited work. This applies to every claim citing it. | "A correction was published for the cited work (doi:…, 2004-03-06)." |
 
-## API (`app/main.py`) and orchestration (`app/pipeline/run.py`)
+### API (`app/main.py`) and orchestration (`app/pipeline/run.py`)
 
 | Method | Path | Purpose |
 |---|---|---|
@@ -195,7 +197,7 @@ Stages overlap so results stream early:
 
 Every intermediate result is stored in SQLite. When the server restarts it resumes unfinished jobs, skipping finished work; this was tested by killing the server mid-job. Expanding a quick check only processes the new sentences. A failure in one citation becomes an `unverifiable` verdict and never fails the job. Hitting the token budget stops the job and marks it `partial`, keeping its results.
 
-## Live judging: quick checks, estimates, caching and limits
+### Live judging: quick checks, estimates, caching and limits
 
 - **Quick check (default).** The first `QUICK_CHECK_MAX_CITATIONS` (20) citing sentences, resolving only the references they cite. "Check the rest" upgrades it to a full check and reuses everything.
 - **Before starting.** The start page looks the paper up as you type and shows its title, size and an estimated time per mode. The estimate is 80 s plus 1.6 s per (sentence, reference) pair, fitted on real uncached runs; cached papers finish sooner. While a check runs, the progress view shows the time left.
@@ -214,7 +216,7 @@ Every intermediate result is stored in SQLite. When the server restarts it resum
 | `TRUST_PROXY_HEADERS` | false | Behind a trusted reverse proxy, rate-limit by `X-Forwarded-For`. |
 | `GROBID_URL` | empty | Use a GROBID server for PDF parsing. |
 
-## UI (`static/`)
+### UI (`static/`)
 
 The UI is plain HTML, CSS and JavaScript, with no build step and no CDN. Run `uvicorn app.main:app` and open http://localhost:8000.
 
