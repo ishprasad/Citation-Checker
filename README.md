@@ -314,4 +314,9 @@ Calibration was done on this paper, so these are development-set numbers; a seco
 
 ## License
 
-The code is released under the [MIT License](LICENSE). The bundled demo data in `demo/` contains the text of a third-party paper (Wei et al., *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models*, arXiv:2201.11903, with deliberately planted errors) and excerpts of the works it cites. These remain under their authors' own licences and are not covered by the MIT License.
+The code is released under the [MIT License](LICENSE).
+
+The demo data in `demo/` is not covered by the MIT License:
+
+- **The demo paper** is *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models* by Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed Chi, Quoc Le and Denny Zhou ([arXiv:2201.11903v6](https://arxiv.org/abs/2201.11903v6)). It is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The copy in `demo/` is modified: it is converted from LaTeX to plain text, and ten citations were deliberately altered to plant errors (listed in `demo/ground_truth.json`). The authors do not endorse these changes or this project.
+- **Excerpts of the works it cites** (quotes and passages in `demo/snapshot.json`) remain under their own authors' licences.
