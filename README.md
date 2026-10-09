@@ -38,47 +38,33 @@ python scripts/plant_errors.py             # build the demo paper (planted error
 python scripts/evaluate.py --snapshot      # score a check of the demo paper; bundle it for offline demos
 ```
 
-## Architecture
+## How Nebius Token Factory and Nemotron helped
 
-```mermaid
-flowchart LR
-    subgraph Input
-        A[arXiv ID / link] --> L[LaTeX source]
-        A -. no usable source .-> P[PDF]
-        U[PDF upload] --> P
-    end
-    L --> I[Ingest: text with offsets,<br/>citing sentences, bibliography]
-    P --> G{GROBID_URL set?}
-    G -- yes --> GR[GROBID TEI] --> I
-    G -- no / fails --> PP[Layout parser<br/>PyMuPDF] --> I
-    I --> R[Resolve references<br/>arXiv, OpenAlex, Crossref<br/>+ full text, retractions]
-    I --> X[Extract claims<br/>Nemotron Nano]
-    R --> E[Retrieve evidence<br/>Qwen3 embeddings]
-    X --> E
-    E --> J[Judge<br/>Nemotron Super]
-    J -->|low confidence, accusatory label,<br/>unverified quote| U2[Escalate with full paper<br/>Nemotron Ultra]
-    J --> D[Detectors + code rules]
-    U2 --> D
-    D --> S[(SQLite: jobs, artifacts,<br/>model-call cache)]
-    S --> API[FastAPI + SSE] --> UI[Browser UI:<br/>annotated paper, evidence, cost]
-```
+Checking citations means many model calls of very different difficulty. Token Factory let us give each kind of work to a model sized for it, behind one API.
 
-Stages overlap: claim extraction starts while references download, and each (claim, reference) pair is judged as soon as its reference is ready, so verdicts stream into the UI from the first minute. Every intermediate result is persisted, so a restarted server resumes unfinished checks and "Check the rest" reuses all completed work.
+- **One endpoint for every model.** All three Nemotron tiers and the embedding model sit behind one OpenAI-compatible endpoint, reached with the standard `openai` SDK and a single `NEBIUS_API_KEY`. Retrieval needs no second provider, because the embedding model is there too. `scripts/list_models.py` lists the available model IDs, and each role's model is an environment variable. Trying another model for a role is a one-line config change, with no code change.
+- **The right Nemotron size for each step:**
 
-## Two-minute demo script
+  | Step | Volume | Model |
+  |---|---|---|
+  | Claim extraction | One call per citing sentence | **Nemotron 3 Nano** (30B, 3B active), reasoning off |
+  | Verdicts | One call per (claim, cited paper) pair, from retrieved passages | **Nemotron 3 Super** (120B, 12B active), reasoning on |
+  | Escalation | Only the hard cases, with up to 300,000 characters (about 75k tokens) of the cited paper | **Nemotron 3 Ultra** (550B, 55B active), reasoning on |
+  | Retrieval | Every chunk of every cited paper | Qwen3-Embedding-8B, on the same platform |
 
-| Time | Do | Say |
-|---|---|---|
-| 0:00 | Start page. | "Citations are how science builds on itself, and nobody checks them. A citation can point to a paper that says something weaker, different, or nothing at all. Citation Checker reads every cited paper and checks the claim." |
-| 0:15 | Click **Try the demo paper**. | "This is the Chain-of-Thought paper with ten errors we planted: changed numbers, inflated scope, a removed hedge, swapped citations. It caught nine of ten." Point at the banner score. |
-| 0:30 | Click **Next issue** to a planted citation swap. | "The claim is about GSM8K, but the citation was swapped to an unrelated paper. The checker flags 'Possibly the wrong reference' and names the paper in the bibliography that actually fits." |
-| 0:45 | Open a number-drift citation; point at the highlighted quote. | "Every verdict comes with a verbatim quote, verified in code against the cited text. Here the claim says 86.9%; the cited work says 54.3%." |
-| 1:00 | Open an escalated citation; then the **cost** panel. | "Nemotron Nano extracts claims, Super judges them, and only hard cases go to Ultra with the full paper: 30 of 147 verdicts here, and Ultra changed 13 of them, mostly false alarms. A full check of 70 citations costs about a dollar." |
-| 1:15 | Back to start; paste a judge's arXiv link. | "Now your paper." The preview shows its size and "about 3 minutes". Start a **quick check**; verdicts start appearing while it runs. Point at the coverage line: "Full text for 41 of 60 references; the rest are limited by open access, and we say so." |
-| 1:45 | Show a PDF report (prepared in advance). | "Journal PDFs work too, with an honest note when citation matching is weak." |
-| 1:55 | — | "Nothing is called an error: anything not clearly supported is marked for a human to check, with the evidence side by side." |
+  The largest model is used only for the minority of verdicts where reading the whole paper can change the answer: about one in five in the demo check.
+- **Ultra's long context improves the results.** A verdict goes to Ultra when, for example, it would read as an accusation ("not found", "contradicted"), its confidence is low, or its quote can't be verified. Ultra reads the full cited paper instead of the abstract and five retrieved passages.
+  - In the full demo check, 30 of 147 verdicts were escalated and Ultra changed 13 of them.
+  - In an earlier 20-sentence run, it changed 7 of 8, mostly turning "not found" into "supported" or "overstated". Escalation is the main way false alarms are removed.
+- **Reasoning on only where it pays.** Each Nemotron model's reasoning is switched per role (`chat_template_kwargs.enable_thinking`), all from one place (`app/llm.py`). Extraction runs without reasoning to save tokens; judging and escalation use it.
+- **Structured output.** Because the API is OpenAI-compatible, verdicts are requested as JSON through the standard `response_format` parameter and come back as typed objects: label, confidence, quote and the detector signals. They are validated with pydantic, and `app/llm.py` falls back from JSON schema to JSON mode to a prompt instruction if a model rejects a format.
+- **Cost and speed:**
+  - A full check of the 70-citing-sentence demo paper costs about **$1.16** (1.65M tokens).
+  - With up to 8 requests in flight, verdicts start streaming into the UI within the first minute.
+  - A check takes about 80 s plus 1.6 s per (sentence, reference) pair.
+  - Pay-per-token pricing kept development cheap: re-running the pipeline after a prompt change cost only the changed calls, because every model response is cached locally.
 
-Before presenting: run the demo once (or rely on the snapshot), and run your planned live paper once so its downloads are cached.
+Token Factory does not offer Nemotron fine-tuning today; a distilled Nano-sized judge is listed under future work.
 
 ## Model roles
 
