@@ -1759,7 +1759,8 @@
       "baseline_cost_usd": 0.459,
       "pipeline_version": 1,
       "eval_job": "759d71ca65f3",
-      "eval_wall_seconds": 156.5
+      "eval_wall_seconds": 156.5,
+      "dev_job": "5c0ec801de2a"
     },
     {
       "slug": "cv-2106.05735",
@@ -1787,7 +1788,8 @@
       "baseline_cost_usd": 0.465,
       "pipeline_version": 1,
       "eval_job": "7b456fc70151",
-      "eval_wall_seconds": 177.7
+      "eval_wall_seconds": 177.7,
+      "dev_job": "5bf8bec8b61f"
     },
     {
       "slug": "astro-2304.13057",
@@ -1815,7 +1817,8 @@
       "baseline_cost_usd": 1.734,
       "pipeline_version": 1,
       "eval_job": "a4fa095dd338",
-      "eval_wall_seconds": 206.3
+      "eval_wall_seconds": 206.3,
+      "dev_job": "105427381373"
     },
     {
       "slug": "medicine-journal.pone.0267015",
@@ -1843,7 +1846,8 @@
       "baseline_cost_usd": 0.138,
       "pipeline_version": 1,
       "eval_job": "f246e98fe9b9",
-      "eval_wall_seconds": 182.0
+      "eval_wall_seconds": 182.0,
+      "dev_job": "28c6bdad5f0e"
     },
     {
       "slug": "biology-elife.87318",
@@ -1871,7 +1875,8 @@
       "baseline_cost_usd": 0.184,
       "pipeline_version": 1,
       "eval_job": "64b986524ded",
-      "eval_wall_seconds": 211.3
+      "eval_wall_seconds": 211.3,
+      "dev_job": "c5cccdf2c257"
     },
     {
       "slug": "psych-plos-journal.pone.0288609",
@@ -1899,7 +1904,8 @@
       "baseline_cost_usd": 0.194,
       "pipeline_version": 1,
       "eval_job": "3d93337c80c1",
-      "eval_wall_seconds": 242.6
+      "eval_wall_seconds": 242.6,
+      "dev_job": "b4c5f19e351a"
     }
   ],
   "notes": [
@@ -1907,5 +1913,10 @@
     "2026-10-08: the Frontiers in Psychology stratum had no eligible paper in its three samples (75 candidates; 73 failed the OpenAlex open-full-text pre-screen). Reported as empty, per the rule fixed before screening; psychology is represented by the PLOS ONE stratum.",
     "2026-10-08: the first planting pass gave only 36 errors (ml-2208.01063: 6, cv-2106.05735: 3, astro-2304.13057: 7, medicine-journal.pone.0267015: 3, biology-elife.87318: 7, psych-plos-journal.pone.0288609: 10), mostly because citation swaps could only use each citation's single least related reference and those collide across citations. Before any evaluation run, swaps were allowed to use any of the 5 least related references that are still at least 0.15 less similar than the original (each target used once), and the papers were planted again on the same baseline checks. The demo keeps the original rule (reproduced exactly).",
     "2026-10-08: reading the planted edits (before any evaluation run) showed two planting problems: the scope phrases were written for the ML demo paper ('across all tasks and model sizes' in a malaria paper), and deleting 'likely' from 'most likely' left an ungrammatical sentence. The held-out set now uses field-neutral scope phrases, hedge deletion skips words after a modifier ('most', 'more', 'very'...), and the papers were planted again on the same baseline checks. The demo is unchanged (reproduced exactly)."
-  ]
+  ],
+  "dev_baseline": {
+    "run": "current",
+    "commit": "a66a891",
+    "set_at": "2026-10-12T15:52:13+00:00"
+  }
 }

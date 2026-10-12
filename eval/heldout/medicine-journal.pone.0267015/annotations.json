@@ -26,6 +26,12 @@
       "note": "The cited Ethiopian study says care quality 'might differ' with equipment, workload and provider commitment; the sentence's 'common occurrences in low income countries' is the citing authors' generalisation, cited jointly with [30]."
     },
     {
+      "sentence_id": "s24",
+      "reference_key": "r30",
+      "verdict": "debatable",
+      "note": "[30] reports exactly these shortages and competence differences at a Ugandan hospital and similar ones in other resource-limited settings. Generalising to low-income countries rests on the co-cited [31]."
+    },
+    {
       "sentence_id": "s25",
       "reference_key": "r17",
       "verdict": "debatable",

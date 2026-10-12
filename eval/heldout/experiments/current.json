@@ -1,0 +1,87 @@
+{
+  "name": "current",
+  "from": "resolve",
+  "base": "baseline",
+  "note": "Round 1 checked by the current pipeline (round 1 was evaluated with round 1's pipeline); becomes round 1's development baseline",
+  "papers": {
+    "ml-2208.01063": {
+      "base_job": "759d71ca65f3",
+      "job_id": "5c0ec801de2a",
+      "wall_seconds": 325.4,
+      "spent_usd": 0.3642
+    },
+    "cv-2106.05735": {
+      "base_job": "7b456fc70151",
+      "job_id": "5bf8bec8b61f",
+      "wall_seconds": 368.4,
+      "spent_usd": 0.6072
+    },
+    "astro-2304.13057": {
+      "base_job": "a4fa095dd338",
+      "job_id": "105427381373",
+      "wall_seconds": 548.5,
+      "spent_usd": 1.6086
+    },
+    "medicine-journal.pone.0267015": {
+      "base_job": "f246e98fe9b9",
+      "job_id": "28c6bdad5f0e",
+      "wall_seconds": 572.8,
+      "spent_usd": 0.2301
+    },
+    "biology-elife.87318": {
+      "base_job": "64b986524ded",
+      "job_id": "c5cccdf2c257",
+      "wall_seconds": 571.9,
+      "spent_usd": 0.2158
+    },
+    "psych-plos-journal.pone.0288609": {
+      "base_job": "3d93337c80c1",
+      "job_id": "b4c5f19e351a",
+      "wall_seconds": 640.2,
+      "spent_usd": 0.3337
+    }
+  },
+  "commit": "a66a891",
+  "uncommitted_changes": true,
+  "started_at": "2026-10-12T15:41:11+00:00",
+  "comparisons": {
+    "baseline": {
+      "papers": 6,
+      "planted": [],
+      "flags": [],
+      "verdicts": 416,
+      "verdicts_changed": 0,
+      "totals": {
+        "run": {
+          "planted": 44,
+          "caught": 38,
+          "label_ok": 35,
+          "genuine": 6,
+          "false_alarm": 27,
+          "debatable": 23,
+          "unreviewed": 0,
+          "spent": 3.3596,
+          "recall": 0.8636363636363636,
+          "label_accuracy": 0.7954545454545454,
+          "precision_reviewed": 0.6197183098591549
+        },
+        "base": {
+          "planted": 44,
+          "caught": 38,
+          "label_ok": 35,
+          "genuine": 6,
+          "false_alarm": 27,
+          "debatable": 23,
+          "unreviewed": 0,
+          "spent": 0.0,
+          "recall": 0.8636363636363636,
+          "label_accuracy": 0.7954545454545454,
+          "precision_reviewed": 0.6197183098591549
+        }
+      },
+      "gained": 0,
+      "lost": 0,
+      "mcnemar_p": 1.0
+    }
+  }
+}

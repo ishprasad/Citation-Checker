@@ -8,10 +8,22 @@
       "note": "Identification citation: quantum phase estimation cited to the standard textbook, which presents the algorithm. Requiring the words 'Hamiltonian diagonalization' is too literal."
     },
     {
+      "sentence_id": "s4",
+      "reference_key": "Takeshita2020",
+      "verdict": "debatable",
+      "note": "Co-cited with [20]. [21] is about subspace expansion and orbital relaxation, not ansatz design, though it notes that variational methods adapt naturally to device parameters."
+    },
+    {
       "sentence_id": "s7",
       "reference_key": "Neuhauser1994",
       "verdict": "false_alarm",
       "note": "Filter diagonalization (small Hamiltonian matrix built from real-time-propagated states) is exactly the classical ancestor of solving generalized eigenproblems from real-time evolution; cited in a group of four. 'Possibly the wrong reference' is wrong."
+    },
+    {
+      "sentence_id": "s7",
+      "reference_key": "Park1986",
+      "verdict": "false_alarm",
+      "note": "One of four works cited for gathering information from real-time evolution: [27] is the Lanczos real-time evolution method this line of work builds on. It is not expected to mention VQPE."
     },
     {
       "sentence_id": "s15",

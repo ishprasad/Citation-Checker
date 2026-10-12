@@ -32,6 +32,12 @@
       "note": "The cited LiTS paper lists IRCAD in France as a data source and describes the LiTS data used for the Decathlon's liver task; the hospital's full name is a detail, not a misattribution."
     },
     {
+      "sentence_id": "s21",
+      "reference_key": "ma2021cutting",
+      "verdict": "false_alarm",
+      "note": "Ma (2021) describes nnU-Net as state of the art in most challenges. 'No new net' is the method's name, not a contradiction of 'new'."
+    },
+    {
       "sentence_id": "s30",
       "reference_key": "isensee2021nnu",
       "verdict": "debatable",

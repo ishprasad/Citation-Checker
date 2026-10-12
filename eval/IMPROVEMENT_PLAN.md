@@ -11,7 +11,29 @@ These papers are now **development data**. Improvements are tuned on them, so th
 | Starting point | Recall | Reviewed precision | Genuine / false alarms / debatable |
 |---|---|---|---|
 | Round 2, current pipeline (`PIPELINE_VERSION` 2) | 89/103 = 86% | 60% | 17 / 71 / 49 |
-| Round 1, round-1 pipeline | 35/44 = 80% | 54% | 5 / 34 / 24 |
+| Round 1, current pipeline (development baseline) | 38/44 = 86% | 62% | 6 / 27 / 23 |
+| Round 1, round-1 pipeline (as evaluated) | 35/44 = 80% | 54% | 5 / 34 / 24 |
+
+Round 1 was evaluated with round 1's pipeline, and its papers were the development data for the fixes in the current one, so its current-pipeline gain (4 planted errors gained, 1 lost; false alarms 34 → 27) is not evidence that the fixes generalise. Round 2's paired run is that evidence, and it shows no gain.
+
+## Working with the harness (E0.1–E0.4, done)
+
+All commands are in `scripts/heldout.py` and run on both rounds unless `--rounds` says otherwise.
+
+- **Frozen inputs (`freeze`).** Each paper's references and cited texts are copied from its development baseline into `.cache/<round>/frozen/` (not committed). Later resolver or parser changes cannot alter them. Each text is checked against the passages the baseline retrieved from it.
+  - Round 2: 455 of 457 texts restored byte-identical (3,823 retrieved passages all found). Europe PMC currently returns server errors for the other 2 (`biology-elife.74777` r25 and r109, PMC4214605 and PMC5286201), which are kept as references whose text is missing.
+  - Round 1: refrozen from its new baseline, all 1,391 passages found.
+- **Development baselines.** Round 2's baseline is its evaluation check. Round 1's is the run `current` (the current pipeline from reference resolution, $3.36), set with `set-baseline`.
+- **Reproduction check.** The run `repro` re-ran round 2 from claim extraction on the frozen inputs. 1,114 of 1,116 verdicts were identical, all from the model cache ($0.01). The 2 that differ, and one extra unreviewed flag, involve r25, whose text is missing.
+- **Experiments.** `experiment NAME --from STAGE --note "..."` re-runs from `resolve`, `extract`, `retrieve`, `judge` (judging and escalation) or `detect` on the baseline's stored results. Unchanged model calls come from the cache, so an experiment costs only the calls its change alters. It is resumable, and records the commit, base jobs and cost paid in `eval/<round>/experiments/NAME.json`.
+- **Comparison.** `compare NAME [--against RUN]` reports, per round and in total:
+  - planted errors gained and lost, with an exact McNemar test;
+  - flags added and removed, by review verdict;
+  - precision over reviewed flags, with unreviewed flags counted separately;
+  - how many verdicts changed label or tags;
+  - model cost paid.
+- **Incremental review (`review-new NAME`).** Writes `review-NAME.md` sheets with only the flags no one has reviewed yet, and adds blank entries to `annotations.json` without touching earlier ones. All flags of both baselines are now reviewed.
+- **Not yet done: E0.5 (better planting).** It changes the evaluation set itself, so it belongs with round 3.
 
 ## Diagnosis (round 2, current pipeline)
 
@@ -136,7 +158,7 @@ Each strategy lists what it targets, the evidence, and how to test it. "Addresse
 
 ## Suggested order
 
-1. **Harness:** E0.1–E0.3, then baseline re-runs on rounds 1 and 2.
+1. **Harness:** E0.1–E0.4 and the baseline re-runs on rounds 1 and 2 (done; see above).
 2. **Cheap, high-yield, mostly code:**
    - D1 and I2 (number fidelity);
    - D4 (abstract-only);
