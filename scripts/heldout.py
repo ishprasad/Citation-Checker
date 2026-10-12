@@ -9,6 +9,19 @@
 
 Every command takes --round N (default: the latest round).
 
+Development on the evaluated papers (these run on every round unless --rounds says otherwise):
+
+    python scripts/heldout.py freeze              restore the cited texts and freeze each paper's references
+    python scripts/heldout.py experiment NAME --from STAGE [--base RUN] [--note TEXT]
+                                                  re-run from STAGE (resolve, extract, retrieve, judge, detect)
+                                                  on the base run's stored inputs, then compare with it
+    python scripts/heldout.py compare NAME [--against RUN]   paired comparison of two runs
+    python scripts/heldout.py review-new NAME     review sheets for a run's flags with no review yet
+    python scripts/heldout.py set-baseline NAME --rounds N   make an experiment the development baseline
+
+A run is an experiment name or `baseline`: each round's evaluation check, or the run made the
+development baseline with `set-baseline`.
+
 Selection is fixed in advance (STRATA, CRITERIA): an OpenAlex random sample with a fixed seed
 per stratum, screened in sample order, taking the first papers that pass. Papers used while
 building or calibrating the checker are excluded. The pipeline is not changed between
@@ -486,6 +499,328 @@ def cmd_run_old(args) -> int:
 
 
 # ----------------------------------------------------------------------------
+# Frozen inputs (no model calls)
+# ----------------------------------------------------------------------------
+#
+# Experiments re-run the pipeline on each paper's references exactly as the evaluation check
+# resolved them, reading the cited texts from a private copy: a later resolver or parser change
+# rewrites the shared text cache, never these inputs.
+
+
+def frozen_dir() -> Path:
+    return WORK_DIR / "frozen"
+
+
+def frozen_references(slug: str) -> dict[str, Reference]:
+    path = frozen_dir() / f"{slug}.references.json"
+    if not path.exists():
+        raise SystemExit(f"{path} is missing; run `heldout.py freeze` first.")
+    return {k: Reference.model_validate(r) for k, r in json.loads(path.read_text(encoding="utf-8")).items()}
+
+
+def _passages_found(text: str, evidence: list[Evidence]) -> tuple[int, int]:
+    """(full-text passages the evaluation check retrieved, how many of them the text contains)."""
+    passages = [ps.text for ev in evidence for ps in ev.passages if ps.chunk_index >= 0]
+    return len(passages), sum(ps in text for ps in passages)
+
+
+async def cmd_freeze(args) -> int:
+    """Restore any missing cited texts by resolving those references again (downloads are cached on
+    disk; Europe PMC texts may be fetched again), check each text against the passages the evaluation
+    check retrieved from it, and copy the texts into the frozen inputs."""
+    m = load_manifest()
+    runner = JobRunner()
+    texts = frozen_dir() / "texts"
+    texts.mkdir(parents=True, exist_ok=True)
+    problems = 0
+    for p in selected(m, args.slugs):
+        job_id = run_job_id(p, BASELINE)
+        if not job_id:
+            continue
+        refs = runner.store.all(job_id, "reference", Reference)
+        missing = [r for r in refs.values() if r.text_path and not Path(r.text_path).exists()]
+        if missing:
+            ingest = runner.store.get(job_id, "ingest", "paper", IngestResult)
+            originals = {r.key: r for r in ingest.paper.references}
+            with _quiet():
+                await ReferenceResolver().resolve_all([originals[r.key] for r in missing])
+        evidence: dict[str, list[Evidence]] = {}
+        for ev in runner.store.all(job_id, "evidence", Evidence).values():
+            evidence.setdefault(ev.reference_key, []).append(ev)
+        frozen, lost, mismatched, checked = {}, [], [], [0, 0]
+        for key, ref in sorted(refs.items()):
+            if ref.text_path:
+                source = Path(ref.text_path)
+                if not source.exists():
+                    lost.append(key)  # kept as is: the pipeline then reads only its abstract
+                    frozen[key] = ref.model_dump(mode="json")
+                    continue
+                text = source.read_text(encoding="utf-8")
+                n, found = _passages_found(text, evidence.get(key, []))
+                checked[0] += n
+                checked[1] += found
+                if found < n:
+                    mismatched.append(f"{key} ({found}/{n} passages)")
+                target = texts / source.name
+                target.write_text(text, encoding="utf-8")
+                sidecar = source.with_suffix(".refs.json")
+                if sidecar.exists():
+                    target.with_suffix(".refs.json").write_bytes(sidecar.read_bytes())
+                ref = ref.model_copy(update={"text_path": str(target)})
+            frozen[key] = ref.model_dump(mode="json")
+        demo.write_json(frozen_dir() / f"{p['slug']}.references.json", frozen)
+        problems += len(lost) + len(mismatched)
+        print(f"[{p['slug']}] {sum(1 for r in refs.values() if r.text_path) - len(lost)} texts frozen "
+              f"({len(missing) - len(lost)} restored); retrieved passages found in the texts: {checked[1]}/{checked[0]}"
+              + (f"; NOT RESTORED: {lost}" if lost else "") + (f"; CHANGED: {mismatched}" if mismatched else ""))
+    if problems:
+        print("Some texts are missing or differ from the ones the evaluation check read; experiments on those "
+              "papers do not reproduce the baseline exactly.")
+    return 0
+
+
+# ----------------------------------------------------------------------------
+# Experiments: re-run from a stage on stored inputs, paired with the baseline
+# ----------------------------------------------------------------------------
+#
+# A job stores every intermediate result (claims per sentence, evidence, judged and final verdicts
+# per pair) and skips whatever it already has. An experiment job is seeded with the baseline's results
+# for the stages before the one it re-runs, so it differs from the baseline only by the changed code.
+# Model calls are cached, so a stage whose inputs did not change costs nothing either.
+
+STAGES = ("resolve", "extract", "retrieve", "judge", "detect")
+# Artifacts copied from the base job when re-running from each stage ("judged" holds verdicts after
+# escalation, so judging and escalation re-run together; their unchanged calls come from the cache).
+SEEDED = {"resolve": (), "extract": ("reference",), "retrieve": ("reference", "claims"),
+          "judge": ("reference", "claims", "evidence"), "detect": ("reference", "claims", "evidence", "judged")}
+# The run experiments start from and compare with: each round's evaluation check, unless
+# `set-baseline` made a later run the reference for development (round 1 was evaluated with an
+# older pipeline, so its development baseline is the current pipeline's run).
+BASELINE = "baseline"
+
+
+def experiment_path(name: str) -> Path:
+    return EVAL_DIR / "experiments" / f"{name}.json"
+
+
+def load_experiment(name: str) -> Optional[dict[str, Any]]:
+    path = experiment_path(name)
+    return json.loads(path.read_text(encoding="utf-8")) if path.exists() else None
+
+
+def run_job_id(p: dict, name: str) -> Optional[str]:
+    """The job of `name` (an experiment, or the baseline) on paper `p`."""
+    if name == BASELINE:
+        return p.get("dev_job") or p.get("eval_job")
+    exp = load_experiment(name)
+    return ((exp or {}).get("papers", {}).get(p["slug"]) or {}).get("job_id")
+
+
+def _git_state() -> dict[str, Any]:
+    def git(*a):
+        return subprocess.run(["git", *a], cwd=ROOT_DIR, capture_output=True, text=True).stdout.strip()
+
+    return {"commit": git("rev-parse", "--short", "HEAD"),
+            "uncommitted_changes": bool(git("status", "--porcelain", "--untracked-files=no"))}
+
+
+def spent_usd(job_id: str) -> float:
+    """Model cost actually paid by a job (cache hits excluded)."""
+    client = llm.get_llm()
+    total = 0.0
+    for row in client.db.usage_rows(job_id):
+        price = client.settings.prices.get(row["role"])
+        if price and not row["cached"]:
+            total += ((row["prompt_tokens"] or 0) * price.input + (row["completion_tokens"] or 0) * price.output) / 1e6
+    return total
+
+
+async def experiment_job(runner: JobRunner, p: dict, stage: str, base: str) -> str:
+    base_job = run_job_id(p, base)
+    if not base_job:
+        raise SystemExit(f"{p['slug']}: no {base} run to start from")
+    mutated = IngestResult.model_validate_json((paper_dir(p["slug"]) / "paper.json").read_text(encoding="utf-8"))
+    job = Job(id=uuid.uuid4().hex[:12], mode="full", source=p["kind"], pipeline_version=PIPELINE_VERSION,
+              arxiv_id=mutated.paper.arxiv_id if p["kind"] == "arxiv" else None)
+    runner._describe(job, mutated)
+    runner.store.put(job.id, "ingest", "paper", mutated)
+    for kind in SEEDED[stage]:
+        if kind == "reference" and base == BASELINE:
+            for key, ref in frozen_references(p["slug"]).items():
+                runner.store.put(job.id, "reference", key, ref)
+            continue
+        for item_id, data in runner.store.db.artifacts(base_job, kind).items():
+            runner.store.db.put_artifact(job.id, kind, item_id, data)
+    runner.store.save_job(job)
+    return job.id
+
+
+async def cmd_experiment(args) -> int:
+    """Run (or resume) an experiment on every round, then compare it with its base."""
+    if args.name == BASELINE or not re.fullmatch(r"[A-Za-z0-9_.-]+", args.name):
+        raise SystemExit("Experiment names use letters, digits, '.', '_' and '-' (and are not 'baseline').")
+    runner = JobRunner()
+    for rnd in args.rounds:
+        use_round(rnd)
+        m = load_manifest()
+        exp = load_experiment(args.name) or {"name": args.name, "from": args.stage, "base": args.base,
+                                             "note": args.note or "", "papers": {}}
+        if (exp["from"], exp["base"]) != (args.stage, args.base):
+            raise SystemExit(f"{args.name} already exists (from {exp['from']}, base {exp['base']}); pick a new name.")
+        exp.update(_git_state(), started_at=exp.get("started_at") or datetime.now(timezone.utc).isoformat(timespec="seconds"))
+        papers = [p for p in selected(m, args.slugs) if p.get("eval_job")]
+        print(f"== round {rnd}: {args.name} from {args.stage} on {len(papers)} papers (base: {args.base})")
+
+        async def one(p: dict) -> None:
+            entry_ = exp["papers"].setdefault(p["slug"], {})
+            job = runner.store.load_job(entry_["job_id"]) if entry_.get("job_id") else None
+            if job is None:
+                entry_["base_job"] = run_job_id(p, args.base)
+                entry_["job_id"] = await experiment_job(runner, p, args.stage, args.base)
+                demo.write_json(experiment_path(args.name), exp)
+            if (runner.store.load_job(entry_["job_id"])).status != "done":
+                t0 = time.perf_counter()
+                runner.start(entry_["job_id"])
+                job = await runner.wait(entry_["job_id"])
+                entry_["wall_seconds"] = round(time.perf_counter() - t0, 1)
+                if job.status != "done":
+                    raise RuntimeError(f"{p['slug']}: job {job.id} ended {job.status}: {job.message}")
+            entry_["spent_usd"] = round(spent_usd(entry_["job_id"]), 4)
+            demo.write_json(experiment_path(args.name), exp)
+            print(f"  [{p['slug']}] done, ${entry_['spent_usd']:.2f}")
+
+        with _quiet():
+            await asyncio.gather(*(one(p) for p in papers))
+        demo.write_json(experiment_path(args.name), exp)
+    return compare(args.name, args.rounds)
+
+
+def cmd_set_baseline(args) -> int:
+    """Make an experiment's jobs the development baseline of the current round (then run `freeze`)."""
+    m = load_manifest()
+    exp = load_experiment(args.name)
+    if exp is None:
+        raise SystemExit(f"No experiment {args.name!r} in round {ROUND}.")
+    runner = JobRunner()
+    for p in m["papers"]:
+        job_id = (exp["papers"].get(p["slug"]) or {}).get("job_id")
+        if p.get("eval_job") and not (job_id and (runner.store.load_job(job_id) or Job(id="")).status == "done"):
+            raise SystemExit(f"{args.name} has no finished job for {p['slug']}.")
+        if job_id:
+            p["dev_job"] = job_id
+    m["dev_baseline"] = {"run": args.name, "commit": exp.get("commit"),
+                         "set_at": datetime.now(timezone.utc).isoformat(timespec="seconds")}
+    save_manifest(m)
+    print(f"Round {ROUND}: development baseline is now {args.name} ({exp.get('commit')}).")
+    return 0
+
+
+def _run_outputs(runner: JobRunner, p: dict, name: str):
+    job_id = run_job_id(p, name)
+    if not job_id:
+        return None
+    claims, verdicts, _ = job_outputs(runner, job_id)
+    return job_id, claims, verdicts
+
+
+def compare_round(runner: JobRunner, name: str, against: str) -> dict[str, Any]:
+    """Paired comparison of two runs on the current round's papers."""
+    m = load_manifest()
+    out: dict[str, Any] = {"papers": 0, "planted": [], "flags": [], "verdicts": 0, "verdicts_changed": 0}
+    totals = {side: {"planted": 0, "caught": 0, "label_ok": 0, "genuine": 0, "false_alarm": 0, "debatable": 0,
+                     "unreviewed": 0, "spent": 0.0} for side in ("run", "base")}
+    for p in m["papers"]:
+        run, base = _run_outputs(runner, p, name), _run_outputs(runner, p, against)
+        if run is None or base is None:
+            continue
+        out["papers"] += 1
+        d = paper_dir(p["slug"])
+        truth = demo.GroundTruth.model_validate_json((d / "ground_truth.json").read_text(encoding="utf-8"))
+        ann = demo.load_annotations(d / "annotations.json")
+        scores = {side: demo.score(truth, verdicts, claims, annotations=ann)
+                  for side, (_, claims, verdicts) in (("run", run), ("base", base))}
+        for side, s in scores.items():
+            t = totals[side]
+            t["planted"] += s["planted"]
+            t["caught"] += s["caught"]
+            t["label_ok"] += sum(x["label_correct"] for x in s["details"])
+            for verdict, n in s["review"].items():
+                t[verdict] += n
+        totals["run"]["spent"] += spent_usd(run[0])
+        # Verdict by verdict (the same claim and reference): how many labels or tags differ.
+        def keyed(claims, verdicts):
+            return {(claims[v.claim_id].citing_sentence_id, claims[v.claim_id].claim_text, v.reference_key):
+                    (v.label, tuple(sorted(v.failure_modes))) for v in verdicts}
+        now, before = keyed(run[1], run[2]), keyed(base[1], base[2])
+        out["verdicts"] += len(now.keys() | before.keys())
+        out["verdicts_changed"] += sum(now.get(k) != before.get(k) for k in now.keys() | before.keys())
+        for now, before in zip(scores["run"]["details"], scores["base"]["details"]):
+            if now["caught"] != before["caught"]:
+                out["planted"].append({"paper": p["slug"], "id": now["id"], "mutation": now["mutation"],
+                                       "change": "gained" if now["caught"] else "lost", "labels": now["labels"]})
+        flagged = {side: {(x["sentence_id"], x["reference_key"]): verdict
+                          for verdict, items in s["review_details"].items() for x in items}
+                   for side, s in scores.items()}
+        for cite in sorted(flagged["run"].keys() ^ flagged["base"].keys()):
+            out["flags"].append({"paper": p["slug"], "sentence_id": cite[0], "reference_key": cite[1],
+                                 "change": "added" if cite in flagged["run"] else "removed",
+                                 "review": flagged["run"].get(cite) or flagged["base"][cite]})
+    for t in totals.values():
+        good = t["caught"] + t["genuine"]
+        t["recall"] = t["caught"] / t["planted"] if t["planted"] else 0.0
+        t["label_accuracy"] = t["label_ok"] / t["planted"] if t["planted"] else 0.0
+        # Precision over reviewed flags; unreviewed ones are reported, not guessed.
+        t["precision_reviewed"] = good / (good + t["false_alarm"]) if good + t["false_alarm"] else 0.0
+        t["spent"] = round(t["spent"], 4)
+    gained = sum(x["change"] == "gained" for x in out["planted"])
+    lost = sum(x["change"] == "lost" for x in out["planted"])
+    out.update(totals=totals, gained=gained, lost=lost, mcnemar_p=mcnemar_exact(gained, lost))
+    return out
+
+
+def compare(name: str, rounds: list[int], against: Optional[str] = None) -> int:
+    runner = JobRunner()
+    results = {}
+    for rnd in rounds:
+        use_round(rnd)
+        exp = load_experiment(name)
+        base = against or (exp["base"] if exp else BASELINE)
+        r = compare_round(runner, name, base)
+        if not r["papers"]:
+            print(f"Round {rnd}: nothing to compare.")
+            continue
+        results[rnd] = r
+        if exp is not None:
+            exp.setdefault("comparisons", {})[base] = {k: v for k, v in r.items()}
+            demo.write_json(experiment_path(name), exp)
+        run, b = r["totals"]["run"], r["totals"]["base"]
+        print(f"\n== Round {rnd}: {name} vs {base} ({r['papers']} papers)")
+        print(f"  {'':<34}{name[:16]:>16}{base[:16]:>16}")
+        for label, key, fmt in (("Planted errors caught", "caught", "{}"), ("Recall", "recall", "{:.0%}"),
+                                ("Label accuracy", "label_accuracy", "{:.0%}"),
+                                ("Genuine problems flagged", "genuine", "{}"), ("False alarms", "false_alarm", "{}"),
+                                ("Debatable", "debatable", "{}"), ("Unreviewed flags", "unreviewed", "{}"),
+                                ("Precision (reviewed flags)", "precision_reviewed", "{:.0%}")):
+            print(f"  {label:<34}{fmt.format(run[key]):>16}{fmt.format(b[key]):>16}")
+        print(f"  Planted errors gained {r['gained']}, lost {r['lost']} (exact McNemar p = {r['mcnemar_p']:.2f}); "
+              f"verdicts with a different label or tags: {r['verdicts_changed']} of {r['verdicts']}; "
+              f"model cost paid ${run['spent']:.2f}")
+        changes: dict[tuple[str, str], int] = {}
+        for x in r["flags"]:
+            changes[(x["change"], x["review"])] = changes.get((x["change"], x["review"]), 0) + 1
+        if changes:
+            print("  Flags on untouched citations: " + ", ".join(
+                f"{c} {v}: {n}" for (c, v), n in sorted(changes.items())))
+        for x in r["planted"]:
+            print(f"    {x['change']:<6} {x['paper']} {x['id']} ({x['mutation']}) labels {x['labels']}")
+    if len(results) > 1:
+        g = sum(r["gained"] for r in results.values())
+        lo = sum(r["lost"] for r in results.values())
+        print(f"\nAll rounds: planted errors gained {g}, lost {lo} (exact McNemar p = {mcnemar_exact(g, lo):.2f})")
+    return 0
+
+
+# ----------------------------------------------------------------------------
 # Review sheets
 # ----------------------------------------------------------------------------
 
@@ -515,9 +850,65 @@ def cmd_review(args) -> int:
             if sid not in planted and demo.is_flag(v):
                 flagged.setdefault((sid, v.reference_key), {}).setdefault(name, []).append(v)
 
-    lines = [f"# Review: {p['title']}", "", f"Field: {p['field']} · job `{p['eval_job']}` · "
-             f"{len(flagged)} flagged citations on untouched sentences"
-             + (" (current and old pipeline)." if old is not None else "."), "",
+    intro = (f"Field: {p['field']} · job `{p['eval_job']}` · {len(flagged)} flagged citations on untouched sentences"
+             + (" (current and old pipeline)." if old is not None else "."))
+    (d / "review.md").write_text("\n".join(_review_sheet(p, intro, runs, flagged, sentences)) + "\n", encoding="utf-8")
+    _write_annotations(annotations_path, p["slug"], existing, flagged, sentences)
+    print(f"Wrote {d / 'review.md'} and {annotations_path} ({len(flagged)} flagged citations)")
+    return 0
+
+
+def _write_annotations(path: Path, slug: str, existing: dict, flagged, sentences) -> None:
+    """Annotation entries for every flagged citation, keeping all earlier ones (other runs' too)."""
+    keys = list(existing) + [k for k in flagged if k not in existing]
+    demo.write_json(path, {"paper": slug, "annotations": [
+        existing.get(k) or {"sentence_id": k[0], "reference_key": k[1], "verdict": "", "note": ""}
+        for k in sorted(keys, key=lambda k: sentences[k[0]].start)
+    ]})
+
+
+def cmd_review_new(args) -> int:
+    """Incremental review: the flags of a run on untouched citations that have no review yet."""
+    m = load_manifest()
+    runner = JobRunner()
+    total = 0
+    for p in selected(m, args.slugs):
+        job_id = run_job_id(p, args.name)
+        if not job_id:
+            continue
+        d = paper_dir(p["slug"])
+        truth = demo.GroundTruth.model_validate_json((d / "ground_truth.json").read_text(encoding="utf-8"))
+        mutated = IngestResult.model_validate_json((d / "paper.json").read_text(encoding="utf-8"))
+        sentences = {s.id: s for s in mutated.sentences}
+        planted = {x.sentence_id for x in truth.planted}
+        annotations_path = d / "annotations.json"
+        existing = demo.load_annotations(annotations_path)
+        runs = [(args.name, *job_outputs(runner, job_id), runner.store.all(job_id, "evidence", Evidence))]
+        if args.name != BASELINE:
+            base_job = run_job_id(p, BASELINE)
+            runs.append((BASELINE, *job_outputs(runner, base_job), runner.store.all(base_job, "evidence", Evidence)))
+        claims, verdicts = runs[0][1], runs[0][2]
+        flagged: dict[tuple[str, str], dict[str, list[Verdict]]] = {}
+        for v in verdicts:
+            cite = (claims[v.claim_id].citing_sentence_id, v.reference_key)
+            if cite[0] not in planted and demo.is_flag(v) and not (existing.get(cite) or {}).get("verdict"):
+                flagged.setdefault(cite, {}).setdefault(args.name, []).append(v)
+        sheet = d / f"review-{args.name}.md"
+        if not flagged:
+            sheet.unlink(missing_ok=True)
+            continue
+        total += len(flagged)
+        intro = (f"Field: {p['field']} · run `{args.name}` (job `{job_id}`) · {len(flagged)} flagged citations on "
+                 "untouched sentences with no review yet. The baseline's verdicts are shown for comparison.")
+        sheet.write_text("\n".join(_review_sheet(p, intro, runs, flagged, sentences)) + "\n", encoding="utf-8")
+        _write_annotations(annotations_path, p["slug"], existing, flagged, sentences)
+        print(f"[{p['slug']}] {len(flagged)} to review: {sheet}")
+    print(f"{total} flagged citations without a review in round {ROUND}.")
+    return 0
+
+
+def _review_sheet(p: dict, intro: str, runs, flagged, sentences) -> list[str]:
+    lines = [f"# Review: {p['title']}", "", intro, "",
              "Mark each one in annotations.json as `genuine` (a real citation problem), `false_alarm`, or "
              "`debatable`, with a one-line note.", ""]
     for (sid, key), by_run in sorted(flagged.items(), key=lambda kv: sentences[kv[0][0]].start):
@@ -547,15 +938,7 @@ def cmd_review(args) -> int:
                         where = "abstract" if passage.chunk_index < 0 else (passage.heading or "text")
                         lines.append(f"  - Passage ({passage.score:.2f}, {where}): {passage.text[:600]}")
         lines.append("")
-    (d / "review.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
-
-    skeleton = {"paper": p["slug"], "annotations": [
-        existing.get((sid, key)) or {"sentence_id": sid, "reference_key": key, "verdict": "", "note": ""}
-        for (sid, key) in sorted(flagged, key=lambda k: sentences[k[0]].start)
-    ]}
-    demo.write_json(annotations_path, skeleton)
-    print(f"Wrote {d / 'review.md'} and {annotations_path} ({len(flagged)} flagged citations)")
-    return 0
+    return lines
 
 
 # ----------------------------------------------------------------------------
@@ -815,8 +1198,45 @@ def main() -> int:
     s = sub.add_parser("review")
     s.add_argument("slug")
     sub.add_parser("report")
+    # Development on the evaluated papers: every command below runs on all rounds unless --rounds says otherwise.
+    every = sorted(ROUNDS)
+    s = sub.add_parser("freeze", help="restore and freeze the cited texts the evaluation checks read")
+    s.add_argument("slugs", nargs="*")
+    s.add_argument("--rounds", type=int, nargs="+", default=every)
+    s = sub.add_parser("experiment", help="re-run from a stage on the baseline's stored inputs, then compare")
+    s.add_argument("name")
+    s.add_argument("--from", dest="stage", choices=STAGES, required=True)
+    s.add_argument("--base", default=BASELINE, help="run whose stored results seed the experiment")
+    s.add_argument("--note", help="what the experiment changes")
+    s.add_argument("--rounds", type=int, nargs="+", default=every)
+    s.add_argument("slugs", nargs="*")
+    s = sub.add_parser("compare", help="paired comparison of an experiment with its base (or --against)")
+    s.add_argument("name")
+    s.add_argument("--against")
+    s.add_argument("--rounds", type=int, nargs="+", default=every)
+    s = sub.add_parser("set-baseline", help="make an experiment the development baseline (then run freeze)")
+    s.add_argument("name")
+    s.add_argument("--rounds", type=int, nargs="+", required=True)
+    s = sub.add_parser("review-new", help="review sheets for a run's flags that have no review yet")
+    s.add_argument("name")
+    s.add_argument("slugs", nargs="*")
+    s.add_argument("--rounds", type=int, nargs="+", default=every)
     args = parser.parse_args()
     use_round(args.round)
+    if args.cmd in ("freeze", "review-new", "set-baseline"):
+        status = 0
+        for rnd in args.rounds:
+            use_round(rnd)
+            print(f"== round {rnd}")
+            if args.cmd == "freeze":
+                status |= asyncio.run(cmd_freeze(args))
+            else:
+                status |= cmd_review_new(args) if args.cmd == "review-new" else cmd_set_baseline(args)
+        return status
+    if args.cmd == "experiment":
+        return asyncio.run(cmd_experiment(args))
+    if args.cmd == "compare":
+        return compare(args.name, args.rounds, args.against)
     if args.cmd == "review":
         return cmd_review(args)
     if args.cmd == "run-old":
