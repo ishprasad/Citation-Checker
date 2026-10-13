@@ -4,6 +4,8 @@ For every citation in a research paper, Citation Checker asks one question: does
 
 Give it an arXiv ID, an arxiv.org link or a PDF. For each citation it extracts the claim, finds and reads the cited paper, and reports whether the cited text supports the claim, with the exact quote. Anything that is not clearly supported is marked "Needs human check", never "wrong".
 
+Made for the Nebius x NVIDIA Global AI Hackathon 2026.
+
 ## Quick start
 
 ```bash
