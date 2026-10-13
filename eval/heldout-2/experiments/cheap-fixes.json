@@ -1,0 +1,279 @@
+{
+  "name": "cheap-fixes",
+  "from": "detect",
+  "base": "baseline",
+  "note": "D1/I2 number ranges, bounds, lost exponents and unitless values; D2 modal hedge vs certain claim on supported verdicts; D3 sweeping qualifiers; D4 abstract-only overstated needs a mismatch tag",
+  "papers": {
+    "ml-2303.00780": {
+      "base_job": "081c663e0eaf",
+      "job_id": "2aee22e3ba2d",
+      "wall_seconds": 15.1,
+      "spent_usd": 0.0
+    },
+    "ml-2012.08536": {
+      "base_job": "fa5e07cc13a7",
+      "job_id": "3dae732023da",
+      "wall_seconds": 15.1,
+      "spent_usd": 0.0
+    },
+    "astro-2305.00803": {
+      "base_job": "4ba5b5c327ae",
+      "job_id": "26063c8a4949",
+      "wall_seconds": 15.0,
+      "spent_usd": 0.0
+    },
+    "astro-2208.03661": {
+      "base_job": "05f5131e1132",
+      "job_id": "fe87f56cf4f9",
+      "wall_seconds": 20.6,
+      "spent_usd": 0.0
+    },
+    "medicine-journal.pone.0292350": {
+      "base_job": "cd7199680a07",
+      "job_id": "0e51e443f849",
+      "wall_seconds": 21.1,
+      "spent_usd": 0.0
+    },
+    "psychology-fpsyg.2021.646368": {
+      "base_job": "0c12f7ef39fd",
+      "job_id": "3054d9ef1e2f",
+      "wall_seconds": 21.1,
+      "spent_usd": 0.0
+    },
+    "psychology-fpsyg.2021.735293": {
+      "base_job": "f0fb7ac2bcd3",
+      "job_id": "5ddd2dda1a6f",
+      "wall_seconds": 28.0,
+      "spent_usd": 0.0
+    },
+    "psych-plos-journal.pone.0264257": {
+      "base_job": "15032b4895dd",
+      "job_id": "3792553df7de",
+      "wall_seconds": 28.7,
+      "spent_usd": 0.0
+    },
+    "psych-plos-journal.pone.0252835": {
+      "base_job": "88f4f4d760c4",
+      "job_id": "5332c78ac5c2",
+      "wall_seconds": 28.8,
+      "spent_usd": 0.0
+    },
+    "medicine-journal.pone.0292900": {
+      "base_job": "d4e1ae55c1c3",
+      "job_id": "24f751e1ff11",
+      "wall_seconds": 36.9,
+      "spent_usd": 0.0
+    },
+    "biology-elife.74777": {
+      "base_job": "4a1681485aed",
+      "job_id": "e030c4a5cd80",
+      "wall_seconds": 36.5,
+      "spent_usd": 0.0
+    },
+    "biology-elife.86333": {
+      "base_job": "8049a0b8a65c",
+      "job_id": "d8bb1ae07e8f",
+      "wall_seconds": 36.2,
+      "spent_usd": 0.0
+    }
+  },
+  "commit": "23b9027",
+  "uncommitted_changes": true,
+  "started_at": "2026-10-13T15:22:26+00:00",
+  "comparisons": {
+    "baseline": {
+      "papers": 12,
+      "planted": [
+        {
+          "paper": "ml-2303.00780",
+          "id": "p1",
+          "mutation": "scope_inflation",
+          "change": "gained",
+          "labels": [
+            "overstated"
+          ]
+        },
+        {
+          "paper": "ml-2303.00780",
+          "id": "p4",
+          "mutation": "scope_inflation",
+          "change": "gained",
+          "labels": [
+            "overstated"
+          ]
+        },
+        {
+          "paper": "astro-2305.00803",
+          "id": "p4",
+          "mutation": "hedge_removal",
+          "change": "gained",
+          "labels": [
+            "overstated"
+          ]
+        },
+        {
+          "paper": "astro-2305.00803",
+          "id": "p6",
+          "mutation": "number_change",
+          "change": "gained",
+          "labels": [
+            "overstated"
+          ]
+        },
+        {
+          "paper": "astro-2208.03661",
+          "id": "p8",
+          "mutation": "scope_inflation",
+          "change": "gained",
+          "labels": [
+            "overstated"
+          ]
+        },
+        {
+          "paper": "medicine-journal.pone.0292350",
+          "id": "p6",
+          "mutation": "scope_inflation",
+          "change": "gained",
+          "labels": [
+            "overstated"
+          ]
+        },
+        {
+          "paper": "psych-plos-journal.pone.0252835",
+          "id": "p3",
+          "mutation": "scope_inflation",
+          "change": "gained",
+          "labels": [
+            "overstated"
+          ]
+        }
+      ],
+      "flags": [
+        {
+          "paper": "ml-2012.08536",
+          "sentence_id": "s32",
+          "reference_key": "brown_fault-tolerant_2020",
+          "change": "removed",
+          "review": "false_alarm"
+        },
+        {
+          "paper": "astro-2305.00803",
+          "sentence_id": "s24",
+          "reference_key": "Dalessio98",
+          "change": "removed",
+          "review": "false_alarm"
+        },
+        {
+          "paper": "astro-2305.00803",
+          "sentence_id": "s25",
+          "reference_key": "Lynden-Bell74",
+          "change": "removed",
+          "review": "false_alarm"
+        },
+        {
+          "paper": "astro-2305.00803",
+          "sentence_id": "s51",
+          "reference_key": "Najita14",
+          "change": "added",
+          "review": "false_alarm"
+        },
+        {
+          "paper": "medicine-journal.pone.0292350",
+          "sentence_id": "s1",
+          "reference_key": "r1",
+          "change": "removed",
+          "review": "debatable"
+        },
+        {
+          "paper": "psychology-fpsyg.2021.646368",
+          "sentence_id": "s6",
+          "reference_key": "r34",
+          "change": "removed",
+          "review": "debatable"
+        },
+        {
+          "paper": "psychology-fpsyg.2021.735293",
+          "sentence_id": "s14",
+          "reference_key": "r31",
+          "change": "removed",
+          "review": "debatable"
+        },
+        {
+          "paper": "psychology-fpsyg.2021.735293",
+          "sentence_id": "s4",
+          "reference_key": "r14",
+          "change": "removed",
+          "review": "false_alarm"
+        },
+        {
+          "paper": "psychology-fpsyg.2021.735293",
+          "sentence_id": "s56",
+          "reference_key": "r14",
+          "change": "removed",
+          "review": "debatable"
+        },
+        {
+          "paper": "medicine-journal.pone.0292900",
+          "sentence_id": "s24",
+          "reference_key": "r20",
+          "change": "removed",
+          "review": "debatable"
+        },
+        {
+          "paper": "biology-elife.74777",
+          "sentence_id": "s23",
+          "reference_key": "r38",
+          "change": "removed",
+          "review": "false_alarm"
+        },
+        {
+          "paper": "biology-elife.74777",
+          "sentence_id": "s4",
+          "reference_key": "r4",
+          "change": "removed",
+          "review": "false_alarm"
+        },
+        {
+          "paper": "biology-elife.74777",
+          "sentence_id": "s82",
+          "reference_key": "r24",
+          "change": "removed",
+          "review": "false_alarm"
+        }
+      ],
+      "verdicts": 1116,
+      "verdicts_changed": 33,
+      "totals": {
+        "run": {
+          "planted": 103,
+          "caught": 96,
+          "label_ok": 94,
+          "genuine": 17,
+          "false_alarm": 65,
+          "debatable": 44,
+          "unreviewed": 0,
+          "spent": 0.0,
+          "recall": 0.9320388349514563,
+          "label_accuracy": 0.912621359223301,
+          "precision_reviewed": 0.6348314606741573
+        },
+        "base": {
+          "planted": 103,
+          "caught": 89,
+          "label_ok": 87,
+          "genuine": 17,
+          "false_alarm": 71,
+          "debatable": 49,
+          "unreviewed": 0,
+          "spent": 0.0,
+          "recall": 0.8640776699029126,
+          "label_accuracy": 0.8446601941747572,
+          "precision_reviewed": 0.5988700564971752
+        }
+      },
+      "gained": 7,
+      "lost": 0,
+      "mcnemar_p": 0.015625
+    }
+  }
+}

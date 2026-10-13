@@ -1,0 +1,114 @@
+{
+  "name": "cheap-fixes",
+  "from": "detect",
+  "base": "baseline",
+  "note": "D1/I2 number ranges, bounds, lost exponents and unitless values; D2 modal hedge vs certain claim on supported verdicts; D3 sweeping qualifiers; D4 abstract-only overstated needs a mismatch tag",
+  "papers": {
+    "ml-2208.01063": {
+      "base_job": "5c0ec801de2a",
+      "job_id": "cb993b1f0f97",
+      "wall_seconds": 9.3,
+      "spent_usd": 0.0
+    },
+    "cv-2106.05735": {
+      "base_job": "5bf8bec8b61f",
+      "job_id": "b238bcd360dd",
+      "wall_seconds": 9.3,
+      "spent_usd": 0.0
+    },
+    "astro-2304.13057": {
+      "base_job": "105427381373",
+      "job_id": "84fcff0b6778",
+      "wall_seconds": 9.3,
+      "spent_usd": 0.0
+    },
+    "medicine-journal.pone.0267015": {
+      "base_job": "28c6bdad5f0e",
+      "job_id": "df87f206a4f0",
+      "wall_seconds": 12.2,
+      "spent_usd": 0.0
+    },
+    "biology-elife.87318": {
+      "base_job": "c5cccdf2c257",
+      "job_id": "8e6013b1f88f",
+      "wall_seconds": 12.1,
+      "spent_usd": 0.0
+    },
+    "psych-plos-journal.pone.0288609": {
+      "base_job": "b4c5f19e351a",
+      "job_id": "1b0591ce20d2",
+      "wall_seconds": 11.9,
+      "spent_usd": 0.0
+    }
+  },
+  "commit": "23b9027",
+  "uncommitted_changes": true,
+  "started_at": "2026-10-13T15:22:13+00:00",
+  "comparisons": {
+    "baseline": {
+      "papers": 6,
+      "planted": [
+        {
+          "paper": "ml-2208.01063",
+          "id": "p8",
+          "mutation": "scope_inflation",
+          "change": "gained",
+          "labels": [
+            "overstated"
+          ]
+        },
+        {
+          "paper": "psych-plos-journal.pone.0288609",
+          "id": "p2",
+          "mutation": "hedge_removal",
+          "change": "gained",
+          "labels": [
+            "overstated"
+          ]
+        }
+      ],
+      "flags": [
+        {
+          "paper": "astro-2304.13057",
+          "sentence_id": "s19",
+          "reference_key": "leclercq2017",
+          "change": "removed",
+          "review": "false_alarm"
+        }
+      ],
+      "verdicts": 416,
+      "verdicts_changed": 6,
+      "totals": {
+        "run": {
+          "planted": 44,
+          "caught": 40,
+          "label_ok": 37,
+          "genuine": 6,
+          "false_alarm": 26,
+          "debatable": 23,
+          "unreviewed": 0,
+          "spent": 0.0,
+          "recall": 0.9090909090909091,
+          "label_accuracy": 0.8409090909090909,
+          "precision_reviewed": 0.6388888888888888
+        },
+        "base": {
+          "planted": 44,
+          "caught": 38,
+          "label_ok": 35,
+          "genuine": 6,
+          "false_alarm": 27,
+          "debatable": 23,
+          "unreviewed": 0,
+          "spent": 0.0,
+          "recall": 0.8636363636363636,
+          "label_accuracy": 0.7954545454545454,
+          "precision_reviewed": 0.6197183098591549
+        }
+      },
+      "gained": 2,
+      "lost": 0,
+      "mcnemar_p": 0.5
+    }
+  }
+}

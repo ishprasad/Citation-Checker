@@ -36,9 +36,18 @@ _UNIT_MAP = {"%": "%", "percent": "%", "pp": "pp", "x": "x", "×": "x", "fold": 
 SCALE = {"k": 1e3, "M": 1e6, "B": 1e9}
 
 
+# PDF text loses superscripts: "10−17" (a minus sign, not a dash, right after 10) is 10^-17, and
+# "2×10−5" is 2×10^-5. Ranges use dashes or hyphens, which are left alone.
+_LOST_EXPONENT_RE = re.compile(r"(?<![\w.])(×\s?)?10−(\d{1,2})(?![\d.]\d)")
+
+
+def restore_exponents(text: str) -> str:
+    return _LOST_EXPONENT_RE.sub(lambda m: f"{m.group(1) or ''}10^-{m.group(2)}", text)
+
+
 def extract_numbers(text: str) -> list[Number]:
     found = []
-    for m in NUMBER_RE.finditer(text):
+    for m in NUMBER_RE.finditer(restore_exponents(text)):
         digits = m.group("num").replace(",", "") + (m.group("dec") or "")
         value = float(digits)
         if m.group("sign") in ("-", "−"):

@@ -159,7 +159,7 @@ Each strategy lists what it targets, the evidence, and how to test it. "Addresse
 ## Suggested order
 
 1. **Harness:** E0.1–E0.4 and the baseline re-runs on rounds 1 and 2 (done; see above).
-2. **Cheap, high-yield, mostly code:**
+2. **Cheap, high-yield, mostly code (done; see "Step 2 results" below):**
    - D1 and I2 (number fidelity);
    - D4 (abstract-only);
    - A5 and A6 (qualifiers and background typing);
@@ -173,6 +173,42 @@ Each strategy lists what it targets, the evidence, and how to test it. "Addresse
 4. **Retrieval and coverage:** V1–V3, R1–R3, I3.
 5. **Judge calibration:** J1–J5 and X3, compared on cost.
 6. **Measure on a fresh round 3**, paired with the current pipeline, with better planting (E0.5).
+
+## Step 2 results: code rules (experiment `cheap-fixes`)
+
+The rules are all in the detectors (`app/pipeline/detectors.py`), so the experiment re-ran only that stage, with no model calls. Every new flag has been reviewed.
+
+| | Baseline | `cheap-fixes` |
+|---|---|---|
+| Planted errors caught, round 1 | 38/44 = 86% | 40/44 = 91% |
+| Planted errors caught, round 2 | 89/103 = 86% | 96/103 = 93% |
+| Both rounds: gained / lost | | 9 / 0 (exact McNemar p = 0.004) |
+| False alarms (rounds 1 + 2) | 27 + 71 | 26 + 65 |
+| Debatable flags (rounds 1 + 2) | 23 + 49 | 23 + 44 |
+| Reviewed precision, round 1 / round 2 | 62% / 60% | 64% / 63% |
+
+What changed:
+
+- **D1 and I2, number drift.** A claim number that differs from the source's is not drift when it doesn't conflict:
+  - the source value lies within a range the claim states (works co-cited for "between 3 and 6.6");
+  - the claim value lies within the source's range or ± interval;
+  - the claim states a bound the source satisfies ("at least 100").
+
+  "10−17" in PDF text now reads as 10^-17. A unitless value from the judge ("5") now matches "5%" in the claim, which caught the planted "30±5%". All 3 flags the drift rule itself created were false alarms, and are gone. No planted number change lost its drift tag: 8 of the 12 now carry it, up from 7.
+- **D4, abstract-only references.** "Overstated" against an abstract alone now needs a concrete mismatch tag (scope, number, hedge, causation or significance). Untagged ones were "the abstract doesn't mention it": 5 false alarms and 5 debatable flags, no planted error.
+- **D3, sweeping qualifiers.** A finding whose citing clause says "without exception", "universally", "always", "in all cases" and the like, against a supporting passage that makes no such general statement, becomes overstated (scope inflation). It reads the citing sentence's own clause (`citation_clause`), so a qualifier dropped by extraction still counts. 6 planted scope inflations gained.
+- **D2, hedge removal.** A "supported" finding becomes overstated (hypothesis as finding) when the verified quote hedges with a modal ("may", "could", "likely", "hypothesize") and the citing clause asserts certainty ("will", "is known to", "demonstrates") without a hedge of its own. 2 planted hedge removals gained, and 1 new flag on an untouched citation: a false alarm (Najita & Kenyon, 2014, whose conclusions are firmer than its abstract).
+  - A first version used any hedge word, including "suggests" and "appears to". It added 7 flags, which were 6 false alarms and 1 debatable: papers routinely report their own results with "this study suggests". That version was discarded.
+
+Not done, and why:
+
+- **A5 (qualifiers kept by extraction).** No longer needed for detection: D2 and D3 read the citing clause directly. It may still help the judge, but it means re-running extraction and everything after it.
+- **A6.**
+  - Fallback "background" claims (23 verdicts) carry no planted error or flag. The truncated extractions behind some of them are repetition loops, not outputs that ran out of room.
+  - Two planted errors were missed because extraction typed the claim as background. Applying D2 and D3 to background claims would catch neither (only one already-planted sentence matches), so background typing needs a prompt change: a step-3 item.
+- **D5 (weak tags).** Correlation-as-causation and secondary-citation tags never create a flag (the judge had already said "overstated"), so they do not affect recall or precision. They belong with the display work (P1).
+
+**Caveat: the gains depend on how errors were planted.** All 6 sweeping-qualifier gains are the planting script's fixed phrases, and both hedge gains are its "may/could → will". On untouched citations D3 fired on none and D2 on one (a false alarm), so they cost almost no precision here. Whether they catch real overstatements can only be measured on round 3, with different planted wordings (E0.5).
 
 ## Caveats
 

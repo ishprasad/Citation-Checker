@@ -74,6 +74,24 @@ def render_sentence(sentence: CitingSentence, paper_text: str) -> tuple[str, dic
     return text, {rid: key for key, rid in id_for.items()}
 
 
+def citation_clause(sentence: CitingSentence, key: str, paper_text: str) -> str:
+    """The part of a sentence that the marker citing `key` closes: from the previous marker (or the
+    sentence start) up to that marker. A textual citation ("Smith et al. (2020) show that ...") also
+    takes the text after it, up to the next marker. The whole sentence when it has one marker."""
+    spans, keys = sentence.marker_spans, sentence.marker_keys
+    if len(spans) <= 1 or len(keys) != len(spans) or not paper_text:
+        return sentence.text
+    idx = next((i for i, k in enumerate(keys) if key in k), None)
+    if idx is None:
+        return sentence.text
+    a, b = spans[idx]
+    lo = spans[idx - 1][1] if idx else sentence.start
+    clause = paper_text[lo:a]
+    if not paper_text[a:b].startswith(("[", "(")):
+        clause += " " + paper_text[b : spans[idx + 1][0] if idx + 1 < len(spans) else sentence.end]
+    return re.sub(r"\s+", " ", clause).strip(" ,;.") or sentence.text
+
+
 def strip_markers(sentence: CitingSentence, paper_text: str) -> str:
     pieces, cursor = [], sentence.start
     for a, b in sentence.marker_spans:

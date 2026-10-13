@@ -119,12 +119,12 @@ def test_experiment_reruns_only_the_stages_from_its_start(heldout, tmp_path, sta
 def test_experiment_compare_and_incremental_review(heldout, tmp_path, monkeypatch, capsys):
     fakes, store, runner, base_job = heldout
     _freeze(store, base_job, tmp_path)
-    # The changed judge: no escalation, and s2 is now judged overstated.
+    # The changed judge: no escalation, and s2 is now judged contradicted.
     original = run_mod.judge_pair
 
     async def judge_pair(claim, ref, evidence, ctx):
         v = await original(claim, ref, evidence, ctx)
-        return v.model_copy(update={"label": "overstated"}) if claim.citing_sentence_id == "s2" else v
+        return v.model_copy(update={"label": "contradicted"}) if claim.citing_sentence_id == "s2" else v
 
     monkeypatch.setattr(run_mod, "judge_pair", judge_pair)
     monkeypatch.setattr(run_mod, "needs_escalation", lambda v, c, r: False)

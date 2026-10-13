@@ -106,6 +106,40 @@ def test_number_drift_downgrades_supported():
     assert out.label == "overstated" and out.confidence == 0.7 and "label_adjusted_number_drift" in out.flags
 
 
+def _drift(claim_text, quote, claim_value, source_value):
+    claim = CLAIM.model_copy(update={"claim_text": claim_text})
+    v = make(label="supported", quote=quote,
+             numbers=[NumberComparison(claim_value=claim_value, source_value=source_value, same_quantity=True)])
+    return detect(v.model_copy(update={"attributed_claim": claim_text}), claim, REF, NO_SIDECAR)
+
+
+@pytest.mark.parametrize("claim_text, quote, claim_value, source_value", [
+    # The source value lies within the claim's range (co-cited works together span 3 to 6.6).
+    ("Neither sees evolution between z 3 and z 6.6", "no significant evolution between redshifts 3 and 6", "6.6", "6"),
+    # The claim value lies within the source's range, written with a spaced minus sign.
+    ("2000 K sets the upper limit", "the sublimation temperature, Tsub ≈1800 −2000 K", "2000 K", "1800 −2000 K"),
+    # A bound the source value satisfies.
+    ("studies with at least 100 samples", "compiled data on ~125,000 exomes", "100", "~125,000"),
+    ("equivalent widths higher than 0.1 Å", "averaging ≃ 1 Å in Lyα equivalent width", "0.1 Å", "≃ 1 Å"),
+    # A superscript lost in PDF text: "10−17" is 10^-17.
+    ("Brown obtained a theoretical value of ∼ 10^-17", "a lower bound on the threshold of ε ∼ 10−17", "∼ 10^-17", "∼ 10−17"),
+])
+def test_number_drift_not_for_consistent_values(claim_text, quote, claim_value, source_value):
+    out = _drift(claim_text, quote, claim_value, source_value)
+    assert "number_drift" not in out.failure_modes and out.label == "supported"
+
+
+@pytest.mark.parametrize("claim_text, quote, claim_value, source_value", [
+    ("The average multiplicity is 2.03±0.12", "each system has 1.27 ± 0.12 cold giants", "2.03±0.12", "1.27±0.12"),
+    ("The fraction of stars with planets is ∼30±5%", "the fraction is 30 ± 3%", "5", "3"),  # unitless judge value
+    ("proportions ranging from 35%-57%", "About 75% felt guilty", "35%-57%", "75%"),
+    ("isolation mass is always ≳ 9–10 M⊕", "we calculate M crit ∼ 8 M ⊕ at 5 AU", "9", "8"),  # bound not met
+    ("scale lengths between 1 and 18 kpc", "scale lengths between 1 and 7 kpc", "18", "1 and 7"),  # both ranges
+])
+def test_number_drift_for_conflicting_values(claim_text, quote, claim_value, source_value):
+    assert "number_drift" in _drift(claim_text, quote, claim_value, source_value).failure_modes
+
+
 # ----------------------------------------------------------------------- scope, hedging
 
 
@@ -146,6 +180,54 @@ def test_hypothesis_as_finding_not_when_claim_hedges_or_supported():
     assert detect(supported, CLAIM, REF, NO_SIDECAR).failure_modes == []
     background = CLAIM.model_copy(update={"claim_type": "background"})
     assert detect(make(quote="this may help"), background, REF, NO_SIDECAR).failure_modes == []
+
+
+def test_hedge_removed_downgrades_supported_only_against_a_certain_claim():
+    claim = CLAIM.model_copy(update={"claim_text": "Stigma will fail to protect public health"})
+    quote = "stigmas may be important drivers of failures in protecting public health"
+    v = make(label="supported", quote=quote, source_hedged=True).model_copy(update={"attributed_claim": claim.claim_text})
+    out = detect(v, claim, REF, NO_SIDECAR)
+    assert out.label == "overstated" and out.failure_modes == ["hypothesis_as_finding"]
+    assert "label_adjusted_hedge_removed" in out.flags
+    # A reporting verb is routine phrasing, not a hedge; and a claim without a certainty marker stays.
+    reporting = make(label="supported", quote="This study suggests that mental health deteriorated", source_hedged=True)
+    assert detect(reporting.model_copy(update={"attributed_claim": claim.claim_text}), claim, REF, NO_SIDECAR).label == "supported"
+    plain = CLAIM.model_copy(update={"claim_text": "Stigma fails to protect public health"})
+    v = make(label="supported", quote=quote, source_hedged=True).model_copy(update={"attributed_claim": plain.claim_text})
+    assert detect(v, plain, REF, NO_SIDECAR).label == "supported"
+    # The citing sentence's own hedge counts even when extraction dropped it.
+    v = make(label="supported", quote=quote, source_hedged=True).model_copy(update={"attributed_claim": claim.claim_text})
+    assert detect(v, claim, REF, NO_SIDECAR, clause="Stigma will possibly fail to protect public health").label == "supported"
+
+
+def test_sweeping_qualifier_absent_from_the_source():
+    claim = CLAIM.model_copy(update={"claim_text": "The compound reduces tumor volume"})
+    v = make(label="supported", quote="In mice, the compound reduced tumor volume by 31%.")
+    out = detect(v.model_copy(update={"attributed_claim": claim.claim_text}), claim, REF, NO_SIDECAR,
+                 clause="The compound reduces tumor volume without exception")
+    assert out.label == "overstated" and out.failure_modes == ["scope_inflation"]
+    assert '"without exception"' in out.failure_notes["scope_inflation"]
+    # The source makes the same general statement: nothing to flag.
+    v = make(label="supported", quote="The compound always reduced tumor volume, in all cases studied.")
+    out = detect(v.model_copy(update={"attributed_claim": claim.claim_text}), claim, REF, NO_SIDECAR,
+                 clause="The compound always reduces tumor volume")
+    assert out.label == "supported" and out.failure_modes == []
+    # Background and method claims are not checked.
+    for kind in ("background", "method"):
+        other = claim.model_copy(update={"claim_type": kind})
+        v = make(label="supported", quote="In mice, the compound reduced tumor volume by 31%.")
+        assert detect(v, other, REF, NO_SIDECAR, clause="It always works").label == "supported"
+
+
+def test_overstated_against_an_abstract_needs_a_concrete_mismatch():
+    abstract_ref = REF.model_copy(update={"fulltext_status": "abstract_only"})
+    missing_detail = make(quote="We studied tumor growth in mice.")
+    out = detect(missing_detail, CLAIM, abstract_ref, NO_SIDECAR)
+    assert out.label == "unverifiable" and "abstract_only_lenient" in out.flags
+    narrower = make(quote="In a pilot study of 24 mice, tumor volume fell by 31%.", scope_broader_than_source=True,
+                    claim_scope="in humans", source_scope="pilot study of 24 mice")
+    assert detect(narrower, CLAIM, abstract_ref, NO_SIDECAR).label == "overstated"
+    assert detect(missing_detail, CLAIM, REF, NO_SIDECAR).label == "overstated"  # full text: unchanged
 
 
 # ------------------------------------------------------------------- secondary citation

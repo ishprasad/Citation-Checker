@@ -164,6 +164,12 @@
       "note": "Manara et al. convert fluxes to dust masses with this opacity and T = 20 K under the optically thin assumption, as the sentence says."
     },
     {
+      "sentence_id": "s51",
+      "reference_key": "Najita14",
+      "verdict": "false_alarm",
+      "note": "The abstract hedges (\"suggests ... likely\") but the conclusions are firm: the data \"directly imply a mismatch\" between planet and class II disc masses. \"Known to\" is a fair restatement."
+    },
+    {
       "sentence_id": "s52",
       "reference_key": "Tobin20",
       "verdict": "false_alarm",

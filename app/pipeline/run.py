@@ -41,7 +41,7 @@ from app.models import (
     Reference,
     Verdict,
 )
-from app.pipeline.claims import extract_claims, mark_duplicate_verdicts
+from app.pipeline.claims import citation_clause, extract_claims, mark_duplicate_verdicts
 from app.pipeline.detectors import apply_detectors, detect
 from app.pipeline.evidence import EvidenceRetriever
 from app.pipeline.ingest import INGEST_VERSION, IngestError, ingest_arxiv
@@ -60,7 +60,7 @@ M = TypeVar("M", bound=BaseModel)
 FINISHED = ("done", "partial", "failed")
 
 # Bump when judging changes enough that earlier results should not be served from the cache.
-PIPELINE_VERSION = 2
+PIPELINE_VERSION = 3
 # Parsed arXiv papers are shared across checks under this pseudo job id in the artifacts table.
 PAPER_CACHE = "_papers"
 
@@ -494,7 +494,8 @@ class JobRunner:
                 self._progress(job, "retrieve", add_done=1)
                 self._progress(job, "judge", add_done=1)
             # Pair-level detectors now; paper-level ones (off-topic baseline) in the final pass.
-            final = detect(verdict, claim, ref, read_reference_sidecar)
+            clause = citation_clause(sentences_by_id[claim.citing_sentence_id], key, paper.text)
+            final = detect(verdict, claim, ref, read_reference_sidecar, clause=clause)
             self.store.put(job.id, "verdict", pid, final)
             self.bus.publish(job.id, "verdict", {"verdict": final.model_dump(mode="json"),
                                                  "claim": claim.model_dump(mode="json")})
@@ -545,11 +546,17 @@ class JobRunner:
         evidence = list(self.store.all(job.id, "evidence", Evidence).values())
         current = self.store.all(job.id, "verdict", Verdict)
         verdicts = [v for v in judged.values() if v.claim_id in claims]
+        ingest = self.store.get(job.id, "ingest", "paper", IngestResult)
+        sentences = {s.id: s for s in ingest.sentences} if ingest else {}
+        clauses = {
+            (c.citing_sentence_id, key): citation_clause(sentences[c.citing_sentence_id], key, ingest.paper.text)
+            for c in claims.values() if c.citing_sentence_id in sentences for key in c.reference_keys
+        }
         try:
             scores = await (retriever or EvidenceRetriever()).abstract_scores(list(claims.values()), references)
         except llm.TokenBudgetExceeded:
             scores = None
-        final = apply_detectors(verdicts, claims, references, evidence, abstract_scores=scores)
+        final = apply_detectors(verdicts, claims, references, evidence, abstract_scores=scores, clauses=clauses)
         final = mark_duplicate_verdicts(final, claims)
         for v in final:
             pid = pair_id(v.claim_id, v.reference_key)
