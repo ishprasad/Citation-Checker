@@ -1760,7 +1760,7 @@
       "pipeline_version": 1,
       "eval_job": "759d71ca65f3",
       "eval_wall_seconds": 156.5,
-      "dev_job": "5c0ec801de2a"
+      "dev_job": "cb993b1f0f97"
     },
     {
       "slug": "cv-2106.05735",
@@ -1789,7 +1789,7 @@
       "pipeline_version": 1,
       "eval_job": "7b456fc70151",
       "eval_wall_seconds": 177.7,
-      "dev_job": "5bf8bec8b61f"
+      "dev_job": "b238bcd360dd"
     },
     {
       "slug": "astro-2304.13057",
@@ -1818,7 +1818,7 @@
       "pipeline_version": 1,
       "eval_job": "a4fa095dd338",
       "eval_wall_seconds": 206.3,
-      "dev_job": "105427381373"
+      "dev_job": "84fcff0b6778"
     },
     {
       "slug": "medicine-journal.pone.0267015",
@@ -1847,7 +1847,7 @@
       "pipeline_version": 1,
       "eval_job": "f246e98fe9b9",
       "eval_wall_seconds": 182.0,
-      "dev_job": "28c6bdad5f0e"
+      "dev_job": "df87f206a4f0"
     },
     {
       "slug": "biology-elife.87318",
@@ -1876,7 +1876,7 @@
       "pipeline_version": 1,
       "eval_job": "64b986524ded",
       "eval_wall_seconds": 211.3,
-      "dev_job": "c5cccdf2c257"
+      "dev_job": "8e6013b1f88f"
     },
     {
       "slug": "psych-plos-journal.pone.0288609",
@@ -1905,7 +1905,7 @@
       "pipeline_version": 1,
       "eval_job": "3d93337c80c1",
       "eval_wall_seconds": 242.6,
-      "dev_job": "b4c5f19e351a"
+      "dev_job": "1b0591ce20d2"
     }
   ],
   "notes": [
@@ -1915,8 +1915,8 @@
     "2026-10-08: reading the planted edits (before any evaluation run) showed two planting problems: the scope phrases were written for the ML demo paper ('across all tasks and model sizes' in a malaria paper), and deleting 'likely' from 'most likely' left an ungrammatical sentence. The held-out set now uses field-neutral scope phrases, hedge deletion skips words after a modifier ('most', 'more', 'very'...), and the papers were planted again on the same baseline checks. The demo is unchanged (reproduced exactly)."
   ],
   "dev_baseline": {
-    "run": "current",
-    "commit": "a66a891",
-    "set_at": "2026-10-12T15:52:13+00:00"
+    "run": "cheap-fixes",
+    "commit": "23b9027",
+    "set_at": "2026-10-13T15:25:06+00:00"
   }
 }

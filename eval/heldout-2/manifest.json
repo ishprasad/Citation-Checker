@@ -2999,7 +2999,8 @@
       "baseline_cost_usd": 0.82,
       "pipeline_version": 2,
       "eval_job": "081c663e0eaf",
-      "eval_wall_seconds": 189.1
+      "eval_wall_seconds": 189.1,
+      "dev_job": "2aee22e3ba2d"
     },
     {
       "slug": "ml-2012.08536",
@@ -3027,7 +3028,8 @@
       "baseline_cost_usd": 0.656,
       "pipeline_version": 2,
       "eval_job": "fa5e07cc13a7",
-      "eval_wall_seconds": 172.9
+      "eval_wall_seconds": 172.9,
+      "dev_job": "3dae732023da"
     },
     {
       "slug": "astro-2305.00803",
@@ -3055,7 +3057,8 @@
       "baseline_cost_usd": 2.736,
       "pipeline_version": 2,
       "eval_job": "4ba5b5c327ae",
-      "eval_wall_seconds": 330.3
+      "eval_wall_seconds": 330.3,
+      "dev_job": "26063c8a4949"
     },
     {
       "slug": "astro-2208.03661",
@@ -3083,7 +3086,8 @@
       "baseline_cost_usd": 0.984,
       "pipeline_version": 2,
       "eval_job": "05f5131e1132",
-      "eval_wall_seconds": 271.9
+      "eval_wall_seconds": 271.9,
+      "dev_job": "fe87f56cf4f9"
     },
     {
       "slug": "medicine-journal.pone.0292350",
@@ -3111,7 +3115,8 @@
       "baseline_cost_usd": 0.457,
       "pipeline_version": 2,
       "eval_job": "cd7199680a07",
-      "eval_wall_seconds": 283.4
+      "eval_wall_seconds": 283.4,
+      "dev_job": "0e51e443f849"
     },
     {
       "slug": "psychology-fpsyg.2021.646368",
@@ -3139,7 +3144,8 @@
       "baseline_cost_usd": 0.314,
       "pipeline_version": 2,
       "eval_job": "0c12f7ef39fd",
-      "eval_wall_seconds": 342.6
+      "eval_wall_seconds": 342.6,
+      "dev_job": "3054d9ef1e2f"
     },
     {
       "slug": "psychology-fpsyg.2021.735293",
@@ -3167,7 +3173,8 @@
       "baseline_cost_usd": 0.663,
       "pipeline_version": 2,
       "eval_job": "f0fb7ac2bcd3",
-      "eval_wall_seconds": 387.8
+      "eval_wall_seconds": 387.8,
+      "dev_job": "5ddd2dda1a6f"
     },
     {
       "slug": "psych-plos-journal.pone.0264257",
@@ -3195,7 +3202,8 @@
       "baseline_cost_usd": 0.315,
       "pipeline_version": 2,
       "eval_job": "15032b4895dd",
-      "eval_wall_seconds": 438.6
+      "eval_wall_seconds": 438.6,
+      "dev_job": "3792553df7de"
     },
     {
       "slug": "psych-plos-journal.pone.0252835",
@@ -3223,7 +3231,8 @@
       "baseline_cost_usd": 0.343,
       "pipeline_version": 2,
       "eval_job": "88f4f4d760c4",
-      "eval_wall_seconds": 428.2
+      "eval_wall_seconds": 428.2,
+      "dev_job": "5332c78ac5c2"
     },
     {
       "slug": "medicine-journal.pone.0292900",
@@ -3251,7 +3260,8 @@
       "baseline_cost_usd": 0.247,
       "pipeline_version": 2,
       "eval_job": "d4e1ae55c1c3",
-      "eval_wall_seconds": 437.6
+      "eval_wall_seconds": 437.6,
+      "dev_job": "24f751e1ff11"
     },
     {
       "slug": "biology-elife.74777",
@@ -3279,7 +3289,8 @@
       "baseline_cost_usd": 0.972,
       "pipeline_version": 2,
       "eval_job": "4a1681485aed",
-      "eval_wall_seconds": 507.5
+      "eval_wall_seconds": 507.5,
+      "dev_job": "e030c4a5cd80"
     },
     {
       "slug": "biology-elife.86333",
@@ -3307,11 +3318,17 @@
       "baseline_cost_usd": 0.315,
       "pipeline_version": 2,
       "eval_job": "8049a0b8a65c",
-      "eval_wall_seconds": 505.9
+      "eval_wall_seconds": 505.9,
+      "dev_job": "d8bb1ae07e8f"
     }
   ],
   "notes": [
     "2026-10-09: a first screening attempt was discarded before anything was planted: Crossref refused about 280 lookups (HTTP 429) and an OpenAlex request failed, so some rejections for low coverage were not sound and both psychology samples came back empty. Screening was changed to mark a candidate inconclusive when a lookup fails (failures can only lower coverage, so acceptances stand) and to stop its stratum until it can be decided, so a later candidate cannot overtake it; Crossref requests were slowed to 4 per second. Screening then restarted from scratch.",
     "2026-10-09: three candidates (cv rank 42, astro ranks 6 and 9) were rejected with 0% coverage because their bibliographies (AAS and REVTeX styles) print no titles and the resolver needs a title, DOI or arXiv ID; REVTeX's bare arXiv IDs ('2105.06979') are not recognised. A real checker limitation, recorded as a finding (papers with title-less bibliographies cannot be checked) and left unfixed until the round is scored."
-  ]
+  ],
+  "dev_baseline": {
+    "run": "cheap-fixes",
+    "commit": "23b9027",
+    "set_at": "2026-10-13T15:25:06+00:00"
+  }
 }
