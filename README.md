@@ -251,7 +251,9 @@ Edits are applied from the end of the text backwards, so every offset stays exac
 
 **Demo button (`POST /api/demo`).** It returns the latest finished check of the demo paper instantly. If there is none, it runs one live; with warm caches that takes about 30 seconds. With no API key configured, it shows the bundled snapshot of a recorded check (`demo/snapshot.json`). In the UI, the banner shows the score, each planted citation shows what was changed and its original sentence, and the issue list marks planted entries.
 
-**Calibration.** Flags on untouched citations were reviewed by hand (`demo/annotations.json`: genuine, false alarm or debatable, with notes; checked against the cited texts where it mattered). Most false alarms fell into two groups:
+### Initial calibration
+
+Flags on untouched citations were reviewed by hand (`demo/annotations.json`: genuine, false alarm or debatable, with notes; checked against the cited texts where it mattered). Most false alarms fell into two groups:
 
 - **Group citations read literally.** "Improving factuality is an open direction (A; B; C)" was flagged because A "does not mention chain-of-thought".
 - **Identification citations judged on the citing authors' own description.** BIG-bench was flagged for "not describing" the Date Understanding task.
@@ -284,9 +286,6 @@ The genuine problems found in the unmodified paper:
 
 Calibration was done on this paper, so these are development-set numbers.
 
-- **Escalation:** 30 of 147 verdicts went to Nemotron Ultra, which changed the label in 13.
-- **Cost:** a full check costs about $1.16 (1.65M tokens) the first time. Repeat runs are served from the cache in about 30 seconds.
-
 ### Held-out evaluation (`scripts/heldout.py`, `eval/heldout-2/`)
 
 The demo numbers above come from the paper the checker was calibrated on. For a held-out estimate, 12 papers in 5 fields were drawn from a seeded random OpenAlex sample, with eligibility rules fixed in advance. 103 errors were planted as above, and every flag on an untouched citation was reviewed by hand. The same edited papers were checked by three versions of the checker:
@@ -311,8 +310,7 @@ Details and caveats: [`eval/heldout-2/README.md`](eval/heldout-2/README.md).
 
 ## Limitations and future work
 
-- **Next evaluation round.** A fresh sample with varied planted wording, paired with the current pipeline. Still open from round 2: values derived from a cited dataset, comparisons drawn by the citing authors, co-cited works judged separately, and title-less bibliographies.
-- **Judge robustness.** Self-consistency voting for accusatory labels (three judge runs, flag on 2-of-3 agreement, disagreement escalates), and reasoning on for extraction only on sentences with several citation markers.
+- **Next evaluation round.** We will use a fresh sample with varied planted wording, paired with the current pipeline. There are fixes from round 2 that still need to be done: values derived from a cited dataset, comparisons drawn by the citing authors, co-cited works judged separately, and title-less bibliographies. We are holding off on this next round because testing is too expensive.
 - **Fine-tuning.** Token Factory does not offer Nemotron fine-tuning today. With more labelled data (roughly 50–100 papers, 3k–8k claim/reference pairs, split by citing and cited paper), a Nano-sized judge could be distilled from Ultra verdicts on full text plus human labels, making full checks much cheaper.
 - **Scanned PDFs.** Image-only PDFs are refused today; Nemotron Nano Omni (`MODEL_VISION`) could read the pages.
 - **Coverage.** Only open-access text is read; paywalled publishers are out of scope, and verdicts on abstract-only references are limited accordingly (the coverage line says how many).
