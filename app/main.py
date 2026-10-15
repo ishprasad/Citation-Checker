@@ -377,4 +377,4 @@ async def start_demo(fresh: bool = False):
     return {"id": job.id, "job": _job_view(job)}
 
 
-app.mount("/", StaticFiles(directory=ROOT_DIR / "docs", html=True), name="static")
+app.mount("/", StaticFiles(directory=ROOT_DIR / "static", html=True), name="static")

@@ -218,7 +218,7 @@ Every intermediate result is stored in SQLite. When the server restarts it resum
 | `TRUST_PROXY_HEADERS` | false | Behind a trusted reverse proxy, rate-limit by `X-Forwarded-For`. |
 | `GROBID_URL` | empty | Use a GROBID server for PDF parsing. |
 
-### UI (`docs/`)
+### UI (`static/`)
 
 The UI is plain HTML, CSS and JavaScript, with no build step and no CDN. Run `uvicorn app.main:app` and open http://localhost:8000.
 
