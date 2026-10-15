@@ -1,0 +1,35 @@
+{
+  "paper": "psych-plos-journal.pone.0288609",
+  "annotations": [
+    {
+      "sentence_id": "s4",
+      "reference_key": "r4",
+      "verdict": "genuine",
+      "note": "[4] studied healthcare workers in Vienna, Austria; the paper calls them Vietnamese. The avoidance, fear of infecting family and 'Coronalady' / 'Corona children' labels are all in [4]."
+    },
+    {
+      "sentence_id": "s5",
+      "reference_key": "r5",
+      "verdict": "genuine",
+      "note": "The cited study never defines stigma; it only lists manifestations (e.g. 'prejudice (devaluation of HCWs)') that it attributes to its own references [7, 8]. The general definition is not in the cited work."
+    },
+    {
+      "sentence_id": "s9",
+      "reference_key": "r8",
+      "verdict": "false_alarm",
+      "note": "The cited interview study says stigma 'still poses a threat to mental well-being' of hospital doctors. Doctors are healthcare workers; flagging the claim as broader than the source is pedantic."
+    },
+    {
+      "sentence_id": "s9",
+      "reference_key": "r9",
+      "verdict": "genuine",
+      "note": "The cited Jordanian survey of depression and anxiety never mentions stigma (no occurrence in the full text), so it cannot support 'stigmatization can impact the mental health of HCWs'."
+    },
+    {
+      "sentence_id": "s9",
+      "reference_key": "r11",
+      "verdict": "debatable",
+      "note": "The cited work reports (citing another study) that perceived stigma is associated with anxiety and depression; PTSD and suicide are absent, but the sentence cites two works [10, 11] for that list, and 'can lead to' over an association is a mild overstatement."
+    }
+  ]
+}

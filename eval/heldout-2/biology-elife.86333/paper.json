@@ -1,0 +1,2248 @@
+{
+  "paper": {
+    "id": "heldout:pdf:89d0a161be3ce2e2:d8d674b9",
+    "title": "Recapitulation of pathophysiological features of AD in SARS-CoV-2-infected subjects",
+    "authors": [],
+    "abstract": "Infection with the etiological agent of COVID-19, SARS-CoV-2, appears capable of impacting cognition in some patients with post-acute sequelae of SARS-CoV-2 (PASC). To evaluate neuropathophysiological consequences of SARS-CoV-2 infection, we examine transcriptional and cellular signatures in the Brodmann area 9 (BA9) of the frontal cortex and the hippocampal formation (HF) in SARS-CoV-2, Alzheimer’s disease (AD), and SARS-CoV-2-infected AD individuals compared to age- and gender-matched neurological cases. Here, we show similar alterations of neuroinflammation and blood–brain barrier integrity in SARS-CoV-2, AD, and SARS-CoV-2-infected AD individuals. Distribution of microglial changes reflected by the increase in Iba-1 reveals nodular morphological alterations in SARS-CoV-2-infected AD individuals. Similarly, HIF-1α is significantly upregulated in the context of SARS-CoV-2 infection in the same brain regions regardless of AD status. The finding may help in informing decision-making regarding therapeutic treatments in patients with neuro-PASC, especially those at increased risk of developing AD.",
+    "source": "pdf",
+    "arxiv_id": null,
+    "parsed_from": "pdf",
+    "citation_style": "author_year",
+    "text": "Abstract\n\nInfection with the etiological agent of COVID-19, SARS-CoV-2, appears capable of impacting cognition in some patients with post-acute sequelae of SARS-CoV-2 (PASC). To evaluate neuropathophysiological consequences of SARS-CoV-2 infection, we examine transcriptional and cellular signatures in the Brodmann area 9 (BA9) of the frontal cortex and the hippocampal formation (HF) in SARS-CoV-2, Alzheimer’s disease (AD), and SARS-CoV-2-infected AD individuals compared to age- and gender-matched neurological cases. Here, we show similar alterations of neuroinflammation and blood–brain barrier integrity in SARS-CoV-2, AD, and SARS-CoV-2-infected AD individuals. Distribution of microglial changes reflected by the increase in Iba-1 reveals nodular morphological alterations in SARS-CoV-2-infected AD individuals. Similarly, HIF-1α is significantly upregulated in the context of SARS-CoV-2 infection in the same brain regions regardless of AD status. The finding may help in informing decision-making regarding therapeutic treatments in patients with neuro-PASC, especially those at increased risk of developing AD.\n\nEditor's evaluation\n\nThis study compares neuropathological changes in postmortem brain samples from patients with SARS-CoV-2 infection, Alzheimer's disease, both SARS-CoV-2 and Alzheimer's disease, and demographically matched controls. This is an important comparison that expands information on SARS-CoV-2 effects in the brain. Solid results are presented to support the main claims.\n\nIntroduction\n\nThe consequences of SARS-CoV-2 infection have been well studied in the respiratory system; however, much less information is available regarding the neurological consequences of infection (Flerlage et al., 2021). Previous evidence tentatively suggests that SARS-CoV-2 may be neuroinvasive, leading to a vast array of neurological symptoms, including anosmia, ageusia, cognitive functions, and cerebrovascular disorders in every population and setting (Desforges et al., 2014; Hingorani et al., 2022). Neurological complications of SARS-CoV-2 infection manifest with increased severity related to age and shared medical history of metabolic disorders and other vascular risk factors (Divani et al., 2020; Chou et al., 2021; Sullivan and Fischer, 2021). Some strains within the coronavirus family are implicated in neuronal degeneration, such as HCoV-OC43, which can lead to glutamate excitotoxicity and neuronal degradation in mice through cytokine production (Jacomy et al., 2010; Brison et al., 2011). Because SARS-CoV-2 is a new addition to the coronavirus family, less information exists regarding the potential long-term neurological complications that may impact COVID-19 survivors. This may be especially concerning for aging individuals with increased vulnerability to developing age-related neurodegenerative diseases.\n\nWhile it is currently unknown whether neurological manifestations of SARS-CoV-2 infection arise solely from systemic inflammation in the periphery or brain infiltration, it is well established that secretion of cytokines and chemokines from the periphery allows the recruitment of leukocytes and other cells to specific tissues (Bauer et al., 2022; Prinz and Priller, 2017). This type of immune response is speculated to accelerate blood–brain barrier (BBB) disruption and may potentially damage cells within the central nervous system (CNS) (de Erausquin et al., 2021). Such effects are similar to neuropathology seen in Alzheimer’s disease (AD) and other neurodegenerative disorders, where leukocyte infiltration, BBB dysregulation, and microglial activation are observed. Thus, it is possible that SARS-CoV-2 may accelerate the onset and severity of cognitive decline or AD in susceptible individuals (Meinhardt et al., 2021; Mhatre et al., 2015). Understanding the impact of SARS-CoV-2 infection on the CNS and subsequent mechanisms associated with cognition is particularly pressing, given the number of individuals presenting with neurological symptoms of post-acute sequelae of SARS-CoV-2 (neuro-PASC), colloquially termed ‘long-COVID’ (Shanley et al., 2022; Davis et al., 2021).\n\nHere, we investigate the potential brain mechanisms associated with SARS-CoV-2 infection in SARS-CoV-2, AD, and SARS-CoV-2-infected AD individuals by comparing transcriptional and cellular responses in the cortical Brodmann area 9 (cortical BA9) of the frontal cortex and the hippocampal formation (HF); two brain regions deeply involved in cognitive and emotional functions, to age- and gender-matched neurological cases. Here, we report evidence suggesting that SARS-CoV-2 infection promotes similar pathophysiological features found in AD cortical BA9 and HF regions and possibly exacerbate preexisting AD pathophysiology.\n\nResults\n\nDemographics of human postmortem cases We examined postmortem tissue samples of cortical BA9 of the frontal cortex and the HF collected by the Neuropathology Brain Bank and Research CoRE at Mount Sinai from four different groups:\n\nSARS-CoV-2, AD, and AD individuals who became infected by SARS-CoV-2, compared to age- and gender-matched neurological cases (Supplementary file 1). Each group comprises an equal number of age-matched male and female patients, ensuring equal distribution with an average age of 79.6 among groups. Medical records indicate that all AD individuals have postmortem ABC scores indicative of AD (Supplementary file 2), where A is a measure of amyloid β deposition, B is a measure of neurofibrillary degeneration based on the Braak and Brook score, and C is scored based on neuritic plaques outlined by the Consortium to Establish a Registry for Alzheimer’s Disease diagnosis (CERAD) (Lampart et al., 2022). SARS-CoV-2 infection was confirmed by diagnostic polymerase chain reaction (PCR). Within the SARS-CoV-2 and SARS-CoV-2-infected AD groups, all patients were symptomatic, admitted to the hospital, and received oxygen supplementation by ventilator or cannula with disease onset to death occurring on average 27 d after diagnosis for patients with SARS-CoV-2 only and 32 d after diagnosis in infected AD patients (Supplementary files 1 and 2). Blood specimens were collected and indicate several laboratory features of severe COVID-19 (Supplementary file 2), such as increased C-reactive protein (CRP) and interleukin-6 (IL-6) universally, in all cases (Lampart et al., 2022).\n\nGene expression of SARS-CoV-2 and AD groups compared to control cases in cortical BA9 and HF The transcriptional profiles of AD and SARS-COV-2-infected postmortem cases from the cortical BA9 were assessed by pairwise comparison to determine gene expression compared to neurological control cases (Figure 1A–C). Volcano plot distributions of gene transcripts of AD and SARS-CoV-2 cases compared to neurological controls (Figure 1A and B) both reveal 39,901 genes that were used to determine differentially expressed genes based on a nominal p-value<0.01 and an absolute log2 fold-change (log2 FC) > 1. In the AD group, 287 genes were upregulated and 131 genes were downregulated (Figure 1D). In the SARS-CoV-2 group, 179 genes were upregulated and 426 genes were downregulated (Figure 1D). The volcano plot distribution of gene transcripts of SARS-CoV-2-infected AD cases compared to neurological controls (Figure 1C) revealed 38,021 genes and showed 813 genes were upregulated and 611 genes were downregulated using the same cutoff for significance (Figure 1D).\n\nTranscriptional profiles of AD and SARS-COV-2 cases from the HF were assessed (p<0.01 and log2 FC > 1) to determine gene expression compared to neurological control cases (Figure 1E–G) using 39,901 genes for AD and SARS-CoV-2 cases (Figure 1E and F), and 35,527 genes for the SARS-CoV- 2-infected AD cases (Figure 1G). In the AD group, 304 genes were upregulated and 214 genes were downregulated (Figure 1H). In the SARS-CoV-2 group, 230 genes were upregulated and 464 genes were downregulated (Figure 1H). Additionally, in the SARS-CoV-2-infected AD group, 466 genes were upregulated and 582 genes were downregulated (Figure 1H).\n\nSimilarity of gene expression in cortical BA9 and HF regions\n\nIn order to determine the relative similarity of gene expression changes induced by disease states, a collection of genes known to be differentially expressed due to either SARS-CoV-2 infection or AD were examined across three individual differential comparisons (Figure 2A and B). While all three comparisons (AD versus control, SARS-CoV-2 versus control, and SARS-CoV-2-infected AD versus control) showed generally the same trends, the AD and SARS-CoV-2-infected AD comparisons were strikingly similar in both BA9 (Figure 2A) and HF (Figure 2B).\n\nRank-rank hypergeometric overlap (RRHO) analysis comparing SARS-CoV-2 and AD cases also reveals a positive correlation between the AD and SARS-CoV-2 groups in the cortical BA9 (Figure 2— figure supplement 1) as well as in the HF (Figure 2—figure supplement 2), although to a lesser extent than in the cortical BA9. We then filtered genes using Ingenuity Pathway Analysis software (IPA) to determine the number of shared differentially regulated genes among the AD, SARS-CoV-2, and SARS-CoV-2-infected AD groups within each tissue region (p<0.05 and absolute z > 0.0001). Comparing these shared genes within the cortical BA9, we find that AD, SARS-CoV-2, and SARS-CoV- 2-infected AD individuals shared 410 upregulated genes and 269 downregulated genes from 679 expressed genes (Figure 2C and Source data 1). In the HF, we found that the three groups share 211 upregulated genes and 148 downregulated genes from 359 differentially expressed genes (Figure 2D and Source data 2).\n\nPathway activation of SARS-CoV-2 and AD groups\n\nIPA was employed to further characterize canonical pathways in AD, SARS-CoV-2, and SARS-CoV-2-infected AD groups compared to the neurological controls. Within the cortical BA9 region (Figure 3A), for example, several pathways, including neuroinflammation, TREM1, and cell senescence, show increased activation in the AD, SARS-CoV-2, and SARS-CoV-2-infected AD groups. TREM1 signaling, the most highly activated pathway in this dataset (Figure 3A and B), is expressed primarily on myeloid cells, such as macrophages and microglia, and is involved in pro-inflammatory immune responses (de Oliveira Matos et al., 2020). Although age-associated cellular senescence (Figure 3A) is a natural process where telomeres shorten over time, this process also occurs during cellular stress due to inflammation, including that caused by viral infections, leading to a senescence-associated secretory phenotype such as metalloproteinases (MMPs), and inflammatory cytokines (Lee et al., 2021; Coppé et al., 2010). Another pathway of interest, SNARE, shows decreased activation in the AD and SARS-CoV-2 groups (Figure 3A), with the most significant reduction seen in the SARS-CoV-2-infected AD cases group. SNARE proteins play an essential role in neurotransmitter release, and altered function is implicated in the pathophysiology of neurodegenerative diseases such as AD, where SNARE proteins affect β-amyloid (Aβ) accumulation and cytoplasmic transport of neurofibrillary tangles (Margiotta, 2021).\n\nWithin the HF (Figure 4A), for example, interleukin-8 (IL-8) another neuroinflammatory pathway, and ciliary neurotrophic factor (CNTF) signaling is upregulated in AD, SARS-CoV-2, and SARS-CoV- 2-infected AD groups, while cAMP response element-binding protein (CREB) is also upregulated in the SARS-CoV-2 groups but downregulated in AD-only (Figure 4A). IL-8 has several important roles, including endothelial cell migration and chemoattraction of neutrophils (Manda-Handzlik and\n\nDemkow, 2019). One way IL-8 aids cell migration is by enhancing the expression of molecules such as MMP-2, MMP-9, involved in BBB integrity and induction of neuronal apoptosis, and VEGF-A, involved in vascular permeability and angiogenesis, thus having a potential effect on vascular damage (Lugano et al., 2020; Jian et al., 2018; Licht and Keshet, 2013). CNTF signaling aids in the prevention of neuronal degeneration after injury and is neuroprotective in diseases such as multiple sclerosis (MS) and amyotrophic lateral sclerosis (ALS) (Pasquin et al., 2015). Interestingly, CREB signaling modulates processes in consolidating memory and information processing and is inhibited in AD (Amidfar et al., 2020). Consistent with these findings, we also see a reduction in CREB signaling in the AD individuals; however, this effect is reversed in SARS-CoV-2-infected AD individuals in the HF. It is important to note that TREM1 signaling is upregulated in two of the three sample groups (SARS-CoV-2 and SARS-CoV-2-infected AD cases), but no predictions for this pathway occur in the AD group. As such, this pathway is not included in the analysis within the HF (Figure 4A and B).\n\nAdditionally, upregulation of integrin signaling and nerve growth factor (NGF) signaling occur in both cortical BA9 and HF tissue (Figures 3B and 4B) in all SARS-CoV-2, AD and SARS-CoV-2 infected AD groups. Neuronal function shown by the upregulation of NGF signaling is critical for the survival of neurons, and alterations of NGF signaling has been implicated in neurodegenerative disorders such as AD (Eu et al., 2021). Integrin signaling is used for a diverse array of functions within the CNS via cell-to-cell and cell-to-extracellular matrix interactions (Ikeshima-Kataoka et al., 2022).\n\nRegulation of inflammatory microglia responses in cortical BA9 and HF\n\nRegion-matched formalin-fixed paraffin-embedded (FFPE) tissue from the contralateral hemisphere of cortical BA9 and HF used for transcriptional studies underwent immunohistochemical (IHC) analysis for evidence of microglial activation (Iba-1), the presence of SARS-CoV-2 (SARS-CoV-2 nucleocapsid), and vascular integrity, assessed via hypoxia-inducible factor-1α subunit (HIF-1α).\n\nNeuroinflammation was assessed with a pan-microglia marker, Iba-1, which is upregulated by microglia in the context of inflammation and reveals morphological alterations associated with their activation state (Figure 5). Compared to neurological controls, microglia in AD, SARS-CoV-2, and SARS-CoV-2-infected AD cases are more numerous and display an activated phenotype, with retracted, thickened processes and enlarged somas (Figure 5A–D). Microglia also appear to accumulate around blood vessels in the context of AD and SARS-CoV-2 groups but not in unaffected neurological controls brain (Figure 5E–H), suggesting that factors at the level of the BBB may participate in microglial activation. Microglial nodules, which are commonly observed in neuroinflammatory disease, were seen in all conditions but appeared larger and more frequently in infection compared to AD-only and controls (Figure 5I–L). When detectable, SARS-CoV-2 appears to be restricted to the endothelium (Figure 5G, H, K and L) and did not colocalize with Iba-1 or glial fibrillary acidic protein (GFAP; data not shown), suggesting that neither microglia nor astrocytes harbor productive virus. Nonbiased quantitation revealed an overall increase in the number of microglia in the HF and cortical BA9 of patients with AD, SARS-CoV-2, and SARS-CoV-2-infected AD cases. A statistically significant increase in the number of microglia occurs in AD alone in the HF and SARS-CoV-2-infected AD cases in both the HF and cortical BA9 (Figure 5M and O). An increase in the frequency of nodular lesions was seen with SARS-CoV-2 infection, with and without AD, in both brain regions assessed. However, a statistically significant increase in nodular lesions is present in SARS-CoV-2-infected AD cases (Figure 5P–R).\n\nRegulation of vascular damage using hypoxia-inducible factor-1α (HIF- 1α) detection Tissues were further assessed for possible hypoxia by IHC using an antibody against the α subunit of HIF-1, which is stabilized under hypoxic conditions. Upregulation and stabilization of HIF-1α are most pronounced in the context of SARS-CoV-2 infection, regardless of AD status in cortical BA9 (Figure 6A–D) and HF (Figure 6E–H). Nonbiased area positivity quantitation revealed that HIF-1α is only slightly elevated in cortical BA9 of AD patients compared to age-matched neurological controls (Figure 6J). In contrast, a greater increase occurs in the HF from SARS-CoV-2 individuals, with and without AD. SARS-CoV-2 only samples showed a significant increase in HIF-1α of cortical BA9 compared to controls (Figure 6I–K).\n\nDiscussion\n\nThe finding from our study suggests that SARS-CoV-2 and AD-infected individuals share similar alterations of regulatory patterns of immune-inflammatory pathways and pathways involved with cognition as suggested by recent meta-analyses showing shared neuroinflammation and microvascular injury, in particular AD and SARS-CoV-2-infected individuals (Zhou et al., 2021). Additionally, Zhou and colleagues found a significant overlap in cerebrospinal fluid (CSF) monocytes and markers in AD and COVID-19, which also occurs in our dataset (Zhou et al., 2021). The similarities of transcriptional profiles and cellular pathophysiology in SARS-CoV-2 and SARS-CoV-2-infected individuals support the potential role of SARS-CoV-2 infection on the CNS, leading to neuro-PASC symptoms such as brain fog and memory loss.\n\nNotably, our study identifies similar neuroinflammatory profiles in SARS-CoV-2, AD, and AD SARS-CoV-2-infected individuals at the transcriptional and cellular levels in both the cortical BA9 and HF brain regions. This suggests that SARS-CoV-2 generates a similar neuroinflammatory environment in neurodegenerative disorders like AD. This was highlighted by the regulation of TREM1, neuroinflammation, and cellular senescence/inflammatory pathways present in all groups and further established by the widespread microglial activation seen in AD and SARS-CoV-2-infected AD cases, and in particular, the nodular formation seen in SARS-CoV-2-infected AD cases. Microglia nodule formation is present in some neurodegenerative diseases, such as MS, and viral infections, such as herpes simplex virus (HSV) and human immunodeficiency virus (HIV) (Varet et al., 2016). A potentially compounding finding is the nodular formation that is initially characterized by abundant presence of activated microglia and innate immune factors leading to Toll-like receptor (TLR) signaling and upregulations of inflammasome genes, leading to T cell stimulation and ultimately the destruction of neurons (Tröscher et al., 2019). This may be of particular concern in the SARS-CoV-2-infected AD cases, where we primarily observe increased nodular lesions. This suggests that SARS-CoV-2 further promotes neuroinflammation in AD, which likely advances the progression and severity of CNS disease in these individuals. Interestingly, a large retrospective study of patients 104 years or older revealed that patients with SARS-CoV-2 were at an increased risk for a new AD diagnosis within a year of their SARS-CoV-2 diagnosis, with the most significant risk seen among those 85 years and older (Wang et al., 2022). This may underscore the critical role of preexisting inflammation in the brain, which is seen in the context of ‘normal’ aging, in promoting or advancing AD progression.\n\nOur findings also support the notion that SARS-CoV-2 may cause cognitive deficits via regulation of pathways associated with cognition and neuroinflammation. Here, we show changes in the transcriptional regulation of SNARE and NGF pathways, suggesting impaired neuronal health and function, presumably negatively impacting cognitive function. We also observed potential damage to the vasculature via increased regulation of HIF-1α, integrin signaling, and IL-8 signaling. It is important to note the possibility of vascular damage due to ventilation prior to death in SARS-CoV-2-infected individuals; however, vascular damage by SARS-CoV-2, as assessed by HIF-1α, is observed in non-human primates that were euthanized at designated end-of-life time points precluding breathing intervention in every population and setting (Rutkai et al., 2022). These findings may point to a possible route for lymphocyte transmigration following chemoattractant gradients such as IL-8 and enhancement of MMPs and VEGF, which are aided by integrins such as cellular adhesion molecules such as ICAM-1 and are implicated with inflammatory signal transduction (Patarroyo et al., 1990; Bui et al., 2020). This process leads to T cell activation, which may be responsible for the observed inflammatory environment. Our transcriptional data showed an abundant upregulation of TLRs (TLRs 1, 5, 7, and 8) related to the inflammasome. Further analysis of this dataset also indicated the potential role for T cells through IL-7 pathway activation and CD86 upregulation; however, we did not confirm changes in the number of T cells, and no evidence of leukocyte infiltration into the CNS compartment was observed in any disease state in this investigation. Future studies will be required to determine the role of leukocytes in the observed pathophysiology.\n\nAlthough neuroinflammation and vascular injury were prominent features of SARS-CoV-2 and SARS-CoV-2-infected AD cases brain pathology, the direct role of the virus is unclear. We did detect SARS-CoV-2 nucleocapsid in some SARS-CoV-2 brain tissues that appear to be restricted to the vasculature. This finding is supported by other studies suggesting that SARS-CoV-2 is sporadically present in brain tissue (Krämer et al., 2014). Importantly, we only investigated CNS regions with the greatest significance in AD. These regions may be less prone to SARS-CoV-2 infection than others, such as the olfactory bulb and tract, where olfactory neurons are proposed to be infected through viral spread from olfactory epithelium (Burks et al., 2021). Our findings of the viral nucleocapsid limited to the endothelium suggest the hematological spread of SARS-CoV-2 to the CNS that may not extend to the neurons in the cortical BA9 and HF yet is still capable of inducing widespread inflammation in the brain. Even in the absence of a detectable virus in the neurons or neural cells, SARS-CoV-2 may impact cognitive dysfunction through TREM1 activation of the NLRP3 inflammasome and subsequent pyroptosis, where pro-caspase 1 cleavage and subsequent cleavage and activation of IL-1β, IL-18, and gasmerdin D pore formation in cells ultimately lead to pyroptosis (Parodi-Rullán et al., 2021; Xu et al., 2021). NLRP3 activation is reported in AD and COVID-19, and is suggested by the formation of microglial nodules demonstrated in these cases (Lünemann et al., 2021; Herman and Pasinetti, 2018; Campbell et al., 2021). SARS-CoV-2 is not the first virus to be implicated in cognitive dysfunction. This is a facet shown with other viruses such as HIV, HSV, and Epstein–Barr virus (EBV) (Smail and Brew, 2018; Sun et al., 2022). While this study cannot predict the outcome of disease progression in COVID-19 survivors, the present findings that SARS-CoV-2 infection can recapitulate AD-type transcriptional and cellular neuroinflammatory patterns among other in a very short time frame make it critical to understand how SARS-CoV-2 impacts long-term cognition. The increase in nodular formation present in SARS-CoV-2-infected AD cases tissue also demonstrates a critical need to functionally determine potentially synergistic effects of AD and SARS-CoV-2. This is underscored by the prevalence of cognitive dysfunction seen among neuro-PASC patients, making it imperative that the link between SARS-CoV-2 and cognition be intensively investigated to identify potential therapeutic strategies for halting cognitive decline in these individuals. Collectively, our results demonstrate several key areas of overlap between the neurological effects of SARS-CoV-2 infection and AD. These findings may help inform decision-making regarding therapeutic treatments in patients with COVID-19, especially those who may be at increased risk of developing AD.\n\nMaterials and methods\n\nPatients Brain tissue was collected from the cortical BA9 and HF of four SARS-CoV-2 cases, four AD cases, and four non-SARS-CoV-2 or AD autopsies. With each case, one hemisphere of the brain was FFPE and the other hemisphere was frozen to generate fresh-frozen blocks. FFPE tissue was used for microscopy, and region-matched fresh-frozen tissue was used for sequencing. Tissue was collected in accordance with IRB-approved guidelines and regulations by the Brain Bank at Mount Sinai, and clinical data, including cardiovascular and neurological conditions, were collected by the Department of Neurology.\n\nRNA sequencing\n\nSamples collected and homogenized in RNAzol RT (Molecular Research Center, Inc) were then processed using the Zymo Clean and concentrator Kit (Zymo Research) to collect total RNA following the manufacturer’s protocols. cDNA library construction and sequencing were conducted by Genewiz (Azenta Life Sciences). Total RNA samples were quantified using Qubit 2.0 Fluorometer (Life Technologies, Carlsbad, CA), and RNA integrity was checked with 4200 TapeStation (Agilent Technologies, Palo Alto, CA). Samples were treated with TURBO DNase (Thermo Fisher Scientific, Waltham, MA) to remove DNA contaminants, followed by rRNA depletion using QIAseq FastSelect−rRNA HMR kit (QIAGEN, Germantown, MD), conducted following the manufacturer’s protocol. RNA sequencing libraries were constructed with the NEBNext Ultra II RNA Library Preparation Kit for Illumina by following the manufacturer’s recommendations, where enriched RNAs were fragmented for 15 min at 94°C. First-strand and second-strand cDNA were subsequently synthesized. cDNA fragments were end repaired and adenylated at 3′ ends, and universal adapters were ligated to cDNA fragments, followed by index addition and library enrichment with limited cycle PCR. Sequencing libraries were validated using the Agilent Tapestation 4200 (Agilent Technologies) and quantified using Qubit 2.0 Fluorometer (Thermo Fisher Scientific), as well as by quantitative PCR (KAPA Biosystems, Wilmington, MA). The sequencing libraries were multiplexed and clustered on one lane of a flowcell. After clustering, the flowcell was loaded on the Illumina HiSeq 4000 instrument according to the manufacturer’s instructions. The samples were sequenced using a 2 × 150 Pair-End (PE) configuration.\n\nImage analysis and base calling were conducted using the HiSeq Control Software (HCS). Raw sequence data (.bcl files) generated from Illumina HiSeq was converted into FASTQ files and de-multiplexed using Illumina’s bcl2fastq 2.17 software. One mismatch was allowed for index sequence identification. After investigating the quality of the raw data, sequence reads were trimmed to remove possible adapter sequences and nucleotides with poor quality using Trimmomatic v.0.36. The trimmed reads were mapped to the GRCh38 reference genome available on ENSEMBL using the STAR aligner v.2.5.2b. BAM files were generated as a result of this step. Unique gene hit counts were calculated by using feature Counts from the Subread package v.1.5.2. Only unique reads that fell within the exon regions were counted.\n\nImmunohistochemistry\n\nTissue was cut at 6 µm on a Leica Microtome for immunohistochemistry that was performed on FFPE brain sections as described previously (Tavazzi et al., 2014). Iba-1 staining was conducted on a Ventana Benchmark using OptiView and UltraView detection kits provided by Roche (Roche Molecular Systems, Inc). Sections were deparaffinized in xylene and rehydrated through an ethanol series ending in distilled water. Heat-mediated antigen retrieval was carried out in a vacuum oven with Tris-EDTA buffer (10 mM Trizma base, 1 mM EDTA, 0.05% Tween 20, pH 9.0) or sodium citrate buffer (10 mM sodium citrate, 0.05% Tween 20, pH 6.0). All washes were performed using Tris buffered saline containing Tween 20 (TTBS; 0.1 M Trizma base, 0.15 M NaCl, 0.1% Tween 20, pH 7.4). Following antigen retrieval, tissues were blocked with 20% normal horse serum. Titrated primary antibodies included anti-HIF-1α (mouse mgc3, 1:400, Abcam, ab16066). Tissues were incubated with primary antibody overnight at room temperature and detected using the appropriate biotinylated secondary antibody (1:200, Vector Labs, BA-1100, BA-2000) and alkaline phosphatase-Vector Red according to the manufacturer’s instructions (Vector Labs). Tissues were counterstained with Mayer’s hematoxylin and coverslipped.\n\nImaging and quantitation\n\nSlides were scanned with the Axio Scan.Z1 digital slide scanner (Zeiss). Brightfield images were acquired using HALO (Indica Labs, v3.4.2986.151). Figures were created in Photoshop (Adobe, v23.5.1) by brightness and contrast adjustments applied to the entire image.\n\nThreshold and multiplex analyses were performed with HALO algorithms for nonbiased quantitation of proteins of interest without processing, as described previously (Burks et al., 2021). For microglia quantitation, hematoxylin-stained nuclei were used to quantify the total number of cells and those with Vector Red intensity above a rigorous threshold (Iba-1+). Microglia frequency is reported as the percentage of total nuclei in the tissue section assessed for each individual subject. To assess frequency of nodular lesions, all Iba-1-stained tissues were viewed in HALO and nodular lesions made up of three or more Iba-1+ microglia in contact with one another were counted as a single nodule. The total number of nodules for each tissue is reported per tissue area for each individual patient. Quantitation of HIF-1α was performed using an area quantification algorithm for Vector Red intensity. Annotations were drawn to outline the tissue and exclude empty spaces and glass. The annotated area was analyzed for overall quantity of Vector Red positivity per micron of tissue and reported for each individual patient. Two-tailed Mann–Whitney U-tests were performed with GraphPad Prism software, v9.3.1. Data are expressed as mean ± SEM. p-Values≤0.05 are considered significant.\n\nBioinformatics data access and analysis\n\nSample similarity was assessed with PCA on VST-transformed expression values. Genes were filtered to remove lowly expressed genes, defined as fewer than five samples showing a minimum read count of 1 read, prior to performing differential analysis with DESeq2, in R (4.2.0; Varet et al., 2016). The transcriptional profiles of SARS-CoV-2 and AD postmortem cases from the cortical BA9 and HF were assessed by pairwise comparison to the neurologically healthy control cases. Multiple testing correction was performed for all comparisons; however, due to the relatively small number of genes surpassing a threshold of 0.05, a nominal p-value was used in the selection of differential genes for all downstream analyses. Genes were assigned as differentially expressed if the nominal p-value was <0.05 and the absolute log2FC exceeded 1. An additional round of differential expression testing was performed using a model containing covariates (COVID status, Alzheimer’s status, gender, and brain region) to extract the transcriptional effects of the individual covariates. Biological pathways and key regulators impacted by disease were identified using QIAGEN IPA (Sullivan and Fischer, 2021). Genes with a threshold of p<0.05 were used as input for IPA. The relative similarities of transcriptional changes in the DESeq2 comparisons were assessed using Rank-rank hypergeometric overlap (RRHO2) analysis.\n\nAcknowledgements\n\nThe authors thank the Neuropathology Brain Bank and Research CoRE of the Icahn School of Medicine at Mount Sinai for postmortem samples. Giulio M Pasinetti holds a Senior VA Career Scientist Award. The views expressed in this article are those of the authors and do not necessarily reflect the position or policy of the Department of Veterans Affairs or the United States government. The research was supported by Unrestricted Funds and Altschul Foundation (GMP) National Institutes of Health Office of Research Infrastructure Programs grant P51OD01110 (TF) The content is solely the responsibility of the authors and does not necessarily represent the official views of the National Institutes of Health and Veteran Administration\n\nAdditional files\n\nSupplementary files • Supplementary file 1. Table 1. Demographics of postmortem cases. Numbers presented are the average per group and standard deviation PMI is postmortem interval (n = 4); OtD is onset to death. ABC is a multipoint measurement where A is a measure of amyloid β deposition, B is a measure of neurofibrillary degeneration based on the Braak score, and C is scored based on neuritic plaques outlined by the Consortium to Establish a Registry for Alzheimer’s Disease diagnosis (CERAD).\n\n• Supplementary file 2. Table 2. Blood chemistry and symptoms. Symptoms are presented as a percentage of the group (n = 4); chemistry numbers are presented as the average per group and standard deviation, based on maximum values collected for single values and the minimum and maximum range collected in cells with two values. Bolded values are implicated as indicators of severe SARS-CoV-2 outcomes; ALP, alkaline phosphatase; ALT, alanine aminotransferase; AST, aspartate transferase; CRP, c-reactive protein; ESR, erythrocyte sedimentation; INR, international normalized ratio; LDH, lactate dehydrogenase; WBC, white blood count; BUN, blood urea nitrogen.\n\n• Source data 1. Based on the DESeq, and filtered using IPA, genes that were expressed in all SARS-CoV-2 and AD in cortical BA9 datasets with an absolute expression of 0.0001 or greater and p<0.05 are presented.\n\n• Source data 2. Based on the DESeq, and filtered using IPA, genes that were expressed in all SARS-CoV-2 and AD in HF datasets with an absolute expression of 0.0001 or greater and p<0.05 are presented.\n\nData availability Data generated for this study are accessible through NCBI's Gene Expression Omnibus (GEO) at GSE236562.\n\nThe following dataset was generated:",
+    "sections": [
+      {
+        "title": "Abstract",
+        "text": "Abstract\n\nInfection with the etiological agent of COVID-19, SARS-CoV-2, appears capable of impacting cognition in some patients with post-acute sequelae of SARS-CoV-2 (PASC). To evaluate neuropathophysiological consequences of SARS-CoV-2 infection, we examine transcriptional and cellular signatures in the Brodmann area 9 (BA9) of the frontal cortex and the hippocampal formation (HF) in SARS-CoV-2, Alzheimer’s disease (AD), and SARS-CoV-2-infected AD individuals compared to age- and gender-matched neurological cases. Here, we show similar alterations of neuroinflammation and blood–brain barrier integrity in SARS-CoV-2, AD, and SARS-CoV-2-infected AD individuals. Distribution of microglial changes reflected by the increase in Iba-1 reveals nodular morphological alterations in SARS-CoV-2-infected AD individuals. Similarly, HIF-1α is significantly upregulated in the context of SARS-CoV-2 infection in the same brain regions regardless of AD status. The finding may help in informing decision-making regarding therapeutic treatments in patients with neuro-PASC, especially those at increased risk of developing AD.\n\n",
+        "start": 0,
+        "end": 1124
+      },
+      {
+        "title": "Editor's evaluation",
+        "text": "Editor's evaluation\n\nThis study compares neuropathological changes in postmortem brain samples from patients with SARS-CoV-2 infection, Alzheimer's disease, both SARS-CoV-2 and Alzheimer's disease, and demographically matched controls. This is an important comparison that expands information on SARS-CoV-2 effects in the brain. Solid results are presented to support the main claims.\n\n",
+        "start": 1124,
+        "end": 1510
+      },
+      {
+        "title": "Introduction",
+        "text": "Introduction\n\nThe consequences of SARS-CoV-2 infection have been well studied in the respiratory system; however, much less information is available regarding the neurological consequences of infection (Flerlage et al., 2021). Previous evidence tentatively suggests that SARS-CoV-2 may be neuroinvasive, leading to a vast array of neurological symptoms, including anosmia, ageusia, cognitive functions, and cerebrovascular disorders in every population and setting (Desforges et al., 2014; Hingorani et al., 2022). Neurological complications of SARS-CoV-2 infection manifest with increased severity related to age and shared medical history of metabolic disorders and other vascular risk factors (Divani et al., 2020; Chou et al., 2021; Sullivan and Fischer, 2021). Some strains within the coronavirus family are implicated in neuronal degeneration, such as HCoV-OC43, which can lead to glutamate excitotoxicity and neuronal degradation in mice through cytokine production (Jacomy et al., 2010; Brison et al., 2011). Because SARS-CoV-2 is a new addition to the coronavirus family, less information exists regarding the potential long-term neurological complications that may impact COVID-19 survivors. This may be especially concerning for aging individuals with increased vulnerability to developing age-related neurodegenerative diseases.\n\nWhile it is currently unknown whether neurological manifestations of SARS-CoV-2 infection arise solely from systemic inflammation in the periphery or brain infiltration, it is well established that secretion of cytokines and chemokines from the periphery allows the recruitment of leukocytes and other cells to specific tissues (Bauer et al., 2022; Prinz and Priller, 2017). This type of immune response is speculated to accelerate blood–brain barrier (BBB) disruption and may potentially damage cells within the central nervous system (CNS) (de Erausquin et al., 2021). Such effects are similar to neuropathology seen in Alzheimer’s disease (AD) and other neurodegenerative disorders, where leukocyte infiltration, BBB dysregulation, and microglial activation are observed. Thus, it is possible that SARS-CoV-2 may accelerate the onset and severity of cognitive decline or AD in susceptible individuals (Meinhardt et al., 2021; Mhatre et al., 2015). Understanding the impact of SARS-CoV-2 infection on the CNS and subsequent mechanisms associated with cognition is particularly pressing, given the number of individuals presenting with neurological symptoms of post-acute sequelae of SARS-CoV-2 (neuro-PASC), colloquially termed ‘long-COVID’ (Shanley et al., 2022; Davis et al., 2021).\n\nHere, we investigate the potential brain mechanisms associated with SARS-CoV-2 infection in SARS-CoV-2, AD, and SARS-CoV-2-infected AD individuals by comparing transcriptional and cellular responses in the cortical Brodmann area 9 (cortical BA9) of the frontal cortex and the hippocampal formation (HF); two brain regions deeply involved in cognitive and emotional functions, to age- and gender-matched neurological cases. Here, we report evidence suggesting that SARS-CoV-2 infection promotes similar pathophysiological features found in AD cortical BA9 and HF regions and possibly exacerbate preexisting AD pathophysiology.\n\n",
+        "start": 1510,
+        "end": 4767
+      },
+      {
+        "title": "Results",
+        "text": "Results\n\nDemographics of human postmortem cases We examined postmortem tissue samples of cortical BA9 of the frontal cortex and the HF collected by the Neuropathology Brain Bank and Research CoRE at Mount Sinai from four different groups:\n\nSARS-CoV-2, AD, and AD individuals who became infected by SARS-CoV-2, compared to age- and gender-matched neurological cases (Supplementary file 1). Each group comprises an equal number of age-matched male and female patients, ensuring equal distribution with an average age of 79.6 among groups. Medical records indicate that all AD individuals have postmortem ABC scores indicative of AD (Supplementary file 2), where A is a measure of amyloid β deposition, B is a measure of neurofibrillary degeneration based on the Braak and Brook score, and C is scored based on neuritic plaques outlined by the Consortium to Establish a Registry for Alzheimer’s Disease diagnosis (CERAD) (Lampart et al., 2022). SARS-CoV-2 infection was confirmed by diagnostic polymerase chain reaction (PCR). Within the SARS-CoV-2 and SARS-CoV-2-infected AD groups, all patients were symptomatic, admitted to the hospital, and received oxygen supplementation by ventilator or cannula with disease onset to death occurring on average 27 d after diagnosis for patients with SARS-CoV-2 only and 32 d after diagnosis in infected AD patients (Supplementary files 1 and 2). Blood specimens were collected and indicate several laboratory features of severe COVID-19 (Supplementary file 2), such as increased C-reactive protein (CRP) and interleukin-6 (IL-6) universally, in all cases (Lampart et al., 2022).\n\nGene expression of SARS-CoV-2 and AD groups compared to control cases in cortical BA9 and HF The transcriptional profiles of AD and SARS-COV-2-infected postmortem cases from the cortical BA9 were assessed by pairwise comparison to determine gene expression compared to neurological control cases (Figure 1A–C). Volcano plot distributions of gene transcripts of AD and SARS-CoV-2 cases compared to neurological controls (Figure 1A and B) both reveal 39,901 genes that were used to determine differentially expressed genes based on a nominal p-value<0.01 and an absolute log2 fold-change (log2 FC) > 1. In the AD group, 287 genes were upregulated and 131 genes were downregulated (Figure 1D). In the SARS-CoV-2 group, 179 genes were upregulated and 426 genes were downregulated (Figure 1D). The volcano plot distribution of gene transcripts of SARS-CoV-2-infected AD cases compared to neurological controls (Figure 1C) revealed 38,021 genes and showed 813 genes were upregulated and 611 genes were downregulated using the same cutoff for significance (Figure 1D).\n\nTranscriptional profiles of AD and SARS-COV-2 cases from the HF were assessed (p<0.01 and log2 FC > 1) to determine gene expression compared to neurological control cases (Figure 1E–G) using 39,901 genes for AD and SARS-CoV-2 cases (Figure 1E and F), and 35,527 genes for the SARS-CoV- 2-infected AD cases (Figure 1G). In the AD group, 304 genes were upregulated and 214 genes were downregulated (Figure 1H). In the SARS-CoV-2 group, 230 genes were upregulated and 464 genes were downregulated (Figure 1H). Additionally, in the SARS-CoV-2-infected AD group, 466 genes were upregulated and 582 genes were downregulated (Figure 1H).\n\n",
+        "start": 4767,
+        "end": 8079
+      },
+      {
+        "title": "Similarity of gene expression in cortical BA9 and HF regions",
+        "text": "Similarity of gene expression in cortical BA9 and HF regions\n\nIn order to determine the relative similarity of gene expression changes induced by disease states, a collection of genes known to be differentially expressed due to either SARS-CoV-2 infection or AD were examined across three individual differential comparisons (Figure 2A and B). While all three comparisons (AD versus control, SARS-CoV-2 versus control, and SARS-CoV-2-infected AD versus control) showed generally the same trends, the AD and SARS-CoV-2-infected AD comparisons were strikingly similar in both BA9 (Figure 2A) and HF (Figure 2B).\n\nRank-rank hypergeometric overlap (RRHO) analysis comparing SARS-CoV-2 and AD cases also reveals a positive correlation between the AD and SARS-CoV-2 groups in the cortical BA9 (Figure 2— figure supplement 1) as well as in the HF (Figure 2—figure supplement 2), although to a lesser extent than in the cortical BA9. We then filtered genes using Ingenuity Pathway Analysis software (IPA) to determine the number of shared differentially regulated genes among the AD, SARS-CoV-2, and SARS-CoV-2-infected AD groups within each tissue region (p<0.05 and absolute z > 0.0001). Comparing these shared genes within the cortical BA9, we find that AD, SARS-CoV-2, and SARS-CoV- 2-infected AD individuals shared 410 upregulated genes and 269 downregulated genes from 679 expressed genes (Figure 2C and Source data 1). In the HF, we found that the three groups share 211 upregulated genes and 148 downregulated genes from 359 differentially expressed genes (Figure 2D and Source data 2).\n\n",
+        "start": 8079,
+        "end": 9667
+      },
+      {
+        "title": "Pathway activation of SARS-CoV-2 and AD groups",
+        "text": "Pathway activation of SARS-CoV-2 and AD groups\n\nIPA was employed to further characterize canonical pathways in AD, SARS-CoV-2, and SARS-CoV-2-infected AD groups compared to the neurological controls. Within the cortical BA9 region (Figure 3A), for example, several pathways, including neuroinflammation, TREM1, and cell senescence, show increased activation in the AD, SARS-CoV-2, and SARS-CoV-2-infected AD groups. TREM1 signaling, the most highly activated pathway in this dataset (Figure 3A and B), is expressed primarily on myeloid cells, such as macrophages and microglia, and is involved in pro-inflammatory immune responses (de Oliveira Matos et al., 2020). Although age-associated cellular senescence (Figure 3A) is a natural process where telomeres shorten over time, this process also occurs during cellular stress due to inflammation, including that caused by viral infections, leading to a senescence-associated secretory phenotype such as metalloproteinases (MMPs), and inflammatory cytokines (Lee et al., 2021; Coppé et al., 2010). Another pathway of interest, SNARE, shows decreased activation in the AD and SARS-CoV-2 groups (Figure 3A), with the most significant reduction seen in the SARS-CoV-2-infected AD cases group. SNARE proteins play an essential role in neurotransmitter release, and altered function is implicated in the pathophysiology of neurodegenerative diseases such as AD, where SNARE proteins affect β-amyloid (Aβ) accumulation and cytoplasmic transport of neurofibrillary tangles (Margiotta, 2021).\n\nWithin the HF (Figure 4A), for example, interleukin-8 (IL-8) another neuroinflammatory pathway, and ciliary neurotrophic factor (CNTF) signaling is upregulated in AD, SARS-CoV-2, and SARS-CoV- 2-infected AD groups, while cAMP response element-binding protein (CREB) is also upregulated in the SARS-CoV-2 groups but downregulated in AD-only (Figure 4A). IL-8 has several important roles, including endothelial cell migration and chemoattraction of neutrophils (Manda-Handzlik and\n\nDemkow, 2019). One way IL-8 aids cell migration is by enhancing the expression of molecules such as MMP-2, MMP-9, involved in BBB integrity and induction of neuronal apoptosis, and VEGF-A, involved in vascular permeability and angiogenesis, thus having a potential effect on vascular damage (Lugano et al., 2020; Jian et al., 2018; Licht and Keshet, 2013). CNTF signaling aids in the prevention of neuronal degeneration after injury and is neuroprotective in diseases such as multiple sclerosis (MS) and amyotrophic lateral sclerosis (ALS) (Pasquin et al., 2015). Interestingly, CREB signaling modulates processes in consolidating memory and information processing and is inhibited in AD (Amidfar et al., 2020). Consistent with these findings, we also see a reduction in CREB signaling in the AD individuals; however, this effect is reversed in SARS-CoV-2-infected AD individuals in the HF. It is important to note that TREM1 signaling is upregulated in two of the three sample groups (SARS-CoV-2 and SARS-CoV-2-infected AD cases), but no predictions for this pathway occur in the AD group. As such, this pathway is not included in the analysis within the HF (Figure 4A and B).\n\nAdditionally, upregulation of integrin signaling and nerve growth factor (NGF) signaling occur in both cortical BA9 and HF tissue (Figures 3B and 4B) in all SARS-CoV-2, AD and SARS-CoV-2 infected AD groups. Neuronal function shown by the upregulation of NGF signaling is critical for the survival of neurons, and alterations of NGF signaling has been implicated in neurodegenerative disorders such as AD (Eu et al., 2021). Integrin signaling is used for a diverse array of functions within the CNS via cell-to-cell and cell-to-extracellular matrix interactions (Ikeshima-Kataoka et al., 2022).\n\n",
+        "start": 9667,
+        "end": 13455
+      },
+      {
+        "title": "Regulation of inflammatory microglia responses in cortical BA9 and HF",
+        "text": "Regulation of inflammatory microglia responses in cortical BA9 and HF\n\nRegion-matched formalin-fixed paraffin-embedded (FFPE) tissue from the contralateral hemisphere of cortical BA9 and HF used for transcriptional studies underwent immunohistochemical (IHC) analysis for evidence of microglial activation (Iba-1), the presence of SARS-CoV-2 (SARS-CoV-2 nucleocapsid), and vascular integrity, assessed via hypoxia-inducible factor-1α subunit (HIF-1α).\n\nNeuroinflammation was assessed with a pan-microglia marker, Iba-1, which is upregulated by microglia in the context of inflammation and reveals morphological alterations associated with their activation state (Figure 5). Compared to neurological controls, microglia in AD, SARS-CoV-2, and SARS-CoV-2-infected AD cases are more numerous and display an activated phenotype, with retracted, thickened processes and enlarged somas (Figure 5A–D). Microglia also appear to accumulate around blood vessels in the context of AD and SARS-CoV-2 groups but not in unaffected neurological controls brain (Figure 5E–H), suggesting that factors at the level of the BBB may participate in microglial activation. Microglial nodules, which are commonly observed in neuroinflammatory disease, were seen in all conditions but appeared larger and more frequently in infection compared to AD-only and controls (Figure 5I–L). When detectable, SARS-CoV-2 appears to be restricted to the endothelium (Figure 5G, H, K and L) and did not colocalize with Iba-1 or glial fibrillary acidic protein (GFAP; data not shown), suggesting that neither microglia nor astrocytes harbor productive virus. Nonbiased quantitation revealed an overall increase in the number of microglia in the HF and cortical BA9 of patients with AD, SARS-CoV-2, and SARS-CoV-2-infected AD cases. A statistically significant increase in the number of microglia occurs in AD alone in the HF and SARS-CoV-2-infected AD cases in both the HF and cortical BA9 (Figure 5M and O). An increase in the frequency of nodular lesions was seen with SARS-CoV-2 infection, with and without AD, in both brain regions assessed. However, a statistically significant increase in nodular lesions is present in SARS-CoV-2-infected AD cases (Figure 5P–R).\n\nRegulation of vascular damage using hypoxia-inducible factor-1α (HIF- 1α) detection Tissues were further assessed for possible hypoxia by IHC using an antibody against the α subunit of HIF-1, which is stabilized under hypoxic conditions. Upregulation and stabilization of HIF-1α are most pronounced in the context of SARS-CoV-2 infection, regardless of AD status in cortical BA9 (Figure 6A–D) and HF (Figure 6E–H). Nonbiased area positivity quantitation revealed that HIF-1α is only slightly elevated in cortical BA9 of AD patients compared to age-matched neurological controls (Figure 6J). In contrast, a greater increase occurs in the HF from SARS-CoV-2 individuals, with and without AD. SARS-CoV-2 only samples showed a significant increase in HIF-1α of cortical BA9 compared to controls (Figure 6I–K).\n\n",
+        "start": 13455,
+        "end": 16493
+      },
+      {
+        "title": "Discussion",
+        "text": "Discussion\n\nThe finding from our study suggests that SARS-CoV-2 and AD-infected individuals share similar alterations of regulatory patterns of immune-inflammatory pathways and pathways involved with cognition as suggested by recent meta-analyses showing shared neuroinflammation and microvascular injury, in particular AD and SARS-CoV-2-infected individuals (Zhou et al., 2021). Additionally, Zhou and colleagues found a significant overlap in cerebrospinal fluid (CSF) monocytes and markers in AD and COVID-19, which also occurs in our dataset (Zhou et al., 2021). The similarities of transcriptional profiles and cellular pathophysiology in SARS-CoV-2 and SARS-CoV-2-infected individuals support the potential role of SARS-CoV-2 infection on the CNS, leading to neuro-PASC symptoms such as brain fog and memory loss.\n\nNotably, our study identifies similar neuroinflammatory profiles in SARS-CoV-2, AD, and AD SARS-CoV-2-infected individuals at the transcriptional and cellular levels in both the cortical BA9 and HF brain regions. This suggests that SARS-CoV-2 generates a similar neuroinflammatory environment in neurodegenerative disorders like AD. This was highlighted by the regulation of TREM1, neuroinflammation, and cellular senescence/inflammatory pathways present in all groups and further established by the widespread microglial activation seen in AD and SARS-CoV-2-infected AD cases, and in particular, the nodular formation seen in SARS-CoV-2-infected AD cases. Microglia nodule formation is present in some neurodegenerative diseases, such as MS, and viral infections, such as herpes simplex virus (HSV) and human immunodeficiency virus (HIV) (Varet et al., 2016). A potentially compounding finding is the nodular formation that is initially characterized by abundant presence of activated microglia and innate immune factors leading to Toll-like receptor (TLR) signaling and upregulations of inflammasome genes, leading to T cell stimulation and ultimately the destruction of neurons (Tröscher et al., 2019). This may be of particular concern in the SARS-CoV-2-infected AD cases, where we primarily observe increased nodular lesions. This suggests that SARS-CoV-2 further promotes neuroinflammation in AD, which likely advances the progression and severity of CNS disease in these individuals. Interestingly, a large retrospective study of patients 104 years or older revealed that patients with SARS-CoV-2 were at an increased risk for a new AD diagnosis within a year of their SARS-CoV-2 diagnosis, with the most significant risk seen among those 85 years and older (Wang et al., 2022). This may underscore the critical role of preexisting inflammation in the brain, which is seen in the context of ‘normal’ aging, in promoting or advancing AD progression.\n\nOur findings also support the notion that SARS-CoV-2 may cause cognitive deficits via regulation of pathways associated with cognition and neuroinflammation. Here, we show changes in the transcriptional regulation of SNARE and NGF pathways, suggesting impaired neuronal health and function, presumably negatively impacting cognitive function. We also observed potential damage to the vasculature via increased regulation of HIF-1α, integrin signaling, and IL-8 signaling. It is important to note the possibility of vascular damage due to ventilation prior to death in SARS-CoV-2-infected individuals; however, vascular damage by SARS-CoV-2, as assessed by HIF-1α, is observed in non-human primates that were euthanized at designated end-of-life time points precluding breathing intervention in every population and setting (Rutkai et al., 2022). These findings may point to a possible route for lymphocyte transmigration following chemoattractant gradients such as IL-8 and enhancement of MMPs and VEGF, which are aided by integrins such as cellular adhesion molecules such as ICAM-1 and are implicated with inflammatory signal transduction (Patarroyo et al., 1990; Bui et al., 2020). This process leads to T cell activation, which may be responsible for the observed inflammatory environment. Our transcriptional data showed an abundant upregulation of TLRs (TLRs 1, 5, 7, and 8) related to the inflammasome. Further analysis of this dataset also indicated the potential role for T cells through IL-7 pathway activation and CD86 upregulation; however, we did not confirm changes in the number of T cells, and no evidence of leukocyte infiltration into the CNS compartment was observed in any disease state in this investigation. Future studies will be required to determine the role of leukocytes in the observed pathophysiology.\n\nAlthough neuroinflammation and vascular injury were prominent features of SARS-CoV-2 and SARS-CoV-2-infected AD cases brain pathology, the direct role of the virus is unclear. We did detect SARS-CoV-2 nucleocapsid in some SARS-CoV-2 brain tissues that appear to be restricted to the vasculature. This finding is supported by other studies suggesting that SARS-CoV-2 is sporadically present in brain tissue (Krämer et al., 2014). Importantly, we only investigated CNS regions with the greatest significance in AD. These regions may be less prone to SARS-CoV-2 infection than others, such as the olfactory bulb and tract, where olfactory neurons are proposed to be infected through viral spread from olfactory epithelium (Burks et al., 2021). Our findings of the viral nucleocapsid limited to the endothelium suggest the hematological spread of SARS-CoV-2 to the CNS that may not extend to the neurons in the cortical BA9 and HF yet is still capable of inducing widespread inflammation in the brain. Even in the absence of a detectable virus in the neurons or neural cells, SARS-CoV-2 may impact cognitive dysfunction through TREM1 activation of the NLRP3 inflammasome and subsequent pyroptosis, where pro-caspase 1 cleavage and subsequent cleavage and activation of IL-1β, IL-18, and gasmerdin D pore formation in cells ultimately lead to pyroptosis (Parodi-Rullán et al., 2021; Xu et al., 2021). NLRP3 activation is reported in AD and COVID-19, and is suggested by the formation of microglial nodules demonstrated in these cases (Lünemann et al., 2021; Herman and Pasinetti, 2018; Campbell et al., 2021). SARS-CoV-2 is not the first virus to be implicated in cognitive dysfunction. This is a facet shown with other viruses such as HIV, HSV, and Epstein–Barr virus (EBV) (Smail and Brew, 2018; Sun et al., 2022). While this study cannot predict the outcome of disease progression in COVID-19 survivors, the present findings that SARS-CoV-2 infection can recapitulate AD-type transcriptional and cellular neuroinflammatory patterns among other in a very short time frame make it critical to understand how SARS-CoV-2 impacts long-term cognition. The increase in nodular formation present in SARS-CoV-2-infected AD cases tissue also demonstrates a critical need to functionally determine potentially synergistic effects of AD and SARS-CoV-2. This is underscored by the prevalence of cognitive dysfunction seen among neuro-PASC patients, making it imperative that the link between SARS-CoV-2 and cognition be intensively investigated to identify potential therapeutic strategies for halting cognitive decline in these individuals. Collectively, our results demonstrate several key areas of overlap between the neurological effects of SARS-CoV-2 infection and AD. These findings may help inform decision-making regarding therapeutic treatments in patients with COVID-19, especially those who may be at increased risk of developing AD.\n\n",
+        "start": 16493,
+        "end": 24034
+      },
+      {
+        "title": "Materials and methods",
+        "text": "Materials and methods\n\nPatients Brain tissue was collected from the cortical BA9 and HF of four SARS-CoV-2 cases, four AD cases, and four non-SARS-CoV-2 or AD autopsies. With each case, one hemisphere of the brain was FFPE and the other hemisphere was frozen to generate fresh-frozen blocks. FFPE tissue was used for microscopy, and region-matched fresh-frozen tissue was used for sequencing. Tissue was collected in accordance with IRB-approved guidelines and regulations by the Brain Bank at Mount Sinai, and clinical data, including cardiovascular and neurological conditions, were collected by the Department of Neurology.\n\n",
+        "start": 24034,
+        "end": 24662
+      },
+      {
+        "title": "RNA sequencing",
+        "text": "RNA sequencing\n\nSamples collected and homogenized in RNAzol RT (Molecular Research Center, Inc) were then processed using the Zymo Clean and concentrator Kit (Zymo Research) to collect total RNA following the manufacturer’s protocols. cDNA library construction and sequencing were conducted by Genewiz (Azenta Life Sciences). Total RNA samples were quantified using Qubit 2.0 Fluorometer (Life Technologies, Carlsbad, CA), and RNA integrity was checked with 4200 TapeStation (Agilent Technologies, Palo Alto, CA). Samples were treated with TURBO DNase (Thermo Fisher Scientific, Waltham, MA) to remove DNA contaminants, followed by rRNA depletion using QIAseq FastSelect−rRNA HMR kit (QIAGEN, Germantown, MD), conducted following the manufacturer’s protocol. RNA sequencing libraries were constructed with the NEBNext Ultra II RNA Library Preparation Kit for Illumina by following the manufacturer’s recommendations, where enriched RNAs were fragmented for 15 min at 94°C. First-strand and second-strand cDNA were subsequently synthesized. cDNA fragments were end repaired and adenylated at 3′ ends, and universal adapters were ligated to cDNA fragments, followed by index addition and library enrichment with limited cycle PCR. Sequencing libraries were validated using the Agilent Tapestation 4200 (Agilent Technologies) and quantified using Qubit 2.0 Fluorometer (Thermo Fisher Scientific), as well as by quantitative PCR (KAPA Biosystems, Wilmington, MA). The sequencing libraries were multiplexed and clustered on one lane of a flowcell. After clustering, the flowcell was loaded on the Illumina HiSeq 4000 instrument according to the manufacturer’s instructions. The samples were sequenced using a 2 × 150 Pair-End (PE) configuration.\n\nImage analysis and base calling were conducted using the HiSeq Control Software (HCS). Raw sequence data (.bcl files) generated from Illumina HiSeq was converted into FASTQ files and de-multiplexed using Illumina’s bcl2fastq 2.17 software. One mismatch was allowed for index sequence identification. After investigating the quality of the raw data, sequence reads were trimmed to remove possible adapter sequences and nucleotides with poor quality using Trimmomatic v.0.36. The trimmed reads were mapped to the GRCh38 reference genome available on ENSEMBL using the STAR aligner v.2.5.2b. BAM files were generated as a result of this step. Unique gene hit counts were calculated by using feature Counts from the Subread package v.1.5.2. Only unique reads that fell within the exon regions were counted.\n\n",
+        "start": 24662,
+        "end": 27208
+      },
+      {
+        "title": "Immunohistochemistry",
+        "text": "Immunohistochemistry\n\nTissue was cut at 6 µm on a Leica Microtome for immunohistochemistry that was performed on FFPE brain sections as described previously (Tavazzi et al., 2014). Iba-1 staining was conducted on a Ventana Benchmark using OptiView and UltraView detection kits provided by Roche (Roche Molecular Systems, Inc). Sections were deparaffinized in xylene and rehydrated through an ethanol series ending in distilled water. Heat-mediated antigen retrieval was carried out in a vacuum oven with Tris-EDTA buffer (10 mM Trizma base, 1 mM EDTA, 0.05% Tween 20, pH 9.0) or sodium citrate buffer (10 mM sodium citrate, 0.05% Tween 20, pH 6.0). All washes were performed using Tris buffered saline containing Tween 20 (TTBS; 0.1 M Trizma base, 0.15 M NaCl, 0.1% Tween 20, pH 7.4). Following antigen retrieval, tissues were blocked with 20% normal horse serum. Titrated primary antibodies included anti-HIF-1α (mouse mgc3, 1:400, Abcam, ab16066). Tissues were incubated with primary antibody overnight at room temperature and detected using the appropriate biotinylated secondary antibody (1:200, Vector Labs, BA-1100, BA-2000) and alkaline phosphatase-Vector Red according to the manufacturer’s instructions (Vector Labs). Tissues were counterstained with Mayer’s hematoxylin and coverslipped.\n\n",
+        "start": 27208,
+        "end": 28507
+      },
+      {
+        "title": "Imaging and quantitation",
+        "text": "Imaging and quantitation\n\nSlides were scanned with the Axio Scan.Z1 digital slide scanner (Zeiss). Brightfield images were acquired using HALO (Indica Labs, v3.4.2986.151). Figures were created in Photoshop (Adobe, v23.5.1) by brightness and contrast adjustments applied to the entire image.\n\nThreshold and multiplex analyses were performed with HALO algorithms for nonbiased quantitation of proteins of interest without processing, as described previously (Burks et al., 2021). For microglia quantitation, hematoxylin-stained nuclei were used to quantify the total number of cells and those with Vector Red intensity above a rigorous threshold (Iba-1+). Microglia frequency is reported as the percentage of total nuclei in the tissue section assessed for each individual subject. To assess frequency of nodular lesions, all Iba-1-stained tissues were viewed in HALO and nodular lesions made up of three or more Iba-1+ microglia in contact with one another were counted as a single nodule. The total number of nodules for each tissue is reported per tissue area for each individual patient. Quantitation of HIF-1α was performed using an area quantification algorithm for Vector Red intensity. Annotations were drawn to outline the tissue and exclude empty spaces and glass. The annotated area was analyzed for overall quantity of Vector Red positivity per micron of tissue and reported for each individual patient. Two-tailed Mann–Whitney U-tests were performed with GraphPad Prism software, v9.3.1. Data are expressed as mean ± SEM. p-Values≤0.05 are considered significant.\n\n",
+        "start": 28507,
+        "end": 30084
+      },
+      {
+        "title": "Bioinformatics data access and analysis",
+        "text": "Bioinformatics data access and analysis\n\nSample similarity was assessed with PCA on VST-transformed expression values. Genes were filtered to remove lowly expressed genes, defined as fewer than five samples showing a minimum read count of 1 read, prior to performing differential analysis with DESeq2, in R (4.2.0; Varet et al., 2016). The transcriptional profiles of SARS-CoV-2 and AD postmortem cases from the cortical BA9 and HF were assessed by pairwise comparison to the neurologically healthy control cases. Multiple testing correction was performed for all comparisons; however, due to the relatively small number of genes surpassing a threshold of 0.05, a nominal p-value was used in the selection of differential genes for all downstream analyses. Genes were assigned as differentially expressed if the nominal p-value was <0.05 and the absolute log2FC exceeded 1. An additional round of differential expression testing was performed using a model containing covariates (COVID status, Alzheimer’s status, gender, and brain region) to extract the transcriptional effects of the individual covariates. Biological pathways and key regulators impacted by disease were identified using QIAGEN IPA (Sullivan and Fischer, 2021). Genes with a threshold of p<0.05 were used as input for IPA. The relative similarities of transcriptional changes in the DESeq2 comparisons were assessed using Rank-rank hypergeometric overlap (RRHO2) analysis.\n\n",
+        "start": 30084,
+        "end": 31527
+      },
+      {
+        "title": "Acknowledgements",
+        "text": "Acknowledgements\n\nThe authors thank the Neuropathology Brain Bank and Research CoRE of the Icahn School of Medicine at Mount Sinai for postmortem samples. Giulio M Pasinetti holds a Senior VA Career Scientist Award. The views expressed in this article are those of the authors and do not necessarily reflect the position or policy of the Department of Veterans Affairs or the United States government. The research was supported by Unrestricted Funds and Altschul Foundation (GMP) National Institutes of Health Office of Research Infrastructure Programs grant P51OD01110 (TF) The content is solely the responsibility of the authors and does not necessarily represent the official views of the National Institutes of Health and Veteran Administration\n\n",
+        "start": 31527,
+        "end": 32278
+      },
+      {
+        "title": "Additional files",
+        "text": "Additional files\n\nSupplementary files • Supplementary file 1. Table 1. Demographics of postmortem cases. Numbers presented are the average per group and standard deviation PMI is postmortem interval (n = 4); OtD is onset to death. ABC is a multipoint measurement where A is a measure of amyloid β deposition, B is a measure of neurofibrillary degeneration based on the Braak score, and C is scored based on neuritic plaques outlined by the Consortium to Establish a Registry for Alzheimer’s Disease diagnosis (CERAD).\n\n• Supplementary file 2. Table 2. Blood chemistry and symptoms. Symptoms are presented as a percentage of the group (n = 4); chemistry numbers are presented as the average per group and standard deviation, based on maximum values collected for single values and the minimum and maximum range collected in cells with two values. Bolded values are implicated as indicators of severe SARS-CoV-2 outcomes; ALP, alkaline phosphatase; ALT, alanine aminotransferase; AST, aspartate transferase; CRP, c-reactive protein; ESR, erythrocyte sedimentation; INR, international normalized ratio; LDH, lactate dehydrogenase; WBC, white blood count; BUN, blood urea nitrogen.\n\n• Source data 1. Based on the DESeq, and filtered using IPA, genes that were expressed in all SARS-CoV-2 and AD in cortical BA9 datasets with an absolute expression of 0.0001 or greater and p<0.05 are presented.\n\n• Source data 2. Based on the DESeq, and filtered using IPA, genes that were expressed in all SARS-CoV-2 and AD in HF datasets with an absolute expression of 0.0001 or greater and p<0.05 are presented.\n\nData availability Data generated for this study are accessible through NCBI's Gene Expression Omnibus (GEO) at GSE236562.\n\nThe following dataset was generated:",
+        "start": 32278,
+        "end": 34032
+      }
+    ],
+    "references": [
+      {
+        "key": "r1",
+        "label": "Amidfar et al., 2020",
+        "raw": "Amidfar M, de Oliveira J, Kucharska E, Budni J, Kim Y-K. 2020. The role of CREB and BDNF in Neurobiology and treatment of Alzheimer’s disease. Life Sciences 257:118020. DOI: https://doi.org/10.1016/j.lfs.2020.118020, PMID: 32603820",
+        "title": null,
+        "authors": [
+          "Amidfar M",
+          "de Oliveira J",
+          "Kucharska E",
+          "Budni J",
+          "Kim Y-K"
+        ],
+        "year": 2020,
+        "doi": "10.1016/j.lfs.2020.118020",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1016/j.lfs.2020.118020,",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r2",
+        "label": "Bauer et al., 2022",
+        "raw": "Bauer L, Laksono BM, de Vrij FMS, Kushner SA, Harschnitz O, van Riel D. 2022. The neuroinvasiveness, neurotropism, and neurovirulence of SARS-Cov-2. Trends in Neurosciences 45:358–368. DOI: https://doi.org/​ 10.1016/j.tins.2022.02.006, PMID: 35279295",
+        "title": null,
+        "authors": [
+          "Bauer L",
+          "Laksono BM",
+          "de Vrij FMS",
+          "Kushner SA",
+          "Harschnitz O",
+          "van Riel D"
+        ],
+        "year": 2022,
+        "doi": "10.1016/j.tins.2022.02.006",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/​",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r3",
+        "label": "Brison et al., 2011",
+        "raw": "Brison E, Jacomy H, Desforges M, Talbot PJ. 2011. Glutamate Excitotoxicity is involved in the induction of paralysis in mice after infection by a human Coronavirus with a single point Mutation in its spike protein. Journal of Virology 85:12464–12473. DOI: https://doi.org/10.1128/JVI.05576-11, PMID: 21957311",
+        "title": "Glutamate Excitotoxicity is involved in the induction of paralysis in mice after infection by a human Coronavirus with a single point Mutation in its spike protein",
+        "authors": [
+          "Brison E",
+          "Jacomy H",
+          "Desforges M",
+          "Talbot PJ"
+        ],
+        "year": 2011,
+        "doi": "10.1128/JVI.05576-11",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1128/JVI.05576-11,",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r4",
+        "label": "Bui et al., 2020",
+        "raw": "Bui TM, Wiesolek HL, Sumagin R. 2020. ICAM-1: A master regulator of cellular responses in inflammation, injury resolution, and tumorigenesis. Journal of Leukocyte Biology 108:787–799. DOI: https://doi.org/10.1002/JLB.​ 2MR0220-549R, PMID: 32182390",
+        "title": null,
+        "authors": [
+          "Bui TM",
+          "Wiesolek HL",
+          "Sumagin R"
+        ],
+        "year": 2020,
+        "doi": "10.1002/JLB.​",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1002/JLB.​",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r5",
+        "label": "Burks et al., 2021",
+        "raw": "Burks SM, Rosas-Hernandez H, Alejandro Ramirez-Lee M, Cuevas E, Talpos JC. 2021. Can SARS-Cov-2 infect the central nervous system via the olfactory bulb or the blood-brain barrier Brain, Behavior, and Immunity 95:7–14. DOI: https://doi.org/10.1016/j.bbi.2020.12.031, PMID: 33412255",
+        "title": "Can SARS-Cov-2 infect the central nervous system via the olfactory bulb or the blood-brain barrier Brain, Behavior, and Immunity 95:7–14",
+        "authors": [
+          "Burks SM",
+          "Rosas-Hernandez H",
+          "Alejandro Ramirez-Lee M",
+          "Cuevas E",
+          "Talpos JC"
+        ],
+        "year": 2021,
+        "doi": "10.1016/j.bbi.2020.12.031",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1016/j.bbi.2020.12.031,",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r6",
+        "label": "Campbell et al., 2021",
+        "raw": "Campbell GR, To RK, Hanna J, Spector SA. 2021. SARS-Cov-2, SARS-Cov-1, and HIV-1 derived ssRNA sequences activate the Nlrp3 Inflammasome in human Macrophages through a non-classical pathway. IScience 24:102295. DOI: https://doi.org/10.1016/j.isci.2021.102295, PMID: 33718825",
+        "title": "SARS-Cov-2, SARS-Cov-1, and HIV-1 derived ssRNA sequences activate the Nlrp3 Inflammasome in human Macrophages through a non-classical pathway",
+        "authors": [
+          "Campbell GR",
+          "To RK",
+          "Hanna J",
+          "Spector SA"
+        ],
+        "year": 2021,
+        "doi": "10.1016/j.isci.2021.102295",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1016/j.isci.2021.102295,",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r7",
+        "label": "Chou et al., 2021",
+        "raw": "Chou SH-Y, Beghi E, Helbok R, Moro E, Sampson J, Altamirano V, Mainali S, Bassetti C, Suarez JI, McNett M, GCS-NeuroCOVID Consortium and ENERGY Consortium. 2021. GCS-Neurocovid consortium and ENERGY consortium, global incidence of neurological manifestations among patients hospitalized with COVID-19—A report for the GCS-Neurocovid consortium and the ENERGY consortium. JAMA Network Open 4:e2112131. DOI: https://doi.org/10.1001/jamanetworkopen.2021.12131, PMID: 33974053",
+        "title": "GCS-Neurocovid consortium and ENERGY consortium, global incidence of neurological manifestations among patients hospitalized with COVID-19—A report for the GCS-Neurocovid consortium and the ENERGY consortium",
+        "authors": [
+          "Chou SH-Y",
+          "Beghi E",
+          "Helbok R",
+          "Moro E",
+          "Sampson J",
+          "Altamirano V",
+          "Mainali S",
+          "Bassetti C",
+          "Suarez JI",
+          "McNett M",
+          "GCS-NeuroCOVID Consortium",
+          "ENERGY Consortium"
+        ],
+        "year": 2021,
+        "doi": "10.1001/jamanetworkopen.2021.12131",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1001/jamanetworkopen.2021.12131,",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r8",
+        "label": "Coppé et al., 2010",
+        "raw": "Coppé JP, Desprez PY, Krtolica A, Campisi J. 2010. The Senescence-associated Secretory phenotype: the dark side of tumor suppression. Annual Review of Pathology 5:99–118. DOI: https://doi.org/10.1146/annurev-​ pathol-121808-102144, PMID: 20078217",
+        "title": null,
+        "authors": [
+          "Coppé JP",
+          "Desprez PY",
+          "Krtolica A",
+          "Campisi J"
+        ],
+        "year": 2010,
+        "doi": "10.1146/annurev-​",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1146/annurev-​",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r9",
+        "label": "Davis et al., 2021",
+        "raw": "Davis HE, Assaf GS, McCorkell L, Wei H, Low RJ, Re’em Y, Redfield S, Austin JP, Akrami A. 2021. Characterizing long COVID in an international cohort: 7 months of symptoms and their impact. EClinicalMedicine 38:101019. DOI: https://doi.org/10.1016/j.eclinm.2021.101019, PMID: 34308300",
+        "title": null,
+        "authors": [
+          "Davis HE",
+          "Assaf GS",
+          "McCorkell L",
+          "Wei H",
+          "Low RJ",
+          "Re’em Y",
+          "Redfield S",
+          "Austin JP",
+          "Akrami A"
+        ],
+        "year": 2021,
+        "doi": "10.1016/j.eclinm.2021.101019",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1016/j.eclinm.2021.101019,",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r10",
+        "label": "de Erausquin et al., 2021",
+        "raw": "de Erausquin GA, Snyder H, Carrillo M, Hosseini AA, Brugha TS, Seshadri S, CNS SARS-CoV-2 Consortium. 2021. CNS SARS-Cov-2 consortium, the chronic neuropsychiatric sequelae of COVID-19: the need for a prospective study of viral impact on brain functioning. Alzheimer’s & Dementia 17:1056–1065. DOI: https://doi.​ org/10.1002/alz.12255, PMID: 33399270",
+        "title": "CNS SARS-Cov-2 consortium, the chronic neuropsychiatric sequelae of COVID-19: the need for a prospective study of viral impact on brain functioning",
+        "authors": [
+          "de Erausquin GA",
+          "Snyder H",
+          "Carrillo M",
+          "Hosseini AA",
+          "Brugha TS",
+          "Seshadri S",
+          "CNS SARS-CoV-2 Consortium"
+        ],
+        "year": 2021,
+        "doi": "10.1002/alz.12255",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.​",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r11",
+        "label": "de Oliveira Matos et al., 2020",
+        "raw": "de Oliveira Matos A, dos Santos Dantas PH, Figueira Marques Silva-Sales M, Sales-Campos H. 2020. The role of the triggering receptor expressed on myeloid Cells-1 (TREM-1) in non-bacterial infections. Critical Reviews in Microbiology 46:237–252. DOI: https://doi.org/10.1080/1040841X.2020.1751060",
+        "title": null,
+        "authors": [
+          "de Oliveira Matos A",
+          "dos Santos Dantas PH",
+          "Figueira Marques Silva-Sales M",
+          "Sales-Campos H"
+        ],
+        "year": 2020,
+        "doi": "10.1080/1040841X.2020.1751060",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1080/1040841X.2020.1751060",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r12",
+        "label": "Desforges et al., 2014",
+        "raw": "Desforges M, Le Coupanec A, Stodola JK, Meessen-Pinard M, Talbot PJ. 2014. Human Coronaviruses: viral and cellular factors involved in Neuroinvasiveness and Neuropathogenesis. Virus Research 194:145–158. DOI: https://doi.org/10.1016/j.virusres.2014.09.011, PMID: 25281913",
+        "title": "Human Coronaviruses: viral and cellular factors involved in Neuroinvasiveness and Neuropathogenesis",
+        "authors": [
+          "Desforges M",
+          "Le Coupanec A",
+          "Stodola JK",
+          "Meessen-Pinard M",
+          "Talbot PJ"
+        ],
+        "year": 2014,
+        "doi": "10.1016/j.virusres.2014.09.011",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1016/j.virusres.2014.09.011,",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r13",
+        "label": "Divani et al., 2020",
+        "raw": "Divani AA, Andalib S, Biller J, Di Napoli M, Moghimi N, Rubinos CA, O’Hana Nobleza C, Sylaja PN, Toledano M, Lattanzi S, McCullough LD, Cruz-Flores S, Torbey M, Azarpazhooh MR. 2020. Central nervous system manifestations associated with COVID-19. Current Neurology and Neuroscience Reports 20:66. DOI: https://​ doi.org/10.1007/s11910-020-01086-8, PMID: 33184674",
+        "title": "Central nervous system manifestations associated with COVID-19",
+        "authors": [
+          "Divani AA",
+          "Andalib S",
+          "Biller J",
+          "Di Napoli M",
+          "Moghimi N",
+          "Rubinos CA",
+          "O’Hana Nobleza C",
+          "Sylaja PN",
+          "Toledano M",
+          "Lattanzi S",
+          "McCullough LD",
+          "Cruz-Flores S",
+          "Torbey M",
+          "Azarpazhooh MR"
+        ],
+        "year": 2020,
+        "doi": "10.1007/s11910-020-01086-8",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://​",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r14",
+        "label": "Eu et al., 2021",
+        "raw": "Eu WZ, Chen YJ, Chen WT, Wu KY, Tsai CY, Cheng SJ, Carter RN, Huang GJ. 2021. The effect of nerve growth factor on supporting spatial memory depends upon hippocampal cholinergic Innervation. Translational Psychiatry 11:162. DOI: https://doi.org/10.1038/s41398-021-01280-3, PMID: 33723225",
+        "title": "The effect of nerve growth factor on supporting spatial memory depends upon hippocampal cholinergic Innervation",
+        "authors": [
+          "Eu WZ",
+          "Chen YJ",
+          "Chen WT",
+          "Wu KY",
+          "Tsai CY",
+          "Cheng SJ",
+          "Carter RN",
+          "Huang GJ"
+        ],
+        "year": 2021,
+        "doi": "10.1038/s41398-021-01280-3",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1038/s41398-021-01280-3,",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r16",
+        "label": "Flerlage et al., 2021",
+        "raw": "Flerlage T, Boyd DF, Meliopoulos V, Thomas PG, Schultz-Cherry S. 2021. Influenza virus and SARS-Cov-2: pathogenesis and host responses in the respiratory tract. Nature Reviews. Microbiology 19:425–441. DOI: https://doi.org/10.1038/s41579-021-00542-7, PMID: 33824495",
+        "title": null,
+        "authors": [
+          "Flerlage T",
+          "Boyd DF",
+          "Meliopoulos V",
+          "Thomas PG",
+          "Schultz-Cherry S"
+        ],
+        "year": 2021,
+        "doi": "10.1038/s41579-021-00542-7",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1038/s41579-021-00542-7,",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r17",
+        "label": "Herman and Pasinetti, 2018",
+        "raw": "Herman FJ, Pasinetti GM. 2018. Principles of Inflammasome priming and inhibition: implications for psychiatric disorders. Brain, Behavior, and Immunity 73:66–84. DOI: https://doi.org/10.1016/j.bbi.2018.06.010, PMID: 29902514",
+        "title": "Principles of Inflammasome priming and inhibition: implications for psychiatric disorders",
+        "authors": [
+          "Herman FJ",
+          "Pasinetti GM"
+        ],
+        "year": 2018,
+        "doi": "10.1016/j.bbi.2018.06.010",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1016/j.bbi.2018.06.010,",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r18",
+        "label": "Hingorani et al., 2022",
+        "raw": "Hingorani KS, Bhadola S, Cervantes-Arslanian AM. 2022. COVID-19 and the brain. Trends in Cardiovascular Medicine 32:323–330. DOI: https://doi.org/10.1016/j.tcm.2022.04.004, PMID: 35461991",
+        "title": "COVID-19 and the brain",
+        "authors": [
+          "Hingorani KS",
+          "Bhadola S",
+          "Cervantes-Arslanian AM"
+        ],
+        "year": 2022,
+        "doi": "10.1016/j.tcm.2022.04.004",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1016/j.tcm.2022.04.004,",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r19",
+        "label": "Ikeshima-Kataoka et al., 2022",
+        "raw": "Ikeshima-Kataoka H, Sugimoto C, Tsubokawa T. 2022. Integrin signaling in the central nervous system in animals and human brain diseases. International Journal of Molecular Sciences 23:1435. DOI: https://doi.org/10.3390/​ ijms23031435, PMID: 35163359",
+        "title": null,
+        "authors": [
+          "Ikeshima-Kataoka H",
+          "Sugimoto C",
+          "Tsubokawa T"
+        ],
+        "year": 2022,
+        "doi": "10.3390/​",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.3390/​",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r20",
+        "label": "Jacomy et al., 2010",
+        "raw": "Jacomy H, St-Jean JR, Brison E, Marceau G, Desforges M, Talbot PJ. 2010. Mutations in the spike glycoprotein of human Coronavirus Oc43 modulate disease in BALB/C mice from encephalitis to flaccid paralysis and Demyelination. Journal of Neurovirology 16:279–293. DOI: https://doi.org/10.3109/13550284.2010.497806, PMID: 20642316",
+        "title": "Mutations in the spike glycoprotein of human Coronavirus Oc43 modulate disease in BALB/C mice from encephalitis to flaccid paralysis and Demyelination",
+        "authors": [
+          "Jacomy H",
+          "St-Jean JR",
+          "Brison E",
+          "Marceau G",
+          "Desforges M",
+          "Talbot PJ"
+        ],
+        "year": 2010,
+        "doi": "10.3109/13550284.2010.497806",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.3109/13550284.2010.497806,",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r21",
+        "label": "Jian et al., 2018",
+        "raw": "Jian W-X, Zhang Z, Chu S-F, Peng Y, Chen N-H. 2018. Potential roles of brain barrier dysfunctions in the early stage of Alzheimer’s disease. Brain Research Bulletin 142:360–367. DOI: https://doi.org/10.1016/j.brainresbull.​ 2018.08.012, PMID: 30153473",
+        "title": null,
+        "authors": [
+          "Jian W-X",
+          "Zhang Z",
+          "Chu S-F",
+          "Peng Y",
+          "Chen N-H"
+        ],
+        "year": 2018,
+        "doi": "10.1016/j.brainresbull.​",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1016/j.brainresbull.​",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r22",
+        "label": "Kovacs and Gelpi, 2012",
+        "raw": "Kovacs GG, Gelpi E. 2012. Clinical neuropathology practice news 3-2012: the \"ABC\" in AD – revised and updated guideline for the Neuropathologic assessment of Alzheimer’s disease. Clinical Neuropathology 31:116–118. DOI: https://doi.org/10.5414/np300512, PMID: 22551914",
+        "title": null,
+        "authors": [
+          "Kovacs GG",
+          "Gelpi E"
+        ],
+        "year": 2012,
+        "doi": "10.5414/np300512",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.5414/np300512,",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r23",
+        "label": "Krämer et al., 2014",
+        "raw": "Krämer A, Green J, Pollard J, Tugendreich S. 2014. Causal analysis approaches in ingenuity pathway analysis. Bioinformatics 30:523–530. DOI: https://doi.org/10.1093/bioinformatics/btt703, PMID: 24336805",
+        "title": null,
+        "authors": [
+          "Krämer A",
+          "Green J",
+          "Pollard J",
+          "Tugendreich S"
+        ],
+        "year": 2014,
+        "doi": "10.1093/bioinformatics/btt703",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1093/bioinformatics/btt703,",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r24",
+        "label": "Lampart et al., 2022",
+        "raw": "Lampart M, Zellweger N, Bassetti S, Tschudin-Sutter S, Rentsch KM, Siegemund M, Bingisser R, Osswald S, Kuster GM, Twerenbold R. 2022. Clinical utility of inflammatory biomarkers in COVID-19 in direct comparison to other respiratory infections—A prospective cohort study. PLOS ONE 17:e0269005. DOI: https://doi.org/10.​ 1371/journal.pone.0269005, PMID: 35622838",
+        "title": null,
+        "authors": [
+          "Lampart M",
+          "Zellweger N",
+          "Bassetti S",
+          "Tschudin-Sutter S",
+          "Rentsch KM",
+          "Siegemund M",
+          "Bingisser R",
+          "Osswald S",
+          "Kuster GM",
+          "Twerenbold R"
+        ],
+        "year": 2022,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.​",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r25",
+        "label": "Lee et al., 2021",
+        "raw": "Lee S, Yu Y, Trimpert J, Benthani F, Mairhofer M, Richter-Pechanska P, Wyler E, Belenki D, Kaltenbrunner S, Pammer M, Kausche L, Firsching TC, Dietert K, Schotsaert M, Martínez-Romero C, Singh G, Kunz S, Niemeyer D, Ghanem R, Salzer HJF, et al. 2021. Virus-induced Senescence is a driver and therapeutic target in COVID-19. Nature 599:283–289. DOI: https://doi.org/10.1038/s41586-021-03995-1",
+        "title": "Virus-induced Senescence is a driver and therapeutic target in COVID-19",
+        "authors": [
+          "Lee S",
+          "Yu Y",
+          "Trimpert J",
+          "Benthani F",
+          "Mairhofer M",
+          "Richter-Pechanska P",
+          "Wyler E",
+          "Belenki D",
+          "Kaltenbrunner S",
+          "Pammer M",
+          "Kausche L",
+          "Firsching TC",
+          "Dietert K",
+          "Schotsaert M",
+          "Martínez-Romero C",
+          "Singh G",
+          "Kunz S",
+          "Niemeyer D",
+          "Ghanem R",
+          "Salzer HJF"
+        ],
+        "year": 2021,
+        "doi": "10.1038/s41586-021-03995-1",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1038/s41586-021-03995-1",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r26",
+        "label": "Licht and Keshet, 2013",
+        "raw": "Licht T, Keshet E. 2013. Delineating multiple functions of VEGF-A in the adult brain. Cellular and Molecular Life Sciences 70:1727–1737. DOI: https://doi.org/10.1007/s00018-013-1280-x, PMID: 23475068",
+        "title": null,
+        "authors": [
+          "Licht T",
+          "Keshet E"
+        ],
+        "year": 2013,
+        "doi": "10.1007/s00018-013-1280-x",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1007/s00018-013-1280-x,",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r27",
+        "label": "Lugano et al., 2020",
+        "raw": "Lugano R, Ramachandran M, Dimberg A. 2020. Tumor angiogenesis: causes, consequences, challenges and opportunities. Cellular and Molecular Life Sciences 77:1745–1770. DOI: https://doi.org/10.1007/s00018-019-​ 03351-7, PMID: 31690961",
+        "title": null,
+        "authors": [
+          "Lugano R",
+          "Ramachandran M",
+          "Dimberg A"
+        ],
+        "year": 2020,
+        "doi": "10.1007/s00018-019-​",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1007/s00018-019-​",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r28",
+        "label": "Lünemann et al., 2021",
+        "raw": "Lünemann JD, Malhotra S, Shinohara ML, Montalban X, Comabella M. 2021. Targeting Inflammasomes to treat neurological diseases. Annals of Neurology 90:177–188. DOI: https://doi.org/10.1002/ana.26158, PMID: 34219266",
+        "title": null,
+        "authors": [
+          "Lünemann JD",
+          "Malhotra S",
+          "Shinohara ML",
+          "Montalban X",
+          "Comabella M"
+        ],
+        "year": 2021,
+        "doi": "10.1002/ana.26158",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1002/ana.26158,",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r29",
+        "label": "Manda-Handzlik and Demkow, 2019",
+        "raw": "Manda-Handzlik A, Demkow U. 2019. The brain entangled: the contribution of neutrophil extracellular traps to the diseases of the central nervous system. Cells 8:1477. DOI: https://doi.org/10.3390/cells8121477, PMID: 31766346",
+        "title": null,
+        "authors": [
+          "Manda-Handzlik A",
+          "Demkow U"
+        ],
+        "year": 2019,
+        "doi": "10.3390/cells8121477",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.3390/cells8121477,",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r31",
+        "label": "Meinhardt et al., 2021",
+        "raw": "Meinhardt J, Radke J, Dittmayer C, Franz J, Thomas C, Mothes R, Laue M, Schneider J, Brünink S, Greuel S, Lehmann M, Hassan O, Aschman T, Schumann E, Chua RL, Conrad C, Eils R, Stenzel W, Windgassen M, Rößler L, et al. 2021. Olfactory Transmucosal SARS-Cov-2 invasion as a port of central nervous system entry in individuals with COVID-19. Nature Neuroscience 24:168–175. DOI: https://doi.org/10.1038/s41593-020-00758- 5",
+        "title": "Olfactory Transmucosal SARS-Cov-2 invasion as a port of central nervous system entry in individuals with COVID-19",
+        "authors": [
+          "Meinhardt J",
+          "Radke J",
+          "Dittmayer C",
+          "Franz J",
+          "Thomas C",
+          "Mothes R",
+          "Laue M",
+          "Schneider J",
+          "Brünink S",
+          "Greuel S",
+          "Lehmann M",
+          "Hassan O",
+          "Aschman T",
+          "Schumann E",
+          "Chua RL",
+          "Conrad C",
+          "Eils R",
+          "Stenzel W",
+          "Windgassen M",
+          "Rößler L"
+        ],
+        "year": 2021,
+        "doi": "10.1038/s41593-020-00758-5",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1038/s41593-020-00758-",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r32",
+        "label": "Mhatre et al., 2015",
+        "raw": "Mhatre SD, Tsai CA, Rubin AJ, James ML, Andreasson KI. 2015. Microglial malfunction: the third rail in the development of Alzheimer’s disease. Trends in Neurosciences 38:621–636. DOI: https://doi.org/10.1016/j.tins.​ 2015.08.006, PMID: 26442696",
+        "title": "Microglial malfunction: the third rail in the development of Alzheimer’s disease",
+        "authors": [
+          "Mhatre SD",
+          "Tsai CA",
+          "Rubin AJ",
+          "James ML",
+          "Andreasson KI"
+        ],
+        "year": 2015,
+        "doi": "10.1016/j.tins.​",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1016/j.tins.​",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r33",
+        "label": "Parodi-Rullán et al., 2021",
+        "raw": "Parodi-Rullán RM, Javadov S, Fossati S. 2021. Dissecting the Crosstalk between endothelial mitochondrial damage, vascular inflammation, and neurodegeneration in cerebral Amyloid Angiopathy and Alzheimer’s disease. Cells 10:2903. DOI: https://doi.org/10.3390/cells10112903, PMID: 34831125",
+        "title": null,
+        "authors": [
+          "Parodi-Rullán RM",
+          "Javadov S",
+          "Fossati S"
+        ],
+        "year": 2021,
+        "doi": "10.3390/cells10112903",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.3390/cells10112903,",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r34",
+        "label": "Pasquin et al., 2015",
+        "raw": "Pasquin S, Sharma M, Gauchat J-F. 2015. Gauchat, Ciliary Neurotrophic factor (CNTF): new facets of an old molecule for treating neurodegenerative and metabolic syndrome Pathologies. Cytokine & Growth Factor Reviews 26:507–515. DOI: https://doi.org/10.1016/j.cytogfr.2015.07.007",
+        "title": null,
+        "authors": [
+          "Pasquin S",
+          "Sharma M",
+          "Gauchat J-F"
+        ],
+        "year": 2015,
+        "doi": "10.1016/j.cytogfr.2015.07.007",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1016/j.cytogfr.2015.07.007",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r35",
+        "label": "Patarroyo et al., 1990",
+        "raw": "Patarroyo M, Prieto J, Rincon J, Timonen T, Lundberg C, Lindbom L, Asjö B, Gahmberg CG. 1990. Leukocytecell adhesion: A molecular process fundamental in Leukocyte physiology. Immunological Reviews 114:67–108. DOI: https://doi.org/10.1111/j.1600-065x.1990.tb00562.x, PMID: 1973408",
+        "title": "Leukocytecell adhesion: A molecular process fundamental in Leukocyte physiology",
+        "authors": [
+          "Patarroyo M",
+          "Prieto J",
+          "Rincon J",
+          "Timonen T",
+          "Lundberg C",
+          "Lindbom L",
+          "Asjö B",
+          "Gahmberg CG"
+        ],
+        "year": 1990,
+        "doi": "10.1111/j.1600-065x.1990.tb00562.x",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1111/j.1600-065x.1990.tb00562.x,",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r36",
+        "label": "Prinz and Priller, 2017",
+        "raw": "Prinz M, Priller J. 2017. The role of peripheral immune cells in the CNS in steady state and disease. Nature Neuroscience 20:136–144. DOI: https://doi.org/10.1038/nn.4475, PMID: 28092660",
+        "title": null,
+        "authors": [
+          "Prinz M",
+          "Priller J"
+        ],
+        "year": 2017,
+        "doi": "10.1038/nn.4475",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1038/nn.4475,",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r37",
+        "label": "Rutkai et al., 2022",
+        "raw": "Rutkai I, Mayer MG, Hellmers LM, Ning B, Huang Z, Monjure CJ, Coyne C, Silvestri R, Golden N, Hensley K, Chandler K, Lehmicke G, Bix GJ, Maness NJ, Russell-Lodrigue K, Hu TY, Roy CJ, Blair RV, Bohm R, Doyle-Meyers LA, et al. 2022. Neuropathology and virus in brain of SARS-Cov-2 infected non-human primates. Nature Communications 13:1745. DOI: https://doi.org/10.1038/s41467-022-29440-z, PMID: 35365631",
+        "title": "Neuropathology and virus in brain of SARS-Cov-2 infected non-human primates",
+        "authors": [
+          "Rutkai I",
+          "Mayer MG",
+          "Hellmers LM",
+          "Ning B",
+          "Huang Z",
+          "Monjure CJ",
+          "Coyne C",
+          "Silvestri R",
+          "Golden N",
+          "Hensley K",
+          "Chandler K",
+          "Lehmicke G",
+          "Bix GJ",
+          "Maness NJ",
+          "Russell-Lodrigue K",
+          "Hu TY",
+          "Roy CJ",
+          "Blair RV",
+          "Bohm R",
+          "Doyle-Meyers LA"
+        ],
+        "year": 2022,
+        "doi": "10.1038/s41467-022-29440-z",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1038/s41467-022-29440-z,",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r38",
+        "label": "Serrano et al., 2021",
+        "raw": "Serrano GE, Walker JE, Arce R, Glass MJ, Vargas D, Sue LI, Intorcia AJ, Nelson CM, Oliver J, Papa J, Russell A, Suszczewicz KE, Borja CI, Belden C, Goldfarb D, Shprecher D, Atri A, Adler CH, Shill HA, Driver-Dunckley E, et al. 2021. Mapping of SARS-Cov-2 Brain Invasion and Histopathology in COVID-19 Disease. [medRxiv]. DOI: https://doi.org/10.1101/2021.02.15.21251511, PMID: 33619496",
+        "title": "Mapping of SARS-Cov-2 Brain Invasion and Histopathology in COVID-19 Disease",
+        "authors": [
+          "Serrano GE",
+          "Walker JE",
+          "Arce R",
+          "Glass MJ",
+          "Vargas D",
+          "Sue LI",
+          "Intorcia AJ",
+          "Nelson CM",
+          "Oliver J",
+          "Papa J",
+          "Russell A",
+          "Suszczewicz KE",
+          "Borja CI",
+          "Belden C",
+          "Goldfarb D",
+          "Shprecher D",
+          "Atri A",
+          "Adler CH",
+          "Shill HA",
+          "Driver-Dunckley E"
+        ],
+        "year": 2021,
+        "doi": "10.1101/2021.02.15.21251511",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1101/2021.02.15.21251511,",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r39",
+        "label": "Shanley et al., 2022",
+        "raw": "Shanley J, Valenciano A, Timmons G, Kakarla V, Miner A, Rempe T, Graves J. 2022. Longitudinal evaluation of neuro-PASC symptoms. Neurology 98:S8.007. DOI: https://doi.org/10.1002/acn3.51578",
+        "title": null,
+        "authors": [
+          "Shanley J",
+          "Valenciano A",
+          "Timmons G",
+          "Kakarla V",
+          "Miner A",
+          "Rempe T",
+          "Graves J"
+        ],
+        "year": 2022,
+        "doi": "10.1002/acn3.51578",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1002/acn3.51578",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r40",
+        "label": "Smail and Brew, 2018",
+        "raw": "Smail RC, Brew BJ. 2018. HIV-associated Neurocognitive disorder. Clinical Neurology 152:75–97. DOI: https://​ doi.org/10.1016/B978-0-444-63849-6.00007-4, PMID: 29604986",
+        "title": "HIV-associated Neurocognitive disorder",
+        "authors": [
+          "Smail RC",
+          "Brew BJ"
+        ],
+        "year": 2018,
+        "doi": "10.1016/B978-0-444-63849-6.00007-4",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://​",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r41",
+        "label": "Sullivan and Fischer, 2021",
+        "raw": "Sullivan BN, Fischer T. 2021. Age-associated neurological complications of COVID-19: A systematic review and meta-analysis. Frontiers in Aging Neuroscience 13:653694. DOI: https://doi.org/10.3389/fnagi.2021.653694, PMID: 34408638",
+        "title": null,
+        "authors": [
+          "Sullivan BN",
+          "Fischer T"
+        ],
+        "year": 2021,
+        "doi": "10.3389/fnagi.2021.653694",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.3389/fnagi.2021.653694,",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r42",
+        "label": "Sun et al., 2022",
+        "raw": "Sun X, Zhang H, Yao D, Xu Y, Jing Q, Cao S, Tian L, Li C. 2022. Integrated Bioinformatics analysis identifies Hub genes associated with viral infection and Alzheimer’s disease. Journal of Alzheimer’s Disease 85:1053–1061. DOI: https://doi.org/10.3233/JAD-215232",
+        "title": null,
+        "authors": [
+          "Sun X",
+          "Zhang H",
+          "Yao D",
+          "Xu Y",
+          "Jing Q",
+          "Cao S",
+          "Tian L",
+          "Li C"
+        ],
+        "year": 2022,
+        "doi": "10.3233/JAD-215232",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.3233/JAD-215232",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r43",
+        "label": "Tavazzi et al., 2014",
+        "raw": "Tavazzi E, Morrison D, Sullivan P, Morgello S, Fischer T. 2014. Brain inflammation is a common feature of HIV-infected patients without HIV encephalitis or productive brain infection. Current HIV Research 12:97–110. DOI: https://doi.org/10.2174/1570162x12666140526114956, PMID: 24862332",
+        "title": null,
+        "authors": [
+          "Tavazzi E",
+          "Morrison D",
+          "Sullivan P",
+          "Morgello S",
+          "Fischer T"
+        ],
+        "year": 2014,
+        "doi": "10.2174/1570162x12666140526114956",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.2174/1570162x12666140526114956,",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r44",
+        "label": "Tröscher et al., 2019",
+        "raw": "Tröscher AR, Wimmer I, Quemada-Garrido L, Köck U, Gessl D, Verberk SGS, Martin B, Lassmann H, Bien CG, Bauer J. 2019. Microglial nodules provide the environment for pathogenic T cells in human encephalitis. Acta Neuropathologica 137:619–635. DOI: https://doi.org/10.1007/s00401-019-01958-5, PMID: 30663001",
+        "title": null,
+        "authors": [
+          "Tröscher AR",
+          "Wimmer I",
+          "Quemada-Garrido L",
+          "Köck U",
+          "Gessl D",
+          "Verberk SGS",
+          "Martin B",
+          "Lassmann H",
+          "Bien CG",
+          "Bauer J"
+        ],
+        "year": 2019,
+        "doi": "10.1007/s00401-019-01958-5",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1007/s00401-019-01958-5,",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r45",
+        "label": "Varet et al., 2016",
+        "raw": "Varet H, Brillet-Guéguen L, Coppée J-Y, Dillies M-A, Mills K. 2016. Dillies, Sartools: A Deseq2- and Edger-based R pipeline for comprehensive differential analysis of RNA-Seq data. PLOS ONE 11:e0157022. DOI: https://doi.​ org/10.1371/journal.pone.0157022",
+        "title": "Dillies, Sartools: A Deseq2- and Edger-based R pipeline for comprehensive differential analysis of RNA-Seq data",
+        "authors": [
+          "Varet H",
+          "Brillet-Guéguen L",
+          "Coppée J-Y",
+          "Dillies M-A",
+          "Mills K. 2016"
+        ],
+        "year": 2016,
+        "doi": "10.1371/journal.pone.0157022",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.​",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r46",
+        "label": "Wang et al., 2022",
+        "raw": "Wang L, Davis PB, Volkow ND, Berger NA, Kaelber DC, Xu R. 2022. Association of COVID-19 with new-onset Alzheimer’s disease. Journal of Alzheimer’s Disease 89:411–414. DOI: https://doi.org/10.3233/JAD-220717",
+        "title": null,
+        "authors": [
+          "Wang L",
+          "Davis PB",
+          "Volkow ND",
+          "Berger NA",
+          "Kaelber DC",
+          "Xu R"
+        ],
+        "year": 2022,
+        "doi": "10.3233/JAD-220717",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.3233/JAD-220717",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r47",
+        "label": "Xu et al., 2021",
+        "raw": "Xu P, Hong Y, Xie Y, Yuan K, Li J, Sun R, Zhang X, Shi X, Li R, Wu J, Liu X, Hu W, Sun W. 2021. TREM-1 exacerbates Neuroinflammatory injury via Nlrp3 Inflammasome-mediated Pyroptosis in experimental subarachnoid hemorrhage. Translational Stroke Research 12:643–659. DOI: https://doi.org/10.1007/s12975-​ 020-00840-x, PMID: 32862402",
+        "title": null,
+        "authors": [
+          "Xu P",
+          "Hong Y",
+          "Xie Y",
+          "Yuan K",
+          "Li J",
+          "Sun R",
+          "Zhang X",
+          "Shi X",
+          "Li R",
+          "Wu J",
+          "Liu X",
+          "Hu W",
+          "Sun W"
+        ],
+        "year": 2021,
+        "doi": "10.1007/s12975-​",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1007/s12975-​",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r48",
+        "label": "Zhou et al., 2021",
+        "raw": "Zhou Y, Xu J, Hou Y, Leverenz JB, Kallianpur A, Mehra R, Liu Y, Yu H, Pieper AA, Jehi L, Cheng F. 2021. Network medicine links SARS-Cov-2/COVID-19 infection to brain Microvascular injury and Neuroinflammation in dementia-like cognitive impairment. Alzheimer’s Research & Therapy 13:110. DOI: https://doi.org/10.1186/​ s13195-021-00850-3",
+        "title": null,
+        "authors": [
+          "Zhou Y",
+          "Xu J",
+          "Hou Y",
+          "Leverenz JB",
+          "Kallianpur A",
+          "Mehra R",
+          "Liu Y",
+          "Yu H",
+          "Pieper AA",
+          "Jehi L",
+          "Cheng F"
+        ],
+        "year": 2021,
+        "doi": "10.1186/​",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1186/​",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      }
+    ],
+    "citation_keys_total": 48,
+    "citation_keys_mapped": 46,
+    "notes": []
+  },
+  "sentences": [
+    {
+      "id": "s1",
+      "text": "The consequences of SARS-CoV-2 infection have been well studied in the respiratory system; however, much less information is available regarding the neurological consequences of infection (Flerlage et al., 2021).",
+      "section": "Introduction",
+      "start": 1524,
+      "end": 1736,
+      "reference_keys": [
+        "r16"
+      ],
+      "marker_spans": [
+        [
+          1712,
+          1735
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r16"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "Previous evidence tentatively suggests that SARS-CoV-2 may be neuroinvasive, leading to a vast array of neurological symptoms, including anosmia, ageusia, cognitive functions, and cerebrovascular disorders in every population and setting (Desforges et al., 2014; Hingorani et al., 2022)."
+    },
+    {
+      "id": "s2",
+      "text": "Previous evidence tentatively suggests that SARS-CoV-2 may be neuroinvasive, leading to a vast array of neurological symptoms, including anosmia, ageusia, cognitive functions, and cerebrovascular disorders in every population and setting (Desforges et al., 2014; Hingorani et al., 2022).",
+      "section": "Introduction",
+      "start": 1737,
+      "end": 2024,
+      "reference_keys": [
+        "r12",
+        "r18"
+      ],
+      "marker_spans": [
+        [
+          1975,
+          2023
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r12",
+          "r18"
+        ]
+      ],
+      "context_before": "The consequences of SARS-CoV-2 infection have been well studied in the respiratory system; however, much less information is available regarding the neurological consequences of infection (Flerlage et al., 2021).",
+      "context_after": "Neurological complications of SARS-CoV-2 infection manifest with increased severity related to age and shared medical history of metabolic disorders and other vascular risk factors (Divani et al., 2020; Chou et al., 2021; Sullivan and Fischer, 2021)."
+    },
+    {
+      "id": "s3",
+      "text": "Neurological complications of SARS-CoV-2 infection manifest with increased severity related to age and shared medical history of metabolic disorders and other vascular risk factors (Divani et al., 2020; Chou et al., 2021; Sullivan and Fischer, 2021).",
+      "section": "Introduction",
+      "start": 2025,
+      "end": 2275,
+      "reference_keys": [
+        "r13",
+        "r7",
+        "r41"
+      ],
+      "marker_spans": [
+        [
+          2206,
+          2274
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r13",
+          "r7",
+          "r41"
+        ]
+      ],
+      "context_before": "Previous evidence tentatively suggests that SARS-CoV-2 may be neuroinvasive, leading to a vast array of neurological symptoms, including anosmia, ageusia, cognitive functions, and cerebrovascular disorders in every population and setting (Desforges et al., 2014; Hingorani et al., 2022).",
+      "context_after": "Some strains within the coronavirus family are implicated in neuronal degeneration, such as HCoV-OC43, which can lead to glutamate excitotoxicity and neuronal degradation in mice through cytokine production (Jacomy et al., 2010; Brison et al., 2011)."
+    },
+    {
+      "id": "s4",
+      "text": "Some strains within the coronavirus family are implicated in neuronal degeneration, such as HCoV-OC43, which can lead to glutamate excitotoxicity and neuronal degradation in mice through cytokine production (Jacomy et al., 2010; Brison et al., 2011).",
+      "section": "Introduction",
+      "start": 2276,
+      "end": 2526,
+      "reference_keys": [
+        "r20",
+        "r3"
+      ],
+      "marker_spans": [
+        [
+          2483,
+          2525
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r20",
+          "r3"
+        ]
+      ],
+      "context_before": "Neurological complications of SARS-CoV-2 infection manifest with increased severity related to age and shared medical history of metabolic disorders and other vascular risk factors (Divani et al., 2020; Chou et al., 2021; Sullivan and Fischer, 2021).",
+      "context_after": "Because SARS-CoV-2 is a new addition to the coronavirus family, less information exists regarding the potential long-term neurological complications that may impact COVID-19 survivors."
+    },
+    {
+      "id": "s5",
+      "text": "While it is currently unknown whether neurological manifestations of SARS-CoV-2 infection arise solely from systemic inflammation in the periphery or brain infiltration, it is well established that secretion of cytokines and chemokines from the periphery allows the recruitment of leukocytes and other cells to specific tissues (Bauer et al., 2022; Prinz and Priller, 2017).",
+      "section": "Introduction",
+      "start": 2852,
+      "end": 3226,
+      "reference_keys": [
+        "r2",
+        "r36"
+      ],
+      "marker_spans": [
+        [
+          3180,
+          3225
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r2",
+          "r36"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "This type of immune response is speculated to accelerate blood–brain barrier (BBB) disruption and may potentially damage cells within the central nervous system (CNS) (de Erausquin et al., 2021)."
+    },
+    {
+      "id": "s6",
+      "text": "This type of immune response is speculated to accelerate blood–brain barrier (BBB) disruption and may potentially damage cells within the central nervous system (CNS) (de Erausquin et al., 2021).",
+      "section": "Introduction",
+      "start": 3227,
+      "end": 3422,
+      "reference_keys": [
+        "r10"
+      ],
+      "marker_spans": [
+        [
+          3394,
+          3421
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r10"
+        ]
+      ],
+      "context_before": "While it is currently unknown whether neurological manifestations of SARS-CoV-2 infection arise solely from systemic inflammation in the periphery or brain infiltration, it is well established that secretion of cytokines and chemokines from the periphery allows the recruitment of leukocytes and other cells to specific tissues (Bauer et al., 2022; Prinz and Priller, 2017).",
+      "context_after": "Such effects are similar to neuropathology seen in Alzheimer’s disease (AD) and other neurodegenerative disorders, where leukocyte infiltration, BBB dysregulation, and microglial activation are observed."
+    },
+    {
+      "id": "s7",
+      "text": "Thus, it is possible that SARS-CoV-2 may accelerate the onset and severity of cognitive decline or AD in susceptible individuals (Meinhardt et al., 2021; Mhatre et al., 2015).",
+      "section": "Introduction",
+      "start": 3627,
+      "end": 3802,
+      "reference_keys": [
+        "r31",
+        "r32"
+      ],
+      "marker_spans": [
+        [
+          3756,
+          3801
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r31",
+          "r32"
+        ]
+      ],
+      "context_before": "Such effects are similar to neuropathology seen in Alzheimer’s disease (AD) and other neurodegenerative disorders, where leukocyte infiltration, BBB dysregulation, and microglial activation are observed.",
+      "context_after": "Understanding the impact of SARS-CoV-2 infection on the CNS and subsequent mechanisms associated with cognition is particularly pressing, given the number of individuals presenting with neurological symptoms of post-acute sequelae of SARS-CoV-2 (neuro-PASC), colloquially termed ‘long-COVID’ (Shanley et al., 2022; Davis et al., 2021)."
+    },
+    {
+      "id": "s8",
+      "text": "Understanding the impact of SARS-CoV-2 infection on the CNS and subsequent mechanisms associated with cognition is particularly pressing, given the number of individuals presenting with neurological symptoms of post-acute sequelae of SARS-CoV-2 (neuro-PASC), colloquially termed ‘long-COVID’ (Shanley et al., 2022; Davis et al., 2021).",
+      "section": "Introduction",
+      "start": 3803,
+      "end": 4138,
+      "reference_keys": [
+        "r39",
+        "r9"
+      ],
+      "marker_spans": [
+        [
+          4095,
+          4137
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r39",
+          "r9"
+        ]
+      ],
+      "context_before": "Thus, it is possible that SARS-CoV-2 may accelerate the onset and severity of cognitive decline or AD in susceptible individuals (Meinhardt et al., 2021; Mhatre et al., 2015).",
+      "context_after": ""
+    },
+    {
+      "id": "s9",
+      "text": "Medical records indicate that all AD individuals have postmortem ABC scores indicative of AD (Supplementary file 2), where A is a measure of amyloid β deposition, B is a measure of neurofibrillary degeneration based on the Braak and Brook score, and C is scored based on neuritic plaques outlined by the Consortium to Establish a Registry for Alzheimer’s Disease diagnosis (CERAD) (Lampart et al., 2022).",
+      "section": "Results",
+      "start": 5304,
+      "end": 5708,
+      "reference_keys": [
+        "r24"
+      ],
+      "marker_spans": [
+        [
+          5685,
+          5707
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r24"
+        ]
+      ],
+      "context_before": "Each group comprises an equal number of age-matched male and female patients, ensuring equal distribution with an average age of 79.6 among groups.",
+      "context_after": "SARS-CoV-2 infection was confirmed by diagnostic polymerase chain reaction (PCR)."
+    },
+    {
+      "id": "s10",
+      "text": "Blood specimens were collected and indicate several laboratory features of severe COVID-19 (Supplementary file 2), such as increased C-reactive protein (CRP) and interleukin-6 (IL-6) universally, in all cases (Lampart et al., 2022).",
+      "section": "Results",
+      "start": 6150,
+      "end": 6382,
+      "reference_keys": [
+        "r24"
+      ],
+      "marker_spans": [
+        [
+          6359,
+          6381
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r24"
+        ]
+      ],
+      "context_before": "Within the SARS-CoV-2 and SARS-CoV-2-infected AD groups, all patients were symptomatic, admitted to the hospital, and received oxygen supplementation by ventilator or cannula with disease onset to death occurring on average 27 d after diagnosis for patients with SARS-CoV-2 only and 32 d after diagnosis in infected AD patients (Supplementary files 1 and 2).",
+      "context_after": ""
+    },
+    {
+      "id": "s11",
+      "text": "TREM1 signaling, the most highly activated pathway in this dataset (Figure 3A and B), is expressed primarily on myeloid cells, such as macrophages and microglia, and is involved in pro-inflammatory immune responses (de Oliveira Matos et al., 2020).",
+      "section": "Pathway activation of SARS-CoV-2 and AD groups",
+      "start": 10083,
+      "end": 10331,
+      "reference_keys": [
+        "r11"
+      ],
+      "marker_spans": [
+        [
+          10298,
+          10330
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r11"
+        ]
+      ],
+      "context_before": "Within the cortical BA9 region (Figure 3A), for example, several pathways, including neuroinflammation, TREM1, and cell senescence, show increased activation in the AD, SARS-CoV-2, and SARS-CoV-2-infected AD groups.",
+      "context_after": "Although age-associated cellular senescence (Figure 3A) is a natural process where telomeres shorten over time, this process also occurs during cellular stress due to inflammation, including that caused by viral infections, leading to a senescence-associated secretory phenotype such as metalloproteinases (MMPs), and inflammatory cytokines (Lee et al., 2021; Coppé et al., 2010)."
+    },
+    {
+      "id": "s12",
+      "text": "Although age-associated cellular senescence (Figure 3A) is a natural process where telomeres shorten over time, this process also occurs during cellular stress due to inflammation, including that caused by viral infections, leading to a senescence-associated secretory phenotype such as metalloproteinases (MMPs), and inflammatory cytokines (Lee et al., 2021; Coppé et al., 2010).",
+      "section": "Pathway activation of SARS-CoV-2 and AD groups",
+      "start": 10332,
+      "end": 10712,
+      "reference_keys": [
+        "r25",
+        "r8"
+      ],
+      "marker_spans": [
+        [
+          10673,
+          10711
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r25",
+          "r8"
+        ]
+      ],
+      "context_before": "TREM1 signaling, the most highly activated pathway in this dataset (Figure 3A and B), is expressed primarily on myeloid cells, such as macrophages and microglia, and is involved in pro-inflammatory immune responses (de Oliveira Matos et al., 2020).",
+      "context_after": "Another pathway of interest, SNARE, shows decreased activation in the AD and SARS-CoV-2 groups (Figure 3A), with the most significant reduction seen in the SARS-CoV-2-infected AD cases group."
+    },
+    {
+      "id": "s13",
+      "text": "IL-8 has several important roles, including endothelial cell migration and chemoattraction of neutrophils (Manda-Handzlik and",
+      "section": "Pathway activation of SARS-CoV-2 and AD groups",
+      "start": 11554,
+      "end": 11679,
+      "reference_keys": [
+        "r29"
+      ],
+      "marker_spans": [
+        [
+          11660,
+          11694
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r29"
+        ]
+      ],
+      "context_before": "Within the HF (Figure 4A), for example, interleukin-8 (IL-8) another neuroinflammatory pathway, and ciliary neurotrophic factor (CNTF) signaling is upregulated in AD, SARS-CoV-2, and SARS-CoV- 2-infected AD groups, while cAMP response element-binding protein (CREB) is also upregulated in the SARS-CoV-2 groups but downregulated in AD-only (Figure 4A).",
+      "context_after": ""
+    },
+    {
+      "id": "s14",
+      "text": "One way IL-8 aids cell migration is by enhancing the expression of molecules such as MMP-2, MMP-9, involved in BBB integrity and induction of neuronal apoptosis, and VEGF-A, involved in vascular permeability and angiogenesis, thus having a potential effect on vascular damage (Lugano et al., 2020; Jian et al., 2018; Licht and Keshet, 2013).",
+      "section": "Pathway activation of SARS-CoV-2 and AD groups",
+      "start": 11696,
+      "end": 12037,
+      "reference_keys": [
+        "r27",
+        "r21",
+        "r26"
+      ],
+      "marker_spans": [
+        [
+          11972,
+          12036
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r27",
+          "r21",
+          "r26"
+        ]
+      ],
+      "context_before": "Demkow, 2019).",
+      "context_after": "CNTF signaling aids in the prevention of neuronal degeneration after injury and is neuroprotective in diseases such as multiple sclerosis (MS) and amyotrophic lateral sclerosis (ALS) (Pasquin et al., 2015)."
+    },
+    {
+      "id": "s15",
+      "text": "CNTF signaling aids in the prevention of neuronal degeneration after injury and is neuroprotective in diseases such as multiple sclerosis (MS) and amyotrophic lateral sclerosis (ALS) (Pasquin et al., 2015).",
+      "section": "Pathway activation of SARS-CoV-2 and AD groups",
+      "start": 12038,
+      "end": 12244,
+      "reference_keys": [
+        "r34"
+      ],
+      "marker_spans": [
+        [
+          12221,
+          12243
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r34"
+        ]
+      ],
+      "context_before": "One way IL-8 aids cell migration is by enhancing the expression of molecules such as MMP-2, MMP-9, involved in BBB integrity and induction of neuronal apoptosis, and VEGF-A, involved in vascular permeability and angiogenesis, thus having a potential effect on vascular damage (Lugano et al., 2020; Jian et al., 2018; Licht and Keshet, 2013).",
+      "context_after": "Interestingly, CREB signaling modulates processes in consolidating memory and information processing and is inhibited in AD (Amidfar et al., 2020)."
+    },
+    {
+      "id": "s16",
+      "text": "Interestingly, CREB signaling modulates processes in consolidating memory and information processing and is inhibited in AD (Amidfar et al., 2020).",
+      "section": "Pathway activation of SARS-CoV-2 and AD groups",
+      "start": 12245,
+      "end": 12392,
+      "reference_keys": [
+        "r1"
+      ],
+      "marker_spans": [
+        [
+          12369,
+          12391
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r1"
+        ]
+      ],
+      "context_before": "CNTF signaling aids in the prevention of neuronal degeneration after injury and is neuroprotective in diseases such as multiple sclerosis (MS) and amyotrophic lateral sclerosis (ALS) (Pasquin et al., 2015).",
+      "context_after": "Consistent with these findings, we also see a reduction in CREB signaling in the AD individuals; however, this effect is reversed in SARS-CoV-2-infected AD individuals in the HF."
+    },
+    {
+      "id": "s17",
+      "text": "Neuronal function shown by the upregulation of NGF signaling is critical for the survival of neurons, and alterations of NGF signaling has been implicated in neurodegenerative disorders such as AD (Eu et al., 2021).",
+      "section": "Pathway activation of SARS-CoV-2 and AD groups",
+      "start": 13067,
+      "end": 13282,
+      "reference_keys": [
+        "r14"
+      ],
+      "marker_spans": [
+        [
+          13264,
+          13281
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r14"
+        ]
+      ],
+      "context_before": "Additionally, upregulation of integrin signaling and nerve growth factor (NGF) signaling occur in both cortical BA9 and HF tissue (Figures 3B and 4B) in all SARS-CoV-2, AD and SARS-CoV-2 infected AD groups.",
+      "context_after": "Integrin signaling is used for a diverse array of functions within the CNS via cell-to-cell and cell-to-extracellular matrix interactions (Ikeshima-Kataoka et al., 2022)."
+    },
+    {
+      "id": "s18",
+      "text": "Integrin signaling is used for a diverse array of functions within the CNS via cell-to-cell and cell-to-extracellular matrix interactions (Ikeshima-Kataoka et al., 2022).",
+      "section": "Pathway activation of SARS-CoV-2 and AD groups",
+      "start": 13283,
+      "end": 13453,
+      "reference_keys": [
+        "r19"
+      ],
+      "marker_spans": [
+        [
+          13421,
+          13452
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r19"
+        ]
+      ],
+      "context_before": "Neuronal function shown by the upregulation of NGF signaling is critical for the survival of neurons, and alterations of NGF signaling has been implicated in neurodegenerative disorders such as AD (Eu et al., 2021).",
+      "context_after": ""
+    },
+    {
+      "id": "s19",
+      "text": "The finding from our study suggests that SARS-CoV-2 and AD-infected individuals share similar alterations of regulatory patterns of immune-inflammatory pathways and pathways involved with cognition as suggested by recent meta-analyses showing shared neuroinflammation and microvascular injury, in particular AD and SARS-CoV-2-infected individuals (Zhou et al., 2021).",
+      "section": "Discussion",
+      "start": 16505,
+      "end": 16872,
+      "reference_keys": [
+        "r48"
+      ],
+      "marker_spans": [
+        [
+          16852,
+          16871
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r48"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "Additionally, Zhou and colleagues found a significant overlap in cerebrospinal fluid (CSF) monocytes and markers in AD and COVID-19, which also occurs in our dataset (Zhou et al., 2021)."
+    },
+    {
+      "id": "s20",
+      "text": "Additionally, Zhou and colleagues found a significant overlap in cerebrospinal fluid (CSF) monocytes and markers in AD and COVID-19, which also occurs in our dataset (Zhou et al., 2021).",
+      "section": "Discussion",
+      "start": 16873,
+      "end": 17059,
+      "reference_keys": [
+        "r48"
+      ],
+      "marker_spans": [
+        [
+          17039,
+          17058
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r48"
+        ]
+      ],
+      "context_before": "The finding from our study suggests that SARS-CoV-2 and AD-infected individuals share similar alterations of regulatory patterns of immune-inflammatory pathways and pathways involved with cognition as suggested by recent meta-analyses showing shared neuroinflammation and microvascular injury, in particular AD and SARS-CoV-2-infected individuals (Zhou et al., 2021).",
+      "context_after": "The similarities of transcriptional profiles and cellular pathophysiology in SARS-CoV-2 and SARS-CoV-2-infected individuals support the potential role of SARS-CoV-2 infection on the CNS, leading to neuro-PASC symptoms such as brain fog and memory loss."
+    },
+    {
+      "id": "s21",
+      "text": "Microglia nodule formation is present in some neurodegenerative diseases, such as MS, and viral infections, such as herpes simplex virus (HSV) and human immunodeficiency virus (HIV) (Varet et al., 2016).",
+      "section": "Discussion",
+      "start": 17971,
+      "end": 18174,
+      "reference_keys": [
+        "r45"
+      ],
+      "marker_spans": [
+        [
+          18153,
+          18173
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r45"
+        ]
+      ],
+      "context_before": "This was highlighted by the regulation of TREM1, neuroinflammation, and cellular senescence/inflammatory pathways present in all groups and further established by the widespread microglial activation seen in AD and SARS-CoV-2-infected AD cases, and in particular, the nodular formation seen in SARS-CoV-2-infected AD cases.",
+      "context_after": "A potentially compounding finding is the nodular formation that is initially characterized by abundant presence of activated microglia and innate immune factors leading to Toll-like receptor (TLR) signaling and upregulations of inflammasome genes, leading to T cell stimulation and ultimately the destruction of neurons (Tröscher et al., 2019)."
+    },
+    {
+      "id": "s22",
+      "text": "A potentially compounding finding is the nodular formation that is initially characterized by abundant presence of activated microglia and innate immune factors leading to Toll-like receptor (TLR) signaling and upregulations of inflammasome genes, leading to T cell stimulation and ultimately the destruction of neurons (Tröscher et al., 2019).",
+      "section": "Discussion",
+      "start": 18175,
+      "end": 18519,
+      "reference_keys": [
+        "r44"
+      ],
+      "marker_spans": [
+        [
+          18495,
+          18518
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r44"
+        ]
+      ],
+      "context_before": "Microglia nodule formation is present in some neurodegenerative diseases, such as MS, and viral infections, such as herpes simplex virus (HSV) and human immunodeficiency virus (HIV) (Varet et al., 2016).",
+      "context_after": "This may be of particular concern in the SARS-CoV-2-infected AD cases, where we primarily observe increased nodular lesions."
+    },
+    {
+      "id": "s23",
+      "text": "Interestingly, a large retrospective study of patients 104 years or older revealed that patients with SARS-CoV-2 were at an increased risk for a new AD diagnosis within a year of their SARS-CoV-2 diagnosis, with the most significant risk seen among those 85 years and older (Wang et al., 2022).",
+      "section": "Discussion",
+      "start": 18805,
+      "end": 19099,
+      "reference_keys": [
+        "r46"
+      ],
+      "marker_spans": [
+        [
+          19079,
+          19098
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r46"
+        ]
+      ],
+      "context_before": "This suggests that SARS-CoV-2 further promotes neuroinflammation in AD, which likely advances the progression and severity of CNS disease in these individuals.",
+      "context_after": "This may underscore the critical role of preexisting inflammation in the brain, which is seen in the context of ‘normal’ aging, in promoting or advancing AD progression."
+    },
+    {
+      "id": "s24",
+      "text": "It is important to note the possibility of vascular damage due to ventilation prior to death in SARS-CoV-2-infected individuals; however, vascular damage by SARS-CoV-2, as assessed by HIF-1α, is observed in non-human primates that were euthanized at designated end-of-life time points precluding breathing intervention in every population and setting (Rutkai et al., 2022).",
+      "section": "Discussion",
+      "start": 19743,
+      "end": 20116,
+      "reference_keys": [
+        "r37"
+      ],
+      "marker_spans": [
+        [
+          20094,
+          20115
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r37"
+        ]
+      ],
+      "context_before": "We also observed potential damage to the vasculature via increased regulation of HIF-1α, integrin signaling, and IL-8 signaling.",
+      "context_after": "These findings may point to a possible route for lymphocyte transmigration following chemoattractant gradients such as IL-8 and enhancement of MMPs and VEGF, which are aided by integrins such as cellular adhesion molecules such as ICAM-1 and are implicated with inflammatory signal transduction (Patarroyo et al., 1990; Bui et al., 2020)."
+    },
+    {
+      "id": "s25",
+      "text": "These findings may point to a possible route for lymphocyte transmigration following chemoattractant gradients such as IL-8 and enhancement of MMPs and VEGF, which are aided by integrins such as cellular adhesion molecules such as ICAM-1 and are implicated with inflammatory signal transduction (Patarroyo et al., 1990; Bui et al., 2020).",
+      "section": "Discussion",
+      "start": 20117,
+      "end": 20455,
+      "reference_keys": [
+        "r35",
+        "r4"
+      ],
+      "marker_spans": [
+        [
+          20412,
+          20454
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r35",
+          "r4"
+        ]
+      ],
+      "context_before": "It is important to note the possibility of vascular damage due to ventilation prior to death in SARS-CoV-2-infected individuals; however, vascular damage by SARS-CoV-2, as assessed by HIF-1α, is observed in non-human primates that were euthanized at designated end-of-life time points precluding breathing intervention in every population and setting (Rutkai et al., 2022).",
+      "context_after": "This process leads to T cell activation, which may be responsible for the observed inflammatory environment."
+    },
+    {
+      "id": "s26",
+      "text": "This finding is supported by other studies suggesting that SARS-CoV-2 is sporadically present in brain tissue (Krämer et al., 2014).",
+      "section": "Discussion",
+      "start": 21399,
+      "end": 21531,
+      "reference_keys": [
+        "r23"
+      ],
+      "marker_spans": [
+        [
+          21509,
+          21530
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r23"
+        ]
+      ],
+      "context_before": "We did detect SARS-CoV-2 nucleocapsid in some SARS-CoV-2 brain tissues that appear to be restricted to the vasculature.",
+      "context_after": "Importantly, we only investigated CNS regions with the greatest significance in AD."
+    },
+    {
+      "id": "s27",
+      "text": "These regions may be less prone to SARS-CoV-2 infection than others, such as the olfactory bulb and tract, where olfactory neurons are proposed to be infected through viral spread from olfactory epithelium (Burks et al., 2021).",
+      "section": "Discussion",
+      "start": 21616,
+      "end": 21843,
+      "reference_keys": [
+        "r5"
+      ],
+      "marker_spans": [
+        [
+          21822,
+          21842
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r5"
+        ]
+      ],
+      "context_before": "Importantly, we only investigated CNS regions with the greatest significance in AD.",
+      "context_after": "Our findings of the viral nucleocapsid limited to the endothelium suggest the hematological spread of SARS-CoV-2 to the CNS that may not extend to the neurons in the cortical BA9 and HF yet is still capable of inducing widespread inflammation in the brain."
+    },
+    {
+      "id": "s28",
+      "text": "Even in the absence of a detectable virus in the neurons or neural cells, SARS-CoV-2 may impact cognitive dysfunction through TREM1 activation of the NLRP3 inflammasome and subsequent pyroptosis, where pro-caspase 1 cleavage and subsequent cleavage and activation of IL-1β, IL-18, and gasmerdin D pore formation in cells ultimately lead to pyroptosis (Parodi-Rullán et al., 2021; Xu et al., 2021).",
+      "section": "Discussion",
+      "start": 22101,
+      "end": 22498,
+      "reference_keys": [
+        "r33",
+        "r47"
+      ],
+      "marker_spans": [
+        [
+          22452,
+          22497
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r33",
+          "r47"
+        ]
+      ],
+      "context_before": "Our findings of the viral nucleocapsid limited to the endothelium suggest the hematological spread of SARS-CoV-2 to the CNS that may not extend to the neurons in the cortical BA9 and HF yet is still capable of inducing widespread inflammation in the brain.",
+      "context_after": "NLRP3 activation is reported in AD and COVID-19, and is suggested by the formation of microglial nodules demonstrated in these cases (Lünemann et al., 2021; Herman and Pasinetti, 2018; Campbell et al., 2021)."
+    },
+    {
+      "id": "s29",
+      "text": "NLRP3 activation is reported in AD and COVID-19, and is suggested by the formation of microglial nodules demonstrated in these cases (Lünemann et al., 2021; Herman and Pasinetti, 2018; Campbell et al., 2021).",
+      "section": "Discussion",
+      "start": 22499,
+      "end": 22707,
+      "reference_keys": [
+        "r28",
+        "r17",
+        "r6"
+      ],
+      "marker_spans": [
+        [
+          22632,
+          22706
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r28",
+          "r17",
+          "r6"
+        ]
+      ],
+      "context_before": "Even in the absence of a detectable virus in the neurons or neural cells, SARS-CoV-2 may impact cognitive dysfunction through TREM1 activation of the NLRP3 inflammasome and subsequent pyroptosis, where pro-caspase 1 cleavage and subsequent cleavage and activation of IL-1β, IL-18, and gasmerdin D pore formation in cells ultimately lead to pyroptosis (Parodi-Rullán et al., 2021; Xu et al., 2021).",
+      "context_after": "SARS-CoV-2 is not the first virus to be implicated in cognitive dysfunction."
+    },
+    {
+      "id": "s30",
+      "text": "This is a facet shown with other viruses such as HIV, HSV, and Epstein–Barr virus (EBV) (Smail and Brew, 2018; Sun et al., 2022).",
+      "section": "Discussion",
+      "start": 22785,
+      "end": 22914,
+      "reference_keys": [
+        "r40",
+        "r42"
+      ],
+      "marker_spans": [
+        [
+          22873,
+          22913
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r40",
+          "r42"
+        ]
+      ],
+      "context_before": "SARS-CoV-2 is not the first virus to be implicated in cognitive dysfunction.",
+      "context_after": "While this study cannot predict the outcome of disease progression in COVID-19 survivors, the present findings that SARS-CoV-2 infection can recapitulate AD-type transcriptional and cellular neuroinflammatory patterns among other in a very short time frame make it critical to understand how SARS-CoV-2 impacts long-term cognition."
+    },
+    {
+      "id": "s31",
+      "text": "Tissue was cut at 6 µm on a Leica Microtome for immunohistochemistry that was performed on FFPE brain sections as described previously (Tavazzi et al., 2014).",
+      "section": "Immunohistochemistry",
+      "start": 27230,
+      "end": 27388,
+      "reference_keys": [
+        "r43"
+      ],
+      "marker_spans": [
+        [
+          27365,
+          27387
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r43"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "Iba-1 staining was conducted on a Ventana Benchmark using OptiView and UltraView detection kits provided by Roche (Roche Molecular Systems, Inc)."
+    },
+    {
+      "id": "s32",
+      "text": "Threshold and multiplex analyses were performed with HALO algorithms for nonbiased quantitation of proteins of interest without processing, as described previously (Burks et al., 2021).",
+      "section": "Imaging and quantitation",
+      "start": 28800,
+      "end": 28985,
+      "reference_keys": [
+        "r5"
+      ],
+      "marker_spans": [
+        [
+          28964,
+          28984
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r5"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "For microglia quantitation, hematoxylin-stained nuclei were used to quantify the total number of cells and those with Vector Red intensity above a rigorous threshold (Iba-1+)."
+    },
+    {
+      "id": "s33",
+      "text": "Genes were filtered to remove lowly expressed genes, defined as fewer than five samples showing a minimum read count of 1 read, prior to performing differential analysis with DESeq2, in R (4.2.0; Varet et al., 2016).",
+      "section": "Bioinformatics data access and analysis",
+      "start": 30203,
+      "end": 30419,
+      "reference_keys": [
+        "r45"
+      ],
+      "marker_spans": [
+        [
+          30391,
+          30418
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r45"
+        ]
+      ],
+      "context_before": "Sample similarity was assessed with PCA on VST-transformed expression values.",
+      "context_after": "The transcriptional profiles of SARS-CoV-2 and AD postmortem cases from the cortical BA9 and HF were assessed by pairwise comparison to the neurologically healthy control cases."
+    },
+    {
+      "id": "s34",
+      "text": "Biological pathways and key regulators impacted by disease were identified using QIAGEN IPA (Sullivan and Fischer, 2021).",
+      "section": "Bioinformatics data access and analysis",
+      "start": 31193,
+      "end": 31314,
+      "reference_keys": [
+        "r41"
+      ],
+      "marker_spans": [
+        [
+          31285,
+          31313
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r41"
+        ]
+      ],
+      "context_before": "An additional round of differential expression testing was performed using a model containing covariates (COVID status, Alzheimer’s status, gender, and brain region) to extract the transcriptional effects of the individual covariates.",
+      "context_after": "Genes with a threshold of p<0.05 were used as input for IPA."
+    }
+  ]
+}

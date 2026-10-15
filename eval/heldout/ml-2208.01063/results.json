@@ -1,0 +1,267 @@
+{
+  "slug": "ml-2208.01063",
+  "field": "Physics: quantum computing (drawn from the machine-learning stratum)",
+  "title": "Real-Time Krylov Theory for Quantum Computing Algorithms",
+  "job_id": "759d71ca65f3",
+  "scored_at": "2026-10-08T17:31:04+00:00",
+  "planted": 8,
+  "checked": 8,
+  "caught": 6,
+  "recall": 0.75,
+  "label_accuracy": 0.5,
+  "expected_mode_rate": 0.5,
+  "untouched_verdicts": 71,
+  "other_flags": 7,
+  "other_flags_preexisting": 5,
+  "precision": 0.46153846153846156,
+  "precision_excluding_preexisting": 0.75,
+  "by_mutation": {
+    "citation_swap": {
+      "planted": 6,
+      "caught": 6
+    },
+    "scope_inflation": {
+      "planted": 2,
+      "caught": 0
+    }
+  },
+  "flagged_citations": 6,
+  "review": {
+    "genuine": 0,
+    "false_alarm": 5,
+    "debatable": 1,
+    "unreviewed": 0
+  },
+  "review_details": {
+    "genuine": [],
+    "false_alarm": [
+      {
+        "sentence_id": "s17",
+        "reference_key": "Higham1998",
+        "note": "Cited for why ill-conditioned generalized eigenproblems are numerically unstable, which is the cited work's subject (condition numbers and backward error of GEPs); the truncation rule itself is the citing authors' method."
+      },
+      {
+        "sentence_id": "s19",
+        "reference_key": "orthogonalpoly",
+        "note": "Caused by the checker: the reference is a 2020 Springer workshop volume ('Orthogonal Polynomials: 2nd AIMS-Volkswagen Stiftung Workshop'), but the resolver matched the generic title to a different survey called 'Orthogonal Polynomials', which was then checked."
+      },
+      {
+        "sentence_id": "s2",
+        "reference_key": "nielsen_chuang",
+        "note": "Identification citation: quantum phase estimation cited to the standard textbook, which presents the algorithm. Requiring the words 'Hamiltonian diagonalization' is too literal."
+      },
+      {
+        "sentence_id": "s30",
+        "reference_key": "LCU",
+        "note": "Childs and Wiebe do give the success probability of LCU; 'where Ex specifies the center of spectral decay' is the citing paper's own notation for its application, not a claim about the source."
+      },
+      {
+        "sentence_id": "s7",
+        "reference_key": "Neuhauser1994",
+        "note": "Filter diagonalization (small Hamiltonian matrix built from real-time-propagated states) is exactly the classical ancestor of solving generalized eigenproblems from real-time evolution; cited in a group of four. 'Possibly the wrong reference' is wrong."
+      }
+    ],
+    "debatable": [
+      {
+        "sentence_id": "s15",
+        "reference_key": "LCU",
+        "note": "The cited work analyses the success and failure probability of LCU constructions; the 'flagged state' and 'target amplitude' framing is the citing paper's own application."
+      }
+    ],
+    "unreviewed": []
+  },
+  "precision_reviewed": 0.5454545454545454,
+  "summary_line": "Caught 6 of 8 planted errors · 5 false alarms",
+  "details": [
+    {
+      "id": "p1",
+      "sentence_id": "s6",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [26] with [50] (\"A deterministic alternative to the full configuration interaction quantum Monte Carlo method\") (similarity 0.42 vs 0.81 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": false,
+      "labels": [
+        "unverifiable"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p2",
+      "sentence_id": "s8",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [26] with [13] (\"Quantum Computation and Quantum Information\") (similarity 0.42 vs 0.60 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": true
+    },
+    {
+      "id": "p3",
+      "sentence_id": "s11",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [26] with [57] (\"Computing Symplectic Eigenpairs of Symmetric Positive-Definite Matrices via Trace Minimization and Riemannian Optimization\") (similarity 0.36 vs 0.54 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": true
+    },
+    {
+      "id": "p4",
+      "sentence_id": "s13",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [39] with [42] (\"Structured Backward Error and Condition of Generalized Eigenvalue Problems\") (similarity 0.32 vs 0.52 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p5",
+      "sentence_id": "s16",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [26] with [60] (\"Sensitivity of quantum speedup by quantum annealing to a noisy oracle\") (similarity 0.32 vs 0.49 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": false,
+      "labels": [
+        "unverifiable"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p6",
+      "sentence_id": "s22",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"in every population and setting\" before the citation",
+      "checked": true,
+      "caught": false,
+      "label_correct": false,
+      "labels": [
+        "unverifiable"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": false
+    },
+    {
+      "id": "p7",
+      "sentence_id": "s24",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [26] with [40] (\"A fast quantum mechanical algorithm for database search\") (similarity 0.37 vs 0.69 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p8",
+      "sentence_id": "s25",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"without exception\" before the citation",
+      "checked": true,
+      "caught": false,
+      "label_correct": false,
+      "labels": [
+        "supported"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": false
+    }
+  ],
+  "verdicts": 80,
+  "escalation": {
+    "verdicts": 80,
+    "escalated": 16,
+    "label_changed": 4,
+    "transitions": {
+      "unverifiable->not_found": 2,
+      "unverifiable->supported": 2
+    }
+  },
+  "coverage": {
+    "total": 60,
+    "full": 43,
+    "abstract_only": 13,
+    "unavailable": 4,
+    "retracted": 0,
+    "line": "Full text found for 43 of 60 references · abstract only for 13 · unavailable for 4."
+  },
+  "usage": {
+    "per_model": [
+      {
+        "model": "Qwen/Qwen3-Embedding-8B",
+        "role": "embed",
+        "calls": 2,
+        "cached_calls": 0,
+        "prompt_tokens": 321,
+        "completion_tokens": 0,
+        "estimated_cost_usd": 3e-06
+      },
+      {
+        "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+        "role": "escalate",
+        "calls": 16,
+        "cached_calls": 10,
+        "prompt_tokens": 278499,
+        "completion_tokens": 35119,
+        "estimated_cost_usd": 0.383856
+      },
+      {
+        "model": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+        "role": "extract",
+        "calls": 32,
+        "cached_calls": 28,
+        "prompt_tokens": 61921,
+        "completion_tokens": 7433,
+        "estimated_cost_usd": 0.005499
+      },
+      {
+        "model": "nvidia/nemotron-3-super-120b-a12b",
+        "role": "judge",
+        "calls": 79,
+        "cached_calls": 55,
+        "prompt_tokens": 347348,
+        "completion_tokens": 90946,
+        "estimated_cost_usd": 0.186056
+      }
+    ],
+    "total_prompt_tokens": 688089,
+    "total_completion_tokens": 133498,
+    "total_estimated_cost_usd": 0.575414
+  },
+  "baseline_cost_usd": 0.459
+}

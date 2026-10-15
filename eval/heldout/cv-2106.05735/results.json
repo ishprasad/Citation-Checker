@@ -1,0 +1,252 @@
+{
+  "slug": "cv-2106.05735",
+  "field": "Computer science: computer vision",
+  "title": "The Medical Segmentation Decathlon",
+  "job_id": "7b456fc70151",
+  "scored_at": "2026-10-08T17:31:04+00:00",
+  "planted": 6,
+  "checked": 6,
+  "caught": 6,
+  "recall": 1.0,
+  "label_accuracy": 0.5,
+  "expected_mode_rate": 1.0,
+  "untouched_verdicts": 50,
+  "other_flags": 9,
+  "other_flags_preexisting": 8,
+  "precision": 0.4,
+  "precision_excluding_preexisting": 0.8571428571428571,
+  "by_mutation": {
+    "scope_inflation": {
+      "planted": 2,
+      "caught": 2
+    },
+    "citation_swap": {
+      "planted": 4,
+      "caught": 4
+    }
+  },
+  "flagged_citations": 8,
+  "review": {
+    "genuine": 0,
+    "false_alarm": 3,
+    "debatable": 5,
+    "unreviewed": 0
+  },
+  "review_details": {
+    "genuine": [],
+    "false_alarm": [
+      {
+        "sentence_id": "s10",
+        "reference_key": "AmberPaper",
+        "note": "Caused by the checker: the per-dataset targets (17 in total) are in a table of the cited data paper, and the checker's text of cited papers omits table contents."
+      },
+      {
+        "sentence_id": "s13",
+        "reference_key": "liver",
+        "note": "The cited LiTS paper lists IRCAD in France as a data source and describes the LiTS data used for the Decathlon's liver task; the hospital's full name is a detail, not a misattribution."
+      },
+      {
+        "sentence_id": "s5",
+        "reference_key": "isensee2021nnu",
+        "note": "The cited paper describes an 'unmanageable number of research papers' and about 12,000 studies building on U-Net since 2015, i.e. thousands per year; the not-found verdict is too literal."
+      }
+    ],
+    "debatable": [
+      {
+        "sentence_id": "s30",
+        "reference_key": "isensee2021nnu",
+        "note": "The checker read the 2019 arXiv preprint ('29 out of 49'); the sentence cites the 2021 Nature Methods version, whose updated results likely contain the 33-of-53 figure. The BraTS 2020 win is not in the preprint either. Version mismatch, not verifiable here."
+      },
+      {
+        "sentence_id": "s31",
+        "reference_key": "isensee2021nnu",
+        "note": "The preprint the checker read says the KiTS top-15 were U-Net offspring but gives no count of nnU-Net derivatives; the journal version may. Same version mismatch."
+      },
+      {
+        "sentence_id": "s37",
+        "reference_key": "sirinukunwattana2017gland",
+        "note": "The GlaS paper says malignant gland boundaries are not well defined and that inter-observer variability was not measured; 'experts often do not agree' is a stretch, cited jointly with another work."
+      },
+      {
+        "sentence_id": "s4",
+        "reference_key": "MaierHein2018",
+        "note": "The source says 70% of challenge tasks were segmentation; the sentence says 70% of challenges. A real but minor imprecision (challenges can have several tasks)."
+      },
+      {
+        "sentence_id": "s8",
+        "reference_key": "2018Lena",
+        "note": "The sentence describes the citing paper's own challenge; the citation most plausibly supports the notion of a challenge 'task', which the cited meta-analysis defines, not the MSD details."
+      }
+    ],
+    "unreviewed": []
+  },
+  "precision_reviewed": 0.6666666666666666,
+  "summary_line": "Caught 6 of 6 planted errors · 3 false alarms",
+  "details": [
+    {
+      "id": "p1",
+      "sentence_id": "s1",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"universally, in all cases\" before the citation",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [
+        "scope_inflation"
+      ],
+      "expected_mode_found": true,
+      "escalated": false
+    },
+    {
+      "id": "p2",
+      "sentence_id": "s23",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Kingma and Ba, 2014) with (Bakas et al., 2017) (\"Advancing The Cancer Genome Atlas glioma MRI collections with expert segmentation labels and radiomic features\") (similarity 0.20 vs 0.82 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": false,
+      "labels": [
+        "unverifiable"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p3",
+      "sentence_id": "s35",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"in every population and setting\" before the citation",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [
+        "scope_inflation"
+      ],
+      "expected_mode_found": true,
+      "escalated": false
+    },
+    {
+      "id": "p4",
+      "sentence_id": "s40",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (He et al., 2021b) with (Reinke et al., 2021) (\"Common Limitations of Image Processing Metrics: A Picture Story\") (similarity 0.28 vs 0.56 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p5",
+      "sentence_id": "s45",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Rippel et al., 2020) with (Wiesenfarth et al., 2021) (\"Methods and open-source toolkit for analyzing and visualizing challenge results\") (similarity 0.35 vs 0.59 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": false,
+      "labels": [
+        "unverifiable"
+      ],
+      "failure_modes": [
+        "corrected_source",
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p6",
+      "sentence_id": "s46",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Wang et al., 2019) with (Maier-Hein et al., 2018) (\"Why rankings of biomedical image analysis competitions should be interpreted with care\") (similarity 0.31 vs 0.68 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": false,
+      "labels": [
+        "unverifiable"
+      ],
+      "failure_modes": [
+        "corrected_source",
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    }
+  ],
+  "verdicts": 59,
+  "escalation": {
+    "verdicts": 59,
+    "escalated": 14,
+    "label_changed": 1,
+    "transitions": {
+      "unverifiable->supported": 1
+    }
+  },
+  "coverage": {
+    "total": 44,
+    "full": 23,
+    "abstract_only": 3,
+    "unavailable": 18,
+    "retracted": 0,
+    "line": "Full text found for 23 of 44 references · abstract only for 3 · unavailable for 18."
+  },
+  "usage": {
+    "per_model": [
+      {
+        "model": "Qwen/Qwen3-Embedding-8B",
+        "role": "embed",
+        "calls": 2,
+        "cached_calls": 0,
+        "prompt_tokens": 249,
+        "completion_tokens": 0,
+        "estimated_cost_usd": 2e-06
+      },
+      {
+        "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+        "role": "escalate",
+        "calls": 14,
+        "cached_calls": 9,
+        "prompt_tokens": 313085,
+        "completion_tokens": 30820,
+        "estimated_cost_usd": 0.405545
+      },
+      {
+        "model": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+        "role": "extract",
+        "calls": 46,
+        "cached_calls": 42,
+        "prompt_tokens": 84982,
+        "completion_tokens": 4797,
+        "estimated_cost_usd": 0.00625
+      },
+      {
+        "model": "nvidia/nemotron-3-super-120b-a12b",
+        "role": "judge",
+        "calls": 40,
+        "cached_calls": 32,
+        "prompt_tokens": 191469,
+        "completion_tokens": 54024,
+        "estimated_cost_usd": 0.106062
+      }
+    ],
+    "total_prompt_tokens": 589785,
+    "total_completion_tokens": 89641,
+    "total_estimated_cost_usd": 0.517859
+  },
+  "baseline_cost_usd": 0.465
+}

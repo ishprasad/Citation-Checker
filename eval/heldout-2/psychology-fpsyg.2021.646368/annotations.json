@@ -1,0 +1,89 @@
+{
+  "paper": "psychology-fpsyg.2021.646368",
+  "annotations": [
+    {
+      "sentence_id": "s4",
+      "reference_key": "r19",
+      "verdict": "genuine",
+      "note": "Liu et al. report 24.5% of pregnant women in Wuhan felt anxious (vs 10.4% in Chongqing); the citing paper says 20.5%. Flagged only by the old pipeline; the current judge accepted 20.5 as 'at least about'."
+    },
+    {
+      "sentence_id": "s6",
+      "reference_key": "r34",
+      "verdict": "debatable",
+      "note": "Yonkers et al. report PTSD in about 8% of pregnant women and discuss co-occurring depression; 'mental health problems are common' is a fair but broad gloss of a PTSD-specific paper."
+    },
+    {
+      "sentence_id": "s8",
+      "reference_key": "r7",
+      "verdict": "debatable",
+      "note": "Corbett et al. report over half of pregnant women with significant health anxiety and major behaviour changes after social-distancing instructions, early in the pandemic; the sentence turns this into lifestyle changes from long-term lockdown causing the anxiety, a causal link the source does not draw."
+    },
+    {
+      "sentence_id": "s10",
+      "reference_key": "r32",
+      "verdict": "debatable",
+      "note": "Wu et al. list underweight, full-time employment and middle income among risk factors; 'economic burden' is a loose rendering of middle income."
+    },
+    {
+      "sentence_id": "s12",
+      "reference_key": "r6",
+      "verdict": "genuine",
+      "note": "A review of commercial video games and cognitive functions is cited for sedentary lifestyle causing adverse health outcomes and poor sleep; it covers neither. Probably the wrong reference (flagged as off-topic by the old pipeline only)."
+    },
+    {
+      "sentence_id": "s14",
+      "reference_key": "r32",
+      "verdict": "genuine",
+      "note": "The anxiety cut-off of 49/50 belongs to the Zung Self-Rating Anxiety Scale; Wu et al. used the EPDS (0-30, anxiety subscale 0-9) and give no such cut-off."
+    },
+    {
+      "sentence_id": "s16",
+      "reference_key": "r4",
+      "verdict": "debatable",
+      "note": "Cai et al. link sleep under 6 h to gestational diabetes, one adverse perinatal outcome; 'adverse perinatal outcomes' generalises a little."
+    },
+    {
+      "sentence_id": "s18",
+      "reference_key": "r32",
+      "verdict": "genuine",
+      "note": "Cited for the screen-time grouping (8 h or more as the highest group), but Wu et al. never mention screen time."
+    },
+    {
+      "sentence_id": "s19",
+      "reference_key": "r13",
+      "verdict": "genuine",
+      "note": "Kang et al. report clusters of mental health disturbance among Wuhan medical and nursing staff, not an anxiety prevalence of 29.4%; the figure does not appear anywhere in the full text, tables included."
+    },
+    {
+      "sentence_id": "s20",
+      "reference_key": "r3",
+      "verdict": "genuine",
+      "note": "Berthelot et al. report 10.9% of the pandemic cohort with clinically significant anxiety and depression symptoms; the 12.6% anxiety prevalence attributed to them does not appear in the text, tables included."
+    },
+    {
+      "sentence_id": "s22",
+      "reference_key": "r19",
+      "verdict": "genuine",
+      "note": "Same as s4: Liu et al. report 24.5% in Wuhan, not 20.5% (Chongqing 10.4% is right)."
+    },
+    {
+      "sentence_id": "s28",
+      "reference_key": "r16",
+      "verdict": "debatable",
+      "note": "Leone et al. compare sleep before and during the lockdown and report associations; 'COVID-19 induces' is causal shorthand for lockdown-associated changes."
+    },
+    {
+      "sentence_id": "s31",
+      "reference_key": "r30",
+      "verdict": "false_alarm",
+      "note": "The sentence offers the citing authors' own 'plausible explanation'; the review supports its premise that health misinformation on social media induces fear and anxiety."
+    },
+    {
+      "sentence_id": "s32",
+      "reference_key": "r31",
+      "verdict": "false_alarm",
+      "note": "Joint citation with Cao et al. (adolescents); Wu et al. studied Chinese college freshmen aged about 18 and found screen time over 2 h/day associated with anxiety, which fits the sentence."
+    }
+  ]
+}

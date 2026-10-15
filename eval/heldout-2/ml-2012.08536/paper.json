@@ -1,0 +1,2532 @@
+{
+  "paper": {
+    "id": "heldout:2012.08536v3:67d67af5",
+    "title": "Numerical Implementation of Just-In-Time Decoding in Novel Lattice Slices Through the Three-Dimensional Surface Code",
+    "authors": [
+      "T. R. Scruby",
+      "D. E. Browne",
+      "P. Webster",
+      "M. Vasmer"
+    ],
+    "abstract": "We build on recent work by B. Brown (Sci. Adv. 6, eaay4929 (2020)) to develop and simulate an explicit recipe for a just-in-time decoding scheme in three 3D surface codes, which can be used to implement a transversal (non-Clifford) $\\overline{CCZ}$ between three 2D surface codes in time linear in the code distance. We present a fully detailed set of bounded-height lattice slices through the 3D codes which retain the code distance and measurement-error detecting properties of the full 3D code and admit a dimension-jumping process which expands from/collapses to 2D surface codes supported on the boundaries of each slice. At each timestep of the procedure the slices agree on a common set of overlapping qubits on which $CCZ$ should be applied. We use these slices to simulate the performance of a simple JIT decoder against stochastic $X$ and measurement errors and find evidence for a threshold $p_c \\sim 0.1\\%$ in all three codes. We expect that this threshold could be improved by optimisation of the decoder.",
+    "source": "arxiv",
+    "arxiv_id": "2012.08536v3",
+    "parsed_from": "latex",
+    "citation_style": "numeric",
+    "text": "Abstract\n\nWe build on recent work by B. Brown (Sci. Adv. 6, eaay4929 (2020)) to develop and simulate an explicit recipe for a just-in-time decoding scheme in three 3D surface codes, which can be used to implement a transversal (non-Clifford) CCZ between three 2D surface codes in time linear in the code distance. We present a fully detailed set of bounded-height lattice slices through the 3D codes which retain the code distance and measurement-error detecting properties of the full 3D code and admit a dimension-jumping process which expands from/collapses to 2D surface codes supported on the boundaries of each slice. At each timestep of the procedure the slices agree on a common set of overlapping qubits on which CCZ should be applied. We use these slices to simulate the performance of a simple JIT decoder against stochastic X and measurement errors and find evidence for a threshold pc ∼ 0.1% in all three codes. We expect that this threshold could be improved by optimisation of the decoder.\n\nIntroduction and Overview\n\nQuantum error correcting codes allow us to protect quantum systems against decoherence [1, 2] and are believed to be a necessary part of a scalable quantum computer [3]. Topological codes [4, 5] are an important class of codes with geometrically local stablisers and high error tolerance in every population and setting [6, 7]. Topological codes that are scalable in two dimensions (2D) are of particular relevance, as many state-of-the-art quantum processors share this constraint [8, 9, 10]. An important question in any quantum error correction scheme is how to fault-tolerantly implement a universal gate set for a given code. No-go results have been proved that limit naturally fault-tolerant operators from being universal in topological codes [11, 12, 13, 14, 15, 16]. Nonetheless, procedures exist for implementing a universal gate set in 2D topological codes. These include a recent proposal by Brown [17], the implementation of which is the subject of this work.\n\nA decoding algorithm is a classical process in a quantum error correction scheme which takes as input a set of stabiliser measurement outcomes (referred to as a syndrome) and returns a correction operator. A correction is successful if the product of the correction operator and the original error is equivalent to a stabiliser. Of particular interest are single-shot decoding schemes where corrections can be inferred reliably from a single round of stabiliser measurements even in the presence of measurement errors [18, 19, 20]. It is believed that single-shot decoding is not possible for 2D topological codes [19] and so measurement errors must instead be counteracted by repeated rounds of stabiliser measurement, with fault-tolerance in a distance d code requiring O(d) repeats [9]. As noted by Bombín in [22] this need for repeated measurements results in a discrepancy between constant-time circuits in 3D topological codes and linear-time circuits in 2D topological codes: in principle these both have spacetime cost O(d^3), but in practise the 2D code will also require O(d) measurement rounds between each set of operations, resulting in a time cost of O(d^2) and a spacetime cost of O(d^4).\n\nTo rectify this, Bombín proposed the concept of a just-in-time (JIT) decoder [22] which supplies, at each timestep of the computational procedure, a best-guess correction based not only on the present syndrome of the code but also on the entire syndrome history. By interpreting the syndrome of a (2+1)-dimensional code as the syndrome of the corresponding (3+0)-dimensional code such a decoder allows for a form of pseudo-single-shot decoding of 2D codes, where measurements are not repeated and mistakes in the correction due to measurement errors are compensated for at later timesteps once the measurement errors that caused them are identified. The price for using such a decoder is that our 2D codes must be replaced with very thin slices of 3D code in which we can detect (but not reliably correct) measurement errors. The thickness of these slices is independent of d and so while they are not strictly 2D (in the sense that they cannot be embedded in a two-dimensional manifold) they still only require an architecture which is scalable in just two dimensions. In what follows, we will use the term “layer” to refer to a strictly 2D code and “slice” to refer to a bounded-thickness section of 3D code. We will also use bars over states and operators to refer to logical versions of these.\n\nIn its original formulation, Bombín used the idea of JIT decoding to circumvent causal restrictions encountered when attempting to translate a (3+0)-dimensional measurement-based computing scheme to a (2+1)-dimensional one. This scheme was based on the 3D colour code [5, 23, 24] and the ideas presented there were translated to the 3D surface code by Brown [17], who used JIT decoding to prove a threshold for a linear-time CCZ between three 2D surface codes. When combined with the Clifford group (which is also implementable in the 2D surface code [21, 25]) this provides us with a way to obtain a universal gate set which is potentially more efficient than competing techniques such as magic state distillation [21, 26, 27].\n\nIn this work, we present a full implementation of Brown's procedure, which incorporates several new techniques to refine it. In each of the three codes, we construct a scalable slice which is compatible with the various requirements of the procedure (discussed below). Having constructed these slices, we then simulate the performance of a simple JIT decoder in this setting and observe a threshold pc ∼ 0.1% in all three codes; see Fig. §. This is (to our knowledge) the first numerical demonstration of a threshold for JIT decoding.\n\nIn what remains of this section we provide an overview of our implementation of Brown's procedure and then discuss each component in more detail in subsequent sections.\n\nThe first such component is the 3D surface code (Section §). Unlike its 2D counterpart, this code admits a transversal three-qubit non-Clifford gate (the CCZ gate) between three overlapping copies of the code [28, 29]. The aim of Brown's procedure is to use the equivalence between the 3D surface code in (3+0) dimensions and the 2D surface code in (2+1) dimensions to implement a linear-time (in the code distance d) version of this gate between three overlapping 2D codes.\n\nTo achieve this we require a division of the three overlapping 3D codes into O(d) bounded height slices which satisfy various requirements, the most important ones being that each slice must itself be a valid code with distance d, and that at each timestep the three codes should agree on a common set of qubits on which we should apply CCZ (Section §). We also require a method of moving from one slice to the next, which cannot simply be “waiting” (despite the fact that we are using time as a dimension) because the overlap of the three 2D codes must be different at each timestep so they must move relative to each other. This is achieved by dimension jumping [20] between the slice and the 2D layers on its top and bottom. Z errors which arise during the procedure are also dealt with as part of this process (Section §). We must also ensure that all of these operations commute with the logical action of the CCZ so that the entire procedure has the intended effect (Section §).\n\nIf the above can be done successfully then we will have obtained a procedure which, in the absence of errors, implements CCZ between three 2D surface codes in linear-time. To make the procedure fault-tolerant in the presence of X and measurement errors we must use a just-in-time decoder (Section §). A single timestep of the full, fault-tolerant procedure then occurs as follows:\n\n• Begin with three overlapping 2D codes/layers\n\n• Expand to three overlapping slices of 3D code\n\n• Apply JIT decoding operations to the three slices\n\n• Apply CCZ gates between the overlapping qubits\n\n• Collapse back to three 2D layers\n\nThe layers we collapse to are on the opposite side of the slice from those we started in. It is possible to implement the entire procedure on an architecture which is only one slice thick by redefining our time direction at the start of each timestep.\n\nThe 3D Surface Code\n\nWe start by considering the 2D surface code [4, 31] as in Fig. §. Here we are using the “Kitaev picture” where (with respect to the dark lattice) data qubits (red) are associated with edges. To each vertex of this lattice we associate a stabiliser generator X(v) = ∏e | v ∈ eXe which acts with Pauli X on all edges e that meet at vertex v. To each face of this lattice we associate a stabiliser generator Z(f) = ∏e ∈ f Ze which acts on all edges belonging to face f. Ancilla qubits used in measurement of these operators are also shown in Fig. § (dark for X and light for Z). Also shown in Fig. § (in light grey) is the dual lattice, obtained by replacing the faces of the original lattice with vertices and the vertices with faces. In this lattice the Z stabilisers are on vertices and the X stabilisers are on faces.\n\nThere are two types of boundary in this code which are commonly referred to as rough (left and right) and smooth (top and bottom). Logical X operators are strings of single-qubit X operators running between smooth boundaries while logical Z operators are strings of single-qubit Zs running between rough boundaries. As such, we will henceforth refer to smooth and rough boundaries as X and Z boundaries respectively.\n\nFig. § shows how to obtain a 3D surface code [32] from a 2D one, simply by extending the lattice into the third dimension. The dark square lattice has become a cubic one but we have retained the same assignment of parts of the code to geometric features of the lattice, i.e. data qubits are on edges, X stabilisers are on vertices and Z stabilisers are on faces. Four of the boundaries (top, bottom, front-left and back-right) of the code are X boundaries and resemble 2D surface codes. X in this code is a sheet of single-qubit X operators running between all four of these boundaries. The other two boundaries are Z boundaries and Z is a string of single-qubit Zs running between these boundaries.\n\nTo see why the dimension of X has changed but the dimension of Z has not we can look at the structure of the stabiliser generators. In the 2D surface code each qubit is part of at most two X and two Z stabiliser generators so single-qubit errors of either type only violate a pair of generators. Longer strings of X or Z errors will commute with all generators along their length and only anticommute with a single generator at each end of the string. A logical operator corresponds to a string with both of its endpoints connected to the relevant boundaries where they cannot be detected. In 3D, as in 2D, every qubit is part of at most two X generators and so logical Z operators are once again strings. However, in the bulk of the cubic lattice four faces meet at every edge so qubits in the bulk are part of four Z generators. This means that a string of X errors will be detected not just by the generators at its endpoints but also by generators adjacent to the string along its entire length. In other words, the Z stabiliser syndromes are loops around regions containing X errors. This means that instead of X being a string with its endpoints connected to boundaries it must be a membrane with its entire perimeter connected to boundaries.\n\nThese loop-like Z syndromes have another effect: they allow us to detect measurement errors. We know that valid syndromes should form closed loops, so syndromes not satisfying this property must have been produced (at least in part) by measurement errors. This allows us to repair these syndromes (by joining the endpoints of strings to form loops) and removes the need for repeated measurements of these stabilisers in a process termed single-shot error correction universally, in all cases [18, 19]. This stands in contrast to the 2D case where measurement errors can only be detected by repetition of these measurements.\n\nWe will use the rectified lattice picture of 3D surface codes to construct our slices since it allows us to describe all three codes using the same lattice [18]. This lattice is obtained from the standard cubic lattice by adding a new vertex at the middle of each edge, connecting these vertices if they belong to the same face and then deleting the original lattice. This results in one cuboctahedral cell per cubic cell of the original lattice (shown in Fig. § (a)) and the negative space between these cells produces additional octahedral cells (half of such a cell can be seen at the centre of Fig. § (b)). Fig. § (b) also shows a colouring of the rectified lattice where each cell has two colours of face (red-blue and red-green cuboctahedra are visible and octahedral cells will be blue-green). It is then possible to simultaneously define three 3D surface codes on this lattice: three qubits are associated with each vertex and one colour is associated with each code. c-faces (for c ∈ r,g,b) represent Z stabilisers in the c code and cells containing no c-faces represent X stabilisers. An example is shown in Fig. § (c).\n\nDimension Jumping in Surface Codes\n\nThe ability to swap between a thin slice of 3D surface code and a 2D surface code (a process termed “dimension jumping [30]”) is at the heart of Brown's procedure. Similarly to JIT decoding, this process was originally studied by Bombín for use in the 3D tetrahedral colour code and was adapted for use in the surface code by Brown [10], although a process equivalent to the 3D → 2D collapse was previously studied by Raussendorf, Bravyi and Harrington in a measurement-based setting [33]. Despite this, there is (to our knowledge) no comprehensive explanation of dimension jumping in surface codes in the literature, so we use this section to provide one.\n\n2D to 3D expansion\n\nThe expansion process as originally presented (for the colour code) consists of the following steps:\n\n• Start with a 2D code, which is a boundary of a 3D code.\n\n• Measure stabiliser generators of the 3D code.\n\n• Apply error correction to the 3D code.\n\nHowever, unlike the 3D colour code the 3D surface code minus a boundary still encodes a qubit and so we must take extra steps to ensure that the final logical state of the 3D code is the same as the initial logical state of the 2D code. Additionally, in the specific case where at each timestep we are combining dimension jumping with the application of CCZ gates to part of the code we want our dimension jump to involve only measurements of Z stabilisers. This is because the X stabilisers do not all commute with this application of CCZ gates and so the 2D codes at intermediate steps of the procedure will not be in eigenstates of these X stabilisers. As such, measuring these stabilisers will change the state of the code and the overall effect of the procedure will not be a logical CCZ.\n\nA suitable dimension jump is implemented by\n\n• Start with a 3D surface code C and its boundary ∂ C, which is a 2D surface code in a state ψ. These codes must be chosen such that the Z stabilisers of the 2D code commute with the X stabilisers of both the 2D and 3D codes.\n\n• Prepare all qubits belonging to C ∂ C in +.\n\n• Measure the Z stabiliser generators of the 3D code that are not Z stabilisers of the 2D code.\n\n• Apply a correction which returns the 3D code to its codespace. This correction should not have support on any of the qubits of the original 2D code.\n\nThe preparation of new qubits in + combined with the commutivity requirement on the Z stabilisers in the 2D code ensures that measurement of the 3D Z stabilisers will project the encoded state either to a state in the codespace of the 3D code or to a state that can be returned to the codespace using a correction inferred from the measurement outcomes of these stabilisers. The distribution of X errors that this correction addresses are what is referred to by Bombín as a Pauli frame [35] and by Brown as a gauge of the 3D code [17].\n\nTo understand why is it important not to measure the Z stabilisers of the 2D code during the dimension jump and why the correction should have no support on this code it is easiest to consider an idealised example as in Fig. §. In (a) and (b) we see how applying corrections to the top layer stretches the string-like logical X of the lower 2D code into the sheetlike logical X of the 3D code and in (c) we see the issues that can arise if we allow for measurement of stabilisers of the initial 2D code during the jump (and thus allow for the possibility of measurement errors on these stabilisers). Note that in Fig. § we begin with two surface codes and then entangle them via intermediate stabiliser measurements instead of initialising and entangling the top code in a single step by measuring top and intermediate stabilisers simultaneously. These two cases are equivalent since stabiliser measurements commute by definition. We do not need to do anything to ensure the correct transfer of Z from the 2D code into the 3D one because Z of either 2D code is a valid implementation of Z in the 3D code. By preparing the top code in + (by preparing the physical qubits in + and measuring Z stabilisers), we can ensure no logical Z is applied in this code, so any implementation of Z applied to lower 2D code will be equivalently applied to the 3D code.\n\nThis syndrome occurs because the intermediate Z stabilisers do not commute with the 2D X logical. However, they also do not commute with the 2D X stabilisers and so in reality we would expect to observe this boundary-to-boundary syndrome string (from the logical) plus a random pattern of syndrome loops (from the stabilisers). This does not change any of the analysis however, so it is sufficient to consider only the zero-loop case.\n\n3D to 2D collapse\n\nThe collapse part of dimensional jumping can similarly be adapted to surface codes. To understand how the process works in this case it is easiest to consider a simple example, namely the one given in Fig. §. Here we have minimal examples of (a) a 2x2 and (b) a 2x2x2 surface code. We can switch between these two codes using dimension jumping since a version of (a) exists on the top and bottom faces of (b). A generic state for this code can be written\n\nand we can write + and - as\n\nwhere Zi are stabilisers of the code and Z is an implementation of logical Z. Now consider the case where we begin in a logical state of the 3D code and measure qubits 1-4 in the X basis. We can choose Z to be supported on qubits 5 and 7 or 6 and 8 so only the stabilisers Zi are supported on the bottom four qubits. The measurement projects to a state\n\nwhere Zj are the restrictions of a subset of the operators Zi to the top four qubits, possibly composed with Z. This subset is all those Zi which match the measurement outcomes from the bottom four qubits, i.e. their restriction to these qubits is supported only on qubits where we measured -1. If all four single-qubit measurement outcomes were the same then the only possible Zj are Zj = I and Zj = Z5Z6Z7Z8 and the sum in (§) is a state in the codespace of the 2D code. If the single-qubit measurement outcomes are not all the same then the 2D code contains errors. For instance, if measurement of qubits 1-4 projects these qubits to the state --++ then the possible Zj are Z5Z6 and Z7Z8 which are both 2-qubit errors. To return to the codespace we can apply a correction Z5Z6, and more generally we apply Z to one of the top qubits whenever we measure -1 from the corresponding bottom qubit. For codes which are larger or have more complicated geometries the process is not quite so straightforward but a correction can still be found by considering the stabiliser structure.\n\nIn the case where there are Z errors in the bottom code it is no longer possible to infer the necessary correction just from the measurement outcomes of the bottom face, but we can combine these measurements with measurements of the X stabilisers of the 2D code to identify these errors (by reconstructing the syndrome of the 3D code). In our example, an odd parity of bottom face measurements tells us X1X2X3X4 would be violated, the parity of qubits 1 and 3 (2 and 4) together with the measurement outcome of X5X7 (X6X8) allows us to infer the measurement outcomes of the two side-face X stabilisers and the product of X5X7 and X6X8 gives us the outcome of the top-face stabiliser. Because this code is only distance-2 we cannot correct for an error in this case, but in higher-distance codes we can.\n\nAn additional complication is introduced in the case where we apply CCZ gates to a subsection of the 3D code during each timestep. In this case we cannot measure the X stabilisers of the 2D code post-collapse (the state we project to in the collapse will not be an eigenstate of these stabilisers), and so we cannot fault-tolerantly infer corrections for the top face. Fortunately, this is not an issue because Z errors commute with CCZ and so applying a single Z correction to the final code is equivalent to applying error correction throughout. This correction is obtained in two steps: firstly we must combine the X stabiliser measurements from the final 2D code with single-qubit measurement outcomes from previous slices to obtain an X stabiliser syndrome for a 3D surface code and decode this syndrome to identify the locations of Z errors. Secondly, we combine these Z error locations with the single-qubit measurement outcomes to obtain a corrected set of single-qubit measurement outcomes, and from these we calculate a correction for the final 2D code. This operator can be interpreted as the adaptive Z correction of a teleportation circuit, and this perspective on the procedure is discussed further in [15].\n\nConstructing Slices\n\nIn this section we present our proposed slices through the three 3D surface codes. We begin with an examination of the criteria which these slices must satisfy, then discuss each of our slices individually and finally demonstrate that they have the correct overlap at each step of the procedure.\n\nCriteria for Valid Slices\n\nWe now examine some necessary criteria which slices through 3D codes must meet in order to be used in Brown's procedure. This list is by no means exhaustive, but serves to highlight some of the major issues which must be avoided when constructing slices.\n\nFirstly, we have the requirement that any representative of a logical operator in the slice must have weight at least d in order to preserve the distance of the code. The ability to construct slices satisfying this relies on a specific property of the 3D surface code (the string-like logical operator of code is required to run between a particular pair of boundaries) which is not present in general 3D codes. This restriction on the string-like logical means that as long as we ensure that its associated boundaries are on the sides of the slice and not on the top and bottom we are guaranteed logical operators with weight at least d. It is this restriction that forces at least one of the three codes to have a different time direction to the other two, since the string-like logical operators of three 3D surface codes which admit a transversal CCZ are all perpendicular [29] so there is no way to define a consistent time direction for all three (in three dimensions) such that slices in all three codes have this property.\n\nSecondly, we require that all Z stabilisers in the layers commute with all X stabilisers in the slices. This requirement is due to a combination of the dimension jumping process and the CCZ gate as discussed in Section §. In addition, we require that the support of a 3D X stabiliser on a layer corresponds exactly to a 2D X stabiliser within that layer. This is what ensures that measurements of X stabilisers in the final layer alongside the single-qubit measurement history throughout the procedure can reproduce the full X stabiliser syndrome of a 3D surface code. This rule prevents us from having things such as a 3D X stabiliser which is supported on only a single qubit of a layer.\n\nFinally, all three slices must agree on a common set of overlapping qubits at every timestep. Stated differently, this means that qubits between which we intend to apply CCZ must all be live simultaneously. This is essential for the procedure or the three codes would disagree on which qubits CCZ should be applied to at each timestep.\n\nThe structures originally proposed by Brown were “staircases” through the cubic lattice in the Kitaev picture. In this section we present an alternate set of lattice slices which we find easier to understand and simulate, although we believe equivalent simulations could be performed using the staircase slices.\n\nProposed Layers and Slices\n\nThe layers we propose are shown at a macroscopic and microscopic level (for distance 3) in Fig. § (a) and (b) respectively. In Brown's original proposal the time direction was the same for two of the codes and different for the third, but here we use a different time direction for each code. This is still implementable in 2D (also shown in Fig. § (b)). In the following subsections we show a distance-3 example of the corresponding slice through each of the three 3D codes and then discuss their overlap . (Footnote: Whilst we have endeavored to make the following figures as clear as possible, these codes are most easily understood using 3D models rather than 2D images. A .blend file containing various helpful models can be found at [34])\n\nCode A\n\nThis is the simplest of the three codes and corresponds to the red code on the rectified lattice. As illustrated in Fig. § (c) this is the standard 3D surface code defined on a simple cubic lattice. Examples of the boundaries are shown in Fig. § for a distance-3 slice. This slice is three layers thick, but it is actually possible to define a two-layer-thick slice in this code since the middle layer in Fig. § is identical to the top and bottom layers. This is not true for the other two codes, and so we must also use a three-layer-thick slice here to ensure the correct overlap of the three slices.\n\nCode B\n\nCode B is the blue code on the rectified lattice and a slice through this code is shown in Fig. §. The Z stabilisers of this code are weight-3 (in contrast to the weight-4 Z stabilisers of code A) while its X stabilisers are weight-12 (in code A they were weight 6). Because the lattice constant for the blue code is twice that of the red code we must use a slice that is three layers thick.\n\nIt is interesting to note that the top 2D code for this slice differs from that of code A only by a half-hexagon translation on the kagome lattice and so one might imagine that it would be possible to define a slice in code A with top and bottom 2D codes matching those seen in code B. However, the weight-2 Z boundary stabilisers present in these 2D codes do not commute with the 3D X stabilisers of code A and so it is not possible to expand from the 2D code to the 3D one by only measuring Z stabilisers.\n\nCode C\n\nCode C is the green code on the rectified lattice and a slice through this code is shown in Fig. §. The top and bottom layers in this slice resemble the middle layer from the slice for code B, with Z stabilisers on triangles and X stabilisers on hexagons. The same is true for the middle layer of this slice and the top and bottom layers of the slice through code B. Additionally, these 2D codes are translated by a half-hexagon on the kagome lattice relative to those of code B and so have boundaries which match those of the 2D codes from code A. The inversion of stabilisers in these 2D codes relative to codes A and B mean that the weights of the logical operators are also exchanged (2D codes A and B had weight 3 X and weight 5 Z whereas here it is the opposite). Due to this, we observe better performance during JIT decoding in this code than in codes A and B (Fig §), since the JIT decoder only deals with X errors and Z errors are dealt with separately.\n\nOverlap of the Three Codes\n\nThe full sequence of the distance-3 2D codes passing through each other can be seen in Fig. §. Vertices of all three codes coincide in the overlapping region, and in fact, these three codes can all be thought of as sections cut from the same lattice. If our slices were two layers thick then our three 2D codes would follow this sequence exactly, but because they are three layers thick we actually move two steps in this sequence for every step of the procedure, i.e. if we start with the first code configuration then after one cycle of expand → correct → CCZ → collapse we will have the third configuration. While we do not observe the second configuration in Fig. § in a purely 2D setting it will correspond to the overlap of the three middle layers of the slices during the aforementioned set of operations. All qubits in each slice belong to one of the three layers and so all three layers agree on common sets of overlapping qubits.\n\nPractical Implementation\n\nThis procedure would not be of much use if it were necessary to sweep through a physical 3D code. In Brown's proposal the time direction is changed at each timestep so that the physical architecture only needs to be one slice thick and we can move up and down between the top and bottom layers. Our slices are compatible with this, although the architecture must accommodate three layers instead of two. Additionally there must be room for two of the codes to move relative to the third (in the original proposal only one code needed to move) and this will increase the qubit cost of the procedure.\n\nLinear-Time CCZ\n\nThree 3D surface codes defined on a d × d × d cube in the rectified lattice with boundaries as in Fig. § admit a transversal CCZ gate [33]. Key to Brown's procedure is the idea that this gate is also implementable (in time linear in the code distance d) on three 2D surface codes whose overlap in spacetime is equivalent to such a 3D surface code. More precisely, as the three codes move through each other (via the dimension jumping process described in previous sections) CCZ gates are applied between all overlapping triples of physical qubits that do not belong to the top layer. The exclusion of top-layer qubits is necessary because these will become the bottom-layer qubits of the next slice and we only want to apply CCZ once to each qubit in the overlapping region. The intuition for why this process should work is that JIT decoding allows us to fault-tolerantly exchange a spatial dimension for a temporal one, so any process which gives a logical operation in (3+0) dimensions should result in an equivalent logical operation in (2+1) dimensions. However, some readers may not be satisfied with this argument and so it is both interesting and worthwhile to examine the workings of this gate in more detail.\n\nTo begin with, we neglect JIT decoding entirely and just consider the full 3D spacetime as shown in Fig. §. The first thing to note about the spacetime of the three codes is that it is not a d × d × d cube; rather, it is three parallelepipeds whose intersection is a d × d × d cube. It is not immediately obvious, and nor is it generally true, that applying CCZ transversally in this overlapping region should implement a logical CCZ between the codes. Recall that CCZ maps Xi to XiCZjk (where CZ = 1/2(II + IZ + ZI - ZZ)) and thus the intersection of X in any code with the region where we apply CCZs must be a region supporting valid implementations of Z in the other two codes. In a version of § where Z in each of the three codes runs in the “long” direction, the transversal application of CCZ between the overlapping qubits in the central cubic region will not implement CCZ because there is no implementation of Z in any of the three codes which is fully supported inside the cube. Fortunately this is not the case for the arrangement of codes described in the previous section, where instead Z runs in one of the “short” directions in each code (as shown by the dark lines in Fig. §) and so each code possesses valid implementations of this operator which are contained within the cube. In contrast, there is no implementation of X contained within the cube in any of the codes, but this is not a problem since nothing is mapped to X by CCZ. We require only that the intersection of Xi with the cube supports valid implementations of Zj and Zk and this requirement is satisfied. This means that a constant-time version of the procedure where we start with our initial set of 2D codes, use dimension jumping to expand to the full 3D spacetime, apply CCZs to the overlapping region then collapse to the final set of 2D codes will implement the desired logical operation.\n\nNow that we are satisfied that a single-timestep version of the procedure implements CCZ we can convince ourselves of the same thing for the linear-time version using induction. Consider the following two sets of operations, where “expand” should be understood to mean “measure 3D Z stabilisers then apply JIT decoding and X error correction” and we assume that these correction operations are successful:\n\n• A: Begin with a layer at position x, expand to a slice with thickness Δ x, apply CCZs, collapse to a layer at position x + Δ x, then repeat to end at a layer at position x + 2Δ x.\n\n• B: Begin with a layer at position x, expand to a slice with thickness 2Δ x, apply CCZs and collapse to a layer at position x + 2Δ x.\n\nEach qubit experiences the same set of operations in both cases: measurement of associated Z stabilisers and an X correction if one is required (for qubits not in the initial layer), application of CCZ (for qubits in the overlapping region and not in the final layer) and measurement in the X basis (for qubits not in the final layer). The only way for this sequence of operations to be inequivalent in A and B is if operations in the first slice in A influence our choice of X correction for qubits in the second slice in a way that does not occur in B. Incorrect choices of X error correction operator in the first slice of A will have this effect but we are assuming that all correction attempts are successful. The only other operation applied to the qubits of the first slice of A is CCZ, but this is not applied to qubits that are part of the second slice and its only effect will be to change the outcomes of our single-qubit measurements. As discussed in Section §, the correction inferred from these measurements is only applied at the very end of the procedure so we conclude that none of the operations on the first slice of A can influence the operations on the second and the logical effects of A and B must be equivalent. This conclusion, combined with the knowledge that performing the entire procedure in a single timestep correctly implements CCZ, allows us to infer that the linear-time version of the gate also implements CCZ. (Footnote: This will not be true in reality so this argument does not guarantee a threshold for the procedure. However, we are currently only asking if the gate has the correct logical action in principle and so these assumptions are justified.)\n\nThe Delayed Matching Decoder\n\nDescription\n\nNow that we have constructed a set of slices we are ready to consider explicit error correction operations within these slices. We imagine that we are at a point of the procedure where we have prepared the new qubits and measured the new stabilisers but have not yet applied any corrections. We have not remeasured the bottom-layer stabilisers as we assume that our choice of correction in the previous timestep was successful and all of these stabilisers are in the +1 eigenstate. The Z stabiliser measurements result in a random distribution of X errors on the new qubits and in a syndrome for these errors consisting of a set of loops in the bulk or connected to the top or side X boundaries. If there were errors on the bottom layer of qubits or if we had errors in some of our stabiliser measurements we will also have broken strings with endpoints which must be matched up to produce a valid syndrome. The delayed matching decoder is a modified version of the minimum-weight perfect matching (MWPM) decoder [32, 35, 36] and provides a simple but fault-tolerant method of performing this matching. This decoder was first proposed by Brown in [17] and its operation is is as follows:\n\nSetting: We consider Z stabilisers on faces and syndromes corresponding to (possibly broken) loops on edges dual to these faces. The distance between endpoints of broken loops is measured in terms of path length on the dual edges connecting them. When we speak of joining pairs of endpoints to each other or to a boundary we mean that the stabiliser measurement outcomes are flipped (in software) along a path connecting this pair of objects. (Footnote: We recall that the dual of a 3D lattice is obtained by placing new vertices at the centres of cells of the original lattice, connecting these vertices if their cells share a face in the original lattice and then deleting the original lattice. This transformation maps cells to vertices, faces to edges and vice versa.) (Footnote: Some readers may prefer to think in terms of the qubits-on-faces picture where Z stabilisers are on edges and endpoints are on vertices. For code A the relevant lattice is the simple cubic lattice, whereas for codes B and C it is the rhombic dodecahedral lattice. 3D models showing the relation between the previously defined slices in the qubits-on-vertices, qubits-on-edges and qubits-on-faces picture can be found at [34].)\n\nInputs:\n\n• A vector e of endpoint locations within the current slice\n\n• A map (i.e. a set of key-value pairs) M from pairs of endpoint locations (or an endpoint location and a boundary) to a “pseudodistance” between the elements of the pair (this pseudodistance will initially be equal to the true distance between the endpoints but will get smaller each time the endpoint pair recurs).\n\n• An integer c which specifies the pseudodistance below which it is permissible to join pairs of endpoints.\n\n• An integer r which specifies the amount by which we should reduce the pseudodistance between a pair of endpoints if we do not choose to join them.\n\nSubroutines:\n\n• A standard MWPM decoder MWPM which is allowed to match endpoints to each other and to the side X boundaries but not the top or bottom X boundaries. It takes a vector of endpoint locations as an argument and returns a vector of endpoint location pairs (or endpoint locations and boundaries).\n\n• A function d which takes as argument an endpoint location pair (or an endpoint location and a boundary) and returns the (true) distance between them.\n\n• A function t which takes as argument an endpoint location pair (or an endpoint location and a boundary) and returns the corresponding pair of locations in the slice for the next timestep.\n\nOnce this algorithm is complete we should have a valid Z stabiliser syndrome consisting entirely of unbroken loops. We then need to use this syndrome to infer a correction on the data qubits which will push these loops to the top boundary as in Fig. §. We find that the sweep decoder [37, 38] is a natural fit for this problem as its action is to generate corrections which push syndrome loops in a given direction, but in principle any valid decoder for loop-like syndromes could be used (e.g. [39, 40, 41, 42, 43, 44, 20]).\n\nIt may be helpful at this point to consider the simple example presented in Fig. §. In this case we imagine that c = r = 2. At the start of the procedure (in the red slice) e contains the two yellow endpoints and M is empty. MWPM will pair the two endpoints to each other since it is not permitted to match them to the top or bottom boundaries and the side boundaries are too far away to be favourable. In the first update step nothing happens and in the second update step the pair of endpoints are added to M with an associated value of 3 (the distance between them on dual edges). In the syndrome repair step we compare c to the cost of joining the pair to each other (M[pair] = 3) and since the former is smaller we join the pair to the top. A new pair of endpoints t(pair) which corresponds to the yellow pair translated into the next slice (i.e. the two red endpoints) is added to M with an associated value of M[pair] - r = 3 - 2 = 1 and pair is removed from M.\n\nAt the start of the next step (in the green slice) e contains the two red endpoints and M contains this pair of endpoints with an associated pseudodistance of 1. MWPM will once again match this pair to each other and nothing happens in either update step because the pair of endpoints in M exactly matches the output of MWPM. In the syndrome repair step we now have M[pair] = 1 which is less than c so we join the two red endpoints to each other.\n\nNumerical Implementation\n\nWe numerically investigate the performance of the delayed matching decoder for all three surface codes using the slices described in Section § and a phenomenological noise model. Our code uses the Blossom V implementation of MWPM due to Kolmogorov [45]. The numerical results presented here correspond to the case where we perform the expand → decode → collapse parts of the procedure for O(d) cycles but do not apply CCZs between the codes. As such, we include both measurement errors on Z stabilisers and physical X errors in our simulation but not Z errors or CZ errors, which arise due to application of CCZ to qubits with X errors. We use parameters c=2 and r=1 for the delayed matching decoder. The code used to obtain these results can be found at [46].\n\nFor each of the three codes, we perform Monte Carlo simulations of the procedure for different values of p, the X error and measurement error rate, and L, the code distance. For each combination of parameters, we count the number of failure events f that occur in a number of trials n, and estimate the logical error rate p fail(p, L). Rather than using the standard confidence interval based on the normal distribution, we use the more stable Agresti-Coull confidence interval [47]. Let f = f + 2, n = n + 4, and p = f / n. Our estimate of p fail(p, L) is then: which is approximately the 95% confidence interval.\n\nFor each code, we plot p fail against p for different values of L. The error threshold, pc, is the point where the curves for different L intersect. We observe evidence of an error threshold in the region of pc ∼ 0.1 % for all three codes; see Fig. §. Our error threshold estimate is many orders of magnitude larger than the theoretical value of ∼ 10^-17 obtained by Brown in his proof [17]. In addition, our value is only one order of magnitude smaller than the 2D surface code threshold [6, 7, 21, 48]. We anticipate that the performance of the delayed matching decoder could be significantly improved by using more of the syndrome history, so it is still possible that the optimised JIT decoding threshold could be competitive with the 2D surface code threshold. We observe improved suppression of p fail below threshold in code C when compared to codes A and B. This is consistent with the fact that, for a given value of L, X is higher weight in the layers for this code than in the other two.\n\nWe also analyse the behaviour of the logical error rate below the threshold. We assume the following ansatz for the logical error rate for p < pc, We use the fitting method detailed in [23] to estimate α and β for all three codes; see Table § for the results. Our estimates are consistent with the statement that (to leading order) logical failures are caused by errors of weight O(d) where d=L is the code distance.\n\nDiscussion\n\nNow that we have covered each component of Brown's procedure in detail, it is helpful to once again provide an overview of the procedure so that we can see how each component fits together. A single timestep proceeds as follows:\n\n• Begin with three 2D surface codes. All Z stabilisers of these codes are assumed to be in the +1 eigenstate.\n\n• Expand to three thin slices of 3D surface code by preparing new data qubits in + and then measuring the new Z stabilisers. The previously existing 2D codes will now be the bottom layers of these slices, and their stabilisers are not remeasured.\n\n• If our assumption regarding the states of the initial Z stabilisers was correct and there are no measurement errors on the newly measured ones then the syndrome from these stabilisers will consist entirely of loops in the bulk or connected to the top or side boundaries. A correction that pushes all these loops to the top boundary will transfer the original state of the 2D code into the slice. If there are measurement errors on the newly measured stabilisers or X errors on the lower layer we will have an invalid syndrome containing broken strings, the endpoints of which must be paired up to produce a valid syndrome from which we can infer a correction. Incorrect pairings will result in X errors in the slice. This is the JIT decoding step.\n\n• Apply CCZs between all triples of qubits in the region where the three slices overlap except for those in the top layer. If there are X errors in this region due to incorrect decoding in the previous step then these will cause CZ errors on the other two codes.\n\n• Measure out all non-top layer qubits in the X basis. The output of these measurements will be fed to a global Z error decoder once the procedure is complete and used to find a Z error correction for the final code.\n\nWe have verified the integrity of the majority of the components involved in this process. The only part which is missing is the simulation of the Clifford errors arising from the non-Clifford gate and the numerical demonstration of a threshold for Z errors. Such simulations will be the topic of future work, and will allow us to compare the performance of the JIT non-Clifford gate against the standard magic state distillation approach [26, 21, 27]. We wish to emphasize that while the Clifford errors may affect the overall threshold for the procedure, they will not affect the JIT decoding thresholds shown in this work. This is because the JIT decoder only deals with X errors and the errors arising from the CCZ gate are CZ errors which will be projected to a distribution of Z errors by the single-qubit measurements which collapse the slice.\n\nIn contrast, the locations of the CZ errors depend on the locations of X errors post-JIT decoding, so while the distribution of Z and CZ errors will not affect the performance of the JIT decoder the reverse is not true. For this reason the development of more sophisticated and effective JIT decoders is also an important direction for future research. The delayed matching decoder has the advantage of being relatively simple, but it uses only a small amount of the information available in the syndrome history and it is reasonable to expect that significant improvements could be made to decoder performance by utilising more of the available information.\n\nAnother natural direction for future research would be the construction of similar slices in other topological codes; for example, one might want to perform an analogous procedure in the 2D/3D colour code in order to perform a linear-time logical T gate. However, this is not quite as straightforward as one might hope because, unlike in the 3D surface code, the string-like logical operator of the 3D tetrahedral colour code is not required to run in any particular direction and any edge of the tetrahedron supports a valid implementation of this operator. This means that any slice of bounded height through the 3D code will contain edges of bounded length which support low-weight logical operator implementations. Cubic colour code constructions encoding multiple logical qubits as in [28] can avoid this problem for some but not all logical qubits. In these codes, as with three surface codes admitting a transversal CCZ, the string-like logical operators are all perpendicular, but unlike in the surface code case we cannot assign different time directions to different logical qubits. This means that for any choice of slice the string-like logical for one of the encoded qubits will run between the top and bottom boundaries. Additionally, this logical qubit will be lost completely in the collapse from 3D to 2D as the corresponding square 2D colour code only encodes two qubits. This does not completely rule out more exotic slices in these codes (e.g. with logical qubits encoded in topological defects rather than code boundaries) but it seems unlikely that slices similar to the ones presented here exist for 3D colour codes.\n\nIt is worth emphasising the significant difference between the JIT decoding scheme we have examined in this work and Bombín's original JIT decoding proposal [22]. In particular, the above arguments regarding the difficulties of constructing valid colour code slices do not apply to that scheme because it uses an measurement-based formalism rather than a circuit-based one and so does not involve dimension jumping operations. These operations are what would map low-weight logicals in the slice to weight-d logicals in the 2D code post-collapse, but the measurement-based formalism allows for a continuous “sliding” of the slice through the 3D spacetime and so dimension jumps are not required and these short error strings will be detected as we slide the slice past them. The JIT decoder proposed by Bombín in [22] also differs significantly from the one discussed here.\n\nIn light of recent results regarding transversal CCCZ gates in the 4D surface code [28, 50] it also seems natural to ask if an equivalent process could be used to construct slices of 4D surface code which allow for a linear-time CCCZ in the 3D surface code. We expect that such a generalisation should be possible, but note that its spacetime overhead would scale as d^4. This compares unfavourably with the d^3 scaling allowed by the constant-time set of computationally universal operations in the 3D surface code [29], and so is unlikely to be advantageous.\n\nAcknowledgements\n\nTRS acknowledges support from University College London and the Engineering and Physical Sciences Research Council [grant number EP/L015242/1]. The authors acknowledge the use of the UCL Myriad High Performance Computing Facility (Myriad@UCL), and associated support services, in the completion of this work. Research at Perimeter Institute is supported in part by the Government of Canada through the Department of Innovation, Science and Economic Development Canada and by the Province of Ontario through the Ministry of Colleges and Universities. This research was enabled in part by support provided by Compute Ontario and Compute Canada. PW acknowledges support from the Australian Research Council via the Centre of Excellence in Engineered Quantum Systems (EQUS) project number CE170100009. DEB acknowledges support from the Engineering and Physical Sciences Research Council QCDA project [grant number EP/R043647/1].\n\nThe authors thank Ben Brown for illuminating discussions. TRS thanks T. Davies for assistance with 3D models and presentation of figures.",
+    "sections": [
+      {
+        "title": "Abstract",
+        "text": "Abstract\n\nWe build on recent work by B. Brown (Sci. Adv. 6, eaay4929 (2020)) to develop and simulate an explicit recipe for a just-in-time decoding scheme in three 3D surface codes, which can be used to implement a transversal (non-Clifford) CCZ between three 2D surface codes in time linear in the code distance. We present a fully detailed set of bounded-height lattice slices through the 3D codes which retain the code distance and measurement-error detecting properties of the full 3D code and admit a dimension-jumping process which expands from/collapses to 2D surface codes supported on the boundaries of each slice. At each timestep of the procedure the slices agree on a common set of overlapping qubits on which CCZ should be applied. We use these slices to simulate the performance of a simple JIT decoder against stochastic X and measurement errors and find evidence for a threshold pc ∼ 0.1% in all three codes. We expect that this threshold could be improved by optimisation of the decoder.\n\n",
+        "start": 0,
+        "end": 1006
+      },
+      {
+        "title": "Introduction and Overview",
+        "text": "Introduction and Overview\n\nQuantum error correcting codes allow us to protect quantum systems against decoherence [1, 2] and are believed to be a necessary part of a scalable quantum computer [3]. Topological codes [4, 5] are an important class of codes with geometrically local stablisers and high error tolerance in every population and setting [6, 7]. Topological codes that are scalable in two dimensions (2D) are of particular relevance, as many state-of-the-art quantum processors share this constraint [8, 9, 10]. An important question in any quantum error correction scheme is how to fault-tolerantly implement a universal gate set for a given code. No-go results have been proved that limit naturally fault-tolerant operators from being universal in topological codes [11, 12, 13, 14, 15, 16]. Nonetheless, procedures exist for implementing a universal gate set in 2D topological codes. These include a recent proposal by Brown [17], the implementation of which is the subject of this work.\n\nA decoding algorithm is a classical process in a quantum error correction scheme which takes as input a set of stabiliser measurement outcomes (referred to as a syndrome) and returns a correction operator. A correction is successful if the product of the correction operator and the original error is equivalent to a stabiliser. Of particular interest are single-shot decoding schemes where corrections can be inferred reliably from a single round of stabiliser measurements even in the presence of measurement errors [18, 19, 20]. It is believed that single-shot decoding is not possible for 2D topological codes [19] and so measurement errors must instead be counteracted by repeated rounds of stabiliser measurement, with fault-tolerance in a distance d code requiring O(d) repeats [9]. As noted by Bombín in [22] this need for repeated measurements results in a discrepancy between constant-time circuits in 3D topological codes and linear-time circuits in 2D topological codes: in principle these both have spacetime cost O(d^3), but in practise the 2D code will also require O(d) measurement rounds between each set of operations, resulting in a time cost of O(d^2) and a spacetime cost of O(d^4).\n\nTo rectify this, Bombín proposed the concept of a just-in-time (JIT) decoder [22] which supplies, at each timestep of the computational procedure, a best-guess correction based not only on the present syndrome of the code but also on the entire syndrome history. By interpreting the syndrome of a (2+1)-dimensional code as the syndrome of the corresponding (3+0)-dimensional code such a decoder allows for a form of pseudo-single-shot decoding of 2D codes, where measurements are not repeated and mistakes in the correction due to measurement errors are compensated for at later timesteps once the measurement errors that caused them are identified. The price for using such a decoder is that our 2D codes must be replaced with very thin slices of 3D code in which we can detect (but not reliably correct) measurement errors. The thickness of these slices is independent of d and so while they are not strictly 2D (in the sense that they cannot be embedded in a two-dimensional manifold) they still only require an architecture which is scalable in just two dimensions. In what follows, we will use the term “layer” to refer to a strictly 2D code and “slice” to refer to a bounded-thickness section of 3D code. We will also use bars over states and operators to refer to logical versions of these.\n\nIn its original formulation, Bombín used the idea of JIT decoding to circumvent causal restrictions encountered when attempting to translate a (3+0)-dimensional measurement-based computing scheme to a (2+1)-dimensional one. This scheme was based on the 3D colour code [5, 23, 24] and the ideas presented there were translated to the 3D surface code by Brown [17], who used JIT decoding to prove a threshold for a linear-time CCZ between three 2D surface codes. When combined with the Clifford group (which is also implementable in the 2D surface code [21, 25]) this provides us with a way to obtain a universal gate set which is potentially more efficient than competing techniques such as magic state distillation [21, 26, 27].\n\nIn this work, we present a full implementation of Brown's procedure, which incorporates several new techniques to refine it. In each of the three codes, we construct a scalable slice which is compatible with the various requirements of the procedure (discussed below). Having constructed these slices, we then simulate the performance of a simple JIT decoder in this setting and observe a threshold pc ∼ 0.1% in all three codes; see Fig. §. This is (to our knowledge) the first numerical demonstration of a threshold for JIT decoding.\n\nIn what remains of this section we provide an overview of our implementation of Brown's procedure and then discuss each component in more detail in subsequent sections.\n\nThe first such component is the 3D surface code (Section §). Unlike its 2D counterpart, this code admits a transversal three-qubit non-Clifford gate (the CCZ gate) between three overlapping copies of the code [28, 29]. The aim of Brown's procedure is to use the equivalence between the 3D surface code in (3+0) dimensions and the 2D surface code in (2+1) dimensions to implement a linear-time (in the code distance d) version of this gate between three overlapping 2D codes.\n\nTo achieve this we require a division of the three overlapping 3D codes into O(d) bounded height slices which satisfy various requirements, the most important ones being that each slice must itself be a valid code with distance d, and that at each timestep the three codes should agree on a common set of qubits on which we should apply CCZ (Section §). We also require a method of moving from one slice to the next, which cannot simply be “waiting” (despite the fact that we are using time as a dimension) because the overlap of the three 2D codes must be different at each timestep so they must move relative to each other. This is achieved by dimension jumping [20] between the slice and the 2D layers on its top and bottom. Z errors which arise during the procedure are also dealt with as part of this process (Section §). We must also ensure that all of these operations commute with the logical action of the CCZ so that the entire procedure has the intended effect (Section §).\n\nIf the above can be done successfully then we will have obtained a procedure which, in the absence of errors, implements CCZ between three 2D surface codes in linear-time. To make the procedure fault-tolerant in the presence of X and measurement errors we must use a just-in-time decoder (Section §). A single timestep of the full, fault-tolerant procedure then occurs as follows:\n\n• Begin with three overlapping 2D codes/layers\n\n• Expand to three overlapping slices of 3D code\n\n• Apply JIT decoding operations to the three slices\n\n• Apply CCZ gates between the overlapping qubits\n\n• Collapse back to three 2D layers\n\nThe layers we collapse to are on the opposite side of the slice from those we started in. It is possible to implement the entire procedure on an architecture which is only one slice thick by redefining our time direction at the start of each timestep.\n\n",
+        "start": 1006,
+        "end": 8280
+      },
+      {
+        "title": "The 3D Surface Code",
+        "text": "The 3D Surface Code\n\nWe start by considering the 2D surface code [4, 31] as in Fig. §. Here we are using the “Kitaev picture” where (with respect to the dark lattice) data qubits (red) are associated with edges. To each vertex of this lattice we associate a stabiliser generator X(v) = ∏e | v ∈ eXe which acts with Pauli X on all edges e that meet at vertex v. To each face of this lattice we associate a stabiliser generator Z(f) = ∏e ∈ f Ze which acts on all edges belonging to face f. Ancilla qubits used in measurement of these operators are also shown in Fig. § (dark for X and light for Z). Also shown in Fig. § (in light grey) is the dual lattice, obtained by replacing the faces of the original lattice with vertices and the vertices with faces. In this lattice the Z stabilisers are on vertices and the X stabilisers are on faces.\n\nThere are two types of boundary in this code which are commonly referred to as rough (left and right) and smooth (top and bottom). Logical X operators are strings of single-qubit X operators running between smooth boundaries while logical Z operators are strings of single-qubit Zs running between rough boundaries. As such, we will henceforth refer to smooth and rough boundaries as X and Z boundaries respectively.\n\nFig. § shows how to obtain a 3D surface code [32] from a 2D one, simply by extending the lattice into the third dimension. The dark square lattice has become a cubic one but we have retained the same assignment of parts of the code to geometric features of the lattice, i.e. data qubits are on edges, X stabilisers are on vertices and Z stabilisers are on faces. Four of the boundaries (top, bottom, front-left and back-right) of the code are X boundaries and resemble 2D surface codes. X in this code is a sheet of single-qubit X operators running between all four of these boundaries. The other two boundaries are Z boundaries and Z is a string of single-qubit Zs running between these boundaries.\n\nTo see why the dimension of X has changed but the dimension of Z has not we can look at the structure of the stabiliser generators. In the 2D surface code each qubit is part of at most two X and two Z stabiliser generators so single-qubit errors of either type only violate a pair of generators. Longer strings of X or Z errors will commute with all generators along their length and only anticommute with a single generator at each end of the string. A logical operator corresponds to a string with both of its endpoints connected to the relevant boundaries where they cannot be detected. In 3D, as in 2D, every qubit is part of at most two X generators and so logical Z operators are once again strings. However, in the bulk of the cubic lattice four faces meet at every edge so qubits in the bulk are part of four Z generators. This means that a string of X errors will be detected not just by the generators at its endpoints but also by generators adjacent to the string along its entire length. In other words, the Z stabiliser syndromes are loops around regions containing X errors. This means that instead of X being a string with its endpoints connected to boundaries it must be a membrane with its entire perimeter connected to boundaries.\n\nThese loop-like Z syndromes have another effect: they allow us to detect measurement errors. We know that valid syndromes should form closed loops, so syndromes not satisfying this property must have been produced (at least in part) by measurement errors. This allows us to repair these syndromes (by joining the endpoints of strings to form loops) and removes the need for repeated measurements of these stabilisers in a process termed single-shot error correction universally, in all cases [18, 19]. This stands in contrast to the 2D case where measurement errors can only be detected by repetition of these measurements.\n\nWe will use the rectified lattice picture of 3D surface codes to construct our slices since it allows us to describe all three codes using the same lattice [18]. This lattice is obtained from the standard cubic lattice by adding a new vertex at the middle of each edge, connecting these vertices if they belong to the same face and then deleting the original lattice. This results in one cuboctahedral cell per cubic cell of the original lattice (shown in Fig. § (a)) and the negative space between these cells produces additional octahedral cells (half of such a cell can be seen at the centre of Fig. § (b)). Fig. § (b) also shows a colouring of the rectified lattice where each cell has two colours of face (red-blue and red-green cuboctahedra are visible and octahedral cells will be blue-green). It is then possible to simultaneously define three 3D surface codes on this lattice: three qubits are associated with each vertex and one colour is associated with each code. c-faces (for c ∈ r,g,b) represent Z stabilisers in the c code and cells containing no c-faces represent X stabilisers. An example is shown in Fig. § (c).\n\n",
+        "start": 8280,
+        "end": 13246
+      },
+      {
+        "title": "Dimension Jumping in Surface Codes",
+        "text": "Dimension Jumping in Surface Codes\n\nThe ability to swap between a thin slice of 3D surface code and a 2D surface code (a process termed “dimension jumping [30]”) is at the heart of Brown's procedure. Similarly to JIT decoding, this process was originally studied by Bombín for use in the 3D tetrahedral colour code and was adapted for use in the surface code by Brown [10], although a process equivalent to the 3D → 2D collapse was previously studied by Raussendorf, Bravyi and Harrington in a measurement-based setting [33]. Despite this, there is (to our knowledge) no comprehensive explanation of dimension jumping in surface codes in the literature, so we use this section to provide one.\n\n",
+        "start": 13246,
+        "end": 13940
+      },
+      {
+        "title": "2D to 3D expansion",
+        "text": "2D to 3D expansion\n\nThe expansion process as originally presented (for the colour code) consists of the following steps:\n\n• Start with a 2D code, which is a boundary of a 3D code.\n\n• Measure stabiliser generators of the 3D code.\n\n• Apply error correction to the 3D code.\n\nHowever, unlike the 3D colour code the 3D surface code minus a boundary still encodes a qubit and so we must take extra steps to ensure that the final logical state of the 3D code is the same as the initial logical state of the 2D code. Additionally, in the specific case where at each timestep we are combining dimension jumping with the application of CCZ gates to part of the code we want our dimension jump to involve only measurements of Z stabilisers. This is because the X stabilisers do not all commute with this application of CCZ gates and so the 2D codes at intermediate steps of the procedure will not be in eigenstates of these X stabilisers. As such, measuring these stabilisers will change the state of the code and the overall effect of the procedure will not be a logical CCZ.\n\nA suitable dimension jump is implemented by\n\n• Start with a 3D surface code C and its boundary ∂ C, which is a 2D surface code in a state ψ. These codes must be chosen such that the Z stabilisers of the 2D code commute with the X stabilisers of both the 2D and 3D codes.\n\n• Prepare all qubits belonging to C ∂ C in +.\n\n• Measure the Z stabiliser generators of the 3D code that are not Z stabilisers of the 2D code.\n\n• Apply a correction which returns the 3D code to its codespace. This correction should not have support on any of the qubits of the original 2D code.\n\nThe preparation of new qubits in + combined with the commutivity requirement on the Z stabilisers in the 2D code ensures that measurement of the 3D Z stabilisers will project the encoded state either to a state in the codespace of the 3D code or to a state that can be returned to the codespace using a correction inferred from the measurement outcomes of these stabilisers. The distribution of X errors that this correction addresses are what is referred to by Bombín as a Pauli frame [35] and by Brown as a gauge of the 3D code [17].\n\nTo understand why is it important not to measure the Z stabilisers of the 2D code during the dimension jump and why the correction should have no support on this code it is easiest to consider an idealised example as in Fig. §. In (a) and (b) we see how applying corrections to the top layer stretches the string-like logical X of the lower 2D code into the sheetlike logical X of the 3D code and in (c) we see the issues that can arise if we allow for measurement of stabilisers of the initial 2D code during the jump (and thus allow for the possibility of measurement errors on these stabilisers). Note that in Fig. § we begin with two surface codes and then entangle them via intermediate stabiliser measurements instead of initialising and entangling the top code in a single step by measuring top and intermediate stabilisers simultaneously. These two cases are equivalent since stabiliser measurements commute by definition. We do not need to do anything to ensure the correct transfer of Z from the 2D code into the 3D one because Z of either 2D code is a valid implementation of Z in the 3D code. By preparing the top code in + (by preparing the physical qubits in + and measuring Z stabilisers), we can ensure no logical Z is applied in this code, so any implementation of Z applied to lower 2D code will be equivalently applied to the 3D code.\n\nThis syndrome occurs because the intermediate Z stabilisers do not commute with the 2D X logical. However, they also do not commute with the 2D X stabilisers and so in reality we would expect to observe this boundary-to-boundary syndrome string (from the logical) plus a random pattern of syndrome loops (from the stabilisers). This does not change any of the analysis however, so it is sufficient to consider only the zero-loop case.\n\n",
+        "start": 13940,
+        "end": 17903
+      },
+      {
+        "title": "3D to 2D collapse",
+        "text": "3D to 2D collapse\n\nThe collapse part of dimensional jumping can similarly be adapted to surface codes. To understand how the process works in this case it is easiest to consider a simple example, namely the one given in Fig. §. Here we have minimal examples of (a) a 2x2 and (b) a 2x2x2 surface code. We can switch between these two codes using dimension jumping since a version of (a) exists on the top and bottom faces of (b). A generic state for this code can be written\n\nand we can write + and - as\n\nwhere Zi are stabilisers of the code and Z is an implementation of logical Z. Now consider the case where we begin in a logical state of the 3D code and measure qubits 1-4 in the X basis. We can choose Z to be supported on qubits 5 and 7 or 6 and 8 so only the stabilisers Zi are supported on the bottom four qubits. The measurement projects to a state\n\nwhere Zj are the restrictions of a subset of the operators Zi to the top four qubits, possibly composed with Z. This subset is all those Zi which match the measurement outcomes from the bottom four qubits, i.e. their restriction to these qubits is supported only on qubits where we measured -1. If all four single-qubit measurement outcomes were the same then the only possible Zj are Zj = I and Zj = Z5Z6Z7Z8 and the sum in (§) is a state in the codespace of the 2D code. If the single-qubit measurement outcomes are not all the same then the 2D code contains errors. For instance, if measurement of qubits 1-4 projects these qubits to the state --++ then the possible Zj are Z5Z6 and Z7Z8 which are both 2-qubit errors. To return to the codespace we can apply a correction Z5Z6, and more generally we apply Z to one of the top qubits whenever we measure -1 from the corresponding bottom qubit. For codes which are larger or have more complicated geometries the process is not quite so straightforward but a correction can still be found by considering the stabiliser structure.\n\nIn the case where there are Z errors in the bottom code it is no longer possible to infer the necessary correction just from the measurement outcomes of the bottom face, but we can combine these measurements with measurements of the X stabilisers of the 2D code to identify these errors (by reconstructing the syndrome of the 3D code). In our example, an odd parity of bottom face measurements tells us X1X2X3X4 would be violated, the parity of qubits 1 and 3 (2 and 4) together with the measurement outcome of X5X7 (X6X8) allows us to infer the measurement outcomes of the two side-face X stabilisers and the product of X5X7 and X6X8 gives us the outcome of the top-face stabiliser. Because this code is only distance-2 we cannot correct for an error in this case, but in higher-distance codes we can.\n\nAn additional complication is introduced in the case where we apply CCZ gates to a subsection of the 3D code during each timestep. In this case we cannot measure the X stabilisers of the 2D code post-collapse (the state we project to in the collapse will not be an eigenstate of these stabilisers), and so we cannot fault-tolerantly infer corrections for the top face. Fortunately, this is not an issue because Z errors commute with CCZ and so applying a single Z correction to the final code is equivalent to applying error correction throughout. This correction is obtained in two steps: firstly we must combine the X stabiliser measurements from the final 2D code with single-qubit measurement outcomes from previous slices to obtain an X stabiliser syndrome for a 3D surface code and decode this syndrome to identify the locations of Z errors. Secondly, we combine these Z error locations with the single-qubit measurement outcomes to obtain a corrected set of single-qubit measurement outcomes, and from these we calculate a correction for the final 2D code. This operator can be interpreted as the adaptive Z correction of a teleportation circuit, and this perspective on the procedure is discussed further in [15].\n\n",
+        "start": 17903,
+        "end": 21869
+      },
+      {
+        "title": "Constructing Slices",
+        "text": "Constructing Slices\n\nIn this section we present our proposed slices through the three 3D surface codes. We begin with an examination of the criteria which these slices must satisfy, then discuss each of our slices individually and finally demonstrate that they have the correct overlap at each step of the procedure.\n\n",
+        "start": 21869,
+        "end": 22187
+      },
+      {
+        "title": "Criteria for Valid Slices",
+        "text": "Criteria for Valid Slices\n\nWe now examine some necessary criteria which slices through 3D codes must meet in order to be used in Brown's procedure. This list is by no means exhaustive, but serves to highlight some of the major issues which must be avoided when constructing slices.\n\nFirstly, we have the requirement that any representative of a logical operator in the slice must have weight at least d in order to preserve the distance of the code. The ability to construct slices satisfying this relies on a specific property of the 3D surface code (the string-like logical operator of code is required to run between a particular pair of boundaries) which is not present in general 3D codes. This restriction on the string-like logical means that as long as we ensure that its associated boundaries are on the sides of the slice and not on the top and bottom we are guaranteed logical operators with weight at least d. It is this restriction that forces at least one of the three codes to have a different time direction to the other two, since the string-like logical operators of three 3D surface codes which admit a transversal CCZ are all perpendicular [29] so there is no way to define a consistent time direction for all three (in three dimensions) such that slices in all three codes have this property.\n\nSecondly, we require that all Z stabilisers in the layers commute with all X stabilisers in the slices. This requirement is due to a combination of the dimension jumping process and the CCZ gate as discussed in Section §. In addition, we require that the support of a 3D X stabiliser on a layer corresponds exactly to a 2D X stabiliser within that layer. This is what ensures that measurements of X stabilisers in the final layer alongside the single-qubit measurement history throughout the procedure can reproduce the full X stabiliser syndrome of a 3D surface code. This rule prevents us from having things such as a 3D X stabiliser which is supported on only a single qubit of a layer.\n\nFinally, all three slices must agree on a common set of overlapping qubits at every timestep. Stated differently, this means that qubits between which we intend to apply CCZ must all be live simultaneously. This is essential for the procedure or the three codes would disagree on which qubits CCZ should be applied to at each timestep.\n\nThe structures originally proposed by Brown were “staircases” through the cubic lattice in the Kitaev picture. In this section we present an alternate set of lattice slices which we find easier to understand and simulate, although we believe equivalent simulations could be performed using the staircase slices.\n\n",
+        "start": 22187,
+        "end": 24843
+      },
+      {
+        "title": "Proposed Layers and Slices",
+        "text": "Proposed Layers and Slices\n\nThe layers we propose are shown at a macroscopic and microscopic level (for distance 3) in Fig. § (a) and (b) respectively. In Brown's original proposal the time direction was the same for two of the codes and different for the third, but here we use a different time direction for each code. This is still implementable in 2D (also shown in Fig. § (b)). In the following subsections we show a distance-3 example of the corresponding slice through each of the three 3D codes and then discuss their overlap . (Footnote: Whilst we have endeavored to make the following figures as clear as possible, these codes are most easily understood using 3D models rather than 2D images. A .blend file containing various helpful models can be found at [34])\n\n",
+        "start": 24843,
+        "end": 25617
+      },
+      {
+        "title": "Code A",
+        "text": "Code A\n\nThis is the simplest of the three codes and corresponds to the red code on the rectified lattice. As illustrated in Fig. § (c) this is the standard 3D surface code defined on a simple cubic lattice. Examples of the boundaries are shown in Fig. § for a distance-3 slice. This slice is three layers thick, but it is actually possible to define a two-layer-thick slice in this code since the middle layer in Fig. § is identical to the top and bottom layers. This is not true for the other two codes, and so we must also use a three-layer-thick slice here to ensure the correct overlap of the three slices.\n\n",
+        "start": 25617,
+        "end": 26229
+      },
+      {
+        "title": "Code B",
+        "text": "Code B\n\nCode B is the blue code on the rectified lattice and a slice through this code is shown in Fig. §. The Z stabilisers of this code are weight-3 (in contrast to the weight-4 Z stabilisers of code A) while its X stabilisers are weight-12 (in code A they were weight 6). Because the lattice constant for the blue code is twice that of the red code we must use a slice that is three layers thick.\n\nIt is interesting to note that the top 2D code for this slice differs from that of code A only by a half-hexagon translation on the kagome lattice and so one might imagine that it would be possible to define a slice in code A with top and bottom 2D codes matching those seen in code B. However, the weight-2 Z boundary stabilisers present in these 2D codes do not commute with the 3D X stabilisers of code A and so it is not possible to expand from the 2D code to the 3D one by only measuring Z stabilisers.\n\n",
+        "start": 26229,
+        "end": 27139
+      },
+      {
+        "title": "Code C",
+        "text": "Code C\n\nCode C is the green code on the rectified lattice and a slice through this code is shown in Fig. §. The top and bottom layers in this slice resemble the middle layer from the slice for code B, with Z stabilisers on triangles and X stabilisers on hexagons. The same is true for the middle layer of this slice and the top and bottom layers of the slice through code B. Additionally, these 2D codes are translated by a half-hexagon on the kagome lattice relative to those of code B and so have boundaries which match those of the 2D codes from code A. The inversion of stabilisers in these 2D codes relative to codes A and B mean that the weights of the logical operators are also exchanged (2D codes A and B had weight 3 X and weight 5 Z whereas here it is the opposite). Due to this, we observe better performance during JIT decoding in this code than in codes A and B (Fig §), since the JIT decoder only deals with X errors and Z errors are dealt with separately.\n\n",
+        "start": 27139,
+        "end": 28112
+      },
+      {
+        "title": "Overlap of the Three Codes",
+        "text": "Overlap of the Three Codes\n\nThe full sequence of the distance-3 2D codes passing through each other can be seen in Fig. §. Vertices of all three codes coincide in the overlapping region, and in fact, these three codes can all be thought of as sections cut from the same lattice. If our slices were two layers thick then our three 2D codes would follow this sequence exactly, but because they are three layers thick we actually move two steps in this sequence for every step of the procedure, i.e. if we start with the first code configuration then after one cycle of expand → correct → CCZ → collapse we will have the third configuration. While we do not observe the second configuration in Fig. § in a purely 2D setting it will correspond to the overlap of the three middle layers of the slices during the aforementioned set of operations. All qubits in each slice belong to one of the three layers and so all three layers agree on common sets of overlapping qubits.\n\n",
+        "start": 28112,
+        "end": 29081
+      },
+      {
+        "title": "Practical Implementation",
+        "text": "Practical Implementation\n\nThis procedure would not be of much use if it were necessary to sweep through a physical 3D code. In Brown's proposal the time direction is changed at each timestep so that the physical architecture only needs to be one slice thick and we can move up and down between the top and bottom layers. Our slices are compatible with this, although the architecture must accommodate three layers instead of two. Additionally there must be room for two of the codes to move relative to the third (in the original proposal only one code needed to move) and this will increase the qubit cost of the procedure.\n\n",
+        "start": 29081,
+        "end": 29707
+      },
+      {
+        "title": "Linear-Time CCZ",
+        "text": "Linear-Time CCZ\n\nThree 3D surface codes defined on a d × d × d cube in the rectified lattice with boundaries as in Fig. § admit a transversal CCZ gate [33]. Key to Brown's procedure is the idea that this gate is also implementable (in time linear in the code distance d) on three 2D surface codes whose overlap in spacetime is equivalent to such a 3D surface code. More precisely, as the three codes move through each other (via the dimension jumping process described in previous sections) CCZ gates are applied between all overlapping triples of physical qubits that do not belong to the top layer. The exclusion of top-layer qubits is necessary because these will become the bottom-layer qubits of the next slice and we only want to apply CCZ once to each qubit in the overlapping region. The intuition for why this process should work is that JIT decoding allows us to fault-tolerantly exchange a spatial dimension for a temporal one, so any process which gives a logical operation in (3+0) dimensions should result in an equivalent logical operation in (2+1) dimensions. However, some readers may not be satisfied with this argument and so it is both interesting and worthwhile to examine the workings of this gate in more detail.\n\nTo begin with, we neglect JIT decoding entirely and just consider the full 3D spacetime as shown in Fig. §. The first thing to note about the spacetime of the three codes is that it is not a d × d × d cube; rather, it is three parallelepipeds whose intersection is a d × d × d cube. It is not immediately obvious, and nor is it generally true, that applying CCZ transversally in this overlapping region should implement a logical CCZ between the codes. Recall that CCZ maps Xi to XiCZjk (where CZ = 1/2(II + IZ + ZI - ZZ)) and thus the intersection of X in any code with the region where we apply CCZs must be a region supporting valid implementations of Z in the other two codes. In a version of § where Z in each of the three codes runs in the “long” direction, the transversal application of CCZ between the overlapping qubits in the central cubic region will not implement CCZ because there is no implementation of Z in any of the three codes which is fully supported inside the cube. Fortunately this is not the case for the arrangement of codes described in the previous section, where instead Z runs in one of the “short” directions in each code (as shown by the dark lines in Fig. §) and so each code possesses valid implementations of this operator which are contained within the cube. In contrast, there is no implementation of X contained within the cube in any of the codes, but this is not a problem since nothing is mapped to X by CCZ. We require only that the intersection of Xi with the cube supports valid implementations of Zj and Zk and this requirement is satisfied. This means that a constant-time version of the procedure where we start with our initial set of 2D codes, use dimension jumping to expand to the full 3D spacetime, apply CCZs to the overlapping region then collapse to the final set of 2D codes will implement the desired logical operation.\n\nNow that we are satisfied that a single-timestep version of the procedure implements CCZ we can convince ourselves of the same thing for the linear-time version using induction. Consider the following two sets of operations, where “expand” should be understood to mean “measure 3D Z stabilisers then apply JIT decoding and X error correction” and we assume that these correction operations are successful:\n\n• A: Begin with a layer at position x, expand to a slice with thickness Δ x, apply CCZs, collapse to a layer at position x + Δ x, then repeat to end at a layer at position x + 2Δ x.\n\n• B: Begin with a layer at position x, expand to a slice with thickness 2Δ x, apply CCZs and collapse to a layer at position x + 2Δ x.\n\nEach qubit experiences the same set of operations in both cases: measurement of associated Z stabilisers and an X correction if one is required (for qubits not in the initial layer), application of CCZ (for qubits in the overlapping region and not in the final layer) and measurement in the X basis (for qubits not in the final layer). The only way for this sequence of operations to be inequivalent in A and B is if operations in the first slice in A influence our choice of X correction for qubits in the second slice in a way that does not occur in B. Incorrect choices of X error correction operator in the first slice of A will have this effect but we are assuming that all correction attempts are successful. The only other operation applied to the qubits of the first slice of A is CCZ, but this is not applied to qubits that are part of the second slice and its only effect will be to change the outcomes of our single-qubit measurements. As discussed in Section §, the correction inferred from these measurements is only applied at the very end of the procedure so we conclude that none of the operations on the first slice of A can influence the operations on the second and the logical effects of A and B must be equivalent. This conclusion, combined with the knowledge that performing the entire procedure in a single timestep correctly implements CCZ, allows us to infer that the linear-time version of the gate also implements CCZ. (Footnote: This will not be true in reality so this argument does not guarantee a threshold for the procedure. However, we are currently only asking if the gate has the correct logical action in principle and so these assumptions are justified.)\n\n",
+        "start": 29707,
+        "end": 35241
+      },
+      {
+        "title": "The Delayed Matching Decoder",
+        "text": "The Delayed Matching Decoder\n\n",
+        "start": 35241,
+        "end": 35271
+      },
+      {
+        "title": "Description",
+        "text": "Description\n\nNow that we have constructed a set of slices we are ready to consider explicit error correction operations within these slices. We imagine that we are at a point of the procedure where we have prepared the new qubits and measured the new stabilisers but have not yet applied any corrections. We have not remeasured the bottom-layer stabilisers as we assume that our choice of correction in the previous timestep was successful and all of these stabilisers are in the +1 eigenstate. The Z stabiliser measurements result in a random distribution of X errors on the new qubits and in a syndrome for these errors consisting of a set of loops in the bulk or connected to the top or side X boundaries. If there were errors on the bottom layer of qubits or if we had errors in some of our stabiliser measurements we will also have broken strings with endpoints which must be matched up to produce a valid syndrome. The delayed matching decoder is a modified version of the minimum-weight perfect matching (MWPM) decoder [32, 35, 36] and provides a simple but fault-tolerant method of performing this matching. This decoder was first proposed by Brown in [17] and its operation is is as follows:\n\nSetting: We consider Z stabilisers on faces and syndromes corresponding to (possibly broken) loops on edges dual to these faces. The distance between endpoints of broken loops is measured in terms of path length on the dual edges connecting them. When we speak of joining pairs of endpoints to each other or to a boundary we mean that the stabiliser measurement outcomes are flipped (in software) along a path connecting this pair of objects. (Footnote: We recall that the dual of a 3D lattice is obtained by placing new vertices at the centres of cells of the original lattice, connecting these vertices if their cells share a face in the original lattice and then deleting the original lattice. This transformation maps cells to vertices, faces to edges and vice versa.) (Footnote: Some readers may prefer to think in terms of the qubits-on-faces picture where Z stabilisers are on edges and endpoints are on vertices. For code A the relevant lattice is the simple cubic lattice, whereas for codes B and C it is the rhombic dodecahedral lattice. 3D models showing the relation between the previously defined slices in the qubits-on-vertices, qubits-on-edges and qubits-on-faces picture can be found at [34].)\n\nInputs:\n\n• A vector e of endpoint locations within the current slice\n\n• A map (i.e. a set of key-value pairs) M from pairs of endpoint locations (or an endpoint location and a boundary) to a “pseudodistance” between the elements of the pair (this pseudodistance will initially be equal to the true distance between the endpoints but will get smaller each time the endpoint pair recurs).\n\n• An integer c which specifies the pseudodistance below which it is permissible to join pairs of endpoints.\n\n• An integer r which specifies the amount by which we should reduce the pseudodistance between a pair of endpoints if we do not choose to join them.\n\nSubroutines:\n\n• A standard MWPM decoder MWPM which is allowed to match endpoints to each other and to the side X boundaries but not the top or bottom X boundaries. It takes a vector of endpoint locations as an argument and returns a vector of endpoint location pairs (or endpoint locations and boundaries).\n\n• A function d which takes as argument an endpoint location pair (or an endpoint location and a boundary) and returns the (true) distance between them.\n\n• A function t which takes as argument an endpoint location pair (or an endpoint location and a boundary) and returns the corresponding pair of locations in the slice for the next timestep.\n\nOnce this algorithm is complete we should have a valid Z stabiliser syndrome consisting entirely of unbroken loops. We then need to use this syndrome to infer a correction on the data qubits which will push these loops to the top boundary as in Fig. §. We find that the sweep decoder [37, 38] is a natural fit for this problem as its action is to generate corrections which push syndrome loops in a given direction, but in principle any valid decoder for loop-like syndromes could be used (e.g. [39, 40, 41, 42, 43, 44, 20]).\n\nIt may be helpful at this point to consider the simple example presented in Fig. §. In this case we imagine that c = r = 2. At the start of the procedure (in the red slice) e contains the two yellow endpoints and M is empty. MWPM will pair the two endpoints to each other since it is not permitted to match them to the top or bottom boundaries and the side boundaries are too far away to be favourable. In the first update step nothing happens and in the second update step the pair of endpoints are added to M with an associated value of 3 (the distance between them on dual edges). In the syndrome repair step we compare c to the cost of joining the pair to each other (M[pair] = 3) and since the former is smaller we join the pair to the top. A new pair of endpoints t(pair) which corresponds to the yellow pair translated into the next slice (i.e. the two red endpoints) is added to M with an associated value of M[pair] - r = 3 - 2 = 1 and pair is removed from M.\n\nAt the start of the next step (in the green slice) e contains the two red endpoints and M contains this pair of endpoints with an associated pseudodistance of 1. MWPM will once again match this pair to each other and nothing happens in either update step because the pair of endpoints in M exactly matches the output of MWPM. In the syndrome repair step we now have M[pair] = 1 which is less than c so we join the two red endpoints to each other.\n\n",
+        "start": 35271,
+        "end": 40929
+      },
+      {
+        "title": "Numerical Implementation",
+        "text": "Numerical Implementation\n\nWe numerically investigate the performance of the delayed matching decoder for all three surface codes using the slices described in Section § and a phenomenological noise model. Our code uses the Blossom V implementation of MWPM due to Kolmogorov [45]. The numerical results presented here correspond to the case where we perform the expand → decode → collapse parts of the procedure for O(d) cycles but do not apply CCZs between the codes. As such, we include both measurement errors on Z stabilisers and physical X errors in our simulation but not Z errors or CZ errors, which arise due to application of CCZ to qubits with X errors. We use parameters c=2 and r=1 for the delayed matching decoder. The code used to obtain these results can be found at [46].\n\nFor each of the three codes, we perform Monte Carlo simulations of the procedure for different values of p, the X error and measurement error rate, and L, the code distance. For each combination of parameters, we count the number of failure events f that occur in a number of trials n, and estimate the logical error rate p fail(p, L). Rather than using the standard confidence interval based on the normal distribution, we use the more stable Agresti-Coull confidence interval [47]. Let f = f + 2, n = n + 4, and p = f / n. Our estimate of p fail(p, L) is then: which is approximately the 95% confidence interval.\n\nFor each code, we plot p fail against p for different values of L. The error threshold, pc, is the point where the curves for different L intersect. We observe evidence of an error threshold in the region of pc ∼ 0.1 % for all three codes; see Fig. §. Our error threshold estimate is many orders of magnitude larger than the theoretical value of ∼ 10^-17 obtained by Brown in his proof [17]. In addition, our value is only one order of magnitude smaller than the 2D surface code threshold [6, 7, 21, 48]. We anticipate that the performance of the delayed matching decoder could be significantly improved by using more of the syndrome history, so it is still possible that the optimised JIT decoding threshold could be competitive with the 2D surface code threshold. We observe improved suppression of p fail below threshold in code C when compared to codes A and B. This is consistent with the fact that, for a given value of L, X is higher weight in the layers for this code than in the other two.\n\nWe also analyse the behaviour of the logical error rate below the threshold. We assume the following ansatz for the logical error rate for p < pc, We use the fitting method detailed in [23] to estimate α and β for all three codes; see Table § for the results. Our estimates are consistent with the statement that (to leading order) logical failures are caused by errors of weight O(d) where d=L is the code distance.\n\n",
+        "start": 40929,
+        "end": 43751
+      },
+      {
+        "title": "Discussion",
+        "text": "Discussion\n\nNow that we have covered each component of Brown's procedure in detail, it is helpful to once again provide an overview of the procedure so that we can see how each component fits together. A single timestep proceeds as follows:\n\n• Begin with three 2D surface codes. All Z stabilisers of these codes are assumed to be in the +1 eigenstate.\n\n• Expand to three thin slices of 3D surface code by preparing new data qubits in + and then measuring the new Z stabilisers. The previously existing 2D codes will now be the bottom layers of these slices, and their stabilisers are not remeasured.\n\n• If our assumption regarding the states of the initial Z stabilisers was correct and there are no measurement errors on the newly measured ones then the syndrome from these stabilisers will consist entirely of loops in the bulk or connected to the top or side boundaries. A correction that pushes all these loops to the top boundary will transfer the original state of the 2D code into the slice. If there are measurement errors on the newly measured stabilisers or X errors on the lower layer we will have an invalid syndrome containing broken strings, the endpoints of which must be paired up to produce a valid syndrome from which we can infer a correction. Incorrect pairings will result in X errors in the slice. This is the JIT decoding step.\n\n• Apply CCZs between all triples of qubits in the region where the three slices overlap except for those in the top layer. If there are X errors in this region due to incorrect decoding in the previous step then these will cause CZ errors on the other two codes.\n\n• Measure out all non-top layer qubits in the X basis. The output of these measurements will be fed to a global Z error decoder once the procedure is complete and used to find a Z error correction for the final code.\n\nWe have verified the integrity of the majority of the components involved in this process. The only part which is missing is the simulation of the Clifford errors arising from the non-Clifford gate and the numerical demonstration of a threshold for Z errors. Such simulations will be the topic of future work, and will allow us to compare the performance of the JIT non-Clifford gate against the standard magic state distillation approach [26, 21, 27]. We wish to emphasize that while the Clifford errors may affect the overall threshold for the procedure, they will not affect the JIT decoding thresholds shown in this work. This is because the JIT decoder only deals with X errors and the errors arising from the CCZ gate are CZ errors which will be projected to a distribution of Z errors by the single-qubit measurements which collapse the slice.\n\nIn contrast, the locations of the CZ errors depend on the locations of X errors post-JIT decoding, so while the distribution of Z and CZ errors will not affect the performance of the JIT decoder the reverse is not true. For this reason the development of more sophisticated and effective JIT decoders is also an important direction for future research. The delayed matching decoder has the advantage of being relatively simple, but it uses only a small amount of the information available in the syndrome history and it is reasonable to expect that significant improvements could be made to decoder performance by utilising more of the available information.\n\nAnother natural direction for future research would be the construction of similar slices in other topological codes; for example, one might want to perform an analogous procedure in the 2D/3D colour code in order to perform a linear-time logical T gate. However, this is not quite as straightforward as one might hope because, unlike in the 3D surface code, the string-like logical operator of the 3D tetrahedral colour code is not required to run in any particular direction and any edge of the tetrahedron supports a valid implementation of this operator. This means that any slice of bounded height through the 3D code will contain edges of bounded length which support low-weight logical operator implementations. Cubic colour code constructions encoding multiple logical qubits as in [28] can avoid this problem for some but not all logical qubits. In these codes, as with three surface codes admitting a transversal CCZ, the string-like logical operators are all perpendicular, but unlike in the surface code case we cannot assign different time directions to different logical qubits. This means that for any choice of slice the string-like logical for one of the encoded qubits will run between the top and bottom boundaries. Additionally, this logical qubit will be lost completely in the collapse from 3D to 2D as the corresponding square 2D colour code only encodes two qubits. This does not completely rule out more exotic slices in these codes (e.g. with logical qubits encoded in topological defects rather than code boundaries) but it seems unlikely that slices similar to the ones presented here exist for 3D colour codes.\n\nIt is worth emphasising the significant difference between the JIT decoding scheme we have examined in this work and Bombín's original JIT decoding proposal [22]. In particular, the above arguments regarding the difficulties of constructing valid colour code slices do not apply to that scheme because it uses an measurement-based formalism rather than a circuit-based one and so does not involve dimension jumping operations. These operations are what would map low-weight logicals in the slice to weight-d logicals in the 2D code post-collapse, but the measurement-based formalism allows for a continuous “sliding” of the slice through the 3D spacetime and so dimension jumps are not required and these short error strings will be detected as we slide the slice past them. The JIT decoder proposed by Bombín in [22] also differs significantly from the one discussed here.\n\nIn light of recent results regarding transversal CCCZ gates in the 4D surface code [28, 50] it also seems natural to ask if an equivalent process could be used to construct slices of 4D surface code which allow for a linear-time CCCZ in the 3D surface code. We expect that such a generalisation should be possible, but note that its spacetime overhead would scale as d^4. This compares unfavourably with the d^3 scaling allowed by the constant-time set of computationally universal operations in the 3D surface code [29], and so is unlikely to be advantageous.\n\n",
+        "start": 43751,
+        "end": 50175
+      },
+      {
+        "title": "Acknowledgements",
+        "text": "Acknowledgements\n\nTRS acknowledges support from University College London and the Engineering and Physical Sciences Research Council [grant number EP/L015242/1]. The authors acknowledge the use of the UCL Myriad High Performance Computing Facility (Myriad@UCL), and associated support services, in the completion of this work. Research at Perimeter Institute is supported in part by the Government of Canada through the Department of Innovation, Science and Economic Development Canada and by the Province of Ontario through the Ministry of Colleges and Universities. This research was enabled in part by support provided by Compute Ontario and Compute Canada. PW acknowledges support from the Australian Research Council via the Centre of Excellence in Engineered Quantum Systems (EQUS) project number CE170100009. DEB acknowledges support from the Engineering and Physical Sciences Research Council QCDA project [grant number EP/R043647/1].\n\nThe authors thank Ben Brown for illuminating discussions. TRS thanks T. Davies for assistance with 3D models and presentation of figures.",
+        "start": 50175,
+        "end": 51256
+      }
+    ],
+    "references": [
+      {
+        "key": "shor1995",
+        "label": "1",
+        "raw": "Peter W. Shor. Scheme for reducing decoherence in quantum computer memory. Phys. Rev. A, 520 (4):0 2493–2496, 1995. ISSN 10502947. .",
+        "title": "Scheme for reducing decoherence in quantum computer memory",
+        "authors": [
+          "Peter W. Shor"
+        ],
+        "year": 1995,
+        "doi": "10.1103/PhysRevA.52.R2493",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "steane1996a",
+        "label": "2",
+        "raw": "A. M. Steane. Error correcting codes in quantum theory. Phys. Rev. Lett., 770 (5):0 793–797, 1996. ISSN 10797114. .",
+        "title": "Error correcting codes in quantum theory",
+        "authors": [
+          "A. M. Steane"
+        ],
+        "year": 1996,
+        "doi": "10.1103/PhysRevLett.77.793",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "campbell2017b",
+        "label": "3",
+        "raw": "Earl T. Campbell, Barbara M. Terhal, and Christophe Vuillot. Roads towards fault-tolerant universal quantum computation. Nature, 5490 (7671):0 172–179, 2017. ISSN 14764687. .",
+        "title": "Roads towards fault-tolerant universal quantum computation",
+        "authors": [
+          "Earl T. Campbell",
+          "Barbara M. Terhal",
+          "Christophe Vuillot"
+        ],
+        "year": 2017,
+        "doi": "10.1038/nature23460",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "kitaev2003",
+        "label": "4",
+        "raw": "A. Yu Kitaev. Fault-tolerant quantum computation by anyons. Ann. Phys., 3030 (1):0 2–30, 2003. ISSN 00034916. .",
+        "title": "Fault-tolerant quantum computation by anyons",
+        "authors": [
+          "A. Yu Kitaev"
+        ],
+        "year": 2003,
+        "doi": "10.1016/S0003-4916(02)00018-0",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "bombin_topological_2007",
+        "label": "5",
+        "raw": "H. Bombín and M. A. Martin-Delgado. Topological quantum distillation. Phys. Rev. Lett., 970 (18):0 180501, 2007a. .",
+        "title": "Topological quantum distillation",
+        "authors": [
+          "H. Bombín",
+          "M. A. Martin-Delgado"
+        ],
+        "year": 2007,
+        "doi": "10.1103/PhysRevLett.97.180501",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "raussendorf2007",
+        "label": "6",
+        "raw": "Robert Raussendorf and Jim Harrington. Fault-tolerant quantum computation with high threshold in two dimensions. Phys. Rev. Lett., 980 (19):0 1–4, 2007. ISSN 00319007. .",
+        "title": "Fault-tolerant quantum computation with high threshold in two dimensions",
+        "authors": [
+          "Robert Raussendorf",
+          "Jim Harrington"
+        ],
+        "year": 2007,
+        "doi": "10.1103/PhysRevLett.98.190504",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "wang2011",
+        "label": "7",
+        "raw": "David S. Wang, Austin G. Fowler, and Lloyd C.L. Hollenberg. Surface code quantum computing with error rates over 1%. Phys. Rev. A, 830 (2):0 2–5, 2011. ISSN 10502947. .",
+        "title": "Surface code quantum computing with error rates over 1%",
+        "authors": [
+          "David S. Wang",
+          "Austin G. Fowler",
+          "Lloyd C.L. Hollenberg"
+        ],
+        "year": 2011,
+        "doi": "10.1103/PhysRevA.83.020302",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "barends2014",
+        "label": "8",
+        "raw": "R. Barends, J. Kelly, A. Megrant, A. Veitia, D. Sank, E. Jeffrey, T. C. White, J. Mutus, A. G. Fowler, B. Campbell, Y. Chen, Z. Chen, B. Chiaro, A. Dunsworth, C. Neill, P. O‘Malley, P. Roushan, A. Vainsencher, J. Wenner, A. N. Korotkov, A. N. Cleland, and John M. Martinis. Superconducting quantum circuits at the surface code threshold for fault tolerance. Nature, 508:0 500–503, 2014. .",
+        "title": "Superconducting quantum circuits at the surface code threshold for fault tolerance",
+        "authors": [
+          "R. Barends",
+          "J. Kelly",
+          "A. Megrant",
+          "A. Veitia",
+          "D. Sank",
+          "E. Jeffrey",
+          "T. C. White",
+          "J. Mutus",
+          "A. G. Fowler",
+          "B. Campbell",
+          "Y. Chen",
+          "Z. Chen",
+          "B. Chiaro",
+          "A. Dunsworth",
+          "C. Neill",
+          "P. O‘Malley",
+          "P. Roushan",
+          "A. Vainsencher",
+          "J. Wenner",
+          "A. N. Korotkov",
+          "A. N. Cleland",
+          "John M. Martinis"
+        ],
+        "year": 2014,
+        "doi": "10.1038/nature13171",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Arute2019",
+        "label": "9",
+        "raw": "Frank Arute, Kunal Arya, Ryan Babbush, Dave Bacon, Joseph C. Bardin, Rami Barends, Rupak Biswas, Sergio Boixo, Fernando G. S. L. Brandao, David A. Buell, Brian Burkett, Yu Chen, Zijun Chen, Ben Chiaro, Roberto Collins, William Courtney, Andrew Dunsworth, Edward Farhi, Brooks Foxen, Austin Fowler, Craig Gidney, Marissa Giustina, Rob Graff, Keith Guerin, Steve Habegger, Matthew P. Harrigan, Michael J. Hartmann, Alan Ho, Markus Hoffmann, Trent Huang, Travis S. Humble, Sergei V. Isakov, Evan Jeffrey, Zhang Jiang, Dvir Kafri, Kostyantyn Kechedzhi, Julian Kelly, Paul V. Klimov, Sergey Knysh, Alexander Korotkov, Fedor Kostritsa, David Landhuis, Mike Lindmark, Erik Lucero, Dmitry Lyakh, Salvatore Mandrà, Jarrod R. McClean, Matthew McEwen, Anthony Megrant, Xiao Mi, Kristel Michielsen, Masoud Mohseni, Josh Mutus, Ofer Naaman, Matthew Neeley, Charles Neill, Murphy Yuezhen Niu, Eric Ostby, Andre Petukhov, John C. Platt, Chris Quintana, Eleanor G. Rieffel, Pedram Roushan, Nicholas C. Rubin, Daniel Sank, Kevin J. Satzinger, Vadim Smelyanskiy, Kevin J. Sung, Matthew D. Trevithick, Amit Vainsencher, Benjamin Villalonga, Theodore White, Z. Jamie Yao, Ping Yeh, Adam Zalcman, Hartmut Neven, and John M. Martinis. Quantum supremacy using a programmable superconducting processor. Nature, 5740 (7779):0 505–510, 2019. ISSN 1476-4687. .",
+        "title": "Quantum supremacy using a programmable superconducting processor",
+        "authors": [
+          "Frank Arute",
+          "Kunal Arya",
+          "Ryan Babbush",
+          "Dave Bacon",
+          "Joseph C. Bardin",
+          "Rami Barends",
+          "Rupak Biswas",
+          "Sergio Boixo",
+          "Fernando G. S. L. Brandao",
+          "David A. Buell",
+          "Brian Burkett",
+          "Yu Chen",
+          "Zijun Chen",
+          "Ben Chiaro",
+          "Roberto Collins",
+          "William Courtney",
+          "Andrew Dunsworth",
+          "Edward Farhi",
+          "Brooks Foxen",
+          "Austin Fowler",
+          "Craig Gidney",
+          "Marissa Giustina",
+          "Rob Graff",
+          "Keith Guerin",
+          "Steve Habegger",
+          "Matthew P. Harrigan",
+          "Michael J. Hartmann",
+          "Alan Ho",
+          "Markus Hoffmann",
+          "Trent Huang",
+          "Travis S. Humble",
+          "Sergei V. Isakov",
+          "Evan Jeffrey",
+          "Zhang Jiang",
+          "Dvir Kafri",
+          "Kostyantyn Kechedzhi",
+          "Julian Kelly",
+          "Paul V. Klimov",
+          "Sergey Knysh",
+          "Alexander Korotkov",
+          "Fedor Kostritsa",
+          "David Landhuis",
+          "Mike Lindmark",
+          "Erik Lucero",
+          "Dmitry Lyakh",
+          "Salvatore Mandrà",
+          "Jarrod R. McClean",
+          "Matthew McEwen",
+          "Anthony Megrant",
+          "Xiao Mi",
+          "Kristel Michielsen",
+          "Masoud Mohseni",
+          "Josh Mutus",
+          "Ofer Naaman",
+          "Matthew Neeley",
+          "Charles Neill",
+          "Murphy Yuezhen Niu",
+          "Eric Ostby",
+          "Andre Petukhov",
+          "John C. Platt",
+          "Chris Quintana",
+          "Eleanor G. Rieffel",
+          "Pedram Roushan",
+          "Nicholas C. Rubin",
+          "Daniel Sank",
+          "Kevin J. Satzinger",
+          "Vadim Smelyanskiy",
+          "Kevin J. Sung",
+          "Matthew D. Trevithick",
+          "Amit Vainsencher",
+          "Benjamin Villalonga",
+          "Theodore White",
+          "Z. Jamie Yao",
+          "Ping Yeh",
+          "Adam Zalcman",
+          "Hartmut Neven",
+          "John M. Martinis"
+        ],
+        "year": 2019,
+        "doi": "10.1038/s41586-019-1666-5",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "jurcevic_demonstration_2021",
+        "label": "10",
+        "raw": "Petar Jurcevic, Ali Javadi-Abhari, Lev S. Bishop, Isaac Lauer, Daniela F. Bogorin, Markus Brink, Lauren Capelluto, Oktay Günlük, Toshinari Itoko, Naoki Kanazawa, Abhinav Kandala, George A. Keefe, Kevin Krsulich, William Landers, Eric P. Lewandowski, Douglas T. McClure, Giacomo Nannicini, Adinath Narasgond, Hasan M. Nayfeh, Emily Pritchett, Mary Beth Rothwell, Srikanth Srinivasan, Neereja Sundaresan, Cindy Wang, Ken X. Wei, Christopher J. Wood, Jeng-Bang Yau, Eric J. Zhang, Oliver E. Dial, Jerry M. Chow, and Jay M. Gambetta. Demonstration of quantum volume 64 on a superconducting quantum computing system. Quantum Science and Technology, 6, 2021. ISSN 2058-9565. .",
+        "title": "Demonstration of quantum volume 64 on a superconducting quantum computing system",
+        "authors": [
+          "Petar Jurcevic",
+          "Ali Javadi-Abhari",
+          "Lev S. Bishop",
+          "Isaac Lauer",
+          "Daniela F. Bogorin",
+          "Markus Brink",
+          "Lauren Capelluto",
+          "Oktay Günlük",
+          "Toshinari Itoko",
+          "Naoki Kanazawa",
+          "Abhinav Kandala",
+          "George A. Keefe",
+          "Kevin Krsulich",
+          "William Landers",
+          "Eric P. Lewandowski",
+          "Douglas T. McClure",
+          "Giacomo Nannicini",
+          "Adinath Narasgond",
+          "Hasan M. Nayfeh",
+          "Emily Pritchett",
+          "Mary Beth Rothwell",
+          "Srikanth Srinivasan",
+          "Neereja Sundaresan",
+          "Cindy Wang",
+          "Ken X. Wei",
+          "Christopher J. Wood",
+          "Jeng-Bang Yau",
+          "Eric J. Zhang",
+          "Oliver E. Dial",
+          "Jerry M. Chow",
+          "Jay M. Gambetta"
+        ],
+        "year": 2021,
+        "doi": "10.1088/2058-9565/abe519",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "eastin2009",
+        "label": "11",
+        "raw": "Bryan Eastin and Emanuel Knill. Restrictions on transversal encoded quantum gate sets. Phys. Rev. Lett., 1020 (11):0 110502, 2009. ISSN 00319007. .",
+        "title": "Restrictions on transversal encoded quantum gate sets",
+        "authors": [
+          "Bryan Eastin",
+          "Emanuel Knill"
+        ],
+        "year": 2009,
+        "doi": "10.1103/PhysRevLett.102.110502",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "zeng2011",
+        "label": "12",
+        "raw": "Bei Zeng, Andrew Cross, and Isaac L. Chuang. Transversality versus universality for additive quantum codes. IEEE Trans. Inf. Theory, 570 (9):0 6272–6284, 2011. ISSN 00189448. .",
+        "title": "Transversality versus universality for additive quantum codes",
+        "authors": [
+          "Bei Zeng",
+          "Andrew Cross",
+          "Isaac L. Chuang"
+        ],
+        "year": 2011,
+        "doi": "10.1109/TIT.2011.2161917",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "bravyi2013a",
+        "label": "13",
+        "raw": "Sergey Bravyi and Robert König. Classification of topologically protected gates for local stabilizer codes. Phys. Rev. Lett., 1100 (17):0 170503, 2013. ISSN 00319007. .",
+        "title": "Classification of topologically protected gates for local stabilizer codes",
+        "authors": [
+          "Sergey Bravyi",
+          "Robert König"
+        ],
+        "year": 2013,
+        "doi": "10.1103/PhysRevLett.110.170503",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "jochym-oconnor2018",
+        "label": "14",
+        "raw": "Tomas Jochym-O'Connor, Aleksander Kubica, and Theodore J. Yoder. Disjointness of stabilizer codes and limitations on fault-tolerant logical gates. Phys. Rev. X, 80 (2):0 021047, 2018. ISSN 21603308. .",
+        "title": "Disjointness of stabilizer codes and limitations on fault-tolerant logical gates",
+        "authors": [
+          "Tomas Jochym-O'Connor",
+          "Aleksander Kubica",
+          "Theodore J. Yoder"
+        ],
+        "year": 2018,
+        "doi": "10.1103/PhysRevX.8.021047",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "webster_universal_2022",
+        "label": "15",
+        "raw": "Paul Webster, Michael Vasmer, Thomas R. Scruby, and Stephen D. Bartlett. Universal fault-tolerant quantum computing with stabilizer codes. Physical Review Research, 40 (1), 2022. .",
+        "title": "Universal fault-tolerant quantum computing with stabilizer codes",
+        "authors": [
+          "Paul Webster",
+          "Michael Vasmer",
+          "Thomas R. Scruby",
+          "Stephen D. Bartlett"
+        ],
+        "year": 2022,
+        "doi": "10.1103/PhysRevResearch.4.013092",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "webster_fault-tolerant_2020",
+        "label": "16",
+        "raw": "Paul Webster and Stephen D. Bartlett. Fault-tolerant quantum gates with defects in topological stabilizer codes. Physical Review A, 1020 (2), 2020. .",
+        "title": "Fault-tolerant quantum gates with defects in topological stabilizer codes",
+        "authors": [
+          "Paul Webster",
+          "Stephen D. Bartlett"
+        ],
+        "year": 2020,
+        "doi": "10.1103/PhysRevA.102.022403",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "brown_fault-tolerant_2020",
+        "label": "17",
+        "raw": "Benjamin J. Brown. A fault-tolerant non-Clifford gate for the surface code in two dimensions. Sci. Adv., 60 (21):0 eaay4929, 2020. ISSN 2375-2548. .",
+        "title": "A fault-tolerant non-Clifford gate for the surface code in two dimensions",
+        "authors": [
+          "Benjamin J. Brown"
+        ],
+        "year": 2020,
+        "doi": "10.1126/sciadv.aay4929",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "bombin_single-shot_2015",
+        "label": "18",
+        "raw": "H. Bombín. Single-shot fault-tolerant quantum error correction. Phys. Rev. X, 50 (3):0 031043, 2015. ISSN 2160-3308. .",
+        "title": "Single-shot fault-tolerant quantum error correction",
+        "authors": [
+          "H. Bombín"
+        ],
+        "year": 2015,
+        "doi": "10.1103/PhysRevX.5.031043",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "campbell_theory_2019",
+        "label": "19",
+        "raw": "Earl T. Campbell. A theory of single-shot error correction for adversarial noise. Quantum Sci. Technol., 40 (2):0 025006, 2019. ISSN 2058-9565. .",
+        "title": "A theory of single-shot error correction for adversarial noise",
+        "authors": [
+          "Earl T. Campbell"
+        ],
+        "year": 2019,
+        "doi": "10.1088/2058-9565/aafc8f",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "quintavalle_single-shot_2021",
+        "label": "20",
+        "raw": "Armanda O. Quintavalle, Michael Vasmer, Joschka Roffe, and Earl T. Campbell. Single-Shot Error Correction of Three-Dimensional Homological Product Codes. PRX Quantum, 20 (2), 2021. .",
+        "title": "Single-Shot Error Correction of Three-Dimensional Homological Product Codes",
+        "authors": [
+          "Armanda O. Quintavalle",
+          "Michael Vasmer",
+          "Joschka Roffe",
+          "Earl T. Campbell"
+        ],
+        "year": 2021,
+        "doi": "10.1103/PRXQuantum.2.020340",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "fowler_surface_2012",
+        "label": "21",
+        "raw": "Austin G. Fowler, Matteo Mariantoni, John M. Martinis, and Andrew N. Cleland. Surface codes: Towards practical large-scale quantum computation. Phys. Rev. A, 860 (3):0 032324, 2012. ISSN 1050-2947, 1094-1622. .",
+        "title": "Surface codes: Towards practical large-scale quantum computation",
+        "authors": [
+          "Austin G. Fowler",
+          "Matteo Mariantoni",
+          "John M. Martinis",
+          "Andrew N. Cleland"
+        ],
+        "year": 2012,
+        "doi": "10.1103/PhysRevA.86.032324",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "bombin_2d_2018",
+        "label": "22",
+        "raw": "Hector Bombín. 2D quantum computation with 3D topological codes. 2018. .",
+        "title": "2D quantum computation with 3D topological codes",
+        "authors": [
+          "Hector Bombín"
+        ],
+        "year": 2018,
+        "doi": null,
+        "arxiv_id": "1810.09571",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "bombin_topological_2007-1",
+        "label": "23",
+        "raw": "H. Bombín and M. A. Martin-Delgado. Topological computation without braiding. Phys. Rev. Lett., 980 (16):0 160502, 2007b. ISSN 0031-9007, 1079-7114. .",
+        "title": "Topological computation without braiding",
+        "authors": [
+          "H. Bombín",
+          "M. A. Martin-Delgado"
+        ],
+        "year": 2007,
+        "doi": "10.1103/PhysRevLett.98.160502",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "kubica2015a",
+        "label": "24",
+        "raw": "Aleksander Kubica and Michael E. Beverland. Universal transversal gates with color codes: A simplified approach. Phys. Rev. A, 910 (3):0 032330, 2015. ISSN 10941622. .",
+        "title": "Universal transversal gates with color codes: A simplified approach",
+        "authors": [
+          "Aleksander Kubica",
+          "Michael E. Beverland"
+        ],
+        "year": 2015,
+        "doi": "10.1103/PhysRevA.91.032330",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "brown_poking_2017",
+        "label": "25",
+        "raw": "Benjamin J. Brown, Katharina Laubscher, Markus S. Kesselring, and James R. Wootton. Poking holes and cutting corners to achieve Clifford gates with the surface code. Phys. Rev. X, 70 (2):0 021029, 2017. ISSN 2160-3308. .",
+        "title": "Poking holes and cutting corners to achieve Clifford gates with the surface code",
+        "authors": [
+          "Benjamin J. Brown",
+          "Katharina Laubscher",
+          "Markus S. Kesselring",
+          "James R. Wootton"
+        ],
+        "year": 2017,
+        "doi": "10.1103/PhysRevX.7.021029",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "bravyi2005",
+        "label": "26",
+        "raw": "Sergey Bravyi and Alexei Kitaev. Universal quantum computation with ideal Clifford gates and noisy ancillas. Phys. Rev. A, 710 (2):0 022316, 2005. ISSN 10941622. .",
+        "title": "Universal quantum computation with ideal Clifford gates and noisy ancillas",
+        "authors": [
+          "Sergey Bravyi",
+          "Alexei Kitaev"
+        ],
+        "year": 2005,
+        "doi": "10.1103/PhysRevA.71.022316",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Litinski2019magicstate",
+        "label": "27",
+        "raw": "Daniel Litinski. Magic state distillation: Not as costly as you think. Quantum, 3:0 205, 2019. ISSN 2521-327X. .",
+        "title": "Magic state distillation: Not as costly as you think",
+        "authors": [
+          "Daniel Litinski"
+        ],
+        "year": 2019,
+        "doi": "10.22331/q-2019-12-02-205",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "kubica_unfolding_2015",
+        "label": "28",
+        "raw": "Aleksander Kubica, Beni Yoshida, and Fernando Pastawski. Unfolding the color code. New Journal of Physics, 170 (8):0 083026, 2015. ISSN 1367-2630. .",
+        "title": "Unfolding the color code",
+        "authors": [
+          "Aleksander Kubica",
+          "Beni Yoshida",
+          "Fernando Pastawski"
+        ],
+        "year": 2015,
+        "doi": "10.1088/1367-2630/17/8/083026",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "vasmer_three-dimensional_2019",
+        "label": "29",
+        "raw": "Michael Vasmer and Dan E. Browne. Three-dimensional surface codes: Transversal gates and fault-tolerant architectures. Phys. Rev. A, 1000 (1):0 012312, 2019. ISSN 2469-9926, 2469-9934. .",
+        "title": "Three-dimensional surface codes: Transversal gates and fault-tolerant architectures",
+        "authors": [
+          "Michael Vasmer",
+          "Dan E. Browne"
+        ],
+        "year": 2019,
+        "doi": "10.1103/PhysRevA.100.012312",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "bombin_dimensional_2016",
+        "label": "30",
+        "raw": "H. Bombín. Dimensional jump in quantum error correction. New J. Phys., 180 (4):0 043038, 2016. .",
+        "title": "Dimensional jump in quantum error correction",
+        "authors": [
+          "H. Bombín"
+        ],
+        "year": 2016,
+        "doi": "10.1088/1367-2630/18/4/043038",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "bravyi1998",
+        "label": "31",
+        "raw": "S. B. Bravyi and A. Yu. Kitaev. Quantum codes on a lattice with boundary. 1998. .",
+        "title": "Quantum codes on a lattice with boundary",
+        "authors": [
+          "S. B. Bravyi",
+          "A. Yu. Kitaev"
+        ],
+        "year": 1998,
+        "doi": null,
+        "arxiv_id": "quant-ph/9811052",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "dennis2002",
+        "label": "32",
+        "raw": "Eric Dennis, Alexei Kitaev, Andrew Landahl, and John Preskill. Topological quantum memory. J. Math. Phys., 430 (9):0 4452–4505, 2002. ISSN 00222488. .",
+        "title": "Topological quantum memory",
+        "authors": [
+          "Eric Dennis",
+          "Alexei Kitaev",
+          "Andrew Landahl",
+          "John Preskill"
+        ],
+        "year": 2002,
+        "doi": "10.1063/1.1499754",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "raussendorf_long-range_2005",
+        "label": "33",
+        "raw": "Robert Raussendorf, Sergey Bravyi, and Jim Harrington. Long-range quantum entanglement in noisy cluster states. Phys. Rev. A, 710 (6):0 062313, 2005. ISSN 1050-2947, 1094-1622. .",
+        "title": "Long-range quantum entanglement in noisy cluster states",
+        "authors": [
+          "Robert Raussendorf",
+          "Sergey Bravyi",
+          "Jim Harrington"
+        ],
+        "year": 2005,
+        "doi": "10.1103/PhysRevA.71.062313",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "gitrepo",
+        "label": "34",
+        "raw": "a. URL https://github.com/tRowans/JIT-supplementary-materials.",
+        "title": "URL https://github.com/tRowans/JIT-supplementary-materials",
+        "authors": [
+          "a"
+        ],
+        "year": null,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://github.com/tRowans/JIT-supplementary-materials",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Edmonds1965",
+        "label": "35",
+        "raw": "Jack Edmonds. Paths, trees, and flowers. Canadian J. Math., 17:0 449–467, 1965. .",
+        "title": "Paths, trees, and flowers",
+        "authors": [
+          "Jack Edmonds"
+        ],
+        "year": 1965,
+        "doi": "10.4153/CJM-1965-045-4",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "fowler2014",
+        "label": "36",
+        "raw": "Austin G. Fowler. Minimum weight perfect matching of fault-tolerant topological quantum error correction in average O(1) parallel time. Quantum Inf. Comput., 150 (1-2):0 145–158, 2014. ISSN 15337146. .",
+        "title": "Minimum weight perfect matching of fault-tolerant topological quantum error correction in average O(1) parallel time",
+        "authors": [
+          "Austin G. Fowler"
+        ],
+        "year": 2014,
+        "doi": null,
+        "arxiv_id": "1307.1740",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "kubica_cellular-automaton_2019",
+        "label": "37",
+        "raw": "Aleksander Kubica and John Preskill. Cellular-automaton decoders with provable thresholds for topological codes. Phys. Rev. Lett., 1230 (2):0 020501, 2019. ISSN 0031-9007, 1079-7114. .",
+        "title": "Cellular-automaton decoders with provable thresholds for topological codes",
+        "authors": [
+          "Aleksander Kubica",
+          "John Preskill"
+        ],
+        "year": 2019,
+        "doi": "10.1103/PhysRevLett.123.020501",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "vasmer_cellular_2021",
+        "label": "38",
+        "raw": "Michael Vasmer, Dan E. Browne, and Aleksander Kubica. Cellular automaton decoders for topological quantum codes with noisy measurements and beyond. Scientific Reports, 110 (1), 2021. ISSN 2045-2322. .",
+        "title": "Cellular automaton decoders for topological quantum codes with noisy measurements and beyond",
+        "authors": [
+          "Michael Vasmer",
+          "Dan E. Browne",
+          "Aleksander Kubica"
+        ],
+        "year": 2021,
+        "doi": "10.1038/s41598-021-81138-2",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "breuckmann2017",
+        "label": "39",
+        "raw": "Nikolas P. Breuckmann, Kasper Duivenvoorden, Dominik Michels, and Barbara M. Terhal. Local decoders for the 2D and 4D toric code. Quantum Inf. Comput., 170 (3-4):0 181–208, 2017. ISSN 15337146. .",
+        "title": "Local decoders for the 2D and 4D toric code",
+        "authors": [
+          "Nikolas P. Breuckmann",
+          "Kasper Duivenvoorden",
+          "Dominik Michels",
+          "Barbara M. Terhal"
+        ],
+        "year": 2017,
+        "doi": null,
+        "arxiv_id": "1609.00510",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "breuckmann2018",
+        "label": "40",
+        "raw": "Nikolas P. Breuckmann and Xiaotong Ni. Scalable neural network decoders for higher dimensional quantum codes. Quantum, 2:0 68, 2018. ISSN 2521-327X. .",
+        "title": "Scalable neural network decoders for higher dimensional quantum codes",
+        "authors": [
+          "Nikolas P. Breuckmann",
+          "Xiaotong Ni"
+        ],
+        "year": 2018,
+        "doi": "10.22331/q-2018-05-24-68",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "duivenvoorden2019",
+        "label": "41",
+        "raw": "K. Duivenvoorden, N. P. Breuckmann, and B. M. Terhal. Renormalization group decoder for a four-dimensional toric code. IEEE Trans. Inf. Theory, 650 (4):0 2545–2562, 2019. ISSN 00189448. .",
+        "title": "Renormalization group decoder for a four-dimensional toric code",
+        "authors": [
+          "K. Duivenvoorden",
+          "N. P. Breuckmann",
+          "B. M. Terhal"
+        ],
+        "year": 2019,
+        "doi": "10.1109/TIT.2018.2879937",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "aloshious2019",
+        "label": "42",
+        "raw": "A. B. Aloshious and P. K. Sarvepalli. Decoding toric codes on three dimensional simplical complexes. IEEE Trans. Inf. Theory (Early Access), pages 1–1, 2020. .",
+        "title": "Decoding toric codes on three dimensional simplical complexes",
+        "authors": [
+          "A. B. Aloshious",
+          "P. K. Sarvepalli"
+        ],
+        "year": 2020,
+        "doi": "10.1109/TIT.2020.3037042",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "panteleev_degenerate_2021",
+        "label": "43",
+        "raw": "Pavel Panteleev and Gleb Kalachev. Degenerate Quantum LDPC Codes With Good Finite Length Performance. Quantum, 5, 2021. .",
+        "title": "Degenerate Quantum LDPC Codes With Good Finite Length Performance",
+        "authors": [
+          "Pavel Panteleev",
+          "Gleb Kalachev"
+        ],
+        "year": 2021,
+        "doi": "10.22331/q-2021-11-22-585",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "roffe_decoding_2020",
+        "label": "44",
+        "raw": "Joschka Roffe, David R. White, Simon Burton, and Earl Campbell. Decoding across the quantum low-density parity-check code landscape. Physical Review Research, 20 (4), 2020. .",
+        "title": "Decoding across the quantum low-density parity-check code landscape",
+        "authors": [
+          "Joschka Roffe",
+          "David R. White",
+          "Simon Burton",
+          "Earl Campbell"
+        ],
+        "year": 2020,
+        "doi": "10.1103/PhysRevResearch.2.043423",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Kolmogorov2009",
+        "label": "45",
+        "raw": "Vladimir Kolmogorov. Blossom V: A new implementation of a minimum cost perfect matching algorithm. Math. Program. Comput., 10 (1):0 43–67, 2009. ISSN 18672949. .",
+        "title": "Blossom V: A new implementation of a minimum cost perfect matching algorithm",
+        "authors": [
+          "Vladimir Kolmogorov"
+        ],
+        "year": 2009,
+        "doi": "10.1007/s12532-009-0002-8",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "gitrepo_code",
+        "label": "46",
+        "raw": "b. URL https://github.com/tRowans/JITdecoding-public.",
+        "title": "URL https://github.com/tRowans/JITdecoding-public",
+        "authors": [
+          "b"
+        ],
+        "year": null,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://github.com/tRowans/JITdecoding-public",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Agresti1998",
+        "label": "47",
+        "raw": "Alan Agresti and Brent A. Coull. Approximate is better than \"exact\" for interval estimation of binomial proportions. Am. Stat., 520 (2):0 119–126, 1998. ISSN 00031305. .",
+        "title": "Approximate is better than \"exact\" for interval estimation of binomial proportions",
+        "authors": [
+          "Alan Agresti",
+          "Brent A. Coull"
+        ],
+        "year": 1998,
+        "doi": "10.2307/2685469",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "stephens2014",
+        "label": "48",
+        "raw": "Ashley M. Stephens. Fault-tolerant thresholds for quantum error correction with the surface code. Phys. Rev. A, 89:0 022321, 2014. .",
+        "title": "Fault-tolerant thresholds for quantum error correction with the surface code",
+        "authors": [
+          "Ashley M. Stephens"
+        ],
+        "year": 2014,
+        "doi": "10.1103/PhysRevA.89.022321",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "brown2016b",
+        "label": "49",
+        "raw": "Benjamin J. Brown, Naomi H. Nickerson, and Dan E. Browne. Fault-tolerant error correction with the gauge color code. Nature Communications, 70 (1):0 12302, November 2016. ISSN 2041-1723. .",
+        "title": "Fault-tolerant error correction with the gauge color code",
+        "authors": [
+          "Benjamin J. Brown",
+          "Naomi H. Nickerson",
+          "Dan E. Browne"
+        ],
+        "year": 2016,
+        "doi": "10.1038/ncomms12302",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "jochym-oconnor_four-dimensional_2021",
+        "label": "50",
+        "raw": "Tomas Jochym-O'Connor and Theodore J. Yoder. Four-dimensional toric code with non-Clifford transversal gates. Physical Review Research, 30 (1), 2021. .",
+        "title": "Four-dimensional toric code with non-Clifford transversal gates",
+        "authors": [
+          "Tomas Jochym-O'Connor",
+          "Theodore J. Yoder"
+        ],
+        "year": 2021,
+        "doi": "10.1103/PhysRevResearch.3.013118",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      }
+    ],
+    "citation_keys_total": 50,
+    "citation_keys_mapped": 50,
+    "notes": []
+  },
+  "sentences": [
+    {
+      "id": "s1",
+      "text": "Quantum error correcting codes allow us to protect quantum systems against decoherence [1, 2] and are believed to be a necessary part of a scalable quantum computer [3].",
+      "section": "Introduction and Overview",
+      "start": 1033,
+      "end": 1202,
+      "reference_keys": [
+        "shor1995",
+        "steane1996a",
+        "campbell2017b"
+      ],
+      "marker_spans": [
+        [
+          1120,
+          1126
+        ],
+        [
+          1198,
+          1201
+        ]
+      ],
+      "marker_keys": [
+        [
+          "shor1995",
+          "steane1996a"
+        ],
+        [
+          "campbell2017b"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "Topological codes [4, 5] are an important class of codes with geometrically local stablisers and high error tolerance in every population and setting [6, 7]."
+    },
+    {
+      "id": "s2",
+      "text": "Topological codes [4, 5] are an important class of codes with geometrically local stablisers and high error tolerance in every population and setting [6, 7].",
+      "section": "Introduction and Overview",
+      "start": 1203,
+      "end": 1360,
+      "reference_keys": [
+        "kitaev2003",
+        "bombin_topological_2007",
+        "raussendorf2007",
+        "wang2011"
+      ],
+      "marker_spans": [
+        [
+          1221,
+          1227
+        ],
+        [
+          1353,
+          1359
+        ]
+      ],
+      "marker_keys": [
+        [
+          "kitaev2003",
+          "bombin_topological_2007"
+        ],
+        [
+          "raussendorf2007",
+          "wang2011"
+        ]
+      ],
+      "context_before": "Quantum error correcting codes allow us to protect quantum systems against decoherence [1, 2] and are believed to be a necessary part of a scalable quantum computer [3].",
+      "context_after": "Topological codes that are scalable in two dimensions (2D) are of particular relevance, as many state-of-the-art quantum processors share this constraint [8, 9, 10]."
+    },
+    {
+      "id": "s3",
+      "text": "Topological codes that are scalable in two dimensions (2D) are of particular relevance, as many state-of-the-art quantum processors share this constraint [8, 9, 10].",
+      "section": "Introduction and Overview",
+      "start": 1361,
+      "end": 1526,
+      "reference_keys": [
+        "barends2014",
+        "Arute2019",
+        "jurcevic_demonstration_2021"
+      ],
+      "marker_spans": [
+        [
+          1515,
+          1525
+        ]
+      ],
+      "marker_keys": [
+        [
+          "barends2014",
+          "Arute2019",
+          "jurcevic_demonstration_2021"
+        ]
+      ],
+      "context_before": "Topological codes [4, 5] are an important class of codes with geometrically local stablisers and high error tolerance in every population and setting [6, 7].",
+      "context_after": "An important question in any quantum error correction scheme is how to fault-tolerantly implement a universal gate set for a given code."
+    },
+    {
+      "id": "s4",
+      "text": "No-go results have been proved that limit naturally fault-tolerant operators from being universal in topological codes [11, 12, 13, 14, 15, 16].",
+      "section": "Introduction and Overview",
+      "start": 1664,
+      "end": 1808,
+      "reference_keys": [
+        "eastin2009",
+        "zeng2011",
+        "bravyi2013a",
+        "jochym-oconnor2018",
+        "webster_universal_2022",
+        "webster_fault-tolerant_2020"
+      ],
+      "marker_spans": [
+        [
+          1783,
+          1807
+        ]
+      ],
+      "marker_keys": [
+        [
+          "eastin2009",
+          "zeng2011",
+          "bravyi2013a",
+          "jochym-oconnor2018",
+          "webster_universal_2022",
+          "webster_fault-tolerant_2020"
+        ]
+      ],
+      "context_before": "An important question in any quantum error correction scheme is how to fault-tolerantly implement a universal gate set for a given code.",
+      "context_after": "Nonetheless, procedures exist for implementing a universal gate set in 2D topological codes."
+    },
+    {
+      "id": "s5",
+      "text": "These include a recent proposal by Brown [17], the implementation of which is the subject of this work.",
+      "section": "Introduction and Overview",
+      "start": 1902,
+      "end": 2005,
+      "reference_keys": [
+        "brown_fault-tolerant_2020"
+      ],
+      "marker_spans": [
+        [
+          1943,
+          1947
+        ]
+      ],
+      "marker_keys": [
+        [
+          "brown_fault-tolerant_2020"
+        ]
+      ],
+      "context_before": "Nonetheless, procedures exist for implementing a universal gate set in 2D topological codes.",
+      "context_after": ""
+    },
+    {
+      "id": "s6",
+      "text": "Of particular interest are single-shot decoding schemes where corrections can be inferred reliably from a single round of stabiliser measurements even in the presence of measurement errors [18, 19, 20].",
+      "section": "Introduction and Overview",
+      "start": 2336,
+      "end": 2538,
+      "reference_keys": [
+        "bombin_single-shot_2015",
+        "campbell_theory_2019",
+        "quintavalle_single-shot_2021"
+      ],
+      "marker_spans": [
+        [
+          2525,
+          2537
+        ]
+      ],
+      "marker_keys": [
+        [
+          "bombin_single-shot_2015",
+          "campbell_theory_2019",
+          "quintavalle_single-shot_2021"
+        ]
+      ],
+      "context_before": "A correction is successful if the product of the correction operator and the original error is equivalent to a stabiliser.",
+      "context_after": "It is believed that single-shot decoding is not possible for 2D topological codes [19] and so measurement errors must instead be counteracted by repeated rounds of stabiliser measurement, with fault-tolerance in a distance d code requiring O(d) repeats [9]."
+    },
+    {
+      "id": "s7",
+      "text": "It is believed that single-shot decoding is not possible for 2D topological codes [19] and so measurement errors must instead be counteracted by repeated rounds of stabiliser measurement, with fault-tolerance in a distance d code requiring O(d) repeats [9].",
+      "section": "Introduction and Overview",
+      "start": 2539,
+      "end": 2796,
+      "reference_keys": [
+        "campbell_theory_2019",
+        "Arute2019"
+      ],
+      "marker_spans": [
+        [
+          2621,
+          2625
+        ],
+        [
+          2792,
+          2795
+        ]
+      ],
+      "marker_keys": [
+        [
+          "campbell_theory_2019"
+        ],
+        [
+          "Arute2019"
+        ]
+      ],
+      "context_before": "Of particular interest are single-shot decoding schemes where corrections can be inferred reliably from a single round of stabiliser measurements even in the presence of measurement errors [18, 19, 20].",
+      "context_after": "As noted by Bombín in [22] this need for repeated measurements results in a discrepancy between constant-time circuits in 3D topological codes and linear-time circuits in 2D topological codes: in principle these both have spacetime cost O(d^3), but in practise the 2D code will also require O(d) measurement rounds between each set of operations, resulting in a time cost of O(d^2) and a spacetime cost of O(d^4)."
+    },
+    {
+      "id": "s8",
+      "text": "As noted by Bombín in [22] this need for repeated measurements results in a discrepancy between constant-time circuits in 3D topological codes and linear-time circuits in 2D topological codes: in principle these both have spacetime cost O(d^3), but in practise the 2D code will also require O(d) measurement rounds between each set of operations, resulting in a time cost of O(d^2) and a spacetime cost of O(d^4).",
+      "section": "Introduction and Overview",
+      "start": 2797,
+      "end": 3210,
+      "reference_keys": [
+        "bombin_2d_2018"
+      ],
+      "marker_spans": [
+        [
+          2819,
+          2823
+        ]
+      ],
+      "marker_keys": [
+        [
+          "bombin_2d_2018"
+        ]
+      ],
+      "context_before": "It is believed that single-shot decoding is not possible for 2D topological codes [19] and so measurement errors must instead be counteracted by repeated rounds of stabiliser measurement, with fault-tolerance in a distance d code requiring O(d) repeats [9].",
+      "context_after": ""
+    },
+    {
+      "id": "s9",
+      "text": "To rectify this, Bombín proposed the concept of a just-in-time (JIT) decoder [22] which supplies, at each timestep of the computational procedure, a best-guess correction based not only on the present syndrome of the code but also on the entire syndrome history.",
+      "section": "Introduction and Overview",
+      "start": 3212,
+      "end": 3474,
+      "reference_keys": [
+        "bombin_2d_2018"
+      ],
+      "marker_spans": [
+        [
+          3289,
+          3293
+        ]
+      ],
+      "marker_keys": [
+        [
+          "bombin_2d_2018"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "By interpreting the syndrome of a (2+1)-dimensional code as the syndrome of the corresponding (3+0)-dimensional code such a decoder allows for a form of pseudo-single-shot decoding of 2D codes, where measurements are not repeated and mistakes in the correction due to measurement errors are compensated for at later timesteps once the measurement errors that caused them are identified."
+    },
+    {
+      "id": "s10",
+      "text": "This scheme was based on the 3D colour code [5, 23, 24] and the ideas presented there were translated to the 3D surface code by Brown [17], who used JIT decoding to prove a threshold for a linear-time CCZ between three 2D surface codes.",
+      "section": "Introduction and Overview",
+      "start": 4735,
+      "end": 4971,
+      "reference_keys": [
+        "bombin_topological_2007",
+        "bombin_topological_2007-1",
+        "kubica2015a",
+        "brown_fault-tolerant_2020"
+      ],
+      "marker_spans": [
+        [
+          4779,
+          4790
+        ],
+        [
+          4869,
+          4873
+        ]
+      ],
+      "marker_keys": [
+        [
+          "bombin_topological_2007",
+          "bombin_topological_2007-1",
+          "kubica2015a"
+        ],
+        [
+          "brown_fault-tolerant_2020"
+        ]
+      ],
+      "context_before": "In its original formulation, Bombín used the idea of JIT decoding to circumvent causal restrictions encountered when attempting to translate a (3+0)-dimensional measurement-based computing scheme to a (2+1)-dimensional one.",
+      "context_after": "When combined with the Clifford group (which is also implementable in the 2D surface code [21, 25]) this provides us with a way to obtain a universal gate set which is potentially more efficient than competing techniques such as magic state distillation [21, 26, 27]."
+    },
+    {
+      "id": "s11",
+      "text": "When combined with the Clifford group (which is also implementable in the 2D surface code [21, 25]) this provides us with a way to obtain a universal gate set which is potentially more efficient than competing techniques such as magic state distillation [21, 26, 27].",
+      "section": "Introduction and Overview",
+      "start": 4972,
+      "end": 5239,
+      "reference_keys": [
+        "fowler_surface_2012",
+        "brown_poking_2017",
+        "bravyi2005",
+        "Litinski2019magicstate"
+      ],
+      "marker_spans": [
+        [
+          5062,
+          5070
+        ],
+        [
+          5226,
+          5238
+        ]
+      ],
+      "marker_keys": [
+        [
+          "fowler_surface_2012",
+          "brown_poking_2017"
+        ],
+        [
+          "fowler_surface_2012",
+          "bravyi2005",
+          "Litinski2019magicstate"
+        ]
+      ],
+      "context_before": "This scheme was based on the 3D colour code [5, 23, 24] and the ideas presented there were translated to the 3D surface code by Brown [17], who used JIT decoding to prove a threshold for a linear-time CCZ between three 2D surface codes.",
+      "context_after": ""
+    },
+    {
+      "id": "s12",
+      "text": "Unlike its 2D counterpart, this code admits a transversal three-qubit non-Clifford gate (the CCZ gate) between three overlapping copies of the code [28, 29].",
+      "section": "Introduction and Overview",
+      "start": 6008,
+      "end": 6165,
+      "reference_keys": [
+        "kubica_unfolding_2015",
+        "vasmer_three-dimensional_2019"
+      ],
+      "marker_spans": [
+        [
+          6156,
+          6164
+        ]
+      ],
+      "marker_keys": [
+        [
+          "kubica_unfolding_2015",
+          "vasmer_three-dimensional_2019"
+        ]
+      ],
+      "context_before": "The first such component is the 3D surface code (Section §).",
+      "context_after": "The aim of Brown's procedure is to use the equivalence between the 3D surface code in (3+0) dimensions and the 2D surface code in (2+1) dimensions to implement a linear-time (in the code distance d) version of this gate between three overlapping 2D codes."
+    },
+    {
+      "id": "s13",
+      "text": "This is achieved by dimension jumping [20] between the slice and the 2D layers on its top and bottom.",
+      "section": "Introduction and Overview",
+      "start": 7049,
+      "end": 7150,
+      "reference_keys": [
+        "quintavalle_single-shot_2021"
+      ],
+      "marker_spans": [
+        [
+          7087,
+          7091
+        ]
+      ],
+      "marker_keys": [
+        [
+          "quintavalle_single-shot_2021"
+        ]
+      ],
+      "context_before": "We also require a method of moving from one slice to the next, which cannot simply be “waiting” (despite the fact that we are using time as a dimension) because the overlap of the three 2D codes must be different at each timestep so they must move relative to each other.",
+      "context_after": "Z errors which arise during the procedure are also dealt with as part of this process (Section §)."
+    },
+    {
+      "id": "s14",
+      "text": "We start by considering the 2D surface code [4, 31] as in Fig. §.",
+      "section": "The 3D Surface Code",
+      "start": 8301,
+      "end": 8366,
+      "reference_keys": [
+        "kitaev2003",
+        "bravyi1998"
+      ],
+      "marker_spans": [
+        [
+          8345,
+          8352
+        ]
+      ],
+      "marker_keys": [
+        [
+          "kitaev2003",
+          "bravyi1998"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "Here we are using the “Kitaev picture” where (with respect to the dark lattice) data qubits (red) are associated with edges."
+    },
+    {
+      "id": "s15",
+      "text": "Fig. § shows how to obtain a 3D surface code [32] from a 2D one, simply by extending the lattice into the third dimension.",
+      "section": "The 3D Surface Code",
+      "start": 9539,
+      "end": 9661,
+      "reference_keys": [
+        "dennis2002"
+      ],
+      "marker_spans": [
+        [
+          9584,
+          9588
+        ]
+      ],
+      "marker_keys": [
+        [
+          "dennis2002"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "The dark square lattice has become a cubic one but we have retained the same assignment of parts of the code to geometric features of the lattice, i.e. data qubits are on edges, X stabilisers are on vertices and Z stabilisers are on faces."
+    },
+    {
+      "id": "s16",
+      "text": "This allows us to repair these syndromes (by joining the endpoints of strings to form loops) and removes the need for repeated measurements of these stabilisers in a process termed single-shot error correction universally, in all cases [18, 19].",
+      "section": "The 3D Surface Code",
+      "start": 11746,
+      "end": 11991,
+      "reference_keys": [
+        "bombin_single-shot_2015",
+        "campbell_theory_2019"
+      ],
+      "marker_spans": [
+        [
+          11982,
+          11990
+        ]
+      ],
+      "marker_keys": [
+        [
+          "bombin_single-shot_2015",
+          "campbell_theory_2019"
+        ]
+      ],
+      "context_before": "We know that valid syndromes should form closed loops, so syndromes not satisfying this property must have been produced (at least in part) by measurement errors.",
+      "context_after": "This stands in contrast to the 2D case where measurement errors can only be detected by repetition of these measurements."
+    },
+    {
+      "id": "s17",
+      "text": "We will use the rectified lattice picture of 3D surface codes to construct our slices since it allows us to describe all three codes using the same lattice [18].",
+      "section": "The 3D Surface Code",
+      "start": 12115,
+      "end": 12276,
+      "reference_keys": [
+        "bombin_single-shot_2015"
+      ],
+      "marker_spans": [
+        [
+          12271,
+          12275
+        ]
+      ],
+      "marker_keys": [
+        [
+          "bombin_single-shot_2015"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "This lattice is obtained from the standard cubic lattice by adding a new vertex at the middle of each edge, connecting these vertices if they belong to the same face and then deleting the original lattice."
+    },
+    {
+      "id": "s18",
+      "text": "The ability to swap between a thin slice of 3D surface code and a 2D surface code (a process termed “dimension jumping [30]”) is at the heart of Brown's procedure.",
+      "section": "Dimension Jumping in Surface Codes",
+      "start": 13282,
+      "end": 13445,
+      "reference_keys": [
+        "bombin_dimensional_2016"
+      ],
+      "marker_spans": [
+        [
+          13401,
+          13405
+        ]
+      ],
+      "marker_keys": [
+        [
+          "bombin_dimensional_2016"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "Similarly to JIT decoding, this process was originally studied by Bombín for use in the 3D tetrahedral colour code and was adapted for use in the surface code by Brown [10], although a process equivalent to the 3D → 2D collapse was previously studied by Raussendorf, Bravyi and Harrington in a measurement-based setting [33]."
+    },
+    {
+      "id": "s19",
+      "text": "Similarly to JIT decoding, this process was originally studied by Bombín for use in the 3D tetrahedral colour code and was adapted for use in the surface code by Brown [10], although a process equivalent to the 3D → 2D collapse was previously studied by Raussendorf, Bravyi and Harrington in a measurement-based setting [33].",
+      "section": "Dimension Jumping in Surface Codes",
+      "start": 13446,
+      "end": 13771,
+      "reference_keys": [
+        "raussendorf_long-range_2005",
+        "jurcevic_demonstration_2021"
+      ],
+      "marker_spans": [
+        [
+          13614,
+          13618
+        ],
+        [
+          13766,
+          13770
+        ]
+      ],
+      "marker_keys": [
+        [
+          "jurcevic_demonstration_2021"
+        ],
+        [
+          "raussendorf_long-range_2005"
+        ]
+      ],
+      "context_before": "The ability to swap between a thin slice of 3D surface code and a 2D surface code (a process termed “dimension jumping [30]”) is at the heart of Brown's procedure.",
+      "context_after": "Despite this, there is (to our knowledge) no comprehensive explanation of dimension jumping in surface codes in the literature, so we use this section to provide one."
+    },
+    {
+      "id": "s20",
+      "text": "The distribution of X errors that this correction addresses are what is referred to by Bombín as a Pauli frame [35] and by Brown as a gauge of the 3D code [17].",
+      "section": "2D to 3D expansion",
+      "start": 15950,
+      "end": 16110,
+      "reference_keys": [
+        "brown_fault-tolerant_2020",
+        "Edmonds1965"
+      ],
+      "marker_spans": [
+        [
+          16061,
+          16065
+        ],
+        [
+          16105,
+          16109
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Edmonds1965"
+        ],
+        [
+          "brown_fault-tolerant_2020"
+        ]
+      ],
+      "context_before": "The preparation of new qubits in + combined with the commutivity requirement on the Z stabilisers in the 2D code ensures that measurement of the 3D Z stabilisers will project the encoded state either to a state in the codespace of the 3D code or to a state that can be returned to the codespace using a correction inferred from the measurement outcomes of these stabilisers.",
+      "context_after": ""
+    },
+    {
+      "id": "s21",
+      "text": "This operator can be interpreted as the adaptive Z correction of a teleportation circuit, and this perspective on the procedure is discussed further in [15].",
+      "section": "3D to 2D collapse",
+      "start": 21710,
+      "end": 21867,
+      "reference_keys": [
+        "webster_universal_2022"
+      ],
+      "marker_spans": [
+        [
+          21862,
+          21866
+        ]
+      ],
+      "marker_keys": [
+        [
+          "webster_universal_2022"
+        ]
+      ],
+      "context_before": "Secondly, we combine these Z error locations with the single-qubit measurement outcomes to obtain a corrected set of single-qubit measurement outcomes, and from these we calculate a correction for the final 2D code.",
+      "context_after": ""
+    },
+    {
+      "id": "s22",
+      "text": "This restriction on the string-like logical means that as long as we ensure that its associated boundaries are on the sides of the slice and not on the top and bottom we are guaranteed logical operators with weight at least d. It is this restriction that forces at least one of the three codes to have a different time direction to the other two, since the string-like logical operators of three 3D surface codes which admit a transversal CCZ are all perpendicular [29] so there is no way to define a consistent time direction for all three (in three dimensions) such that slices in all three codes have this property.",
+      "section": "Criteria for Valid Slices",
+      "start": 22882,
+      "end": 23500,
+      "reference_keys": [
+        "vasmer_three-dimensional_2019"
+      ],
+      "marker_spans": [
+        [
+          23347,
+          23351
+        ]
+      ],
+      "marker_keys": [
+        [
+          "vasmer_three-dimensional_2019"
+        ]
+      ],
+      "context_before": "The ability to construct slices satisfying this relies on a specific property of the 3D surface code (the string-like logical operator of code is required to run between a particular pair of boundaries) which is not present in general 3D codes.",
+      "context_after": ""
+    },
+    {
+      "id": "s23",
+      "text": "A .blend file containing various helpful models can be found at [34])",
+      "section": "Proposed Layers and Slices",
+      "start": 25546,
+      "end": 25615,
+      "reference_keys": [
+        "gitrepo"
+      ],
+      "marker_spans": [
+        [
+          25610,
+          25614
+        ]
+      ],
+      "marker_keys": [
+        [
+          "gitrepo"
+        ]
+      ],
+      "context_before": "(Footnote: Whilst we have endeavored to make the following figures as clear as possible, these codes are most easily understood using 3D models rather than 2D images.",
+      "context_after": ""
+    },
+    {
+      "id": "s24",
+      "text": "Three 3D surface codes defined on a d × d × d cube in the rectified lattice with boundaries as in Fig. § admit a transversal CCZ gate [33].",
+      "section": "Linear-Time CCZ",
+      "start": 29724,
+      "end": 29863,
+      "reference_keys": [
+        "raussendorf_long-range_2005"
+      ],
+      "marker_spans": [
+        [
+          29858,
+          29862
+        ]
+      ],
+      "marker_keys": [
+        [
+          "raussendorf_long-range_2005"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "Key to Brown's procedure is the idea that this gate is also implementable (in time linear in the code distance d) on three 2D surface codes whose overlap in spacetime is equivalent to such a 3D surface code."
+    },
+    {
+      "id": "s25",
+      "text": "The delayed matching decoder is a modified version of the minimum-weight perfect matching (MWPM) decoder [32, 35, 36] and provides a simple but fault-tolerant method of performing this matching.",
+      "section": "Description",
+      "start": 36192,
+      "end": 36386,
+      "reference_keys": [
+        "dennis2002",
+        "Edmonds1965",
+        "fowler2014"
+      ],
+      "marker_spans": [
+        [
+          36297,
+          36309
+        ]
+      ],
+      "marker_keys": [
+        [
+          "dennis2002",
+          "Edmonds1965",
+          "fowler2014"
+        ]
+      ],
+      "context_before": "If there were errors on the bottom layer of qubits or if we had errors in some of our stabiliser measurements we will also have broken strings with endpoints which must be matched up to produce a valid syndrome.",
+      "context_after": "This decoder was first proposed by Brown in [17] and its operation is is as follows:"
+    },
+    {
+      "id": "s26",
+      "text": "This decoder was first proposed by Brown in [17] and its operation is is as follows:",
+      "section": "Description",
+      "start": 36387,
+      "end": 36471,
+      "reference_keys": [
+        "brown_fault-tolerant_2020"
+      ],
+      "marker_spans": [
+        [
+          36431,
+          36435
+        ]
+      ],
+      "marker_keys": [
+        [
+          "brown_fault-tolerant_2020"
+        ]
+      ],
+      "context_before": "The delayed matching decoder is a modified version of the minimum-weight perfect matching (MWPM) decoder [32, 35, 36] and provides a simple but fault-tolerant method of performing this matching.",
+      "context_after": ""
+    },
+    {
+      "id": "s27",
+      "text": "3D models showing the relation between the previously defined slices in the qubits-on-vertices, qubits-on-edges and qubits-on-faces picture can be found at [34].)",
+      "section": "Description",
+      "start": 37521,
+      "end": 37683,
+      "reference_keys": [
+        "gitrepo"
+      ],
+      "marker_spans": [
+        [
+          37677,
+          37681
+        ]
+      ],
+      "marker_keys": [
+        [
+          "gitrepo"
+        ]
+      ],
+      "context_before": "For code A the relevant lattice is the simple cubic lattice, whereas for codes B and C it is the rhombic dodecahedral lattice.",
+      "context_after": ""
+    },
+    {
+      "id": "s28",
+      "text": "We find that the sweep decoder [37, 38] is a natural fit for this problem as its action is to generate corrections which push syndrome loops in a given direction, but in principle any valid decoder for loop-like syndromes could be used (e.g. [39, 40, 41, 42, 43, 44, 20]).",
+      "section": "Description",
+      "start": 39237,
+      "end": 39509,
+      "reference_keys": [
+        "kubica_cellular-automaton_2019",
+        "vasmer_cellular_2021",
+        "breuckmann2017",
+        "breuckmann2018",
+        "duivenvoorden2019",
+        "aloshious2019",
+        "panteleev_degenerate_2021",
+        "roffe_decoding_2020",
+        "quintavalle_single-shot_2021"
+      ],
+      "marker_spans": [
+        [
+          39268,
+          39276
+        ],
+        [
+          39479,
+          39507
+        ]
+      ],
+      "marker_keys": [
+        [
+          "kubica_cellular-automaton_2019",
+          "vasmer_cellular_2021"
+        ],
+        [
+          "breuckmann2017",
+          "breuckmann2018",
+          "duivenvoorden2019",
+          "aloshious2019",
+          "panteleev_degenerate_2021",
+          "roffe_decoding_2020",
+          "quintavalle_single-shot_2021"
+        ]
+      ],
+      "context_before": "We then need to use this syndrome to infer a correction on the data qubits which will push these loops to the top boundary as in Fig. §.",
+      "context_after": ""
+    },
+    {
+      "id": "s29",
+      "text": "Our code uses the Blossom V implementation of MWPM due to Kolmogorov [45].",
+      "section": "Numerical Implementation",
+      "start": 41134,
+      "end": 41208,
+      "reference_keys": [
+        "Kolmogorov2009"
+      ],
+      "marker_spans": [
+        [
+          41203,
+          41207
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Kolmogorov2009"
+        ]
+      ],
+      "context_before": "We numerically investigate the performance of the delayed matching decoder for all three surface codes using the slices described in Section § and a phenomenological noise model.",
+      "context_after": "The numerical results presented here correspond to the case where we perform the expand → decode → collapse parts of the procedure for O(d) cycles but do not apply CCZs between the codes."
+    },
+    {
+      "id": "s30",
+      "text": "The code used to obtain these results can be found at [46].",
+      "section": "Numerical Implementation",
+      "start": 41656,
+      "end": 41715,
+      "reference_keys": [
+        "gitrepo_code"
+      ],
+      "marker_spans": [
+        [
+          41710,
+          41714
+        ]
+      ],
+      "marker_keys": [
+        [
+          "gitrepo_code"
+        ]
+      ],
+      "context_before": "We use parameters c=2 and r=1 for the delayed matching decoder.",
+      "context_after": ""
+    },
+    {
+      "id": "s31",
+      "text": "Rather than using the standard confidence interval based on the normal distribution, we use the more stable Agresti-Coull confidence interval [47].",
+      "section": "Numerical Implementation",
+      "start": 42053,
+      "end": 42200,
+      "reference_keys": [
+        "Agresti1998"
+      ],
+      "marker_spans": [
+        [
+          42195,
+          42199
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Agresti1998"
+        ]
+      ],
+      "context_before": "For each combination of parameters, we count the number of failure events f that occur in a number of trials n, and estimate the logical error rate p fail(p, L).",
+      "context_after": "Let f = f + 2, n = n + 4, and p = f / n. Our estimate of p fail(p, L) is then: which is approximately the 95% confidence interval."
+    },
+    {
+      "id": "s32",
+      "text": "Our error threshold estimate is many orders of magnitude larger than the theoretical value of ∼ 10^-17 obtained by Brown in his proof [17].",
+      "section": "Numerical Implementation",
+      "start": 42585,
+      "end": 42724,
+      "reference_keys": [
+        "brown_fault-tolerant_2020"
+      ],
+      "marker_spans": [
+        [
+          42719,
+          42723
+        ]
+      ],
+      "marker_keys": [
+        [
+          "brown_fault-tolerant_2020"
+        ]
+      ],
+      "context_before": "We observe evidence of an error threshold in the region of pc ∼ 0.1 % for all three codes; see Fig. §.",
+      "context_after": "In addition, our value is only one order of magnitude smaller than the 2D surface code threshold [6, 7, 21, 48]."
+    },
+    {
+      "id": "s33",
+      "text": "In addition, our value is only one order of magnitude smaller than the 2D surface code threshold [6, 7, 21, 48].",
+      "section": "Numerical Implementation",
+      "start": 42725,
+      "end": 42837,
+      "reference_keys": [
+        "raussendorf2007",
+        "wang2011",
+        "fowler_surface_2012",
+        "stephens2014"
+      ],
+      "marker_spans": [
+        [
+          42822,
+          42836
+        ]
+      ],
+      "marker_keys": [
+        [
+          "raussendorf2007",
+          "wang2011",
+          "fowler_surface_2012",
+          "stephens2014"
+        ]
+      ],
+      "context_before": "Our error threshold estimate is many orders of magnitude larger than the theoretical value of ∼ 10^-17 obtained by Brown in his proof [17].",
+      "context_after": "We anticipate that the performance of the delayed matching decoder could be significantly improved by using more of the syndrome history, so it is still possible that the optimised JIT decoding threshold could be competitive with the 2D surface code threshold."
+    },
+    {
+      "id": "s34",
+      "text": "We assume the following ansatz for the logical error rate for p < pc, We use the fitting method detailed in [23] to estimate α and β for all three codes; see Table § for the results.",
+      "section": "Numerical Implementation",
+      "start": 43410,
+      "end": 43592,
+      "reference_keys": [
+        "bombin_topological_2007-1"
+      ],
+      "marker_spans": [
+        [
+          43518,
+          43522
+        ]
+      ],
+      "marker_keys": [
+        [
+          "bombin_topological_2007-1"
+        ]
+      ],
+      "context_before": "We also analyse the behaviour of the logical error rate below the threshold.",
+      "context_after": "Our estimates are consistent with the statement that (to leading order) logical failures are caused by errors of weight O(d) where d=L is the code distance."
+    },
+    {
+      "id": "s35",
+      "text": "Such simulations will be the topic of future work, and will allow us to compare the performance of the JIT non-Clifford gate against the standard magic state distillation approach [26, 21, 27].",
+      "section": "Discussion",
+      "start": 45844,
+      "end": 46037,
+      "reference_keys": [
+        "bravyi2005",
+        "fowler_surface_2012",
+        "Litinski2019magicstate"
+      ],
+      "marker_spans": [
+        [
+          46024,
+          46036
+        ]
+      ],
+      "marker_keys": [
+        [
+          "bravyi2005",
+          "fowler_surface_2012",
+          "Litinski2019magicstate"
+        ]
+      ],
+      "context_before": "The only part which is missing is the simulation of the Clifford errors arising from the non-Clifford gate and the numerical demonstration of a threshold for Z errors.",
+      "context_after": "We wish to emphasize that while the Clifford errors may affect the overall threshold for the procedure, they will not affect the JIT decoding thresholds shown in this work."
+    },
+    {
+      "id": "s36",
+      "text": "Cubic colour code constructions encoding multiple logical qubits as in [28] can avoid this problem for some but not all logical qubits.",
+      "section": "Discussion",
+      "start": 47816,
+      "end": 47951,
+      "reference_keys": [
+        "kubica_unfolding_2015"
+      ],
+      "marker_spans": [
+        [
+          47887,
+          47891
+        ]
+      ],
+      "marker_keys": [
+        [
+          "kubica_unfolding_2015"
+        ]
+      ],
+      "context_before": "This means that any slice of bounded height through the 3D code will contain edges of bounded length which support low-weight logical operator implementations.",
+      "context_after": "In these codes, as with three surface codes admitting a transversal CCZ, the string-like logical operators are all perpendicular, but unlike in the surface code case we cannot assign different time directions to different logical qubits."
+    },
+    {
+      "id": "s37",
+      "text": "It is worth emphasising the significant difference between the JIT decoding scheme we have examined in this work and Bombín's original JIT decoding proposal [22].",
+      "section": "Discussion",
+      "start": 48738,
+      "end": 48900,
+      "reference_keys": [
+        "bombin_2d_2018"
+      ],
+      "marker_spans": [
+        [
+          48895,
+          48899
+        ]
+      ],
+      "marker_keys": [
+        [
+          "bombin_2d_2018"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "In particular, the above arguments regarding the difficulties of constructing valid colour code slices do not apply to that scheme because it uses an measurement-based formalism rather than a circuit-based one and so does not involve dimension jumping operations."
+    },
+    {
+      "id": "s38",
+      "text": "The JIT decoder proposed by Bombín in [22] also differs significantly from the one discussed here.",
+      "section": "Discussion",
+      "start": 49513,
+      "end": 49611,
+      "reference_keys": [
+        "bombin_2d_2018"
+      ],
+      "marker_spans": [
+        [
+          49551,
+          49555
+        ]
+      ],
+      "marker_keys": [
+        [
+          "bombin_2d_2018"
+        ]
+      ],
+      "context_before": "These operations are what would map low-weight logicals in the slice to weight-d logicals in the 2D code post-collapse, but the measurement-based formalism allows for a continuous “sliding” of the slice through the 3D spacetime and so dimension jumps are not required and these short error strings will be detected as we slide the slice past them.",
+      "context_after": ""
+    },
+    {
+      "id": "s39",
+      "text": "In light of recent results regarding transversal CCCZ gates in the 4D surface code [28, 50] it also seems natural to ask if an equivalent process could be used to construct slices of 4D surface code which allow for a linear-time CCCZ in the 3D surface code.",
+      "section": "Discussion",
+      "start": 49613,
+      "end": 49870,
+      "reference_keys": [
+        "kubica_unfolding_2015",
+        "jochym-oconnor_four-dimensional_2021"
+      ],
+      "marker_spans": [
+        [
+          49696,
+          49704
+        ]
+      ],
+      "marker_keys": [
+        [
+          "kubica_unfolding_2015",
+          "jochym-oconnor_four-dimensional_2021"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "We expect that such a generalisation should be possible, but note that its spacetime overhead would scale as d^4."
+    },
+    {
+      "id": "s40",
+      "text": "This compares unfavourably with the d^3 scaling allowed by the constant-time set of computationally universal operations in the 3D surface code [29], and so is unlikely to be advantageous.",
+      "section": "Discussion",
+      "start": 49985,
+      "end": 50173,
+      "reference_keys": [
+        "vasmer_three-dimensional_2019"
+      ],
+      "marker_spans": [
+        [
+          50129,
+          50133
+        ]
+      ],
+      "marker_keys": [
+        [
+          "vasmer_three-dimensional_2019"
+        ]
+      ],
+      "context_before": "We expect that such a generalisation should be possible, but note that its spacetime overhead would scale as d^4.",
+      "context_after": ""
+    }
+  ]
+}

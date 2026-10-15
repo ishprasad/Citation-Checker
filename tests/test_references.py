@@ -196,15 +196,18 @@ def _tar_gz(name: str, text: str) -> bytes:
 class Network:
     """Routes mocked requests and counts calls."""
 
-    def __init__(self, fail_arxiv_downloads: bool = False):
+    def __init__(self, fail_arxiv_downloads: bool = False, openalex_quota_used: bool = False):
         self.calls: list[str] = []
         self.fail_arxiv_downloads = fail_arxiv_downloads
+        self.openalex_quota_used = openalex_quota_used
         self.pdf = make_pdf([BODY, BODY])
 
     def __call__(self, request: httpx.Request) -> httpx.Response:
         url = request.url
         self.calls.append(str(url))
         host, path, params = url.host, url.path, dict(url.params)
+        if host == "api.openalex.org" and self.openalex_quota_used:
+            return httpx.Response(429, headers={"retry-after": "23999"})
         if host == "export.arxiv.org" and path == "/api/query":
             if "id_list" in params and "2101.00001" in params["id_list"]:
                 return httpx.Response(200, text=ATOM_ENTRY)
@@ -345,3 +348,185 @@ def test_arxiv_twin_search_backs_off_when_rate_limited(monkeypatch):
     assert asyncio.run(refs_mod.find_arxiv_twin(title)) is None  # a refusal is "no preprint", not a failure
     assert asyncio.run(refs_mod.find_arxiv_twin(title)) is None
     assert len(calls) == 1  # paused after the first refusal
+
+
+def test_exhausted_api_quota_fails_fast_and_falls_back(network):
+    """OpenAlex refusing for hours: no waiting, other sources still used, nothing cached as final."""
+    net = network(Network(openalex_quota_used=True))
+    resolved = {r.key: r for r in asyncio.run(resolve_references(REFS))}
+    openalex_calls = [c for c in net.calls if "api.openalex.org" in c]
+    assert len(openalex_calls) == 1  # the first refusal blocks the host; later lookups skip it
+    assert resolved["lee2021"].fulltext_status == "full"  # arXiv still works
+    assert resolved["jones2019"].retracted is True  # Crossref still works
+    assert http_mod.host_blocked("api.openalex.org") > 3600
+
+    net.openalex_quota_used = False
+    http_mod._blocked_until.clear()  # the quota is back
+    again = {r.key: r for r in asyncio.run(resolve_references(REFS))}
+    assert again["jones2019"].fulltext_status == "full"  # retried: the degraded results were not cached
+
+
+def test_openalex_api_key_is_sent_only_to_openalex(monkeypatch, tmp_path):
+    seen = {}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        seen[request.url.host] = request.headers.get("authorization")
+        return httpx.Response(200, json={"results": []})
+
+    settings = replace(get_settings(), cache_dir=tmp_path, openalex_api_key="k123")
+    monkeypatch.setattr(http_mod, "get_settings", lambda: settings)
+    http_mod.set_client(httpx.AsyncClient(transport=httpx.MockTransport(handler)))
+    try:
+        asyncio.run(http_mod.fetch("https://api.openalex.org/works", {"search": "x"}))
+        asyncio.run(http_mod.fetch("https://api.crossref.org/works", {"query": "x"}))
+    finally:
+        http_mod.set_client(None)
+    assert seen == {"api.openalex.org": "Bearer k123", "api.crossref.org": None}
+
+
+JATS_ARTICLE = (
+    '<article><front><article-meta><abstract><p>We study e-cigarettes.</p></abstract></article-meta></front>'
+    "<body><sec><title>Results</title><p>Use rose to 27.7% among students"
+    '<sup><xref ref-type="bibr">3</xref>,<xref ref-type="bibr">4</xref></sup>, as earlier work found '
+    '[<xref ref-type="bibr">1</xref>, <xref ref-type="bibr">2</xref>].'
+    '<table-wrap><caption><p>Prevalence by year (27.7% in 2019).</p></caption><table><thead><tr><th>Year</th><th>Prevalence</th></tr></thead>'
+    '<tbody><tr><td>2019</td><td>27.7%</td></tr><tr><td></td><td></td></tr></tbody></table>'
+    "</table-wrap></p></sec></body><back><ref-list><ref><label>1</label><mixed-citation>Wang T. "
+    "<article-title>Tobacco use among adults</article-title>. MMWR. 2018.</mixed-citation></ref></ref-list></back></article>"
+)
+
+
+def test_jats_to_text():
+    from app.pipeline.jats import jats_to_text
+
+    text, sidecar = jats_to_text((JATS_ARTICLE * 1).encode())
+    assert text.split("\n\n") == [
+        "Abstract", "We study e-cigarettes.", "Results",
+        "Use rose to 27.7% among students[3,4], as earlier work found [1, 2].",
+        "Table: Prevalence by year (27.7% in 2019).",
+        "Year | Prevalence\n2019 | 27.7%",  # table contents: cited numbers are often only there
+    ]
+    assert sidecar["references"] == [{"label": "1", "title": "Tobacco use among adults",
+                                      "raw": "Wang T. Tobacco use among adults. MMWR. 2018."}]
+
+
+def test_europepmc_full_text_is_preferred_over_publisher_pdf(network):
+    long_article = JATS_ARTICLE.replace("We study e-cigarettes.", "We study e-cigarettes. " * 120)
+
+    class PmcNetwork(Network):
+        def __call__(self, request):
+            url = request.url
+            if url.host == "api.openalex.org" and url.params.get("filter", "").startswith("doi:"):
+                self.calls.append(str(url))
+                return httpx.Response(200, json={"results": [{
+                    "id": "https://openalex.org/W9", "doi": "https://doi.org/10.1371/journal.pone.1",
+                    "title": "Vaping among students", "publication_year": 2021, "is_retracted": False,
+                    "ids": {"pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/123456"},
+                    "best_oa_location": {"pdf_url": "https://pub.example/blocked.pdf"}, "locations": [],
+                }]})
+            if url.host == "www.ebi.ac.uk":
+                self.calls.append(str(url))
+                if url.path.endswith("/search"):
+                    return httpx.Response(200, json={"resultList": {"result": [
+                        {"pmcid": "PMC777", "isOpenAccess": "Y"}]}})
+                if url.path.endswith("/PMC123456/fullTextXML") or url.path.endswith("/PMC777/fullTextXML"):
+                    return httpx.Response(200, text=long_article)
+                return httpx.Response(404)
+            return super().__call__(request)
+
+    net = network(PmcNetwork())
+    refs = [
+        Reference(key="a", label="1", raw="Vaping among students. 2021.", title="Vaping among students",
+                  year=2021, doi="10.1371/journal.pone.1"),
+        Reference(key="b", label="2", raw="Another study. 2020.", title="Another study", year=2020,
+                  doi="10.1186/s12889-020-1"),  # not in OpenAlex: PMC ID from a Europe PMC DOI lookup
+    ]
+    a, b = asyncio.run(resolve_references(refs))
+    assert (a.fulltext_status, a.fulltext_source) == ("full", "europepmc")
+    assert (b.fulltext_status, b.fulltext_source) == ("full", "europepmc")
+    assert "Table: Prevalence by year" in read_reference_text(a)
+    assert read_reference_sidecar(a)["references"][0]["label"] == "1"
+    assert not any("pub.example" in c for c in net.calls)  # the publisher PDF was not needed
+
+
+# ------------------------------------------------------- versions, generic titles, mangled DOIs
+
+
+def test_arxiv_year_and_plausible_preprint():
+    from app.pipeline.references import arxiv_year, plausible_preprint
+
+    assert (arxiv_year("2004.09142"), arxiv_year("math/0512424"), arxiv_year("hep-th/9901001")) == (2020, 2005, 1999)
+    assert plausible_preprint("1904.08128", 2021)  # preprint two years before the journal version
+    assert not plausible_preprint("math/0512424", 2020)  # a 2005 survey is not a 2020 book
+    assert not plausible_preprint("2004.09142", 2016)  # a 2020 paper is not a 2016 one
+    assert plausible_preprint(None, 2020) and plausible_preprint("2004.09142", None)
+
+
+def test_find_doi_rejoins_a_doi_broken_across_lines():
+    from app.pipeline.bibliography import find_doi
+
+    assert find_doi("PLoS Med 2016. https://doi.org/10.1371/journal.pmed. 1002151 PMID: 27755547") == "10.1371/journal.pmed.1002151"
+    assert find_doi("doi: 10.1016/j.cell.2020.01.001. 2020.") == "10.1016/j.cell.2020.01.001"  # not the year
+    assert find_doi("doi:10.1000/xyz. Accessed 2020") == "10.1000/xyz"
+
+
+class VersionNetwork(Network):
+    """OpenAlex records that link the wrong arXiv paper, or a preprint older than the cited version."""
+
+    RECORDS = {
+        "10.1007/book.1": {"title": "Orthogonal Polynomials", "publication_year": 2020,
+                           "locations": [{"landing_page_url": "https://arxiv.org/abs/math/0512424"}]},
+        "10.1038/nm.1": {"title": "nnU-Net: a self-configuring method", "publication_year": 2021,
+                         "best_oa_location": {"pdf_url": "https://pub.example/nm.pdf"},
+                         "locations": [{"landing_page_url": "https://arxiv.org/abs/2101.00001"}]},
+        "10.1371/journal.pmed": {"title": "Commercial Serological Antibody Detection Tests for Tuberculosis",
+                                 "publication_year": 2016, "locations": []},
+    }
+
+    def __call__(self, request):
+        url = request.url
+        if url.host == "api.openalex.org" and url.params.get("filter", "").startswith("doi:"):
+            self.calls.append(str(url))
+            dois = url.params["filter"][4:].split("|")
+            return httpx.Response(200, json={"results": [
+                {"id": f"https://openalex.org/W{i}", "doi": f"https://doi.org/{doi}", "is_retracted": False,
+                 "best_oa_location": None, **record}
+                for i, (doi, record) in enumerate(self.RECORDS.items()) if doi in dois]})
+        return super().__call__(request)
+
+
+def test_resolver_checks_versions_and_identifiers(network):
+    net = network(VersionNetwork())
+    refs = [
+        Reference(key="book", raw="Foupouagnigni M, Koepf W. Orthogonal Polynomials: 2nd AIMS Workshop. 2020.",
+                  title="Orthogonal Polynomials: 2nd AIMS-Volkswagen Stiftung Workshop", year=2020, doi="10.1007/book.1"),
+        Reference(key="journal", raw="Isensee F. nnU-Net. Nature Methods 2021.", title="nnU-Net: a self-configuring method",
+                  year=2021, doi="10.1038/nm.1"),
+        Reference(key="mangled", raw="Leslie HH. Obstetric Facility Quality and Newborn Mortality in Malawi. PLoS Med 2016.",
+                  title="Obstetric Facility Quality and Newborn Mortality in Malawi", year=2016, doi="10.1371/journal.pmed"),
+    ]
+    book, journal, mangled = asyncio.run(resolve_references(refs))
+    # The 2005 arXiv survey linked to the 2020 book is not read as the book.
+    assert book.arxiv_id is None and not any("0512424" in c for c in net.calls)
+    # Preprint and journal version from the same year: the preprint's LaTeX source is read.
+    assert journal.fulltext_source == "arxiv_latex"
+    # A DOI pointing at a different paper is not trusted.
+    assert mangled.doi is None and "Tuberculosis" not in (mangled.title or "")
+
+
+def test_later_journal_version_is_read_before_the_preprint(network):
+    net = VersionNetwork()
+    net.RECORDS = {"10.1038/nm.1": {**VersionNetwork.RECORDS["10.1038/nm.1"], "publication_year": 2022}}
+    network(net)
+    ref = Reference(key="journal", raw="Isensee F. nnU-Net. Nature Methods 2022.", title="nnU-Net: a self-configuring method",
+                    year=2022, doi="10.1038/nm.1")
+    [resolved] = asyncio.run(resolve_references([ref]))
+    assert (resolved.fulltext_status, resolved.fulltext_source) == ("full", "oa_pdf")
+    assert not any("e-print" in c for c in net.calls)
+    # When the citing paper itself gives the arXiv ID, the preprint is what it cites: read it first.
+    net.RECORDS = {"10.1038/nm.2": {**VersionNetwork.RECORDS["10.1038/nm.1"], "publication_year": 2022,
+                                    "title": "Pretraining for low-resource NLP"}}
+    cited_preprint = Reference(key="pre", raw="Lee K. Pretraining for low-resource NLP. arXiv:2101.00001.",
+                               title="Pretraining for low-resource NLP", year=2022, doi="10.1038/nm.2", arxiv_id="2101.00001")
+    [preprint] = asyncio.run(resolve_references([cited_preprint]))
+    assert preprint.fulltext_source == "arxiv_latex"

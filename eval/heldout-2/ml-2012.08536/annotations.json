@@ -1,0 +1,65 @@
+{
+  "paper": "ml-2012.08536",
+  "annotations": [
+    {
+      "sentence_id": "s8",
+      "reference_key": "bombin_2d_2018",
+      "verdict": "debatable",
+      "note": "Bombín does note the dimensional puzzle (constant-time universal operations in 3D, not in 2D), which is the qualitative point; the O(d^3)/O(d^4) spacetime costs and O(d) rounds are the citing authors' own elaboration and are not in the cited text."
+    },
+    {
+      "sentence_id": "s10",
+      "reference_key": "bombin_topological_2007",
+      "verdict": "debatable",
+      "note": "Group citation [5, 23, 24] for the 3D colour code: [5] introduces colour codes (in 2D only); the 3D colour code is in [23, 24]. A fair pointer to the code family, loosely placed."
+    },
+    {
+      "sentence_id": "s10",
+      "reference_key": "brown_fault-tolerant_2020",
+      "verdict": "false_alarm",
+      "note": "Brown's paper performs a controlled-controlled-phase gate with three overlapping 2D surface codes over a time that scales with system size, using a just-in-time decoder, and proves a threshold; the sentence is accurate."
+    },
+    {
+      "sentence_id": "s18",
+      "reference_key": "bombin_dimensional_2016",
+      "verdict": "false_alarm",
+      "note": "The citation credits the term 'dimension jumping' to Bombín's dimensional-jump paper; the surface-code version is Brown's, as the next sentence of the citing paper says."
+    },
+    {
+      "sentence_id": "s22",
+      "reference_key": "vasmer_three-dimensional_2019",
+      "verdict": "false_alarm",
+      "note": "The cited work assigns the three codes' string-like logical operators to the x, y and z axes of the rectified lattice, i.e. they are perpendicular; the word itself does not appear, which is all the judge objected to."
+    },
+    {
+      "sentence_id": "s32",
+      "reference_key": "brown_fault-tolerant_2020",
+      "verdict": "false_alarm",
+      "note": "The text the current pipeline read gives a threshold lower bound of ε ∼ 10^-17, matching the claim; the number-drift tag is a parsing error (PDF text '10−17' read as the number 10). The old pipeline read a different version giving 6·10^-15 and called it contradicted (version mismatch)."
+    },
+    {
+      "sentence_id": "s37",
+      "reference_key": "bombin_2d_2018",
+      "verdict": "false_alarm",
+      "note": "The 'significant difference' is the citing authors' own comparison of their scheme with Bombín's proposal; the citation only identifies the proposal."
+    },
+    {
+      "sentence_id": "s39",
+      "reference_key": "kubica_unfolding_2015",
+      "verdict": "false_alarm",
+      "note": "Unfolding the color code shows a transversal d-qubit control-Z on a stack of d copies of the d-dimensional toric code, i.e. CCCZ for d = 4; that is a result regarding transversal CCCZ in the 4D surface code."
+    },
+    {
+      "sentence_id": "s39",
+      "reference_key": "jochym-oconnor_four-dimensional_2021",
+      "verdict": "false_alarm",
+      "note": "The cited work does report a 4D toric code with a transversal CCCZ; the flagged part ('it seems natural to ask if an equivalent process could be used...') is the citing authors' own open question."
+    },
+    {
+      "sentence_id": "s40",
+      "reference_key": "vasmer_three-dimensional_2019",
+      "verdict": "genuine",
+      "note": "Cited for d^3 spacetime scaling of constant-time universal operations in the 3D surface code, but the cited work states that a 3D surface code needs an unknown number of syndrome-extraction rounds and that single-shot decoding of its string-like Z errors seems unlikely; d^3 is established there only for 3D gauge colour codes."
+    }
+  ]
+}

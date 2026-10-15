@@ -1,0 +1,184 @@
+{
+  "arxiv_id": "",
+  "title": "Primaquine in glucose-6-phosphate dehydrogenase deficiency: an adaptive pharmacometric assessment of ascending dose regimens in healthy volunteers",
+  "field": "Biology / neuroscience",
+  "source": "10.7554/elife.87318",
+  "planted": [
+    {
+      "id": "p1",
+      "sentence_id": "s3",
+      "reference_keys": [
+        "r7"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Recht et al., 2018 ) with (Commons, 2023) (\"Effect of primaquine dose on the risk of recurrence in patients with uncomplicated Plasmodium vivax: a systematic review and individual patient data meta-analysis\") (similarity 0.38 vs 0.59 for the original)",
+      "original": "As G6PD deficiency is common in malaria endemic regions, primaquine is underused because reliable point-of-care testing for G6PD deficiency is usually not available (Recht et al., 2018 ) and prescribers are naturally reluctant to risk causing potentially severe, life threatening haemolysis (Yilma et al., 2023 ).",
+      "mutated": "As G6PD deficiency is common in malaria endemic regions, primaquine is underused because reliable point-of-care testing for G6PD deficiency is usually not available (Commons, 2023) and prescribers are naturally reluctant to risk causing potentially severe, life threatening haemolysis (Yilma et al., 2023 ).",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p2",
+      "sentence_id": "s7",
+      "reference_keys": [
+        "r12"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"in every population and setting\" before the citation",
+      "original": "G6PD deficiency occurs mainly in malaria endemic or historically endemic regions (Howes et al., 2012 ).",
+      "mutated": "G6PD deficiency occurs mainly in malaria endemic or historically endemic regions in every population and setting (Howes et al., 2012 ).",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p3",
+      "sentence_id": "s11",
+      "reference_keys": [
+        "r4"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"universally, in all cases\" before the citation",
+      "original": "The most common G6PD deficiency genetic variant was Viangchan (871G>A, n=12), as it is in much of the eastern Greater Mekong subregion (Bancone et al., 2019 ).",
+      "mutated": "The most common G6PD deficiency genetic variant was Viangchan (871G>A, n=12), as it is in much of the eastern Greater Mekong subregion universally, in all cases (Bancone et al., 2019 ).",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p4",
+      "sentence_id": "s17",
+      "reference_keys": [
+        "r10"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Awab et al., 2021 ) with (Douglas, 2014) (\"Mortality attributable to Plasmodium vivaxmalaria: a clinical audit from Papua, Indonesia\") (similarity 0.61 vs 0.84 for the original)",
+      "original": "At a population level the overall risks are lower than predicted from gene frequencies because severe variants of G6PD deficiency protect against vivax malaria, although whether they affect the risk of relapse is not known (Awab et al., 2021 ).",
+      "mutated": "At a population level the overall risks are lower than predicted from gene frequencies because severe variants of G6PD deficiency protect against vivax malaria, although whether they affect the risk of relapse is not known (Douglas, 2014).",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p5",
+      "sentence_id": "s21",
+      "reference_keys": [
+        "r17"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"without exception\" before the citation",
+      "original": "Very large mass treatments with primaquine have been used in malaria elimination campaigns involving millions of people in China, Nicaragua, Turkmenistan, Azerbaijan, Tajikistan, Afghanistan and North Korea (Hsiang et al., 2013 ; Kondrashin et al., 2014 ).",
+      "mutated": "Very large mass treatments with primaquine have been used in malaria elimination campaigns involving millions of people in China, Nicaragua, Turkmenistan, Azerbaijan, Tajikistan, Afghanistan and North Korea without exception (Hsiang et al., 2013 ; Kondrashin et al., 2014 ).",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p6",
+      "sentence_id": "s23",
+      "reference_keys": [
+        "r22"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Kheng et al., 2015 ) with (Puaprasert et al., 2018) (\"Real time PCR detection of common CYP2D6 genetic variants and its application in a Karen population study\") (similarity 0.55 vs 0.73 for the original)",
+      "original": "On the other hand, compensatory reticulocytosis might be inhibited but limited experience with weekly primaquine shows a robust reticulocyte response post treatment (Kheng et al., 2015 ).",
+      "mutated": "On the other hand, compensatory reticulocytosis might be inhibited but limited experience with weekly primaquine shows a robust reticulocyte response post treatment (Puaprasert et al., 2018).",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p7",
+      "sentence_id": "s24",
+      "reference_keys": [
+        "r13"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Bancone et al., 2019 ) with (Hsiang, 2013) (\"Mass drug administration for the control and elimination of Plasmodium vivax malaria: an ecological study from Jiangsu province, China\") (similarity 0.27 vs 0.49 for the original)",
+      "original": "Healthy male volunteers were recruited if they provided written informed consent, had a G6PD enzyme activity <30% of the population median value determined by a validated quantitative spectrophotometric G6PD assay, a genotype confirmed G6PD variant (according to a previously published method (Bancone et al., 2019 )), and were aged between 18 and 65 years with a screening haemoglobin concentration >11 g/dL.",
+      "mutated": "Healthy male volunteers were recruited if they provided written informed consent, had a G6PD enzyme activity <30% of the population median value determined by a validated quantitative spectrophotometric G6PD assay, a genotype confirmed G6PD variant (according to a previously published method (Hsiang, 2013)), and were aged between 18 and 65 years with a screening haemoglobin concentration >11 g/dL.",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    }
+  ],
+  "baseline_flags": [
+    [
+      "s10",
+      "r16",
+      "overstated"
+    ],
+    [
+      "s12",
+      "r6",
+      "not_found"
+    ],
+    [
+      "s15",
+      "r16",
+      "overstated"
+    ],
+    [
+      "s16",
+      "r8",
+      "overstated"
+    ],
+    [
+      "s21",
+      "r13",
+      "overstated"
+    ],
+    [
+      "s26",
+      "r7",
+      "overstated"
+    ],
+    [
+      "s27",
+      "r16",
+      "not_found"
+    ],
+    [
+      "s27",
+      "r25",
+      "not_found"
+    ],
+    [
+      "s30",
+      "r22",
+      "overstated"
+    ],
+    [
+      "s5",
+      "r10",
+      "overstated"
+    ],
+    [
+      "s5",
+      "r8",
+      "not_found"
+    ]
+  ]
+}

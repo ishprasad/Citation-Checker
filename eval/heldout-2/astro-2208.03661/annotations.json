@@ -1,0 +1,71 @@
+{
+  "paper": "astro-2208.03661",
+  "annotations": [
+    {
+      "sentence_id": "s3",
+      "reference_key": "Synge:1966okc",
+      "verdict": "false_alarm",
+      "note": "Synge's 1966 paper on photon escape from compact stars is the classic derivation of the escape cone set by the photon sphere, i.e. the shadow boundary; only its abstract was available, and the off-topic tag (both pipelines) is wrong."
+    },
+    {
+      "sentence_id": "s3",
+      "reference_key": "Virbhadra:1999nm",
+      "verdict": "false_alarm",
+      "note": "Joint citation [12, 13]: Virbhadra & Ellis define the Schwarzschild photon sphere at r = 3M (the circular photon orbits); the shadow part is carried by Synge [12]."
+    },
+    {
+      "sentence_id": "s8",
+      "reference_key": "Claudel:2000yi",
+      "verdict": "false_alarm",
+      "note": "Claudel, Virbhadra and Ellis introduced the (quasi-local) definition of photon surfaces, which the field credits as the first; the paper not saying 'first' about itself does not make the attribution wrong."
+    },
+    {
+      "sentence_id": "s24",
+      "reference_key": "Cardoso:2008bp",
+      "verdict": "false_alarm",
+      "note": "The correspondence F = f, H = 1/g matches the cited metric; the remark about a sign difference from metric signature is the citing authors' own comparison."
+    },
+    {
+      "sentence_id": "s28",
+      "reference_key": "Claudel:2000yi",
+      "verdict": "false_alarm",
+      "note": "Claudel et al. give the unit normal of an SO(3)-invariant timelike hypersurface in a general spherically symmetric metric; the citing authors write it in their own f, g notation."
+    },
+    {
+      "sentence_id": "s29",
+      "reference_key": "Song:2021ziq",
+      "verdict": "false_alarm",
+      "note": "The citation points to the conserved-orbital-angular-momentum method of [45]; applying it to general timelike circular orbits is the citing authors' own step."
+    },
+    {
+      "sentence_id": "s30",
+      "reference_key": "Claudel:2000yi",
+      "verdict": "false_alarm",
+      "note": "As for s28: the general unit-normal formula of [32], specialised by the citing authors to Vaidya coordinates."
+    },
+    {
+      "sentence_id": "s32",
+      "reference_key": "Song:2021ziq",
+      "verdict": "false_alarm",
+      "note": "'Consistent with the result in [45]': [45] obtains the ISCO evolution in Vaidya spacetime (numerically, shown in a figure); the consistency check is the citing authors'."
+    },
+    {
+      "sentence_id": "s35",
+      "reference_key": "Cederbaum:2019vwv",
+      "verdict": "debatable",
+      "note": "Cederbaum & Jahns treat spherical photon orbits (constant r) in Kerr; extending 'not evolved, r = constant' to general stationary axisymmetric spacetimes goes a little beyond the source. The corrected-source tag (an erratum) is legitimate."
+    },
+    {
+      "sentence_id": "s39",
+      "reference_key": "Mishra:2019trb",
+      "verdict": "false_alarm",
+      "note": "The cited work gives the slow-rotation Kerr-Vaidya metric on the equatorial plane, which is what the marker is attached to; the tangent-vector definitions that follow are the citing authors'."
+    },
+    {
+      "sentence_id": "s45",
+      "reference_key": "Song:2021ziq",
+      "verdict": "false_alarm",
+      "note": "'The result is consistent with [45]': [45] derives ISCO evolution equations in dynamical spherically symmetric spacetimes by another method; the consistency is the citing authors' own comparison (both pipelines too literal)."
+    }
+  ]
+}

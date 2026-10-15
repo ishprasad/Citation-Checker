@@ -1,0 +1,171 @@
+{
+  "arxiv_id": "2208.01063v3",
+  "title": "Real-Time Krylov Theory for Quantum Computing Algorithms",
+  "field": "Physics: quantum computing (drawn from the machine-learning stratum)",
+  "source": "10.22331/q-2023-07-25-1066",
+  "planted": [
+    {
+      "id": "p1",
+      "sentence_id": "s6",
+      "reference_keys": [
+        "Tubman2016"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [26] with [50] (\"A deterministic alternative to the full configuration interaction quantum Monte Carlo method\") (similarity 0.42 vs 0.81 for the original)",
+      "original": "One representative approach is the so-called variational quantum phase estimation (VQPE) studied and developed recently [26].",
+      "mutated": "One representative approach is the so-called variational quantum phase estimation (VQPE) studied and developed recently [50].",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p2",
+      "sentence_id": "s8",
+      "reference_keys": [
+        "nielsen_chuang"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [26] with [13] (\"Quantum Computation and Quantum Information\") (similarity 0.42 vs 0.60 for the original)",
+      "original": "Recent theoretical development [26] of real-time evolution highlights the phase cancellation intuition for perfect spectral recovery, where eigenspaces of a target Hamiltonian operator are extracted exactly provided (i) the number of evolution timesteps matches the size of the Hilbert space and (ii) the time-evolved phases satisfy a set of geometrically meaningful sum rules.",
+      "mutated": "Recent theoretical development [13] of real-time evolution highlights the phase cancellation intuition for perfect spectral recovery, where eigenspaces of a target Hamiltonian operator are extracted exactly provided (i) the number of evolution timesteps matches the size of the Hilbert space and (ii) the time-evolved phases satisfy a set of geometrically meaningful sum rules.",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p3",
+      "sentence_id": "s11",
+      "reference_keys": [
+        "SymplecticEigenpair"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [26] with [57] (\"Computing Symplectic Eigenpairs of Symmetric Positive-Definite Matrices via Trace Minimization and Riemannian Optimization\") (similarity 0.36 vs 0.54 for the original)",
+      "original": "We first address why superposing these equi-energy states helps generate the ground state, as previous work [26] has demonstrated that the ground-state convergence can be reached with a surprisingly small number of real-time states.",
+      "mutated": "We first address why superposing these equi-energy states helps generate the ground state, as previous work [57] has demonstrated that the ground-state convergence can be reached with a surprisingly small number of real-time states.",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p4",
+      "sentence_id": "s13",
+      "reference_keys": [
+        "Higham1998"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [39] with [42] (\"Structured Backward Error and Condition of Generalized Eigenvalue Problems\") (similarity 0.32 vs 0.52 for the original)",
+      "original": "In general, the associated quantum circuit enacts (i) time evolution of the initial state, |Φ0 ⟩ (-iH t)|Φ0 ⟩, which is difficult to simulate classically, and (ii) subsequent measurements of the matrix elements, Hij and Sij, for example through the Hadamard test or shadow tomography [39].",
+      "mutated": "In general, the associated quantum circuit enacts (i) time evolution of the initial state, |Φ0 ⟩ (-iH t)|Φ0 ⟩, which is difficult to simulate classically, and (ii) subsequent measurements of the matrix elements, Hij and Sij, for example through the Hadamard test or shadow tomography [42].",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p5",
+      "sentence_id": "s16",
+      "reference_keys": [
+        "Noise_2019"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [26] with [60] (\"Sensitivity of quantum speedup by quantum annealing to a noisy oracle\") (similarity 0.32 vs 0.49 for the original)",
+      "original": "In previous work we specifically examined the ground state wavefunctions of molecular Hamiltonians [26].",
+      "mutated": "In previous work we specifically examined the ground state wavefunctions of molecular Hamiltonians [60].",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p6",
+      "sentence_id": "s22",
+      "reference_keys": [
+        "weigend2005a"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"in every population and setting\" before the citation",
+      "original": "Here we consider the transition metal dimer Cr2 (def2-SVP basis set [49], 30 orbitals and 24 electrons), where we restrict the simulation to the widely studied 30-orbital active space, as a prototypical molecular system that exhibits strong electronic correlations.",
+      "mutated": "Here we consider the transition metal dimer Cr2 (def2-SVP basis set in every population and setting [49], 30 orbitals and 24 electrons), where we restrict the simulation to the widely studied 30-orbital active space, as a prototypical molecular system that exhibits strong electronic correlations.",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p7",
+      "sentence_id": "s24",
+      "reference_keys": [
+        "Grover"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [26] with [40] (\"A fast quantum mechanical algorithm for database search\") (similarity 0.37 vs 0.69 for the original)",
+      "original": "Although the full Hilbert space for Cr2 is much larger than what we have studied here, we remark that in previous work [26] we performed a finite-size effect study of VQPE by comparing the dynamics of progressively larger truncations of Cr2, from one thousand to one million determinants, demonstrating that vastly different truncation sizes result in the same convergence.",
+      "mutated": "Although the full Hilbert space for Cr2 is much larger than what we have studied here, we remark that in previous work [40] we performed a finite-size effect study of VQPE by comparing the dynamics of progressively larger truncations of Cr2, from one thousand to one million determinants, demonstrating that vastly different truncation sizes result in the same convergence.",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p8",
+      "sentence_id": "s25",
+      "reference_keys": [
+        "Klymko2021_VQPE"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"without exception\" before the citation",
+      "original": "In this work, we study the class of subspace expansion algorithms utilizing a real-time evolved basis, providing detailed analysis for the underlying ideas in the original VQPE formalism from our previous work [26].",
+      "mutated": "In this work, we study the class of subspace expansion algorithms utilizing a real-time evolved basis, providing detailed analysis for the underlying ideas in the original VQPE formalism from our previous work without exception [26].",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    }
+  ],
+  "baseline_flags": [
+    [
+      "s15",
+      "LCU",
+      "not_found"
+    ],
+    [
+      "s17",
+      "Higham1998",
+      "not_found"
+    ],
+    [
+      "s19",
+      "orthogonalpoly",
+      "not_found"
+    ],
+    [
+      "s2",
+      "nielsen_chuang",
+      "not_found"
+    ],
+    [
+      "s30",
+      "LCU",
+      "overstated"
+    ]
+  ]
+}

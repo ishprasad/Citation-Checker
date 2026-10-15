@@ -1,0 +1,143 @@
+{
+  "paper": "psychology-fpsyg.2021.735293",
+  "annotations": [
+    {
+      "sentence_id": "s4",
+      "reference_key": "r14",
+      "verdict": "false_alarm",
+      "note": "Dale et al. (abstract only) report poor well-being and quality of life during the lockdown; that pandemic fears, isolation and decline put pressure on people is the citing authors' framing, supported jointly with Daly et al."
+    },
+    {
+      "sentence_id": "s4",
+      "reference_key": "r15",
+      "verdict": "false_alarm",
+      "note": "Daly et al. describe social isolation, financial insecurity and health concerns as contributors to distress and find a marked deterioration in UK mental health, which supports the sentence."
+    },
+    {
+      "sentence_id": "s6",
+      "reference_key": "r9",
+      "verdict": "debatable",
+      "note": "Brodeur et al. find lockdowns 'may result in substantial damage to population well-being' (Google Trends); 'any lockdown measure has substantial negative effects' generalises and hardens a hedged finding, though the sentence itself says 'evidence suggests'."
+    },
+    {
+      "sentence_id": "s8",
+      "reference_key": "r10",
+      "verdict": "false_alarm",
+      "note": "Joint citation: Burhamah et al. show singles had more depression and anxiety than married people during lockdown; the partner-support mechanism is carried by Jiang et al."
+    },
+    {
+      "sentence_id": "s8",
+      "reference_key": "r28",
+      "verdict": "false_alarm",
+      "note": "Jiang et al. show daily positive support from marital partners buffers stress during the outbreak, the mechanism part of the sentence; the comparison with singles is carried by Burhamah et al."
+    },
+    {
+      "sentence_id": "s11",
+      "reference_key": "r57",
+      "verdict": "genuine",
+      "note": "Cited for lockdowns exacerbating structural inequalities in domestic labour, but Shafer et al. find the Canadian household division of labour stayed static or became slightly more equal, explicitly not a regression to traditional roles."
+    },
+    {
+      "sentence_id": "s11",
+      "reference_key": "r45",
+      "verdict": "false_alarm",
+      "note": "Power argues the pandemic sharply increased the unpaid care burden that falls mainly on women, i.e. exacerbated existing inequalities in caregiving."
+    },
+    {
+      "sentence_id": "s14",
+      "reference_key": "r31",
+      "verdict": "debatable",
+      "note": "Kuhn et al. list the unemployed and those with deteriorating finances among groups with decreased life satisfaction; whether this was the largest decrease is not visible in the text the checker read."
+    },
+    {
+      "sentence_id": "s18",
+      "reference_key": "r3",
+      "verdict": "debatable",
+      "note": "Amerio et al. link small apartments, poor views and low indoor quality to depressive symptoms, but find no significant association for green view (p = 0.44) and only a trend for balcony usability; other works are co-cited for the list."
+    },
+    {
+      "sentence_id": "s18",
+      "reference_key": "r42",
+      "verdict": "false_alarm",
+      "note": "Passavanti et al. find lower depression with access to balconies, terraces or gardens, which supports the balcony part; the other housing features are carried by the co-cited works."
+    },
+    {
+      "sentence_id": "s19",
+      "reference_key": "r52",
+      "verdict": "false_alarm",
+      "note": "Salari et al. state that people who follow COVID-19 news most experience more anxiety and that constant exposure to distressing news raises anxiety; the sentence is hedged ('may increase')."
+    },
+    {
+      "sentence_id": "s23",
+      "reference_key": "r32",
+      "verdict": "debatable",
+      "note": "A greenspace-and-obesity review co-cited with WHO (2010) for exercise reducing obesity and disease risk; it supports the obesity link only indirectly (greenspace as a resource for physical activity), the disease part rests on WHO."
+    },
+    {
+      "sentence_id": "s24",
+      "reference_key": "r21",
+      "verdict": "false_alarm",
+      "note": "'Several articles have reported on the beneficial role of physical activity': Garre-Olmo et al. link reduced sport practice to depressive symptoms and call the link biologically plausible; reading the sentence as a causal-effect claim is pedantic."
+    },
+    {
+      "sentence_id": "s24",
+      "reference_key": "r43",
+      "verdict": "false_alarm",
+      "note": "Peterson et al. find depressive symptoms, loneliness and fatigue negatively associated with physical activity during isolation, i.e. they report on its beneficial role."
+    },
+    {
+      "sentence_id": "s25",
+      "reference_key": "r14",
+      "verdict": "debatable",
+      "note": "Only the abstract was available; it reports worse mental health in those who do no physical activity, and the 30-minutes-once-a-week definition is plausibly in the full paper."
+    },
+    {
+      "sentence_id": "s27",
+      "reference_key": "r33",
+      "verdict": "false_alarm",
+      "note": "Lesser & Nienhuis report that inactive participants who became more active had better well-being and lower anxiety; 'positive impact' matches the study's own framing."
+    },
+    {
+      "sentence_id": "s31",
+      "reference_key": "r21",
+      "verdict": "false_alarm",
+      "note": "Garre-Olmo et al. find unemployment and negative work changes during confinement among the strongest predictors of depression, supporting the expectation."
+    },
+    {
+      "sentence_id": "s32",
+      "reference_key": "r10",
+      "verdict": "false_alarm",
+      "note": "Hedged ('it seems plausible'): Burhamah et al. find singles with markedly more depression and anxiety during lockdown than married people; Kuhn et al. list those without a partner as vulnerable to isolation."
+    },
+    {
+      "sentence_id": "s42",
+      "reference_key": "r6",
+      "verdict": "debatable",
+      "note": "Belosi et al. model SARS-CoV-2 in outdoor air and find very low outdoor transmission risk, a rationale for outdoor activity, but they say nothing about green infrastructure or urban green space; loosely related at best."
+    },
+    {
+      "sentence_id": "s49",
+      "reference_key": "r67",
+      "verdict": "false_alarm",
+      "note": "Joint citation: Xiong et al. note students' distress from cancelled social events and school closures; career concerns are carried by Ranta et al."
+    },
+    {
+      "sentence_id": "s49",
+      "reference_key": "r48",
+      "verdict": "false_alarm",
+      "note": "Ranta et al. find young adults especially concerned about the pandemic's effects on their careers and studies, the career part of the sentence."
+    },
+    {
+      "sentence_id": "s52",
+      "reference_key": "r17",
+      "verdict": "debatable",
+      "note": "Fore (UNICEF) discusses income losses and economic effects on children's health and nutrition, not psychological problems from unemployment; co-cited with Hensher, who may carry the claim."
+    },
+    {
+      "sentence_id": "s56",
+      "reference_key": "r14",
+      "verdict": "debatable",
+      "note": "Only the abstract was available: it reports high rates of depression, anxiety and insomnia and poorer well-being and quality of life than in the first lockdown; 'considerably more pronounced mental health problems' may be supported by the full paper."
+    }
+  ]
+}

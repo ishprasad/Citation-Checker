@@ -46,12 +46,21 @@ def find_arxiv_id(*texts: Optional[str]) -> Optional[str]:
     return None
 
 
+# A DOI broken at a line end in a PDF reference list: "10.1371/journal.pmed. 1002151".
+_DOI_CONTINUATION_RE = re.compile(r"\s+(\d[^\s,;{}\"<>]*)")
+
+
 def find_doi(*texts: Optional[str]) -> Optional[str]:
     for text in texts:
         if text:
             m = DOI_RE.search(text)
             if m:
-                doi = m.group(1).rstrip(".")
+                doi = m.group(1)
+                if doi.endswith((".", "/", "-", "_")):
+                    more = _DOI_CONTINUATION_RE.match(text, m.end())
+                    if more and not re.fullmatch(r"(?:19|20)\d\d\W*", more.group(1)):  # not a year after the DOI
+                        doi += more.group(1)
+                doi = doi.rstrip(".")
                 if doi.lower().startswith("10.48550/arxiv."):
                     continue  # an arXiv DOI; the arXiv ID is more useful
                 return doi

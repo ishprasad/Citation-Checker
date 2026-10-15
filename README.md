@@ -282,14 +282,38 @@ The genuine problems found in the unmodified paper:
 - InstructGPT and LaMDA model sizes that the cited papers do not report (350M and 6.7B; 422M and 68B).
 - "Cobbe et al. extend Ling et al. by creating a *larger* dataset": GSM8K has 8.5K problems and AQuA has 100K.
 
-Calibration was done on this paper, so these are development-set numbers; a second paper with planted errors would give a held-out estimate.
+Calibration was done on this paper, so these are development-set numbers.
+
+### Held-out evaluation (`eval/heldout/`, `scripts/heldout.py`)
+
+Six papers the checker was never built or calibrated on, one per field (quantum computing, computer vision, astrophysics, medicine, biology, psychology), chosen by a seeded random OpenAlex sample with eligibility rules fixed in advance; 44 planted errors; every flag on an untouched citation reviewed by hand. The pipeline was frozen throughout.
+
+| | Held-out (6 papers) | Development (CoT) |
+|---|---|---|
+| Planted errors caught | **35 of 44 = 80%** (95% CI 65–89%) | 9 of 10 |
+| Precision with human review | **54%** (95% CI 43–65%) | 63% |
+| Genuine problems found in the original papers | 5 | 3 |
+| Model cost | $6.93 for 12 full checks | |
+
+Four of the nine misses come from the identification-citation leniency added during calibration, and 5 of the 34 false alarms from the checker's inputs (a DOI broken across a PDF line break, generic titles matched to the wrong paper, a dropped `≲`, table contents missing); the rest are the judge reading method and data-source citations too literally. Details, caveats and every selection decision: [`eval/heldout/README.md`](eval/heldout/README.md).
+
+**Round 2 ([`eval/heldout-2/`](eval/heldout-2/README.md)) measured the fixes made after round 1** on a fresh sample: 12 papers in 5 fields, 103 planted errors. The same edited papers were also checked with round 1's pipeline, so the comparison is paired:
+
+| Same 12 papers | Current pipeline | Round 1 pipeline |
+|---|---|---|
+| Planted errors caught | **89 of 103 = 86%** (95% CI 78–92%) | 87 of 103 = 84% |
+| Label accuracy on planted errors | **84%** | 67% |
+| Precision with human review | **60%** (95% CI 53–67%) | 61% |
+| Genuine problems found in the original papers | 17 | 19 (20 between them) |
+
+The fixes made labels more accurate and caught more citation swaps, but recall and precision did not change measurably (McNemar p = 0.75 for recall). The higher numbers than round 1 come from the papers drawn. The remaining false alarms are mostly values the citing authors derived from a cited dataset, their own comparisons and applications of cited formulas, co-cited works, and number-drift parsing errors.
 
 - **Escalation:** 30 of 147 verdicts went to Nemotron Ultra, which changed the label in 13.
 - **Cost:** a full check costs about $1.16 (1.65M tokens) the first time. Repeat runs are served from the cache in about 30 seconds.
 
 ## Limitations and future work
 
-- **Held-out evaluation.** The numbers above are from the paper the judge was calibrated on. Next: 6–8 papers across 3–4 fields (including biomedical and social-science PDFs), about 10 planted errors each, flags reviewed by hand, scored without further tuning.
+- **Next evaluation round.** Round 2's findings are listed in its README: values derived from a cited dataset, comparisons drawn by the citing authors, number-drift parsing, abstract-only overstatement flags, book reviews matched for books, and title-less bibliographies. Fixes for them need a round 3, again with the paired old-pipeline run (`scripts/heldout.py run-old`). Round 2 showed that comparing rounds alone can mistake an easier sample for progress. Planting should also produce more number changes and hedge removals.
 - **Judge robustness.** Self-consistency voting for accusatory labels (three judge runs, flag on 2-of-3 agreement, disagreement escalates), and reasoning on for extraction only on sentences with several citation markers.
 - **Fine-tuning.** Token Factory does not offer Nemotron fine-tuning today. With more labelled data (roughly 50–100 papers, 3k–8k claim/reference pairs, split by citing and cited paper), a Nano-sized judge could be distilled from Ultra verdicts on full text plus human labels, making full checks much cheaper.
 - **Scanned PDFs.** Image-only PDFs are refused today; Nemotron Nano Omni (`MODEL_VISION`) could read the pages.

@@ -1,0 +1,415 @@
+{
+  "slug": "astro-2208.03661",
+  "field": "Physics: astronomy and astrophysics",
+  "title": "Quasi-local studies of the particle surfaces and their stability in general spacetimes",
+  "job_id": "05f5131e1132",
+  "scored_at": "2026-10-09T17:00:12+00:00",
+  "planted": 10,
+  "checked": 10,
+  "caught": 8,
+  "recall": 0.8,
+  "label_accuracy": 0.7,
+  "expected_mode_rate": 0.5,
+  "untouched_verdicts": 75,
+  "other_flags": 10,
+  "other_flags_preexisting": 9,
+  "precision": 0.4444444444444444,
+  "precision_excluding_preexisting": 0.8888888888888888,
+  "by_mutation": {
+    "citation_swap": {
+      "planted": 6,
+      "caught": 5
+    },
+    "scope_inflation": {
+      "planted": 4,
+      "caught": 3
+    }
+  },
+  "flagged_citations": 9,
+  "review": {
+    "genuine": 0,
+    "false_alarm": 8,
+    "debatable": 1,
+    "unreviewed": 0
+  },
+  "review_details": {
+    "genuine": [],
+    "false_alarm": [
+      {
+        "sentence_id": "s24",
+        "reference_key": "Cardoso:2008bp",
+        "note": "The correspondence F = f, H = 1/g matches the cited metric; the remark about a sign difference from metric signature is the citing authors' own comparison."
+      },
+      {
+        "sentence_id": "s28",
+        "reference_key": "Claudel:2000yi",
+        "note": "Claudel et al. give the unit normal of an SO(3)-invariant timelike hypersurface in a general spherically symmetric metric; the citing authors write it in their own f, g notation."
+      },
+      {
+        "sentence_id": "s3",
+        "reference_key": "Synge:1966okc",
+        "note": "Synge's 1966 paper on photon escape from compact stars is the classic derivation of the escape cone set by the photon sphere, i.e. the shadow boundary; only its abstract was available, and the off-topic tag (both pipelines) is wrong."
+      },
+      {
+        "sentence_id": "s30",
+        "reference_key": "Claudel:2000yi",
+        "note": "As for s28: the general unit-normal formula of [32], specialised by the citing authors to Vaidya coordinates."
+      },
+      {
+        "sentence_id": "s32",
+        "reference_key": "Song:2021ziq",
+        "note": "'Consistent with the result in [45]': [45] obtains the ISCO evolution in Vaidya spacetime (numerically, shown in a figure); the consistency check is the citing authors'."
+      },
+      {
+        "sentence_id": "s39",
+        "reference_key": "Mishra:2019trb",
+        "note": "The cited work gives the slow-rotation Kerr-Vaidya metric on the equatorial plane, which is what the marker is attached to; the tangent-vector definitions that follow are the citing authors'."
+      },
+      {
+        "sentence_id": "s45",
+        "reference_key": "Song:2021ziq",
+        "note": "'The result is consistent with [45]': [45] derives ISCO evolution equations in dynamical spherically symmetric spacetimes by another method; the consistency is the citing authors' own comparison (both pipelines too literal)."
+      },
+      {
+        "sentence_id": "s8",
+        "reference_key": "Claudel:2000yi",
+        "note": "Claudel, Virbhadra and Ellis introduced the (quasi-local) definition of photon surfaces, which the field credits as the first; the paper not saying 'first' about itself does not make the attribution wrong."
+      }
+    ],
+    "debatable": [
+      {
+        "sentence_id": "s35",
+        "reference_key": "Cederbaum:2019vwv",
+        "note": "Cederbaum & Jahns treat spherical photon orbits (constant r) in Kerr; extending 'not evolved, r = constant' to general stationary axisymmetric spacetimes goes a little beyond the source. The corrected-source tag (an erratum) is legitimate."
+      }
+    ],
+    "unreviewed": []
+  },
+  "precision_reviewed": 0.5,
+  "summary_line": "Caught 8 of 10 planted errors · 8 false alarms",
+  "details": [
+    {
+      "id": "p1",
+      "sentence_id": "s2",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [11] with [33] (\"Area bound for a surface in a strong gravity region\") (similarity 0.31 vs 0.75 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p2",
+      "sentence_id": "s4",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [11] with [38] (\"Killing tensors and photon surfaces in foliated spacetimes\") (similarity 0.25 vs 0.56 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p3",
+      "sentence_id": "s10",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [31] with [11] (\"Foundations of Black Hole Accretion Disk Theory\") (similarity 0.28 vs 0.47 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p4",
+      "sentence_id": "s12",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"universally, in all cases\" before the citation",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [
+        "scope_inflation"
+      ],
+      "expected_mode_found": true,
+      "escalated": false
+    },
+    {
+      "id": "p5",
+      "sentence_id": "s19",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"without exception\" before the citation",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [
+        "hypothesis_as_finding"
+      ],
+      "expected_mode_found": false,
+      "escalated": false
+    },
+    {
+      "id": "p6",
+      "sentence_id": "s20",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"in every population and setting\" before the citation",
+      "checked": true,
+      "caught": true,
+      "label_correct": false,
+      "labels": [
+        "contradicted"
+      ],
+      "failure_modes": [
+        "scope_inflation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p7",
+      "sentence_id": "s21",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [16] with [3] (\"First M87 Event Horizon Telescope Results. V. Physical Origin of the Asymmetric Ring\") (similarity 0.31 vs 0.57 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": true
+    },
+    {
+      "id": "p8",
+      "sentence_id": "s23",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"without exception\" before the citation",
+      "checked": true,
+      "caught": false,
+      "label_correct": false,
+      "labels": [
+        "supported"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": false
+    },
+    {
+      "id": "p9",
+      "sentence_id": "s34",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [32] with [5] (\"First M87 Event Horizon Telescope Results. II. Array and Instrumentation\") (similarity 0.30 vs 0.71 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": true
+    },
+    {
+      "id": "p10",
+      "sentence_id": "s46",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [31] with [4] (\"First M87 Event Horizon Telescope Results. IV. Imaging the Central Supermassive Black Hole\") (similarity 0.37 vs 0.71 for the original)",
+      "checked": true,
+      "caught": false,
+      "label_correct": false,
+      "labels": [
+        "unverifiable"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": true
+    }
+  ],
+  "verdicts": 92,
+  "escalation": {
+    "verdicts": 92,
+    "escalated": 25,
+    "label_changed": 7,
+    "transitions": {
+      "not_found->supported": 3,
+      "unverifiable->not_found": 2,
+      "unverifiable->supported": 1,
+      "supported->not_found": 1
+    }
+  },
+  "coverage": {
+    "total": 46,
+    "full": 38,
+    "abstract_only": 3,
+    "unavailable": 5,
+    "retracted": 0,
+    "line": "Full text found for 38 of 46 references · abstract only for 3 · unavailable for 5."
+  },
+  "usage": {
+    "per_model": [
+      {
+        "model": "Qwen/Qwen3-Embedding-8B",
+        "role": "embed",
+        "calls": 7,
+        "cached_calls": 0,
+        "prompt_tokens": 409,
+        "completion_tokens": 0,
+        "estimated_cost_usd": 4e-06
+      },
+      {
+        "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+        "role": "escalate",
+        "calls": 29,
+        "cached_calls": 18,
+        "prompt_tokens": 600029,
+        "completion_tokens": 118743,
+        "estimated_cost_usd": 0.956258
+      },
+      {
+        "model": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+        "role": "extract",
+        "calls": 46,
+        "cached_calls": 39,
+        "prompt_tokens": 85793,
+        "completion_tokens": 5112,
+        "estimated_cost_usd": 0.006374
+      },
+      {
+        "model": "nvidia/nemotron-3-super-120b-a12b",
+        "role": "judge",
+        "calls": 87,
+        "cached_calls": 68,
+        "prompt_tokens": 480784,
+        "completion_tokens": 132298,
+        "estimated_cost_usd": 0.263303
+      }
+    ],
+    "total_prompt_tokens": 1167015,
+    "total_completion_tokens": 256153,
+    "total_estimated_cost_usd": 1.225939
+  },
+  "baseline_cost_usd": 0.984,
+  "old_pipeline": {
+    "commit": "da5f9e3",
+    "job_id": "9116f521a9c2",
+    "cost_usd": 0.848696,
+    "planted": 10,
+    "checked": 10,
+    "caught": 8,
+    "recall": 0.8,
+    "label_accuracy": 0.6,
+    "expected_mode_rate": 0.7,
+    "untouched_verdicts": 69,
+    "other_flags": 7,
+    "other_flags_preexisting": 5,
+    "precision": 0.5333333333333333,
+    "precision_excluding_preexisting": 0.8,
+    "by_mutation": {
+      "citation_swap": {
+        "planted": 6,
+        "caught": 4
+      },
+      "scope_inflation": {
+        "planted": 4,
+        "caught": 4
+      }
+    },
+    "flagged_citations": 7,
+    "review": {
+      "genuine": 0,
+      "false_alarm": 6,
+      "debatable": 1,
+      "unreviewed": 0
+    },
+    "review_details": {
+      "genuine": [],
+      "false_alarm": [
+        {
+          "sentence_id": "s24",
+          "reference_key": "Cardoso:2008bp",
+          "note": "The correspondence F = f, H = 1/g matches the cited metric; the remark about a sign difference from metric signature is the citing authors' own comparison."
+        },
+        {
+          "sentence_id": "s29",
+          "reference_key": "Song:2021ziq",
+          "note": "The citation points to the conserved-orbital-angular-momentum method of [45]; applying it to general timelike circular orbits is the citing authors' own step."
+        },
+        {
+          "sentence_id": "s3",
+          "reference_key": "Synge:1966okc",
+          "note": "Synge's 1966 paper on photon escape from compact stars is the classic derivation of the escape cone set by the photon sphere, i.e. the shadow boundary; only its abstract was available, and the off-topic tag (both pipelines) is wrong."
+        },
+        {
+          "sentence_id": "s3",
+          "reference_key": "Virbhadra:1999nm",
+          "note": "Joint citation [12, 13]: Virbhadra & Ellis define the Schwarzschild photon sphere at r = 3M (the circular photon orbits); the shadow part is carried by Synge [12]."
+        },
+        {
+          "sentence_id": "s45",
+          "reference_key": "Song:2021ziq",
+          "note": "'The result is consistent with [45]': [45] derives ISCO evolution equations in dynamical spherically symmetric spacetimes by another method; the consistency is the citing authors' own comparison (both pipelines too literal)."
+        },
+        {
+          "sentence_id": "s8",
+          "reference_key": "Claudel:2000yi",
+          "note": "Claudel, Virbhadra and Ellis introduced the (quasi-local) definition of photon surfaces, which the field credits as the first; the paper not saying 'first' about itself does not make the attribution wrong."
+        }
+      ],
+      "debatable": [
+        {
+          "sentence_id": "s35",
+          "reference_key": "Cederbaum:2019vwv",
+          "note": "Cederbaum & Jahns treat spherical photon orbits (constant r) in Kerr; extending 'not evolved, r = constant' to general stationary axisymmetric spacetimes goes a little beyond the source. The corrected-source tag (an erratum) is legitimate."
+        }
+      ],
+      "unreviewed": []
+    },
+    "precision_reviewed": 0.5714285714285714,
+    "caught_ids": [
+      "p1",
+      "p2",
+      "p3",
+      "p4",
+      "p5",
+      "p6",
+      "p7",
+      "p8"
+    ]
+  },
+  "caught_ids": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p6",
+    "p7",
+    "p9"
+  ]
+}

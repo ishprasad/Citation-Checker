@@ -1,0 +1,35 @@
+{
+  "paper": "ml-2303.00780",
+  "annotations": [
+    {
+      "sentence_id": "s11",
+      "reference_key": "huang2021efficient",
+      "verdict": "genuine",
+      "note": "Cited (DOI 10.1103/PhysRevLett.127.030503) as one of the tensor-network contraction methods for decoding syndromes, but it is Huang, Kueng and Preskill's derandomized estimation of Pauli observables, which has nothing on tensor networks or decoding. Flagged only by the old pipeline (off-topic tag)."
+    },
+    {
+      "sentence_id": "s12",
+      "reference_key": "Bravyi2014",
+      "verdict": "false_alarm",
+      "note": "The citation identifies the approximate MLD tensor-network decoder, which the cited work introduces; bond dimension 8 is the citing authors' own setting (the source treats χ as a free parameter)."
+    },
+    {
+      "sentence_id": "s21",
+      "reference_key": "google2022",
+      "verdict": "debatable",
+      "note": "The surface-code paper uses correlation-aware decoders (belief matching, tensor network) for its best results and characterises correlations, but does not state that correlations are necessary for near-optimal performance; co-cited with McEwen et al."
+    },
+    {
+      "sentence_id": "s37",
+      "reference_key": "Arute2019",
+      "verdict": "false_alarm",
+      "note": "The source reports simultaneous single-qubit errors rising only 'modestly' (about 0.003) while two-qubit errors nearly double (0.36% to 0.62%) and readout errors rise (0.97% to 1.8%); 'significant' is plain-language, not a claim of statistical significance."
+    },
+    {
+      "sentence_id": "s45",
+      "reference_key": "Nielsen2002",
+      "verdict": "debatable",
+      "note": "Nielsen proves the depolarizing result for the twirl over the full unitary group; that the Clifford group suffices (a unitary 2-design) comes from later work. The citation supports the core result but not the Clifford-group condition."
+    }
+  ]
+}

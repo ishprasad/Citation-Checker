@@ -1,0 +1,59 @@
+{
+  "paper": "cv-2106.05735",
+  "annotations": [
+    {
+      "sentence_id": "s4",
+      "reference_key": "MaierHein2018",
+      "verdict": "debatable",
+      "note": "The source says 70% of challenge tasks were segmentation; the sentence says 70% of challenges. A real but minor imprecision (challenges can have several tasks)."
+    },
+    {
+      "sentence_id": "s5",
+      "reference_key": "isensee2021nnu",
+      "verdict": "false_alarm",
+      "note": "The cited paper describes an 'unmanageable number of research papers' and about 12,000 studies building on U-Net since 2015, i.e. thousands per year; the not-found verdict is too literal."
+    },
+    {
+      "sentence_id": "s8",
+      "reference_key": "2018Lena",
+      "verdict": "debatable",
+      "note": "The sentence describes the citing paper's own challenge; the citation most plausibly supports the notion of a challenge 'task', which the cited meta-analysis defines, not the MSD details."
+    },
+    {
+      "sentence_id": "s10",
+      "reference_key": "AmberPaper",
+      "verdict": "false_alarm",
+      "note": "Caused by the checker: the per-dataset targets (17 in total) are in a table of the cited data paper, and the checker's text of cited papers omits table contents."
+    },
+    {
+      "sentence_id": "s13",
+      "reference_key": "liver",
+      "verdict": "false_alarm",
+      "note": "The cited LiTS paper lists IRCAD in France as a data source and describes the LiTS data used for the Decathlon's liver task; the hospital's full name is a detail, not a misattribution."
+    },
+    {
+      "sentence_id": "s21",
+      "reference_key": "ma2021cutting",
+      "verdict": "false_alarm",
+      "note": "Ma (2021) describes nnU-Net as state of the art in most challenges. 'No new net' is the method's name, not a contradiction of 'new'."
+    },
+    {
+      "sentence_id": "s30",
+      "reference_key": "isensee2021nnu",
+      "verdict": "debatable",
+      "note": "The checker read the 2019 arXiv preprint ('29 out of 49'); the sentence cites the 2021 Nature Methods version, whose updated results likely contain the 33-of-53 figure. The BraTS 2020 win is not in the preprint either. Version mismatch, not verifiable here."
+    },
+    {
+      "sentence_id": "s31",
+      "reference_key": "isensee2021nnu",
+      "verdict": "debatable",
+      "note": "The preprint the checker read says the KiTS top-15 were U-Net offspring but gives no count of nnU-Net derivatives; the journal version may. Same version mismatch."
+    },
+    {
+      "sentence_id": "s37",
+      "reference_key": "sirinukunwattana2017gland",
+      "verdict": "debatable",
+      "note": "The GlaS paper says malignant gland boundaries are not well defined and that inter-observer variability was not measured; 'experts often do not agree' is a stretch, cited jointly with another work."
+    }
+  ]
+}

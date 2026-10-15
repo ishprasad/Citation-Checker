@@ -1,0 +1,379 @@
+{
+  "slug": "ml-2303.00780",
+  "field": "Computer science: machine learning",
+  "title": "Learning correlated noise in a 39-qubit quantum processor",
+  "job_id": "081c663e0eaf",
+  "scored_at": "2026-10-09T17:00:12+00:00",
+  "planted": 10,
+  "checked": 10,
+  "caught": 8,
+  "recall": 0.8,
+  "label_accuracy": 0.8,
+  "expected_mode_rate": 0.5,
+  "untouched_verdicts": 113,
+  "other_flags": 4,
+  "other_flags_preexisting": 4,
+  "precision": 0.6666666666666666,
+  "precision_excluding_preexisting": 1.0,
+  "by_mutation": {
+    "scope_inflation": {
+      "planted": 2,
+      "caught": 0
+    },
+    "citation_swap": {
+      "planted": 6,
+      "caught": 6
+    },
+    "number_change": {
+      "planted": 2,
+      "caught": 2
+    }
+  },
+  "flagged_citations": 4,
+  "review": {
+    "genuine": 0,
+    "false_alarm": 2,
+    "debatable": 2,
+    "unreviewed": 0
+  },
+  "review_details": {
+    "genuine": [],
+    "false_alarm": [
+      {
+        "sentence_id": "s12",
+        "reference_key": "Bravyi2014",
+        "note": "The citation identifies the approximate MLD tensor-network decoder, which the cited work introduces; bond dimension 8 is the citing authors' own setting (the source treats χ as a free parameter)."
+      },
+      {
+        "sentence_id": "s37",
+        "reference_key": "Arute2019",
+        "note": "The source reports simultaneous single-qubit errors rising only 'modestly' (about 0.003) while two-qubit errors nearly double (0.36% to 0.62%) and readout errors rise (0.97% to 1.8%); 'significant' is plain-language, not a claim of statistical significance."
+      }
+    ],
+    "debatable": [
+      {
+        "sentence_id": "s21",
+        "reference_key": "google2022",
+        "note": "The surface-code paper uses correlation-aware decoders (belief matching, tensor network) for its best results and characterises correlations, but does not state that correlations are necessary for near-optimal performance; co-cited with McEwen et al."
+      },
+      {
+        "sentence_id": "s45",
+        "reference_key": "Nielsen2002",
+        "note": "Nielsen proves the depolarizing result for the twirl over the full unitary group; that the Clifford group suffices (a unitary 2-design) comes from later work. The citation supports the core result but not the Clifford-group condition."
+      }
+    ],
+    "unreviewed": []
+  },
+  "precision_reviewed": 0.8,
+  "summary_line": "Caught 8 of 10 planted errors · 2 false alarms",
+  "details": [
+    {
+      "id": "p1",
+      "sentence_id": "s2",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"universally, in all cases\" before the citation",
+      "checked": true,
+      "caught": false,
+      "label_correct": false,
+      "labels": [
+        "supported"
+      ],
+      "failure_modes": [
+        "secondary_citation"
+      ],
+      "expected_mode_found": false,
+      "escalated": false
+    },
+    {
+      "id": "p2",
+      "sentence_id": "s13",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Bonilla Ataides et al., 2021) with (Cao et al., 2019) (\"Quantum Chemistry in the Age of Quantum Computing\") (similarity 0.26 vs 0.72 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": true
+    },
+    {
+      "id": "p3",
+      "sentence_id": "s19",
+      "mutation": "number_change",
+      "description": "Changed \"54\" to \"86\"",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [
+        "number_drift"
+      ],
+      "expected_mode_found": true,
+      "escalated": false
+    },
+    {
+      "id": "p4",
+      "sentence_id": "s23",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"without exception\" before the citation",
+      "checked": true,
+      "caught": false,
+      "label_correct": false,
+      "labels": [
+        "supported"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": false
+    },
+    {
+      "id": "p5",
+      "sentence_id": "s24",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Miao et al., 2022) with (Robeva and Seigal, 2018) (\"Duality of graphical models and tensor networks\") (similarity 0.21 vs 0.58 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p6",
+      "sentence_id": "s28",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Tiurev et al., 2022) with (Versluis et al., 2017) (\"Scalable Quantum Circuit and Control for a Superconducting Surface Code\") (similarity 0.26 vs 0.47 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": true
+    },
+    {
+      "id": "p7",
+      "sentence_id": "s29",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Chuang and Nielsen, 1997) with (Chubb, 2021) (\"General tensor network decoding of 2D Pauli codes\") (similarity 0.22 vs 0.50 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p8",
+      "sentence_id": "s36",
+      "mutation": "number_change",
+      "description": "Changed \"54\" to \"86\"",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "contradicted"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": true
+    },
+    {
+      "id": "p9",
+      "sentence_id": "s39",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Harper et al., 2019) with (Abbeel et al., 2012) (\"Learning Factor Graphs in Polynomial Time & Sample Complexity\") (similarity 0.29 vs 0.60 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p10",
+      "sentence_id": "s49",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Abbeel et al., 2012) with (Zhao et al., 2022) (\"Realization of an Error-Correcting Surface Code with Superconducting Qubits\") (similarity 0.23 vs 0.50 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    }
+  ],
+  "verdicts": 132,
+  "escalation": {
+    "verdicts": 132,
+    "escalated": 24,
+    "label_changed": 6,
+    "transitions": {
+      "unverifiable->not_found": 2,
+      "unverifiable->supported": 1,
+      "supported->not_found": 1,
+      "contradicted->supported": 1,
+      "contradicted->overstated": 1
+    }
+  },
+  "coverage": {
+    "total": 78,
+    "full": 70,
+    "abstract_only": 3,
+    "unavailable": 5,
+    "retracted": 0,
+    "line": "Full text found for 70 of 78 references · abstract only for 3 · unavailable for 5."
+  },
+  "usage": {
+    "per_model": [
+      {
+        "model": "Qwen/Qwen3-Embedding-8B",
+        "role": "embed",
+        "calls": 7,
+        "cached_calls": 0,
+        "prompt_tokens": 369,
+        "completion_tokens": 0,
+        "estimated_cost_usd": 4e-06
+      },
+      {
+        "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+        "role": "escalate",
+        "calls": 24,
+        "cached_calls": 12,
+        "prompt_tokens": 485806,
+        "completion_tokens": 78489,
+        "estimated_cost_usd": 0.721273
+      },
+      {
+        "model": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+        "role": "extract",
+        "calls": 49,
+        "cached_calls": 42,
+        "prompt_tokens": 91970,
+        "completion_tokens": 5220,
+        "estimated_cost_usd": 0.006771
+      },
+      {
+        "model": "nvidia/nemotron-3-super-120b-a12b",
+        "role": "judge",
+        "calls": 126,
+        "cached_calls": 102,
+        "prompt_tokens": 690246,
+        "completion_tokens": 186781,
+        "estimated_cost_usd": 0.375177
+      }
+    ],
+    "total_prompt_tokens": 1268391,
+    "total_completion_tokens": 270490,
+    "total_estimated_cost_usd": 1.103225
+  },
+  "baseline_cost_usd": 0.82,
+  "old_pipeline": {
+    "commit": "da5f9e3",
+    "job_id": "70cacb0b218c",
+    "cost_usd": 1.175852,
+    "planted": 10,
+    "checked": 10,
+    "caught": 7,
+    "recall": 0.7,
+    "label_accuracy": 0.4,
+    "expected_mode_rate": 0.4,
+    "untouched_verdicts": 113,
+    "other_flags": 4,
+    "other_flags_preexisting": 3,
+    "precision": 0.6363636363636364,
+    "precision_excluding_preexisting": 0.875,
+    "by_mutation": {
+      "scope_inflation": {
+        "planted": 2,
+        "caught": 0
+      },
+      "citation_swap": {
+        "planted": 6,
+        "caught": 5
+      },
+      "number_change": {
+        "planted": 2,
+        "caught": 2
+      }
+    },
+    "flagged_citations": 3,
+    "review": {
+      "genuine": 1,
+      "false_alarm": 1,
+      "debatable": 1,
+      "unreviewed": 0
+    },
+    "review_details": {
+      "genuine": [
+        {
+          "sentence_id": "s11",
+          "reference_key": "huang2021efficient",
+          "note": "Cited (DOI 10.1103/PhysRevLett.127.030503) as one of the tensor-network contraction methods for decoding syndromes, but it is Huang, Kueng and Preskill's derandomized estimation of Pauli observables, which has nothing on tensor networks or decoding. Flagged only by the old pipeline (off-topic tag)."
+        }
+      ],
+      "false_alarm": [
+        {
+          "sentence_id": "s37",
+          "reference_key": "Arute2019",
+          "note": "The source reports simultaneous single-qubit errors rising only 'modestly' (about 0.003) while two-qubit errors nearly double (0.36% to 0.62%) and readout errors rise (0.97% to 1.8%); 'significant' is plain-language, not a claim of statistical significance."
+        }
+      ],
+      "debatable": [
+        {
+          "sentence_id": "s21",
+          "reference_key": "google2022",
+          "note": "The surface-code paper uses correlation-aware decoders (belief matching, tensor network) for its best results and characterises correlations, but does not state that correlations are necessary for near-optimal performance; co-cited with McEwen et al."
+        }
+      ],
+      "unreviewed": []
+    },
+    "precision_reviewed": 0.8888888888888888,
+    "caught_ids": [
+      "p2",
+      "p3",
+      "p5",
+      "p6",
+      "p7",
+      "p8",
+      "p10"
+    ]
+  },
+  "caught_ids": [
+    "p2",
+    "p3",
+    "p5",
+    "p6",
+    "p7",
+    "p8",
+    "p9",
+    "p10"
+  ]
+}

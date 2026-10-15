@@ -1,0 +1,521 @@
+{
+  "slug": "psychology-fpsyg.2021.735293",
+  "field": "Psychology",
+  "title": "Activities, Housing Situation and Other Factors Influencing Psychological Strain Experienced During the First COVID-19 Lockdown in Switzerland",
+  "job_id": "f0fb7ac2bcd3",
+  "scored_at": "2026-10-09T17:00:12+00:00",
+  "planted": 10,
+  "checked": 10,
+  "caught": 7,
+  "recall": 0.7,
+  "label_accuracy": 0.7,
+  "expected_mode_rate": 0.6,
+  "untouched_verdicts": 125,
+  "other_flags": 17,
+  "other_flags_preexisting": 17,
+  "precision": 0.2916666666666667,
+  "precision_excluding_preexisting": 1.0,
+  "by_mutation": {
+    "scope_inflation": {
+      "planted": 5,
+      "caught": 4
+    },
+    "hedge_removal": {
+      "planted": 2,
+      "caught": 0
+    },
+    "citation_swap": {
+      "planted": 3,
+      "caught": 3
+    }
+  },
+  "flagged_citations": 16,
+  "review": {
+    "genuine": 1,
+    "false_alarm": 7,
+    "debatable": 8,
+    "unreviewed": 0
+  },
+  "review_details": {
+    "genuine": [
+      {
+        "sentence_id": "s11",
+        "reference_key": "r57",
+        "note": "Cited for lockdowns exacerbating structural inequalities in domestic labour, but Shafer et al. find the Canadian household division of labour stayed static or became slightly more equal, explicitly not a regression to traditional roles."
+      }
+    ],
+    "false_alarm": [
+      {
+        "sentence_id": "s18",
+        "reference_key": "r42",
+        "note": "Passavanti et al. find lower depression with access to balconies, terraces or gardens, which supports the balcony part; the other housing features are carried by the co-cited works."
+      },
+      {
+        "sentence_id": "s24",
+        "reference_key": "r21",
+        "note": "'Several articles have reported on the beneficial role of physical activity': Garre-Olmo et al. link reduced sport practice to depressive symptoms and call the link biologically plausible; reading the sentence as a causal-effect claim is pedantic."
+      },
+      {
+        "sentence_id": "s24",
+        "reference_key": "r43",
+        "note": "Peterson et al. find depressive symptoms, loneliness and fatigue negatively associated with physical activity during isolation, i.e. they report on its beneficial role."
+      },
+      {
+        "sentence_id": "s32",
+        "reference_key": "r10",
+        "note": "Hedged ('it seems plausible'): Burhamah et al. find singles with markedly more depression and anxiety during lockdown than married people; Kuhn et al. list those without a partner as vulnerable to isolation."
+      },
+      {
+        "sentence_id": "s4",
+        "reference_key": "r14",
+        "note": "Dale et al. (abstract only) report poor well-being and quality of life during the lockdown; that pandemic fears, isolation and decline put pressure on people is the citing authors' framing, supported jointly with Daly et al."
+      },
+      {
+        "sentence_id": "s49",
+        "reference_key": "r67",
+        "note": "Joint citation: Xiong et al. note students' distress from cancelled social events and school closures; career concerns are carried by Ranta et al."
+      },
+      {
+        "sentence_id": "s8",
+        "reference_key": "r10",
+        "note": "Joint citation: Burhamah et al. show singles had more depression and anxiety than married people during lockdown; the partner-support mechanism is carried by Jiang et al."
+      }
+    ],
+    "debatable": [
+      {
+        "sentence_id": "s14",
+        "reference_key": "r31",
+        "note": "Kuhn et al. list the unemployed and those with deteriorating finances among groups with decreased life satisfaction; whether this was the largest decrease is not visible in the text the checker read."
+      },
+      {
+        "sentence_id": "s18",
+        "reference_key": "r3",
+        "note": "Amerio et al. link small apartments, poor views and low indoor quality to depressive symptoms, but find no significant association for green view (p = 0.44) and only a trend for balcony usability; other works are co-cited for the list."
+      },
+      {
+        "sentence_id": "s23",
+        "reference_key": "r32",
+        "note": "A greenspace-and-obesity review co-cited with WHO (2010) for exercise reducing obesity and disease risk; it supports the obesity link only indirectly (greenspace as a resource for physical activity), the disease part rests on WHO."
+      },
+      {
+        "sentence_id": "s25",
+        "reference_key": "r14",
+        "note": "Only the abstract was available; it reports worse mental health in those who do no physical activity, and the 30-minutes-once-a-week definition is plausibly in the full paper."
+      },
+      {
+        "sentence_id": "s42",
+        "reference_key": "r6",
+        "note": "Belosi et al. model SARS-CoV-2 in outdoor air and find very low outdoor transmission risk, a rationale for outdoor activity, but they say nothing about green infrastructure or urban green space; loosely related at best."
+      },
+      {
+        "sentence_id": "s52",
+        "reference_key": "r17",
+        "note": "Fore (UNICEF) discusses income losses and economic effects on children's health and nutrition, not psychological problems from unemployment; co-cited with Hensher, who may carry the claim."
+      },
+      {
+        "sentence_id": "s56",
+        "reference_key": "r14",
+        "note": "Only the abstract was available: it reports high rates of depression, anxiety and insomnia and poorer well-being and quality of life than in the first lockdown; 'considerably more pronounced mental health problems' may be supported by the full paper."
+      },
+      {
+        "sentence_id": "s6",
+        "reference_key": "r9",
+        "note": "Brodeur et al. find lockdowns 'may result in substantial damage to population well-being' (Google Trends); 'any lockdown measure has substantial negative effects' generalises and hardens a hedged finding, though the sentence itself says 'evidence suggests'."
+      }
+    ],
+    "unreviewed": []
+  },
+  "precision_reviewed": 0.5333333333333333,
+  "summary_line": "Caught 7 of 10 planted errors · 7 false alarms · 1 real citation problem found in the original paper",
+  "details": [
+    {
+      "id": "p1",
+      "sentence_id": "s12",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"universally, in all cases\" before the citation",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [
+        "hypothesis_as_finding",
+        "scope_inflation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p2",
+      "sentence_id": "s16",
+      "mutation": "hedge_removal",
+      "description": "Removed the hedge: \"could\" became \"will\"",
+      "checked": true,
+      "caught": false,
+      "label_correct": false,
+      "labels": [
+        "supported"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": false
+    },
+    {
+      "id": "p3",
+      "sentence_id": "s17",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"without exception\" before the citation",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "overstated",
+        "supported"
+      ],
+      "failure_modes": [
+        "hypothesis_as_finding"
+      ],
+      "expected_mode_found": false,
+      "escalated": false
+    },
+    {
+      "id": "p4",
+      "sentence_id": "s35",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (c.f. Horton and Kleinman, 2007) with (Woods et al., 2020) (\"The COVID-19 pandemic and physical activity\") (similarity 0.22 vs 0.57 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p5",
+      "sentence_id": "s48",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"in every population and setting\" before the citation",
+      "checked": true,
+      "caught": false,
+      "label_correct": false,
+      "labels": [
+        "unverifiable"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": false
+    },
+    {
+      "id": "p6",
+      "sentence_id": "s50",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Tokazhanov et al., 2020) with (Horton and Kleinman, 2007) (\"Much Ado About Nothing\") (similarity 0.22 vs 0.55 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p7",
+      "sentence_id": "s51",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"universally, in all cases\" before the citation",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [
+        "scope_inflation"
+      ],
+      "expected_mode_found": true,
+      "escalated": false
+    },
+    {
+      "id": "p8",
+      "sentence_id": "s53",
+      "mutation": "hedge_removal",
+      "description": "Removed the hedge: \"could\" became \"will\"",
+      "checked": true,
+      "caught": false,
+      "label_correct": false,
+      "labels": [
+        "supported"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": false
+    },
+    {
+      "id": "p9",
+      "sentence_id": "s55",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Garre-Olmo et al., 2021) with (Hansmann, 2010) (\"“Sustainability Learning”: An Introduction to the Concept and Its Motivational Aspects\") (similarity 0.31 vs 0.51 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p10",
+      "sentence_id": "s57",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"in every population and setting\" before the citation",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [
+        "hypothesis_as_finding",
+        "scope_inflation"
+      ],
+      "expected_mode_found": true,
+      "escalated": false
+    }
+  ],
+  "verdicts": 142,
+  "escalation": {
+    "verdicts": 142,
+    "escalated": 11,
+    "label_changed": 2,
+    "transitions": {
+      "not_found->overstated": 1,
+      "unverifiable->not_found": 1
+    }
+  },
+  "coverage": {
+    "total": 60,
+    "full": 30,
+    "abstract_only": 17,
+    "unavailable": 13,
+    "retracted": 0,
+    "line": "Full text found for 30 of 60 references · abstract only for 17 · unavailable for 13."
+  },
+  "usage": {
+    "per_model": [
+      {
+        "model": "Qwen/Qwen3-Embedding-8B",
+        "role": "embed",
+        "calls": 7,
+        "cached_calls": 0,
+        "prompt_tokens": 451,
+        "completion_tokens": 0,
+        "estimated_cost_usd": 5e-06
+      },
+      {
+        "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+        "role": "escalate",
+        "calls": 11,
+        "cached_calls": 6,
+        "prompt_tokens": 142346,
+        "completion_tokens": 23829,
+        "estimated_cost_usd": 0.213833
+      },
+      {
+        "model": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+        "role": "extract",
+        "calls": 57,
+        "cached_calls": 45,
+        "prompt_tokens": 108098,
+        "completion_tokens": 6141,
+        "estimated_cost_usd": 0.00796
+      },
+      {
+        "model": "nvidia/nemotron-3-super-120b-a12b",
+        "role": "judge",
+        "calls": 125,
+        "cached_calls": 102,
+        "prompt_tokens": 617501,
+        "completion_tokens": 172865,
+        "estimated_cost_usd": 0.340829
+      }
+    ],
+    "total_prompt_tokens": 868396,
+    "total_completion_tokens": 202835,
+    "total_estimated_cost_usd": 0.562627
+  },
+  "baseline_cost_usd": 0.663,
+  "old_pipeline": {
+    "commit": "da5f9e3",
+    "job_id": "e9f67d15a8ab",
+    "cost_usd": 0.548179,
+    "planted": 10,
+    "checked": 10,
+    "caught": 7,
+    "recall": 0.7,
+    "label_accuracy": 0.7,
+    "expected_mode_rate": 0.7,
+    "untouched_verdicts": 125,
+    "other_flags": 20,
+    "other_flags_preexisting": 14,
+    "precision": 0.25925925925925924,
+    "precision_excluding_preexisting": 0.5384615384615384,
+    "by_mutation": {
+      "scope_inflation": {
+        "planted": 5,
+        "caught": 4
+      },
+      "hedge_removal": {
+        "planted": 2,
+        "caught": 0
+      },
+      "citation_swap": {
+        "planted": 3,
+        "caught": 3
+      }
+    },
+    "flagged_citations": 19,
+    "review": {
+      "genuine": 1,
+      "false_alarm": 13,
+      "debatable": 5,
+      "unreviewed": 0
+    },
+    "review_details": {
+      "genuine": [
+        {
+          "sentence_id": "s11",
+          "reference_key": "r57",
+          "note": "Cited for lockdowns exacerbating structural inequalities in domestic labour, but Shafer et al. find the Canadian household division of labour stayed static or became slightly more equal, explicitly not a regression to traditional roles."
+        }
+      ],
+      "false_alarm": [
+        {
+          "sentence_id": "s11",
+          "reference_key": "r45",
+          "note": "Power argues the pandemic sharply increased the unpaid care burden that falls mainly on women, i.e. exacerbated existing inequalities in caregiving."
+        },
+        {
+          "sentence_id": "s19",
+          "reference_key": "r52",
+          "note": "Salari et al. state that people who follow COVID-19 news most experience more anxiety and that constant exposure to distressing news raises anxiety; the sentence is hedged ('may increase')."
+        },
+        {
+          "sentence_id": "s24",
+          "reference_key": "r21",
+          "note": "'Several articles have reported on the beneficial role of physical activity': Garre-Olmo et al. link reduced sport practice to depressive symptoms and call the link biologically plausible; reading the sentence as a causal-effect claim is pedantic."
+        },
+        {
+          "sentence_id": "s24",
+          "reference_key": "r43",
+          "note": "Peterson et al. find depressive symptoms, loneliness and fatigue negatively associated with physical activity during isolation, i.e. they report on its beneficial role."
+        },
+        {
+          "sentence_id": "s27",
+          "reference_key": "r33",
+          "note": "Lesser & Nienhuis report that inactive participants who became more active had better well-being and lower anxiety; 'positive impact' matches the study's own framing."
+        },
+        {
+          "sentence_id": "s31",
+          "reference_key": "r21",
+          "note": "Garre-Olmo et al. find unemployment and negative work changes during confinement among the strongest predictors of depression, supporting the expectation."
+        },
+        {
+          "sentence_id": "s32",
+          "reference_key": "r10",
+          "note": "Hedged ('it seems plausible'): Burhamah et al. find singles with markedly more depression and anxiety during lockdown than married people; Kuhn et al. list those without a partner as vulnerable to isolation."
+        },
+        {
+          "sentence_id": "s4",
+          "reference_key": "r14",
+          "note": "Dale et al. (abstract only) report poor well-being and quality of life during the lockdown; that pandemic fears, isolation and decline put pressure on people is the citing authors' framing, supported jointly with Daly et al."
+        },
+        {
+          "sentence_id": "s4",
+          "reference_key": "r15",
+          "note": "Daly et al. describe social isolation, financial insecurity and health concerns as contributors to distress and find a marked deterioration in UK mental health, which supports the sentence."
+        },
+        {
+          "sentence_id": "s49",
+          "reference_key": "r48",
+          "note": "Ranta et al. find young adults especially concerned about the pandemic's effects on their careers and studies, the career part of the sentence."
+        },
+        {
+          "sentence_id": "s49",
+          "reference_key": "r67",
+          "note": "Joint citation: Xiong et al. note students' distress from cancelled social events and school closures; career concerns are carried by Ranta et al."
+        },
+        {
+          "sentence_id": "s8",
+          "reference_key": "r10",
+          "note": "Joint citation: Burhamah et al. show singles had more depression and anxiety than married people during lockdown; the partner-support mechanism is carried by Jiang et al."
+        },
+        {
+          "sentence_id": "s8",
+          "reference_key": "r28",
+          "note": "Jiang et al. show daily positive support from marital partners buffers stress during the outbreak, the mechanism part of the sentence; the comparison with singles is carried by Burhamah et al."
+        }
+      ],
+      "debatable": [
+        {
+          "sentence_id": "s14",
+          "reference_key": "r31",
+          "note": "Kuhn et al. list the unemployed and those with deteriorating finances among groups with decreased life satisfaction; whether this was the largest decrease is not visible in the text the checker read."
+        },
+        {
+          "sentence_id": "s25",
+          "reference_key": "r14",
+          "note": "Only the abstract was available; it reports worse mental health in those who do no physical activity, and the 30-minutes-once-a-week definition is plausibly in the full paper."
+        },
+        {
+          "sentence_id": "s42",
+          "reference_key": "r6",
+          "note": "Belosi et al. model SARS-CoV-2 in outdoor air and find very low outdoor transmission risk, a rationale for outdoor activity, but they say nothing about green infrastructure or urban green space; loosely related at best."
+        },
+        {
+          "sentence_id": "s52",
+          "reference_key": "r17",
+          "note": "Fore (UNICEF) discusses income losses and economic effects on children's health and nutrition, not psychological problems from unemployment; co-cited with Hensher, who may carry the claim."
+        },
+        {
+          "sentence_id": "s6",
+          "reference_key": "r9",
+          "note": "Brodeur et al. find lockdowns 'may result in substantial damage to population well-being' (Google Trends); 'any lockdown measure has substantial negative effects' generalises and hardens a hedged finding, though the sentence itself says 'evidence suggests'."
+        }
+      ],
+      "unreviewed": []
+    },
+    "precision_reviewed": 0.38095238095238093,
+    "caught_ids": [
+      "p1",
+      "p3",
+      "p4",
+      "p5",
+      "p6",
+      "p9",
+      "p10"
+    ]
+  },
+  "caught_ids": [
+    "p1",
+    "p3",
+    "p4",
+    "p6",
+    "p7",
+    "p9",
+    "p10"
+  ]
+}

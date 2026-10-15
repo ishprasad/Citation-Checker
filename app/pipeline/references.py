@@ -19,6 +19,7 @@ too, so re-running a paper (or another paper citing the same work) is instant.
 from __future__ import annotations
 
 import asyncio
+import contextvars
 import inspect
 import json
 import logging
@@ -44,11 +45,12 @@ from app.pipeline.ingest import (
     strip_version,
     unpack_source,
 )
+from app.pipeline.jats import JatsError, jats_to_text
 from app.pipeline.pdftext import PdfTextError, extract_pdf_text
 
 log = logging.getLogger(__name__)
 
-RESOLVER_VERSION = 7  # bump to invalidate cached resolutions after logic changes
+RESOLVER_VERSION = 9  # bump to invalidate cached resolutions after logic changes
 TITLE_MATCH_THRESHOLD = 0.88
 MIN_FULLTEXT_CHARS = 3000
 MAX_PDF_BYTES = 40 * 1024 * 1024
@@ -57,7 +59,7 @@ MAX_PDF_ATTEMPTS = 3
 CONCURRENCY = 8
 
 OPENALEX_WORKS = "https://api.openalex.org/works"
-OPENALEX_SELECT = "id,doi,title,publication_year,locations,best_oa_location,abstract_inverted_index,is_retracted"
+OPENALEX_SELECT = "id,doi,title,publication_year,locations,best_oa_location,abstract_inverted_index,is_retracted,ids"
 OPENALEX_DOI_BATCH = 50
 CROSSREF_WORKS = "https://api.crossref.org/works"
 CROSSREF_SELECT = "DOI,title,issued,abstract,updated-by,type"
@@ -115,6 +117,40 @@ def _arxiv_from(*urls: Optional[str]) -> Optional[str]:
     return None
 
 
+def arxiv_year(arxiv_id: Optional[str]) -> Optional[int]:
+    """Submission year encoded in an arXiv ID: "2004.09142" -> 2020, "math/0512424" -> 2005."""
+    m = re.match(r"(?:[a-z\-]+(?:\.[a-z]{2})?/)?(\d{2})\d{2}[.\d]", arxiv_id or "", re.I)
+    if not m:
+        return None
+    yy = int(m.group(1))
+    return 1900 + yy if yy >= 91 else 2000 + yy
+
+
+# A preprint is posted up to a few years before the published version, or shortly after it.
+PREPRINT_YEARS_BEFORE = 6
+PREPRINT_YEARS_AFTER = 1
+
+
+def plausible_preprint(arxiv_id: Optional[str], year: Optional[int]) -> bool:
+    """Can this arXiv paper be a version of a work published in `year`? Catches records that
+    link a different paper with the same generic title (a 2005 survey for a 2020 book)."""
+    ay = arxiv_year(arxiv_id)
+    return ay is None or year is None or year - PREPRINT_YEARS_BEFORE <= ay <= year + PREPRINT_YEARS_AFTER
+
+
+DOI_TITLE_MIN_SIMILARITY = 0.5
+
+
+def doi_title_mismatch(ref: Reference, cand: "Candidate") -> bool:
+    """The record found for the entry's DOI has a clearly different title: the DOI was probably
+    mangled (e.g. broken across lines in a PDF) and points at another paper."""
+    if not ref.title or not cand.title or len(normalize_title(ref.title)) < 15:
+        return False
+    if normalize_title(cand.title) in normalize_title(ref.raw):
+        return False
+    return title_similarity(ref.title, cand.title) < DOI_TITLE_MIN_SIMILARITY
+
+
 @dataclass
 class Candidate:
     title: str
@@ -126,6 +162,7 @@ class Candidate:
     pdf_urls: list[str] = field(default_factory=list)
     retracted: Optional[bool] = None
     source: str = "openalex"
+    pmcid: Optional[str] = None  # PubMed Central: full text as JATS XML through Europe PMC
 
 
 def match_score(ref: Reference, cand: Candidate) -> float:
@@ -183,7 +220,13 @@ def candidate_from_openalex(work: dict[str, Any]) -> Candidate:
         pdf_urls=pdf_urls,
         retracted=work.get("is_retracted"),
         source="openalex",
+        pmcid=_pmcid((work.get("ids") or {}).get("pmcid")),
     )
+
+
+def _pmcid(value: Optional[str]) -> Optional[str]:
+    m = re.search(r"(?:PMC)?(\d{4,9})/?$", value or "")
+    return f"PMC{m.group(1)}" if m else None
 
 
 def _strip_jats(text: Optional[str]) -> Optional[str]:
@@ -244,8 +287,20 @@ def _polite(params: dict[str, str]) -> dict[str, str]:
     return {**params, "mailto": email} if email else params
 
 
+# Failures of metadata APIs (rate limits, outages) for the reference being resolved: the
+# resolver continues with other sources, but does not cache a result built without them.
+_lookup_failures: contextvars.ContextVar[Optional["Downloads"]] = contextvars.ContextVar("lookup_failures", default=None)
+
+
 async def _get_json(url: str, namespace: str, params: Optional[dict] = None) -> Optional[dict]:
-    data = await fetch_cached(url, namespace, params=params, suffix=".json", allow_missing=True)
+    try:
+        data = await fetch_cached(url, namespace, params=params, suffix=".json", allow_missing=True)
+    except httpx.HTTPError as exc:
+        log.warning("%s lookup failed (%s); continuing with other sources", namespace, exc)
+        tracker = _lookup_failures.get()
+        if tracker is not None:
+            tracker.transient_failure = True
+        return None
     return json.loads(data) if data else None
 
 
@@ -294,12 +349,14 @@ ARXIV_SEARCH_COOLDOWN = 600.0
 _arxiv_search_paused_until = 0.0
 
 
-async def find_arxiv_twin(title: str) -> Optional[str]:
-    """arXiv ID of a preprint with (nearly) the same title: OpenAlex first, then the arXiv API."""
+async def find_arxiv_twin(title: str, year: Optional[int] = None) -> Optional[str]:
+    """arXiv ID of a preprint with (nearly) the same title and a compatible year: OpenAlex
+    first, then the arXiv API."""
     global _arxiv_search_paused_until
     for work in await openalex_search(title):
         cand = candidate_from_openalex(work)
-        if cand.arxiv_id and title_similarity(title, cand.title) >= ARXIV_TWIN_THRESHOLD:
+        if (cand.arxiv_id and title_similarity(title, cand.title) >= ARXIV_TWIN_THRESHOLD
+                and plausible_preprint(cand.arxiv_id, year)):
             return cand.arxiv_id
     words = normalize_title(title)
     if len(words) < 12 or time.monotonic() < _arxiv_search_paused_until:
@@ -320,7 +377,7 @@ async def find_arxiv_twin(title: str) -> Optional[str]:
             log.info("arXiv preprint search failed for %r: %s", title[:60], exc)
         return None
     for arxiv_id, meta in (parse_arxiv_feed(data) if data else {}).items():
-        if title_similarity(title, meta.title) >= ARXIV_TWIN_THRESHOLD:
+        if title_similarity(title, meta.title) >= ARXIV_TWIN_THRESHOLD and plausible_preprint(arxiv_id, year):
             return arxiv_id
     return None
 
@@ -401,6 +458,34 @@ async def fetch_arxiv_text(arxiv_id: str, downloads: Optional[Downloads] = None)
     return None
 
 
+EUROPEPMC = "https://www.ebi.ac.uk/europepmc/webservices/rest"
+MIN_FULLTEXT_CHARS = 2000
+
+
+async def europepmc_pmcid(doi: str) -> Optional[str]:
+    """PMC ID of an open-access article in Europe PMC, by DOI (free API, no key)."""
+    payload = await _get_json(f"{EUROPEPMC}/search", "europepmc",
+                              {"query": f'DOI:"{doi}"', "format": "json", "resultType": "lite"})
+    for hit in ((payload or {}).get("resultList") or {}).get("result", []):
+        if hit.get("pmcid") and hit.get("isOpenAccess") == "Y":
+            return hit["pmcid"]
+    return None
+
+
+async def fetch_europepmc_text(pmcid: str, downloads: Optional[Downloads] = None) -> Optional[FetchedText]:
+    """Full text from Europe PMC's open-access subset (structured XML: no PDF layout problems)."""
+    downloads = downloads or Downloads()
+    data = await downloads.get(f"{EUROPEPMC}/{pmcid}/fullTextXML", "europepmc_xml", ".xml")
+    if not data:
+        return None
+    try:
+        text, sidecar = await asyncio.to_thread(jats_to_text, data)
+    except JatsError as exc:
+        log.info("Europe PMC %s: %s", pmcid, exc)
+        return None
+    return FetchedText(text, "europepmc", sidecar) if len(text) >= MIN_FULLTEXT_CHARS else None
+
+
 async def fetch_oa_pdf_text(urls: list[str], downloads: Optional[Downloads] = None) -> Optional[FetchedText]:
     downloads = downloads or Downloads()
     for url in urls[:MAX_PDF_ATTEMPTS]:
@@ -473,6 +558,8 @@ class ReferenceResolver:
         self.semaphore = asyncio.Semaphore(concurrency)
         self.arxiv_meta: dict[str, ArxivMeta] = {}
         self.openalex: dict[str, dict] = {}
+        self.prefetch_degraded = False  # a batch lookup failed: results are not cached as final
+        self.incomplete = 0  # references resolved with a failed lookup or download (not final)
 
     async def resolve_all(self, refs: list[Reference], on_done: Optional[OnDone] = None) -> list[Reference]:
         """Resolve and fetch text for each reference. Never raises for a single reference."""
@@ -496,10 +583,12 @@ class ReferenceResolver:
                 async with self.semaphore:
                     try:
                         resolved, final = await self.resolve_one(ref)
-                        if final:
+                        self.incomplete += not final
+                        if final and not self.prefetch_degraded:
                             _save_resolution(ref, resolved)
                     except Exception:  # noqa: BLE001 - isolate failures per reference
                         log.exception("reference %s: resolution failed", ref.key)
+                        self.incomplete += 1
                         resolved = ref.model_copy(
                             update={"fulltext_status": "unavailable", "status_reason": REASON_LOOKUP_FAILED}
                         )
@@ -514,10 +603,16 @@ class ReferenceResolver:
         arxiv_ids = [r.arxiv_id for r in refs if r.arxiv_id]
         dois = [r.doi for r in refs if r.doi] + [arxiv_doi(a) for a in arxiv_ids]
         meta_task = fetch_arxiv_metadata_batch(arxiv_ids) if arxiv_ids else _empty()
-        results = await asyncio.gather(meta_task, openalex_by_dois(dois), return_exceptions=True)
+        tracker = Downloads()
+        token = _lookup_failures.set(tracker)
+        try:
+            results = await asyncio.gather(meta_task, openalex_by_dois(dois), return_exceptions=True)
+        finally:
+            _lookup_failures.reset(token)
         for result, name in zip(results, ("arXiv metadata", "OpenAlex DOI batch")):
             if isinstance(result, Exception):
                 log.warning("%s lookup failed: %s", name, result)
+        self.prefetch_degraded = tracker.transient_failure or any(isinstance(r, Exception) for r in results)
         self.arxiv_meta = results[0] if isinstance(results[0], dict) else {}
         self.openalex = results[1] if isinstance(results[1], dict) else {}
 
@@ -526,6 +621,7 @@ class ReferenceResolver:
         so the result is not cached and the next run tries again."""
         ref = ref.model_copy(deep=True)
         downloads = Downloads()
+        _lookup_failures.set(downloads)  # this task's own context: metadata API failures count as transient
         ref.doi = normalize_doi(ref.doi)
         cand: Optional[Candidate] = None
         score: Optional[float] = None
@@ -540,8 +636,12 @@ class ReferenceResolver:
             ref.arxiv_id = None
         if ref.doi and ref.doi in self.openalex:
             cand = candidate_from_openalex(self.openalex[ref.doi])
+            if doi_title_mismatch(ref, cand):
+                log.info("reference %s: DOI %s is a different paper (%r); searching instead", ref.key, ref.doi, cand.title)
+                ref.doi, cand = None, None
         elif ref.arxiv_id and arxiv_doi(ref.arxiv_id) in self.openalex:
             cand = candidate_from_openalex(self.openalex[arxiv_doi(ref.arxiv_id)])
+        entry_arxiv = ref.arxiv_id  # the citing paper itself cites the arXiv version
 
         # 2. Search when the entry has no usable identifier.
         if cand is None and not ref.arxiv_id and not ref.doi:
@@ -561,6 +661,9 @@ class ReferenceResolver:
         if cand is not None:
             ref.title = cand.title or ref.title
             ref.doi = ref.doi or cand.doi
+            if cand.arxiv_id and not plausible_preprint(cand.arxiv_id, cand.year or ref.year):
+                log.info("reference %s: ignoring arXiv %s linked to a %s record", ref.key, cand.arxiv_id, cand.year)
+                cand.arxiv_id = None
             ref.arxiv_id = ref.arxiv_id or cand.arxiv_id
             ref.openalex_id = cand.openalex_id
             ref.year = ref.year or cand.year
@@ -582,18 +685,40 @@ class ReferenceResolver:
 
         identified = cand is not None or meta is not None
 
-        # 4. Text.
+        # 4. Text. The arXiv version first (LaTeX source reads best), unless the citing paper cites
+        # a journal version published in a later year than the preprint: its numbers may have
+        # changed, so its own open text is tried first.
         fetched: Optional[FetchedText] = None
         identity = None
-        if ref.arxiv_id:
-            fetched = await fetch_arxiv_text(ref.arxiv_id, downloads)
-            identity = f"arxiv:{strip_version(ref.arxiv_id)}"
-        if fetched is None and cand is not None and cand.pdf_urls:
-            fetched = await fetch_oa_pdf_text(cand.pdf_urls, downloads)
-            identity = f"pdf:{ref.doi or cand.pdf_urls[0]}"
+        published_first = bool(
+            ref.arxiv_id and not entry_arxiv and ref.doi and not ref.doi.startswith("10.48550/")
+            and cand is not None and cand.year and (arxiv_year(ref.arxiv_id) or cand.year) < cand.year
+        )
+
+        async def arxiv() -> None:
+            nonlocal fetched, identity
+            if fetched is None and ref.arxiv_id:
+                fetched = await fetch_arxiv_text(ref.arxiv_id, downloads)
+                identity = f"arxiv:{strip_version(ref.arxiv_id)}"
+
+        async def published() -> None:
+            nonlocal fetched, identity
+            if fetched is None and (ref.doi or (cand is not None and cand.pmcid)):
+                # PubMed Central's open-access subset: clean XML, and reachable where publisher sites
+                # refuse automated downloads (most biomedical open-access journals).
+                pmcid = (cand.pmcid if cand is not None else None) or await europepmc_pmcid(ref.doi)
+                if pmcid:
+                    fetched = await fetch_europepmc_text(pmcid, downloads)
+                    identity = f"pmc:{pmcid}"
+            if fetched is None and cand is not None and cand.pdf_urls:
+                fetched = await fetch_oa_pdf_text(cand.pdf_urls, downloads)
+                identity = f"pdf:{ref.doi or cand.pdf_urls[0]}"
+
+        for attempt in ((published, arxiv) if published_first else (arxiv, published)):
+            await attempt()
         if fetched is None and not ref.arxiv_id and ref.title:
             # Published versions often have an arXiv preprint that OpenAlex lists as a separate work.
-            twin = await find_arxiv_twin(ref.title)
+            twin = await find_arxiv_twin(ref.title, ref.year)
             if twin:
                 log.info("reference %s: found arXiv preprint %s", ref.key, twin)
                 ref.arxiv_id = twin

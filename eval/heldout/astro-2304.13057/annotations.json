@@ -1,0 +1,203 @@
+{
+  "paper": "astro-2304.13057",
+  "annotations": [
+    {
+      "sentence_id": "s3",
+      "reference_key": "steidel2011",
+      "verdict": "genuine",
+      "note": "Cited as the first to stack narrow-band images of LBGs, but the cited paper itself credits Hayashino et al. (2004) with an earlier stacked narrow-band Lyα study of LBGs in SSA22."
+    },
+    {
+      "sentence_id": "s6",
+      "reference_key": "leclercq2017",
+      "verdict": "false_alarm",
+      "note": "The source gives 1.0-18.7 kpc with a median of 4.5 kpc; the judge's own explanation says it matches. Rounding 18.7 to 18 is not number drift."
+    },
+    {
+      "sentence_id": "s6",
+      "reference_key": "wisotzki2016",
+      "verdict": "debatable",
+      "note": "Group citation [65, 39, 40]: the 1-18 kpc range and 4.5 kpc median come from [39]; this work reports 1-7 kpc, which fits inside the range."
+    },
+    {
+      "sentence_id": "s6",
+      "reference_key": "leclercq2020",
+      "verdict": "false_alarm",
+      "note": "Cited with [65, 39]: [40] gives the 4.5 kpc median, and the 1-18 kpc range comes from the co-cited works."
+    },
+    {
+      "sentence_id": "s8",
+      "reference_key": "feldmeier2013",
+      "verdict": "false_alarm",
+      "note": "The judge compared against the ~40 kpc extent from the previous sentence; the MUSE scale lengths (median ~4.5 kpc) are similar to the 5-8 kpc this work finds in some subsamples, exactly as the sentence says."
+    },
+    {
+      "sentence_id": "s8",
+      "reference_key": "momose2014",
+      "verdict": "false_alarm",
+      "note": "Scale lengths of 5-10 kpc are similar to the MUSE results; the cited work does not need to mention MUSE (the comparison is the citing authors')."
+    },
+    {
+      "sentence_id": "s8",
+      "reference_key": "momose2016",
+      "verdict": "false_alarm",
+      "note": "Same as [49]: the cited scale lengths are comparable to MUSE; the comparison is the citing authors'."
+    },
+    {
+      "sentence_id": "s9",
+      "reference_key": "chen2021",
+      "verdict": "genuine",
+      "note": "The cited KCWI study measures 15.6 kpc for its median stack and attributes 17.5 kpc to an earlier narrow-band study; the citing sentence credits it with 17.5 kpc."
+    },
+    {
+      "sentence_id": "s12",
+      "reference_key": "hayes2009b",
+      "verdict": "debatable",
+      "note": "The source describes only a 'slight advantage' for the adjacent long-pass configuration and notes the same drawbacks remain; 'more effective' is a mild overstatement."
+    },
+    {
+      "sentence_id": "s14",
+      "reference_key": "bridge2017a",
+      "verdict": "debatable",
+      "note": "This LARS paper (dust and scattering) does not state that UV/Hα knots are absent in Lyα or that Lyα is smoother; that finding is reported elsewhere in the LARS series."
+    },
+    {
+      "sentence_id": "s16",
+      "reference_key": "hayes2013",
+      "verdict": "false_alarm",
+      "note": "Partly caused by the checker: the LaTeX converter dropped '≲' so 'z ≲ 0.2' reached the judge as 'redshift 0.2'; the source's 0.028-0.18 and radius ratios of 1-3.6 (Hα) and ~2.9 (FUV) support 'z ≲ 0.2' and '1 to 4 times'."
+    },
+    {
+      "sentence_id": "s16",
+      "reference_key": "rasekh2021",
+      "verdict": "false_alarm",
+      "note": "Co-cited with [24], which carries the numbers; this work confirms Lyα is more extended than the FUV."
+    },
+    {
+      "sentence_id": "s18",
+      "reference_key": "leclercq2017",
+      "verdict": "false_alarm",
+      "note": "The judge's own explanation says the source supports larger ratios (median 10.8, 4 to >20) than the 2-4 found at low z."
+    },
+    {
+      "sentence_id": "s19",
+      "reference_key": "wisotzki2016",
+      "verdict": "genuine",
+      "note": "Cited for seeing no redshift evolution, but the cited paper reports a significant decrease of halo scale lengths towards higher redshift (factor 2 between z~3.7 and 5.1)."
+    },
+    {
+      "sentence_id": "s19",
+      "reference_key": "leclercq2017",
+      "verdict": "false_alarm",
+      "note": "The judge's own explanation says [39] finds no significant evolution between z = 3 and 6. The number-drift tag misfires on the 6.6 upper end, which is [65]'s range."
+    },
+    {
+      "sentence_id": "s20",
+      "reference_key": "borthakur2015",
+      "verdict": "debatable",
+      "note": "Joint summary of three surveys; COS-GASS probes 63-231 kpc, so 'as far as 300 kpc' overstates its reach, but the general statement about extended H I halos is supported."
+    },
+    {
+      "sentence_id": "s20",
+      "reference_key": "heckman2017",
+      "verdict": "debatable",
+      "note": "Same joint summary; COS-Burst sightlines reach roughly the virial radius (~230 kpc), not 300 kpc."
+    },
+    {
+      "sentence_id": "s20",
+      "reference_key": "tumlinson2013",
+      "verdict": "debatable",
+      "note": "Same joint summary; COS-Halos finds ~1 Å Lyα equivalent widths out to 150 kpc, which supports strong extended absorption but not 300 kpc."
+    },
+    {
+      "sentence_id": "s21",
+      "reference_key": "rasekh2021",
+      "verdict": "false_alarm",
+      "note": "The source describes the limited HST field of view and Lyα extents of typically 10 kpc; the sentence is a fair summary."
+    },
+    {
+      "sentence_id": "s22",
+      "reference_key": "leclercq2017",
+      "verdict": "false_alarm",
+      "note": "The median 4.5 kpc halo is supported; 'can only probe 2 scale lengths' is the citing authors' own calculation."
+    },
+    {
+      "sentence_id": "s26",
+      "reference_key": "leclercq2017",
+      "verdict": "debatable",
+      "note": "The 25th percentile of the MUSE sample's UV magnitudes is not stated in the text; it may be derived from the published catalogue."
+    },
+    {
+      "sentence_id": "s26",
+      "reference_key": "steidel2011",
+      "verdict": "debatable",
+      "note": "The upper brightness limit of the LBG sample is not stated as such; likely derived from the sample's properties."
+    },
+    {
+      "sentence_id": "s35",
+      "reference_key": "hayes2009b",
+      "verdict": "false_alarm",
+      "note": "[23] (Hayes et al. 2009) develops the continuum-subtraction methods that LaXs implements. The name is attached later, and [47] is cited for the current version."
+    },
+    {
+      "sentence_id": "s44",
+      "reference_key": "duval2016a",
+      "verdict": "false_alarm",
+      "note": "Caused by the checker: the DOI is Duval et al. 2016 (Lyα escape from the edge-on galaxy Mrk 1486), but the arXiv-preprint lookup matched the generic title 'The Lyman alpha reference sample' to a different LARS paper (Puschnig et al.) and checked that text."
+    },
+    {
+      "sentence_id": "s44",
+      "reference_key": "rasekh2021",
+      "verdict": "debatable",
+      "note": "Co-cited with the Mrk 1486 paper; this morphology paper discusses orientation effects but does not single out Mrk 1486."
+    },
+    {
+      "sentence_id": "s50",
+      "reference_key": "leclercq2017",
+      "verdict": "false_alarm",
+      "note": "The judge's own explanation says the source's points scatter around a 10:1 ratio (median 10.8)."
+    },
+    {
+      "sentence_id": "s51",
+      "reference_key": "leclercq2017",
+      "verdict": "debatable",
+      "note": "The source gives a median ratio of 10.8, not a mean of 12; a mean computed from its catalogue may well be 12, but it is not stated."
+    },
+    {
+      "sentence_id": "s56",
+      "reference_key": "izotov2016b",
+      "verdict": "debatable",
+      "note": "Both describe a bright central component plus a flatter outer component; the source calls the outskirts exponential discs while the citing paper says 'not exponential', so the 'similar results' are similar only loosely."
+    },
+    {
+      "sentence_id": "s57",
+      "reference_key": "leitherer1999a",
+      "verdict": "false_alarm",
+      "note": "Starburst99 models show ionizing photon output peaking in the first few Myr and falling by orders of magnitude for old populations; the sentence is a fair reading of the models."
+    },
+    {
+      "sentence_id": "s61",
+      "reference_key": "leclercq2017",
+      "verdict": "debatable",
+      "note": "The source quotes per-Å surface-brightness limits (2.8 and 5.5 × 10^-20); integrated over a narrow band these are of order 10^-19, so 'very similar' is loose but defensible."
+    },
+    {
+      "sentence_id": "s64",
+      "reference_key": "flury2022",
+      "verdict": "false_alarm",
+      "note": "'[similar to 32, 18]' identifies comparable galaxy samples; the claim about non-cospatial diagnostics is the citing authors' own conclusion, not attributed to these works."
+    },
+    {
+      "sentence_id": "s64",
+      "reference_key": "izotov2018c",
+      "verdict": "false_alarm",
+      "note": "As for [18]: the citation identifies similar compact galaxies, not the source of the conclusion."
+    },
+    {
+      "sentence_id": "s71",
+      "reference_key": "hayes2014",
+      "verdict": "debatable",
+      "note": "LARS II reports mostly low escape fractions with five galaxies above 10%; calling a 12% mean 'quite comparable' is a judgement call."
+    }
+  ]
+}

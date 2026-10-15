@@ -1,0 +1,358 @@
+{
+  "slug": "psych-plos-journal.pone.0264257",
+  "field": "Psychology",
+  "title": "Fear among Syrians: A Proposed Cutoff Score for the Arabic Fear of COVID-19 Scale",
+  "job_id": "15032b4895dd",
+  "scored_at": "2026-10-09T17:00:12+00:00",
+  "planted": 5,
+  "checked": 5,
+  "caught": 5,
+  "recall": 1.0,
+  "label_accuracy": 1.0,
+  "expected_mode_rate": 0.8,
+  "untouched_verdicts": 71,
+  "other_flags": 11,
+  "other_flags_preexisting": 11,
+  "precision": 0.3125,
+  "precision_excluding_preexisting": 1.0,
+  "by_mutation": {
+    "citation_swap": {
+      "planted": 3,
+      "caught": 3
+    },
+    "scope_inflation": {
+      "planted": 1,
+      "caught": 1
+    },
+    "number_change": {
+      "planted": 1,
+      "caught": 1
+    }
+  },
+  "flagged_citations": 11,
+  "review": {
+    "genuine": 1,
+    "false_alarm": 6,
+    "debatable": 4,
+    "unreviewed": 0
+  },
+  "review_details": {
+    "genuine": [
+      {
+        "sentence_id": "s5",
+        "reference_key": "r7",
+        "note": "A study of PTSD, emotion dysregulation and alcohol use among US college students is cited for Syria entering its third COVID-19 wave; it has nothing on Syria or COVID-19. Probably the wrong reference (only the abstract was available, off-topic tag from both pipelines)."
+      }
+    ],
+    "false_alarm": [
+      {
+        "sentence_id": "s15",
+        "reference_key": "r43",
+        "note": "The Greek validation study states that no optimal cut-off had been proposed before it and proposes one, so at the time it was the only such study, as the sentence says."
+      },
+      {
+        "sentence_id": "s22",
+        "reference_key": "r51",
+        "note": "Caused by the checker: the resolver matched Kline's SEM textbook to a journal book review with the same title (DOI 10.15353/cgjsc.v1i1.3787) and checked the review; the thresholds are standard and are in the book."
+      },
+      {
+        "sentence_id": "s26",
+        "reference_key": "r28",
+        "note": "Group citation for a range of Cronbach's alpha values (0.82-0.88) across four studies; the original FCV-19S paper reports 0.82, the lower end."
+      },
+      {
+        "sentence_id": "s26",
+        "reference_key": "r58",
+        "note": "The Italian validation reports alpha = 0.871, within the cited range across studies."
+      },
+      {
+        "sentence_id": "s26",
+        "reference_key": "r59",
+        "note": "The Turkish adaptation reports alpha = .847 (and the original .82), within the range; this reference duplicates [42] in the citing paper's own bibliography."
+      },
+      {
+        "sentence_id": "s33",
+        "reference_key": "r65",
+        "note": "The source documents fleeing health workers, few ventilators and bombed hospitals; 'Syrians must feel constant fear for their lives' is the citing authors' inference, clearly marked as such ('must')."
+      }
+    ],
+    "debatable": [
+      {
+        "sentence_id": "s10",
+        "reference_key": "r25",
+        "note": "The original Fear of COVID-19 Scale paper (Iranian sample) is a fair example of researchers assessing fear of COVID-19, but on its own it does not show assessments 'in different regions of the world' or identification of triggers."
+      },
+      {
+        "sentence_id": "s3",
+        "reference_key": "r3",
+        "note": "The source says enumerating all deaths, compared with historically expected mortality, gives a picture of excess death with direct and indirect burdens; the citing sentence swaps in 'the 0.28% crude mortality rate', which is not in the source (possibly from the co-cited [4])."
+      },
+      {
+        "sentence_id": "s34",
+        "reference_key": "r67",
+        "note": "The source reports severe shortages (about 1 mental health professional per 100,000) and expects most people with mental illness to go untreated; the exact figures (90% unattended, 80 psychiatrists) may come from the co-cited [66]."
+      },
+      {
+        "sentence_id": "s9",
+        "reference_key": "r24",
+        "note": "A garbled sentence defining fear of COVID-19 as a prolonged worry or negative emotional reaction; Van Bavel et al. discuss fear and threat perception in pandemics but give no such definition."
+      }
+    ],
+    "unreviewed": []
+  },
+  "precision_reviewed": 0.5,
+  "summary_line": "Caught 5 of 5 planted errors · 6 false alarms · 1 real citation problem found in the original paper",
+  "details": [
+    {
+      "id": "p1",
+      "sentence_id": "s12",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [28] with [56] (\"SDQ: discriminative validity and diagnostic potential\") (similarity 0.42 vs 0.83 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p2",
+      "sentence_id": "s17",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"universally, in all cases\" before the citation",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [
+        "scope_inflation"
+      ],
+      "expected_mode_found": true,
+      "escalated": false
+    },
+    {
+      "id": "p3",
+      "sentence_id": "s19",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [45] with [16] (\"Problematic internet-related behaviors mediate the associations between levels of internet engagement and distress among schoolchildren during COVID-19 lockdown: A longitudinal structural equation modeling study\") (similarity 0.31 vs 0.68 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": true
+    },
+    {
+      "id": "p4",
+      "sentence_id": "s28",
+      "mutation": "number_change",
+      "description": "Changed \"16.5\" to \"26.4\"",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "contradicted"
+      ],
+      "failure_modes": [
+        "number_drift"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p5",
+      "sentence_id": "s31",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [63] with [67] (\"Mental health in Syria\") (similarity 0.33 vs 0.68 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    }
+  ],
+  "verdicts": 76,
+  "escalation": {
+    "verdicts": 76,
+    "escalated": 12,
+    "label_changed": 2,
+    "transitions": {
+      "unverifiable->not_found": 1,
+      "overstated->supported": 1
+    }
+  },
+  "coverage": {
+    "total": 67,
+    "full": 38,
+    "abstract_only": 13,
+    "unavailable": 16,
+    "retracted": 0,
+    "line": "Full text found for 38 of 67 references · abstract only for 13 · unavailable for 16."
+  },
+  "usage": {
+    "per_model": [
+      {
+        "model": "Qwen/Qwen3-Embedding-8B",
+        "role": "embed",
+        "calls": 2,
+        "cached_calls": 0,
+        "prompt_tokens": 110,
+        "completion_tokens": 0,
+        "estimated_cost_usd": 1e-06
+      },
+      {
+        "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+        "role": "escalate",
+        "calls": 12,
+        "cached_calls": 6,
+        "prompt_tokens": 127723,
+        "completion_tokens": 29970,
+        "estimated_cost_usd": 0.217633
+      },
+      {
+        "model": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+        "role": "extract",
+        "calls": 34,
+        "cached_calls": 29,
+        "prompt_tokens": 63380,
+        "completion_tokens": 3645,
+        "estimated_cost_usd": 0.004678
+      },
+      {
+        "model": "nvidia/nemotron-3-super-120b-a12b",
+        "role": "judge",
+        "calls": 59,
+        "cached_calls": 44,
+        "prompt_tokens": 297676,
+        "completion_tokens": 88786,
+        "estimated_cost_usd": 0.16921
+      }
+    ],
+    "total_prompt_tokens": 488889,
+    "total_completion_tokens": 122401,
+    "total_estimated_cost_usd": 0.391522
+  },
+  "baseline_cost_usd": 0.315,
+  "old_pipeline": {
+    "commit": "da5f9e3",
+    "job_id": "bfd7ae7fc039",
+    "cost_usd": 0.342931,
+    "planted": 5,
+    "checked": 5,
+    "caught": 5,
+    "recall": 1.0,
+    "label_accuracy": 0.8,
+    "expected_mode_rate": 0.8,
+    "untouched_verdicts": 74,
+    "other_flags": 9,
+    "other_flags_preexisting": 8,
+    "precision": 0.35714285714285715,
+    "precision_excluding_preexisting": 0.8333333333333334,
+    "by_mutation": {
+      "citation_swap": {
+        "planted": 3,
+        "caught": 3
+      },
+      "scope_inflation": {
+        "planted": 1,
+        "caught": 1
+      },
+      "number_change": {
+        "planted": 1,
+        "caught": 1
+      }
+    },
+    "flagged_citations": 9,
+    "review": {
+      "genuine": 1,
+      "false_alarm": 5,
+      "debatable": 3,
+      "unreviewed": 0
+    },
+    "review_details": {
+      "genuine": [
+        {
+          "sentence_id": "s5",
+          "reference_key": "r7",
+          "note": "A study of PTSD, emotion dysregulation and alcohol use among US college students is cited for Syria entering its third COVID-19 wave; it has nothing on Syria or COVID-19. Probably the wrong reference (only the abstract was available, off-topic tag from both pipelines)."
+        }
+      ],
+      "false_alarm": [
+        {
+          "sentence_id": "s22",
+          "reference_key": "r51",
+          "note": "Caused by the checker: the resolver matched Kline's SEM textbook to a journal book review with the same title (DOI 10.15353/cgjsc.v1i1.3787) and checked the review; the thresholds are standard and are in the book."
+        },
+        {
+          "sentence_id": "s26",
+          "reference_key": "r28",
+          "note": "Group citation for a range of Cronbach's alpha values (0.82-0.88) across four studies; the original FCV-19S paper reports 0.82, the lower end."
+        },
+        {
+          "sentence_id": "s26",
+          "reference_key": "r42",
+          "note": "Same Turkish adaptation as [59] (listed twice by the citing paper); alpha = .847 lies within the cited range."
+        },
+        {
+          "sentence_id": "s26",
+          "reference_key": "r59",
+          "note": "The Turkish adaptation reports alpha = .847 (and the original .82), within the range; this reference duplicates [42] in the citing paper's own bibliography."
+        },
+        {
+          "sentence_id": "s33",
+          "reference_key": "r65",
+          "note": "The source documents fleeing health workers, few ventilators and bombed hospitals; 'Syrians must feel constant fear for their lives' is the citing authors' inference, clearly marked as such ('must')."
+        }
+      ],
+      "debatable": [
+        {
+          "sentence_id": "s10",
+          "reference_key": "r25",
+          "note": "The original Fear of COVID-19 Scale paper (Iranian sample) is a fair example of researchers assessing fear of COVID-19, but on its own it does not show assessments 'in different regions of the world' or identification of triggers."
+        },
+        {
+          "sentence_id": "s34",
+          "reference_key": "r67",
+          "note": "The source reports severe shortages (about 1 mental health professional per 100,000) and expects most people with mental illness to go untreated; the exact figures (90% unattended, 80 psychiatrists) may come from the co-cited [66]."
+        },
+        {
+          "sentence_id": "s9",
+          "reference_key": "r24",
+          "note": "A garbled sentence defining fear of COVID-19 as a prolonged worry or negative emotional reaction; Van Bavel et al. discuss fear and threat perception in pandemics but give no such definition."
+        }
+      ],
+      "unreviewed": []
+    },
+    "precision_reviewed": 0.5454545454545454,
+    "caught_ids": [
+      "p1",
+      "p2",
+      "p3",
+      "p4",
+      "p5"
+    ]
+  },
+  "caught_ids": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5"
+  ]
+}

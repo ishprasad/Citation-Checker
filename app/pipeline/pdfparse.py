@@ -283,6 +283,18 @@ def is_heading(b: Block, body_size: float) -> bool:
     return text[0].isupper() or text[0].isdigit()
 
 
+def _ends_references(b: Block, ref_size: float) -> bool:
+    """A heading after the reference list (an appendix, author information). Some journals set
+    titles in references in bold (eLife), so a short entry can look like a heading: inside the
+    list, a heading must be set larger than the entries, or be wholly bold and unlike an entry."""
+    text = b.text.strip()
+    if re.match(r"^\[?\d+[\].]\s", text):
+        return False
+    if b.size >= ref_size + 1:
+        return True
+    return b.bold >= 0.95 and not _YEAR_LABEL_RE.search(text) and text.count(",") < 2
+
+
 def _is_table_like(b: Block) -> bool:
     if len(b.lines) < 3:
         return False
@@ -334,8 +346,9 @@ def analyse(doc: pymupdf.Document) -> Layout:
     headings = [is_heading(b, body_size) and not b.in_table for b in blocks]
     if ref_start is not None:
         ref_end = len(blocks)
+        ref_size = body_font_size(blocks[ref_start + 1 : ref_start + 30])
         for j in range(ref_start + 1, len(blocks)):
-            if headings[j] and not re.match(r"^\[?\d+[\].]\s", blocks[j].text):
+            if headings[j] and _ends_references(blocks[j], ref_size):
                 ref_end = j
                 break
     reference_blocks = blocks[ref_start + 1 : ref_end] if ref_start is not None else []

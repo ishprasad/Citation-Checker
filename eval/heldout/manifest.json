@@ -1,0 +1,1922 @@
+{
+  "strata": [
+    {
+      "name": "ml",
+      "field": "Computer science: machine learning",
+      "kind": "arxiv",
+      "count": 1,
+      "filter": "locations.source.id:S4306400194,primary_topic.subfield.id:1702,publication_year:2022-2023,best_oa_location.license:cc-by,type:article"
+    },
+    {
+      "name": "cv",
+      "field": "Computer science: computer vision",
+      "kind": "arxiv",
+      "count": 1,
+      "filter": "locations.source.id:S4306400194,primary_topic.subfield.id:1707,publication_year:2022-2023,best_oa_location.license:cc-by,type:article"
+    },
+    {
+      "name": "astro",
+      "field": "Physics: astronomy and astrophysics",
+      "kind": "arxiv",
+      "count": 1,
+      "filter": "locations.source.id:S4306400194,primary_topic.subfield.id:3103,publication_year:2022-2023,best_oa_location.license:cc-by,type:article"
+    },
+    {
+      "name": "medicine",
+      "field": "Medicine",
+      "kind": "pdf",
+      "count": 1,
+      "filter": "primary_location.source.id:S202381698,primary_topic.field.id:27,publication_year:2021-2023,best_oa_location.license:cc-by,type:article"
+    },
+    {
+      "name": "biology",
+      "field": "Biology / neuroscience",
+      "kind": "pdf",
+      "count": 1,
+      "filter": "primary_location.source.id:S1336409049,publication_year:2021-2023,best_oa_location.license:cc-by,type:article"
+    },
+    {
+      "name": "psychology",
+      "field": "Psychology",
+      "kind": "pdf",
+      "count": 1,
+      "filter": "primary_location.source.id:S9692511,publication_year:2021-2023,best_oa_location.license:cc-by,type:article"
+    },
+    {
+      "name": "psych-plos",
+      "field": "Psychology",
+      "kind": "pdf",
+      "count": 1,
+      "filter": "primary_location.source.id:S202381698,primary_topic.field.id:32,publication_year:2021-2023,best_oa_location.license:cc-by,type:article"
+    }
+  ],
+  "criteria": {
+    "citing_sentences": [
+      25,
+      90
+    ],
+    "min_citations_mapped": 0.5,
+    "min_fulltext_coverage": 0.5
+  },
+  "sample": {
+    "size": 25,
+    "seeds": [
+      42,
+      43,
+      44
+    ]
+  },
+  "development_set": [
+    "10.1038/s41467-022-35648-w",
+    "10.1371/journal.pone.0262090",
+    "10.3389/fpsyg.2021.689563",
+    "1706.03762",
+    "2106.09685",
+    "2201.11903",
+    "2310.06825"
+  ],
+  "candidates": {
+    "ml": [
+      {
+        "rank": 1,
+        "openalex_id": "https://openalex.org/W4386601188",
+        "doi": "https://doi.org/10.1103/physrevresearch.5.033177",
+        "arxiv_id": "2301.10203",
+        "title": "Statistical temporal pattern extraction by neuronal architecture",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 48% of the references (need 50%)"
+      },
+      {
+        "rank": 2,
+        "openalex_id": "https://openalex.org/W3208753047",
+        "doi": "https://doi.org/10.1088/2058-9565/ac66fb",
+        "arxiv_id": "2110.11724",
+        "title": "On the connection between quantum pseudorandomness and quantum hardware assumptions",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 38% of the references (need 50%)"
+      },
+      {
+        "rank": 3,
+        "openalex_id": "https://openalex.org/W4385255027",
+        "doi": "https://doi.org/10.22331/q-2023-07-25-1066",
+        "arxiv_id": "2208.01063",
+        "title": "Real-Time Krylov Theory for Quantum Computing Algorithms",
+        "year": 2023,
+        "decision": "accepted",
+        "reason": "accepted",
+        "citing_sentences": 31,
+        "parsed_from": "latex",
+        "citations_mapped": "60/60",
+        "coverage": "Full text found for 43 of 60 references · abstract only for 13 · unavailable for 4."
+      }
+    ],
+    "cv": [
+      {
+        "rank": 1,
+        "openalex_id": "https://openalex.org/W4385327769",
+        "doi": "https://doi.org/10.48550/arxiv.2307.13842",
+        "arxiv_id": "2307.13842",
+        "title": "CosSIF: Cosine similarity-based image filtering to overcome low inter-class variation in synthetic medical image datasets",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 35% of the references (need 50%)"
+      },
+      {
+        "rank": 2,
+        "openalex_id": "https://openalex.org/W4221141871",
+        "doi": "https://doi.org/10.1155/2022/9092785",
+        "arxiv_id": "2203.13972",
+        "title": "Autoregressive Linguistic Steganography Based on BERT and Consistency Coding",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 33% of the references (need 50%)"
+      },
+      {
+        "rank": 3,
+        "openalex_id": "https://openalex.org/W3203620832",
+        "doi": "https://doi.org/10.1109/lra.2022.3145512",
+        "arxiv_id": "2110.03234",
+        "title": "Self-Supervised Depth Completion for Active Stereo",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 34% of the references (need 50%)"
+      },
+      {
+        "rank": 4,
+        "openalex_id": "https://openalex.org/W3168682287",
+        "doi": "https://doi.org/10.1145/3557999",
+        "arxiv_id": "2106.08710",
+        "title": "Mobile Augmented Reality: User Interfaces, Frameworks, and Intelligence",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 25% of the references (need 50%)"
+      },
+      {
+        "rank": 5,
+        "openalex_id": "https://openalex.org/W4309575388",
+        "doi": "https://doi.org/10.1016/j.engappai.2022.105604",
+        "arxiv_id": "2211.11647",
+        "title": "Benchmarking edge computing devices for grape bunches and trunks detection using accelerated object detection single shot multibox deep learning models",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 23% of the references (need 50%)"
+      },
+      {
+        "rank": 6,
+        "openalex_id": "https://openalex.org/W3172681723",
+        "doi": "https://doi.org/10.1038/s41467-022-30695-9",
+        "arxiv_id": "2106.05735",
+        "title": "The Medical Segmentation Decathlon",
+        "year": 2022,
+        "decision": "accepted",
+        "reason": "accepted",
+        "citing_sentences": 46,
+        "parsed_from": "latex",
+        "citations_mapped": "44/44",
+        "coverage": "Full text found for 23 of 44 references · abstract only for 4 · unavailable for 17."
+      }
+    ],
+    "astro": [
+      {
+        "rank": 1,
+        "openalex_id": "https://openalex.org/W4367318146",
+        "doi": "https://doi.org/10.1093/mnras/stad1264",
+        "arxiv_id": "2304.13057",
+        "title": "On the evolution of the size of Lyman alpha haloes across cosmic time: no change in the circumgalactic gas distribution when probed by line emission",
+        "year": 2023,
+        "decision": "accepted",
+        "reason": "accepted",
+        "citing_sentences": 71,
+        "parsed_from": "latex",
+        "citations_mapped": "67/67",
+        "coverage": "Full text found for 56 of 64 references · abstract only for 4 · unavailable for 4."
+      }
+    ],
+    "medicine": [
+      {
+        "rank": 1,
+        "openalex_id": "https://openalex.org/W4362471819",
+        "doi": "https://doi.org/10.1371/journal.pone.0283831",
+        "arxiv_id": null,
+        "title": "Risk factor of elevated matrix metalloproteinase-3 gene expression in synovial fluid in knee osteoarthritis women",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 46% of the references (need 50%)"
+      },
+      {
+        "rank": 2,
+        "openalex_id": "https://openalex.org/W3207137208",
+        "doi": "https://doi.org/10.1371/journal.pone.0258447",
+        "arxiv_id": null,
+        "title": "Determinants of quality of life in women immediately following the completion of primary treatment of breast cancer: A cross-sectional study",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 31% of the references (need 50%)"
+      },
+      {
+        "rank": 4,
+        "openalex_id": "https://openalex.org/W3169110327",
+        "doi": "https://doi.org/10.1371/journal.pone.0252927",
+        "arxiv_id": null,
+        "title": "CDK4/6 inhibition synergizes with inhibition of P21-Activated Kinases (PAKs) in lung cancer cell lines",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 44% of the references (need 50%)"
+      },
+      {
+        "rank": 5,
+        "openalex_id": "https://openalex.org/W4378782649",
+        "doi": "https://doi.org/10.1371/journal.pone.0286300",
+        "arxiv_id": null,
+        "title": "Endoscopic features of lymphoid follicles in the colonic mucosa using the image enhanced endoscopy and its association with colorectal adenoma",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 46% of the references (need 50%)"
+      },
+      {
+        "rank": 9,
+        "openalex_id": "https://openalex.org/W4365443225",
+        "doi": "https://doi.org/10.1371/journal.pone.0283774",
+        "arxiv_id": null,
+        "title": "Epidemiology and risk factors for mortality among methicillin-resistant Staphylococcus aureus bacteremic patients in Southern Brazil",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 45% of the references (need 50%)"
+      },
+      {
+        "rank": 11,
+        "openalex_id": "https://openalex.org/W4310437259",
+        "doi": "https://doi.org/10.1371/journal.pone.0265343",
+        "arxiv_id": null,
+        "title": "Figure skating: Increasing numbers of revolutions in jumps at the European and World Championships",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 35% of the references (need 50%)"
+      },
+      {
+        "rank": 12,
+        "openalex_id": "https://openalex.org/W4306154849",
+        "doi": "https://doi.org/10.1371/journal.pone.0275564",
+        "arxiv_id": null,
+        "title": "APRIL/BLyS deficient rats prevent donor specific antibody (DSA) production and cell proliferation in rodent kidney transplant model",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 26% of the references (need 50%)"
+      },
+      {
+        "rank": 13,
+        "openalex_id": "https://openalex.org/W3198047668",
+        "doi": "https://doi.org/10.1371/journal.pone.0256877",
+        "arxiv_id": null,
+        "title": "Self-collection and pooling of samples as resources-saving strategies for RT-PCR-based SARS-CoV-2 surveillance, the example of travelers in French Polynesia",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "0 citing sentences (need 25-90)",
+        "citing_sentences": 0,
+        "parsed_from": "pdf",
+        "citations_mapped": "0/0"
+      },
+      {
+        "rank": 15,
+        "openalex_id": "https://openalex.org/W3140741707",
+        "doi": "https://doi.org/10.1371/journal.pone.0249059",
+        "arxiv_id": null,
+        "title": "Cell competition between anaplastic thyroid cancer and normal thyroid follicular cells exerts reciprocal stress response defining tumor suppressive effects of normal epithelial tissue",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 43% of the references (need 50%)"
+      },
+      {
+        "rank": 16,
+        "openalex_id": "https://openalex.org/W4360810356",
+        "doi": "https://doi.org/10.1371/journal.pone.0283495",
+        "arxiv_id": null,
+        "title": "Presence and severity of migraine is associated with development of primary open angle glaucoma: A population-based longitudinal cohort study",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 27% of the references (need 50%)"
+      },
+      {
+        "rank": 17,
+        "openalex_id": "https://openalex.org/W4310434327",
+        "doi": "https://doi.org/10.1371/journal.pone.0277628",
+        "arxiv_id": null,
+        "title": "Decrease in medial meniscal extrusion after physical therapy to improve knee pain and range of motion in patients with knee osteoarthritis: A retrospective study",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 36% of the references (need 50%)"
+      },
+      {
+        "rank": 3,
+        "openalex_id": "https://openalex.org/W4205804730",
+        "doi": "https://doi.org/10.1371/journal.pone.0260770",
+        "arxiv_id": null,
+        "title": "A multi-center, international, randomized, 2-year, parallel-group study to assess the superiority of IVUS-guided PCI versus qualitative angio-guided PCI in unprotected left main coronary artery (ULMCA) disease: Study protocol for OPTIMAL trial",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "full text for 15% of cited references (need 50%)",
+        "citing_sentences": 37,
+        "parsed_from": "pdf",
+        "citations_mapped": "39/39",
+        "coverage": "Full text found for 6 of 40 references · abstract only for 12 · unavailable for 22."
+      },
+      {
+        "rank": 6,
+        "openalex_id": "https://openalex.org/W4360813629",
+        "doi": "https://doi.org/10.1371/journal.pone.0283421",
+        "arxiv_id": null,
+        "title": "Anemia prevalence and associated factors among school-children of Kersa Woreda in eastern Ethiopia: A cross-sectional study",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "full text for 46% of cited references (need 50%)",
+        "citing_sentences": 39,
+        "parsed_from": "pdf",
+        "citations_mapped": "57/57",
+        "coverage": "Full text found for 26 of 57 references · abstract only for 12 · unavailable for 19."
+      },
+      {
+        "rank": 7,
+        "openalex_id": "https://openalex.org/W4225642644",
+        "doi": "https://doi.org/10.1371/journal.pone.0265820",
+        "arxiv_id": null,
+        "title": "Detection of SARS-CoV-2 antibodies in febrile patients from an endemic region of dengue and chikungunya in Peru",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "full text for 42% of cited references (need 50%)",
+        "citing_sentences": 47,
+        "parsed_from": "pdf",
+        "citations_mapped": "38/38",
+        "coverage": "Full text found for 16 of 38 references · abstract only for 8 · unavailable for 14."
+      },
+      {
+        "rank": 8,
+        "openalex_id": "https://openalex.org/W4387909654",
+        "doi": "https://doi.org/10.1371/journal.pone.0293263",
+        "arxiv_id": null,
+        "title": "Computational design of novel nanobodies targeting the receptor binding domain of variants of concern of SARS-CoV-2",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "full text for 49% of cited references (need 50%)",
+        "citing_sentences": 30,
+        "parsed_from": "pdf",
+        "citations_mapped": "53/53",
+        "coverage": "Full text found for 26 of 53 references · abstract only for 12 · unavailable for 15."
+      },
+      {
+        "rank": 10,
+        "openalex_id": "https://openalex.org/W4206485655",
+        "doi": "https://doi.org/10.1371/journal.pone.0261563",
+        "arxiv_id": null,
+        "title": "Associations of FGF21 and GDF15 with mitochondrial dysfunction in children living with perinatally-acquired HIV: A cross-sectional evaluation of pediatric AIDS clinical trials group 219/219C",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "full text for 34% of cited references (need 50%)",
+        "citing_sentences": 29,
+        "parsed_from": "pdf",
+        "citations_mapped": "32/32",
+        "coverage": "Full text found for 11 of 32 references · abstract only for 14 · unavailable for 7."
+      },
+      {
+        "rank": 14,
+        "openalex_id": "https://openalex.org/W4214597939",
+        "doi": "https://doi.org/10.1371/journal.pone.0263469",
+        "arxiv_id": null,
+        "title": "Searching for genetic modulators of the phenotypic heterogeneity in Brugada syndrome",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "full text for 34% of cited references (need 50%)",
+        "citing_sentences": 29,
+        "parsed_from": "pdf",
+        "citations_mapped": "44/44",
+        "coverage": "Full text found for 15 of 44 references · abstract only for 11 · unavailable for 18."
+      },
+      {
+        "rank": 18,
+        "openalex_id": "https://openalex.org/W3163902481",
+        "doi": "https://doi.org/10.1371/journal.pone.0251463",
+        "arxiv_id": null,
+        "title": "Safety, effectiveness and costs of percutaneous mitral valve repair: A real-world prospective study",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "full text for 10% of cited references (need 50%)",
+        "citing_sentences": 27,
+        "parsed_from": "pdf",
+        "citations_mapped": "29/29",
+        "coverage": "Full text found for 3 of 29 references · abstract only for 10 · unavailable for 16."
+      },
+      {
+        "rank": 19,
+        "openalex_id": "https://openalex.org/W3199069748",
+        "doi": "https://doi.org/10.1371/journal.pone.0257516",
+        "arxiv_id": null,
+        "title": "Global research priorities for COVID-19 in maternal, reproductive and child health: Results of an international survey",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "full text for 42% of cited references (need 50%)",
+        "citing_sentences": 33,
+        "parsed_from": "pdf",
+        "citations_mapped": "61/61",
+        "coverage": "Full text found for 26 of 62 references · abstract only for 5 · unavailable for 31."
+      },
+      {
+        "rank": 20,
+        "openalex_id": "https://openalex.org/W4293783717",
+        "doi": "https://doi.org/10.1371/journal.pone.0270186",
+        "arxiv_id": null,
+        "title": "Knowledge, attitude and practice regarding diabetes and hypertension among school students of Nepal: A rural vs. urban study",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 45% of the references (need 50%)"
+      },
+      {
+        "rank": 21,
+        "openalex_id": "https://openalex.org/W4327564825",
+        "doi": "https://doi.org/10.1371/journal.pone.0283040",
+        "arxiv_id": null,
+        "title": "Ethnic differences in the age-related distribution of serum prostate-specific antigen values: A study in a Taiwanese male population",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 17% of the references (need 50%)"
+      },
+      {
+        "rank": 22,
+        "openalex_id": "https://openalex.org/W4387569134",
+        "doi": "https://doi.org/10.1371/journal.pone.0292653",
+        "arxiv_id": null,
+        "title": "Clinical indicators combined with S100A12/TLR2 signaling molecules to establish a new scoring model for coronary artery lesions in Kawasaki disease",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 40% of the references (need 50%)"
+      },
+      {
+        "rank": 23,
+        "openalex_id": "https://openalex.org/W4389152604",
+        "doi": "https://doi.org/10.1371/journal.pone.0283910",
+        "arxiv_id": null,
+        "title": "Differential improvements between men and women in repeated CrossFit open workouts",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "full text for 35% of cited references (need 50%)",
+        "citing_sentences": 42,
+        "parsed_from": "pdf",
+        "citations_mapped": "40/40",
+        "coverage": "Full text found for 14 of 40 references · abstract only for 10 · unavailable for 16."
+      },
+      {
+        "rank": 24,
+        "openalex_id": "https://openalex.org/W4307411078",
+        "doi": "https://doi.org/10.1371/journal.pone.0275761",
+        "arxiv_id": null,
+        "title": "Development and validation of a clinical predictive model for severe and critical pediatric COVID-19 infection",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "full text for 45% of cited references (need 50%)",
+        "citing_sentences": 40,
+        "parsed_from": "pdf",
+        "citations_mapped": "52/52",
+        "coverage": "Full text found for 24 of 53 references · abstract only for 16 · unavailable for 13."
+      },
+      {
+        "rank": 25,
+        "openalex_id": "https://openalex.org/W4213334905",
+        "doi": "https://doi.org/10.1371/journal.pone.0263233",
+        "arxiv_id": null,
+        "title": "Association between indigenous status and Body Mass Index (BMI) in Australian adults: Does sleep duration affect the relationship?",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 40% of the references (need 50%)"
+      },
+      {
+        "rank": 26,
+        "openalex_id": "https://openalex.org/W4281718737",
+        "doi": "https://doi.org/10.1371/journal.pone.0267015",
+        "arxiv_id": null,
+        "title": "Perinatal care in Western Uganda: Prevalence and factors associated with appropriate care among women attending three district hospitals",
+        "year": 2022,
+        "decision": "accepted",
+        "reason": "accepted",
+        "citing_sentences": 32,
+        "parsed_from": "pdf",
+        "citations_mapped": "40/40",
+        "coverage": "Full text found for 22 of 40 references · abstract only for 3 · unavailable for 15."
+      }
+    ],
+    "biology": [
+      {
+        "rank": 1,
+        "openalex_id": "https://openalex.org/W3206860915",
+        "doi": "https://doi.org/10.7554/elife.71774",
+        "arxiv_id": null,
+        "title": "The OpenNeuro resource for sharing of neuroscience data",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "full text for 44% of cited references (need 50%)",
+        "citing_sentences": 39,
+        "parsed_from": "pdf",
+        "citations_mapped": "55/58",
+        "coverage": "Full text found for 24 of 55 references · abstract only for 8 · unavailable for 23."
+      },
+      {
+        "rank": 2,
+        "openalex_id": "https://openalex.org/W3186447512",
+        "doi": "https://doi.org/10.7554/elife.61733",
+        "arxiv_id": null,
+        "title": "Twisting of the zebrafish heart tube during cardiac looping is a tbx5-dependent and tissue-intrinsic process",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "text not available (no downloadable PDF)"
+      },
+      {
+        "rank": 3,
+        "openalex_id": "https://openalex.org/W3135377440",
+        "doi": "https://doi.org/10.7554/elife.62606",
+        "arxiv_id": null,
+        "title": "Bidirectional regulation of glial potassium buffering – glioprotection versus neuroprotection",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "text not available (no downloadable PDF)"
+      },
+      {
+        "rank": 4,
+        "openalex_id": "https://openalex.org/W4318995190",
+        "doi": "https://doi.org/10.7554/elife.83561",
+        "arxiv_id": null,
+        "title": "B cell receptor-induced IL-10 production from neonatal mouse CD19+CD43- cells depends on STAT5-mediated IL-6 secretion",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 41% of the references (need 50%)"
+      },
+      {
+        "rank": 5,
+        "openalex_id": "https://openalex.org/W4383999005",
+        "doi": "https://doi.org/10.7554/elife.90216",
+        "arxiv_id": null,
+        "title": "Surviving under pressure",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "2 citing sentences (need 25-90)",
+        "citing_sentences": 2,
+        "parsed_from": "pdf",
+        "citations_mapped": "2/6"
+      },
+      {
+        "rank": 6,
+        "openalex_id": "https://openalex.org/W4283662014",
+        "doi": "https://doi.org/10.7554/elife.78410",
+        "arxiv_id": null,
+        "title": "Integration of visual and antennal mechanosensory feedback during head stabilization in hawkmoths",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 24% of the references (need 50%)"
+      },
+      {
+        "rank": 7,
+        "openalex_id": "https://openalex.org/W4387333935",
+        "doi": "https://doi.org/10.7554/elife.91611",
+        "arxiv_id": null,
+        "title": "SOD1 is a synthetic-lethal target in PPM1D-mutant leukemia cells",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 37% of the references (need 50%)"
+      },
+      {
+        "rank": 8,
+        "openalex_id": "https://openalex.org/W4386888531",
+        "doi": "https://doi.org/10.7554/elife.90253",
+        "arxiv_id": null,
+        "title": "Heat stress impairs centromere structure and segregation of meiotic chromosomes in Arabidopsis",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "text not available (no downloadable PDF)"
+      },
+      {
+        "rank": 9,
+        "openalex_id": "https://openalex.org/W3129629117",
+        "doi": "https://doi.org/10.7554/elife.64317",
+        "arxiv_id": null,
+        "title": "Evolutionary shifts in taste coding in the fruit pest Drosophila suzukii",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "text not available (no downloadable PDF)"
+      },
+      {
+        "rank": 10,
+        "openalex_id": "https://openalex.org/W4297409721",
+        "doi": "https://doi.org/10.7554/elife.63600",
+        "arxiv_id": null,
+        "title": "RNA-binding protein Elavl1/HuR is required for maintenance of cranial neural crest specification",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 46% of the references (need 50%)"
+      },
+      {
+        "rank": 11,
+        "openalex_id": "https://openalex.org/W4389626108",
+        "doi": "https://doi.org/10.7554/elife.92169",
+        "arxiv_id": null,
+        "title": "Sensorimotor mechanisms selective to numerosity derived from individual differences",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "16 citing sentences (need 25-90)",
+        "citing_sentences": 16,
+        "parsed_from": "pdf",
+        "citations_mapped": "27/47"
+      },
+      {
+        "rank": 12,
+        "openalex_id": "https://openalex.org/W4385759300",
+        "doi": "https://doi.org/10.7554/elife.89367",
+        "arxiv_id": null,
+        "title": "Temporally resolved early bone morphogenetic protein-driven transcriptional cascade during human amnion specification",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 38% of the references (need 50%)"
+      },
+      {
+        "rank": 13,
+        "openalex_id": "https://openalex.org/W4311825186",
+        "doi": "https://doi.org/10.7554/elife.79076",
+        "arxiv_id": null,
+        "title": "Defining cellular population dynamics at single-cell resolution during prostate cancer progression",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 49% of the references (need 50%)"
+      },
+      {
+        "rank": 14,
+        "openalex_id": "https://openalex.org/W4220893121",
+        "doi": "https://doi.org/10.7554/elife.76822",
+        "arxiv_id": null,
+        "title": "Potential role of KRAB-ZFP binding and transcriptional states on DNA methylation of retroelements in human male germ cells",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "text not available (no downloadable PDF)"
+      },
+      {
+        "rank": 15,
+        "openalex_id": "https://openalex.org/W4384197933",
+        "doi": "https://doi.org/10.7554/elife.88616",
+        "arxiv_id": null,
+        "title": "Landscape drives zoonotic malaria prevalence in non-human primates",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "fewer than half of the in-text citations matched a reference",
+        "citing_sentences": 43,
+        "parsed_from": "pdf",
+        "citations_mapped": "27/110"
+      },
+      {
+        "rank": 16,
+        "openalex_id": "https://openalex.org/W4210356489",
+        "doi": "https://doi.org/10.7554/elife.70207",
+        "arxiv_id": null,
+        "title": "Widespread discrepancy in Nnt genotypes and genetic backgrounds complicates granzyme A and other knockout mouse studies",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "text not available (no downloadable PDF)"
+      },
+      {
+        "rank": 17,
+        "openalex_id": "https://openalex.org/W4365514405",
+        "doi": "https://doi.org/10.7554/elife.87167",
+        "arxiv_id": null,
+        "title": "Energy coupling and stoichiometry of Zn2+/H+ antiport by the prokaryotic cation diffusion facilitator YiiP",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 40% of the references (need 50%)"
+      },
+      {
+        "rank": 18,
+        "openalex_id": "https://openalex.org/W3160125292",
+        "doi": "https://doi.org/10.7554/elife.63798",
+        "arxiv_id": null,
+        "title": "Clustered functional domains for curves and corners in cortical area V4",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 34% of the references (need 50%)"
+      },
+      {
+        "rank": 19,
+        "openalex_id": "https://openalex.org/W4387517557",
+        "doi": "https://doi.org/10.7554/elife.86452",
+        "arxiv_id": null,
+        "title": "GDF15 is required for cold-induced thermogenesis and contributes to improved systemic metabolic health following loss of OPA1 in brown adipocytes",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "full text for 47% of cited references (need 50%)",
+        "citing_sentences": 58,
+        "parsed_from": "pdf",
+        "citations_mapped": "47/48",
+        "coverage": "Full text found for 22 of 47 references · abstract only for 7 · unavailable for 18."
+      },
+      {
+        "rank": 20,
+        "openalex_id": "https://openalex.org/W4389432264",
+        "doi": "https://doi.org/10.7554/elife.89795.3",
+        "arxiv_id": null,
+        "title": "Opposing chemosensory functions of closely related gustatory receptors",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "text not available (no downloadable PDF)"
+      },
+      {
+        "rank": 21,
+        "openalex_id": "https://openalex.org/W3213670119",
+        "doi": "https://doi.org/10.7554/elife.58148",
+        "arxiv_id": null,
+        "title": "Tracking the movement of discrete gating charges in a voltage-gated potassium channel",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 42% of the references (need 50%)"
+      },
+      {
+        "rank": 22,
+        "openalex_id": "https://openalex.org/W3199374241",
+        "doi": "https://doi.org/10.7554/elife.70427",
+        "arxiv_id": null,
+        "title": "Cryo-EM reveals new species-specific proteins and symmetry elements in the Legionella pneumophila Dot/Icm T4SS",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 47% of the references (need 50%)"
+      },
+      {
+        "rank": 23,
+        "openalex_id": "https://openalex.org/W4361275304",
+        "doi": "https://doi.org/10.7554/elife.86633",
+        "arxiv_id": null,
+        "title": "Neuropeptide Y-expressing dorsal horn inhibitory interneurons gate spinal pain and itch signalling",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 44% of the references (need 50%)"
+      },
+      {
+        "rank": 24,
+        "openalex_id": "https://openalex.org/W3179396995",
+        "doi": "https://doi.org/10.7554/elife.69482",
+        "arxiv_id": null,
+        "title": "The fluoride permeation pathway and anion recognition in Fluc family fluoride channels",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 37% of the references (need 50%)"
+      },
+      {
+        "rank": 25,
+        "openalex_id": "https://openalex.org/W4283161447",
+        "doi": "https://doi.org/10.7554/elife.77433",
+        "arxiv_id": null,
+        "title": "Comprehensive fitness landscape of SARS-CoV-2 Mpro reveals insights into viral resistance mechanisms",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 40% of the references (need 50%)"
+      },
+      {
+        "rank": 26,
+        "openalex_id": "https://openalex.org/W4313237754",
+        "doi": "https://doi.org/10.7554/elife.80380",
+        "arxiv_id": null,
+        "title": "Lack of evidence for increased transcriptional noise in aged tissues",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "text not available (no downloadable PDF)"
+      },
+      {
+        "rank": 27,
+        "openalex_id": "https://openalex.org/W4280517859",
+        "doi": "https://doi.org/10.7554/elife.73346",
+        "arxiv_id": null,
+        "title": "Radiocarbon and genomic evidence for the survival of Equus Sussemionus until the late Holocene",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "full text for 38% of cited references (need 50%)",
+        "citing_sentences": 66,
+        "parsed_from": "pdf",
+        "citations_mapped": "58/63",
+        "coverage": "Full text found for 21 of 56 references · abstract only for 11 · unavailable for 24."
+      },
+      {
+        "rank": 28,
+        "openalex_id": "https://openalex.org/W4220711109",
+        "doi": "https://doi.org/10.7554/elife.70881",
+        "arxiv_id": null,
+        "title": "A light-gated transcriptional recorder for detecting cell-cell contacts",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 45% of the references (need 50%)"
+      },
+      {
+        "rank": 29,
+        "openalex_id": "https://openalex.org/W4379162212",
+        "doi": "https://doi.org/10.7554/elife.87518",
+        "arxiv_id": null,
+        "title": "Metabolic regulation of misfolded protein import into mitochondria",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 42% of the references (need 50%)"
+      },
+      {
+        "rank": 30,
+        "openalex_id": "https://openalex.org/W4220695785",
+        "doi": "https://doi.org/10.7554/elife.69705",
+        "arxiv_id": null,
+        "title": "The TRRAP transcription cofactor represses interferon-stimulated genes in colorectal cancer cells",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "text not available (no downloadable PDF)"
+      },
+      {
+        "rank": 31,
+        "openalex_id": "https://openalex.org/W4367669573",
+        "doi": "https://doi.org/10.7554/elife.85703",
+        "arxiv_id": null,
+        "title": "Social learning mechanisms shape transmission pathways through replicate local social networks of wild birds",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "text not available (no downloadable PDF)"
+      },
+      {
+        "rank": 32,
+        "openalex_id": "https://openalex.org/W4221033111",
+        "doi": "https://doi.org/10.7554/elife.62856",
+        "arxiv_id": null,
+        "title": "Fibroblast mechanotransduction network predicts targets for mechano-adaptive infarct therapies",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 49% of the references (need 50%)"
+      },
+      {
+        "rank": 33,
+        "openalex_id": "https://openalex.org/W3198098339",
+        "doi": "https://doi.org/10.7554/elife.67312",
+        "arxiv_id": null,
+        "title": "YAP and TAZ are transcriptional co-activators of AP-1 proteins and STAT3 during breast cellular transformation",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "text not available (no downloadable PDF)"
+      },
+      {
+        "rank": 34,
+        "openalex_id": "https://openalex.org/W3130492894",
+        "doi": "https://doi.org/10.7554/elife.62362",
+        "arxiv_id": null,
+        "title": "Accelerating with FlyBrainLab the discovery of the functional logic of the Drosophila brain in the connectomic and synaptomic era",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "text not available (no downloadable PDF)"
+      },
+      {
+        "rank": 35,
+        "openalex_id": "https://openalex.org/W4390793899",
+        "doi": "https://doi.org/10.7554/elife.76421",
+        "arxiv_id": null,
+        "title": "Probe-free optical chromatin deformation and measurement of differential mechanical properties in the nucleus",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "text not available (no downloadable PDF)"
+      },
+      {
+        "rank": 36,
+        "openalex_id": "https://openalex.org/W3204412199",
+        "doi": "https://doi.org/10.7554/elife.73378",
+        "arxiv_id": null,
+        "title": "Pain or gain?",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "text not available (no downloadable PDF)"
+      },
+      {
+        "rank": 37,
+        "openalex_id": "https://openalex.org/W4322719131",
+        "doi": "https://doi.org/10.7554/elife.80741",
+        "arxiv_id": null,
+        "title": "RPG acts as a central determinant for infectosome formation and cellular polarization during intracellular rhizobial infections",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 46% of the references (need 50%)"
+      },
+      {
+        "rank": 38,
+        "openalex_id": "https://openalex.org/W3133204495",
+        "doi": "https://doi.org/10.7554/elife.60916",
+        "arxiv_id": null,
+        "title": "DUCT reveals architectural mechanisms contributing to bile duct recovery in a mouse model for Alagille syndrome",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "24 citing sentences (need 25-90)",
+        "citing_sentences": 24,
+        "parsed_from": "pdf",
+        "citations_mapped": "34/36"
+      },
+      {
+        "rank": 39,
+        "openalex_id": "https://openalex.org/W3188699384",
+        "doi": "https://doi.org/10.7554/elife.66393",
+        "arxiv_id": null,
+        "title": "Imaging cytoplasmic lipid droplets in vivo with fluorescent perilipin 2 and perilipin 3 knock-in zebrafish",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 47% of the references (need 50%)"
+      },
+      {
+        "rank": 40,
+        "openalex_id": "https://openalex.org/W4382182532",
+        "doi": "https://doi.org/10.7554/elife.89778",
+        "arxiv_id": null,
+        "title": "Unraveling the mechanisms behind joint damage",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "0 citing sentences (need 25-90)",
+        "citing_sentences": 0,
+        "parsed_from": "pdf",
+        "citations_mapped": "0/8"
+      },
+      {
+        "rank": 41,
+        "openalex_id": "https://openalex.org/W4387333906",
+        "doi": "https://doi.org/10.7554/elife.91599",
+        "arxiv_id": null,
+        "title": "Balance of activity during a critical period tunes a developing network",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "text not available (no downloadable PDF)"
+      },
+      {
+        "rank": 42,
+        "openalex_id": "https://openalex.org/W4384205517",
+        "doi": "https://doi.org/10.7554/elife.87318",
+        "arxiv_id": null,
+        "title": "Primaquine in glucose-6-phosphate dehydrogenase deficiency: an adaptive pharmacometric assessment of ascending dose regimens in healthy volunteers",
+        "year": 2023,
+        "decision": "accepted",
+        "reason": "accepted",
+        "citing_sentences": 31,
+        "parsed_from": "pdf",
+        "citations_mapped": "24/28",
+        "coverage": "Full text found for 14 of 24 references · abstract only for 2 · unavailable for 8."
+      }
+    ],
+    "psychology": [
+      {
+        "rank": 1,
+        "openalex_id": "https://openalex.org/W4286560150",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.911197",
+        "arxiv_id": null,
+        "title": "Understanding the Public Policy of Global Budget Payment Reform Improves the Quality of Public Healthcare From the Perspective of Patients in China",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 25% of the references (need 50%)"
+      },
+      {
+        "rank": 2,
+        "openalex_id": "https://openalex.org/W4283396007",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.845691",
+        "arxiv_id": null,
+        "title": "Structural Priming and Inverse Preference Effects in L2 Grammaticality Judgment and Production of English Relative Clauses",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 15% of the references (need 50%)"
+      },
+      {
+        "rank": 3,
+        "openalex_id": "https://openalex.org/W4389245469",
+        "doi": "https://doi.org/10.3389/fpsyg.2023.1190081",
+        "arxiv_id": null,
+        "title": "Is the association between sleep and socio-emotional development mediated by weight in toddlers aged 12 to 36 months?",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 33% of the references (need 50%)"
+      },
+      {
+        "rank": 4,
+        "openalex_id": "https://openalex.org/W4295102913",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.1006518",
+        "arxiv_id": null,
+        "title": "Job satisfaction and burnout of psychiatric nurses during the COVID-19 pandemic in China—the moderation of family support",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 38% of the references (need 50%)"
+      },
+      {
+        "rank": 5,
+        "openalex_id": "https://openalex.org/W3194832883",
+        "doi": "https://doi.org/10.3389/fpsyg.2021.716796",
+        "arxiv_id": null,
+        "title": "Influencing Factors of the Continuous Usage Intention of Consumers of Online Food Delivery Platform Based on an Information System Success Model",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 22% of the references (need 50%)"
+      },
+      {
+        "rank": 6,
+        "openalex_id": "https://openalex.org/W4281754296",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.873305",
+        "arxiv_id": null,
+        "title": "Gun Violence and Psychopathy Among Female Offenders",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 6% of the references (need 50%)"
+      },
+      {
+        "rank": 7,
+        "openalex_id": "https://openalex.org/W4284711986",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.877725",
+        "arxiv_id": null,
+        "title": "How Does Inclusive Leadership Curb Workers’ Emotional Exhaustion? The Mediation of Caring Ethical Climate and Psychological Safety",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 26% of the references (need 50%)"
+      },
+      {
+        "rank": 8,
+        "openalex_id": "https://openalex.org/W4220969218",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.837346",
+        "arxiv_id": null,
+        "title": "Facts Tell, Stories Sell? Assessing the Availability Heuristic and Resistance as Cognitive Mechanisms Underlying the Persuasive Effects of Vaccination Narratives",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 28% of the references (need 50%)"
+      },
+      {
+        "rank": 9,
+        "openalex_id": "https://openalex.org/W4295030842",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.901471",
+        "arxiv_id": null,
+        "title": "The impact of national values on the prevention and control of COVID-19: An empirical study",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "15 citing sentences (need 25-90)",
+        "citing_sentences": 15,
+        "parsed_from": "pdf",
+        "citations_mapped": "17/55"
+      },
+      {
+        "rank": 10,
+        "openalex_id": "https://openalex.org/W3209163804",
+        "doi": "https://doi.org/10.3389/fpsyg.2021.723518",
+        "arxiv_id": null,
+        "title": "“Everything Will Be All Right!” National and European Identification as Predictors of Positive Expectations for the Future During the COVID-19 Emergency",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 42% of the references (need 50%)"
+      },
+      {
+        "rank": 11,
+        "openalex_id": "https://openalex.org/W4298146538",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.857878",
+        "arxiv_id": null,
+        "title": "The reciprocal relationships between Chinese children’s perception of interparental conflict, negative thinking, and depression symptoms: A cross-lagged study",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 25% of the references (need 50%)"
+      },
+      {
+        "rank": 12,
+        "openalex_id": "https://openalex.org/W4291148792",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.984367",
+        "arxiv_id": null,
+        "title": "The effect of the video assistant referee (VAR) on referees' decisions at FIFA Women's World Cups",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 31% of the references (need 50%)"
+      },
+      {
+        "rank": 13,
+        "openalex_id": "https://openalex.org/W4313329019",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.999524",
+        "arxiv_id": null,
+        "title": "Perceived teacher support, peer relationship, and university students’ mental health: The mediation of reality and Internet altruistic behaviors",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 12% of the references (need 50%)"
+      },
+      {
+        "rank": 14,
+        "openalex_id": "https://openalex.org/W3135201953",
+        "doi": "https://doi.org/10.3389/fpsyg.2021.562381",
+        "arxiv_id": null,
+        "title": "Why Do We Take Risks? Perception of the Situation and Risk Proneness Predict Domain-Specific Risk Taking",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 14% of the references (need 50%)"
+      },
+      {
+        "rank": 15,
+        "openalex_id": "https://openalex.org/W4285744461",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.899381",
+        "arxiv_id": null,
+        "title": "Implementation of a Remote Instrumental Music Course Focused on Creativity, Interaction, and Bodily Movement. Preliminary Insights and Thematic Analysis",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 31% of the references (need 50%)"
+      },
+      {
+        "rank": 16,
+        "openalex_id": "https://openalex.org/W4213316822",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.840132",
+        "arxiv_id": null,
+        "title": "Comparing the Relative Importance of Predictors of Intention to Use Bicycles",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 30% of the references (need 50%)"
+      },
+      {
+        "rank": 17,
+        "openalex_id": "https://openalex.org/W4313561448",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.1054907",
+        "arxiv_id": null,
+        "title": "A study on psychological stress assessment of higher educational institution’s students based on computer data mining technology",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 18% of the references (need 50%)"
+      },
+      {
+        "rank": 18,
+        "openalex_id": "https://openalex.org/W4280576140",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.899021",
+        "arxiv_id": null,
+        "title": "Policy Uncertainty, Official Social Capital, and the Effective Corporate Tax Rate—Evidence From Chinese Firms",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 29% of the references (need 50%)"
+      },
+      {
+        "rank": 19,
+        "openalex_id": "https://openalex.org/W4366828215",
+        "doi": "https://doi.org/10.3389/fpsyg.2023.1056535",
+        "arxiv_id": null,
+        "title": "The association of negative mood with automatic and effortful facial expression mimicry",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 19% of the references (need 50%)"
+      },
+      {
+        "rank": 20,
+        "openalex_id": "https://openalex.org/W3137367228",
+        "doi": "https://doi.org/10.3389/fpsyg.2021.641178",
+        "arxiv_id": null,
+        "title": "Mediation of Problematic Use in the Relationship Between Types of Internet Use and Subjective Well-Being in Schoolchildren",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 40% of the references (need 50%)"
+      },
+      {
+        "rank": 21,
+        "openalex_id": "https://openalex.org/W4319729163",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.1041016",
+        "arxiv_id": null,
+        "title": "Designing mindfulness information for interaction in social media: The role of information framing, health risk perception and lay theories of health",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 33% of the references (need 50%)"
+      },
+      {
+        "rank": 22,
+        "openalex_id": "https://openalex.org/W4288489473",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.927847",
+        "arxiv_id": null,
+        "title": "Bias in measurement of autism symptoms by spoken language level and non-verbal mental age in minimally verbal children with neurodevelopmental disorders",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 27% of the references (need 50%)"
+      },
+      {
+        "rank": 23,
+        "openalex_id": "https://openalex.org/W4367854090",
+        "doi": "https://doi.org/10.3389/fpsyg.2023.1116686",
+        "arxiv_id": null,
+        "title": "Men's perception of current and ideal body composition and the influence of media internalization on body judgements",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 30% of the references (need 50%)"
+      },
+      {
+        "rank": 24,
+        "openalex_id": "https://openalex.org/W4283374254",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.812447",
+        "arxiv_id": null,
+        "title": "Teachers’ Adoption of Emotions-Based Learning Outcomes: Significance of Teachers’ Competence, Creative Performance, and University Performance",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 26% of the references (need 50%)"
+      },
+      {
+        "rank": 25,
+        "openalex_id": "https://openalex.org/W4308322089",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.962934",
+        "arxiv_id": null,
+        "title": "The dark side of sexism in Argentina: Psychometric properties of the Short Dark Triad Personality measure and its relation with ambivalent sexism",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 14% of the references (need 50%)"
+      },
+      {
+        "rank": 26,
+        "openalex_id": "https://openalex.org/W3128889630",
+        "doi": "https://doi.org/10.3389/fpsyg.2020.581968",
+        "arxiv_id": null,
+        "title": "Orde ab Chao Method for Disruptive Innovations Creation (With COVID-19 Pandemic Case Application)",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 15% of the references (need 50%)"
+      },
+      {
+        "rank": 27,
+        "openalex_id": "https://openalex.org/W4281390190",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.901412",
+        "arxiv_id": null,
+        "title": "How Accurate Is Your Correlation? Different Methods Derive Different Results and Different Interpretations",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 7% of the references (need 50%)"
+      },
+      {
+        "rank": 28,
+        "openalex_id": "https://openalex.org/W4301585345",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.1031767",
+        "arxiv_id": null,
+        "title": "Opinion: Understanding EAP learners' beliefs about language learning from a socio-cultural perspective : A longitudinal study at an EMI context in mainland China",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 17% of the references (need 50%)"
+      },
+      {
+        "rank": 29,
+        "openalex_id": "https://openalex.org/W4281961049",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.852792",
+        "arxiv_id": null,
+        "title": "Convergence or Divergence: Preferences for Establishing an Unemployment Subsidy During the COVID-19 Period by Taxing Across Earnings Redistribution in Urban China",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 35% of the references (need 50%)"
+      },
+      {
+        "rank": 30,
+        "openalex_id": "https://openalex.org/W4313641498",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.1090244",
+        "arxiv_id": null,
+        "title": "Psychological distress, emotion regulation, neuroticism, and sexual relationship on patients with temporary ejaculation failure in vitro fertilization-embryo transfer treatment",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 25% of the references (need 50%)"
+      },
+      {
+        "rank": 31,
+        "openalex_id": "https://openalex.org/W4381660886",
+        "doi": "https://doi.org/10.3389/fpsyg.2023.1112076",
+        "arxiv_id": null,
+        "title": "“Get on with it. Cope.” The compassion-experience during COVID-19 in UK universities",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 33% of the references (need 50%)"
+      },
+      {
+        "rank": 32,
+        "openalex_id": "https://openalex.org/W4387968465",
+        "doi": "https://doi.org/10.3389/fpsyg.2023.1165713",
+        "arxiv_id": null,
+        "title": "Putting the individual in the context of the organization: A Carnegie perspective on decision-making",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 11% of the references (need 50%)"
+      },
+      {
+        "rank": 33,
+        "openalex_id": "https://openalex.org/W4319748496",
+        "doi": "https://doi.org/10.3389/fpsyg.2023.831862",
+        "arxiv_id": null,
+        "title": "The influence of the COVID-19 pandemic on work connectivity behavior",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 20% of the references (need 50%)"
+      },
+      {
+        "rank": 34,
+        "openalex_id": "https://openalex.org/W3183457127",
+        "doi": "https://doi.org/10.3389/fpsyg.2021.700514",
+        "arxiv_id": null,
+        "title": "Recent Advances in Smellscape Research for the Built Environment",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 35% of the references (need 50%)"
+      },
+      {
+        "rank": 35,
+        "openalex_id": "https://openalex.org/W4285090866",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.789252",
+        "arxiv_id": null,
+        "title": "Correlation Between Learning Motivation and Satisfaction in Synchronous On-the-Job Online Training in the Public Sector",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 25% of the references (need 50%)"
+      },
+      {
+        "rank": 36,
+        "openalex_id": "https://openalex.org/W3215745214",
+        "doi": "https://doi.org/10.3389/fpsyg.2021.779041",
+        "arxiv_id": null,
+        "title": "Concurrent Validity of the Adult Eating Behavior Questionnaire in a Canadian Sample",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 47% of the references (need 50%)"
+      },
+      {
+        "rank": 37,
+        "openalex_id": "https://openalex.org/W4220658461",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.822725",
+        "arxiv_id": null,
+        "title": "Childhood Disorder: Dysregulated Self-Conscious Emotions? Psychopathological Correlates of Implicit and Explicit Shame and Guilt in Clinical and Non-clinical Children and Adolescents",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 19% of the references (need 50%)"
+      },
+      {
+        "rank": 38,
+        "openalex_id": "https://openalex.org/W4387117284",
+        "doi": "https://doi.org/10.3389/fpsyg.2023.1244480",
+        "arxiv_id": null,
+        "title": "Why human olfaction should not be modeled on theories and tasks of vision",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 32% of the references (need 50%)"
+      },
+      {
+        "rank": 39,
+        "openalex_id": "https://openalex.org/W4385439766",
+        "doi": "https://doi.org/10.3389/fpsyg.2023.1186984",
+        "arxiv_id": null,
+        "title": "Resilience mediates the effect of peer victimization on quality of life in Chongqing adolescents: from a perspective of positive childhood experiences",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 36% of the references (need 50%)"
+      },
+      {
+        "rank": 40,
+        "openalex_id": "https://openalex.org/W4310474128",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.1015497",
+        "arxiv_id": null,
+        "title": "Pain as a risk factor of depression and anxiety symptoms with multiple myeloma during maintenance therapy",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 32% of the references (need 50%)"
+      },
+      {
+        "rank": 41,
+        "openalex_id": "https://openalex.org/W4379141777",
+        "doi": "https://doi.org/10.3389/fpsyg.2023.1187153",
+        "arxiv_id": null,
+        "title": "Inducing and disrupting flow during music performance",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 23% of the references (need 50%)"
+      },
+      {
+        "rank": 42,
+        "openalex_id": "https://openalex.org/W4206979448",
+        "doi": "https://doi.org/10.3389/fpsyg.2021.731618",
+        "arxiv_id": null,
+        "title": "Remote Data Collection During a Pandemic: A New Approach for Assessing and Coding Multisensory Attention Skills in Infants and Young Children",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 25% of the references (need 50%)"
+      },
+      {
+        "rank": 43,
+        "openalex_id": "https://openalex.org/W4224939155",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.865123",
+        "arxiv_id": null,
+        "title": "The Influence of Psychological Safety on Students’ Creativity in Project-Based Learning: The Mediating Role of Psychological Empowerment",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 19% of the references (need 50%)"
+      },
+      {
+        "rank": 44,
+        "openalex_id": "https://openalex.org/W4386443689",
+        "doi": "https://doi.org/10.3389/fpsyg.2023.1218636",
+        "arxiv_id": null,
+        "title": "Social support: mediating the emotional intelligence-academic stress link",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 29% of the references (need 50%)"
+      },
+      {
+        "rank": 45,
+        "openalex_id": "https://openalex.org/W3197675935",
+        "doi": "https://doi.org/10.3389/fpsyg.2021.539555",
+        "arxiv_id": null,
+        "title": "Bodies in the Novel Infinite Jest",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 19% of the references (need 50%)"
+      },
+      {
+        "rank": 46,
+        "openalex_id": "https://openalex.org/W4308320748",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.1042383",
+        "arxiv_id": null,
+        "title": "The knowledge produced through student drawings",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 19% of the references (need 50%)"
+      },
+      {
+        "rank": 47,
+        "openalex_id": "https://openalex.org/W4310208846",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.1054292",
+        "arxiv_id": null,
+        "title": "The Qwantify app dataset: A remote experience sampling study of desire, emotion, and well-being",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 22% of the references (need 50%)"
+      },
+      {
+        "rank": 48,
+        "openalex_id": "https://openalex.org/W3193708869",
+        "doi": "https://doi.org/10.3389/fpsyg.2021.683870",
+        "arxiv_id": null,
+        "title": "Enhancing Organizational Memory Through Virtual Memoryscapes: Does It Work?",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 29% of the references (need 50%)"
+      },
+      {
+        "rank": 49,
+        "openalex_id": "https://openalex.org/W4317727241",
+        "doi": "https://doi.org/10.3389/fpsyg.2023.1031294",
+        "arxiv_id": null,
+        "title": "The impact of the digital economy on enterprise innovation behavior: Based on CiteSpace knowledge graph analysis",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 32% of the references (need 50%)"
+      },
+      {
+        "rank": 50,
+        "openalex_id": "https://openalex.org/W3209071175",
+        "doi": "https://doi.org/10.3389/fpsyg.2021.734484",
+        "arxiv_id": null,
+        "title": "The Relationship Between Preschool Teachers’ Proactive Personality and Innovative Behavior: The Chain-Mediated Role of Error Management Climate and Self-Efficacy",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 14% of the references (need 50%)"
+      },
+      {
+        "rank": 51,
+        "openalex_id": "https://openalex.org/W4212878294",
+        "doi": "https://doi.org/10.3389/fpsyg.2021.786249",
+        "arxiv_id": null,
+        "title": "Why Do Students Procrastinate More in Some Courses Than in Others and What Happens Next? Expanding the Multilevel Perspective on Procrastination",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 9% of the references (need 50%)"
+      },
+      {
+        "rank": 52,
+        "openalex_id": "https://openalex.org/W4308418035",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.997213",
+        "arxiv_id": null,
+        "title": "The predictive ability of emotional creativity in motivation for adaptive innovation among university professors under COVID-19 epidemic: An international study",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 35% of the references (need 50%)"
+      },
+      {
+        "rank": 53,
+        "openalex_id": "https://openalex.org/W3118758894",
+        "doi": "https://doi.org/10.3389/fpsyg.2020.464774",
+        "arxiv_id": null,
+        "title": "Caught in the Middle: How and When Psychological Contract Breach by Subordinates Relates to Weekly Emotional Exhaustion of Supervisors",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 18% of the references (need 50%)"
+      },
+      {
+        "rank": 54,
+        "openalex_id": "https://openalex.org/W4297383376",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.984106",
+        "arxiv_id": null,
+        "title": "Association between bodyweight perception, nutritional status, and weight control practices: A cross-sectional analysis from the Chilean Health Survey 2016–2017",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 43% of the references (need 50%)"
+      },
+      {
+        "rank": 55,
+        "openalex_id": "https://openalex.org/W4283753879",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.871025",
+        "arxiv_id": null,
+        "title": "Red Tape and Community Workers’ Proactive Behavior During COVID-19: Applying the Job Demands–Resources Model",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 26% of the references (need 50%)"
+      },
+      {
+        "rank": 56,
+        "openalex_id": "https://openalex.org/W4321376524",
+        "doi": "https://doi.org/10.3389/fpsyg.2023.1140480",
+        "arxiv_id": null,
+        "title": "Category characteristics of high school students’ sense of hope and its relationship with mental health",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 8% of the references (need 50%)"
+      },
+      {
+        "rank": 57,
+        "openalex_id": "https://openalex.org/W4290802391",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.989432",
+        "arxiv_id": null,
+        "title": "To adjust or not to adjust: Cut-off scores in performance validity testing in Portuguese older adults with dementia",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 25% of the references (need 50%)"
+      },
+      {
+        "rank": 58,
+        "openalex_id": "https://openalex.org/W4315782045",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.1065059",
+        "arxiv_id": null,
+        "title": "Intention to consume news via personal social media network and political trust among young people: The evidence from Hong Kong",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 15% of the references (need 50%)"
+      },
+      {
+        "rank": 59,
+        "openalex_id": "https://openalex.org/W4313408295",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.1014818",
+        "arxiv_id": null,
+        "title": "Sensehacking the guest’s multisensory hotel experience",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 26% of the references (need 50%)"
+      },
+      {
+        "rank": 60,
+        "openalex_id": "https://openalex.org/W4312173377",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.1053135",
+        "arxiv_id": null,
+        "title": "The impact of price transparency of bundled vacation packages on travel decision making: An experimental study",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 16% of the references (need 50%)"
+      },
+      {
+        "rank": 61,
+        "openalex_id": "https://openalex.org/W4308125776",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.993609",
+        "arxiv_id": null,
+        "title": "Perceived posttraumatic growth after interpersonal trauma and subsequent well-being among young Colombian adults: A longitudinal analysis",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 30% of the references (need 50%)"
+      },
+      {
+        "rank": 62,
+        "openalex_id": "https://openalex.org/W4376279758",
+        "doi": "https://doi.org/10.3389/fpsyg.2023.1042710",
+        "arxiv_id": null,
+        "title": "Are two naïve and distributed heads better than one? Factors influencing the performance of teams in a challenging real-time task",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 11% of the references (need 50%)"
+      },
+      {
+        "rank": 63,
+        "openalex_id": "https://openalex.org/W3130153528",
+        "doi": "https://doi.org/10.3389/fpsyg.2021.636384",
+        "arxiv_id": null,
+        "title": "Hindu Response to Dying and Death in the Time of COVID-19",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "7 citing sentences (need 25-90)",
+        "citing_sentences": 7,
+        "parsed_from": "pdf",
+        "citations_mapped": "9/9"
+      },
+      {
+        "rank": 64,
+        "openalex_id": "https://openalex.org/W3194828561",
+        "doi": "https://doi.org/10.3389/fpsyg.2021.698413",
+        "arxiv_id": null,
+        "title": "Bedtime Smart Phone Usage and Its Effects on Work-Related Behaviour at Workplace",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 38% of the references (need 50%)"
+      },
+      {
+        "rank": 65,
+        "openalex_id": "https://openalex.org/W4386734213",
+        "doi": "https://doi.org/10.3389/fpsyg.2023.1165039",
+        "arxiv_id": null,
+        "title": "Evaluation of misinformation among pro-Ukrainian Latvians – the role of prior attitude, analytical thinking, and emotions",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 33% of the references (need 50%)"
+      },
+      {
+        "rank": 66,
+        "openalex_id": "https://openalex.org/W4281606681",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.754233",
+        "arxiv_id": null,
+        "title": "Critical Faculty and Peer Instructor Development: Core Components for Building Inclusive STEM Programs in Higher Education",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 21% of the references (need 50%)"
+      },
+      {
+        "rank": 67,
+        "openalex_id": "https://openalex.org/W4377220592",
+        "doi": "https://doi.org/10.3389/fpsyg.2023.1180379",
+        "arxiv_id": null,
+        "title": "Momentary engagement in simultaneous versus consecutive interpreting: through the lens of translanguaging and CDST",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 24% of the references (need 50%)"
+      },
+      {
+        "rank": 68,
+        "openalex_id": "https://openalex.org/W3214950440",
+        "doi": "https://doi.org/10.3389/fpsyg.2021.763746",
+        "arxiv_id": null,
+        "title": "Supervisor-Subordinate Age Dissimilarity and Its Impact on Supervisory Ratings of Employability: Does Supportive Learning Context Make a Difference?",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 26% of the references (need 50%)"
+      },
+      {
+        "rank": 69,
+        "openalex_id": "https://openalex.org/W4220653517",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.849303",
+        "arxiv_id": null,
+        "title": "Confirming the Validity of the School-Refusal Assessment Scale—Revised in a Sample of Children With Attention-Deficit/Hyperactivity Disorder",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 28% of the references (need 50%)"
+      },
+      {
+        "rank": 70,
+        "openalex_id": "https://openalex.org/W4366548263",
+        "doi": "https://doi.org/10.3389/fpsyg.2023.1107080",
+        "arxiv_id": null,
+        "title": "Detection and analysis of graduate students’ academic emotions in the online academic forum based on text mining with a deep learning approach",
+        "year": 2023,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 23% of the references (need 50%)"
+      },
+      {
+        "rank": 71,
+        "openalex_id": "https://openalex.org/W3134294410",
+        "doi": "https://doi.org/10.3389/fpsyg.2021.585557",
+        "arxiv_id": null,
+        "title": "A Qualitative Exploration of Aged-Care Residents’ Everyday Music Listening Practices and How These May Support Psychosocial Well-Being",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 28% of the references (need 50%)"
+      },
+      {
+        "rank": 72,
+        "openalex_id": "https://openalex.org/W3161559304",
+        "doi": "https://doi.org/10.3389/fpsyg.2021.651136",
+        "arxiv_id": null,
+        "title": "A Teleneuropsychology Protocol for the Cognitive Assessment of Older Adults During COVID-19",
+        "year": 2021,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 15% of the references (need 50%)"
+      },
+      {
+        "rank": 73,
+        "openalex_id": "https://openalex.org/W4226108907",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.808379",
+        "arxiv_id": null,
+        "title": "Poorer Well-Being in Children With Misophonia: Evidence From the Sussex Misophonia Scale for Adolescents",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 36% of the references (need 50%)"
+      },
+      {
+        "rank": 74,
+        "openalex_id": "https://openalex.org/W4296109446",
+        "doi": "https://doi.org/10.3389/fpsyg.2022.986450",
+        "arxiv_id": null,
+        "title": "First language translation involvement in second language word processing",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 23% of the references (need 50%)"
+      },
+      {
+        "rank": 75,
+        "openalex_id": "https://openalex.org/W4205788670",
+        "doi": "https://doi.org/10.3389/fpsyg.2021.698176",
+        "arxiv_id": null,
+        "title": "Children’s Internet Use, Self-Reported Life Satisfaction, and Parental Mediation in Europe: An Analysis of the EU Kids Online Dataset",
+        "year": 2022,
+        "decision": "rejected",
+        "reason": "OpenAlex lists open full text for 34% of the references (need 50%)"
+      }
+    ],
+    "psych-plos": [
+      {
+        "rank": 1,
+        "openalex_id": "https://openalex.org/W4385064347",
+        "doi": "https://doi.org/10.1371/journal.pone.0288609",
+        "arxiv_id": null,
+        "title": "Respected but stigmatized: Healthcare workers caring for COVID-19 patients",
+        "year": 2023,
+        "decision": "accepted",
+        "reason": "accepted",
+        "citing_sentences": 33,
+        "parsed_from": "pdf",
+        "citations_mapped": "40/40",
+        "coverage": "Full text found for 26 of 41 references · abstract only for 2 · unavailable for 13."
+      }
+    ]
+  },
+  "papers": [
+    {
+      "slug": "ml-2208.01063",
+      "stratum": "ml",
+      "field": "Physics: quantum computing (drawn from the machine-learning stratum)",
+      "kind": "arxiv",
+      "title": "Real-Time Krylov Theory for Quantum Computing Algorithms",
+      "arxiv_id": "2208.01063v3",
+      "doi": "10.22331/q-2023-07-25-1066",
+      "openalex_id": "https://openalex.org/W4385255027",
+      "sample_rank": 3,
+      "citing_sentences": 31,
+      "parsed_from": "latex",
+      "citations_mapped": "60/60",
+      "coverage": "Full text found for 43 of 60 references · abstract only for 13 · unavailable for 4.",
+      "field_note": "OpenAlex files this paper under Artificial Intelligence; it is quantum computing. Kept: the protocol takes the first paper that passes.",
+      "baseline_job": "9143f8869e2a",
+      "planted": 8,
+      "plant_candidates": {
+        "citation_swap": 29,
+        "number_change": 0,
+        "scope_inflation": 3,
+        "hedge_removal": 0
+      },
+      "baseline_flags": 5,
+      "baseline_cost_usd": 0.459,
+      "pipeline_version": 1,
+      "eval_job": "759d71ca65f3",
+      "eval_wall_seconds": 156.5,
+      "dev_job": "cb993b1f0f97"
+    },
+    {
+      "slug": "cv-2106.05735",
+      "stratum": "cv",
+      "field": "Computer science: computer vision",
+      "kind": "arxiv",
+      "title": "The Medical Segmentation Decathlon",
+      "arxiv_id": "2106.05735v1",
+      "doi": "10.1038/s41467-022-30695-9",
+      "openalex_id": "https://openalex.org/W3172681723",
+      "sample_rank": 6,
+      "citing_sentences": 46,
+      "parsed_from": "latex",
+      "citations_mapped": "44/44",
+      "coverage": "Full text found for 23 of 44 references · abstract only for 4 · unavailable for 17.",
+      "baseline_job": "ca2f1ceaa65f",
+      "planted": 6,
+      "plant_candidates": {
+        "citation_swap": 30,
+        "number_change": 0,
+        "scope_inflation": 2,
+        "hedge_removal": 0
+      },
+      "baseline_flags": 7,
+      "baseline_cost_usd": 0.465,
+      "pipeline_version": 1,
+      "eval_job": "7b456fc70151",
+      "eval_wall_seconds": 177.7,
+      "dev_job": "b238bcd360dd"
+    },
+    {
+      "slug": "astro-2304.13057",
+      "stratum": "astro",
+      "field": "Physics: astronomy and astrophysics",
+      "kind": "arxiv",
+      "title": "On the evolution of the size of Lyman alpha halos across cosmic time: no change in the circumgalactic gas distribution when probed by line emission",
+      "arxiv_id": "2304.13057v1",
+      "doi": "10.1093/mnras/stad1264",
+      "openalex_id": "https://openalex.org/W4367318146",
+      "sample_rank": 1,
+      "citing_sentences": 71,
+      "parsed_from": "latex",
+      "citations_mapped": "67/67",
+      "coverage": "Full text found for 56 of 64 references · abstract only for 4 · unavailable for 4.",
+      "baseline_job": "ef38987e38db",
+      "planted": 10,
+      "plant_candidates": {
+        "citation_swap": 117,
+        "number_change": 0,
+        "scope_inflation": 3,
+        "hedge_removal": 0
+      },
+      "baseline_flags": 31,
+      "baseline_cost_usd": 1.734,
+      "pipeline_version": 1,
+      "eval_job": "a4fa095dd338",
+      "eval_wall_seconds": 206.3,
+      "dev_job": "84fcff0b6778"
+    },
+    {
+      "slug": "medicine-journal.pone.0267015",
+      "stratum": "medicine",
+      "field": "Medicine",
+      "kind": "pdf",
+      "title": "Perinatal care in Western Uganda: Prevalence and factors associated with appropriate care among women attending three district hospitals",
+      "arxiv_id": null,
+      "doi": "10.1371/journal.pone.0267015",
+      "openalex_id": "https://openalex.org/W4281718737",
+      "sample_rank": 26,
+      "citing_sentences": 32,
+      "parsed_from": "pdf",
+      "citations_mapped": "40/40",
+      "coverage": "Full text found for 22 of 40 references · abstract only for 3 · unavailable for 15.",
+      "baseline_job": "a1802b689c20",
+      "planted": 3,
+      "plant_candidates": {
+        "citation_swap": 14,
+        "number_change": 0,
+        "scope_inflation": 3,
+        "hedge_removal": 0
+      },
+      "baseline_flags": 6,
+      "baseline_cost_usd": 0.138,
+      "pipeline_version": 1,
+      "eval_job": "f246e98fe9b9",
+      "eval_wall_seconds": 182.0,
+      "dev_job": "df87f206a4f0"
+    },
+    {
+      "slug": "biology-elife.87318",
+      "stratum": "biology",
+      "field": "Biology / neuroscience",
+      "kind": "pdf",
+      "title": "Primaquine in glucose-6-phosphate dehydrogenase deficiency: an adaptive pharmacometric assessment of ascending dose regimens in healthy volunteers",
+      "arxiv_id": null,
+      "doi": "10.7554/elife.87318",
+      "openalex_id": "https://openalex.org/W4384205517",
+      "sample_rank": 42,
+      "citing_sentences": 31,
+      "parsed_from": "pdf",
+      "citations_mapped": "24/28",
+      "coverage": "Full text found for 14 of 24 references · abstract only for 2 · unavailable for 8.",
+      "baseline_job": "288cc63d416e",
+      "planted": 7,
+      "plant_candidates": {
+        "citation_swap": 27,
+        "number_change": 0,
+        "scope_inflation": 5,
+        "hedge_removal": 1
+      },
+      "baseline_flags": 11,
+      "baseline_cost_usd": 0.184,
+      "pipeline_version": 1,
+      "eval_job": "64b986524ded",
+      "eval_wall_seconds": 211.3,
+      "dev_job": "8e6013b1f88f"
+    },
+    {
+      "slug": "psych-plos-journal.pone.0288609",
+      "stratum": "psych-plos",
+      "field": "Psychology",
+      "kind": "pdf",
+      "title": "Respected but stigmatized: Healthcare workers caring for COVID-19 patients",
+      "arxiv_id": null,
+      "doi": "10.1371/journal.pone.0288609",
+      "openalex_id": "https://openalex.org/W4385064347",
+      "sample_rank": 1,
+      "citing_sentences": 33,
+      "parsed_from": "pdf",
+      "citations_mapped": "40/40",
+      "coverage": "Full text found for 26 of 41 references · abstract only for 2 · unavailable for 13.",
+      "baseline_job": "a1174425d7ad",
+      "planted": 10,
+      "plant_candidates": {
+        "citation_swap": 30,
+        "number_change": 3,
+        "scope_inflation": 11,
+        "hedge_removal": 2
+      },
+      "baseline_flags": 7,
+      "baseline_cost_usd": 0.194,
+      "pipeline_version": 1,
+      "eval_job": "3d93337c80c1",
+      "eval_wall_seconds": 242.6,
+      "dev_job": "1b0591ce20d2"
+    }
+  ],
+  "notes": [
+    "2026-10-07: screening of the medicine stratum showed the resolver obtained far less open full text than OpenAlex lists (publisher sites refuse automated downloads). Europe PMC full text (JATS XML) was added to the resolver before any planting or scoring, and the 7 candidates rejected for low resolver coverage were screened again with it. Rejections from the OpenAlex pre-screen do not depend on the resolver and stand.",
+    "2026-10-08: the Frontiers in Psychology stratum had no eligible paper in its three samples (75 candidates; 73 failed the OpenAlex open-full-text pre-screen). Reported as empty, per the rule fixed before screening; psychology is represented by the PLOS ONE stratum.",
+    "2026-10-08: the first planting pass gave only 36 errors (ml-2208.01063: 6, cv-2106.05735: 3, astro-2304.13057: 7, medicine-journal.pone.0267015: 3, biology-elife.87318: 7, psych-plos-journal.pone.0288609: 10), mostly because citation swaps could only use each citation's single least related reference and those collide across citations. Before any evaluation run, swaps were allowed to use any of the 5 least related references that are still at least 0.15 less similar than the original (each target used once), and the papers were planted again on the same baseline checks. The demo keeps the original rule (reproduced exactly).",
+    "2026-10-08: reading the planted edits (before any evaluation run) showed two planting problems: the scope phrases were written for the ML demo paper ('across all tasks and model sizes' in a malaria paper), and deleting 'likely' from 'most likely' left an ungrammatical sentence. The held-out set now uses field-neutral scope phrases, hedge deletion skips words after a modifier ('most', 'more', 'very'...), and the papers were planted again on the same baseline checks. The demo is unchanged (reproduced exactly)."
+  ],
+  "dev_baseline": {
+    "run": "cheap-fixes",
+    "commit": "23b9027",
+    "set_at": "2026-10-13T15:25:06+00:00"
+  }
+}

@@ -1,0 +1,224 @@
+{
+  "arxiv_id": "2303.00780v1",
+  "title": "Learning correlated noise in a 39-qubit quantum processor",
+  "field": "Computer science: machine learning",
+  "source": "10.1103/prxquantum.4.040311",
+  "planted": [
+    {
+      "id": "p1",
+      "sentence_id": "s2",
+      "reference_keys": [
+        "Gidney2021"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"universally, in all cases\" before the citation",
+      "original": "Current multi-qubit devices have single-qubit gates with average error rates around 10^-3 (Grzesiak et al., 2020; Huang et al., 2019; Chen et al., 2022; Ballance et al., 2016); this is orders of magnitude too high to directly execute the number of operations required for computations such as integer factoring (Gidney and Ekerå, 2021).",
+      "mutated": "Current multi-qubit devices have single-qubit gates with average error rates around 10^-3 (Grzesiak et al., 2020; Huang et al., 2019; Chen et al., 2022; Ballance et al., 2016); this is orders of magnitude too high to directly execute the number of operations required for computations such as integer factoring universally, in all cases (Gidney and Ekerå, 2021).",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p2",
+      "sentence_id": "s13",
+      "reference_keys": [
+        "Cao2019"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Bonilla Ataides et al., 2021) with (Cao et al., 2019) (\"Quantum Chemistry in the Age of Quantum Computing\") (similarity 0.26 vs 0.72 for the original)",
+      "original": "In this paper, we consider the standard (CSS) surface code with X- and Z-type stabilizer generators, although we note that more recent experiments on Google devices (Acharya et al., 2023) used the closely related XZZX code instead (Bonilla Ataides et al., 2021).",
+      "mutated": "In this paper, we consider the standard (CSS) surface code with X- and Z-type stabilizer generators, although we note that more recent experiments on Google devices (Acharya et al., 2023) used the closely related XZZX code instead (Cao et al., 2019).",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p3",
+      "sentence_id": "s19",
+      "reference_keys": [
+        "Arute2019"
+      ],
+      "mutation": "number_change",
+      "description": "Changed \"54\" to \"86\"",
+      "original": "We tested these ideas on Google's Sycamore device, a 54-qubit superconducting device of the type described in (Arute et al., 2019).",
+      "mutated": "We tested these ideas on Google's Sycamore device, a 86-qubit superconducting device of the type described in (Arute et al., 2019).",
+      "expected_labels": [
+        "overstated",
+        "contradicted",
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "number_drift"
+      ]
+    },
+    {
+      "id": "p4",
+      "sentence_id": "s23",
+      "reference_keys": [
+        "napp2013"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"without exception\" before the citation",
+      "original": "While problematic for larger systems, it might still be a valid methodology in systems with highly biased noise, where the proposed grid would be rectangular rather than square (Chamberland et al., 2022; Napp and Preskill, 2013).",
+      "mutated": "While problematic for larger systems, it might still be a valid methodology in systems with highly biased noise, where the proposed grid would be rectangular rather than square without exception (Chamberland et al., 2022; Napp and Preskill, 2013).",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p5",
+      "sentence_id": "s24",
+      "reference_keys": [
+        "Robeva2018"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Miao et al., 2022) with (Robeva and Seigal, 2018) (\"Duality of graphical models and tensor networks\") (similarity 0.21 vs 0.58 for the original)",
+      "original": "Examples include energy state leakage (Miao et al., 2022), leakage of control signals and qubit frequency crowding.",
+      "mutated": "Examples include energy state leakage (Robeva and Seigal, 2018), leakage of control signals and qubit frequency crowding.",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p6",
+      "sentence_id": "s28",
+      "reference_keys": [
+        "Versluis2017"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Tiurev et al., 2022) with (Versluis et al., 2017) (\"Scalable Quantum Circuit and Control for a Superconducting Surface Code\") (similarity 0.26 vs 0.47 for the original)",
+      "original": "While there is much work yet to be done to work out if actual knowledge of the noise can improve decoding success rates (Tiurev et al., 2022), this is not what we do here — rather the analysis below might be seen as setting out the base success rate, which such decoders might seek to improve on.",
+      "mutated": "While there is much work yet to be done to work out if actual knowledge of the noise can improve decoding success rates (Versluis et al., 2017), this is not what we do here — rather the analysis below might be seen as setting out the base success rate, which such decoders might seek to improve on.",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p7",
+      "sentence_id": "s29",
+      "reference_keys": [
+        "Chubb2021"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Chuang and Nielsen, 1997) with (Chubb, 2021) (\"General tensor network decoding of 2D Pauli codes\") (similarity 0.22 vs 0.50 for the original)",
+      "original": "Process tomography (Chuang and Nielsen, 1997) and its variants (Merkel et al., 2013; Blume-Kohout et al., 2016; Evans et al., 2022) remain an important tool in the characterization arsenal.",
+      "mutated": "Process tomography (Chubb, 2021) and its variants (Merkel et al., 2013; Blume-Kohout et al., 2016; Evans et al., 2022) remain an important tool in the characterization arsenal.",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p8",
+      "sentence_id": "s36",
+      "reference_keys": [
+        "Arute2019"
+      ],
+      "mutation": "number_change",
+      "description": "Changed \"54\" to \"86\"",
+      "original": "The device used in these experiments is the exactly the same 54 qubit sycamore processor as in Ref. (Arute et al., 2019).",
+      "mutated": "The device used in these experiments is the exactly the same 86 qubit sycamore processor as in Ref. (Arute et al., 2019).",
+      "expected_labels": [
+        "overstated",
+        "contradicted",
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "number_drift"
+      ]
+    },
+    {
+      "id": "p9",
+      "sentence_id": "s39",
+      "reference_keys": [
+        "Abbeel2012"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Harper et al., 2019) with (Abbeel et al., 2012) (\"Learning Factor Graphs in Polynomial Time & Sample Complexity\") (similarity 0.29 vs 0.60 for the original)",
+      "original": "Ref. (Harper et al., 2019) provides guidance but in general you want the largest m to to be large enough that most qubits have a marginalised survival rate that is ≈ 60%.",
+      "mutated": "Ref. (Abbeel et al., 2012) provides guidance but in general you want the largest m to to be large enough that most qubits have a marginalised survival rate that is ≈ 60%.",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p10",
+      "sentence_id": "s49",
+      "reference_keys": [
+        "zhao2022"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Abbeel et al., 2012) with (Zhao et al., 2022) (\"Realization of an Error-Correcting Surface Code with Superconducting Qubits\") (similarity 0.23 vs 0.50 for the original)",
+      "original": "While this calculation is predicated on the fact that the underlying probability distribution does indeed obey the global Markov global property (which will not necessarily be the case for the actual noise in the device), ref (Abbeel et al., 2012) shows (and our numerics indicate that in an experimental setting) the process degrades gracefully, i.e. the calculated approximation will indeed approximate the underlying probability distribution.",
+      "mutated": "While this calculation is predicated on the fact that the underlying probability distribution does indeed obey the global Markov global property (which will not necessarily be the case for the actual noise in the device), ref (Zhao et al., 2022) shows (and our numerics indicate that in an experimental setting) the process degrades gracefully, i.e. the calculated approximation will indeed approximate the underlying probability distribution.",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    }
+  ],
+  "baseline_flags": [
+    [
+      "s12",
+      "Bravyi2014",
+      "overstated"
+    ],
+    [
+      "s2",
+      "Grzesiak2020",
+      "overstated"
+    ],
+    [
+      "s2",
+      "Huang2019",
+      "overstated"
+    ],
+    [
+      "s2",
+      "ballance2016",
+      "overstated"
+    ],
+    [
+      "s2",
+      "chen2022",
+      "overstated"
+    ],
+    [
+      "s21",
+      "google2022",
+      "overstated"
+    ],
+    [
+      "s37",
+      "Arute2019",
+      "overstated"
+    ],
+    [
+      "s45",
+      "Nielsen2002",
+      "not_found"
+    ]
+  ]
+}

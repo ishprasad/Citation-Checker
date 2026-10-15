@@ -1,0 +1,326 @@
+{
+  "slug": "medicine-journal.pone.0292900",
+  "field": "Medicine",
+  "title": "Prevalence, attitudes, and practices of dietary supplements among middle-aged and older adults in Asir region, Saudi Arabia: A cross-sectional study",
+  "job_id": "d4e1ae55c1c3",
+  "scored_at": "2026-10-09T17:00:12+00:00",
+  "planted": 6,
+  "checked": 6,
+  "caught": 6,
+  "recall": 1.0,
+  "label_accuracy": 1.0,
+  "expected_mode_rate": 0.5,
+  "untouched_verdicts": 76,
+  "other_flags": 7,
+  "other_flags_preexisting": 7,
+  "precision": 0.46153846153846156,
+  "precision_excluding_preexisting": 1.0,
+  "by_mutation": {
+    "citation_swap": {
+      "planted": 2,
+      "caught": 2
+    },
+    "scope_inflation": {
+      "planted": 4,
+      "caught": 4
+    }
+  },
+  "flagged_citations": 7,
+  "review": {
+    "genuine": 2,
+    "false_alarm": 0,
+    "debatable": 5,
+    "unreviewed": 0
+  },
+  "review_details": {
+    "genuine": [
+      {
+        "sentence_id": "s10",
+        "reference_key": "r7",
+        "note": "The source says supplements have not been shown to benefit nutrient-sufficient adults in primary prevention; the citing sentence drops that qualifier, turning a statement about nutrient-sufficient adults into one about everyone (deficient people can benefit)."
+      },
+      {
+        "sentence_id": "s24",
+        "reference_key": "r28",
+        "note": "Cited for supplements being a vital source of essential nutrients, but the cited review concludes that supplement use seems unnecessary for athletes with a well-balanced diet and warns of contamination with doping agents."
+      }
+    ],
+    "false_alarm": [],
+    "debatable": [
+      {
+        "sentence_id": "s13",
+        "reference_key": "r9",
+        "note": "The Bangladeshi student survey reports low monthly costs of supplement use; ready availability and 'consumer compliance' as reasons for rising use are not visible in the text the checker read."
+      },
+      {
+        "sentence_id": "s17",
+        "reference_key": "r19",
+        "note": "Joint citation [19, 20]: the NHANES study of long-term multiple-supplement users reports prevalence at single time points, not rising popularity or awareness; weak support for a general background statement."
+      },
+      {
+        "sentence_id": "s24",
+        "reference_key": "r20",
+        "note": "Only the abstract of a prevalence study; it does not call supplements a vital source of essential nutrients, though a minority of users take them to ensure adequate nutrition."
+      },
+      {
+        "sentence_id": "s28",
+        "reference_key": "r26",
+        "note": "Only the abstract (motivations for supplement use among US adults, with older adults singled out) was available; the list of groups of concern may be in the full paper or from elsewhere."
+      },
+      {
+        "sentence_id": "s31",
+        "reference_key": "r32",
+        "note": "The Japanese study finds 70.3% of patients considered combining supplements and medicines safe; 'most users worldwide' generalises from Japan, possibly together with the co-cited [24]."
+      }
+    ],
+    "unreviewed": []
+  },
+  "precision_reviewed": 1.0,
+  "summary_line": "Caught 6 of 6 planted errors · 0 false alarms · 2 real citation problems found in the original paper",
+  "details": [
+    {
+      "id": "p1",
+      "sentence_id": "s4",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [4] with [11] (\"Knowledge and use of dietary supplements by students of College of Medicine, University of Lagos, Idi-Araba, Lagos, Nigeria\") (similarity 0.37 vs 0.58 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": true
+    },
+    {
+      "id": "p2",
+      "sentence_id": "s12",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"universally, in all cases\" before the citation",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [
+        "scope_inflation",
+        "secondary_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p3",
+      "sentence_id": "s21",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"in every population and setting\" before the citation",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [
+        "scope_inflation"
+      ],
+      "expected_mode_found": true,
+      "escalated": false
+    },
+    {
+      "id": "p4",
+      "sentence_id": "s34",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"without exception\" before the citation",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": false
+    },
+    {
+      "id": "p5",
+      "sentence_id": "s36",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [23] with [28] (\"Nutritional supplements: prevalence of use and contamination with doping agents\") (similarity 0.26 vs 0.45 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": true
+    },
+    {
+      "id": "p6",
+      "sentence_id": "s37",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"in every population and setting\" before the citation",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [
+        "scope_inflation"
+      ],
+      "expected_mode_found": true,
+      "escalated": false
+    }
+  ],
+  "verdicts": 83,
+  "escalation": {
+    "verdicts": 83,
+    "escalated": 4,
+    "label_changed": 0,
+    "transitions": {}
+  },
+  "coverage": {
+    "total": 35,
+    "full": 18,
+    "abstract_only": 10,
+    "unavailable": 7,
+    "retracted": 0,
+    "line": "Full text found for 18 of 35 references · abstract only for 10 · unavailable for 7."
+  },
+  "usage": {
+    "per_model": [
+      {
+        "model": "Qwen/Qwen3-Embedding-8B",
+        "role": "embed",
+        "calls": 4,
+        "cached_calls": 0,
+        "prompt_tokens": 199,
+        "completion_tokens": 0,
+        "estimated_cost_usd": 2e-06
+      },
+      {
+        "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+        "role": "escalate",
+        "calls": 4,
+        "cached_calls": 1,
+        "prompt_tokens": 54957,
+        "completion_tokens": 7740,
+        "estimated_cost_usd": 0.078177
+      },
+      {
+        "model": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+        "role": "extract",
+        "calls": 39,
+        "cached_calls": 30,
+        "prompt_tokens": 72726,
+        "completion_tokens": 3811,
+        "estimated_cost_usd": 0.005278
+      },
+      {
+        "model": "nvidia/nemotron-3-super-120b-a12b",
+        "role": "judge",
+        "calls": 65,
+        "cached_calls": 47,
+        "prompt_tokens": 316385,
+        "completion_tokens": 87831,
+        "estimated_cost_usd": 0.173963
+      }
+    ],
+    "total_prompt_tokens": 444267,
+    "total_completion_tokens": 99382,
+    "total_estimated_cost_usd": 0.25742
+  },
+  "baseline_cost_usd": 0.247,
+  "old_pipeline": {
+    "commit": "da5f9e3",
+    "job_id": "f458962e0609",
+    "cost_usd": 0.255839,
+    "planted": 6,
+    "checked": 6,
+    "caught": 6,
+    "recall": 1.0,
+    "label_accuracy": 1.0,
+    "expected_mode_rate": 0.6666666666666666,
+    "untouched_verdicts": 75,
+    "other_flags": 6,
+    "other_flags_preexisting": 5,
+    "precision": 0.5,
+    "precision_excluding_preexisting": 0.8571428571428571,
+    "by_mutation": {
+      "citation_swap": {
+        "planted": 2,
+        "caught": 2
+      },
+      "scope_inflation": {
+        "planted": 4,
+        "caught": 4
+      }
+    },
+    "flagged_citations": 6,
+    "review": {
+      "genuine": 2,
+      "false_alarm": 0,
+      "debatable": 4,
+      "unreviewed": 0
+    },
+    "review_details": {
+      "genuine": [
+        {
+          "sentence_id": "s10",
+          "reference_key": "r7",
+          "note": "The source says supplements have not been shown to benefit nutrient-sufficient adults in primary prevention; the citing sentence drops that qualifier, turning a statement about nutrient-sufficient adults into one about everyone (deficient people can benefit)."
+        },
+        {
+          "sentence_id": "s24",
+          "reference_key": "r28",
+          "note": "Cited for supplements being a vital source of essential nutrients, but the cited review concludes that supplement use seems unnecessary for athletes with a well-balanced diet and warns of contamination with doping agents."
+        }
+      ],
+      "false_alarm": [],
+      "debatable": [
+        {
+          "sentence_id": "s13",
+          "reference_key": "r9",
+          "note": "The Bangladeshi student survey reports low monthly costs of supplement use; ready availability and 'consumer compliance' as reasons for rising use are not visible in the text the checker read."
+        },
+        {
+          "sentence_id": "s17",
+          "reference_key": "r19",
+          "note": "Joint citation [19, 20]: the NHANES study of long-term multiple-supplement users reports prevalence at single time points, not rising popularity or awareness; weak support for a general background statement."
+        },
+        {
+          "sentence_id": "s23",
+          "reference_key": "r20",
+          "note": "Only the abstract (prevalence and reasons among Malaysian students, 10.5% 'to ensure adequate nutrition'); it neither supports nor contradicts the opinion that supplements' complementary role 'cannot be underestimated'."
+        },
+        {
+          "sentence_id": "s31",
+          "reference_key": "r32",
+          "note": "The Japanese study finds 70.3% of patients considered combining supplements and medicines safe; 'most users worldwide' generalises from Japan, possibly together with the co-cited [24]."
+        }
+      ],
+      "unreviewed": []
+    },
+    "precision_reviewed": 1.0,
+    "caught_ids": [
+      "p1",
+      "p2",
+      "p3",
+      "p4",
+      "p5",
+      "p6"
+    ]
+  },
+  "caught_ids": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p6"
+  ]
+}

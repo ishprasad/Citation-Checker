@@ -314,3 +314,34 @@ def test_identification_claims_fail_only_by_wrong_source_or_contradiction():
     assert apply_rules(out("contradicted", quote="We evaluate on 24 mice"), ident, FULL_REF, "super", [SOURCE]).label == "contradicted"
     sized = ident.model_copy(update={"numbers": ["6.7B"]})
     assert apply_rules(out("not_found"), sized, FULL_REF, "super", [SOURCE]).label == "not_found"
+
+
+def test_identification_leniency_needs_the_named_resource_in_the_cited_text():
+    # A swapped citation: the sentence names KCWI, the cited paper never mentions it.
+    ident = FINDING.model_copy(update={"claim_type": "method", "numbers": [], "claim_text": "We observe with KCWI"})
+    sentence = "The halos were observed with the Keck Cosmic Web Imager (KCWI) [12]."
+    named = out("not_found").model_copy(update={"signals": JudgeSignals(named_resource="KCWI")})
+    v = apply_rules(named, ident, FULL_REF, "super", [SOURCE], sentence_text=sentence)
+    assert v.label == "not_found" and "named_resource_absent" in v.flags
+    # Mentioned in the cited text (any case, punctuation): the leniency applies as before.
+    v = apply_rules(named, ident, FULL_REF, "super", [SOURCE + " Data were taken with kcwi."], sentence_text=sentence)
+    assert v.label == "unverifiable" and "identification_lenient" in v.flags
+    # A hyphenated name counts as mentioned when its first word is ("ImageNet-1k" in an ImageNet paper).
+    variant = named.model_copy(update={"signals": JudgeSignals(named_resource="ImageNet-1k")})
+    v = apply_rules(variant, ident, FULL_REF, "super", ["We introduce ImageNet."], sentence_text="trained on ImageNet-1k [3]")
+    assert v.label == "unverifiable"
+    # A name that is not in the sentence (a judge's description or invention) is ignored.
+    vague = named.model_copy(update={"signals": JudgeSignals(named_resource="the imaging spectrograph")})
+    assert apply_rules(vague, ident, FULL_REF, "super", [SOURCE], sentence_text=sentence).label == "unverifiable"
+    # Absence from an abstract alone proves nothing.
+    abstract_ref = FULL_REF.model_copy(update={"fulltext_status": "abstract_only"})
+    assert apply_rules(named, ident, abstract_ref, "super", [SOURCE], sentence_text=sentence).label == "unverifiable"
+
+
+def test_identification_leniency_not_for_a_source_that_lacks_the_method():
+    # "The correction factor given in [R1]" citing a paper that has no such correction factor.
+    ident = FINDING.model_copy(update={"claim_type": "method", "numbers": [],
+                                       "claim_text": "The correction factor given in R1 is used"})
+    wrong = out("not_found").model_copy(update={"signals": JudgeSignals(cited_work_provides_resource=False)})
+    v = apply_rules(wrong, ident, FULL_REF, "super", [SOURCE])
+    assert v.label == "not_found" and "resource_not_in_cited_work" in v.flags

@@ -40,7 +40,7 @@ SOURCE_EXTENSIONS = (".tex", ".bbl", ".bib", ".sty", ".ltx")
 MAX_SOURCE_FILE_BYTES = 5 * 1024 * 1024
 ATOM = "{http://www.w3.org/2005/Atom}"
 # Bump when parsing changes, so papers cached by the job runner are parsed again.
-INGEST_VERSION = 2
+INGEST_VERSION = 3
 
 
 class IngestError(Exception):

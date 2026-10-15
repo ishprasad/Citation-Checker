@@ -1,0 +1,217 @@
+{
+  "arxiv_id": "",
+  "title": "Respected but stigmatized: Healthcare workers caring for COVID-19 patients",
+  "field": "Psychology",
+  "source": "10.1371/journal.pone.0288609",
+  "planted": [
+    {
+      "id": "p1",
+      "sentence_id": "s3",
+      "reference_keys": [
+        "r9"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [3] with [9] (\"Mental health status of the general population, healthcare professionals, and university students during 2019 coronavirus disease outbreak in Jordan: A cross‐sectional study\") (similarity 0.43 vs 0.65 for the original)",
+      "original": "Furthermore, other Zimbabwean COVID-19 HCWs were requested to vacate their house after neighbours and the landlord found out they were sick with COVID-19 [3].",
+      "mutated": "Furthermore, other Zimbabwean COVID-19 HCWs were requested to vacate their house after neighbours and the landlord found out they were sick with COVID-19 [9].",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p2",
+      "sentence_id": "s8",
+      "reference_keys": [
+        "r7"
+      ],
+      "mutation": "hedge_removal",
+      "description": "Removed the hedge: \"may\" became \"will\"",
+      "original": "Stigma may fail to protect the public health as it can be an important driver of problematic behaviours that counteract the fight against an infectious disease [7].",
+      "mutated": "Stigma will fail to protect the public health as it can be an important driver of problematic behaviours that counteract the fight against an infectious disease [7].",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "hypothesis_as_finding"
+      ]
+    },
+    {
+      "id": "p3",
+      "sentence_id": "s14",
+      "reference_keys": [
+        "r22"
+      ],
+      "mutation": "number_change",
+      "description": "Changed \"28%\" to \"45%\"",
+      "original": "A systematic review showed that 28% of HCWs experienced stigma and 31% perceived stigma [22], which is comparable to studies reporting on COVID-19 HCWs (proportions ranging from 35%-57%) [23– 26].",
+      "mutated": "A systematic review showed that 45% of HCWs experienced stigma and 31% perceived stigma [22], which is comparable to studies reporting on COVID-19 HCWs (proportions ranging from 35%-57%) [23– 26].",
+      "expected_labels": [
+        "overstated",
+        "contradicted",
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "number_drift"
+      ]
+    },
+    {
+      "id": "p4",
+      "sentence_id": "s15",
+      "reference_keys": [
+        "r28"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [27] with [28] (\"Exploring the impact of COVID-19 on frontline health workers through a photovoice study in Kaduna, Kwara and Ogun States, Nigeria\") (similarity 0.37 vs 0.78 for the original)",
+      "original": "This is supported by a quantitative study from Mexico that showed perceived risk of contagion to be the main predictor of stigmatization [27].",
+      "mutated": "This is supported by a quantitative study from Mexico that showed perceived risk of contagion to be the main predictor of stigmatization [28].",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p5",
+      "sentence_id": "s18",
+      "reference_keys": [
+        "r31"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"in every population and setting\" before the citation",
+      "original": "For example, American COVID-19 described being refused entrance at a store or the hairdresser and encountering difficulties in conversations because of others “knowing better” about COVID-19 [31].",
+      "mutated": "For example, American COVID-19 described being refused entrance at a store or the hairdresser and encountering difficulties in conversations because of others “knowing better” about COVID-19 in every population and setting [31].",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p6",
+      "sentence_id": "s19",
+      "reference_keys": [
+        "r26"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"without exception\" before the citation",
+      "original": "Indian COVID-19 HCWs nondisclosed their jobs out of fear of stigmatization and felt guilty of exposing their family members to COVID-19 infection [26].",
+      "mutated": "Indian COVID-19 HCWs nondisclosed their jobs out of fear of stigmatization and felt guilty of exposing their family members to COVID-19 infection without exception [26].",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p7",
+      "sentence_id": "s24",
+      "reference_keys": [
+        "r22"
+      ],
+      "mutation": "hedge_removal",
+      "description": "Removed the hedge: \"may\" became \"will\"",
+      "original": "A systematic review showed that compared to people from high-income countries or with a high-level of education, people from low- and middle-income countries or with lower education are vulnerable populations who may have a greater risk of experiencing stigma [22].",
+      "mutated": "A systematic review showed that compared to people from high-income countries or with a high-level of education, people from low- and middle-income countries or with lower education are vulnerable populations who will have a greater risk of experiencing stigma [22].",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "hypothesis_as_finding"
+      ]
+    },
+    {
+      "id": "p8",
+      "sentence_id": "s27",
+      "reference_keys": [
+        "r15"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [38] with [15] (\"Mental Health of Physicians During COVID-19 Outbreak in Bangladesh: A Web-Based Cross-Sectional Survey\") (similarity 0.54 vs 0.81 for the original)",
+      "original": "Another review showed that social stigma was a predisposing risk factor for the development of burnout among intensive care nurses during the COVID-19 pandemic [38].",
+      "mutated": "Another review showed that social stigma was a predisposing risk factor for the development of burnout among intensive care nurses during the COVID-19 pandemic [15].",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p9",
+      "sentence_id": "s30",
+      "reference_keys": [
+        "r8"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [40] with [8] (\"“We All Really Need to just Take a Breath”: Composite Narratives of Hospital Doctors’ Well-Being during the COVID-19 Pandemic\") (similarity 0.49 vs 0.85 for the original)",
+      "original": "The association between COVID-19 stigmatization and job performance is partially mediated by anxiety [40].",
+      "mutated": "The association between COVID-19 stigmatization and job performance is partially mediated by anxiety [8].",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p10",
+      "sentence_id": "s32",
+      "reference_keys": [
+        "r19"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [28] with [19] (\"TB STIGMA – MEASUREMENT GUIDANCE\") (similarity 0.36 vs 0.61 for the original)",
+      "original": "Another interesting intervention is “Photovoices” in which participants document and share their experiences through photos: it provides a platform for healthcare workers to come together find support in each other [28].",
+      "mutated": "Another interesting intervention is “Photovoices” in which participants document and share their experiences through photos: it provides a platform for healthcare workers to come together find support in each other [19].",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    }
+  ],
+  "baseline_flags": [
+    [
+      "s14",
+      "r25",
+      "overstated"
+    ],
+    [
+      "s14",
+      "r26",
+      "not_found"
+    ],
+    [
+      "s4",
+      "r4",
+      "not_found"
+    ],
+    [
+      "s5",
+      "r5",
+      "not_found"
+    ],
+    [
+      "s9",
+      "r11",
+      "overstated"
+    ],
+    [
+      "s9",
+      "r8",
+      "overstated"
+    ],
+    [
+      "s9",
+      "r9",
+      "not_found"
+    ]
+  ]
+}

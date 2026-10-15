@@ -252,6 +252,13 @@ CAPTION_ENVS = {
     "table": "Table", "wraptable": "Table", "sidewaystable": "Table",
 }
 _CAPTION_RE = re.compile(r"\\caption\*?(?![A-Za-z])")
+# Tabular environments and how many arguments precede the rows ({lcc}; {width}{lcc}).
+TABULAR_SPEC_ARGS = {"tabular": 1, "tabular*": 2, "tabularx": 2, "tabulary": 2, "longtable": 1}
+_TABULAR_RE = re.compile(r"\\begin\s*\{(tabular\*?|tabularx|tabulary|longtable)\}")
+_TABLE_ROW_RE = re.compile(r"\\\\(?:\s*\[[^\]]*\])?|\\tabularnewline\b")
+_TABLE_RULE_RE = re.compile(r"\\(?:cline|cmidrule\s*(?:\([^)]*\))?)\s*\{[^}]*\}|\\(?:rowcolor|cellcolor)\s*(?:\[[^\]]*\])?\s*\{[^}]*\}")
+MAX_TABLE_ROWS = 80
+MAX_TABLE_CHARS = 6000
 LIST_ENVS = {"itemize", "enumerate", "description", "list", "compactitem", "compactenum"}
 ENV_ARGS = {"minipage": 1, "multicols": 1, "list": 2}
 
@@ -276,7 +283,11 @@ DROP_ARGS = {
     "affiliation": 1, "author": 1, "authorrunning": 1, "titlerunning": 1, "acmConference": 1,
 }
 # command -> number of leading brace arguments to discard before keeping the next one
-SKIP_THEN_KEEP = {"textcolor": 1, "colorbox": 1, "href": 1, "fcolorbox": 2, "foreignlanguage": 1}
+SKIP_THEN_KEEP = {
+    "textcolor": 1, "colorbox": 1, "href": 1, "fcolorbox": 2, "foreignlanguage": 1,
+    "bibinfo": 1, "bibfield": 1,  # elsarticle-style .bbl: \bibinfo{title}{nnU-Net: ...}
+    "multicolumn": 2, "multirow": 2,  # table cells
+}
 TYPED_REF_COMMANDS = {"autoref", "Autoref", "cref", "Cref", "vref"}
 REF_KINDS = {
     "fig": "Figure", "figure": "Figure", "tab": "Table", "table": "Table", "sec": "Section",
@@ -300,7 +311,7 @@ SYMBOLS = {
     "LaTeX": "LaTeX", "TeX": "TeX", "ss": "ß", "ae": "æ", "AE": "Æ", "oe": "œ", "OE": "Œ",
     "o": "ø", "O": "Ø", "l": "ł", "L": "Ł", "aa": "å", "AA": "Å", "i": "ı", "j": "ȷ",
     "textpercent": "%", "texttimes": "×", "textpm": "±", "textmu": "µ", "euro": "€",
-    "pounds": "£", "quad": " ", "qquad": " ", "enspace": " ", "space": " ", "newline": " ",
+    "pounds": "£", "arcsec": "″", "arcmin": "′", "farcs": "″", "quad": " ", "qquad": " ", "enspace": " ", "space": " ", "newline": " ",
     "linebreak": " ", "par": "\n\n", "noindent": "", "centering": "", "item": "",
 }
 
@@ -311,7 +322,13 @@ ACCENTS = {
 }
 
 MATH_SYMBOLS = {
-    "times": "×", "pm": "±", "mp": "∓", "sim": "~", "approx": "≈", "leq": "≤", "le": "≤",
+    # "∼", not "~": a tilde is read as a non-breaking space below.
+    "times": "×", "pm": "±", "mp": "∓", "sim": "∼", "approx": "≈", "leq": "≤", "le": "≤",
+    "lesssim": "≲", "gtrsim": "≳", "lapprox": "≲", "gapprox": "≳", "la": "≲", "ga": "≳",
+    "simeq": "≃", "cong": "≅", "equiv": "≡", "lt": "<", "gt": ">", "leqslant": "≤", "geqslant": "≥",
+    "odot": "⊙", "sun": "☉", "oplus": "⊕", "deg": "°", "arcsec": "″", "arcmin": "′", "AA": "Å",
+    "angstrom": "Å", "ell": "ℓ", "hbar": "ℏ", "ast": "*", "star": "⋆", "mid": "|",
+    ",": " ", ";": " ", ":": " ", " ": " ", "!": "",  # math spacing
     "geq": "≥", "ge": "≥", "neq": "≠", "ne": "≠", "cdot": "·", "cdots": "⋯", "ldots": "…",
     "dots": "…", "infty": "∞", "rightarrow": "→", "to": "→", "leftarrow": "←", "Rightarrow": "⇒",
     "in": "∈", "subset": "⊂", "subseteq": "⊆", "cup": "∪", "cap": "∩", "sum": "∑", "prod": "∏",
@@ -646,10 +663,10 @@ class LatexConverter:
             end = len(src) if end == -1 else end
             self.emit(simplify_math(src[i + 2 : end]))
             return end + 2
-        if c in " \n\t":
+        if c in " \n\t,;:":  # \, is a thin space: "5\,kpc" -> "5 kpc"
             self.space()
             return i + 2
-        return i + 2  # \, \; \! \@ \/ etc.
+        return i + 2  # \! \@ \/ etc.
 
     def _accent(self, src: str, i: int, accent: str) -> int:
         arg, j = self._arg(src, i)
@@ -688,6 +705,35 @@ class LatexConverter:
             self._sub(caption)
             self.para()
 
+    def _tabular_lines(self, name: str, body: str) -> list[str]:
+        """Rows of one tabular environment (`body` starts right after \\begin{name})."""
+        body = body[: body.rfind("\\end")] if "\\end" in body else body
+        _, j = self._opt_args(body, 0, 1)
+        for _ in range(TABULAR_SPEC_ARGS[name]):
+            _, j = self._arg(body, j)
+        lines = []
+        for row in _TABLE_ROW_RE.split(_TABLE_RULE_RE.sub(" ", body[j:])):
+            cells = [latex_to_plain(cell) for cell in re.split(r"(?<!\\)&", row)]
+            if any(cells):
+                lines.append(" | ".join(cells).strip(" |"))
+        return lines
+
+    def _table_rows(self, env_src: str, name: Optional[str] = None) -> None:
+        """Table contents as "cell | cell" lines: cited numbers are often only in a table.
+        `env_src` is a table float's body, or with `name` the body of a bare tabular."""
+        lines: list[str] = []
+        if name:
+            lines = self._tabular_lines(name, env_src)
+        for m in _TABULAR_RE.finditer(env_src if not name else ""):
+            end = _find_env_end(env_src, m.end(), m.group(1))
+            lines += self._tabular_lines(m.group(1), env_src[m.end() : end])
+        text = "\n".join(lines[:MAX_TABLE_ROWS])[:MAX_TABLE_CHARS]
+        if text:
+            self.para()
+            self._flush()
+            self._write(text)
+            self.para()
+
     def _begin(self, src: str, i: int) -> int:
         env, i = self._arg(src, i)
         env = (env or "").strip()
@@ -699,6 +745,10 @@ class LatexConverter:
                 self.para()
                 if self.keep_captions and env.rstrip("*") in CAPTION_ENVS:
                     self._captions(src[i:end], CAPTION_ENVS[env.rstrip("*")])
+                if self.keep_captions and env in TABULAR_SPEC_ARGS:
+                    self._table_rows(src[i:end], name=env)
+                elif self.keep_captions and CAPTION_ENVS.get(env.rstrip("*")) == "Table":
+                    self._table_rows(src[i:end])
             return end
         if env == "abstract":
             self._heading("Abstract", 1)

@@ -1,0 +1,237 @@
+{
+  "arxiv_id": "",
+  "title": "Diverse ancestry whole-genome sequencing association study identifies TBX5 and PTK7 as susceptibility genes for posterior urethral valves",
+  "field": "Biology / neuroscience",
+  "source": "10.7554/elife.74777",
+  "planted": [
+    {
+      "id": "p1",
+      "sentence_id": "s6",
+      "reference_keys": [
+        "r91"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [11] with [91] (\"qqman: an R package for visualizing GWAS results using Q-Q and manhattan plots\") (similarity 0.23 vs 0.67 for the original)",
+      "original": "Although usually sporadic, familial clustering and twin studies suggest a genetic component underlying PUV.[7–10] Monogenic causes of anatomical and functional congenital bladder outflow obstruction have been described (BNC2 in urethral stenosis and atypical PUV,[11] HPSE2 and LRIG2 in urofacial syndrome,[12,13] CHRM3 in prune-belly like syndrome,[14] and MYOCD in congenital megabladder[15]), however a monogenic etiology for classical PUV has not been identified.",
+      "mutated": "Although usually sporadic, familial clustering and twin studies suggest a genetic component underlying PUV.[7–10] Monogenic causes of anatomical and functional congenital bladder outflow obstruction have been described (BNC2 in urethral stenosis and atypical PUV,[91] HPSE2 and LRIG2 in urofacial syndrome,[12,13] CHRM3 in prune-belly like syndrome,[14] and MYOCD in congenital megabladder[15]), however a monogenic etiology for classical PUV has not been identified.",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p2",
+      "sentence_id": "s20",
+      "reference_keys": [
+        "r71"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [30] with [71] (\"Human inversions and their functional consequences\") (similarity 0.23 vs 0.86 for the original)",
+      "original": "In addition, interrogation of the JASPAR 2020[30] database of experimentally defined TF binding profiles revealed rs144171242 intersects with the DNA-binding motifs of",
+      "mutated": "In addition, interrogation of the JASPAR 2020[71] database of experimentally defined TF binding profiles revealed rs144171242 intersects with the DNA-binding motifs of",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p3",
+      "sentence_id": "s21",
+      "reference_keys": [
+        "r59"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [35] with [59] (\"Ptk7 and Mcc, Unfancied Components in Non-Canonical Wnt Signaling and Cancer\") (similarity 0.20 vs 0.80 for the original)",
+      "original": "Interrogation of the NHGR/EBI GWAS Catalog[35] revealed the risk allele rs10774740 (G) is associated with prostate cancer aggressiveness[36] (P=3x10-10; OR 1.14; 95%",
+      "mutated": "Interrogation of the NHGR/EBI GWAS Catalog[59] revealed the risk allele rs10774740 (G) is associated with prostate cancer aggressiveness[36] (P=3x10-10; OR 1.14; 95%",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p4",
+      "sentence_id": "s22",
+      "reference_keys": [
+        "r11"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [37] with [11] (\"Rare Variants in BNC2 Are Implicated in Autosomal-Dominant Congenital Lower Urinary-Tract Obstruction\") (similarity 0.32 vs 0.83 for the original)",
+      "original": "We therefore aggregated rare (gnomAD[24] allele frequency [AF] < 0.1%), predicted deleterious (protein-truncating, or combined annotation dependent depletion [CADD][37] score ≥ 20) single-nucleotide variants (SNVs) and small indels by gene, comparing the burden between cases and controls on an exome-wide basis.",
+      "mutated": "We therefore aggregated rare (gnomAD[24] allele frequency [AF] < 0.1%), predicted deleterious (protein-truncating, or combined annotation dependent depletion [CADD][11] score ≥ 20) single-nucleotide variants (SNVs) and small indels by gene, comparing the burden between cases and controls on an exome-wide basis.",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p5",
+      "sentence_id": "s53",
+      "reference_keys": [
+        "r13"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [93] with [13] (\"LRIG2 Mutations Cause Urofacial Syndrome\") (similarity 0.24 vs 0.86 for the original)",
+      "original": "Manhattan and Q-Q plots, and LocusZoom[93] to visualize regions of interest.",
+      "mutated": "Manhattan and Q-Q plots, and LocusZoom[13] to visualize regions of interest.",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p6",
+      "sentence_id": "s55",
+      "reference_keys": [
+        "r15"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [25] with [15] (\"Loss-of-function variants in myocardin cause congenital megabladder in humans and mice\") (similarity 0.23 vs 0.60 for the original)",
+      "original": "We applied PAINTOR[25] (v3.1), a statistical fine-mapping method which uses an empirical Bayes prior to integrate functional annotation data, linkage disequilibrium (LD) patterns and strength of association to estimate the posterior probability (PP) of a variant being causal.",
+      "mutated": "We applied PAINTOR[15] (v3.1), a statistical fine-mapping method which uses an empirical Bayes prior to integrate functional annotation data, linkage disequilibrium (LD) patterns and strength of association to estimate the posterior probability (PP) of a variant being causal.",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p7",
+      "sentence_id": "s68",
+      "reference_keys": [
+        "r61"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [30] with [61] (\"Variants identified in PTK7 associated with neural tube defects\") (similarity 0.22 vs 0.82 for the original)",
+      "original": "Sequence logos based on position weight matrices of the DNA binding motifs were downloaded from JASPAR 2020.[30]",
+      "mutated": "Sequence logos based on position weight matrices of the DNA binding motifs were downloaded from JASPAR 2020.[61]",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p8",
+      "sentence_id": "s69",
+      "reference_keys": [
+        "r57"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [35] with [57] (\"PTK7 Faces the Wnt in Development and Disease\") (similarity 0.22 vs 0.80 for the original)",
+      "original": "The NHGRI-EBI GWAS Catalog[35] and PheWAS data from the UK Biobank (see Web resources) were interrogated to determine known associations of the lead variants.",
+      "mutated": "The NHGRI-EBI GWAS Catalog[57] and PheWAS data from the UK Biobank (see Web resources) were interrogated to determine known associations of the lead variants.",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p9",
+      "sentence_id": "s77",
+      "reference_keys": [
+        "r62"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [107] with [62] (\"ptk7 mutant zebrafish models of congenital and idiopathic scoliosis implicate dysregulated Wnt signalling in disease\") (similarity 0.27 vs 0.77 for the original)",
+      "original": "Structural variants (>50bp) that intersect by a minimum of 1bp with a) at least one exon (GENCODE[96]; version 29) or b) an ENCODE[31] candidate cis-regulatory element (cCRE) were extracted using BEDTools[107] (version 2.27.1).",
+      "mutated": "Structural variants (>50bp) that intersect by a minimum of 1bp with a) at least one exon (GENCODE[96]; version 29) or b) an ENCODE[31] candidate cis-regulatory element (cCRE) were extracted using BEDTools[62] (version 2.27.1).",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p10",
+      "sentence_id": "s83",
+      "reference_keys": [
+        "r95"
+      ],
+      "mutation": "number_change",
+      "description": "Changed \"1000\" to \"1600\"",
+      "original": "1000 Genomes (Phase 3)[95]and DECIPHER.[67] To create a dataset of common SVs from the 100KGP cancer cohort, variants were merged using SURVIVOR[109] (v1.0.7), allowing a maximum distance of 300bp between pairwise breakpoints, and those with AF > 0.1% retained.",
+      "mutated": "1600 Genomes (Phase 3)[95]and DECIPHER.[67] To create a dataset of common SVs from the 100KGP cancer cohort, variants were merged using SURVIVOR[109] (v1.0.7), allowing a maximum distance of 300bp between pairwise breakpoints, and those with AF > 0.1% retained.",
+      "expected_labels": [
+        "overstated",
+        "contradicted",
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "number_drift"
+      ]
+    }
+  ],
+  "baseline_flags": [
+    [
+      "s12",
+      "r26",
+      "overstated"
+    ],
+    [
+      "s12",
+      "r27",
+      "overstated"
+    ],
+    [
+      "s17",
+      "r32",
+      "overstated"
+    ],
+    [
+      "s19",
+      "r34",
+      "not_found"
+    ],
+    [
+      "s21",
+      "r36",
+      "not_found"
+    ],
+    [
+      "s23",
+      "r38",
+      "overstated"
+    ],
+    [
+      "s27",
+      "r52",
+      "not_found"
+    ],
+    [
+      "s31",
+      "r58",
+      "unverifiable"
+    ],
+    [
+      "s37",
+      "r76",
+      "overstated"
+    ],
+    [
+      "s4",
+      "r4",
+      "overstated"
+    ],
+    [
+      "s82",
+      "r24",
+      "overstated"
+    ]
+  ]
+}

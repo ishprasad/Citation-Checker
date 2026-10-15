@@ -1,0 +1,451 @@
+{
+  "slug": "medicine-journal.pone.0292350",
+  "field": "Medicine",
+  "title": "Cryptic Zika virus infections unmasked from suspected malaria cases in Northeastern Nigeria",
+  "job_id": "cd7199680a07",
+  "scored_at": "2026-10-09T17:00:12+00:00",
+  "planted": 8,
+  "checked": 8,
+  "caught": 7,
+  "recall": 0.875,
+  "label_accuracy": 0.875,
+  "expected_mode_rate": 0.875,
+  "untouched_verdicts": 47,
+  "other_flags": 15,
+  "other_flags_preexisting": 15,
+  "precision": 0.3181818181818182,
+  "precision_excluding_preexisting": 1.0,
+  "by_mutation": {
+    "scope_inflation": {
+      "planted": 2,
+      "caught": 1
+    },
+    "citation_swap": {
+      "planted": 4,
+      "caught": 4
+    },
+    "number_change": {
+      "planted": 2,
+      "caught": 2
+    }
+  },
+  "flagged_citations": 14,
+  "review": {
+    "genuine": 4,
+    "false_alarm": 4,
+    "debatable": 6,
+    "unreviewed": 0
+  },
+  "review_details": {
+    "genuine": [
+      {
+        "sentence_id": "s13",
+        "reference_key": "r29",
+        "note": "A paper on calculating sample sizes for medical studies is cited for what PRNT measures (antibody quantity and effectiveness); it has nothing on PRNT or antibodies. Probably the wrong reference."
+      },
+      {
+        "sentence_id": "s27",
+        "reference_key": "r43",
+        "note": "Cited as agreeing with chikungunya in 39% of patients, but the Colombian surveillance study found CHIKV in 1.07% of samples; the 'agreement' does not hold."
+      },
+      {
+        "sentence_id": "s33",
+        "reference_key": "r52",
+        "note": "The cited narrative review summarises mostly preclinical (in silico, in vitro, animal) antiviral activity of approved antimicrobials; it does not establish them as 'effective treatments for many viral diseases', and it never mentions ivermectin (mefloquine, chloroquine, erythromycin and tetracyclines do appear)."
+      },
+      {
+        "sentence_id": "s8",
+        "reference_key": "r13",
+        "note": "The source reports 2,439 cases of a congenital syndrome associated with Zika; the citing sentence says 'genital syndrome'. The case counts match, so it is a misreport (probably a typo) that changes the meaning."
+      }
+    ],
+    "false_alarm": [
+      {
+        "sentence_id": "s14",
+        "reference_key": "r31",
+        "note": "The cited study uses PRNT90 as a confirmatory test to rule out dengue cross-reactions and notes IgM false positives from flavivirus cross-reactivity, which supports greater specificity of PRNT90; the old pipeline misread a 'no differences' result about positivity rates."
+      },
+      {
+        "sentence_id": "s25",
+        "reference_key": "r40",
+        "note": "'In agreement with previous reports' that ZIKV neutralising antibodies often cross-react with dengue, West Nile and yellow fever viruses: the cited review describes exactly this cross-reactivity; the percentages are the citing study's own results."
+      },
+      {
+        "sentence_id": "s26",
+        "reference_key": "r40",
+        "note": "The review describes co-circulating flaviviruses, the likelihood of multiple infections and the resulting need for specific differential diagnosis, which is the point of the sentence."
+      },
+      {
+        "sentence_id": "s31",
+        "reference_key": "r50",
+        "note": "Joint citation [49, 50]: this Kenyan study shows temperature (a climatic condition) affects Aedes aegypti vector competence; vegetation is presumably carried by [49]."
+      }
+    ],
+    "debatable": [
+      {
+        "sentence_id": "s1",
+        "reference_key": "r1",
+        "note": "The source gives the first isolation (1947) from a sentinel rhesus macaque in the Zika Forest and isolations from Aedes africanus only after 1947; the sentence runs the mosquito into the 1947 first isolation. A small imprecision."
+      },
+      {
+        "sentence_id": "s1",
+        "reference_key": "r2",
+        "note": "The source dates the first human cases to 1952 (neutralising antibodies in sera), not an isolation from humans; 'isolated ... in humans in 1952' is a common shorthand but not what the source reports."
+      },
+      {
+        "sentence_id": "s14",
+        "reference_key": "r30",
+        "note": "Only the abstract (yellow fever booster response and pre-existing antibodies) was available; the study likely measured neutralising antibodies by PRNT, but nothing available supports the PRNT90-vs-IgM/IgG specificity claim. The off-topic tag is too strong."
+      },
+      {
+        "sentence_id": "s23",
+        "reference_key": "r31",
+        "note": "'In agreement with a previous report': the cited study treats PRNT90 titres of 10 or more as positive; it does not discuss 1:64-1:128 titres as highly suggestive, so the agreement is loose."
+      },
+      {
+        "sentence_id": "s25",
+        "reference_key": "r39",
+        "note": "A dengue/yellow fever coinfection case report that mentions cross-neutralisation of ZIKV convalescent sera with other flaviviruses; consistent with frequent cross-reactivity, but not with the specific 13.8%/86.0% split."
+      },
+      {
+        "sentence_id": "s27",
+        "reference_key": "r42",
+        "note": "A mosquito vector-competence study of ZIKV/CHIKV co-infection; it reports no human prevalence, so it can neither agree nor disagree with the 39% figure. Cited in the range [41-43]."
+      }
+    ],
+    "unreviewed": []
+  },
+  "precision_reviewed": 0.7333333333333333,
+  "summary_line": "Caught 7 of 8 planted errors · 4 false alarms · 4 real citation problems found in the original paper",
+  "details": [
+    {
+      "id": "p1",
+      "sentence_id": "s4",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"universally, in all cases\" before the citation",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [
+        "scope_inflation"
+      ],
+      "expected_mode_found": true,
+      "escalated": false
+    },
+    {
+      "id": "p2",
+      "sentence_id": "s10",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [19] with [31] (\"Plaque Reduction Neutralization Test (PRNT) in the Congenital Zika Syndrome: Positivity and Associations with Laboratory, Clinical, and Imaging Characteristics\") (similarity 0.35 vs 0.61 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p3",
+      "sentence_id": "s12",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [24] with [28] (\"Screening test for neutralizing antibodies against yellow fever virus, based on a flavivirus pseudotype\") (similarity 0.43 vs 0.60 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p4",
+      "sentence_id": "s15",
+      "mutation": "number_change",
+      "description": "Changed \"32\" to \"51\"",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [
+        "hypothesis_as_finding",
+        "number_drift",
+        "scope_inflation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p5",
+      "sentence_id": "s22",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [37] with [29] (\"How to Calculate Sample Size for Different Study Designs in Medical Research?\") (similarity 0.27 vs 0.79 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p6",
+      "sentence_id": "s34",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"without exception\" before the citation",
+      "checked": true,
+      "caught": false,
+      "label_correct": false,
+      "labels": [
+        "supported"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": false
+    },
+    {
+      "id": "p7",
+      "sentence_id": "s35",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [55] with [50] (\"Vector competence of Aedes aegypti populations from Kilifi and Nairobi for dengue 2 virus and the influence of temperature\") (similarity 0.34 vs 0.83 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [
+        "off_topic_citation"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    },
+    {
+      "id": "p8",
+      "sentence_id": "s36",
+      "mutation": "number_change",
+      "description": "Changed \"17\" to \"27\"",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "contradicted"
+      ],
+      "failure_modes": [
+        "number_drift"
+      ],
+      "expected_mode_found": true,
+      "escalated": true
+    }
+  ],
+  "verdicts": 67,
+  "escalation": {
+    "verdicts": 67,
+    "escalated": 20,
+    "label_changed": 4,
+    "transitions": {
+      "unverifiable->not_found": 2,
+      "not_found->overstated": 1,
+      "not_found->contradicted": 1
+    }
+  },
+  "coverage": {
+    "total": 56,
+    "full": 29,
+    "abstract_only": 12,
+    "unavailable": 15,
+    "retracted": 0,
+    "line": "Full text found for 29 of 56 references · abstract only for 12 · unavailable for 15."
+  },
+  "usage": {
+    "per_model": [
+      {
+        "model": "Qwen/Qwen3-Embedding-8B",
+        "role": "embed",
+        "calls": 4,
+        "cached_calls": 0,
+        "prompt_tokens": 297,
+        "completion_tokens": 0,
+        "estimated_cost_usd": 3e-06
+      },
+      {
+        "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+        "role": "escalate",
+        "calls": 21,
+        "cached_calls": 14,
+        "prompt_tokens": 225798,
+        "completion_tokens": 55248,
+        "estimated_cost_usd": 0.391542
+      },
+      {
+        "model": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+        "role": "extract",
+        "calls": 36,
+        "cached_calls": 27,
+        "prompt_tokens": 67901,
+        "completion_tokens": 4830,
+        "estimated_cost_usd": 0.005233
+      },
+      {
+        "model": "nvidia/nemotron-3-super-120b-a12b",
+        "role": "judge",
+        "calls": 52,
+        "cached_calls": 38,
+        "prompt_tokens": 261101,
+        "completion_tokens": 75481,
+        "estimated_cost_usd": 0.146263
+      }
+    ],
+    "total_prompt_tokens": 555097,
+    "total_completion_tokens": 135559,
+    "total_estimated_cost_usd": 0.543041
+  },
+  "baseline_cost_usd": 0.457,
+  "old_pipeline": {
+    "commit": "da5f9e3",
+    "job_id": "563e6190238f",
+    "cost_usd": 0.376775,
+    "planted": 8,
+    "checked": 8,
+    "caught": 7,
+    "recall": 0.875,
+    "label_accuracy": 0.75,
+    "expected_mode_rate": 0.875,
+    "untouched_verdicts": 49,
+    "other_flags": 14,
+    "other_flags_preexisting": 14,
+    "precision": 0.3333333333333333,
+    "precision_excluding_preexisting": 1.0,
+    "by_mutation": {
+      "scope_inflation": {
+        "planted": 2,
+        "caught": 1
+      },
+      "citation_swap": {
+        "planted": 4,
+        "caught": 4
+      },
+      "number_change": {
+        "planted": 2,
+        "caught": 2
+      }
+    },
+    "flagged_citations": 13,
+    "review": {
+      "genuine": 4,
+      "false_alarm": 4,
+      "debatable": 5,
+      "unreviewed": 0
+    },
+    "review_details": {
+      "genuine": [
+        {
+          "sentence_id": "s13",
+          "reference_key": "r29",
+          "note": "A paper on calculating sample sizes for medical studies is cited for what PRNT measures (antibody quantity and effectiveness); it has nothing on PRNT or antibodies. Probably the wrong reference."
+        },
+        {
+          "sentence_id": "s27",
+          "reference_key": "r43",
+          "note": "Cited as agreeing with chikungunya in 39% of patients, but the Colombian surveillance study found CHIKV in 1.07% of samples; the 'agreement' does not hold."
+        },
+        {
+          "sentence_id": "s33",
+          "reference_key": "r52",
+          "note": "The cited narrative review summarises mostly preclinical (in silico, in vitro, animal) antiviral activity of approved antimicrobials; it does not establish them as 'effective treatments for many viral diseases', and it never mentions ivermectin (mefloquine, chloroquine, erythromycin and tetracyclines do appear)."
+        },
+        {
+          "sentence_id": "s8",
+          "reference_key": "r13",
+          "note": "The source reports 2,439 cases of a congenital syndrome associated with Zika; the citing sentence says 'genital syndrome'. The case counts match, so it is a misreport (probably a typo) that changes the meaning."
+        }
+      ],
+      "false_alarm": [
+        {
+          "sentence_id": "s14",
+          "reference_key": "r31",
+          "note": "The cited study uses PRNT90 as a confirmatory test to rule out dengue cross-reactions and notes IgM false positives from flavivirus cross-reactivity, which supports greater specificity of PRNT90; the old pipeline misread a 'no differences' result about positivity rates."
+        },
+        {
+          "sentence_id": "s25",
+          "reference_key": "r40",
+          "note": "'In agreement with previous reports' that ZIKV neutralising antibodies often cross-react with dengue, West Nile and yellow fever viruses: the cited review describes exactly this cross-reactivity; the percentages are the citing study's own results."
+        },
+        {
+          "sentence_id": "s26",
+          "reference_key": "r40",
+          "note": "The review describes co-circulating flaviviruses, the likelihood of multiple infections and the resulting need for specific differential diagnosis, which is the point of the sentence."
+        },
+        {
+          "sentence_id": "s31",
+          "reference_key": "r50",
+          "note": "Joint citation [49, 50]: this Kenyan study shows temperature (a climatic condition) affects Aedes aegypti vector competence; vegetation is presumably carried by [49]."
+        }
+      ],
+      "debatable": [
+        {
+          "sentence_id": "s1",
+          "reference_key": "r1",
+          "note": "The source gives the first isolation (1947) from a sentinel rhesus macaque in the Zika Forest and isolations from Aedes africanus only after 1947; the sentence runs the mosquito into the 1947 first isolation. A small imprecision."
+        },
+        {
+          "sentence_id": "s14",
+          "reference_key": "r30",
+          "note": "Only the abstract (yellow fever booster response and pre-existing antibodies) was available; the study likely measured neutralising antibodies by PRNT, but nothing available supports the PRNT90-vs-IgM/IgG specificity claim. The off-topic tag is too strong."
+        },
+        {
+          "sentence_id": "s23",
+          "reference_key": "r31",
+          "note": "'In agreement with a previous report': the cited study treats PRNT90 titres of 10 or more as positive; it does not discuss 1:64-1:128 titres as highly suggestive, so the agreement is loose."
+        },
+        {
+          "sentence_id": "s25",
+          "reference_key": "r39",
+          "note": "A dengue/yellow fever coinfection case report that mentions cross-neutralisation of ZIKV convalescent sera with other flaviviruses; consistent with frequent cross-reactivity, but not with the specific 13.8%/86.0% split."
+        },
+        {
+          "sentence_id": "s27",
+          "reference_key": "r42",
+          "note": "A mosquito vector-competence study of ZIKV/CHIKV co-infection; it reports no human prevalence, so it can neither agree nor disagree with the 39% figure. Cited in the range [41-43]."
+        }
+      ],
+      "unreviewed": []
+    },
+    "precision_reviewed": 0.7333333333333333,
+    "caught_ids": [
+      "p1",
+      "p2",
+      "p3",
+      "p4",
+      "p5",
+      "p7",
+      "p8"
+    ]
+  },
+  "caught_ids": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p7",
+    "p8"
+  ]
+}

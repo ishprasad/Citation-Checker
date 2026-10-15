@@ -1,0 +1,2282 @@
+{
+  "paper": {
+    "id": "heldout:2208.03661v3:c4bf7e08",
+    "title": "Quasi-local studies of the particle surfaces and their stability in general spacetimes",
+    "authors": [
+      "Yong Song",
+      "Chuanyu Zhang"
+    ],
+    "abstract": "In this paper, enlightened by the definition of the photon surface given by Claudel, Virbhadra and Ellis, we give a quasi-local definition of the particle surface. From this definition, one can study the evolution of the circular orbits in general spacetime. Especially, we pointed out that this definition can be used to get the spherical circular orbits in stationary spacetimes which cannot be got by the definition of Claudel, Virbhadra and Ellis. Further, we give a condition to exclude the particle surface in spacetime without gravity. Simultaneously, we give a quasi-local definition of the stability of the particle surface in general spacetime. From this definition, one can get the evolution equation of the innermost stable circular orbit (ISCO) in general spacetime. To verify the correctness of these definitions, we studied the circular orbits in some special cases and the results are all consistent with the previous results.",
+    "source": "arxiv",
+    "arxiv_id": "2208.03661v3",
+    "parsed_from": "latex",
+    "citation_style": "numeric",
+    "text": "Abstract\n\nIn this paper, enlightened by the definition of the photon surface given by Claudel, Virbhadra and Ellis, we give a quasi-local definition of the particle surface. From this definition, one can study the evolution of the circular orbits in general spacetime. Especially, we pointed out that this definition can be used to get the spherical circular orbits in stationary spacetimes which cannot be got by the definition of Claudel, Virbhadra and Ellis. Further, we give a condition to exclude the particle surface in spacetime without gravity. Simultaneously, we give a quasi-local definition of the stability of the particle surface in general spacetime. From this definition, one can get the evolution equation of the innermost stable circular orbit (ISCO) in general spacetime. To verify the correctness of these definitions, we studied the circular orbits in some special cases and the results are all consistent with the previous results.\n\nIntroduction\n\nBlack holes are an important prediction of general relativity. Confirming the existence of black holes can further verify the correctness of general relativity. In 2019, the Event Horizon Telescope (EHT) Collaborations published the first image of the black hole at the center of the M87 galaxy [1, 2, 6, 3, 4, 5]. As shown in FIG.§.\n\nIn this image, one can clearly see a shadowed region surrounded by a halo. This shadow region is called black hole shadow, and the halo corresponds to the black hole accretion disk. One can get a lot of information about the black hole by studying black hole shadow and accretion disk.\n\nUp to date, there are many studies on the black hole shadow [7, 8, 9, 10] and the accretion disk [33]. The circular orbits of the spacetime are important for black hole shadow and accretion disk. For example, in Schwarzschild spacetime, on the one hand, the photon sphere, which is the location of the circular photon orbits, is the boundary of the black hole shadow [12, 13]. On the other hand, the timelike stable circular orbits determine the position of the accretion disk and the ISCO is the boundary of the accretion disk [38]. Here, we focus on the study of the circular orbits in the spacetime. There are mainly two ways to study the circular orbits. In the first method, one can solve the geodesic equations to get the circular orbits. This method has a wide range of applications. Such as, for null geodesics, this method can be used to study the photon sphere in static spacetimes [14, 15, 16], the photon surface in dynamical spacetime [17, 18] and the photon region in stationary spacetimes [19, 20, 21, 22, 23]; for timelike geodesics, one can use this method to study the circular orbits in static spacetimes [24, 25, 26, 27] and stationary spacetimes [28, 29, 30]. However, there are some practical problems in this traditional method which have been pointed out by [31]: (i). To grantee the separability of the geodesic equations, the systems which have been studied must have enough symmetries [7]. For real black holes, this condition is hard to satisfy. (ii). This method depends on the information at the infinity of the spacetime. This dependence means that we have to know the metric of the full spacetime, especially the future infinity of spacetime. This is impossible without additional assumptions. These problems inspire people to study the circular orbits in a different way. The second approach, which is called quasi-local study, has drawn some attention these years. For null geodesic, the first quasi-local definition of the photon surface is given by Claudel, Virbhadra and Ellis [32]. They defined a photon surface in a general spacetime as an umbilical timelike hypersurface. Based on this definition, they studied the photon surfaces in general spherically symmetric spacetimes. However, there are some obvious problems with this definition: (i). This definition is based on the null geodesic, so, it can not deal with the situation of timelike geodesic. (ii). The umbilical condition can not be used to study the photon region of stationary axisymmetric spacetimes. Up to date, there are some generalization studies of photon surface in stationary axisymmetric spacetimes. Such as, Yoshino et al. generalized the photon surface to be a loosely trapped surface [33] and (dynamically) transversely trapping surface [34, 35, 36]; Kobialko et al. generalized the photon surface to be a fundamental photon hypersurfaces and fundamental photon regions [37, 38]. (iii). This definition can not exclude the photon surface in spacetime without gravity. For example, it allows the existence of the photon surface in Minkowski spacetime. This problem has been solved by [11] which based on the geometry of a codimension-2 surface.\n\nIn this work, we want to give a generalized definition to over come the above three problems in the definition of the photon surface. Enlightened by the quasi-local definition of the photon sphere and photon surface [32, 31], we generalized the photon surface to the particle surface. Unlike the work studied the stability of the photon surface universally, in all cases [39, 40], we give a quasi-local definition of the stability of the particle surface in general spacetime. From this generalization, we studied the circular orbits in general spherical symmetric spacetimes and axisymmetric spacetimes. The results are all consistent with the previous results.\n\nThis paper is organized as follows: In section II, we will give the definitions of a particle surface and the stability of the particle surface. In section III, based on these definitions, we will study the circular orbits in general static spherical symmetric spacetimes. In section IV, we will study the evolutions of the circular orbits in general spherical symmetric spacetimes. Especially, we will study the evolutions of the circular orbits in Vaidya spacetime. In section V, we will use the spherical orbits of Kerr spacetime and evolved spherical orbits of Kerr-Vaidya spacetime in the slow rotation limit as examples to show the validity of the definition 1. Section VI is devoted to the conclusion and discussion.\n\nConvention of this paper: We choose the system of geometrized unit, i.e., set G=c=1. Also, we set the mass of a massive point particle m=1 and use M to denote the mass of a black hole. We use the symbol (M,∇a,gab) to denote a manifold M with metric gab and covariant derivative operator ∇a, and (gab,∇a) satisfies the compatibility condition, i.e., ∇a gbc=0. The abstract index formalism has been used to clarify some formulas or calculations. The curvature Rabcd of the spacetime is defined by Rabcdv^d=(∇a∇b-∇b∇a)vc for an arbitrary tangent vector field v^a [41].\n\nThe definition of a particle surface and the stability of the particle surface\n\nIn this section, we will give the quasi-local definition of the particle surfaces and their stability in general spacetime. At first, let us give a brief review of the circular orbits in the Schwarzschild spacetime [41]. The metric of the Schwarzschild spacetime in t,r,θ,φ coordinates can be expressed as Due to the spherical symmetry of Schwarzschild spacetime, we can choose the equatorial plane, i.e., θ=π/2. The circular photon orbits, which is usually called photon sphere or photon surface, is located at The null geodesics on the photon surface have the property that any null geodesic emitted in any tangent direction of the photon surface from any point on the photon surface will continue to propagate on the photon surface [32].\n\nHowever, the case of timelike circular orbits is different. The locations of the timelike circular orbits are satisfies where E is the conserved orbital energy and L is the conserved orbital angular momentum of the timelike geodesic. And the tangent vector of the timelike circular orbits in the equatorial plane can be written as The timelike circular orbits are located at the hypersurface that r=constant, which will be called particle surface in this work. On each particle surface, the timelike geodesics with specified parameter have the property that it emitted in at least one tangent direction of the particle surface from any point on the particle surface will continue to propagate on the particle surface.\n\nEnlightened by the above discussion and the quasi-local definition of the photon surface [32, 31], we give the following definitions:\n\nLet (S,Da,hab) be a timelike hypersurface (or a subset of a timelike hypersurface) of (M,∇a,gab). Let k^a be the null or unit timelike tangent vector of γ which is an affine null or timelike geodesic in S, i.e., it satisfies Let v^a be a unit normal vector to S and Kab be the second fundamental form on S. If for p∈ S, there exists at least one γ∈ S passing through p and satisfies where k^a can be timelike or null, and where k^a is a null vector. Then, S is called a (partial) particle surface.\n\nA (partial) particle surface is called stable if 2v^c∇c(Kabk^ak^b)≥ 0, and unstabe if 2v^c∇c(Kabk^ak^b)<0.\n\nIn definition 2, k^a can be a timelike or a null vector and we have assumed that v^a is out pointing. Roughly speaking, the out pointing requirement refers to a direction from the center of the system to infinity. The condition 2v^c∇c(Kabk^ak^b)=0 for a timelike geodesic will determine the position of the innermost stable circular orbit of the spacetime.\n\nTo get a better understand of these definitions, we give some remarks:\n\n(i). It should be noted that the spatial section of a particle surface may not be topologically closed, and it is called a partial particle surface in this work. For example, although the null particle surfaces exist in the Kerr spacetime at r=constant, the angular range is limited as -θc≤θ≤θc from the work of Ref. [20].\n\n(ii). Although definition 1 is quite general, it needs the spacetime have enough symmetries to solve eq.(§). So, in this paper, we focus on the applications of the above definitions in spherical symmetric spacetimes and axisymmetric spacetimes. In spherical symmetric spacetimes and axisymmetric spacetimes, from the normalized condition and the orthogonal condition and the condition of the (partial) particle surface one can get the tangent vector k^a and the equation of the (partial) particle surface. The detailed solution process will be developed in the following sections.\n\n(iii). Based on the proof given by [32], for any curve in S with timelike or null tangent vector k^a, one has where Da denotes covariant differentiation in S with respect to hab. If the eq.(§) in definition 1 is satisfied, the second term on the right of eq.(§) will be vanished, i.e., if k^a is tangent to an affine timelike or null geodesic of (S,hab) then the term on the left of eq.(§) also vanishes and so k^a is tangent to an affine timelike or null geodesic of (M,gab).\n\n(iv). The tangent vector k^a satisfies the following condition: If k^aka=-1, eq.(§) can be used to get the stable or unstable circular orbits in general spacetime. If k^aka=0, the definition 1 degenerates to the photon sphere in static spherical symmetric spacetime and the photon surface in dynamical spherical symmetric spacetime. The photon region in stationary axisymmetric spacetime can be formed by a collection of (partial) photon surface.\n\n(v). In the general situation, from eq.(§), one can not get the result that σab=0, where σab is the trace-free part of Kab. The umbilical condition, i.e., σab=0, can be only used to get the photon surface in spherical symmetric spacetime without exception [32].\n\n(vi). Eq.(§) only need to be held for a null vector k^a, i.e., k^aka=0. As long as this condition is not satisfied, we will say that there is no particle surface in this spacetime. For a timelike geodesic, it can have continuous solutions of eq.(§) and will have inhomogeneity along v^a. So, eq.(§) will not vanish in general, even in the spacetime which is the absence of gravity, such as the Minkowski spacetime in the next section.\n\n(vii). Eq.(§) can be used to exclude the particle surface in the spacetime without gravity. It should be noted that our condition is based on a hypersurface, not a codimension-2 surface in every population and setting [31]. But it can not be used to exclude the asymptotically null photon surface in the spacetime with inhomogeneity of the gravitational field. Such as, the asymptotically null photon surface in Schwarzschild spacetime, where b=L/E is the impact parameter. The solutions of eq.(§) also satisfy eq.(§), and they can not be excluded by eq.(§).\n\n(viii). The factor “2\" in eq.(§) or definition 2 is not important. From the following section we will know that 2v^c∇c(Kabk^ak^b) in definition 2 is exactly the second derivative of the effective potential in static spherical symmetric spacetime, and the factor 2 is a proportionality coefficient. So, 2v^c∇c(Kabk^ak^b) can be used to characterize the stability of the (partial) particle surface.\n\nStatic spherical symmetric spacetimes\n\nIn this section, we consider the circular orbits in general static spherical symmetric spacetimes. In the t,r,θ,φ coordinates, the metric of the general static spherical symmetric spacetimes can be written as where F and H are functions of r. Considering the untraped region, we have F(r)>0 and H(r)>0. In static spacetime, the circular orbits is not evolved, and they satisfy the condition that ro=constant, where ro is the location of the circular orbit. Then, we can get the normal vector v^a as follows Because the system has the spherical symmetry, we can choose the equatorial plane, i.e., θ=π/2. And we can suppose the component of the tangent vector of the circular orbit to be k^a=k^0,k^1,0,k^3, where k^0 ,k^1 ,k^3 are only functions of r. From the orthogonal condition that k^ava=0, we have Then we have k^1=0. So, we can choose k=k^0,0,0,k^3. From eq.(§), we get where F'(ro)=∂ F(r)/∂ r|ro. To parameterize the circular orbit, we introduce the conserved orbital energy and the conserved orbital angular momentum which defined as\n\ntimelike geodesic\n\nFor a timelike circular orbit, from the normalized condition of the timelike geodesic, i.e., k^aka=-1, we have Then, combining the eq.(§), (§), (§) and (§), we can get which is consistent with the result in [3]. From definition 2, we have which is the second derivative of the effective potential of the timelike geodesic in [16]. It is well-known that ISCO satisfies that the second derivative of the effective potential is zero without exception [42, 43]. So, at the location of ISCO, eq.(§) can be zero. (Footnote: It needs to be noticed that F(r) and H(r) respectively correspond to the f(r) and 1/g(r) in [16] and there is minus sign bewteen the eq.(§) and the result in [16] because of the difference of the signature of the metric. This situation also exist in eq.(§).)\n\nnull geodesic\n\nThe circular orbit of a null geodesic in static spherical symmetric spacetime is usually called a photon sphere. So, we will substitute rps for ro to represent the location of a null circular orbit. For a photon sphere, from the normalized condition of the null geodesic, i.e., k^aka=0, we have Then, combining eq.(§), (§), (§) and (§), we have which is consistent with [16]. From eq.(§), we have which is the second derivative of the potential of the null geodesic in [16].\n\nHere, we will use Minkowski spacetime as an example to illustrate how eq.(§) excludes the particle surface in the spacetime which is the absence of gravity. The metric of the Minkowski spacetime in t,r,θ,φ coordinate can be written as The unit normal vector v^a of the particle surface is where a ``·\" stands for the derivative with respect to coordinate time ``t\". Considering the spherical symmetry of this spacetime, we study the circular orbits on the equatorial plane. Then, we suppose the component of the tangent vector of the circular orbit to be k^a=k^0,k^1,0,k^3, where k^0 ,k^1 ,k^3 are the functions of t,r. From the orthogonal condition, i.e., k^ava=0, we have where rs represents rs(t) and is the location of the particle surface. From eq.(§), we have\n\n• timelike geodesic:\n\nFrom the normalized condition of the timelike geodesic, i.e., k^aka=-1, we have The orbital angular momentum of the timelike geodesic can be defined as So, combining eq.(§), (§), (§) and (§), we get From definition 2, we have It should be pointed out that r is a function of ``t\" in eq.(§). So, the second equal sign in eq.(§) involves variational operation. Putting eq.(§) into eq.(§), we can easily get So, eq.(§) can be satisfied for timelike geodesic in Minkowski spacetime.\n\n• null geodesic:\n\nFrom the normalized condition of the null geodesic, i.e., k^aka=0,, we have Combining eq.(§), (§) and (§), we get Then, we can get the solution of the above equation is where B is an arbitrary constant factor. This is the timelike hyperboloid solution in [32]. From eq.(§), we have where we have used eq.(§) or (§).\n\nFrom this example, we can clearly see how eq.(§) excludes the particle surface in the spacetime which is the absence of gravity.\n\nConclusion of this section: The eq.(§) of definition 1 can be used to get the circular orbits in static spherical spacetime. Definition 2 correspondings to the second derivative of the effective potential of the geodesic, so, it can be used to characterize the stability of the circular orbits in static spherical symmetric spacetimes. In more general situation, one may not define the effective potential of the system, but one can still use eq.(§) to characterize the stability of the evolved circular orbits in general spacetimes.\n\nGeneral spherical symmetric spacetime\n\nIn this section, we will study the evolution of the circular orbits in general spherical symmetric spacetime. The metric of the general spherical symmetric spacetime in t,r,θ,φ coordinate can be written as where f and g are functions of t,r. The unit normal vector v^a of the particle surface can be written as [32] where f and g represent f(t,ro(t)) and g(t,ro(t)), ro is a function of coordinate time ``t\" and ``·\" stands for the derivative with respect to ``t\". Considering the spherical symmetry of this spacetime, we study the circular orbits on the equatorial plane. Then, we suppose the component of the tangent vector of the circular orbit to be k^a=k^0,k^1,0,k^3, where k^0 ,k^1 ,k^3 are the functions of t,r. From the orthogonal condition, i.e., k^ava=0, we have\n\ntimelike geodesic\n\nFor an evolved timelike circular orbit,from the normalized condition of the timelike geodesic, i.e., k^aka=-1,, we have To parametrize the timelike circular orbit of the general dynamical spherical symmetric spacetime, we introduce the conserved orbital angular momentum of the timelike circular orbit which defined as From eq.(§) and considering eq.(§), (§) and (§), we have where f represents ∂ f(t,r)/∂ t|ro(t),t and f^′ represents ∂ f(t,r)/∂ r|ro(t),t. Solving eq.(§), we have This is the evolution equation of the timelike circular orbits in general spherical symmetric spacetime and it is consistent with the result in [45].\n\nnull geodesic\n\nThe evolved circular photon orbit in dynamical spherical symmetric spacetime is usually called a photon surface. So, we will substitute rph for ro to represent the location of a null circular orbit. It should be noted that rph represents rph(t) and is a function of coordinate time ``t\". For a photon surface, from the normalized condition of the null geodesic, i.e., k^aka=0, we have From eq.(§) and combining eq.(§) and (§), we have Solving eq.(§), we get This is the equation of the photon surface in general spherical symmetric spacetime.\n\nAs an example, we study the evolution of the circular orbits in the in-going Vaidya spacetime. The metric of the 4-dimensional Vaidya spacetime in the in-going null coordinate v,r,θ,φ can be written as [44] where M(v) is a freely specifiable function of v. The unit normal vector v^a of the particle surface in Vaidya spacetime can be written as [32] where ``·\" stands for the derivative with respect to the coordinate time ``v\". Because of the spherical symmetry of the system, we can study this question on the equatorial plane, i.e., θ=π/2. Similarly, we can suppose the component of the tangent vector of the circular orbit to be k^a=k^0,k^1,0,k^3, where k^0 ,k^1 ,k^3 are functions of v,r. From the orthogonal condition that k^ava=0, we have From eq.(§), we have\n\n• timelike geodesic:\n\nFor a timelike geodesic, from the normalized condition that kak^a=-1, we have To parametrize the timelike circular orbit of the Vaidya spacetime, we introduce the conserved orbital angular momentum of the timelike circular orbit which defined as So, we have Combining eq.(§), (§) and (§), we have and Here, we choose k^a to be a furture-pointing vector. Putting eq.(§), (§) and (§) into eq.(§), we have which is consistent with the result in [45]. To get the evolution equation of the ISCO in Vaidya spacetime, one needs to require v^c∇c(Kabk^ak^b)=0. Then, one can get which is consistent with the result in [45]. For a more general situation, it is not hard to show definition 2 will give the same result as [45].\n\n• null geodesic:\n\nFor a photon surface in Vaidya spacetime, from the normalized condition of the null geodesic, i.e., kak^a=0, we have From eq.(§) and (§), we have and Combining eq.(§), (§) and (§), we have This is the equation of the photon surface in Vaidya spacetime and it is consistent with the result in [5].\n\nKerr spacetime\n\nIn this section, we will study the spherical orbits in Kerr spacetime to illustrate the validity of the definition in general stationary axisymmetric spacetimes.\n\nThe metric of the 4-dimensional Kerr spacetime in Boyer-Lindquist coordinates takes the following form where a is the angular momentum per unit mass of the black hole (0≤ a≤ M), and the functions Δ ,Σ are defined as The spherical orbits are not evolved in general stationary axisymmetric spacetimes and satisfy r=constant [23]. So, the normal vector v^a of the particle surface in Kerr spacetime can be expressed as The tangent vector of spherical orbits can be generally choosed as k^a=k^0,k^1,k^2,k^3. From the orthogonal condition, i.e. k^ava=0, we have k^1=0. So, k^a becomes k^0,0,k^2,k^3.\n\nTo obtain an explicit parameterization of the class of spherical orbits in the Kerr spacetime, we introduce the conserved orbital energy and orbital angular momentum as follows where Σo=ro^2+a^2^2θ. Simultaneously, we introduce the Carter's constant of the spherical orbit which can be defined as and qo is defined as where and where Δo=ro^2-2Mro+a^2. Then, we introduce the parameter and where χ≡ k^3/k^0. Considering the eq.(§), we have\n\nnull geodesic\n\nThe spatial section of the photon surface in Kerr spacetime is not topologically closed, and the collection of the photon surface forms the photon region in Kerr spacetime [20]. For a spherical photon orbit, from the normalized condition of the null geodesic, i.e., k^aka=0, we have Combining the eq.(§), (§), (§) and (§), one can get which are consistent with the results in [20].\n\ntimelike geodesic\n\nFor a spherical timelike orbit, from the normalized condition of the timelike geodesic, i.e., k^aka=-1, we have Solving eq.(§) and (§), we get From eq.(§), we have Putting eq.(§) and (§) into eq.(§), we get Combining eq.(§), (§), (§) and (§), we have Combining eq.(§) and (§), after some calculations, one can get the same result as [30]\n\nKerr-Vaidya spacetime in the slow-rotation limit\n\nIn this section, we will study the evolution of the spherical orbits of the Kerr-Vaidya spacetime in the slow-rotation limit.\n\nFor simplicity, we focus on the equatorial plane of the 4-dimensional Kerr-Vaidya spacetime. In the slow rotation limit, the metric the Kerr-Vaidya spacetime on the equatorial plane can be expressed as [17, 46] For an evolved circular orbits, one can suppose the component of the tangent vector of the evolved spherical orbits to be k^a=k^0,k^1,k^2, where k^0 ,k^1 ,k^2 are the functions of v,r. The unit normal vector v^a of the particle surface can be written as where ``·\" stands for the derivative with respect to the coordinate time ``v\". From the orthogonal condition that k^ava=0, we have where ro and φo represent ro(v) and φo(v,ro(v)) respectively. From the eq.(§) of definition 1, we have\n\nnull geodesic\n\nFor an arbitrary null geodesic, we have ds^2=0. Then, we can get the following result Solving the above equation, we get Here, we can only consider the lowest order of a. So, we have From the normalizing condition of k^a, i.e., k^aka=0, we have Combining eq.(§), (§), (§) and (§), we get where “+\" correspond to the orbital angular momentum associated with “direct\" circular orbit and “-\" corresponds to the “retrograde\" circular orbit. This is the evolution equation of the circular photon orbits at the equatorial plane of the Kerr-Vaidya spacetime in the slow rotation limit, and it is consistent with the result in [17].\n\ntimelike geodesic\n\nFor an arbitrary timelike geodesic, we have where τ is the affine parameter of the timelike geodesic, and the conserved orbital angular momentum can be defined as Combining eq.(§) and (§), we get Here, we only consider the lowest order of a. So, we have Considering an evolved timelike circular orbits of Kerr-Vaidya spacetime in the slow rotation limit, from the normalizing condition of k^a, i.e., k^aka=-1, we have and the corresponding angular momentum can be expressed as Combining eq.( §), (§), (§), (§) and (§), we have This is the evolution equation of the timelike circular orbits at the equatorial plane of the Kerr-Vaidya spacetime in the slow rotation limit, and it is consistent with the result in [45].\n\nDiscussion and conclusion\n\nIn this paper, based on the definition of the photon surface given by [32, 31], we give a quasi-local definition of the (partial) particle surface in general spacetime in definition 1 and a simple classification in definition 2. The new definition has three advantages over [32]. First, it can be used to get the timelike circular orbits in general spacetime. Second, it can be used to study the photon region of the Kerr-like spacetime. Third, it not allows for the existence of the particle surface in spacetime without gravity. The third point is a little bit different from [31] which is based on a codimension-2 surface, and our definition is based on a hypersurface.\n\nIn definition 2, we give a quasi-local definition of the stability of the circular orbits. In the static spherical symmetric spacetime, this condition consistent with the second derivative of the effective potential of the system. In more general situation, one may not define the effective potential of the system. But, one can still use definition 2 to classify the stability of the circular orbits. One can use the condition that v^c∇c(Kabk^ak^b)=0 to get the evolution equation of the ISCO in general spacetime, and the result is consistent with [45].\n\nUsing definition 1, we studied the (partial) particle surface in general spherical symmetric spacetime and axisymmetric spacetime. The results obtained by our definition are all consistent with the previous results. Although we only studied the situation in 4-dimensional spacetime, our definition actually can be used in higher spacetimes and it is easy to generalize the previous studies to higher spacetimes.\n\nWhen solving the evolution equation of the (partial) particle surface, one need give appropriate boundary conditions. But from our definition, one can not get the boundary condition. The similar question in the study of photon surface has been solved by [4] which is based on a codimension-2 surface. One may solve the boundary question in our definition by using the method based on a codimension-2 surface.\n\nAcknowledgement\n\nWe would like to thank Li-Ming Cao for his useful discussions and kindly helps. This work is supported by the National Natural Science Foundation of China (Grant No. 41930112, 91755215 and 11804238), and our research is also supported by Sichuan Science and Technology Program (Grant No. 2022YFG0317).",
+    "sections": [
+      {
+        "title": "Abstract",
+        "text": "Abstract\n\nIn this paper, enlightened by the definition of the photon surface given by Claudel, Virbhadra and Ellis, we give a quasi-local definition of the particle surface. From this definition, one can study the evolution of the circular orbits in general spacetime. Especially, we pointed out that this definition can be used to get the spherical circular orbits in stationary spacetimes which cannot be got by the definition of Claudel, Virbhadra and Ellis. Further, we give a condition to exclude the particle surface in spacetime without gravity. Simultaneously, we give a quasi-local definition of the stability of the particle surface in general spacetime. From this definition, one can get the evolution equation of the innermost stable circular orbit (ISCO) in general spacetime. To verify the correctness of these definitions, we studied the circular orbits in some special cases and the results are all consistent with the previous results.\n\n",
+        "start": 0,
+        "end": 954
+      },
+      {
+        "title": "Introduction",
+        "text": "Introduction\n\nBlack holes are an important prediction of general relativity. Confirming the existence of black holes can further verify the correctness of general relativity. In 2019, the Event Horizon Telescope (EHT) Collaborations published the first image of the black hole at the center of the M87 galaxy [1, 2, 6, 3, 4, 5]. As shown in FIG.§.\n\nIn this image, one can clearly see a shadowed region surrounded by a halo. This shadow region is called black hole shadow, and the halo corresponds to the black hole accretion disk. One can get a lot of information about the black hole by studying black hole shadow and accretion disk.\n\nUp to date, there are many studies on the black hole shadow [7, 8, 9, 10] and the accretion disk [33]. The circular orbits of the spacetime are important for black hole shadow and accretion disk. For example, in Schwarzschild spacetime, on the one hand, the photon sphere, which is the location of the circular photon orbits, is the boundary of the black hole shadow [12, 13]. On the other hand, the timelike stable circular orbits determine the position of the accretion disk and the ISCO is the boundary of the accretion disk [38]. Here, we focus on the study of the circular orbits in the spacetime. There are mainly two ways to study the circular orbits. In the first method, one can solve the geodesic equations to get the circular orbits. This method has a wide range of applications. Such as, for null geodesics, this method can be used to study the photon sphere in static spacetimes [14, 15, 16], the photon surface in dynamical spacetime [17, 18] and the photon region in stationary spacetimes [19, 20, 21, 22, 23]; for timelike geodesics, one can use this method to study the circular orbits in static spacetimes [24, 25, 26, 27] and stationary spacetimes [28, 29, 30]. However, there are some practical problems in this traditional method which have been pointed out by [31]: (i). To grantee the separability of the geodesic equations, the systems which have been studied must have enough symmetries [7]. For real black holes, this condition is hard to satisfy. (ii). This method depends on the information at the infinity of the spacetime. This dependence means that we have to know the metric of the full spacetime, especially the future infinity of spacetime. This is impossible without additional assumptions. These problems inspire people to study the circular orbits in a different way. The second approach, which is called quasi-local study, has drawn some attention these years. For null geodesic, the first quasi-local definition of the photon surface is given by Claudel, Virbhadra and Ellis [32]. They defined a photon surface in a general spacetime as an umbilical timelike hypersurface. Based on this definition, they studied the photon surfaces in general spherically symmetric spacetimes. However, there are some obvious problems with this definition: (i). This definition is based on the null geodesic, so, it can not deal with the situation of timelike geodesic. (ii). The umbilical condition can not be used to study the photon region of stationary axisymmetric spacetimes. Up to date, there are some generalization studies of photon surface in stationary axisymmetric spacetimes. Such as, Yoshino et al. generalized the photon surface to be a loosely trapped surface [33] and (dynamically) transversely trapping surface [34, 35, 36]; Kobialko et al. generalized the photon surface to be a fundamental photon hypersurfaces and fundamental photon regions [37, 38]. (iii). This definition can not exclude the photon surface in spacetime without gravity. For example, it allows the existence of the photon surface in Minkowski spacetime. This problem has been solved by [11] which based on the geometry of a codimension-2 surface.\n\nIn this work, we want to give a generalized definition to over come the above three problems in the definition of the photon surface. Enlightened by the quasi-local definition of the photon sphere and photon surface [32, 31], we generalized the photon surface to the particle surface. Unlike the work studied the stability of the photon surface universally, in all cases [39, 40], we give a quasi-local definition of the stability of the particle surface in general spacetime. From this generalization, we studied the circular orbits in general spherical symmetric spacetimes and axisymmetric spacetimes. The results are all consistent with the previous results.\n\nThis paper is organized as follows: In section II, we will give the definitions of a particle surface and the stability of the particle surface. In section III, based on these definitions, we will study the circular orbits in general static spherical symmetric spacetimes. In section IV, we will study the evolutions of the circular orbits in general spherical symmetric spacetimes. Especially, we will study the evolutions of the circular orbits in Vaidya spacetime. In section V, we will use the spherical orbits of Kerr spacetime and evolved spherical orbits of Kerr-Vaidya spacetime in the slow rotation limit as examples to show the validity of the definition 1. Section VI is devoted to the conclusion and discussion.\n\nConvention of this paper: We choose the system of geometrized unit, i.e., set G=c=1. Also, we set the mass of a massive point particle m=1 and use M to denote the mass of a black hole. We use the symbol (M,∇a,gab) to denote a manifold M with metric gab and covariant derivative operator ∇a, and (gab,∇a) satisfies the compatibility condition, i.e., ∇a gbc=0. The abstract index formalism has been used to clarify some formulas or calculations. The curvature Rabcd of the spacetime is defined by Rabcdv^d=(∇a∇b-∇b∇a)vc for an arbitrary tangent vector field v^a [41].\n\n",
+        "start": 954,
+        "end": 6705
+      },
+      {
+        "title": "The definition of a particle surface and the stability of the particle surface",
+        "text": "The definition of a particle surface and the stability of the particle surface\n\nIn this section, we will give the quasi-local definition of the particle surfaces and their stability in general spacetime. At first, let us give a brief review of the circular orbits in the Schwarzschild spacetime [41]. The metric of the Schwarzschild spacetime in t,r,θ,φ coordinates can be expressed as Due to the spherical symmetry of Schwarzschild spacetime, we can choose the equatorial plane, i.e., θ=π/2. The circular photon orbits, which is usually called photon sphere or photon surface, is located at The null geodesics on the photon surface have the property that any null geodesic emitted in any tangent direction of the photon surface from any point on the photon surface will continue to propagate on the photon surface [32].\n\nHowever, the case of timelike circular orbits is different. The locations of the timelike circular orbits are satisfies where E is the conserved orbital energy and L is the conserved orbital angular momentum of the timelike geodesic. And the tangent vector of the timelike circular orbits in the equatorial plane can be written as The timelike circular orbits are located at the hypersurface that r=constant, which will be called particle surface in this work. On each particle surface, the timelike geodesics with specified parameter have the property that it emitted in at least one tangent direction of the particle surface from any point on the particle surface will continue to propagate on the particle surface.\n\nEnlightened by the above discussion and the quasi-local definition of the photon surface [32, 31], we give the following definitions:\n\nLet (S,Da,hab) be a timelike hypersurface (or a subset of a timelike hypersurface) of (M,∇a,gab). Let k^a be the null or unit timelike tangent vector of γ which is an affine null or timelike geodesic in S, i.e., it satisfies Let v^a be a unit normal vector to S and Kab be the second fundamental form on S. If for p∈ S, there exists at least one γ∈ S passing through p and satisfies where k^a can be timelike or null, and where k^a is a null vector. Then, S is called a (partial) particle surface.\n\nA (partial) particle surface is called stable if 2v^c∇c(Kabk^ak^b)≥ 0, and unstabe if 2v^c∇c(Kabk^ak^b)<0.\n\nIn definition 2, k^a can be a timelike or a null vector and we have assumed that v^a is out pointing. Roughly speaking, the out pointing requirement refers to a direction from the center of the system to infinity. The condition 2v^c∇c(Kabk^ak^b)=0 for a timelike geodesic will determine the position of the innermost stable circular orbit of the spacetime.\n\nTo get a better understand of these definitions, we give some remarks:\n\n(i). It should be noted that the spatial section of a particle surface may not be topologically closed, and it is called a partial particle surface in this work. For example, although the null particle surfaces exist in the Kerr spacetime at r=constant, the angular range is limited as -θc≤θ≤θc from the work of Ref. [20].\n\n(ii). Although definition 1 is quite general, it needs the spacetime have enough symmetries to solve eq.(§). So, in this paper, we focus on the applications of the above definitions in spherical symmetric spacetimes and axisymmetric spacetimes. In spherical symmetric spacetimes and axisymmetric spacetimes, from the normalized condition and the orthogonal condition and the condition of the (partial) particle surface one can get the tangent vector k^a and the equation of the (partial) particle surface. The detailed solution process will be developed in the following sections.\n\n(iii). Based on the proof given by [32], for any curve in S with timelike or null tangent vector k^a, one has where Da denotes covariant differentiation in S with respect to hab. If the eq.(§) in definition 1 is satisfied, the second term on the right of eq.(§) will be vanished, i.e., if k^a is tangent to an affine timelike or null geodesic of (S,hab) then the term on the left of eq.(§) also vanishes and so k^a is tangent to an affine timelike or null geodesic of (M,gab).\n\n(iv). The tangent vector k^a satisfies the following condition: If k^aka=-1, eq.(§) can be used to get the stable or unstable circular orbits in general spacetime. If k^aka=0, the definition 1 degenerates to the photon sphere in static spherical symmetric spacetime and the photon surface in dynamical spherical symmetric spacetime. The photon region in stationary axisymmetric spacetime can be formed by a collection of (partial) photon surface.\n\n(v). In the general situation, from eq.(§), one can not get the result that σab=0, where σab is the trace-free part of Kab. The umbilical condition, i.e., σab=0, can be only used to get the photon surface in spherical symmetric spacetime without exception [32].\n\n(vi). Eq.(§) only need to be held for a null vector k^a, i.e., k^aka=0. As long as this condition is not satisfied, we will say that there is no particle surface in this spacetime. For a timelike geodesic, it can have continuous solutions of eq.(§) and will have inhomogeneity along v^a. So, eq.(§) will not vanish in general, even in the spacetime which is the absence of gravity, such as the Minkowski spacetime in the next section.\n\n(vii). Eq.(§) can be used to exclude the particle surface in the spacetime without gravity. It should be noted that our condition is based on a hypersurface, not a codimension-2 surface in every population and setting [31]. But it can not be used to exclude the asymptotically null photon surface in the spacetime with inhomogeneity of the gravitational field. Such as, the asymptotically null photon surface in Schwarzschild spacetime, where b=L/E is the impact parameter. The solutions of eq.(§) also satisfy eq.(§), and they can not be excluded by eq.(§).\n\n(viii). The factor “2\" in eq.(§) or definition 2 is not important. From the following section we will know that 2v^c∇c(Kabk^ak^b) in definition 2 is exactly the second derivative of the effective potential in static spherical symmetric spacetime, and the factor 2 is a proportionality coefficient. So, 2v^c∇c(Kabk^ak^b) can be used to characterize the stability of the (partial) particle surface.\n\n",
+        "start": 6705,
+        "end": 12907
+      },
+      {
+        "title": "Static spherical symmetric spacetimes",
+        "text": "Static spherical symmetric spacetimes\n\nIn this section, we consider the circular orbits in general static spherical symmetric spacetimes. In the t,r,θ,φ coordinates, the metric of the general static spherical symmetric spacetimes can be written as where F and H are functions of r. Considering the untraped region, we have F(r)>0 and H(r)>0. In static spacetime, the circular orbits is not evolved, and they satisfy the condition that ro=constant, where ro is the location of the circular orbit. Then, we can get the normal vector v^a as follows Because the system has the spherical symmetry, we can choose the equatorial plane, i.e., θ=π/2. And we can suppose the component of the tangent vector of the circular orbit to be k^a=k^0,k^1,0,k^3, where k^0 ,k^1 ,k^3 are only functions of r. From the orthogonal condition that k^ava=0, we have Then we have k^1=0. So, we can choose k=k^0,0,0,k^3. From eq.(§), we get where F'(ro)=∂ F(r)/∂ r|ro. To parameterize the circular orbit, we introduce the conserved orbital energy and the conserved orbital angular momentum which defined as\n\n",
+        "start": 12907,
+        "end": 13988
+      },
+      {
+        "title": "timelike geodesic",
+        "text": "timelike geodesic\n\nFor a timelike circular orbit, from the normalized condition of the timelike geodesic, i.e., k^aka=-1, we have Then, combining the eq.(§), (§), (§) and (§), we can get which is consistent with the result in [3]. From definition 2, we have which is the second derivative of the effective potential of the timelike geodesic in [16]. It is well-known that ISCO satisfies that the second derivative of the effective potential is zero without exception [42, 43]. So, at the location of ISCO, eq.(§) can be zero. (Footnote: It needs to be noticed that F(r) and H(r) respectively correspond to the f(r) and 1/g(r) in [16] and there is minus sign bewteen the eq.(§) and the result in [16] because of the difference of the signature of the metric. This situation also exist in eq.(§).)\n\n",
+        "start": 13988,
+        "end": 14785
+      },
+      {
+        "title": "null geodesic",
+        "text": "null geodesic\n\nThe circular orbit of a null geodesic in static spherical symmetric spacetime is usually called a photon sphere. So, we will substitute rps for ro to represent the location of a null circular orbit. For a photon sphere, from the normalized condition of the null geodesic, i.e., k^aka=0, we have Then, combining eq.(§), (§), (§) and (§), we have which is consistent with [16]. From eq.(§), we have which is the second derivative of the potential of the null geodesic in [16].\n\nHere, we will use Minkowski spacetime as an example to illustrate how eq.(§) excludes the particle surface in the spacetime which is the absence of gravity. The metric of the Minkowski spacetime in t,r,θ,φ coordinate can be written as The unit normal vector v^a of the particle surface is where a ``·\" stands for the derivative with respect to coordinate time ``t\". Considering the spherical symmetry of this spacetime, we study the circular orbits on the equatorial plane. Then, we suppose the component of the tangent vector of the circular orbit to be k^a=k^0,k^1,0,k^3, where k^0 ,k^1 ,k^3 are the functions of t,r. From the orthogonal condition, i.e., k^ava=0, we have where rs represents rs(t) and is the location of the particle surface. From eq.(§), we have\n\n• timelike geodesic:\n\nFrom the normalized condition of the timelike geodesic, i.e., k^aka=-1, we have The orbital angular momentum of the timelike geodesic can be defined as So, combining eq.(§), (§), (§) and (§), we get From definition 2, we have It should be pointed out that r is a function of ``t\" in eq.(§). So, the second equal sign in eq.(§) involves variational operation. Putting eq.(§) into eq.(§), we can easily get So, eq.(§) can be satisfied for timelike geodesic in Minkowski spacetime.\n\n• null geodesic:\n\nFrom the normalized condition of the null geodesic, i.e., k^aka=0,, we have Combining eq.(§), (§) and (§), we get Then, we can get the solution of the above equation is where B is an arbitrary constant factor. This is the timelike hyperboloid solution in [32]. From eq.(§), we have where we have used eq.(§) or (§).\n\nFrom this example, we can clearly see how eq.(§) excludes the particle surface in the spacetime which is the absence of gravity.\n\nConclusion of this section: The eq.(§) of definition 1 can be used to get the circular orbits in static spherical spacetime. Definition 2 correspondings to the second derivative of the effective potential of the geodesic, so, it can be used to characterize the stability of the circular orbits in static spherical symmetric spacetimes. In more general situation, one may not define the effective potential of the system, but one can still use eq.(§) to characterize the stability of the evolved circular orbits in general spacetimes.\n\n",
+        "start": 14785,
+        "end": 17545
+      },
+      {
+        "title": "General spherical symmetric spacetime",
+        "text": "General spherical symmetric spacetime\n\nIn this section, we will study the evolution of the circular orbits in general spherical symmetric spacetime. The metric of the general spherical symmetric spacetime in t,r,θ,φ coordinate can be written as where f and g are functions of t,r. The unit normal vector v^a of the particle surface can be written as [32] where f and g represent f(t,ro(t)) and g(t,ro(t)), ro is a function of coordinate time ``t\" and ``·\" stands for the derivative with respect to ``t\". Considering the spherical symmetry of this spacetime, we study the circular orbits on the equatorial plane. Then, we suppose the component of the tangent vector of the circular orbit to be k^a=k^0,k^1,0,k^3, where k^0 ,k^1 ,k^3 are the functions of t,r. From the orthogonal condition, i.e., k^ava=0, we have\n\n",
+        "start": 17545,
+        "end": 18358
+      },
+      {
+        "title": "timelike geodesic",
+        "text": "timelike geodesic\n\nFor an evolved timelike circular orbit,from the normalized condition of the timelike geodesic, i.e., k^aka=-1,, we have To parametrize the timelike circular orbit of the general dynamical spherical symmetric spacetime, we introduce the conserved orbital angular momentum of the timelike circular orbit which defined as From eq.(§) and considering eq.(§), (§) and (§), we have where f represents ∂ f(t,r)/∂ t|ro(t),t and f^′ represents ∂ f(t,r)/∂ r|ro(t),t. Solving eq.(§), we have This is the evolution equation of the timelike circular orbits in general spherical symmetric spacetime and it is consistent with the result in [45].\n\n",
+        "start": 18358,
+        "end": 19009
+      },
+      {
+        "title": "null geodesic",
+        "text": "null geodesic\n\nThe evolved circular photon orbit in dynamical spherical symmetric spacetime is usually called a photon surface. So, we will substitute rph for ro to represent the location of a null circular orbit. It should be noted that rph represents rph(t) and is a function of coordinate time ``t\". For a photon surface, from the normalized condition of the null geodesic, i.e., k^aka=0, we have From eq.(§) and combining eq.(§) and (§), we have Solving eq.(§), we get This is the equation of the photon surface in general spherical symmetric spacetime.\n\nAs an example, we study the evolution of the circular orbits in the in-going Vaidya spacetime. The metric of the 4-dimensional Vaidya spacetime in the in-going null coordinate v,r,θ,φ can be written as [44] where M(v) is a freely specifiable function of v. The unit normal vector v^a of the particle surface in Vaidya spacetime can be written as [32] where ``·\" stands for the derivative with respect to the coordinate time ``v\". Because of the spherical symmetry of the system, we can study this question on the equatorial plane, i.e., θ=π/2. Similarly, we can suppose the component of the tangent vector of the circular orbit to be k^a=k^0,k^1,0,k^3, where k^0 ,k^1 ,k^3 are functions of v,r. From the orthogonal condition that k^ava=0, we have From eq.(§), we have\n\n• timelike geodesic:\n\nFor a timelike geodesic, from the normalized condition that kak^a=-1, we have To parametrize the timelike circular orbit of the Vaidya spacetime, we introduce the conserved orbital angular momentum of the timelike circular orbit which defined as So, we have Combining eq.(§), (§) and (§), we have and Here, we choose k^a to be a furture-pointing vector. Putting eq.(§), (§) and (§) into eq.(§), we have which is consistent with the result in [45]. To get the evolution equation of the ISCO in Vaidya spacetime, one needs to require v^c∇c(Kabk^ak^b)=0. Then, one can get which is consistent with the result in [45]. For a more general situation, it is not hard to show definition 2 will give the same result as [45].\n\n• null geodesic:\n\nFor a photon surface in Vaidya spacetime, from the normalized condition of the null geodesic, i.e., kak^a=0, we have From eq.(§) and (§), we have and Combining eq.(§), (§) and (§), we have This is the equation of the photon surface in Vaidya spacetime and it is consistent with the result in [5].\n\n",
+        "start": 19009,
+        "end": 21392
+      },
+      {
+        "title": "Kerr spacetime",
+        "text": "Kerr spacetime\n\nIn this section, we will study the spherical orbits in Kerr spacetime to illustrate the validity of the definition in general stationary axisymmetric spacetimes.\n\nThe metric of the 4-dimensional Kerr spacetime in Boyer-Lindquist coordinates takes the following form where a is the angular momentum per unit mass of the black hole (0≤ a≤ M), and the functions Δ ,Σ are defined as The spherical orbits are not evolved in general stationary axisymmetric spacetimes and satisfy r=constant [23]. So, the normal vector v^a of the particle surface in Kerr spacetime can be expressed as The tangent vector of spherical orbits can be generally choosed as k^a=k^0,k^1,k^2,k^3. From the orthogonal condition, i.e. k^ava=0, we have k^1=0. So, k^a becomes k^0,0,k^2,k^3.\n\nTo obtain an explicit parameterization of the class of spherical orbits in the Kerr spacetime, we introduce the conserved orbital energy and orbital angular momentum as follows where Σo=ro^2+a^2^2θ. Simultaneously, we introduce the Carter's constant of the spherical orbit which can be defined as and qo is defined as where and where Δo=ro^2-2Mro+a^2. Then, we introduce the parameter and where χ≡ k^3/k^0. Considering the eq.(§), we have\n\n",
+        "start": 21392,
+        "end": 22607
+      },
+      {
+        "title": "null geodesic",
+        "text": "null geodesic\n\nThe spatial section of the photon surface in Kerr spacetime is not topologically closed, and the collection of the photon surface forms the photon region in Kerr spacetime [20]. For a spherical photon orbit, from the normalized condition of the null geodesic, i.e., k^aka=0, we have Combining the eq.(§), (§), (§) and (§), one can get which are consistent with the results in [20].\n\n",
+        "start": 22607,
+        "end": 23005
+      },
+      {
+        "title": "timelike geodesic",
+        "text": "timelike geodesic\n\nFor a spherical timelike orbit, from the normalized condition of the timelike geodesic, i.e., k^aka=-1, we have Solving eq.(§) and (§), we get From eq.(§), we have Putting eq.(§) and (§) into eq.(§), we get Combining eq.(§), (§), (§) and (§), we have Combining eq.(§) and (§), after some calculations, one can get the same result as [30]\n\n",
+        "start": 23005,
+        "end": 23363
+      },
+      {
+        "title": "Kerr-Vaidya spacetime in the slow-rotation limit",
+        "text": "Kerr-Vaidya spacetime in the slow-rotation limit\n\nIn this section, we will study the evolution of the spherical orbits of the Kerr-Vaidya spacetime in the slow-rotation limit.\n\nFor simplicity, we focus on the equatorial plane of the 4-dimensional Kerr-Vaidya spacetime. In the slow rotation limit, the metric the Kerr-Vaidya spacetime on the equatorial plane can be expressed as [17, 46] For an evolved circular orbits, one can suppose the component of the tangent vector of the evolved spherical orbits to be k^a=k^0,k^1,k^2, where k^0 ,k^1 ,k^2 are the functions of v,r. The unit normal vector v^a of the particle surface can be written as where ``·\" stands for the derivative with respect to the coordinate time ``v\". From the orthogonal condition that k^ava=0, we have where ro and φo represent ro(v) and φo(v,ro(v)) respectively. From the eq.(§) of definition 1, we have\n\n",
+        "start": 23363,
+        "end": 24240
+      },
+      {
+        "title": "null geodesic",
+        "text": "null geodesic\n\nFor an arbitrary null geodesic, we have ds^2=0. Then, we can get the following result Solving the above equation, we get Here, we can only consider the lowest order of a. So, we have From the normalizing condition of k^a, i.e., k^aka=0, we have Combining eq.(§), (§), (§) and (§), we get where “+\" correspond to the orbital angular momentum associated with “direct\" circular orbit and “-\" corresponds to the “retrograde\" circular orbit. This is the evolution equation of the circular photon orbits at the equatorial plane of the Kerr-Vaidya spacetime in the slow rotation limit, and it is consistent with the result in [17].\n\n",
+        "start": 24240,
+        "end": 24881
+      },
+      {
+        "title": "timelike geodesic",
+        "text": "timelike geodesic\n\nFor an arbitrary timelike geodesic, we have where τ is the affine parameter of the timelike geodesic, and the conserved orbital angular momentum can be defined as Combining eq.(§) and (§), we get Here, we only consider the lowest order of a. So, we have Considering an evolved timelike circular orbits of Kerr-Vaidya spacetime in the slow rotation limit, from the normalizing condition of k^a, i.e., k^aka=-1, we have and the corresponding angular momentum can be expressed as Combining eq.( §), (§), (§), (§) and (§), we have This is the evolution equation of the timelike circular orbits at the equatorial plane of the Kerr-Vaidya spacetime in the slow rotation limit, and it is consistent with the result in [45].\n\n",
+        "start": 24881,
+        "end": 25618
+      },
+      {
+        "title": "Discussion and conclusion",
+        "text": "Discussion and conclusion\n\nIn this paper, based on the definition of the photon surface given by [32, 31], we give a quasi-local definition of the (partial) particle surface in general spacetime in definition 1 and a simple classification in definition 2. The new definition has three advantages over [32]. First, it can be used to get the timelike circular orbits in general spacetime. Second, it can be used to study the photon region of the Kerr-like spacetime. Third, it not allows for the existence of the particle surface in spacetime without gravity. The third point is a little bit different from [31] which is based on a codimension-2 surface, and our definition is based on a hypersurface.\n\nIn definition 2, we give a quasi-local definition of the stability of the circular orbits. In the static spherical symmetric spacetime, this condition consistent with the second derivative of the effective potential of the system. In more general situation, one may not define the effective potential of the system. But, one can still use definition 2 to classify the stability of the circular orbits. One can use the condition that v^c∇c(Kabk^ak^b)=0 to get the evolution equation of the ISCO in general spacetime, and the result is consistent with [45].\n\nUsing definition 1, we studied the (partial) particle surface in general spherical symmetric spacetime and axisymmetric spacetime. The results obtained by our definition are all consistent with the previous results. Although we only studied the situation in 4-dimensional spacetime, our definition actually can be used in higher spacetimes and it is easy to generalize the previous studies to higher spacetimes.\n\nWhen solving the evolution equation of the (partial) particle surface, one need give appropriate boundary conditions. But from our definition, one can not get the boundary condition. The similar question in the study of photon surface has been solved by [4] which is based on a codimension-2 surface. One may solve the boundary question in our definition by using the method based on a codimension-2 surface.\n\n",
+        "start": 25618,
+        "end": 27699
+      },
+      {
+        "title": "Acknowledgement",
+        "text": "Acknowledgement\n\nWe would like to thank Li-Ming Cao for his useful discussions and kindly helps. This work is supported by the National Natural Science Foundation of China (Grant No. 41930112, 91755215 and 11804238), and our research is also supported by Sichuan Science and Technology Program (Grant No. 2022YFG0317).",
+        "start": 27699,
+        "end": 28017
+      }
+    ],
+    "references": [
+      {
+        "key": "EventHorizonTelescope:2019dse",
+        "label": "1",
+        "raw": "K. Akiyama et al. [Event Horizon Telescope], Astrophys. J. Lett. 875, L1 (2019) doi:10.3847/2041-8213/ab0ec7 [arXiv:1906.11238 [astro-ph.GA]].",
+        "title": null,
+        "authors": [],
+        "year": 2041,
+        "doi": "10.3847/2041-8213/ab0ec7",
+        "arxiv_id": "1906.11238",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "EventHorizonTelescope:2019ggy",
+        "label": "2",
+        "raw": "K. Akiyama et al. [Event Horizon Telescope], Astrophys. J. Lett. 875, no.1, L6 (2019) doi:10.3847/2041-8213/ab1141 [arXiv:1906.11243 [astro-ph.GA]].",
+        "title": null,
+        "authors": [],
+        "year": 2041,
+        "doi": "10.3847/2041-8213/ab1141",
+        "arxiv_id": "1906.11243",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "EventHorizonTelescope:2019pgp",
+        "label": "3",
+        "raw": "K. Akiyama et al. [Event Horizon Telescope], Astrophys. J. Lett. 875, no.1, L5 (2019) doi:10.3847/2041-8213/ab0f43 [arXiv:1906.11242 [astro-ph.GA]].",
+        "title": null,
+        "authors": [],
+        "year": 2041,
+        "doi": "10.3847/2041-8213/ab0f43",
+        "arxiv_id": "1906.11242",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "EventHorizonTelescope:2019ths",
+        "label": "4",
+        "raw": "K. Akiyama et al. [Event Horizon Telescope], Astrophys. J. Lett. 875, no.1, L4 (2019) doi:10.3847/2041-8213/ab0e85 [arXiv:1906.11241 [astro-ph.GA]].",
+        "title": null,
+        "authors": [],
+        "year": 2041,
+        "doi": "10.3847/2041-8213/ab0e85",
+        "arxiv_id": "1906.11241",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "EventHorizonTelescope:2019uob",
+        "label": "5",
+        "raw": "K. Akiyama et al. [Event Horizon Telescope], Astrophys. J. Lett. 875, no.1, L2 (2019) doi:10.3847/2041-8213/ab0c96 [arXiv:1906.11239 [astro-ph.IM]].",
+        "title": null,
+        "authors": [],
+        "year": 2041,
+        "doi": "10.3847/2041-8213/ab0c96",
+        "arxiv_id": "1906.11239",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "EventHorizonTelescope:2019jan",
+        "label": "6",
+        "raw": "K. Akiyama et al. [Event Horizon Telescope], Astrophys. J. Lett. 875, no.1, L3 (2019) doi:10.3847/2041-8213/ab0c57 [arXiv:1906.11240 [astro-ph.GA]].",
+        "title": null,
+        "authors": [],
+        "year": 2041,
+        "doi": "10.3847/2041-8213/ab0c57",
+        "arxiv_id": "1906.11240",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Grenzebach:2016",
+        "label": "7",
+        "raw": "Grenzebach, A., The Shadow of Black Holes – An Analytic Description, SpringerBriefs in Physics, Springer, Heidelberg (2016).",
+        "title": null,
+        "authors": [],
+        "year": 2016,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Cunha:2018acu",
+        "label": "8",
+        "raw": "P. V. P. Cunha and C. A. R. Herdeiro, Gen. Rel. Grav. 50, no. 4, 42 (2018) [arXiv:1801.00860 [gr-qc]].",
+        "title": null,
+        "authors": [],
+        "year": 2018,
+        "doi": null,
+        "arxiv_id": "1801.00860",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Virbhadra:2022ybp",
+        "label": "9",
+        "raw": "K. S. Virbhadra, [arXiv:2204.01792 [gr-qc]].",
+        "title": null,
+        "authors": [],
+        "year": null,
+        "doi": null,
+        "arxiv_id": "2204.01792",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Virbhadra:2022iiy",
+        "label": "10",
+        "raw": "K. S. Virbhadra, [arXiv:2204.01879 [gr-qc]].",
+        "title": null,
+        "authors": [],
+        "year": null,
+        "doi": null,
+        "arxiv_id": "2204.01879",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Abramowicz:2011xu",
+        "label": "11",
+        "raw": "M. A. Abramowicz and P. C. Fragile, Living Rev. Rel. 16, 1 (2013) doi:10.12942/lrr-2013-1 [arXiv:1104.5499 [astro-ph.HE]].",
+        "title": null,
+        "authors": [],
+        "year": 2013,
+        "doi": "10.12942/lrr-2013-1",
+        "arxiv_id": "1104.5499",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Synge:1966okc",
+        "label": "12",
+        "raw": "J. L. Synge, Mon. Not. Roy. Astron. Soc. 131, no.3, 463-466 (1966) doi:10.1093/mnras/131.3.463",
+        "title": null,
+        "authors": [],
+        "year": 1966,
+        "doi": "10.1093/mnras/131.3.463",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Virbhadra:1999nm",
+        "label": "13",
+        "raw": "K. S. Virbhadra and G. F. R. Ellis, Phys. Rev. D 62, 084003 (2000) doi:10.1103/PhysRevD.62.084003 [arXiv:astro-ph/9904193 [astro-ph]].",
+        "title": null,
+        "authors": [],
+        "year": 2000,
+        "doi": "10.1103/PhysRevD.62.084003",
+        "arxiv_id": "astro-ph/9904193",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Hasse:2001by",
+        "label": "14",
+        "raw": "W. Hasse and V. Perlick, Gen. Rel. Grav. 34, 415-433 (2002) doi:10.1023/A:1015384604371 [arXiv:gr-qc/0108002 [gr-qc]].",
+        "title": null,
+        "authors": [],
+        "year": 2002,
+        "doi": "10.1023/A:1015384604371",
+        "arxiv_id": "gr-qc/0108002",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Chakraborty:2011uj",
+        "label": "15",
+        "raw": "S. Chakraborty and S. Chakraborty, Can. J. Phys. 89, 689-695 (2011) doi:10.1139/p11-032 [arXiv:1109.0676 [gr-qc]].",
+        "title": null,
+        "authors": [],
+        "year": 2011,
+        "doi": "10.1139/p11-032",
+        "arxiv_id": "1109.0676",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Cardoso:2008bp",
+        "label": "16",
+        "raw": "V. Cardoso, A. S. Miranda, E. Berti, H. Witek and V. T. Zanchin, Phys. Rev. D 79, no.6, 064016 (2009) doi:10.1103/PhysRevD.79.064016 [arXiv:0812.1806 [hep-th]].",
+        "title": null,
+        "authors": [],
+        "year": 2009,
+        "doi": "10.1103/PhysRevD.79.064016",
+        "arxiv_id": "0812.1806",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Mishra:2019trb",
+        "label": "17",
+        "raw": "A. K. Mishra, S. Chakraborty and S. Sarkar, Phys. Rev. D 99, no.10, 104080 (2019) doi:10.1103/PhysRevD.99.104080 [arXiv:1903.06376 [gr-qc]].",
+        "title": null,
+        "authors": [],
+        "year": 2019,
+        "doi": "10.1103/PhysRevD.99.104080",
+        "arxiv_id": "1903.06376",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Koga:2022dsu",
+        "label": "18",
+        "raw": "Y. Koga, N. Asaka, M. Kimura and K. Okabayashi, Phys. Rev. D 105, no.10, 104040 (2022) doi:10.1103/PhysRevD.105.104040 [arXiv:2202.00201 [gr-qc]].",
+        "title": null,
+        "authors": [],
+        "year": 2022,
+        "doi": "10.1103/PhysRevD.105.104040",
+        "arxiv_id": "2202.00201",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Bardeen:1972fi",
+        "label": "19",
+        "raw": "J. M. Bardeen, W. H. Press and S. A. Teukolsky, Astrophys. J. 178, 347 (1972) doi:10.1086/151796",
+        "title": null,
+        "authors": [],
+        "year": 1972,
+        "doi": "10.1086/151796",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Teo:2003",
+        "label": "20",
+        "raw": "Edward Teo, Gen. Rel. Grav. 35, 1909–1926 (2003) doi:10.1023/A:1026286607562.",
+        "title": null,
+        "authors": [],
+        "year": 2003,
+        "doi": "10.1023/A:1026286607562",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Johannsen:2013vgc",
+        "label": "21",
+        "raw": "T. Johannsen, Astrophys. J. 777, 170 (2013) doi:10.1088/0004-637X/777/2/170 [arXiv:1501.02814 [astro-ph.HE]].",
+        "title": null,
+        "authors": [],
+        "year": 2013,
+        "doi": "10.1088/0004-637X/777/2/170",
+        "arxiv_id": "1501.02814",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Igata:2019pgb",
+        "label": "22",
+        "raw": "T. Igata, H. Ishihara and Y. Yasunishi, Phys. Rev. D 100, no.4, 044058 (2019) doi:10.1103/PhysRevD.100.044058 [arXiv:1904.00271 [gr-qc]].",
+        "title": null,
+        "authors": [],
+        "year": 2019,
+        "doi": "10.1103/PhysRevD.100.044058",
+        "arxiv_id": "1904.00271",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Cederbaum:2019vwv",
+        "label": "23",
+        "raw": "C. Cederbaum and S. Jahns, Gen. Rel. Grav. 51, no.6, 79 (2019) [erratum: Gen. Rel. Grav. 51, no.11, 154 (2019)] doi:10.1007/s10714-019-2561-y [arXiv:1904.00916 [math.DG]].",
+        "title": null,
+        "authors": [],
+        "year": 2019,
+        "doi": "10.1007/s10714-019-2561-y",
+        "arxiv_id": "1904.00916",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Cornish:2003ig",
+        "label": "24",
+        "raw": "N. J. Cornish and J. J. Levin, Class. Quant. Grav. 20, 1649-1660 (2003) doi:10.1088/0264-9381/20/9/304 [arXiv:gr-qc/0304056 [gr-qc]].",
+        "title": null,
+        "authors": [],
+        "year": 2003,
+        "doi": "10.1088/0264-9381/20/9/304",
+        "arxiv_id": "gr-qc/0304056",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Vieira:2013jga",
+        "label": "25",
+        "raw": "R. S. S. Vieira, J. Schee, W. Kluźniak, Z. Stuchlík and M. Abramowicz, Phys. Rev. D 90, no.2, 024035 (2014) doi:10.1103/PhysRevD.90.024035 [arXiv:1311.5820 [gr-qc]].",
+        "title": null,
+        "authors": [],
+        "year": 2014,
+        "doi": "10.1103/PhysRevD.90.024035",
+        "arxiv_id": "1311.5820",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Boonserm:2019nqq",
+        "label": "26",
+        "raw": "P. Boonserm, T. Ngampitipan, A. Simpson and M. Visser, Phys. Rev. D 101, no.2, 024050 (2020) doi:10.1103/PhysRevD.101.024050 [arXiv:1909.06755 [gr-qc]].",
+        "title": null,
+        "authors": [],
+        "year": 2020,
+        "doi": "10.1103/PhysRevD.101.024050",
+        "arxiv_id": "1909.06755",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Berry:2020ntz",
+        "label": "27",
+        "raw": "T. Berry, A. Simpson and M. Visser, Universe 7, no.1, 2 (2020) doi:10.3390/universe7010002 [arXiv:2008.13308 [gr-qc]].",
+        "title": null,
+        "authors": [],
+        "year": 2008,
+        "doi": "10.3390/universe7010002",
+        "arxiv_id": "2008.13308",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Slany:2013ora",
+        "label": "28",
+        "raw": "P. Slaný, M. Pokorná and Z. Stuchlík, Gen. Rel. Grav. 45, 2611-2633 (2013) doi:10.1007/s10714-013-1606-x",
+        "title": null,
+        "authors": [],
+        "year": 2013,
+        "doi": "10.1007/s10714-013-1606-x",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Stuchlik:2003dt",
+        "label": "29",
+        "raw": "Z. Stuchlik and P. Slany, Phys. Rev. D 69, 064001 (2004) doi:10.1103/PhysRevD.69.064001 [arXiv:gr-qc/0307049 [gr-qc]].",
+        "title": null,
+        "authors": [],
+        "year": 2004,
+        "doi": "10.1103/PhysRevD.69.064001",
+        "arxiv_id": "gr-qc/0307049",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Teo:2020sey",
+        "label": "30",
+        "raw": "E. Teo, Gen. Rel. Grav. 53, no.1, 10 (2021) doi:10.1007/s10714-020-02782-z [arXiv:2007.04022 [gr-qc]].",
+        "title": null,
+        "authors": [],
+        "year": 2007,
+        "doi": "10.1007/s10714-020-02782-z",
+        "arxiv_id": "2007.04022",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Cao:2019vlu",
+        "label": "31",
+        "raw": "L. M. Cao and Y. Song, Eur. Phys. J. C 81, no.8, 714 (2021) doi:10.1140/epjc/s10052-021-09502-0 [arXiv:1910.13758 [gr-qc]].",
+        "title": null,
+        "authors": [],
+        "year": 2021,
+        "doi": "10.1140/epjc/s10052-021-09502-0",
+        "arxiv_id": "1910.13758",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Claudel:2000yi",
+        "label": "32",
+        "raw": "C. M. Claudel, K. S. Virbhadra and G. F. R. Ellis, J. Math. Phys. 42, 818-838 (2001) doi:10.1063/1.1308507 [arXiv:gr-qc/0005050 [gr-qc]].",
+        "title": null,
+        "authors": [],
+        "year": 2001,
+        "doi": "10.1063/1.1308507",
+        "arxiv_id": "gr-qc/0005050",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Shiromizu:2017ego",
+        "label": "33",
+        "raw": "T. Shiromizu, Y. Tomikawa, K. Izumi and H. Yoshino, PTEP 2017, no.3, 033E01 (2017) doi:10.1093/ptep/ptx022 [arXiv:1701.00564 [gr-qc]].",
+        "title": null,
+        "authors": [],
+        "year": 2017,
+        "doi": "10.1093/ptep/ptx022",
+        "arxiv_id": "1701.00564",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Yoshino:2017gqv",
+        "label": "34",
+        "raw": "H. Yoshino, K. Izumi, T. Shiromizu and Y. Tomikawa, PTEP 2017, no.6, 063E01 (2017) doi:10.1093/ptep/ptx072 [arXiv:1704.04637 [gr-qc]].",
+        "title": null,
+        "authors": [],
+        "year": 2017,
+        "doi": "10.1093/ptep/ptx072",
+        "arxiv_id": "1704.04637",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Yoshino:2019dty",
+        "label": "35",
+        "raw": "H. Yoshino, K. Izumi, T. Shiromizu and Y. Tomikawa, PTEP 2020, no.2, 023E02 (2020) doi:10.1093/ptep/ptz161 [arXiv:1909.08420 [gr-qc]].",
+        "title": null,
+        "authors": [],
+        "year": 2020,
+        "doi": "10.1093/ptep/ptz161",
+        "arxiv_id": "1909.08420",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Galtsov:2019bty",
+        "label": "36",
+        "raw": "D. V. Gal'tsov and K. V. Kobialko, Phys. Rev. D 99, no.8, 084043 (2019) doi:10.1103/PhysRevD.99.084043 [arXiv:1901.02785 [gr-qc]].",
+        "title": null,
+        "authors": [],
+        "year": 2019,
+        "doi": "10.1103/PhysRevD.99.084043",
+        "arxiv_id": "1901.02785",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Kobialko:2020vqf",
+        "label": "37",
+        "raw": "K. V. Kobialko and D. V. Gal'tsov, Eur. Phys. J. C 80, no.6, 527 (2020) doi:10.1140/epjc/s10052-020-8070-z [arXiv:2002.04280 [gr-qc]].",
+        "title": null,
+        "authors": [],
+        "year": 2002,
+        "doi": "10.1140/epjc/s10052-020-8070-z",
+        "arxiv_id": "2002.04280",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Kobialko:2021aqg",
+        "label": "38",
+        "raw": "K. Kobialko, I. Bogush and D. Gal'tsov, Phys. Rev. D 104, no.4, 044009 (2021) doi:10.1103/PhysRevD.104.044009 [arXiv:2104.02167 [gr-qc]].",
+        "title": null,
+        "authors": [],
+        "year": 2021,
+        "doi": "10.1103/PhysRevD.104.044009",
+        "arxiv_id": "2104.02167",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Koga:2019uqd",
+        "label": "39",
+        "raw": "Y. Koga and T. Harada, Phys. Rev. D 100, no.6, 064040 (2019) doi:10.1103/PhysRevD.100.064040 [arXiv:1907.07336 [gr-qc]].",
+        "title": null,
+        "authors": [],
+        "year": 2019,
+        "doi": "10.1103/PhysRevD.100.064040",
+        "arxiv_id": "1907.07336",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Koga:2020akc",
+        "label": "40",
+        "raw": "Y. Koga, T. Igata and K. Nakashi, Phys. Rev. D 103, no.4, 044003 (2021) doi:10.1103/PhysRevD.103.044003 [arXiv:2011.10234 [gr-qc]].",
+        "title": null,
+        "authors": [],
+        "year": 2011,
+        "doi": "10.1103/PhysRevD.103.044003",
+        "arxiv_id": "2011.10234",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Wald:1984rg",
+        "label": "41",
+        "raw": "R. M. Wald, “General Relativity,” Chicago Univ. Pr., 1984, doi:10.7208/chicago/9780226870373.001.0001",
+        "title": null,
+        "authors": [],
+        "year": 1984,
+        "doi": "10.7208/chicago/9780226870373.001.0001",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Tsupko:2016bpn",
+        "label": "42",
+        "raw": "O. Y. Tsupko, G. S. Bisnovatyi-Kogan and P. I. Jefremov, Grav. Cosmol. 22, no.2, 138-147 (2016) doi:10.1134/S0202289316020158 [arXiv:1605.04189 [gr-qc]].",
+        "title": null,
+        "authors": [],
+        "year": 2016,
+        "doi": "10.1134/S0202289316020158",
+        "arxiv_id": "1605.04189",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Berenstein:2020vlp",
+        "label": "43",
+        "raw": "D. Berenstein, Z. Li and J. Simon, Class. Quant. Grav. 38, no.4, 045009 (2021) doi:10.1088/1361-6382/abcaeb [arXiv:2009.04500 [hep-th]].",
+        "title": null,
+        "authors": [],
+        "year": 2009,
+        "doi": "10.1088/1361-6382/abcaeb",
+        "arxiv_id": "2009.04500",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Vaidya:1951zza",
+        "label": "44",
+        "raw": "P. C. Vaidya, Phys. Rev. 83, 10-17 (1951) doi:10.1103/PhysRev.83.10",
+        "title": null,
+        "authors": [],
+        "year": 1951,
+        "doi": "10.1103/PhysRev.83.10",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Song:2021ziq",
+        "label": "45",
+        "raw": "Y. Song, Eur. Phys. J. C 81, no.10, 875 (2021) doi:10.1140/epjc/s10052-021-09623-6 [arXiv:2108.00696 [gr-qc]].",
+        "title": null,
+        "authors": [],
+        "year": 2021,
+        "doi": "10.1140/epjc/s10052-021-09623-6",
+        "arxiv_id": "2108.00696",
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "Murenbeeld:1970aq",
+        "label": "46",
+        "raw": "M. Murenbeeld and J. R. Trollope, Phys. Rev. D 1, 3220-3223 (1970) doi:10.1103/PhysRevD.1.3220",
+        "title": null,
+        "authors": [],
+        "year": 1970,
+        "doi": "10.1103/PhysRevD.1.3220",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      }
+    ],
+    "citation_keys_total": 46,
+    "citation_keys_mapped": 46,
+    "notes": []
+  },
+  "sentences": [
+    {
+      "id": "s1",
+      "text": "In 2019, the Event Horizon Telescope (EHT) Collaborations published the first image of the black hole at the center of the M87 galaxy [1, 2, 6, 3, 4, 5].",
+      "section": "Introduction",
+      "start": 1129,
+      "end": 1282,
+      "reference_keys": [
+        "EventHorizonTelescope:2019dse",
+        "EventHorizonTelescope:2019ggy",
+        "EventHorizonTelescope:2019jan",
+        "EventHorizonTelescope:2019pgp",
+        "EventHorizonTelescope:2019ths",
+        "EventHorizonTelescope:2019uob"
+      ],
+      "marker_spans": [
+        [
+          1263,
+          1281
+        ]
+      ],
+      "marker_keys": [
+        [
+          "EventHorizonTelescope:2019dse",
+          "EventHorizonTelescope:2019ggy",
+          "EventHorizonTelescope:2019jan",
+          "EventHorizonTelescope:2019pgp",
+          "EventHorizonTelescope:2019ths",
+          "EventHorizonTelescope:2019uob"
+        ]
+      ],
+      "context_before": "Confirming the existence of black holes can further verify the correctness of general relativity.",
+      "context_after": "As shown in FIG.§."
+    },
+    {
+      "id": "s2",
+      "text": "Up to date, there are many studies on the black hole shadow [7, 8, 9, 10] and the accretion disk [33].",
+      "section": "Introduction",
+      "start": 1590,
+      "end": 1692,
+      "reference_keys": [
+        "Grenzebach:2016",
+        "Cunha:2018acu",
+        "Virbhadra:2022ybp",
+        "Virbhadra:2022iiy",
+        "Shiromizu:2017ego"
+      ],
+      "marker_spans": [
+        [
+          1650,
+          1663
+        ],
+        [
+          1687,
+          1691
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Grenzebach:2016",
+          "Cunha:2018acu",
+          "Virbhadra:2022ybp",
+          "Virbhadra:2022iiy"
+        ],
+        [
+          "Shiromizu:2017ego"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "The circular orbits of the spacetime are important for black hole shadow and accretion disk."
+    },
+    {
+      "id": "s3",
+      "text": "For example, in Schwarzschild spacetime, on the one hand, the photon sphere, which is the location of the circular photon orbits, is the boundary of the black hole shadow [12, 13].",
+      "section": "Introduction",
+      "start": 1786,
+      "end": 1966,
+      "reference_keys": [
+        "Synge:1966okc",
+        "Virbhadra:1999nm"
+      ],
+      "marker_spans": [
+        [
+          1957,
+          1965
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Synge:1966okc",
+          "Virbhadra:1999nm"
+        ]
+      ],
+      "context_before": "The circular orbits of the spacetime are important for black hole shadow and accretion disk.",
+      "context_after": "On the other hand, the timelike stable circular orbits determine the position of the accretion disk and the ISCO is the boundary of the accretion disk [38]."
+    },
+    {
+      "id": "s4",
+      "text": "On the other hand, the timelike stable circular orbits determine the position of the accretion disk and the ISCO is the boundary of the accretion disk [38].",
+      "section": "Introduction",
+      "start": 1967,
+      "end": 2123,
+      "reference_keys": [
+        "Kobialko:2021aqg"
+      ],
+      "marker_spans": [
+        [
+          2118,
+          2122
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Kobialko:2021aqg"
+        ]
+      ],
+      "context_before": "For example, in Schwarzschild spacetime, on the one hand, the photon sphere, which is the location of the circular photon orbits, is the boundary of the black hole shadow [12, 13].",
+      "context_after": "Here, we focus on the study of the circular orbits in the spacetime."
+    },
+    {
+      "id": "s5",
+      "text": "Such as, for null geodesics, this method can be used to study the photon sphere in static spacetimes [14, 15, 16], the photon surface in dynamical spacetime [17, 18] and the photon region in stationary spacetimes [19, 20, 21, 22, 23]; for timelike geodesics, one can use this method to study the circular orbits in static spacetimes [24, 25, 26, 27] and stationary spacetimes [28, 29, 30].",
+      "section": "Introduction",
+      "start": 2381,
+      "end": 2770,
+      "reference_keys": [
+        "Hasse:2001by",
+        "Chakraborty:2011uj",
+        "Cardoso:2008bp",
+        "Mishra:2019trb",
+        "Koga:2022dsu",
+        "Bardeen:1972fi",
+        "Teo:2003",
+        "Johannsen:2013vgc",
+        "Igata:2019pgb",
+        "Cederbaum:2019vwv",
+        "Cornish:2003ig",
+        "Vieira:2013jga",
+        "Boonserm:2019nqq",
+        "Berry:2020ntz",
+        "Slany:2013ora",
+        "Stuchlik:2003dt",
+        "Teo:2020sey"
+      ],
+      "marker_spans": [
+        [
+          2482,
+          2494
+        ],
+        [
+          2538,
+          2546
+        ],
+        [
+          2594,
+          2614
+        ],
+        [
+          2714,
+          2730
+        ],
+        [
+          2757,
+          2769
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Hasse:2001by",
+          "Chakraborty:2011uj",
+          "Cardoso:2008bp"
+        ],
+        [
+          "Mishra:2019trb",
+          "Koga:2022dsu"
+        ],
+        [
+          "Bardeen:1972fi",
+          "Teo:2003",
+          "Johannsen:2013vgc",
+          "Igata:2019pgb",
+          "Cederbaum:2019vwv"
+        ],
+        [
+          "Cornish:2003ig",
+          "Vieira:2013jga",
+          "Boonserm:2019nqq",
+          "Berry:2020ntz"
+        ],
+        [
+          "Slany:2013ora",
+          "Stuchlik:2003dt",
+          "Teo:2020sey"
+        ]
+      ],
+      "context_before": "This method has a wide range of applications.",
+      "context_after": "However, there are some practical problems in this traditional method which have been pointed out by [31]: (i)."
+    },
+    {
+      "id": "s6",
+      "text": "However, there are some practical problems in this traditional method which have been pointed out by [31]: (i).",
+      "section": "Introduction",
+      "start": 2771,
+      "end": 2882,
+      "reference_keys": [
+        "Cao:2019vlu"
+      ],
+      "marker_spans": [
+        [
+          2872,
+          2876
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Cao:2019vlu"
+        ]
+      ],
+      "context_before": "Such as, for null geodesics, this method can be used to study the photon sphere in static spacetimes [14, 15, 16], the photon surface in dynamical spacetime [17, 18] and the photon region in stationary spacetimes [19, 20, 21, 22, 23]; for timelike geodesics, one can use this method to study the circular orbits in static spacetimes [24, 25, 26, 27] and stationary spacetimes [28, 29, 30].",
+      "context_after": "To grantee the separability of the geodesic equations, the systems which have been studied must have enough symmetries [7]."
+    },
+    {
+      "id": "s7",
+      "text": "To grantee the separability of the geodesic equations, the systems which have been studied must have enough symmetries [7].",
+      "section": "Introduction",
+      "start": 2883,
+      "end": 3006,
+      "reference_keys": [
+        "Grenzebach:2016"
+      ],
+      "marker_spans": [
+        [
+          3002,
+          3005
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Grenzebach:2016"
+        ]
+      ],
+      "context_before": "However, there are some practical problems in this traditional method which have been pointed out by [31]: (i).",
+      "context_after": "For real black holes, this condition is hard to satisfy."
+    },
+    {
+      "id": "s8",
+      "text": "For null geodesic, the first quasi-local definition of the photon surface is given by Claudel, Virbhadra and Ellis [32].",
+      "section": "Introduction",
+      "start": 3489,
+      "end": 3609,
+      "reference_keys": [
+        "Claudel:2000yi"
+      ],
+      "marker_spans": [
+        [
+          3604,
+          3608
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Claudel:2000yi"
+        ]
+      ],
+      "context_before": "The second approach, which is called quasi-local study, has drawn some attention these years.",
+      "context_after": "They defined a photon surface in a general spacetime as an umbilical timelike hypersurface."
+    },
+    {
+      "id": "s9",
+      "text": "Such as, Yoshino et al. generalized the photon surface to be a loosely trapped surface [33] and (dynamically) transversely trapping surface [34, 35, 36]; Kobialko et al. generalized the photon surface to be a fundamental photon hypersurfaces and fundamental photon regions [37, 38].",
+      "section": "Introduction",
+      "start": 4201,
+      "end": 4483,
+      "reference_keys": [
+        "Shiromizu:2017ego",
+        "Yoshino:2017gqv",
+        "Yoshino:2019dty",
+        "Galtsov:2019bty",
+        "Kobialko:2020vqf",
+        "Kobialko:2021aqg"
+      ],
+      "marker_spans": [
+        [
+          4288,
+          4292
+        ],
+        [
+          4341,
+          4353
+        ],
+        [
+          4474,
+          4482
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Shiromizu:2017ego"
+        ],
+        [
+          "Yoshino:2017gqv",
+          "Yoshino:2019dty",
+          "Galtsov:2019bty"
+        ],
+        [
+          "Kobialko:2020vqf",
+          "Kobialko:2021aqg"
+        ]
+      ],
+      "context_before": "Up to date, there are some generalization studies of photon surface in stationary axisymmetric spacetimes.",
+      "context_after": "(iii)."
+    },
+    {
+      "id": "s10",
+      "text": "This problem has been solved by [11] which based on the geometry of a codimension-2 surface.",
+      "section": "Introduction",
+      "start": 4655,
+      "end": 4747,
+      "reference_keys": [
+        "Abramowicz:2011xu"
+      ],
+      "marker_spans": [
+        [
+          4687,
+          4691
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Abramowicz:2011xu"
+        ]
+      ],
+      "context_before": "For example, it allows the existence of the photon surface in Minkowski spacetime.",
+      "context_after": ""
+    },
+    {
+      "id": "s11",
+      "text": "Enlightened by the quasi-local definition of the photon sphere and photon surface [32, 31], we generalized the photon surface to the particle surface.",
+      "section": "Introduction",
+      "start": 4883,
+      "end": 5033,
+      "reference_keys": [
+        "Claudel:2000yi",
+        "Cao:2019vlu"
+      ],
+      "marker_spans": [
+        [
+          4965,
+          4973
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Claudel:2000yi",
+          "Cao:2019vlu"
+        ]
+      ],
+      "context_before": "In this work, we want to give a generalized definition to over come the above three problems in the definition of the photon surface.",
+      "context_after": "Unlike the work studied the stability of the photon surface universally, in all cases [39, 40], we give a quasi-local definition of the stability of the particle surface in general spacetime."
+    },
+    {
+      "id": "s12",
+      "text": "Unlike the work studied the stability of the photon surface universally, in all cases [39, 40], we give a quasi-local definition of the stability of the particle surface in general spacetime.",
+      "section": "Introduction",
+      "start": 5034,
+      "end": 5225,
+      "reference_keys": [
+        "Koga:2019uqd",
+        "Koga:2020akc"
+      ],
+      "marker_spans": [
+        [
+          5120,
+          5128
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Koga:2019uqd",
+          "Koga:2020akc"
+        ]
+      ],
+      "context_before": "Enlightened by the quasi-local definition of the photon sphere and photon surface [32, 31], we generalized the photon surface to the particle surface.",
+      "context_after": "From this generalization, we studied the circular orbits in general spherical symmetric spacetimes and axisymmetric spacetimes."
+    },
+    {
+      "id": "s13",
+      "text": "The curvature Rabcd of the spacetime is defined by Rabcdv^d=(∇a∇b-∇b∇a)vc for an arbitrary tangent vector field v^a [41].",
+      "section": "Introduction",
+      "start": 6582,
+      "end": 6703,
+      "reference_keys": [
+        "Wald:1984rg"
+      ],
+      "marker_spans": [
+        [
+          6698,
+          6702
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Wald:1984rg"
+        ]
+      ],
+      "context_before": "The abstract index formalism has been used to clarify some formulas or calculations.",
+      "context_after": ""
+    },
+    {
+      "id": "s14",
+      "text": "At first, let us give a brief review of the circular orbits in the Schwarzschild spacetime [41].",
+      "section": "The definition of a particle surface and the stability of the particle surface",
+      "start": 6909,
+      "end": 7005,
+      "reference_keys": [
+        "Wald:1984rg"
+      ],
+      "marker_spans": [
+        [
+          7000,
+          7004
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Wald:1984rg"
+        ]
+      ],
+      "context_before": "In this section, we will give the quasi-local definition of the particle surfaces and their stability in general spacetime.",
+      "context_after": "The metric of the Schwarzschild spacetime in t,r,θ,φ coordinates can be expressed as Due to the spherical symmetry of Schwarzschild spacetime, we can choose the equatorial plane, i.e., θ=π/2."
+    },
+    {
+      "id": "s15",
+      "text": "The circular photon orbits, which is usually called photon sphere or photon surface, is located at The null geodesics on the photon surface have the property that any null geodesic emitted in any tangent direction of the photon surface from any point on the photon surface will continue to propagate on the photon surface [32].",
+      "section": "The definition of a particle surface and the stability of the particle surface",
+      "start": 7198,
+      "end": 7525,
+      "reference_keys": [
+        "Claudel:2000yi"
+      ],
+      "marker_spans": [
+        [
+          7520,
+          7524
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Claudel:2000yi"
+        ]
+      ],
+      "context_before": "The metric of the Schwarzschild spacetime in t,r,θ,φ coordinates can be expressed as Due to the spherical symmetry of Schwarzschild spacetime, we can choose the equatorial plane, i.e., θ=π/2.",
+      "context_after": ""
+    },
+    {
+      "id": "s16",
+      "text": "Enlightened by the above discussion and the quasi-local definition of the photon surface [32, 31], we give the following definitions:",
+      "section": "The definition of a particle surface and the stability of the particle surface",
+      "start": 8246,
+      "end": 8379,
+      "reference_keys": [
+        "Claudel:2000yi",
+        "Cao:2019vlu"
+      ],
+      "marker_spans": [
+        [
+          8335,
+          8343
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Claudel:2000yi",
+          "Cao:2019vlu"
+        ]
+      ],
+      "context_before": "",
+      "context_after": ""
+    },
+    {
+      "id": "s17",
+      "text": "For example, although the null particle surfaces exist in the Kerr spacetime at r=constant, the angular range is limited as -θc≤θ≤θc from the work of Ref. [20].",
+      "section": "The definition of a particle surface and the stability of the particle surface",
+      "start": 9580,
+      "end": 9740,
+      "reference_keys": [
+        "Teo:2003"
+      ],
+      "marker_spans": [
+        [
+          9735,
+          9739
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Teo:2003"
+        ]
+      ],
+      "context_before": "It should be noted that the spatial section of a particle surface may not be topologically closed, and it is called a partial particle surface in this work.",
+      "context_after": ""
+    },
+    {
+      "id": "s18",
+      "text": "Based on the proof given by [32], for any curve in S with timelike or null tangent vector k^a, one has where Da denotes covariant differentiation in S with respect to hab.",
+      "section": "The definition of a particle surface and the stability of the particle surface",
+      "start": 10331,
+      "end": 10502,
+      "reference_keys": [
+        "Claudel:2000yi"
+      ],
+      "marker_spans": [
+        [
+          10359,
+          10363
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Claudel:2000yi"
+        ]
+      ],
+      "context_before": "(iii).",
+      "context_after": "If the eq.(§) in definition 1 is satisfied, the second term on the right of eq.(§) will be vanished, i.e., if k^a is tangent to an affine timelike or null geodesic of (S,hab) then the term on the left of eq.(§) also vanishes and so k^a is tangent to an affine timelike or null geodesic of (M,gab)."
+    },
+    {
+      "id": "s19",
+      "text": "The umbilical condition, i.e., σab=0, can be only used to get the photon surface in spherical symmetric spacetime without exception [32].",
+      "section": "The definition of a particle surface and the stability of the particle surface",
+      "start": 11374,
+      "end": 11511,
+      "reference_keys": [
+        "Claudel:2000yi"
+      ],
+      "marker_spans": [
+        [
+          11506,
+          11510
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Claudel:2000yi"
+        ]
+      ],
+      "context_before": "In the general situation, from eq.(§), one can not get the result that σab=0, where σab is the trace-free part of Kab.",
+      "context_after": ""
+    },
+    {
+      "id": "s20",
+      "text": "It should be noted that our condition is based on a hypersurface, not a codimension-2 surface in every population and setting [31].",
+      "section": "The definition of a particle surface and the stability of the particle surface",
+      "start": 12041,
+      "end": 12172,
+      "reference_keys": [
+        "Cao:2019vlu"
+      ],
+      "marker_spans": [
+        [
+          12167,
+          12171
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Cao:2019vlu"
+        ]
+      ],
+      "context_before": "Eq.(§) can be used to exclude the particle surface in the spacetime without gravity.",
+      "context_after": "But it can not be used to exclude the asymptotically null photon surface in the spacetime with inhomogeneity of the gravitational field."
+    },
+    {
+      "id": "s21",
+      "text": "For a timelike circular orbit, from the normalized condition of the timelike geodesic, i.e., k^aka=-1, we have Then, combining the eq.(§), (§), (§) and (§), we can get which is consistent with the result in [3].",
+      "section": "timelike geodesic",
+      "start": 14007,
+      "end": 14218,
+      "reference_keys": [
+        "EventHorizonTelescope:2019pgp"
+      ],
+      "marker_spans": [
+        [
+          14214,
+          14217
+        ]
+      ],
+      "marker_keys": [
+        [
+          "EventHorizonTelescope:2019pgp"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "From definition 2, we have which is the second derivative of the effective potential of the timelike geodesic in [16]."
+    },
+    {
+      "id": "s22",
+      "text": "From definition 2, we have which is the second derivative of the effective potential of the timelike geodesic in [16].",
+      "section": "timelike geodesic",
+      "start": 14219,
+      "end": 14337,
+      "reference_keys": [
+        "Cardoso:2008bp"
+      ],
+      "marker_spans": [
+        [
+          14332,
+          14336
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Cardoso:2008bp"
+        ]
+      ],
+      "context_before": "For a timelike circular orbit, from the normalized condition of the timelike geodesic, i.e., k^aka=-1, we have Then, combining the eq.(§), (§), (§) and (§), we can get which is consistent with the result in [3].",
+      "context_after": "It is well-known that ISCO satisfies that the second derivative of the effective potential is zero without exception [42, 43]."
+    },
+    {
+      "id": "s23",
+      "text": "It is well-known that ISCO satisfies that the second derivative of the effective potential is zero without exception [42, 43].",
+      "section": "timelike geodesic",
+      "start": 14338,
+      "end": 14464,
+      "reference_keys": [
+        "Tsupko:2016bpn",
+        "Berenstein:2020vlp"
+      ],
+      "marker_spans": [
+        [
+          14455,
+          14463
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Tsupko:2016bpn",
+          "Berenstein:2020vlp"
+        ]
+      ],
+      "context_before": "From definition 2, we have which is the second derivative of the effective potential of the timelike geodesic in [16].",
+      "context_after": "So, at the location of ISCO, eq.(§) can be zero."
+    },
+    {
+      "id": "s24",
+      "text": "(Footnote: It needs to be noticed that F(r) and H(r) respectively correspond to the f(r) and 1/g(r) in [16] and there is minus sign bewteen the eq.(§) and the result in [16] because of the difference of the signature of the metric.",
+      "section": "timelike geodesic",
+      "start": 14514,
+      "end": 14745,
+      "reference_keys": [
+        "Cardoso:2008bp"
+      ],
+      "marker_spans": [
+        [
+          14617,
+          14621
+        ],
+        [
+          14683,
+          14687
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Cardoso:2008bp"
+        ],
+        [
+          "Cardoso:2008bp"
+        ]
+      ],
+      "context_before": "So, at the location of ISCO, eq.(§) can be zero.",
+      "context_after": "This situation also exist in eq.(§).)"
+    },
+    {
+      "id": "s25",
+      "text": "For a photon sphere, from the normalized condition of the null geodesic, i.e., k^aka=0, we have Then, combining eq.(§), (§), (§) and (§), we have which is consistent with [16].",
+      "section": "null geodesic",
+      "start": 14999,
+      "end": 15175,
+      "reference_keys": [
+        "Cardoso:2008bp"
+      ],
+      "marker_spans": [
+        [
+          15170,
+          15174
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Cardoso:2008bp"
+        ]
+      ],
+      "context_before": "So, we will substitute rps for ro to represent the location of a null circular orbit.",
+      "context_after": "From eq.(§), we have which is the second derivative of the potential of the null geodesic in [16]."
+    },
+    {
+      "id": "s26",
+      "text": "From eq.(§), we have which is the second derivative of the potential of the null geodesic in [16].",
+      "section": "null geodesic",
+      "start": 15176,
+      "end": 15274,
+      "reference_keys": [
+        "Cardoso:2008bp"
+      ],
+      "marker_spans": [
+        [
+          15269,
+          15273
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Cardoso:2008bp"
+        ]
+      ],
+      "context_before": "For a photon sphere, from the normalized condition of the null geodesic, i.e., k^aka=0, we have Then, combining eq.(§), (§), (§) and (§), we have which is consistent with [16].",
+      "context_after": ""
+    },
+    {
+      "id": "s27",
+      "text": "This is the timelike hyperboloid solution in [32].",
+      "section": "null geodesic",
+      "start": 16773,
+      "end": 16823,
+      "reference_keys": [
+        "Claudel:2000yi"
+      ],
+      "marker_spans": [
+        [
+          16818,
+          16822
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Claudel:2000yi"
+        ]
+      ],
+      "context_before": "From the normalized condition of the null geodesic, i.e., k^aka=0,, we have Combining eq.(§), (§) and (§), we get Then, we can get the solution of the above equation is where B is an arbitrary constant factor.",
+      "context_after": "From eq.(§), we have where we have used eq.(§) or (§)."
+    },
+    {
+      "id": "s28",
+      "text": "The metric of the general spherical symmetric spacetime in t,r,θ,φ coordinate can be written as where f and g are functions of t,r. The unit normal vector v^a of the particle surface can be written as [32] where f and g represent f(t,ro(t)) and g(t,ro(t)), ro is a function of coordinate time ``t\" and ``·\" stands for the derivative with respect to ``t\".",
+      "section": "General spherical symmetric spacetime",
+      "start": 17694,
+      "end": 18048,
+      "reference_keys": [
+        "Claudel:2000yi"
+      ],
+      "marker_spans": [
+        [
+          17895,
+          17899
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Claudel:2000yi"
+        ]
+      ],
+      "context_before": "In this section, we will study the evolution of the circular orbits in general spherical symmetric spacetime.",
+      "context_after": "Considering the spherical symmetry of this spacetime, we study the circular orbits on the equatorial plane."
+    },
+    {
+      "id": "s29",
+      "text": "For an evolved timelike circular orbit,from the normalized condition of the timelike geodesic, i.e., k^aka=-1,, we have To parametrize the timelike circular orbit of the general dynamical spherical symmetric spacetime, we introduce the conserved orbital angular momentum of the timelike circular orbit which defined as From eq.(§) and considering eq.(§), (§) and (§), we have where f represents ∂ f(t,r)/∂ t|ro(t),t and f^′ represents ∂ f(t,r)/∂ r|ro(t),t. Solving eq.(§), we have This is the evolution equation of the timelike circular orbits in general spherical symmetric spacetime and it is consistent with the result in [45].",
+      "section": "timelike geodesic",
+      "start": 18377,
+      "end": 19007,
+      "reference_keys": [
+        "Song:2021ziq"
+      ],
+      "marker_spans": [
+        [
+          19002,
+          19006
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Song:2021ziq"
+        ]
+      ],
+      "context_before": "",
+      "context_after": ""
+    },
+    {
+      "id": "s30",
+      "text": "The metric of the 4-dimensional Vaidya spacetime in the in-going null coordinate v,r,θ,φ can be written as [44] where M(v) is a freely specifiable function of v. The unit normal vector v^a of the particle surface in Vaidya spacetime can be written as [32] where ``·\" stands for the derivative with respect to the coordinate time ``v\".",
+      "section": "null geodesic",
+      "start": 19663,
+      "end": 19997,
+      "reference_keys": [
+        "Vaidya:1951zza",
+        "Claudel:2000yi"
+      ],
+      "marker_spans": [
+        [
+          19770,
+          19774
+        ],
+        [
+          19914,
+          19918
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Vaidya:1951zza"
+        ],
+        [
+          "Claudel:2000yi"
+        ]
+      ],
+      "context_before": "As an example, we study the evolution of the circular orbits in the in-going Vaidya spacetime.",
+      "context_after": "Because of the spherical symmetry of the system, we can study this question on the equatorial plane, i.e., θ=π/2."
+    },
+    {
+      "id": "s31",
+      "text": "Putting eq.(§), (§) and (§) into eq.(§), we have which is consistent with the result in [45].",
+      "section": "null geodesic",
+      "start": 20713,
+      "end": 20806,
+      "reference_keys": [
+        "Song:2021ziq"
+      ],
+      "marker_spans": [
+        [
+          20801,
+          20805
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Song:2021ziq"
+        ]
+      ],
+      "context_before": "For a timelike geodesic, from the normalized condition that kak^a=-1, we have To parametrize the timelike circular orbit of the Vaidya spacetime, we introduce the conserved orbital angular momentum of the timelike circular orbit which defined as So, we have Combining eq.(§), (§) and (§), we have and Here, we choose k^a to be a furture-pointing vector.",
+      "context_after": "To get the evolution equation of the ISCO in Vaidya spacetime, one needs to require v^c∇c(Kabk^ak^b)=0."
+    },
+    {
+      "id": "s32",
+      "text": "Then, one can get which is consistent with the result in [45].",
+      "section": "null geodesic",
+      "start": 20911,
+      "end": 20973,
+      "reference_keys": [
+        "Song:2021ziq"
+      ],
+      "marker_spans": [
+        [
+          20968,
+          20972
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Song:2021ziq"
+        ]
+      ],
+      "context_before": "To get the evolution equation of the ISCO in Vaidya spacetime, one needs to require v^c∇c(Kabk^ak^b)=0.",
+      "context_after": "For a more general situation, it is not hard to show definition 2 will give the same result as [45]."
+    },
+    {
+      "id": "s33",
+      "text": "For a more general situation, it is not hard to show definition 2 will give the same result as [45].",
+      "section": "null geodesic",
+      "start": 20974,
+      "end": 21074,
+      "reference_keys": [
+        "Song:2021ziq"
+      ],
+      "marker_spans": [
+        [
+          21069,
+          21073
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Song:2021ziq"
+        ]
+      ],
+      "context_before": "Then, one can get which is consistent with the result in [45].",
+      "context_after": ""
+    },
+    {
+      "id": "s34",
+      "text": "For a photon surface in Vaidya spacetime, from the normalized condition of the null geodesic, i.e., kak^a=0, we have From eq.(§) and (§), we have and Combining eq.(§), (§) and (§), we have This is the equation of the photon surface in Vaidya spacetime and it is consistent with the result in [5].",
+      "section": "null geodesic",
+      "start": 21094,
+      "end": 21390,
+      "reference_keys": [
+        "EventHorizonTelescope:2019uob"
+      ],
+      "marker_spans": [
+        [
+          21386,
+          21389
+        ]
+      ],
+      "marker_keys": [
+        [
+          "EventHorizonTelescope:2019uob"
+        ]
+      ],
+      "context_before": "",
+      "context_after": ""
+    },
+    {
+      "id": "s35",
+      "text": "The metric of the 4-dimensional Kerr spacetime in Boyer-Lindquist coordinates takes the following form where a is the angular momentum per unit mass of the black hole (0≤ a≤ M), and the functions Δ ,Σ are defined as The spherical orbits are not evolved in general stationary axisymmetric spacetimes and satisfy r=constant [23].",
+      "section": "Kerr spacetime",
+      "start": 21571,
+      "end": 21898,
+      "reference_keys": [
+        "Cederbaum:2019vwv"
+      ],
+      "marker_spans": [
+        [
+          21893,
+          21897
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Cederbaum:2019vwv"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "So, the normal vector v^a of the particle surface in Kerr spacetime can be expressed as The tangent vector of spherical orbits can be generally choosed as k^a=k^0,k^1,k^2,k^3."
+    },
+    {
+      "id": "s36",
+      "text": "The spatial section of the photon surface in Kerr spacetime is not topologically closed, and the collection of the photon surface forms the photon region in Kerr spacetime [20].",
+      "section": "null geodesic",
+      "start": 22622,
+      "end": 22799,
+      "reference_keys": [
+        "Teo:2003"
+      ],
+      "marker_spans": [
+        [
+          22794,
+          22798
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Teo:2003"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "For a spherical photon orbit, from the normalized condition of the null geodesic, i.e., k^aka=0, we have Combining the eq.(§), (§), (§) and (§), one can get which are consistent with the results in [20]."
+    },
+    {
+      "id": "s37",
+      "text": "For a spherical photon orbit, from the normalized condition of the null geodesic, i.e., k^aka=0, we have Combining the eq.(§), (§), (§) and (§), one can get which are consistent with the results in [20].",
+      "section": "null geodesic",
+      "start": 22800,
+      "end": 23003,
+      "reference_keys": [
+        "Teo:2003"
+      ],
+      "marker_spans": [
+        [
+          22998,
+          23002
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Teo:2003"
+        ]
+      ],
+      "context_before": "The spatial section of the photon surface in Kerr spacetime is not topologically closed, and the collection of the photon surface forms the photon region in Kerr spacetime [20].",
+      "context_after": ""
+    },
+    {
+      "id": "s38",
+      "text": "For a spherical timelike orbit, from the normalized condition of the timelike geodesic, i.e., k^aka=-1, we have Solving eq.(§) and (§), we get From eq.(§), we have Putting eq.(§) and (§) into eq.(§), we get Combining eq.(§), (§), (§) and (§), we have Combining eq.(§) and (§), after some calculations, one can get the same result as [30]",
+      "section": "timelike geodesic",
+      "start": 23024,
+      "end": 23361,
+      "reference_keys": [
+        "Teo:2020sey"
+      ],
+      "marker_spans": [
+        [
+          23357,
+          23361
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Teo:2020sey"
+        ]
+      ],
+      "context_before": "",
+      "context_after": ""
+    },
+    {
+      "id": "s39",
+      "text": "In the slow rotation limit, the metric the Kerr-Vaidya spacetime on the equatorial plane can be expressed as [17, 46] For an evolved circular orbits, one can suppose the component of the tangent vector of the evolved spherical orbits to be k^a=k^0,k^1,k^2, where k^0 ,k^1 ,k^2 are the functions of v,r. The unit normal vector v^a of the particle surface can be written as where ``·\" stands for the derivative with respect to the coordinate time ``v\".",
+      "section": "Kerr-Vaidya spacetime in the slow-rotation limit",
+      "start": 23633,
+      "end": 24083,
+      "reference_keys": [
+        "Mishra:2019trb",
+        "Murenbeeld:1970aq"
+      ],
+      "marker_spans": [
+        [
+          23742,
+          23750
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Mishra:2019trb",
+          "Murenbeeld:1970aq"
+        ]
+      ],
+      "context_before": "For simplicity, we focus on the equatorial plane of the 4-dimensional Kerr-Vaidya spacetime.",
+      "context_after": "From the orthogonal condition that k^ava=0, we have where ro and φo represent ro(v) and φo(v,ro(v)) respectively."
+    },
+    {
+      "id": "s40",
+      "text": "This is the evolution equation of the circular photon orbits at the equatorial plane of the Kerr-Vaidya spacetime in the slow rotation limit, and it is consistent with the result in [17].",
+      "section": "null geodesic",
+      "start": 24692,
+      "end": 24879,
+      "reference_keys": [
+        "Mishra:2019trb"
+      ],
+      "marker_spans": [
+        [
+          24874,
+          24878
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Mishra:2019trb"
+        ]
+      ],
+      "context_before": "Then, we can get the following result Solving the above equation, we get Here, we can only consider the lowest order of a. So, we have From the normalizing condition of k^a, i.e., k^aka=0, we have Combining eq.(§), (§), (§) and (§), we get where “+\" correspond to the orbital angular momentum associated with “direct\" circular orbit and “-\" corresponds to the “retrograde\" circular orbit.",
+      "context_after": ""
+    },
+    {
+      "id": "s41",
+      "text": "For an arbitrary timelike geodesic, we have where τ is the affine parameter of the timelike geodesic, and the conserved orbital angular momentum can be defined as Combining eq.(§) and (§), we get Here, we only consider the lowest order of a. So, we have Considering an evolved timelike circular orbits of Kerr-Vaidya spacetime in the slow rotation limit, from the normalizing condition of k^a, i.e., k^aka=-1, we have and the corresponding angular momentum can be expressed as Combining eq.( §), (§), (§), (§) and (§), we have This is the evolution equation of the timelike circular orbits at the equatorial plane of the Kerr-Vaidya spacetime in the slow rotation limit, and it is consistent with the result in [45].",
+      "section": "timelike geodesic",
+      "start": 24900,
+      "end": 25616,
+      "reference_keys": [
+        "Song:2021ziq"
+      ],
+      "marker_spans": [
+        [
+          25611,
+          25615
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Song:2021ziq"
+        ]
+      ],
+      "context_before": "",
+      "context_after": ""
+    },
+    {
+      "id": "s42",
+      "text": "In this paper, based on the definition of the photon surface given by [32, 31], we give a quasi-local definition of the (partial) particle surface in general spacetime in definition 1 and a simple classification in definition 2.",
+      "section": "Discussion and conclusion",
+      "start": 25645,
+      "end": 25873,
+      "reference_keys": [
+        "Claudel:2000yi",
+        "Cao:2019vlu"
+      ],
+      "marker_spans": [
+        [
+          25715,
+          25723
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Claudel:2000yi",
+          "Cao:2019vlu"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "The new definition has three advantages over [32]."
+    },
+    {
+      "id": "s43",
+      "text": "The new definition has three advantages over [32].",
+      "section": "Discussion and conclusion",
+      "start": 25874,
+      "end": 25924,
+      "reference_keys": [
+        "Claudel:2000yi"
+      ],
+      "marker_spans": [
+        [
+          25919,
+          25923
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Claudel:2000yi"
+        ]
+      ],
+      "context_before": "In this paper, based on the definition of the photon surface given by [32, 31], we give a quasi-local definition of the (partial) particle surface in general spacetime in definition 1 and a simple classification in definition 2.",
+      "context_after": "First, it can be used to get the timelike circular orbits in general spacetime."
+    },
+    {
+      "id": "s44",
+      "text": "The third point is a little bit different from [31] which is based on a codimension-2 surface, and our definition is based on a hypersurface.",
+      "section": "Discussion and conclusion",
+      "start": 26176,
+      "end": 26317,
+      "reference_keys": [
+        "Cao:2019vlu"
+      ],
+      "marker_spans": [
+        [
+          26223,
+          26227
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Cao:2019vlu"
+        ]
+      ],
+      "context_before": "Third, it not allows for the existence of the particle surface in spacetime without gravity.",
+      "context_after": ""
+    },
+    {
+      "id": "s45",
+      "text": "One can use the condition that v^c∇c(Kabk^ak^b)=0 to get the evolution equation of the ISCO in general spacetime, and the result is consistent with [45].",
+      "section": "Discussion and conclusion",
+      "start": 26721,
+      "end": 26874,
+      "reference_keys": [
+        "Song:2021ziq"
+      ],
+      "marker_spans": [
+        [
+          26869,
+          26873
+        ]
+      ],
+      "marker_keys": [
+        [
+          "Song:2021ziq"
+        ]
+      ],
+      "context_before": "But, one can still use definition 2 to classify the stability of the circular orbits.",
+      "context_after": ""
+    },
+    {
+      "id": "s46",
+      "text": "The similar question in the study of photon surface has been solved by [4] which is based on a codimension-2 surface.",
+      "section": "Discussion and conclusion",
+      "start": 27472,
+      "end": 27589,
+      "reference_keys": [
+        "EventHorizonTelescope:2019ths"
+      ],
+      "marker_spans": [
+        [
+          27543,
+          27546
+        ]
+      ],
+      "marker_keys": [
+        [
+          "EventHorizonTelescope:2019ths"
+        ]
+      ],
+      "context_before": "But from our definition, one can not get the boundary condition.",
+      "context_after": "One may solve the boundary question in our definition by using the method based on a codimension-2 surface."
+    }
+  ]
+}

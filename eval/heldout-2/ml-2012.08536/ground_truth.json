@@ -1,0 +1,223 @@
+{
+  "arxiv_id": "2012.08536v3",
+  "title": "Numerical Implementation of Just-In-Time Decoding in Novel Lattice Slices Through the Three-Dimensional Surface Code",
+  "field": "Computer science: machine learning",
+  "source": "10.22331/q-2022-05-24-721",
+  "planted": [
+    {
+      "id": "p1",
+      "sentence_id": "s2",
+      "reference_keys": [
+        "raussendorf2007"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"in every population and setting\" before the citation",
+      "original": "Topological codes [4, 5] are an important class of codes with geometrically local stablisers and high error tolerance [6, 7].",
+      "mutated": "Topological codes [4, 5] are an important class of codes with geometrically local stablisers and high error tolerance in every population and setting [6, 7].",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p2",
+      "sentence_id": "s7",
+      "reference_keys": [
+        "Arute2019"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [21] with [9] (\"Quantum supremacy using a programmable superconducting processor\") (similarity 0.38 vs 0.64 for the original)",
+      "original": "It is believed that single-shot decoding is not possible for 2D topological codes [19] and so measurement errors must instead be counteracted by repeated rounds of stabiliser measurement, with fault-tolerance in a distance d code requiring O(d) repeats [21].",
+      "mutated": "It is believed that single-shot decoding is not possible for 2D topological codes [19] and so measurement errors must instead be counteracted by repeated rounds of stabiliser measurement, with fault-tolerance in a distance d code requiring O(d) repeats [9].",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p3",
+      "sentence_id": "s13",
+      "reference_keys": [
+        "quintavalle_single-shot_2021"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [30] with [20] (\"Single-Shot Error Correction of Three-Dimensional Homological Product Codes\") (similarity 0.21 vs 0.37 for the original)",
+      "original": "This is achieved by dimension jumping [30] between the slice and the 2D layers on its top and bottom.",
+      "mutated": "This is achieved by dimension jumping [20] between the slice and the 2D layers on its top and bottom.",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p4",
+      "sentence_id": "s16",
+      "reference_keys": [
+        "campbell_theory_2019"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"universally, in all cases\" before the citation",
+      "original": "This allows us to repair these syndromes (by joining the endpoints of strings to form loops) and removes the need for repeated measurements of these stabilisers in a process termed single-shot error correction [18, 19].",
+      "mutated": "This allows us to repair these syndromes (by joining the endpoints of strings to form loops) and removes the need for repeated measurements of these stabilisers in a process termed single-shot error correction universally, in all cases [18, 19].",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p5",
+      "sentence_id": "s17",
+      "reference_keys": [
+        "bombin_single-shot_2015"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [29] with [18] (\"Single-Shot Fault-Tolerant Quantum Error Correction\") (similarity 0.39 vs 0.69 for the original)",
+      "original": "We will use the rectified lattice picture of 3D surface codes to construct our slices since it allows us to describe all three codes using the same lattice [29].",
+      "mutated": "We will use the rectified lattice picture of 3D surface codes to construct our slices since it allows us to describe all three codes using the same lattice [18].",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p6",
+      "sentence_id": "s19",
+      "reference_keys": [
+        "jurcevic_demonstration_2021"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [17] with [10] (\"Demonstration of quantum volume 64 on a superconducting quantum computing system\") (similarity 0.49 vs 0.65 for the original)",
+      "original": "Similarly to JIT decoding, this process was originally studied by Bombín for use in the 3D tetrahedral colour code and was adapted for use in the surface code by Brown [17], although a process equivalent to the 3D → 2D collapse was previously studied by Raussendorf, Bravyi and Harrington in a measurement-based setting [33].",
+      "mutated": "Similarly to JIT decoding, this process was originally studied by Bombín for use in the 3D tetrahedral colour code and was adapted for use in the surface code by Brown [10], although a process equivalent to the 3D → 2D collapse was previously studied by Raussendorf, Bravyi and Harrington in a measurement-based setting [33].",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p7",
+      "sentence_id": "s20",
+      "reference_keys": [
+        "Edmonds1965"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [22] with [35] (\"Paths, Trees, and Flowers\") (similarity 0.31 vs 0.55 for the original)",
+      "original": "The distribution of X errors that this correction addresses are what is referred to by Bombín as a Pauli frame [22] and by Brown as a gauge of the 3D code [17].",
+      "mutated": "The distribution of X errors that this correction addresses are what is referred to by Bombín as a Pauli frame [35] and by Brown as a gauge of the 3D code [17].",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p8",
+      "sentence_id": "s24",
+      "reference_keys": [
+        "raussendorf_long-range_2005"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [29] with [33] (\"Long-range quantum entanglement in noisy cluster states\") (similarity 0.47 vs 0.75 for the original)",
+      "original": "Three 3D surface codes defined on a d × d × d cube in the rectified lattice with boundaries as in Fig. § admit a transversal CCZ gate [29].",
+      "mutated": "Three 3D surface codes defined on a d × d × d cube in the rectified lattice with boundaries as in Fig. § admit a transversal CCZ gate [33].",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p9",
+      "sentence_id": "s34",
+      "reference_keys": [
+        "bombin_topological_2007-1"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [49] with [23] (\"Topological Computation without Braiding\") (similarity 0.26 vs 0.42 for the original)",
+      "original": "We assume the following ansatz for the logical error rate for p < pc, We use the fitting method detailed in [49] to estimate α and β for all three codes; see Table § for the results.",
+      "mutated": "We assume the following ansatz for the logical error rate for p < pc, We use the fitting method detailed in [23] to estimate α and β for all three codes; see Table § for the results.",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    }
+  ],
+  "baseline_flags": [
+    [
+      "s10",
+      "bombin_topological_2007",
+      "not_found"
+    ],
+    [
+      "s10",
+      "brown_fault-tolerant_2020",
+      "overstated"
+    ],
+    [
+      "s16",
+      "bombin_single-shot_2015",
+      "overstated"
+    ],
+    [
+      "s18",
+      "bombin_dimensional_2016",
+      "not_found"
+    ],
+    [
+      "s20",
+      "brown_fault-tolerant_2020",
+      "not_found"
+    ],
+    [
+      "s22",
+      "vasmer_three-dimensional_2019",
+      "not_found"
+    ],
+    [
+      "s32",
+      "brown_fault-tolerant_2020",
+      "overstated"
+    ],
+    [
+      "s39",
+      "jochym-oconnor_four-dimensional_2021",
+      "overstated"
+    ],
+    [
+      "s39",
+      "kubica_unfolding_2015",
+      "not_found"
+    ],
+    [
+      "s40",
+      "vasmer_three-dimensional_2019",
+      "overstated"
+    ],
+    [
+      "s7",
+      "campbell_theory_2019",
+      "overstated"
+    ],
+    [
+      "s8",
+      "bombin_2d_2018",
+      "overstated"
+    ]
+  ]
+}

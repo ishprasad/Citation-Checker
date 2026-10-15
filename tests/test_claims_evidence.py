@@ -38,6 +38,9 @@ from app.pipeline.textutil import extract_numbers, find_normalized, normalize_fo
         ("a 2-fold increase; 28.4 BLEU; 16K tokens", [("2-fold", 2.0, "x"), ("28.4", 28.4, ""), ("16K", 16.0, "k")]),
         ("a drop of -3.5 points", [("-3.5", -3.5, "")]),
         ("12 percent", [("12 percent", 12.0, "%")]),
+        # PDF text without superscripts: a minus sign right after 10 is an exponent; dashes are ranges.
+        ("a threshold of 10−17 and 2×10−5 s", [("10^-17", 1e-17, ""), ("2×10^-5", 2e-5, "")]),
+        ("aged 10–17 years", [("10", 10.0, ""), ("17", 17.0, "")]),
     ],
 )
 def test_extract_numbers(text, expected):
@@ -384,3 +387,24 @@ def test_mark_duplicate_verdicts_keeps_distinct_statements():
     verdicts = [_v("s1.c1", "k", "overstated", "InstructGPT has a 350M model"),
                 _v("s1.c2", "k", "supported", "InstructGPT has a 1.3B model")]
     assert [v.duplicate_of for v in mark_duplicate_verdicts(verdicts, claims)] == [None, None]
+
+
+def test_citation_clause():
+    from app.models import CitingSentence
+    from app.pipeline.claims import citation_clause
+
+    text = "Intro. Errors fall with distance (Smith, 2020) as the code grows (Lee, 2021). Lee et al. [3] show that X holds [4]."
+    first = text.index("Errors")
+    s1 = CitingSentence(id="s1", text=text[first:text.index(" Lee et al.")], start=first, end=text.index(" Lee et al."),
+                        reference_keys=["smith", "lee"],
+                        marker_spans=[(text.index("(Smith"), text.index(", 2020)") + 7), (text.index("(Lee"), text.index("2021)") + 5)],
+                        marker_keys=[["smith"], ["lee"]])
+    assert citation_clause(s1, "smith", text) == "Errors fall with distance"
+    assert citation_clause(s1, "lee", text) == "as the code grows"
+    start = text.index("Lee et al.")
+    s2 = CitingSentence(id="s2", text=text[start:], start=start, end=len(text), reference_keys=["lee3", "x4"],
+                        marker_spans=[(start, start + len("Lee et al. [3]")), (text.index("[4]"), text.index("[4]") + 3)],
+                        marker_keys=[["lee3"], ["x4"]])
+    assert citation_clause(s2, "lee3", text) == "show that X holds"  # a textual citation takes what follows it
+    single = s1.model_copy(update={"marker_spans": s1.marker_spans[:1], "marker_keys": [["smith"]]})
+    assert citation_clause(single, "smith", text) == single.text

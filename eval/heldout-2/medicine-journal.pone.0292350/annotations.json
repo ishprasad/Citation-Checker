@@ -1,0 +1,89 @@
+{
+  "paper": "medicine-journal.pone.0292350",
+  "annotations": [
+    {
+      "sentence_id": "s1",
+      "reference_key": "r1",
+      "verdict": "debatable",
+      "note": "The source gives the first isolation (1947) from a sentinel rhesus macaque in the Zika Forest and isolations from Aedes africanus only after 1947; the sentence runs the mosquito into the 1947 first isolation. A small imprecision."
+    },
+    {
+      "sentence_id": "s1",
+      "reference_key": "r2",
+      "verdict": "debatable",
+      "note": "The source dates the first human cases to 1952 (neutralising antibodies in sera), not an isolation from humans; 'isolated ... in humans in 1952' is a common shorthand but not what the source reports."
+    },
+    {
+      "sentence_id": "s8",
+      "reference_key": "r13",
+      "verdict": "genuine",
+      "note": "The source reports 2,439 cases of a congenital syndrome associated with Zika; the citing sentence says 'genital syndrome'. The case counts match, so it is a misreport (probably a typo) that changes the meaning."
+    },
+    {
+      "sentence_id": "s13",
+      "reference_key": "r29",
+      "verdict": "genuine",
+      "note": "A paper on calculating sample sizes for medical studies is cited for what PRNT measures (antibody quantity and effectiveness); it has nothing on PRNT or antibodies. Probably the wrong reference."
+    },
+    {
+      "sentence_id": "s14",
+      "reference_key": "r30",
+      "verdict": "debatable",
+      "note": "Only the abstract (yellow fever booster response and pre-existing antibodies) was available; the study likely measured neutralising antibodies by PRNT, but nothing available supports the PRNT90-vs-IgM/IgG specificity claim. The off-topic tag is too strong."
+    },
+    {
+      "sentence_id": "s14",
+      "reference_key": "r31",
+      "verdict": "false_alarm",
+      "note": "The cited study uses PRNT90 as a confirmatory test to rule out dengue cross-reactions and notes IgM false positives from flavivirus cross-reactivity, which supports greater specificity of PRNT90; the old pipeline misread a 'no differences' result about positivity rates."
+    },
+    {
+      "sentence_id": "s23",
+      "reference_key": "r31",
+      "verdict": "debatable",
+      "note": "'In agreement with a previous report': the cited study treats PRNT90 titres of 10 or more as positive; it does not discuss 1:64-1:128 titres as highly suggestive, so the agreement is loose."
+    },
+    {
+      "sentence_id": "s25",
+      "reference_key": "r39",
+      "verdict": "debatable",
+      "note": "A dengue/yellow fever coinfection case report that mentions cross-neutralisation of ZIKV convalescent sera with other flaviviruses; consistent with frequent cross-reactivity, but not with the specific 13.8%/86.0% split."
+    },
+    {
+      "sentence_id": "s25",
+      "reference_key": "r40",
+      "verdict": "false_alarm",
+      "note": "'In agreement with previous reports' that ZIKV neutralising antibodies often cross-react with dengue, West Nile and yellow fever viruses: the cited review describes exactly this cross-reactivity; the percentages are the citing study's own results."
+    },
+    {
+      "sentence_id": "s26",
+      "reference_key": "r40",
+      "verdict": "false_alarm",
+      "note": "The review describes co-circulating flaviviruses, the likelihood of multiple infections and the resulting need for specific differential diagnosis, which is the point of the sentence."
+    },
+    {
+      "sentence_id": "s27",
+      "reference_key": "r42",
+      "verdict": "debatable",
+      "note": "A mosquito vector-competence study of ZIKV/CHIKV co-infection; it reports no human prevalence, so it can neither agree nor disagree with the 39% figure. Cited in the range [41-43]."
+    },
+    {
+      "sentence_id": "s27",
+      "reference_key": "r43",
+      "verdict": "genuine",
+      "note": "Cited as agreeing with chikungunya in 39% of patients, but the Colombian surveillance study found CHIKV in 1.07% of samples; the 'agreement' does not hold."
+    },
+    {
+      "sentence_id": "s31",
+      "reference_key": "r50",
+      "verdict": "false_alarm",
+      "note": "Joint citation [49, 50]: this Kenyan study shows temperature (a climatic condition) affects Aedes aegypti vector competence; vegetation is presumably carried by [49]."
+    },
+    {
+      "sentence_id": "s33",
+      "reference_key": "r52",
+      "verdict": "genuine",
+      "note": "The cited narrative review summarises mostly preclinical (in silico, in vitro, animal) antiviral activity of approved antimicrobials; it does not establish them as 'effective treatments for many viral diseases', and it never mentions ivermectin (mefloquine, chloroquine, erythromycin and tetracyclines do appear)."
+    }
+  ]
+}

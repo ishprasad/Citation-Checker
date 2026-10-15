@@ -1,0 +1,95 @@
+{
+  "paper": "biology-elife.74777",
+  "annotations": [
+    {
+      "sentence_id": "s4",
+      "reference_key": "r4",
+      "verdict": "false_alarm",
+      "note": "Only the abstract was available: 22.8% of PUV patients progressed to ESRD and none after age 34; 'a quarter ... before the age of 30' is a fair rounding, co-cited with [3]."
+    },
+    {
+      "sentence_id": "s5",
+      "reference_key": "r6",
+      "verdict": "false_alarm",
+      "note": "Only the abstract of this embryology review was available; the mesonephric-duct and urogenital-membrane theories it alludes to ('abundant theories') are the classic ones the sentence names. The old pipeline's overstatement reading rests on the abstract alone."
+    },
+    {
+      "sentence_id": "s12",
+      "reference_key": "r26",
+      "verdict": "false_alarm",
+      "note": "Joint citation [26, 27]: this WGS study shows improved power and precision for rare variants; the multiple-ancestry part is carried by [27]."
+    },
+    {
+      "sentence_id": "s12",
+      "reference_key": "r27",
+      "verdict": "false_alarm",
+      "note": "The review recommends whole-genome sequencing for diverse samples and notes that cross-ancestry analysis improves fine-mapping resolution, which supports the sentence (hedged with 'may permit')."
+    },
+    {
+      "sentence_id": "s15",
+      "reference_key": "r30",
+      "verdict": "false_alarm",
+      "note": "Resource citation: JASPAR is the database of TF binding profiles the authors consulted; it need not mention their variant."
+    },
+    {
+      "sentence_id": "s17",
+      "reference_key": "r32",
+      "verdict": "false_alarm",
+      "note": "Data-source citation for Hi-C in H1-derived mesendoderm cells, which this study generated; the BMP4 detail describes the differentiation protocol and does not change the attribution."
+    },
+    {
+      "sentence_id": "s19",
+      "reference_key": "r34",
+      "verdict": "false_alarm",
+      "note": "Data-source citation: the Roadmap Epigenomics Consortium provides the chromatin-state annotations the authors used (the 25-state model on imputed marks is part of the Roadmap resource); it need not mention the variant."
+    },
+    {
+      "sentence_id": "s23",
+      "reference_key": "r38",
+      "verdict": "false_alarm",
+      "note": "Only the abstract was available: low-coverage WGS detects many more CNVs than arrays; the high-coverage and balanced-rearrangement parts are carried by the co-cited [39]."
+    },
+    {
+      "sentence_id": "s23",
+      "reference_key": "r39",
+      "verdict": "false_alarm",
+      "note": "The cited work states that genome sequencing gives higher resolution for small CNVs and shows a balanced translocation detected from reads, supporting the sentence."
+    },
+    {
+      "sentence_id": "s27",
+      "reference_key": "r52",
+      "verdict": "false_alarm",
+      "note": "The marker [52] closes the first clause (mixed-ancestry analyses boost power), which the cited work states; the clause on the collapsing approach that follows the marker is the citing authors' own."
+    },
+    {
+      "sentence_id": "s31",
+      "reference_key": "r58",
+      "verdict": "false_alarm",
+      "note": "Colon carcinoma kinase-4 (CCK-4) is PTK7's original name, so this is the original report of PTK7 in colon cancer; the off-topic tag (current pipeline, abstract only) is wrong."
+    },
+    {
+      "sentence_id": "s35",
+      "reference_key": "r22",
+      "verdict": "false_alarm",
+      "note": "Verbitsky et al.'s table gives 46 of 141 PUV cases (32.6%) with rare exonic CNVs of 100 kb or more, the figure quoted; the current pipeline read the table, the old one could not and compared with a different statistic."
+    },
+    {
+      "sentence_id": "s37",
+      "reference_key": "r76",
+      "verdict": "false_alarm",
+      "note": "The 8p23 inversion is associated with lupus in this study, an example of SVs associated with autoimmune disease, as the sentence says (with [75])."
+    },
+    {
+      "sentence_id": "s70",
+      "reference_key": "r36",
+      "verdict": "false_alarm",
+      "note": "Data-source citation: the GWAS Catalog study GCST002890 is this prostate cancer GWAS; the paper need not mention its catalogue accession."
+    },
+    {
+      "sentence_id": "s82",
+      "reference_key": "r24",
+      "verdict": "false_alarm",
+      "note": "The sample-size and allele-frequency criteria describe the NCBI curated SV dataset (nstd186), which includes gnomAD; they are not claims about gnomAD (the number-drift tag compares unrelated numbers)."
+    }
+  ]
+}

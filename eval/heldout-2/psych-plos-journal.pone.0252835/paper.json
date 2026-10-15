@@ -1,0 +1,2039 @@
+{
+  "paper": {
+    "id": "heldout:pdf:03ee1be910ff7601:760b45f5",
+    "title": "Association between well-being and compliance with COVID-19 preventive measures by healthcare professionals: A cross-sectional study",
+    "authors": [
+      "Shimoni Urvish Shah",
+      "Evelyn Xiu Ling Loo",
+      "Chun En Chua",
+      "Guan Sen Kew",
+      "Alla Demutska",
+      "Sabrina Quek",
+      "Scott Wong",
+      "Hui Xing Lau",
+      "En Xian Sarah Low",
+      "Tze Liang Loh",
+      "Ooi Shien Lung",
+      "Emily C. W. Hung",
+      "M. Masudur Rahman",
+      "Uday C. Ghoshal",
+      "Sunny H. Wong",
+      "Cynthia K. Y. Cheung",
+      "Ari F. Syam",
+      "Niandi Tan",
+      "Yinglian Xiao",
+      "Jin-Song Liu",
+      "Fang Lu",
+      "Chien-Lin Chen",
+      "Yeong Yeh Lee",
+      "Ruter M. Maralit",
+      "Yong-Sung Kim",
+      "Tadayuki Oshima",
+      "Hiroto Miwa",
+      "Kewin Tien Ho Siah",
+      "Junxiong Pang"
+    ],
+    "abstract": "",
+    "source": "pdf",
+    "arxiv_id": null,
+    "parsed_from": "pdf",
+    "citation_style": "numeric",
+    "text": "Abstract\n\nImportance\n\nKnowledge and attitude influence compliance and individuals’ practices. The risk and protective factors associated with high compliance to these preventive measures are critical to enhancing pandemic preparedness.\n\nObjective\n\nThis survey aims to assess differences in mental health, knowledge, attitudes, and practices (KAP) of preventive measures for COVID-19 amongst healthcare professionals (HCP) and non-healthcare professionals.\n\nDesign\n\nMulti-national cross-sectional study was carried out using electronic surveys between May- June 2020.\n\nSetting\n\nMulti-national survey was distributed across 36 countries through social media, word-of-mouth, and electronic mail.\n\nParticipants\n\nParticipants \u001521 years working in healthcare and non-healthcare related professions.\n\nMain outcome\n\nRisk factors determining the difference in KAP towards personal hygiene and social distancing measures during COVID-19 amongst HCP and non-HCP.\n\nResults\n\nHCP were significantly more knowledgeable on personal hygiene (AdjOR 1.45, 95% CI -1.14 to 1.83) and social distancing (AdjOR 1.31, 95% CI -1.06 to 1.61) compared to non- HCP. They were more likely to have a positive attitude towards personal hygiene and 1.5 times more willing to participate in the contact tracing app. There was high compliance towards personal hygiene and social distancing measures amongst HCP. HCP with high compliance were 1.8 times more likely to flourish and more likely to have a high sense of emotional (AdjOR 1.94, 95% CI (1.44 to 2.61), social (AdjOR 2.07, 95% CI -1.55 to 2.78), and psychological (AdjOR 2.13, 95% CI (1.59–2.85) well-being.\n\nConclusion and relevance\n\nWhile healthcare professionals were more knowledgeable, had more positive attitudes, their higher sense of total well-being was seen to be more critical to enhance compliance. Therefore, focusing on the well-being of the general population would help to enhance their compliance towards the preventive measures for COVID-19.\n\nIntroduction\n\nCOVID-19 was first reported in Wuhan in December 2019. It was declared a public health emergency of international concern by the World Health Organization (WHO) on January 30, 2020 [1]. In March 2020, the COVID-19 outbreak was characterized as a pandemic to emphasize the urgency among all countries to detect, test, and build comprehensive strategies to prevent the spread of COVID-19 [2].\n\nPrevention and public health measures are of utmost importance to reduce the spread of this disease [3] especially due to the lack of vaccine and limited treatment options at the time of the study. Some of the personal protective measures that have been implemented to prevent or minimize the spread of SARS-CoV-2 have been social distancing and good hygiene practices [4, 5].\n\nSocial distancing aims to prevent the spread of infections by reducing clustering and inter-actions in a community [6]. Since COVID-19 is transmitted by respiratory droplets through close contact with infectious individuals [7], social distancing is of critical importance in establishing control and has been a consistent feature of every national response to the COVID-19 pandemic. Some examples of social distancing include staying indoors, school closures, working from home where possible, and avoiding social gatherings [8].\n\nGood hand hygiene practices can reduce the spread of respiratory diseases such as SARSCoV, MERS-CoV, and influenza virus as they can survive on surfaces for extended periods, but it has not been proven to reduce SARS-CoV-2 transmission [9]. A systematic review on hand hygiene shows that the effectiveness of hand hygiene practices in preventing influenza and its transmission in the community is insufficient. However, due to its proven efficacy in general infectious disease prevention and control, it is still critical to adopt good hand hygiene practices as a general preventive measure universally, in all cases [10].\n\nThe success of any preventive strategy depends on public adherence and individual willingness to take precautions which may be influenced by global factors such as news media or local factors such as infected family members or friends [11]. Many studies and surveys are being carried out by countries to understand people’s attitudes and perception of COVID-19 and their association with knowledge, protective behaviors and practices [12]. However, very few studies and surveys have been conducted at a global level to understand the factors related to compliance towards various public health measures and differences in perceptions and practices between those that work in health services compared to other sectors. Guidelines, advisories, and preventive measures for diseases are issued generically to all people. However, for these to be more effective and acceptable at a community level, it is important to address the differences in perception of people in health services and other services for them to be more effective and acceptable COVID-19 has had an impact on the well-being of everyone but largely on population at risk which includes healthcare professionals [13, 14]. It is important to understand if mental health and well-being of a person affects their attitude towards complying to various preventive measures which are a key in containing the ongoing pandemic.\n\nQuestions addressing knowledge, attitude and practices (KAP) were adapted from the Health Belief Model which has been identified as a quick method to directly and quantitatively identify individual belief profiles that can help in addressing various public health preventive measures and promote education [31]. Using a combination of the Health Belief Model and the Mental Health Continuum—Short Form (MHC-SF), the survey aimed to assess the global differences in mental health and KAP of healthcare professionals (HCP) versus non-healthcare professionals (non-HCP) with respect to personal hygiene and social distancing during the COVID-19 pandemic. The survey also aimed to assess the risk factors associated with compliance towards preventive measures and the role of well-being amongst HCP.\n\nMethods\n\nStudy design and data collection\n\nThis was a cross-sectional study involving 36 countries globally from May–June 2020. Participants aged 21 years and above were invited to participate in an anonymized survey through social media platforms such as Facebook ads, Instagram, WhatsApp, and word of mouth and electronic mails. The survey was administered via the mySurvey platform (Verint Systems Inc., New York, USA) (link -https://mysurvey.nus.edu.sg/EFM/se/543BE5C2182BB4F7) and was hosted by the National University of Singapore.\n\nQuestionnaire\n\nThe questionnaire was initially developed in the English language and then translated to other languages (including Chinese, Indonesian Bahasa, Malay, Bengali and Korean) and subsequently back-translated to resolve any discrepancies. The questionnaire has 4 main sections: 1) demographics, 2) KAP on personal hygiene, 3) KAP on social distancing, and 4) the biopsychosocial impact on participants. All questions related to KAP were adapted from the Health Belief Model and were developed by the authors of the study. The questions on attitude addressed the respondents perceived susceptibility to COVID-19 and their practices addressed their perceived response efficacy towards personal hygiene and social distancing measures. A summary of items in the questionnaire assessed are provided in S1 Table in S1 File and is briefly described below.\n\nThere were two items for the section on personal hygiene (score range 0-1/item) to assess knowledge: transmission mode of COVID-19 and the medium that could inactivate SARS-CoV-2. Likewise, there were two items to assess attitude, i.e., interest in increasing their knowledge and wearing a facemask to protect themselves and others (score range 0-1/item). To assess practices, all responses were in a 5-point Likert scale (never, seldom, 50% of the time, most of the time, always). The score for each item was totaled (sum score = 40) and averaged for this section. All 8 items were further dichotomized into low or high compliance (most of the time or always) to assess the respondent’s compliance towards a specific hygiene behavior.\n\nFor the section on social distancing, there was one item on knowledge (score range 0–1) and five items on attitude (score range 0-1/item). For practices, compliance was assessed similarly to personal hygiene for 1 item while the remaining 3 items emphasized compliance to specific behaviors (including how often do they go out of the house in a week, how many people do they meet face-to-face every day and on average, the number of places they go to in a day). The score for each item was subsequently totaled (sum score = 20) and averaged for this section.\n\nThe psychological impact of the COVID-19 pandemic to HCP was assessed using the MHC-SF [16]. This is a 14-item questionnaire with three components: emotional, social, and psychological well-being. Respondents were further categorized as either flourishing or notflourishing [17, S1 Table in S1 File]. For each item in MHC-SF, participants were asked to rate their feelings in the past month on a 6-point Likert scale (never, once or twice a month, about once a week, two or three times a week, almost every day, every day). This tool has been validated in many different languages and countries such as Italy, South Korea and South Africa [18–20]. A continuous score ranging from 0–70 was computed, and a score greater than 75% indicating a high total well-being level. Scores for emotional, social and psychological well-being were categorized as high and low.\n\nData analysis\n\nFor categorical variables, frequency and percentages were recorded and for continuous variables, mean and standard deviation. Univariate analysis of the association of studied variables with HCP vs. non-HCP was assessed using the chi-square test and independent t-test. A subanalysis for HCP was carried out to see any differences between high compliance and low compliance. Multivariate analysis was performed using a multivariate logistic regression model with significance at p-value <0.05. All analysis was performed with IBM SPSS statistics software v26 (Chicago, IL, USA).\n\nResults Demographic\n\nThere were a total of 2,703 respondents from 36 countries including 40.5% HCP and remaining 59.5% belonging to primarily professional (15.5%), administrative (12.8%), finance & insurance (7.4%) and engineering (7.0%) sectors. The majority of the cohort especially HCP (43.6%) were from Singapore. Table 1 shows the significant demographic differences between HCP and non-HCP.\n\nKnowledge, Attitude, and Practices (KAP)\n\nKnowledge. Personal hygiene. Higher proportion of HCP knew that COVID-19 cannot be transmitted by mosquito bites (90.1% vs. 83.8%, p-value—<0.001) and SARS-CoV-2 can be inactivated by soap and alcohol disinfectant (97.8% vs. 96.3%, p-value—0.040). A significantly higher mean knowledge score was observed amongst HCP ((mean—1.88, SD– 0.35 vs. mean —1.80, SD– 0.44 (p-value—<0.001)) compared to non-HCP\n\nSocial distancing. The higher proportion of HCP knew that >1 or 2m was the distance to maintain socially to prevent transmission of COVID-19 (96.4% vs. 95.1%, p-value—<0.001) (S2 Table in S1 File).\n\nAttitude. Personal hygiene. A higher proportion of HCP felt that wearing facemask was important as it protected them and others from being infected with COVID-19 (97.4% vs. 95.9%, p-value—0.027). A significantly higher positive attitude score was seen amongst HCP ((mean—1.67, SD– 0.64 vs. mean—1.55, SD– 0.74, p-value—<0.001)).\n\nSocial distancing. An overall positive attitude towards social distancing was seen in the cohort while significantly higher proportion of HCP was willing to participate in the contact tracing app (80.6% vs. 73.9%, p-value—<0.01). No difference in attitude towards social distancing was seen between HCP and non-HCP [S2 Table in S1 File].\n\nPractices. Personal hygiene. An increased level of compliance towards personal hygiene practices was seen amongst HCP in washing their hands with soap or alcohol- based disinfectant >5 times/day (81.3% vs. 68.1%, p-value—<0.001), covering their mouth while sneezing or coughing (96.0% vs. 93.5%), p-value– 0.006), wearing a mask when they have flu-like symptoms even before the COVID-19 pandemic started (42.1% vs. 38.3%, p-value—0.050), avoiding touching their eyes, nose and mouth (77.8% vs. 69.6%, p-value—<0.001) and wiping surfaces and objects with disinfectant regularly (60.9% vs. 47.5%, p-value—<0.001). A significantly higher mean score for personal hygiene practices was seen amongst HCP ((mean– 33.4, SD– 4.58 vs. mean– 31.8, SD– 4.96, p-value—<0.001)). Social distancing. A high level of compliance towards social distancing measure of avoiding to stand or sit close to people was observed equally amongst HCP and non-HCP. For three additional social distancing practices, lesser proportion of HCP had gone out of the house more than 7 times (7.7% vs. 10.5%, p-value– 0.007) excluding for work, while a greater proportion of HCP met > 20 people face-to-face (<1m apart) every day, excluding from own household (24.1% vs. 7.5%, p-value—<0.001) and went to \u00153 places in a day, excluding home (12.7% vs. 11.9%, p-value—<0.001). A significantly lower mean score for social distancing practices was seen amongst HCP (mean 14.5, SD– 2.64 vs. mean– 15.5, SD– 2.78, p-value—< 0.001) [S2 Table in S1 File].\n\nMental health and well being\n\nThe proportion of HCP who thought they will never get infected with COVID-19 in the next one month was significantly lower (24.9% vs. 33.2%, p-value—<0.001)) and who were flourishing were significantly higher (74.8% vs. 68. 6%, p-value—<0.001)) as compared to non- HCP. A higher sense of total well-being was seen amongst HCP (38.2% vs. 33.7%, p-value— 0.009) with higher level of emotional well-being (48.4% vs. 45.6%, p-value—0.081) and psychological well-being (45.4% vs. 42%, p-value 0.042) as well as a higher sense of social well-being (36.3% vs. 29.9%, p-value <0.001). HCP also had a higher mean score (mean- 46.2, SD-14.5 vs. mean—43.9, SD-15.0, p-value—<0.001) out of a maximum score of 70 for total well-being [S2 Table in S1 File].\n\nKAP risk factors associated with health and non-health related professions\n\nAfter adjusting for the demographic variables that were significantly different between HCP and non-HCP, multivariate logistic regression analysis (Table 2) showed that HCP were significantly more knowledgeable on personal hygiene (AdjOR 1.45, 95% CI [1.14–1.83]) and social distancing (AdjOR 1.31, 95% CI [1.06–1.61]). HCP were 1.21 times more likely to have a positive attitude towards personal hygiene and 1.46 times more willing to participate in contact tracing app. HCP were 4.29 times more likely to have met >20 people every day outside of their household and were 2.25 times more likely to go to >4 places every day.\n\nHCP were 1.79 times more likely to shows high compliance, 1.5 times more likely to think that their probability of getting COVID-19 in the next 1 month was >25%—< 75%. In terms of well-being, they were 1.25 times more likely to have a higher sense of total well-being and 1.33 times more likely to have a high sense of social well-being. Flourishing, emotional, and psychological well-being were not significantly different between HCP and non-HCP.\n\nDemographics and KAP related to HCP’s compliance\n\nDemographic and Knowledge, Attitude, and Practices (KAP). HCP that showed high compliance had a significantly higher proportion of females, non-Chinese and a lower level of education than HCP that showed low compliance [Table 3].\n\nSimilar high scores were observed for knowledge and attitudes towards personal hygiene amongst HCP with different compliance levels. A similar HCP across compliance levels knew that >1 or 2m distance was ideal for maintaining effective social distancing (95.2% vs. 96.9%). The overall score for social distancing attitude was significantly higher (3.59 vs. 3.47, p-value– 0.014) for HCP with high compliance, who had a significantly higher proportion of respondents willing to participate in the contact tracing app (85.3% vs. 79.0%, p-value—0.022). Although insignificant, a higher proportion of HCP with high compliance believed that social distancing measures were important to reduce the spread of COVID-19 (99.3% vs. 97.8%, p-value– 0.189). HCP with high compliance had a higher proportion that went to no places on an average, excluding home (16.5% vs. 10.1%, p-value—0.003). A higher proportion of HCP with high compliance thought they will not get infected by COVID-19 (35.2% vs. 21.5%, p-value—<0.001), were flourishing (82.4% vs. 72.3%, p-value—<0.001) and had high sense of total well-being (53.1% vs. 33.3%, p-value—<0.001) including emotional (60.4% vs. 44.3%, p-value—<0.001), social (48.7% vs. 32.2%, p-value—<0.001) and psychological (59.3% vs. 40.8%, p-value—<0.001) [S3 Table in S1 File]. Factors associated with high compliance amongst HCP. After adjusting for the demographic variables that were significantly different between HCP showing high and low compliance, multivariate logistic regression analysis showed that HCP with high compliance were more likely to have gone to 0 places on an average in a day, excluding home, and were more likely to think they would not get COVID-19 in the next 1 month. HCP with high compliance were 1.86 times more likely to flourish, 2.33 times more likely to have a sense of total well-being, including emotional (AdjOR 1.94, 95% CI [1.44–2.61]), social (AdjOR 2.07, 95% CI [1.55–2.78]) and psychological (AdjOR 2.13, 95% CI [1.59–2.85]) [Table 4].\n\nDiscussion\n\nThis study evaluated the differences in KAP, mental health status, and risk factors of compliance towards personal hygiene and social distancing among healthcare professionals (HCP) and non-HCP during the mid-COVID-19 pandemic.\n\nHCP had a higher level of knowledge for personal hygiene and social distancing, which corroborated findings among healthcare workers in Henan, China [21]. Non-HCP were more likely to be unsure about the transmission of COVID-19 and the method to inactivate SARS-CoV-2. Experienced frontline HCW with higher education and training in COVID-19 showed a better KAP on perceived risk levels, indicating that increased awareness and education needs to be imparted to the general community in order for them to understand the risk factors of COVID-19 universally, in all cases [22]. Knowledge is essential to establish the importance of prevention, promote positive behavior and attitude, affecting the effectiveness of coping strategies and behaviors to a certain extent [23].\n\nAn overall higher level of positive attitude towards personal hygiene was seen amongst HCP compared to non-HCP. These attitudes include wearing of facemask and willingness to participate in contact tracing app, both important measures to prevent the spread of COVID- 19 [24]. By participating in the contact tracing app, which has been implemented in few countries, one is able to track cases and their contacts to swiftly quarantine potential cases and prevent further spread of the disease. We need to understand the reason for hesitation to take part in the contact tracing app amongst the general community and ensure that mask wearing is not only important during a pandemic but even under general conditions when one is unwell. Non-HCP in general, showed less compliance towards personal hygiene practices, thus advocating for stricter rules and more efforts looking at behavioral changes amongst the general population.\n\nThe attitude towards social distancing was similar amongst HCP and non-HCP, likely because of the fear that their family and friends may get infected with COVID-19. Similar findings were observed in a North American and European study which found that protecting others, self and community were the most common motivations in engaging in social distancing [22]. Amongst the general population, washing hands and keeping away from crowded places were seen as ‘the right thing to do’ and the main motivation to comply [26].\n\nFrequent hand washing and avoidance of shaking hands were the dominant practices seen in the general population in Southwest Ethiopia without exception [27]. Whilst our study had similar findings, we also found higher level of compliance amongst HCP towards personal hygiene practices like washing hands, covering mouth while sneezing, wearing mask while displaying flu-like symptoms, avoiding touching their eyes, nose and mouth and during wiping surfaces and objects with disinfectant regularly. A review by Mathur P emphasizes the importance of hand hygiene in reducing the risk of cross-transmission of infections [28] which makes it even more important for the non-HCP to comply. While all respondents avoided standing or sitting close to people, HCP was more sociable and meeting more people, and going to more places in a day, most likely due to their work load and professional demands, making self-isolation difficult. Although HCP had a higher proportion of wearing a mask when they had flu-like symptoms even before the COVID-19 pandemic, the proportions were still very low (42.1% vs. 38.3%). Due to limitations of data collection, we were unable to identify the different types of HCP which may help us understand if certain practices, attitudes were more prevalent amongst certain section of healthcare professionals. Importance of wearing a facemask when sick needs to be stressed globally irrespective of the current pandemic situation as there is evidence that population-wide use of face masks can delay pandemics and reduce the reproduction number, thereby helping to contain an outbreak [29]. This practice along with several other preventive behaviors can be achieved by messages focusing on “protecting your community” as concluded by Capraro and Barcelo [30].\n\nOur study saw multiple sources being used to obtain COVID-19 information similar to a survey being carried out among HCP in the United Kingdom [30]. Sources used were significantly different; electronic news and social media being more prevalent amongst HCP and messaging platforms and TV news being more common amongst non-HCP. This information helps target relevant public health messages through a suitable platform for the right cohort of people. As one study concluded that messages with a positive language were likely to be adhered to by people and that people with leadership roles should be engaged in motivating their colleagues and informal social circles by sharing public health messages [32].\n\nA study in Italy [10] revealed that the healthcare workers perceive having 2.5 times higher risk of COVID-19 infection than the general population, similar to 1.9 times seen in our study. While flourishing mental health, emotional and psychological well-being were similar across cohorts, a higher sense of overall well-being and social well-being was seen amongst HCP. However, this is contradictory to higher levels of depression and stress seen amongst HCWs that are assisting COVID-19 patients [37]. A study among nurses showed a negative correlation between perceived stress and happiness scores [13] which can help explain the increased social well-being seen amongst HCP in our study as their professional role may provide them with a large sense of satisfaction and meaning towards protecting the community from COVID-19 even though occupational stress level is likely higher. Job satisfaction was also observed to be significantly associated with a high level of total positive mental health status, and so was the workplace environment [35]. A review on impact of COVID-19 on mental health showed student status, unemployment, presence of chronic illness, poor self-rated health were some of the risk factors that predicted stress in the general community [14]. Efforts need to be directed towards the mental health of the community, especially in times of lockdown and social distancing where support from friends and families can be minimal, aggravating loneliness and producing negative long-term health consequences that affect ones social and mental well-being [36].\n\nThis is the first study, to our best knowledge, that focused on risk factors among HCP with high/low compliance behaviors. HCPs who are females and those with a pre-university level of education are more likely to have high compliance behavior. This was noted in other studies where male staff tend to have a higher incidence of unsatisfactory hand washing than females [13] and physicians were more likely than nurses and allied health professionals to need external reminders for hand hygiene [38]. This highlights the importance of targeting public health interventions among those at-risk populations to strengthen high compliance behavior further. In addition, HCP with high compliance behavior were more likely to flourish and have a high sense of emotional, social, and psychological well-being. This was similar to findings from Hong Kong COVID-19 health information survey that found lower stress levels and less anxiety and depressive symptoms to be positively associated with perceived compliance towards social distancing measures in the general population in every population and setting [39]. Another study amongst college students concluded that compliance towards social distancing measures was not predicted by risk tolerance or increased risk factors of being infected [40]. Therefore, further research is still required to verify the causal risk factors associated with high compliance behavior amongst the healthcare professionals and general population to help successfully implement preventive measures.\n\nLimitations\n\nOur study has some limitations. Firstly, over-simplification of findings or social desirability bias due to closed responses or responding as per what may seem correct can lead to poor reliability and validity of the findings. Secondly, questions based on their past practices could have led to recall bias. Although data was gathered from 36 countries, findings may not be truly representative of the demographics of each country making the findings less generalizable. Another limitation was the lack of assessment on the validity and reliability of the survey instrument in each of the country involved, which could have provided a more accurate inter-pretation of the findings and a more robust instrument. Being a cross-sectional study, a causal relationship of risk factors with compliance cannot be established. Lastly, overestimation of the risk effect is observed as we have not captured the risk factors contributing to KAP and mental health of the study sample.\n\nConclusions\n\nHealthcare professionals were more knowledgeable, showed increased motivation towards practicing personal hygiene and social distancing and had better total well-being compared to non-healthcare professionals. A high level of total well-being may attribute to the high compliance behavior amongst healthcare professionals. Based on the results we believe that by focusing on the total well-being of the general population we can help in increasing their compliance towards various preventive measures.",
+    "sections": [
+      {
+        "title": "Abstract",
+        "text": "Abstract\n\n",
+        "start": 0,
+        "end": 10
+      },
+      {
+        "title": "Importance",
+        "text": "Importance\n\nKnowledge and attitude influence compliance and individuals’ practices. The risk and protective factors associated with high compliance to these preventive measures are critical to enhancing pandemic preparedness.\n\n",
+        "start": 10,
+        "end": 237
+      },
+      {
+        "title": "Objective",
+        "text": "Objective\n\nThis survey aims to assess differences in mental health, knowledge, attitudes, and practices (KAP) of preventive measures for COVID-19 amongst healthcare professionals (HCP) and non-healthcare professionals.\n\n",
+        "start": 237,
+        "end": 457
+      },
+      {
+        "title": "Design",
+        "text": "Design\n\nMulti-national cross-sectional study was carried out using electronic surveys between May- June 2020.\n\n",
+        "start": 457,
+        "end": 568
+      },
+      {
+        "title": "Setting",
+        "text": "Setting\n\nMulti-national survey was distributed across 36 countries through social media, word-of-mouth, and electronic mail.\n\n",
+        "start": 568,
+        "end": 694
+      },
+      {
+        "title": "Participants",
+        "text": "Participants\n\nParticipants \u001521 years working in healthcare and non-healthcare related professions.\n\n",
+        "start": 694,
+        "end": 794
+      },
+      {
+        "title": "Main outcome",
+        "text": "Main outcome\n\nRisk factors determining the difference in KAP towards personal hygiene and social distancing measures during COVID-19 amongst HCP and non-HCP.\n\n",
+        "start": 794,
+        "end": 953
+      },
+      {
+        "title": "Results",
+        "text": "Results\n\nHCP were significantly more knowledgeable on personal hygiene (AdjOR 1.45, 95% CI -1.14 to 1.83) and social distancing (AdjOR 1.31, 95% CI -1.06 to 1.61) compared to non- HCP. They were more likely to have a positive attitude towards personal hygiene and 1.5 times more willing to participate in the contact tracing app. There was high compliance towards personal hygiene and social distancing measures amongst HCP. HCP with high compliance were 1.8 times more likely to flourish and more likely to have a high sense of emotional (AdjOR 1.94, 95% CI (1.44 to 2.61), social (AdjOR 2.07, 95% CI -1.55 to 2.78), and psychological (AdjOR 2.13, 95% CI (1.59–2.85) well-being.\n\n",
+        "start": 953,
+        "end": 1634
+      },
+      {
+        "title": "Conclusion and relevance",
+        "text": "Conclusion and relevance\n\nWhile healthcare professionals were more knowledgeable, had more positive attitudes, their higher sense of total well-being was seen to be more critical to enhance compliance. Therefore, focusing on the well-being of the general population would help to enhance their compliance towards the preventive measures for COVID-19.\n\n",
+        "start": 1634,
+        "end": 1986
+      },
+      {
+        "title": "Introduction",
+        "text": "Introduction\n\nCOVID-19 was first reported in Wuhan in December 2019. It was declared a public health emergency of international concern by the World Health Organization (WHO) on January 30, 2020 [1]. In March 2020, the COVID-19 outbreak was characterized as a pandemic to emphasize the urgency among all countries to detect, test, and build comprehensive strategies to prevent the spread of COVID-19 [2].\n\nPrevention and public health measures are of utmost importance to reduce the spread of this disease [3] especially due to the lack of vaccine and limited treatment options at the time of the study. Some of the personal protective measures that have been implemented to prevent or minimize the spread of SARS-CoV-2 have been social distancing and good hygiene practices [4, 5].\n\nSocial distancing aims to prevent the spread of infections by reducing clustering and inter-actions in a community [6]. Since COVID-19 is transmitted by respiratory droplets through close contact with infectious individuals [7], social distancing is of critical importance in establishing control and has been a consistent feature of every national response to the COVID-19 pandemic. Some examples of social distancing include staying indoors, school closures, working from home where possible, and avoiding social gatherings [8].\n\nGood hand hygiene practices can reduce the spread of respiratory diseases such as SARSCoV, MERS-CoV, and influenza virus as they can survive on surfaces for extended periods, but it has not been proven to reduce SARS-CoV-2 transmission [9]. A systematic review on hand hygiene shows that the effectiveness of hand hygiene practices in preventing influenza and its transmission in the community is insufficient. However, due to its proven efficacy in general infectious disease prevention and control, it is still critical to adopt good hand hygiene practices as a general preventive measure universally, in all cases [10].\n\nThe success of any preventive strategy depends on public adherence and individual willingness to take precautions which may be influenced by global factors such as news media or local factors such as infected family members or friends [11]. Many studies and surveys are being carried out by countries to understand people’s attitudes and perception of COVID-19 and their association with knowledge, protective behaviors and practices [12]. However, very few studies and surveys have been conducted at a global level to understand the factors related to compliance towards various public health measures and differences in perceptions and practices between those that work in health services compared to other sectors. Guidelines, advisories, and preventive measures for diseases are issued generically to all people. However, for these to be more effective and acceptable at a community level, it is important to address the differences in perception of people in health services and other services for them to be more effective and acceptable COVID-19 has had an impact on the well-being of everyone but largely on population at risk which includes healthcare professionals [13, 14]. It is important to understand if mental health and well-being of a person affects their attitude towards complying to various preventive measures which are a key in containing the ongoing pandemic.\n\nQuestions addressing knowledge, attitude and practices (KAP) were adapted from the Health Belief Model which has been identified as a quick method to directly and quantitatively identify individual belief profiles that can help in addressing various public health preventive measures and promote education [31]. Using a combination of the Health Belief Model and the Mental Health Continuum—Short Form (MHC-SF), the survey aimed to assess the global differences in mental health and KAP of healthcare professionals (HCP) versus non-healthcare professionals (non-HCP) with respect to personal hygiene and social distancing during the COVID-19 pandemic. The survey also aimed to assess the risk factors associated with compliance towards preventive measures and the role of well-being amongst HCP.\n\n",
+        "start": 1986,
+        "end": 6107
+      },
+      {
+        "title": "Methods",
+        "text": "Methods\n\n",
+        "start": 6107,
+        "end": 6116
+      },
+      {
+        "title": "Study design and data collection",
+        "text": "Study design and data collection\n\nThis was a cross-sectional study involving 36 countries globally from May–June 2020. Participants aged 21 years and above were invited to participate in an anonymized survey through social media platforms such as Facebook ads, Instagram, WhatsApp, and word of mouth and electronic mails. The survey was administered via the mySurvey platform (Verint Systems Inc., New York, USA) (link -https://mysurvey.nus.edu.sg/EFM/se/543BE5C2182BB4F7) and was hosted by the National University of Singapore.\n\n",
+        "start": 6116,
+        "end": 6646
+      },
+      {
+        "title": "Questionnaire",
+        "text": "Questionnaire\n\nThe questionnaire was initially developed in the English language and then translated to other languages (including Chinese, Indonesian Bahasa, Malay, Bengali and Korean) and subsequently back-translated to resolve any discrepancies. The questionnaire has 4 main sections: 1) demographics, 2) KAP on personal hygiene, 3) KAP on social distancing, and 4) the biopsychosocial impact on participants. All questions related to KAP were adapted from the Health Belief Model and were developed by the authors of the study. The questions on attitude addressed the respondents perceived susceptibility to COVID-19 and their practices addressed their perceived response efficacy towards personal hygiene and social distancing measures. A summary of items in the questionnaire assessed are provided in S1 Table in S1 File and is briefly described below.\n\nThere were two items for the section on personal hygiene (score range 0-1/item) to assess knowledge: transmission mode of COVID-19 and the medium that could inactivate SARS-CoV-2. Likewise, there were two items to assess attitude, i.e., interest in increasing their knowledge and wearing a facemask to protect themselves and others (score range 0-1/item). To assess practices, all responses were in a 5-point Likert scale (never, seldom, 50% of the time, most of the time, always). The score for each item was totaled (sum score = 40) and averaged for this section. All 8 items were further dichotomized into low or high compliance (most of the time or always) to assess the respondent’s compliance towards a specific hygiene behavior.\n\nFor the section on social distancing, there was one item on knowledge (score range 0–1) and five items on attitude (score range 0-1/item). For practices, compliance was assessed similarly to personal hygiene for 1 item while the remaining 3 items emphasized compliance to specific behaviors (including how often do they go out of the house in a week, how many people do they meet face-to-face every day and on average, the number of places they go to in a day). The score for each item was subsequently totaled (sum score = 20) and averaged for this section.\n\nThe psychological impact of the COVID-19 pandemic to HCP was assessed using the MHC-SF [16]. This is a 14-item questionnaire with three components: emotional, social, and psychological well-being. Respondents were further categorized as either flourishing or notflourishing [17, S1 Table in S1 File]. For each item in MHC-SF, participants were asked to rate their feelings in the past month on a 6-point Likert scale (never, once or twice a month, about once a week, two or three times a week, almost every day, every day). This tool has been validated in many different languages and countries such as Italy, South Korea and South Africa [18–20]. A continuous score ranging from 0–70 was computed, and a score greater than 75% indicating a high total well-being level. Scores for emotional, social and psychological well-being were categorized as high and low.\n\n",
+        "start": 6646,
+        "end": 9666
+      },
+      {
+        "title": "Data analysis",
+        "text": "Data analysis\n\nFor categorical variables, frequency and percentages were recorded and for continuous variables, mean and standard deviation. Univariate analysis of the association of studied variables with HCP vs. non-HCP was assessed using the chi-square test and independent t-test. A subanalysis for HCP was carried out to see any differences between high compliance and low compliance. Multivariate analysis was performed using a multivariate logistic regression model with significance at p-value <0.05. All analysis was performed with IBM SPSS statistics software v26 (Chicago, IL, USA).\n\n",
+        "start": 9666,
+        "end": 10261
+      },
+      {
+        "title": "Results Demographic",
+        "text": "Results Demographic\n\nThere were a total of 2,703 respondents from 36 countries including 40.5% HCP and remaining 59.5% belonging to primarily professional (15.5%), administrative (12.8%), finance & insurance (7.4%) and engineering (7.0%) sectors. The majority of the cohort especially HCP (43.6%) were from Singapore. Table 1 shows the significant demographic differences between HCP and non-HCP.\n\n",
+        "start": 10261,
+        "end": 10659
+      },
+      {
+        "title": "Knowledge, Attitude, and Practices (KAP)",
+        "text": "Knowledge, Attitude, and Practices (KAP)\n\nKnowledge. Personal hygiene. Higher proportion of HCP knew that COVID-19 cannot be transmitted by mosquito bites (90.1% vs. 83.8%, p-value—<0.001) and SARS-CoV-2 can be inactivated by soap and alcohol disinfectant (97.8% vs. 96.3%, p-value—0.040). A significantly higher mean knowledge score was observed amongst HCP ((mean—1.88, SD– 0.35 vs. mean —1.80, SD– 0.44 (p-value—<0.001)) compared to non-HCP\n\nSocial distancing. The higher proportion of HCP knew that >1 or 2m was the distance to maintain socially to prevent transmission of COVID-19 (96.4% vs. 95.1%, p-value—<0.001) (S2 Table in S1 File).\n\nAttitude. Personal hygiene. A higher proportion of HCP felt that wearing facemask was important as it protected them and others from being infected with COVID-19 (97.4% vs. 95.9%, p-value—0.027). A significantly higher positive attitude score was seen amongst HCP ((mean—1.67, SD– 0.64 vs. mean—1.55, SD– 0.74, p-value—<0.001)).\n\nSocial distancing. An overall positive attitude towards social distancing was seen in the cohort while significantly higher proportion of HCP was willing to participate in the contact tracing app (80.6% vs. 73.9%, p-value—<0.01). No difference in attitude towards social distancing was seen between HCP and non-HCP [S2 Table in S1 File].\n\nPractices. Personal hygiene. An increased level of compliance towards personal hygiene practices was seen amongst HCP in washing their hands with soap or alcohol- based disinfectant >5 times/day (81.3% vs. 68.1%, p-value—<0.001), covering their mouth while sneezing or coughing (96.0% vs. 93.5%), p-value– 0.006), wearing a mask when they have flu-like symptoms even before the COVID-19 pandemic started (42.1% vs. 38.3%, p-value—0.050), avoiding touching their eyes, nose and mouth (77.8% vs. 69.6%, p-value—<0.001) and wiping surfaces and objects with disinfectant regularly (60.9% vs. 47.5%, p-value—<0.001). A significantly higher mean score for personal hygiene practices was seen amongst HCP ((mean– 33.4, SD– 4.58 vs. mean– 31.8, SD– 4.96, p-value—<0.001)). Social distancing. A high level of compliance towards social distancing measure of avoiding to stand or sit close to people was observed equally amongst HCP and non-HCP. For three additional social distancing practices, lesser proportion of HCP had gone out of the house more than 7 times (7.7% vs. 10.5%, p-value– 0.007) excluding for work, while a greater proportion of HCP met > 20 people face-to-face (<1m apart) every day, excluding from own household (24.1% vs. 7.5%, p-value—<0.001) and went to \u00153 places in a day, excluding home (12.7% vs. 11.9%, p-value—<0.001). A significantly lower mean score for social distancing practices was seen amongst HCP (mean 14.5, SD– 2.64 vs. mean– 15.5, SD– 2.78, p-value—< 0.001) [S2 Table in S1 File].\n\n",
+        "start": 10659,
+        "end": 13483
+      },
+      {
+        "title": "Mental health and well being",
+        "text": "Mental health and well being\n\nThe proportion of HCP who thought they will never get infected with COVID-19 in the next one month was significantly lower (24.9% vs. 33.2%, p-value—<0.001)) and who were flourishing were significantly higher (74.8% vs. 68. 6%, p-value—<0.001)) as compared to non- HCP. A higher sense of total well-being was seen amongst HCP (38.2% vs. 33.7%, p-value— 0.009) with higher level of emotional well-being (48.4% vs. 45.6%, p-value—0.081) and psychological well-being (45.4% vs. 42%, p-value 0.042) as well as a higher sense of social well-being (36.3% vs. 29.9%, p-value <0.001). HCP also had a higher mean score (mean- 46.2, SD-14.5 vs. mean—43.9, SD-15.0, p-value—<0.001) out of a maximum score of 70 for total well-being [S2 Table in S1 File].\n\n",
+        "start": 13483,
+        "end": 14258
+      },
+      {
+        "title": "KAP risk factors associated with health and non-health related professions",
+        "text": "KAP risk factors associated with health and non-health related professions\n\nAfter adjusting for the demographic variables that were significantly different between HCP and non-HCP, multivariate logistic regression analysis (Table 2) showed that HCP were significantly more knowledgeable on personal hygiene (AdjOR 1.45, 95% CI [1.14–1.83]) and social distancing (AdjOR 1.31, 95% CI [1.06–1.61]). HCP were 1.21 times more likely to have a positive attitude towards personal hygiene and 1.46 times more willing to participate in contact tracing app. HCP were 4.29 times more likely to have met >20 people every day outside of their household and were 2.25 times more likely to go to >4 places every day.\n\nHCP were 1.79 times more likely to shows high compliance, 1.5 times more likely to think that their probability of getting COVID-19 in the next 1 month was >25%—< 75%. In terms of well-being, they were 1.25 times more likely to have a higher sense of total well-being and 1.33 times more likely to have a high sense of social well-being. Flourishing, emotional, and psychological well-being were not significantly different between HCP and non-HCP.\n\n",
+        "start": 14258,
+        "end": 15411
+      },
+      {
+        "title": "Demographics and KAP related to HCP’s compliance",
+        "text": "Demographics and KAP related to HCP’s compliance\n\nDemographic and Knowledge, Attitude, and Practices (KAP). HCP that showed high compliance had a significantly higher proportion of females, non-Chinese and a lower level of education than HCP that showed low compliance [Table 3].\n\nSimilar high scores were observed for knowledge and attitudes towards personal hygiene amongst HCP with different compliance levels. A similar HCP across compliance levels knew that >1 or 2m distance was ideal for maintaining effective social distancing (95.2% vs. 96.9%). The overall score for social distancing attitude was significantly higher (3.59 vs. 3.47, p-value– 0.014) for HCP with high compliance, who had a significantly higher proportion of respondents willing to participate in the contact tracing app (85.3% vs. 79.0%, p-value—0.022). Although insignificant, a higher proportion of HCP with high compliance believed that social distancing measures were important to reduce the spread of COVID-19 (99.3% vs. 97.8%, p-value– 0.189). HCP with high compliance had a higher proportion that went to no places on an average, excluding home (16.5% vs. 10.1%, p-value—0.003). A higher proportion of HCP with high compliance thought they will not get infected by COVID-19 (35.2% vs. 21.5%, p-value—<0.001), were flourishing (82.4% vs. 72.3%, p-value—<0.001) and had high sense of total well-being (53.1% vs. 33.3%, p-value—<0.001) including emotional (60.4% vs. 44.3%, p-value—<0.001), social (48.7% vs. 32.2%, p-value—<0.001) and psychological (59.3% vs. 40.8%, p-value—<0.001) [S3 Table in S1 File]. Factors associated with high compliance amongst HCP. After adjusting for the demographic variables that were significantly different between HCP showing high and low compliance, multivariate logistic regression analysis showed that HCP with high compliance were more likely to have gone to 0 places on an average in a day, excluding home, and were more likely to think they would not get COVID-19 in the next 1 month. HCP with high compliance were 1.86 times more likely to flourish, 2.33 times more likely to have a sense of total well-being, including emotional (AdjOR 1.94, 95% CI [1.44–2.61]), social (AdjOR 2.07, 95% CI [1.55–2.78]) and psychological (AdjOR 2.13, 95% CI [1.59–2.85]) [Table 4].\n\n",
+        "start": 15411,
+        "end": 17700
+      },
+      {
+        "title": "Discussion",
+        "text": "Discussion\n\nThis study evaluated the differences in KAP, mental health status, and risk factors of compliance towards personal hygiene and social distancing among healthcare professionals (HCP) and non-HCP during the mid-COVID-19 pandemic.\n\nHCP had a higher level of knowledge for personal hygiene and social distancing, which corroborated findings among healthcare workers in Henan, China [21]. Non-HCP were more likely to be unsure about the transmission of COVID-19 and the method to inactivate SARS-CoV-2. Experienced frontline HCW with higher education and training in COVID-19 showed a better KAP on perceived risk levels, indicating that increased awareness and education needs to be imparted to the general community in order for them to understand the risk factors of COVID-19 universally, in all cases [22]. Knowledge is essential to establish the importance of prevention, promote positive behavior and attitude, affecting the effectiveness of coping strategies and behaviors to a certain extent [23].\n\nAn overall higher level of positive attitude towards personal hygiene was seen amongst HCP compared to non-HCP. These attitudes include wearing of facemask and willingness to participate in contact tracing app, both important measures to prevent the spread of COVID- 19 [24]. By participating in the contact tracing app, which has been implemented in few countries, one is able to track cases and their contacts to swiftly quarantine potential cases and prevent further spread of the disease. We need to understand the reason for hesitation to take part in the contact tracing app amongst the general community and ensure that mask wearing is not only important during a pandemic but even under general conditions when one is unwell. Non-HCP in general, showed less compliance towards personal hygiene practices, thus advocating for stricter rules and more efforts looking at behavioral changes amongst the general population.\n\nThe attitude towards social distancing was similar amongst HCP and non-HCP, likely because of the fear that their family and friends may get infected with COVID-19. Similar findings were observed in a North American and European study which found that protecting others, self and community were the most common motivations in engaging in social distancing [22]. Amongst the general population, washing hands and keeping away from crowded places were seen as ‘the right thing to do’ and the main motivation to comply [26].\n\nFrequent hand washing and avoidance of shaking hands were the dominant practices seen in the general population in Southwest Ethiopia without exception [27]. Whilst our study had similar findings, we also found higher level of compliance amongst HCP towards personal hygiene practices like washing hands, covering mouth while sneezing, wearing mask while displaying flu-like symptoms, avoiding touching their eyes, nose and mouth and during wiping surfaces and objects with disinfectant regularly. A review by Mathur P emphasizes the importance of hand hygiene in reducing the risk of cross-transmission of infections [28] which makes it even more important for the non-HCP to comply. While all respondents avoided standing or sitting close to people, HCP was more sociable and meeting more people, and going to more places in a day, most likely due to their work load and professional demands, making self-isolation difficult. Although HCP had a higher proportion of wearing a mask when they had flu-like symptoms even before the COVID-19 pandemic, the proportions were still very low (42.1% vs. 38.3%). Due to limitations of data collection, we were unable to identify the different types of HCP which may help us understand if certain practices, attitudes were more prevalent amongst certain section of healthcare professionals. Importance of wearing a facemask when sick needs to be stressed globally irrespective of the current pandemic situation as there is evidence that population-wide use of face masks can delay pandemics and reduce the reproduction number, thereby helping to contain an outbreak [29]. This practice along with several other preventive behaviors can be achieved by messages focusing on “protecting your community” as concluded by Capraro and Barcelo [30].\n\nOur study saw multiple sources being used to obtain COVID-19 information similar to a survey being carried out among HCP in the United Kingdom [30]. Sources used were significantly different; electronic news and social media being more prevalent amongst HCP and messaging platforms and TV news being more common amongst non-HCP. This information helps target relevant public health messages through a suitable platform for the right cohort of people. As one study concluded that messages with a positive language were likely to be adhered to by people and that people with leadership roles should be engaged in motivating their colleagues and informal social circles by sharing public health messages [32].\n\nA study in Italy [10] revealed that the healthcare workers perceive having 2.5 times higher risk of COVID-19 infection than the general population, similar to 1.9 times seen in our study. While flourishing mental health, emotional and psychological well-being were similar across cohorts, a higher sense of overall well-being and social well-being was seen amongst HCP. However, this is contradictory to higher levels of depression and stress seen amongst HCWs that are assisting COVID-19 patients [37]. A study among nurses showed a negative correlation between perceived stress and happiness scores [13] which can help explain the increased social well-being seen amongst HCP in our study as their professional role may provide them with a large sense of satisfaction and meaning towards protecting the community from COVID-19 even though occupational stress level is likely higher. Job satisfaction was also observed to be significantly associated with a high level of total positive mental health status, and so was the workplace environment [35]. A review on impact of COVID-19 on mental health showed student status, unemployment, presence of chronic illness, poor self-rated health were some of the risk factors that predicted stress in the general community [14]. Efforts need to be directed towards the mental health of the community, especially in times of lockdown and social distancing where support from friends and families can be minimal, aggravating loneliness and producing negative long-term health consequences that affect ones social and mental well-being [36].\n\nThis is the first study, to our best knowledge, that focused on risk factors among HCP with high/low compliance behaviors. HCPs who are females and those with a pre-university level of education are more likely to have high compliance behavior. This was noted in other studies where male staff tend to have a higher incidence of unsatisfactory hand washing than females [13] and physicians were more likely than nurses and allied health professionals to need external reminders for hand hygiene [38]. This highlights the importance of targeting public health interventions among those at-risk populations to strengthen high compliance behavior further. In addition, HCP with high compliance behavior were more likely to flourish and have a high sense of emotional, social, and psychological well-being. This was similar to findings from Hong Kong COVID-19 health information survey that found lower stress levels and less anxiety and depressive symptoms to be positively associated with perceived compliance towards social distancing measures in the general population in every population and setting [39]. Another study amongst college students concluded that compliance towards social distancing measures was not predicted by risk tolerance or increased risk factors of being infected [40]. Therefore, further research is still required to verify the causal risk factors associated with high compliance behavior amongst the healthcare professionals and general population to help successfully implement preventive measures.\n\n",
+        "start": 17700,
+        "end": 25767
+      },
+      {
+        "title": "Limitations",
+        "text": "Limitations\n\nOur study has some limitations. Firstly, over-simplification of findings or social desirability bias due to closed responses or responding as per what may seem correct can lead to poor reliability and validity of the findings. Secondly, questions based on their past practices could have led to recall bias. Although data was gathered from 36 countries, findings may not be truly representative of the demographics of each country making the findings less generalizable. Another limitation was the lack of assessment on the validity and reliability of the survey instrument in each of the country involved, which could have provided a more accurate inter-pretation of the findings and a more robust instrument. Being a cross-sectional study, a causal relationship of risk factors with compliance cannot be established. Lastly, overestimation of the risk effect is observed as we have not captured the risk factors contributing to KAP and mental health of the study sample.\n\n",
+        "start": 25767,
+        "end": 26754
+      },
+      {
+        "title": "Conclusions",
+        "text": "Conclusions\n\nHealthcare professionals were more knowledgeable, showed increased motivation towards practicing personal hygiene and social distancing and had better total well-being compared to non-healthcare professionals. A high level of total well-being may attribute to the high compliance behavior amongst healthcare professionals. Based on the results we believe that by focusing on the total well-being of the general population we can help in increasing their compliance towards various preventive measures.",
+        "start": 26754,
+        "end": 27268
+      }
+    ],
+    "references": [
+      {
+        "key": "r1",
+        "label": "1",
+        "raw": "Fu L, Wang B, Yuan T, Chen X, Ao Y, Fitzpatrick T, et al. Clinical characteristics of coronavirus disease 2019 (COVID-19) in China: A systematic review and meta-analysis. J Infect. 2020; 80(6):656–665. https://doi.org/10.1016/j.jinf.2020.03.041 PMID: 32283155",
+        "title": "Clinical characteristics of coronavirus disease 2019 (COVID-19) in China: A systematic review and meta-analysis",
+        "authors": [
+          "Fu L",
+          "Wang B",
+          "Yuan T",
+          "Chen X",
+          "Ao Y",
+          "Fitzpatrick T"
+        ],
+        "year": 2020,
+        "doi": "10.1016/j.jinf.2020.03.041",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1016/j.jinf.2020.03.041",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r2",
+        "label": "2",
+        "raw": "WHO: Listings of WHO’s response to COVID-19; June 29, 2020. https://www.who.int/news/item/29-06- 2020-covidtimeline",
+        "title": "https://www.who.int/news/item/29-06- 2020-covidtimeline",
+        "authors": [
+          "WHO: Listings of WHO’s response to COVID-19",
+          "June 29"
+        ],
+        "year": 2020,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://www.who.int/news/item/29-06-",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r3",
+        "label": "3",
+        "raw": "Srivastava N, Saxena SK. Prevention and Control Strategies for SARS-CoV-2 Infection. Coronavirus Disease 2019 (COVID-19). 2020;127–140.",
+        "title": "Prevention and Control Strategies for SARS-CoV-2 Infection",
+        "authors": [
+          "Srivastava N",
+          "Saxena SK"
+        ],
+        "year": 2020,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r4",
+        "label": "4",
+        "raw": "Qualls N, Levitt A, Kanade N, Wright-Jegede N, Dopson S, Biggerstaff M, et al. Community Mitigation Guidelines to Prevent Pandemic Influenza—United States, 2017. MMWR Recomm Rep. 2017; 66 (1):1–34. https://doi.org/10.15585/mmwr.rr6601a1 PMID: 28426646",
+        "title": "Community Mitigation Guidelines to Prevent Pandemic Influenza—United States",
+        "authors": [
+          "Qualls N",
+          "Levitt A",
+          "Kanade N",
+          "Wright-Jegede N",
+          "Dopson S",
+          "Biggerstaff M"
+        ],
+        "year": 2017,
+        "doi": "10.15585/mmwr.rr6601a1",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.15585/mmwr.rr6601a1",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r5",
+        "label": "5",
+        "raw": "Gun̈er R, Hasanoğlu I, Aktaş F. COVID-19: Prevention and control measures in community. Turk J Med Sci. 2020; 50(SI-1):571–577. https://doi.org/10.3906/sag-2004-146 PMID: 32293835",
+        "title": "Turk J Med Sci",
+        "authors": [
+          "Gun̈er R",
+          "Hasanoğlu I",
+          "Aktaş F. COVID-19: Prevention",
+          "control measures in community"
+        ],
+        "year": 2020,
+        "doi": "10.3906/sag-2004-146",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.3906/sag-2004-146",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r6",
+        "label": "6",
+        "raw": "Wilder-Smith A, Freedman DO. Isolation, quarantine, social distancing and community containment: pivotal role for old-style public health measures in the novel coronavirus (2019-nCoV) outbreak. J Travel Med. 2020; 27(2):taaa020. https://doi.org/10.1093/jtm/taaa020 PMID: 32052841",
+        "title": "outbreak",
+        "authors": [
+          "Wilder-Smith A",
+          "Freedman DO. Isolation",
+          "quarantine",
+          "social distancing",
+          "community containment: pivotal role for old-style public health measures in the novel coronavirus"
+        ],
+        "year": 2019,
+        "doi": "10.1093/jtm/taaa020",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1093/jtm/taaa020",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r7",
+        "label": "7",
+        "raw": "WHO: Getting your workplace ready for COVID-19: How COVID-19 spreads; March 19, 2020. https:// www.who.int/publications/m/item/getting-your-workplace-ready-for-covid-19-how-covid-19-spreads.",
+        "title": "https:// www.who.int/publications/m/item/getting-your-workplace-ready-for-covid-19-how-covid-19-spreads",
+        "authors": [
+          "WHO: Getting your workplace ready for COVID-19: How COVID-19 spreads",
+          "March 19"
+        ],
+        "year": 2020,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r8",
+        "label": "8",
+        "raw": "Williams N. Social Distancing in the Covid-19 Pandemic. Occup Med (Lond). 2020;kqaa072.",
+        "title": "Occup Med (Lond)",
+        "authors": [
+          "Williams N. Social Distancing in the Covid-19 Pandemic"
+        ],
+        "year": 2020,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r9",
+        "label": "9",
+        "raw": "Yang C. Does hand hygiene reduce SARS-CoV-2 transmission?. Graefes Arch Clin Exp Ophthalmol. 2020; 258(5):1133–1134. https://doi.org/10.1007/s00417-020-04652-5 PMID: 32221693",
+        "title": "Graefes Arch Clin Exp Ophthalmol",
+        "authors": [
+          "Yang C. Does hand hygiene reduce SARS-CoV-2 transmission?"
+        ],
+        "year": 2020,
+        "doi": "10.1007/s00417-020-04652-5",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1007/s00417-020-04652-5",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r10",
+        "label": "10",
+        "raw": "Moncion K, Young K, Tunis M, Rempel S, Stirling R, Zhao L. Effectiveness of hand hygiene practices in preventing influenza virus infection in the community setting: A systematic review. Can Commun Dis Rep. 2019; 45(1):12–23. https://doi.org/10.14745/ccdr.v45i01a02 PMID: 31015816",
+        "title": "Effectiveness of hand hygiene practices in preventing influenza virus infection in the community setting: A systematic review",
+        "authors": [
+          "Moncion K",
+          "Young K",
+          "Tunis M",
+          "Rempel S",
+          "Stirling R",
+          "Zhao L"
+        ],
+        "year": 2019,
+        "doi": "10.14745/ccdr.v45i01a02",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.14745/ccdr.v45i01a02",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r11",
+        "label": "11",
+        "raw": "Herrera-Diestra JL, Meyers LA. Local risk perception enhances epidemic control. PLoS One. 2019; 14 (12):e0225576. https://doi.org/10.1371/journal.pone.0225576 PMID: 31794551",
+        "title": "Local risk perception enhances epidemic control",
+        "authors": [
+          "Herrera-Diestra JL",
+          "Meyers LA"
+        ],
+        "year": 2019,
+        "doi": "10.1371/journal.pone.0225576",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1371/journal.pone.0225576",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r12",
+        "label": "12",
+        "raw": "Bruine de Bruin W, Bennett D. Relationships Between Initial COVID-19 Risk Perceptions and Protective Health Behaviors: A National Survey. Am J Prev Med. 2020; 59(2):157–167. https://doi.org/10.1016/j. amepre.2020.05.001 PMID: 32576418",
+        "title": "Relationships Between Initial COVID-19 Risk Perceptions and Protective Health Behaviors: A National Survey",
+        "authors": [
+          "Bruine de Bruin W",
+          "Bennett D"
+        ],
+        "year": 2020,
+        "doi": "10.1016/j",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1016/j.",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r13",
+        "label": "13",
+        "raw": "Saladino V, Algeri D, Auriemma V. The Psychological and Social Impact of Covid-19: New Perspectives of Well-Being. Front Psychol. 2020 Oct 2; 11:577684. https://doi.org/10.3389/fpsyg.2020.577684 PMID: 33132986",
+        "title": "The Psychological and Social Impact of Covid-19: New Perspectives of Well-Being",
+        "authors": [
+          "Saladino V",
+          "Algeri D",
+          "Auriemma V"
+        ],
+        "year": 2020,
+        "doi": "10.3389/fpsyg.2020.577684",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.3389/fpsyg.2020.577684",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r14",
+        "label": "14",
+        "raw": "Xiong J, Lipsitz O, Nasri F, Lui LMW, Gill H, Phan L, et al. Impact of COVID-19 pandemic on mental health in the general population: A systematic review. J Affect Disord. 2020 Dec 1; 277:55–64. https:// doi.org/10.1016/j.jad.2020.08.001 PMID: 32799105",
+        "title": "Impact of COVID-19 pandemic on mental health in the general population: A systematic review",
+        "authors": [
+          "Xiong J",
+          "Lipsitz O",
+          "Nasri F",
+          "Lui LMW",
+          "Gill H",
+          "Phan L"
+        ],
+        "year": 2020,
+        "doi": "10.1016/j.jad.2020.08.001",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r15",
+        "label": "15",
+        "raw": "Costa MF. Health belief model for coronavirus infection risk determinants. Rev Saude Publica. 2020; 54:47. https://doi.org/10.11606/s1518-8787.2020054002494 PMID: 32491096",
+        "title": "Health belief model for coronavirus infection risk determinants",
+        "authors": [
+          "Costa MF"
+        ],
+        "year": 2020,
+        "doi": "10.11606/s1518-8787.2020054002494",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.11606/s1518-8787.2020054002494",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r16",
+        "label": "16",
+        "raw": "Keyes CL. Mental illness and/or mental health? Investigating axioms of the complete state model of health. J Consult Clin Psychol. 2005; 73(3):539–548. https://doi.org/10.1037/0022-006X.73.3.539 PMID: 15982151",
+        "title": "Mental illness and/or mental health? Investigating axioms of the complete state model of health",
+        "authors": [
+          "Keyes CL"
+        ],
+        "year": 2005,
+        "doi": "10.1037/0022-006X.73.3.539",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1037/0022-006X.73.3.539",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r18",
+        "label": "18",
+        "raw": "Lupano Perugini ML, de la Iglesia G, Castro Solano A, Keyes CL. The Mental Health Continuum-Short Form (MHC-SF) in the Argentinean Context: Confirmatory Factor Analysis and Measurement Invariance. Eur J Psychol. 2017; 13(1):93–108. https://doi.org/10.5964/ejop.v13i1.1163 PMID: 28344677",
+        "title": "The Mental Health Continuum-Short Form (MHC-SF) in the Argentinean Context: Confirmatory Factor Analysis and Measurement Invariance",
+        "authors": [
+          "Lupano Perugini ML",
+          "de la Iglesia G",
+          "Castro Solano A",
+          "Keyes CL"
+        ],
+        "year": 2017,
+        "doi": "10.5964/ejop.v13i1.1163",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.5964/ejop.v13i1.1163",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r19",
+        "label": "19",
+        "raw": "Guo C, Tomson G, Guo J, Li X, Keller C, Sod̈erqvist F. Psychometric evaluation of the Mental Health Continuum-Short Form (MHC-SF) in Chinese adolescents—a methodological study. Health Qual Life Outcomes. 2015; 13:198. https://doi.org/10.1186/s12955-015-0394-2 PMID: 26651829",
+        "title": "Health Qual Life Outcomes",
+        "authors": [
+          "Guo C",
+          "Tomson G",
+          "Guo J",
+          "Li X",
+          "Keller C",
+          "Sod̈erqvist F. Psychometric evaluation of the Mental Health Continuum-Short Form (MHC-SF) in Chinese adolescents—a methodological study"
+        ],
+        "year": 2015,
+        "doi": "10.1186/s12955-015-0394-2",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1186/s12955-015-0394-2",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r20",
+        "label": "20",
+        "raw": "Keyes CL, Wissing M, Potgieter JP, Temane M, Kruger A, van Rooy S. Evaluation of the mental health continuum-short form (MHC-SF) in setswana-speaking South Africans. Clin Psychol Psychother. 2008; 15(3):181–192. https://doi.org/10.1002/cpp.572 PMID: 19115439",
+        "title": "Evaluation of the mental health continuum-short form (MHC-SF) in setswana-speaking South Africans",
+        "authors": [
+          "Keyes CL",
+          "Wissing M",
+          "Potgieter JP",
+          "Temane M",
+          "Kruger A",
+          "van Rooy S"
+        ],
+        "year": 2008,
+        "doi": "10.1002/cpp.572",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1002/cpp.572",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r21",
+        "label": "21",
+        "raw": "Zhang M, Zhou M, Tang F, Wang Y, Nie H, Zhang L, et al. Knowledge, attitude, and practice regarding COVID-19 among healthcare workers in Henan, China. J Hosp Infect. 2020; 105(2):183–187. https:// doi.org/10.1016/j.jhin.2020.04.012 PMID: 32278701",
+        "title": "Knowledge, attitude, and practice regarding COVID-19 among healthcare workers in Henan, China",
+        "authors": [
+          "Zhang M",
+          "Zhou M",
+          "Tang F",
+          "Wang Y",
+          "Nie H",
+          "Zhang L"
+        ],
+        "year": 2020,
+        "doi": "10.1016/j.jhin.2020.04.012",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r22",
+        "label": "22",
+        "raw": "Tamang N, Rai P, Dhungana S, Sherchan B, Shah B, Pyakurel P, et al. COVID-19: a National Survey on perceived level of knowledge, attitude and practice among frontline healthcare Workers in Nepal. BMC Public Health. 2020; 20(1):1905. https://doi.org/10.1186/s12889-020-10025-8 PMID: 33317486",
+        "title": "COVID-19: a National Survey on perceived level of knowledge, attitude and practice among frontline healthcare Workers in Nepal",
+        "authors": [
+          "Tamang N",
+          "Rai P",
+          "Dhungana S",
+          "Sherchan B",
+          "Shah B",
+          "Pyakurel P"
+        ],
+        "year": 1905,
+        "doi": "10.1186/s12889-020-10025-8",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1186/s12889-020-10025-8",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r23",
+        "label": "23",
+        "raw": "McEachan R, Taylor N, Harrison R, Lawton R, Gardner P, Conner M. Meta-Analysis of the Reasoned Action Approach (RAA) to Understanding Health Behaviors. Ann Behav Med. 2016; 50(4):592–612. https://doi.org/10.1007/s12160-016-9798-4 PMID: 27169555",
+        "title": "Meta-Analysis of the Reasoned Action Approach (RAA) to Understanding Health Behaviors",
+        "authors": [
+          "McEachan R",
+          "Taylor N",
+          "Harrison R",
+          "Lawton R",
+          "Gardner P",
+          "Conner M"
+        ],
+        "year": 2016,
+        "doi": "10.1007/s12160-016-9798-4",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1007/s12160-016-9798-4",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r24",
+        "label": "24",
+        "raw": "CDC: Guidance for Wearing Masks, Help Slow the Spread of COVID-19; February 18, 2021. https:// www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/cloth-face-cover-guidance.html",
+        "title": "https:// www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/cloth-face-cover-guidance.html",
+        "authors": [
+          "CDC: Guidance for Wearing Masks",
+          "Help Slow the Spread of COVID-19",
+          "February 18"
+        ],
+        "year": 2019,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r25",
+        "label": "25",
+        "raw": "Coroiu A, Moran C, Campbell T, Geller AC. Barriers and facilitators of adherence to social distancing recommendations during COVID-19 among a large international sample of adults. PLoS One. 2020; 15 (10):e0239795. https://doi.org/10.1371/journal.pone.0239795 PMID: 33027281",
+        "title": "Barriers and facilitators of adherence to social distancing recommendations during COVID-19 among a large international sample of adults",
+        "authors": [
+          "Coroiu A",
+          "Moran C",
+          "Campbell T",
+          "Geller AC"
+        ],
+        "year": 2020,
+        "doi": "10.1371/journal.pone.0239795",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1371/journal.pone.0239795",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r26",
+        "label": "26",
+        "raw": "Seale H, Heywood AE, Leask J, Sheel M, Thomas S, Durrheim DN, et al. COVID-19 is rapidly changing: Examining public perceptions and behaviors in response to this evolving pandemic. PLoS One. 2020; 15(6):e0235112. https://doi.org/10.1371/journal.pone.0235112 PMID: 32574184",
+        "title": "COVID-19 is rapidly changing: Examining public perceptions and behaviors in response to this evolving pandemic",
+        "authors": [
+          "Seale H",
+          "Heywood AE",
+          "Leask J",
+          "Sheel M",
+          "Thomas S",
+          "Durrheim DN"
+        ],
+        "year": 2020,
+        "doi": "10.1371/journal.pone.0235112",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1371/journal.pone.0235112",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r27",
+        "label": "27",
+        "raw": "Kebede Y, Yitayih Y, Birhanu Z, Mekonen S, Ambelu A. Knowledge, perceptions and preventive practices towards COVID-19 early in the outbreak among Jimma university medical center visitors, Southwest Ethiopia. PLoS One. 2020; 15(5):e0233744. https://doi.org/10.1371/journal.pone.0233744 PMID: 32437432",
+        "title": "Knowledge, perceptions and preventive practices towards COVID-19 early in the outbreak among Jimma university medical center visitors, Southwest Ethiopia",
+        "authors": [
+          "Kebede Y",
+          "Yitayih Y",
+          "Birhanu Z",
+          "Mekonen S",
+          "Ambelu A"
+        ],
+        "year": 2020,
+        "doi": "10.1371/journal.pone.0233744",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1371/journal.pone.0233744",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r28",
+        "label": "28",
+        "raw": "Mathur P. Hand hygiene: back to the basics of infection control. Indian J Med Res. 2011; 134(5):611–",
+        "title": "Indian J Med Res",
+        "authors": [
+          "Mathur P. Hand hygiene: back to the basics of infection control"
+        ],
+        "year": 2011,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r29",
+        "label": "29",
+        "raw": "Brienen NC, Timen A, Wallinga J, van Steenbergen JE, Teunis PF. The effect of mask use on the spread of influenza during a pandemic. Risk Anal. 2010; 30(8):1210–1218. https://doi.org/10.1111/j. 1539-6924.2010.01428.x PMID: 20497389",
+        "title": "The effect of mask use on the spread of influenza during a pandemic",
+        "authors": [
+          "Brienen NC",
+          "Timen A",
+          "Wallinga J",
+          "van Steenbergen JE",
+          "Teunis PF"
+        ],
+        "year": 2010,
+        "doi": "10.1111/j.1539-6924.2010.01428.x",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1111/j.",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r30",
+        "label": "30",
+        "raw": "Capraro V, Barcel H. The effect of messaging and gender on intentions to wear a face covering to slow down COVID-19 transmission. Journal of Behavioral Economics for Policy. 2020; Special Issue 2,45–",
+        "title": "The effect of messaging and gender on intentions to wear a face covering to slow down COVID-19 transmission",
+        "authors": [
+          "Capraro V",
+          "Barcel H"
+        ],
+        "year": 2020,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r31",
+        "label": "31",
+        "raw": "Iqbal MR, Chaudhuri A. COVID-19: Results of a national survey of United Kingdom healthcare professionals’ perceptions of current management strategy—A cross-sectional questionnaire study. Int J Surg. 2020; 79:156–161. https://doi.org/10.1016/j.ijsu.2020.05.042 PMID: 32447002",
+        "title": "COVID-19: Results of a national survey of United Kingdom healthcare professionals’ perceptions of current management strategy—A cross-sectional questionnaire study",
+        "authors": [
+          "Iqbal MR",
+          "Chaudhuri A"
+        ],
+        "year": 2020,
+        "doi": "10.1016/j.ijsu.2020.05.042",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1016/j.ijsu.2020.05.042",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r32",
+        "label": "32",
+        "raw": "Bellato A. Psychological factors underlying adherence to COVID-19 regulations: A commentary on how to promote compliance through mass media and limit the risk of a second wave. Social Sciences & Humanities Open. 2020; 2(1):100062.",
+        "title": "Social Sciences & Humanities Open",
+        "authors": [
+          "Bellato A. Psychological factors underlying adherence to COVID-19 regulations: A commentary on how to promote compliance through mass media",
+          "limit the risk of a second wave"
+        ],
+        "year": 2020,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r33",
+        "label": "33",
+        "raw": "Simione L, Gnagnarella C. Differences Between Health Workers and General Population in Risk Per-ception, Behaviors, and Psychological Distress Related to COVID-19 Spread in Italy. Front Psychol. 2020; 11:2166. https://doi.org/10.3389/fpsyg.2020.02166 PMID: 33013555",
+        "title": "Differences Between Health Workers and General Population in Risk Per-ception, Behaviors, and Psychological Distress Related to COVID-19 Spread in Italy",
+        "authors": [
+          "Simione L",
+          "Gnagnarella C"
+        ],
+        "year": 2020,
+        "doi": "10.3389/fpsyg.2020.02166",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.3389/fpsyg.2020.02166",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r34",
+        "label": "34",
+        "raw": "Lai J, Ma S, Wang Y, Cai Z, Hu J, Wei N, et al. Factors Associated With Mental Health Outcomes Among Health Care Workers Exposed to Coronavirus Disease 2019. JAMA Netw Open. 2020 Mar 2; 3 (3):e203976. https://doi.org/10.1001/jamanetworkopen.2020.3976 PMID: 32202646",
+        "title": "Factors Associated With Mental Health Outcomes Among Health Care Workers Exposed to Coronavirus Disease 2019",
+        "authors": [
+          "Lai J",
+          "Ma S",
+          "Wang Y",
+          "Cai Z",
+          "Hu J",
+          "Wei N"
+        ],
+        "year": 2020,
+        "doi": "10.1001/jamanetworkopen.2020.3976",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1001/jamanetworkopen.2020.3976",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r35",
+        "label": "35",
+        "raw": "Picco L, Yuan Q, Vaingankar JA, Chang S, Abdin E, Chua HC, et al. Positive mental health among health professionals working at a psychiatric hospital. PLoS One. 2017; 12(6):e0178359. https://doi. org/10.1371/journal.pone.0178359 PMID: 28591203",
+        "title": "Positive mental health among health professionals working at a psychiatric hospital",
+        "authors": [
+          "Picco L",
+          "Yuan Q",
+          "Vaingankar JA",
+          "Chang S",
+          "Abdin E",
+          "Chua HC"
+        ],
+        "year": 2017,
+        "doi": "10.1371/journal.pone.0178359",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r36",
+        "label": "36",
+        "raw": "Bavel JJV, Baicker K, Boggio PS, Capraro V, Cichocka A, Cikara M, et al. Using social and behavioural science to support COVID-19 pandemic response. Nat Hum Behav. 2020 May; 4(5):460–471. https:// doi.org/10.1038/s41562-020-0884-z PMID: 32355299",
+        "title": "Using social and behavioural science to support COVID-19 pandemic response",
+        "authors": [
+          "Bavel JJV",
+          "Baicker K",
+          "Boggio PS",
+          "Capraro V",
+          "Cichocka A",
+          "Cikara M"
+        ],
+        "year": 2020,
+        "doi": "10.1038/s41562-020-0884-z",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r37",
+        "label": "37",
+        "raw": "Szilaǵyi L, Haidegger T, Lehotsky A, Nagy M, Csonka EA, Sunet X, et al. A large-scale assessment of hand hygiene quality and the effectiveness of the \"WHO 6-steps\". BMC Infect Dis. 2013; 13:249. Published 2013 May 30. https://doi.org/10.1186/1471-2334-13-249 PMID: 23718728",
+        "title": "A large-scale assessment of hand hygiene quality and the effectiveness of the \"WHO 6-steps\"",
+        "authors": [
+          "Szilaǵyi L",
+          "Haidegger T",
+          "Lehotsky A",
+          "Nagy M",
+          "Csonka EA",
+          "Sunet X"
+        ],
+        "year": 2013,
+        "doi": "10.1186/1471-2334-13-249",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1186/1471-2334-13-249",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r38",
+        "label": "38",
+        "raw": "Ibrahim MAB, Chow C, Poh BF, Ang B, Chow A. Differences in psychosocial determinants of hand hygiene between health care professional groups: Insights from a mixed-methods analysis. Am J Infect Control. 2018; 46(3):253–260. https://doi.org/10.1016/j.ajic.2017.09.014 PMID: 29122392",
+        "title": "Differences in psychosocial determinants of hand hygiene between health care professional groups: Insights from a mixed-methods analysis",
+        "authors": [
+          "Ibrahim MAB",
+          "Chow C",
+          "Poh BF",
+          "Ang B",
+          "Chow A"
+        ],
+        "year": 2018,
+        "doi": "10.1016/j.ajic.2017.09.014",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.1016/j.ajic.2017.09.014",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r39",
+        "label": "39",
+        "raw": "Zhao SZ, Wong JYH, Wu Y, Choi EPH, Wang MP, Lam TH. Social Distancing Compliance under COVID-19 Pandemic and Mental Health Impacts: A Population-Based Study. Int J Environ Res Public Health. 2020; 17(18):6692. https://doi.org/10.3390/ijerph17186692 PMID: 32937929",
+        "title": "Social Distancing Compliance under COVID-19 Pandemic and Mental Health Impacts: A Population-Based Study",
+        "authors": [
+          "Zhao SZ",
+          "Wong JYH",
+          "Wu Y",
+          "Choi EPH",
+          "Wang MP",
+          "Lam TH"
+        ],
+        "year": 2020,
+        "doi": "10.3390/ijerph17186692",
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": "https://doi.org/10.3390/ijerph17186692",
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      },
+      {
+        "key": "r40",
+        "label": "40",
+        "raw": "Sheth K, Wright GC. The usual suspects: do risk tolerance, altruism, and health predict the response to COVID-19? Rev Econ Househ. 2020;1–12.",
+        "title": "The usual suspects: do risk tolerance, altruism, and health predict the response to COVID-19? Rev Econ Househ",
+        "authors": [
+          "Sheth K",
+          "Wright GC"
+        ],
+        "year": 2020,
+        "doi": null,
+        "arxiv_id": null,
+        "openalex_id": null,
+        "url": null,
+        "abstract": null,
+        "fulltext_status": "unavailable",
+        "fulltext_source": null,
+        "status_reason": null,
+        "match_score": null,
+        "retracted": null,
+        "retraction_notice": null,
+        "updates": [],
+        "text_path": null
+      }
+    ],
+    "citation_keys_total": 39,
+    "citation_keys_mapped": 39,
+    "notes": []
+  },
+  "sentences": [
+    {
+      "id": "s1",
+      "text": "It was declared a public health emergency of international concern by the World Health Organization (WHO) on January 30, 2020 [1].",
+      "section": "Introduction",
+      "start": 2055,
+      "end": 2185,
+      "reference_keys": [
+        "r1"
+      ],
+      "marker_spans": [
+        [
+          2181,
+          2184
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r1"
+        ]
+      ],
+      "context_before": "COVID-19 was first reported in Wuhan in December 2019.",
+      "context_after": "In March 2020, the COVID-19 outbreak was characterized as a pandemic to emphasize the urgency among all countries to detect, test, and build comprehensive strategies to prevent the spread of COVID-19 [2]."
+    },
+    {
+      "id": "s2",
+      "text": "In March 2020, the COVID-19 outbreak was characterized as a pandemic to emphasize the urgency among all countries to detect, test, and build comprehensive strategies to prevent the spread of COVID-19 [2].",
+      "section": "Introduction",
+      "start": 2186,
+      "end": 2390,
+      "reference_keys": [
+        "r2"
+      ],
+      "marker_spans": [
+        [
+          2386,
+          2389
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r2"
+        ]
+      ],
+      "context_before": "It was declared a public health emergency of international concern by the World Health Organization (WHO) on January 30, 2020 [1].",
+      "context_after": ""
+    },
+    {
+      "id": "s3",
+      "text": "Prevention and public health measures are of utmost importance to reduce the spread of this disease [3] especially due to the lack of vaccine and limited treatment options at the time of the study.",
+      "section": "Introduction",
+      "start": 2392,
+      "end": 2589,
+      "reference_keys": [
+        "r3"
+      ],
+      "marker_spans": [
+        [
+          2492,
+          2495
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r3"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "Some of the personal protective measures that have been implemented to prevent or minimize the spread of SARS-CoV-2 have been social distancing and good hygiene practices [4, 5]."
+    },
+    {
+      "id": "s4",
+      "text": "Some of the personal protective measures that have been implemented to prevent or minimize the spread of SARS-CoV-2 have been social distancing and good hygiene practices [4, 5].",
+      "section": "Introduction",
+      "start": 2590,
+      "end": 2768,
+      "reference_keys": [
+        "r4",
+        "r5"
+      ],
+      "marker_spans": [
+        [
+          2761,
+          2767
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r4",
+          "r5"
+        ]
+      ],
+      "context_before": "Prevention and public health measures are of utmost importance to reduce the spread of this disease [3] especially due to the lack of vaccine and limited treatment options at the time of the study.",
+      "context_after": ""
+    },
+    {
+      "id": "s5",
+      "text": "Social distancing aims to prevent the spread of infections by reducing clustering and inter-actions in a community [6].",
+      "section": "Introduction",
+      "start": 2770,
+      "end": 2889,
+      "reference_keys": [
+        "r6"
+      ],
+      "marker_spans": [
+        [
+          2885,
+          2888
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r6"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "Since COVID-19 is transmitted by respiratory droplets through close contact with infectious individuals [7], social distancing is of critical importance in establishing control and has been a consistent feature of every national response to the COVID-19 pandemic."
+    },
+    {
+      "id": "s6",
+      "text": "Since COVID-19 is transmitted by respiratory droplets through close contact with infectious individuals [7], social distancing is of critical importance in establishing control and has been a consistent feature of every national response to the COVID-19 pandemic.",
+      "section": "Introduction",
+      "start": 2890,
+      "end": 3153,
+      "reference_keys": [
+        "r7"
+      ],
+      "marker_spans": [
+        [
+          2994,
+          2997
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r7"
+        ]
+      ],
+      "context_before": "Social distancing aims to prevent the spread of infections by reducing clustering and inter-actions in a community [6].",
+      "context_after": "Some examples of social distancing include staying indoors, school closures, working from home where possible, and avoiding social gatherings [8]."
+    },
+    {
+      "id": "s7",
+      "text": "Some examples of social distancing include staying indoors, school closures, working from home where possible, and avoiding social gatherings [8].",
+      "section": "Introduction",
+      "start": 3154,
+      "end": 3300,
+      "reference_keys": [
+        "r8"
+      ],
+      "marker_spans": [
+        [
+          3296,
+          3299
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r8"
+        ]
+      ],
+      "context_before": "Since COVID-19 is transmitted by respiratory droplets through close contact with infectious individuals [7], social distancing is of critical importance in establishing control and has been a consistent feature of every national response to the COVID-19 pandemic.",
+      "context_after": ""
+    },
+    {
+      "id": "s8",
+      "text": "Good hand hygiene practices can reduce the spread of respiratory diseases such as SARSCoV, MERS-CoV, and influenza virus as they can survive on surfaces for extended periods, but it has not been proven to reduce SARS-CoV-2 transmission [9].",
+      "section": "Introduction",
+      "start": 3302,
+      "end": 3542,
+      "reference_keys": [
+        "r9"
+      ],
+      "marker_spans": [
+        [
+          3538,
+          3541
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r9"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "A systematic review on hand hygiene shows that the effectiveness of hand hygiene practices in preventing influenza and its transmission in the community is insufficient."
+    },
+    {
+      "id": "s9",
+      "text": "However, due to its proven efficacy in general infectious disease prevention and control, it is still critical to adopt good hand hygiene practices as a general preventive measure universally, in all cases [10].",
+      "section": "Introduction",
+      "start": 3713,
+      "end": 3924,
+      "reference_keys": [
+        "r10"
+      ],
+      "marker_spans": [
+        [
+          3919,
+          3923
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r10"
+        ]
+      ],
+      "context_before": "A systematic review on hand hygiene shows that the effectiveness of hand hygiene practices in preventing influenza and its transmission in the community is insufficient.",
+      "context_after": ""
+    },
+    {
+      "id": "s10",
+      "text": "The success of any preventive strategy depends on public adherence and individual willingness to take precautions which may be influenced by global factors such as news media or local factors such as infected family members or friends [11].",
+      "section": "Introduction",
+      "start": 3926,
+      "end": 4166,
+      "reference_keys": [
+        "r11"
+      ],
+      "marker_spans": [
+        [
+          4161,
+          4165
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r11"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "Many studies and surveys are being carried out by countries to understand people’s attitudes and perception of COVID-19 and their association with knowledge, protective behaviors and practices [12]."
+    },
+    {
+      "id": "s11",
+      "text": "Many studies and surveys are being carried out by countries to understand people’s attitudes and perception of COVID-19 and their association with knowledge, protective behaviors and practices [12].",
+      "section": "Introduction",
+      "start": 4167,
+      "end": 4365,
+      "reference_keys": [
+        "r12"
+      ],
+      "marker_spans": [
+        [
+          4360,
+          4364
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r12"
+        ]
+      ],
+      "context_before": "The success of any preventive strategy depends on public adherence and individual willingness to take precautions which may be influenced by global factors such as news media or local factors such as infected family members or friends [11].",
+      "context_after": "However, very few studies and surveys have been conducted at a global level to understand the factors related to compliance towards various public health measures and differences in perceptions and practices between those that work in health services compared to other sectors."
+    },
+    {
+      "id": "s12",
+      "text": "However, for these to be more effective and acceptable at a community level, it is important to address the differences in perception of people in health services and other services for them to be more effective and acceptable COVID-19 has had an impact on the well-being of everyone but largely on population at risk which includes healthcare professionals [13, 14].",
+      "section": "Introduction",
+      "start": 4743,
+      "end": 5110,
+      "reference_keys": [
+        "r13",
+        "r14"
+      ],
+      "marker_spans": [
+        [
+          5101,
+          5109
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r13",
+          "r14"
+        ]
+      ],
+      "context_before": "Guidelines, advisories, and preventive measures for diseases are issued generically to all people.",
+      "context_after": "It is important to understand if mental health and well-being of a person affects their attitude towards complying to various preventive measures which are a key in containing the ongoing pandemic."
+    },
+    {
+      "id": "s13",
+      "text": "Questions addressing knowledge, attitude and practices (KAP) were adapted from the Health Belief Model which has been identified as a quick method to directly and quantitatively identify individual belief profiles that can help in addressing various public health preventive measures and promote education [31].",
+      "section": "Introduction",
+      "start": 5310,
+      "end": 5621,
+      "reference_keys": [
+        "r31"
+      ],
+      "marker_spans": [
+        [
+          5616,
+          5620
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r31"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "Using a combination of the Health Belief Model and the Mental Health Continuum—Short Form (MHC-SF), the survey aimed to assess the global differences in mental health and KAP of healthcare professionals (HCP) versus non-healthcare professionals (non-HCP) with respect to personal hygiene and social distancing during the COVID-19 pandemic."
+    },
+    {
+      "id": "s14",
+      "text": "The psychological impact of the COVID-19 pandemic to HCP was assessed using the MHC-SF [16].",
+      "section": "Questionnaire",
+      "start": 8803,
+      "end": 8895,
+      "reference_keys": [
+        "r16"
+      ],
+      "marker_spans": [
+        [
+          8890,
+          8894
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r16"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "This is a 14-item questionnaire with three components: emotional, social, and psychological well-being."
+    },
+    {
+      "id": "s15",
+      "text": "This tool has been validated in many different languages and countries such as Italy, South Korea and South Africa [18–20].",
+      "section": "Questionnaire",
+      "start": 9327,
+      "end": 9450,
+      "reference_keys": [
+        "r18",
+        "r19",
+        "r20"
+      ],
+      "marker_spans": [
+        [
+          9442,
+          9449
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r18",
+          "r19",
+          "r20"
+        ]
+      ],
+      "context_before": "For each item in MHC-SF, participants were asked to rate their feelings in the past month on a 6-point Likert scale (never, once or twice a month, about once a week, two or three times a week, almost every day, every day).",
+      "context_after": "A continuous score ranging from 0–70 was computed, and a score greater than 75% indicating a high total well-being level."
+    },
+    {
+      "id": "s16",
+      "text": "HCP had a higher level of knowledge for personal hygiene and social distancing, which corroborated findings among healthcare workers in Henan, China [21].",
+      "section": "Discussion",
+      "start": 17941,
+      "end": 18095,
+      "reference_keys": [
+        "r21"
+      ],
+      "marker_spans": [
+        [
+          18090,
+          18094
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r21"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "Non-HCP were more likely to be unsure about the transmission of COVID-19 and the method to inactivate SARS-CoV-2."
+    },
+    {
+      "id": "s17",
+      "text": "Experienced frontline HCW with higher education and training in COVID-19 showed a better KAP on perceived risk levels, indicating that increased awareness and education needs to be imparted to the general community in order for them to understand the risk factors of COVID-19 universally, in all cases [22].",
+      "section": "Discussion",
+      "start": 18210,
+      "end": 18517,
+      "reference_keys": [
+        "r22"
+      ],
+      "marker_spans": [
+        [
+          18512,
+          18516
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r22"
+        ]
+      ],
+      "context_before": "Non-HCP were more likely to be unsure about the transmission of COVID-19 and the method to inactivate SARS-CoV-2.",
+      "context_after": "Knowledge is essential to establish the importance of prevention, promote positive behavior and attitude, affecting the effectiveness of coping strategies and behaviors to a certain extent [23]."
+    },
+    {
+      "id": "s18",
+      "text": "Knowledge is essential to establish the importance of prevention, promote positive behavior and attitude, affecting the effectiveness of coping strategies and behaviors to a certain extent [23].",
+      "section": "Discussion",
+      "start": 18518,
+      "end": 18712,
+      "reference_keys": [
+        "r23"
+      ],
+      "marker_spans": [
+        [
+          18707,
+          18711
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r23"
+        ]
+      ],
+      "context_before": "Experienced frontline HCW with higher education and training in COVID-19 showed a better KAP on perceived risk levels, indicating that increased awareness and education needs to be imparted to the general community in order for them to understand the risk factors of COVID-19 universally, in all cases [22].",
+      "context_after": ""
+    },
+    {
+      "id": "s19",
+      "text": "These attitudes include wearing of facemask and willingness to participate in contact tracing app, both important measures to prevent the spread of COVID- 19 [24].",
+      "section": "Discussion",
+      "start": 18826,
+      "end": 18989,
+      "reference_keys": [
+        "r24"
+      ],
+      "marker_spans": [
+        [
+          18984,
+          18988
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r24"
+        ]
+      ],
+      "context_before": "An overall higher level of positive attitude towards personal hygiene was seen amongst HCP compared to non-HCP.",
+      "context_after": "By participating in the contact tracing app, which has been implemented in few countries, one is able to track cases and their contacts to swiftly quarantine potential cases and prevent further spread of the disease."
+    },
+    {
+      "id": "s20",
+      "text": "Similar findings were observed in a North American and European study which found that protecting others, self and community were the most common motivations in engaging in social distancing [22].",
+      "section": "Discussion",
+      "start": 19807,
+      "end": 20003,
+      "reference_keys": [
+        "r22"
+      ],
+      "marker_spans": [
+        [
+          19998,
+          20002
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r22"
+        ]
+      ],
+      "context_before": "The attitude towards social distancing was similar amongst HCP and non-HCP, likely because of the fear that their family and friends may get infected with COVID-19.",
+      "context_after": "Amongst the general population, washing hands and keeping away from crowded places were seen as ‘the right thing to do’ and the main motivation to comply [26]."
+    },
+    {
+      "id": "s21",
+      "text": "Amongst the general population, washing hands and keeping away from crowded places were seen as ‘the right thing to do’ and the main motivation to comply [26].",
+      "section": "Discussion",
+      "start": 20004,
+      "end": 20163,
+      "reference_keys": [
+        "r26"
+      ],
+      "marker_spans": [
+        [
+          20158,
+          20162
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r26"
+        ]
+      ],
+      "context_before": "Similar findings were observed in a North American and European study which found that protecting others, self and community were the most common motivations in engaging in social distancing [22].",
+      "context_after": ""
+    },
+    {
+      "id": "s22",
+      "text": "Frequent hand washing and avoidance of shaking hands were the dominant practices seen in the general population in Southwest Ethiopia without exception [27].",
+      "section": "Discussion",
+      "start": 20165,
+      "end": 20322,
+      "reference_keys": [
+        "r27"
+      ],
+      "marker_spans": [
+        [
+          20317,
+          20321
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r27"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "Whilst our study had similar findings, we also found higher level of compliance amongst HCP towards personal hygiene practices like washing hands, covering mouth while sneezing, wearing mask while displaying flu-like symptoms, avoiding touching their eyes, nose and mouth and during wiping surfaces and objects with disinfectant regularly."
+    },
+    {
+      "id": "s23",
+      "text": "A review by Mathur P emphasizes the importance of hand hygiene in reducing the risk of cross-transmission of infections [28] which makes it even more important for the non-HCP to comply.",
+      "section": "Discussion",
+      "start": 20663,
+      "end": 20849,
+      "reference_keys": [
+        "r28"
+      ],
+      "marker_spans": [
+        [
+          20783,
+          20787
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r28"
+        ]
+      ],
+      "context_before": "Whilst our study had similar findings, we also found higher level of compliance amongst HCP towards personal hygiene practices like washing hands, covering mouth while sneezing, wearing mask while displaying flu-like symptoms, avoiding touching their eyes, nose and mouth and during wiping surfaces and objects with disinfectant regularly.",
+      "context_after": "While all respondents avoided standing or sitting close to people, HCP was more sociable and meeting more people, and going to more places in a day, most likely due to their work load and professional demands, making self-isolation difficult."
+    },
+    {
+      "id": "s24",
+      "text": "Importance of wearing a facemask when sick needs to be stressed globally irrespective of the current pandemic situation as there is evidence that population-wide use of face masks can delay pandemics and reduce the reproduction number, thereby helping to contain an outbreak [29].",
+      "section": "Discussion",
+      "start": 21497,
+      "end": 21777,
+      "reference_keys": [
+        "r29"
+      ],
+      "marker_spans": [
+        [
+          21772,
+          21776
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r29"
+        ]
+      ],
+      "context_before": "Due to limitations of data collection, we were unable to identify the different types of HCP which may help us understand if certain practices, attitudes were more prevalent amongst certain section of healthcare professionals.",
+      "context_after": "This practice along with several other preventive behaviors can be achieved by messages focusing on “protecting your community” as concluded by Capraro and Barcelo [30]."
+    },
+    {
+      "id": "s25",
+      "text": "This practice along with several other preventive behaviors can be achieved by messages focusing on “protecting your community” as concluded by Capraro and Barcelo [30].",
+      "section": "Discussion",
+      "start": 21778,
+      "end": 21947,
+      "reference_keys": [
+        "r30"
+      ],
+      "marker_spans": [
+        [
+          21942,
+          21946
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r30"
+        ]
+      ],
+      "context_before": "Importance of wearing a facemask when sick needs to be stressed globally irrespective of the current pandemic situation as there is evidence that population-wide use of face masks can delay pandemics and reduce the reproduction number, thereby helping to contain an outbreak [29].",
+      "context_after": ""
+    },
+    {
+      "id": "s26",
+      "text": "Our study saw multiple sources being used to obtain COVID-19 information similar to a survey being carried out among HCP in the United Kingdom [30].",
+      "section": "Discussion",
+      "start": 21949,
+      "end": 22097,
+      "reference_keys": [
+        "r30"
+      ],
+      "marker_spans": [
+        [
+          22092,
+          22096
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r30"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "Sources used were significantly different; electronic news and social media being more prevalent amongst HCP and messaging platforms and TV news being more common amongst non-HCP."
+    },
+    {
+      "id": "s27",
+      "text": "As one study concluded that messages with a positive language were likely to be adhered to by people and that people with leadership roles should be engaged in motivating their colleagues and informal social circles by sharing public health messages [32].",
+      "section": "Discussion",
+      "start": 22400,
+      "end": 22655,
+      "reference_keys": [
+        "r32"
+      ],
+      "marker_spans": [
+        [
+          22650,
+          22654
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r32"
+        ]
+      ],
+      "context_before": "This information helps target relevant public health messages through a suitable platform for the right cohort of people.",
+      "context_after": ""
+    },
+    {
+      "id": "s28",
+      "text": "A study in Italy [10] revealed that the healthcare workers perceive having 2.5 times higher risk of COVID-19 infection than the general population, similar to 1.9 times seen in our study.",
+      "section": "Discussion",
+      "start": 22657,
+      "end": 22844,
+      "reference_keys": [
+        "r10"
+      ],
+      "marker_spans": [
+        [
+          22674,
+          22678
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r10"
+        ]
+      ],
+      "context_before": "",
+      "context_after": "While flourishing mental health, emotional and psychological well-being were similar across cohorts, a higher sense of overall well-being and social well-being was seen amongst HCP."
+    },
+    {
+      "id": "s29",
+      "text": "However, this is contradictory to higher levels of depression and stress seen amongst HCWs that are assisting COVID-19 patients [37].",
+      "section": "Discussion",
+      "start": 23027,
+      "end": 23160,
+      "reference_keys": [
+        "r37"
+      ],
+      "marker_spans": [
+        [
+          23155,
+          23159
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r37"
+        ]
+      ],
+      "context_before": "While flourishing mental health, emotional and psychological well-being were similar across cohorts, a higher sense of overall well-being and social well-being was seen amongst HCP.",
+      "context_after": "A study among nurses showed a negative correlation between perceived stress and happiness scores [13] which can help explain the increased social well-being seen amongst HCP in our study as their professional role may provide them with a large sense of satisfaction and meaning towards protecting the community from COVID-19 even though occupational stress level is likely higher."
+    },
+    {
+      "id": "s30",
+      "text": "A study among nurses showed a negative correlation between perceived stress and happiness scores [13] which can help explain the increased social well-being seen amongst HCP in our study as their professional role may provide them with a large sense of satisfaction and meaning towards protecting the community from COVID-19 even though occupational stress level is likely higher.",
+      "section": "Discussion",
+      "start": 23161,
+      "end": 23541,
+      "reference_keys": [
+        "r13"
+      ],
+      "marker_spans": [
+        [
+          23258,
+          23262
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r13"
+        ]
+      ],
+      "context_before": "However, this is contradictory to higher levels of depression and stress seen amongst HCWs that are assisting COVID-19 patients [37].",
+      "context_after": "Job satisfaction was also observed to be significantly associated with a high level of total positive mental health status, and so was the workplace environment [35]."
+    },
+    {
+      "id": "s31",
+      "text": "Job satisfaction was also observed to be significantly associated with a high level of total positive mental health status, and so was the workplace environment [35].",
+      "section": "Discussion",
+      "start": 23542,
+      "end": 23708,
+      "reference_keys": [
+        "r35"
+      ],
+      "marker_spans": [
+        [
+          23703,
+          23707
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r35"
+        ]
+      ],
+      "context_before": "A study among nurses showed a negative correlation between perceived stress and happiness scores [13] which can help explain the increased social well-being seen amongst HCP in our study as their professional role may provide them with a large sense of satisfaction and meaning towards protecting the community from COVID-19 even though occupational stress level is likely higher.",
+      "context_after": "A review on impact of COVID-19 on mental health showed student status, unemployment, presence of chronic illness, poor self-rated health were some of the risk factors that predicted stress in the general community [14]."
+    },
+    {
+      "id": "s32",
+      "text": "A review on impact of COVID-19 on mental health showed student status, unemployment, presence of chronic illness, poor self-rated health were some of the risk factors that predicted stress in the general community [14].",
+      "section": "Discussion",
+      "start": 23709,
+      "end": 23928,
+      "reference_keys": [
+        "r14"
+      ],
+      "marker_spans": [
+        [
+          23923,
+          23927
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r14"
+        ]
+      ],
+      "context_before": "Job satisfaction was also observed to be significantly associated with a high level of total positive mental health status, and so was the workplace environment [35].",
+      "context_after": "Efforts need to be directed towards the mental health of the community, especially in times of lockdown and social distancing where support from friends and families can be minimal, aggravating loneliness and producing negative long-term health consequences that affect ones social and mental well-being [36]."
+    },
+    {
+      "id": "s33",
+      "text": "Efforts need to be directed towards the mental health of the community, especially in times of lockdown and social distancing where support from friends and families can be minimal, aggravating loneliness and producing negative long-term health consequences that affect ones social and mental well-being [36].",
+      "section": "Discussion",
+      "start": 23929,
+      "end": 24238,
+      "reference_keys": [
+        "r36"
+      ],
+      "marker_spans": [
+        [
+          24233,
+          24237
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r36"
+        ]
+      ],
+      "context_before": "A review on impact of COVID-19 on mental health showed student status, unemployment, presence of chronic illness, poor self-rated health were some of the risk factors that predicted stress in the general community [14].",
+      "context_after": ""
+    },
+    {
+      "id": "s34",
+      "text": "This was noted in other studies where male staff tend to have a higher incidence of unsatisfactory hand washing than females [13] and physicians were more likely than nurses and allied health professionals to need external reminders for hand hygiene [38].",
+      "section": "Discussion",
+      "start": 24485,
+      "end": 24740,
+      "reference_keys": [
+        "r38",
+        "r13"
+      ],
+      "marker_spans": [
+        [
+          24610,
+          24614
+        ],
+        [
+          24735,
+          24739
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r13"
+        ],
+        [
+          "r38"
+        ]
+      ],
+      "context_before": "HCPs who are females and those with a pre-university level of education are more likely to have high compliance behavior.",
+      "context_after": "This highlights the importance of targeting public health interventions among those at-risk populations to strengthen high compliance behavior further."
+    },
+    {
+      "id": "s35",
+      "text": "This was similar to findings from Hong Kong COVID-19 health information survey that found lower stress levels and less anxiety and depressive symptoms to be positively associated with perceived compliance towards social distancing measures in the general population in every population and setting [39].",
+      "section": "Discussion",
+      "start": 25043,
+      "end": 25346,
+      "reference_keys": [
+        "r39"
+      ],
+      "marker_spans": [
+        [
+          25341,
+          25345
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r39"
+        ]
+      ],
+      "context_before": "In addition, HCP with high compliance behavior were more likely to flourish and have a high sense of emotional, social, and psychological well-being.",
+      "context_after": "Another study amongst college students concluded that compliance towards social distancing measures was not predicted by risk tolerance or increased risk factors of being infected [40]."
+    },
+    {
+      "id": "s36",
+      "text": "Another study amongst college students concluded that compliance towards social distancing measures was not predicted by risk tolerance or increased risk factors of being infected [40].",
+      "section": "Discussion",
+      "start": 25347,
+      "end": 25532,
+      "reference_keys": [
+        "r40"
+      ],
+      "marker_spans": [
+        [
+          25527,
+          25531
+        ]
+      ],
+      "marker_keys": [
+        [
+          "r40"
+        ]
+      ],
+      "context_before": "This was similar to findings from Hong Kong COVID-19 health information survey that found lower stress levels and less anxiety and depressive symptoms to be positively associated with perceived compliance towards social distancing measures in the general population in every population and setting [39].",
+      "context_after": "Therefore, further research is still required to verify the causal risk factors associated with high compliance behavior amongst the healthcare professionals and general population to help successfully implement preventive measures."
+    }
+  ]
+}

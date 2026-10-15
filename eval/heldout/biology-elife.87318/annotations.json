@@ -1,0 +1,65 @@
+{
+  "paper": "biology-elife.87318",
+  "annotations": [
+    {
+      "sentence_id": "s5",
+      "reference_key": "r10",
+      "verdict": "false_alarm",
+      "note": "The Papua audit shows vivax malaria (a relapsing infection) causing deaths, with extreme anaemia the commonest cause and young children at high risk; cited jointly with a meta-analysis. 'Relapsing' and 'higher transmission settings' are context, not unsupported claims."
+    },
+    {
+      "sentence_id": "s5",
+      "reference_key": "r8",
+      "verdict": "false_alarm",
+      "note": "The meta-analysis states vivax is a significant cause of morbidity and mortality and that relapses compound anaemia; the child-mortality part is carried by the co-cited audit."
+    },
+    {
+      "sentence_id": "s10",
+      "reference_key": "r16",
+      "verdict": "false_alarm",
+      "note": "The weekly regimen is a single 0.75 mg/kg (about 45 mg) dose each week; 28% of G6PD-deficient patients had a >25% haemoglobin fall by day 7 (after the first dose) and one needed transfusion, which supports 'may not be safe'."
+    },
+    {
+      "sentence_id": "s12",
+      "reference_key": "r6",
+      "verdict": "false_alarm",
+      "note": "Definition citation: the CPIC/DPWG consensus defines the activity score and phenotype for *10/*10 (intermediate metaboliser); the 8/27 frequency is the citing study's own result."
+    },
+    {
+      "sentence_id": "s15",
+      "reference_key": "r16",
+      "verdict": "false_alarm",
+      "note": "The cited study reports significant, mostly transient haemoglobin falls after the first weekly dose, and contrasts the weekly regimen's smaller drops with daily dosing; the sentence paraphrases it fairly."
+    },
+    {
+      "sentence_id": "s16",
+      "reference_key": "r8",
+      "verdict": "false_alarm",
+      "note": "The cited meta-analysis states that primaquine compounds the haemoglobin reduction, particularly in G6PD deficiency, which is the context of the sentence; the 'not predictable in G6PD-normal patients' objection misses that context."
+    },
+    {
+      "sentence_id": "s26",
+      "reference_key": "r7",
+      "verdict": "debatable",
+      "note": "The cited meta-analysis supports a high total dose of about 7 mg/kg versus 3.5 mg/kg; the lower bound of '5 to 7 mg/kg' is not stated in it."
+    },
+    {
+      "sentence_id": "s27",
+      "reference_key": "r16",
+      "verdict": "false_alarm",
+      "note": "Data-source citation: the Cambodian study is the dataset of vivax patients given 45 mg (0.75 mg/kg) primaquine doses that the model used."
+    },
+    {
+      "sentence_id": "s27",
+      "reference_key": "r25",
+      "verdict": "false_alarm",
+      "note": "This is the modelling paper itself, and it explicitly uses the Cambodian vivax-patient data; the objection that the population is not stated as vivax patients is wrong."
+    },
+    {
+      "sentence_id": "s30",
+      "reference_key": "r22",
+      "verdict": "false_alarm",
+      "note": "Method citation for the CYP2D6 genotyping protocol, which the cited paper describes; the haemoglobin electrophoresis in the same sentence is the citing study's own procedure."
+    }
+  ]
+}

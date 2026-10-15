@@ -1,0 +1,53 @@
+{
+  "paper": "medicine-journal.pone.0292900",
+  "annotations": [
+    {
+      "sentence_id": "s10",
+      "reference_key": "r7",
+      "verdict": "genuine",
+      "note": "The source says supplements have not been shown to benefit nutrient-sufficient adults in primary prevention; the citing sentence drops that qualifier, turning a statement about nutrient-sufficient adults into one about everyone (deficient people can benefit)."
+    },
+    {
+      "sentence_id": "s13",
+      "reference_key": "r9",
+      "verdict": "debatable",
+      "note": "The Bangladeshi student survey reports low monthly costs of supplement use; ready availability and 'consumer compliance' as reasons for rising use are not visible in the text the checker read."
+    },
+    {
+      "sentence_id": "s17",
+      "reference_key": "r19",
+      "verdict": "debatable",
+      "note": "Joint citation [19, 20]: the NHANES study of long-term multiple-supplement users reports prevalence at single time points, not rising popularity or awareness; weak support for a general background statement."
+    },
+    {
+      "sentence_id": "s23",
+      "reference_key": "r20",
+      "verdict": "debatable",
+      "note": "Only the abstract (prevalence and reasons among Malaysian students, 10.5% 'to ensure adequate nutrition'); it neither supports nor contradicts the opinion that supplements' complementary role 'cannot be underestimated'."
+    },
+    {
+      "sentence_id": "s24",
+      "reference_key": "r20",
+      "verdict": "debatable",
+      "note": "Only the abstract of a prevalence study; it does not call supplements a vital source of essential nutrients, though a minority of users take them to ensure adequate nutrition."
+    },
+    {
+      "sentence_id": "s24",
+      "reference_key": "r28",
+      "verdict": "genuine",
+      "note": "Cited for supplements being a vital source of essential nutrients, but the cited review concludes that supplement use seems unnecessary for athletes with a well-balanced diet and warns of contamination with doping agents."
+    },
+    {
+      "sentence_id": "s28",
+      "reference_key": "r26",
+      "verdict": "debatable",
+      "note": "Only the abstract (motivations for supplement use among US adults, with older adults singled out) was available; the list of groups of concern may be in the full paper or from elsewhere."
+    },
+    {
+      "sentence_id": "s31",
+      "reference_key": "r32",
+      "verdict": "debatable",
+      "note": "The Japanese study finds 70.3% of patients considered combining supplements and medicines safe; 'most users worldwide' generalises from Japan, possibly together with the co-cited [24]."
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "name": "repro",
+  "from": "extract",
+  "base": "baseline",
+  "note": "Reproduction check: current code from claim extraction on the frozen inputs",
+  "papers": {
+    "psychology-fpsyg.2021.646368": {
+      "base_job": "0c12f7ef39fd",
+      "job_id": "2f5538271a4d",
+      "wall_seconds": 1.5,
+      "spent_usd": 0.0
+    },
+    "ml-2303.00780": {
+      "base_job": "081c663e0eaf",
+      "job_id": "882f10be5b7b",
+      "wall_seconds": 25.7,
+      "spent_usd": 0.0
+    },
+    "ml-2012.08536": {
+      "base_job": "fa5e07cc13a7",
+      "job_id": "44013756a06f",
+      "wall_seconds": 27.4,
+      "spent_usd": 0.0
+    },
+    "astro-2305.00803": {
+      "base_job": "4ba5b5c327ae",
+      "job_id": "9a3d0ff6e475",
+      "wall_seconds": 27.7,
+      "spent_usd": 0.0
+    },
+    "astro-2208.03661": {
+      "base_job": "05f5131e1132",
+      "job_id": "8973ed9fac3f",
+      "wall_seconds": 38.0,
+      "spent_usd": 0.0
+    },
+    "medicine-journal.pone.0292350": {
+      "base_job": "cd7199680a07",
+      "job_id": "9dced4464b5a",
+      "wall_seconds": 41.7,
+      "spent_usd": 0.0
+    },
+    "psychology-fpsyg.2021.735293": {
+      "base_job": "f0fb7ac2bcd3",
+      "job_id": "5f90898ec0cd",
+      "wall_seconds": 38.9,
+      "spent_usd": 0.0
+    },
+    "psych-plos-journal.pone.0264257": {
+      "base_job": "15032b4895dd",
+      "job_id": "7fd1a10a4296",
+      "wall_seconds": 44.7,
+      "spent_usd": 0.0
+    },
+    "psych-plos-journal.pone.0252835": {
+      "base_job": "88f4f4d760c4",
+      "job_id": "e12f785d149c",
+      "wall_seconds": 47.8,
+      "spent_usd": 0.0
+    },
+    "medicine-journal.pone.0292900": {
+      "base_job": "d4e1ae55c1c3",
+      "job_id": "98b92803950d",
+      "wall_seconds": 47.7,
+      "spent_usd": 0.0
+    },
+    "biology-elife.74777": {
+      "base_job": "4a1681485aed",
+      "job_id": "154b64063a2c",
+      "wall_seconds": 66.4,
+      "spent_usd": 0.0131
+    },
+    "biology-elife.86333": {
+      "base_job": "8049a0b8a65c",
+      "job_id": "242d28a2ea57",
+      "wall_seconds": 54.4,
+      "spent_usd": 0.0
+    }
+  },
+  "commit": "a66a891",
+  "uncommitted_changes": true,
+  "started_at": "2026-10-12T15:39:28+00:00",
+  "comparisons": {
+    "baseline": {
+      "papers": 12,
+      "planted": [],
+      "flags": [
+        {
+          "paper": "biology-elife.74777",
+          "sentence_id": "s11",
+          "reference_key": "r25",
+          "change": "added",
+          "review": "unreviewed"
+        }
+      ],
+      "verdicts": 1116,
+      "verdicts_changed": 2,
+      "totals": {
+        "run": {
+          "planted": 103,
+          "caught": 89,
+          "label_ok": 87,
+          "genuine": 17,
+          "false_alarm": 71,
+          "debatable": 49,
+          "unreviewed": 1,
+          "spent": 0.0131,
+          "recall": 0.8640776699029126,
+          "label_accuracy": 0.8446601941747572,
+          "precision_reviewed": 0.5988700564971752
+        },
+        "base": {
+          "planted": 103,
+          "caught": 89,
+          "label_ok": 87,
+          "genuine": 17,
+          "false_alarm": 71,
+          "debatable": 49,
+          "unreviewed": 0,
+          "spent": 0.0,
+          "recall": 0.8640776699029126,
+          "label_accuracy": 0.8446601941747572,
+          "precision_reviewed": 0.5988700564971752
+        }
+      },
+      "gained": 0,
+      "lost": 0,
+      "mcnemar_p": 1.0
+    }
+  }
+}

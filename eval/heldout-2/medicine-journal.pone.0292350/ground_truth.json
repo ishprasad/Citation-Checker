@@ -1,0 +1,235 @@
+{
+  "arxiv_id": "",
+  "title": "Cryptic Zika virus infections unmasked from suspected malaria cases in Northeastern Nigeria",
+  "field": "Medicine",
+  "source": "10.1371/journal.pone.0292350",
+  "planted": [
+    {
+      "id": "p1",
+      "sentence_id": "s4",
+      "reference_keys": [
+        "r7"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"universally, in all cases\" before the citation",
+      "original": "Human Zika epidemics occurred on the island of Yap (Micronesia) [7], Gabon [8], and Senegal [9] from 2007–2008.",
+      "mutated": "Human Zika epidemics occurred on the island of Yap (Micronesia) universally, in all cases [7], Gabon [8], and Senegal [9] from 2007–2008.",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p2",
+      "sentence_id": "s10",
+      "reference_keys": [
+        "r31"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [19] with [31] (\"Plaque Reduction Neutralization Test (PRNT) in the Congenital Zika Syndrome: Positivity and Associations with Laboratory, Clinical, and Imaging Characteristics\") (similarity 0.35 vs 0.61 for the original)",
+      "original": "Overall, routine surveillance for endemic arboviruses in Nigeria {including dengue (DENV) [15–17], yellow fever virus (YFV) [18], West Nile virus (WNV) [19], chikungunya virus (CHIKV) [20, 21]} is presently lacking.",
+      "mutated": "Overall, routine surveillance for endemic arboviruses in Nigeria {including dengue (DENV) [15–17], yellow fever virus (YFV) [18], West Nile virus (WNV) [31], chikungunya virus (CHIKV) [20, 21]} is presently lacking.",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p3",
+      "sentence_id": "s12",
+      "reference_keys": [
+        "r28"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [24] with [28] (\"Screening test for neutralizing antibodies against yellow fever virus, based on a flavivirus pseudotype\") (similarity 0.43 vs 0.60 for the original)",
+      "original": "Very few human ZIKV cases were reported in 1954 [23], 1975 [24], 1983 [25], 2016 [26] and 2020 [27] in Nigeria.",
+      "mutated": "Very few human ZIKV cases were reported in 1954 [23], 1975 [28], 1983 [25], 2016 [26] and 2020 [27] in Nigeria.",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p4",
+      "sentence_id": "s15",
+      "reference_keys": [
+        "r32"
+      ],
+      "mutation": "number_change",
+      "description": "Changed \"32\" to \"51\"",
+      "original": "Nigeria is one of the 32 countries in Sub-Saharan Africa that account for almost 93% of malaria death worldwide [32].",
+      "mutated": "Nigeria is one of the 51 countries in Sub-Saharan Africa that account for almost 93% of malaria death worldwide [32].",
+      "expected_labels": [
+        "overstated",
+        "contradicted",
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "number_drift"
+      ]
+    },
+    {
+      "id": "p5",
+      "sentence_id": "s22",
+      "reference_keys": [
+        "r29"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [37] with [29] (\"How to Calculate Sample Size for Different Study Designs in Medical Research?\") (similarity 0.27 vs 0.79 for the original)",
+      "original": "However, the persistence of ZIKV IgM up to 12–19 months after illness onset confounds the recent and past infections concept [37].",
+      "mutated": "However, the persistence of ZIKV IgM up to 12–19 months after illness onset confounds the recent and past infections concept [29].",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p6",
+      "sentence_id": "s34",
+      "reference_keys": [
+        "r54"
+      ],
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"without exception\" before the citation",
+      "original": "Our findings corroborated a previous study that demonstrated significant ZIKV–related microcephaly in the Northeast region of Brazil where YF vaccination coverage was the lowest [54].",
+      "mutated": "Our findings corroborated a previous study that demonstrated significant ZIKV–related microcephaly in the Northeast region of Brazil where YF vaccination coverage was the lowest without exception [54].",
+      "expected_labels": [
+        "overstated"
+      ],
+      "expected_failure_modes": [
+        "scope_inflation"
+      ]
+    },
+    {
+      "id": "p7",
+      "sentence_id": "s35",
+      "reference_keys": [
+        "r50"
+      ],
+      "mutation": "citation_swap",
+      "description": "Replaced the citation [55] with [50] (\"Vector competence of Aedes aegypti populations from Kilifi and Nairobi for dengue 2 virus and the influence of temperature\") (similarity 0.34 vs 0.83 for the original)",
+      "original": "The strong protection of YF vaccine against ZIKV in mice [55] has opened way for the use of YF vaccine for large-scale immunization during a ZIKV outbreak.",
+      "mutated": "The strong protection of YF vaccine against ZIKV in mice [50] has opened way for the use of YF vaccine for large-scale immunization during a ZIKV outbreak.",
+      "expected_labels": [
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "off_topic_citation"
+      ]
+    },
+    {
+      "id": "p8",
+      "sentence_id": "s36",
+      "reference_keys": [
+        "r56"
+      ],
+      "mutation": "number_change",
+      "description": "Changed \"17\" to \"27\"",
+      "original": "Additionally, the significant immune response obtained from the use of a chimeric ZIKV vaccine developed with the 17-D YFV vaccine as the backbone [56] has provided a sound basis for the future development of ZIKV vaccine candidate.",
+      "mutated": "Additionally, the significant immune response obtained from the use of a chimeric ZIKV vaccine developed with the 27-D YFV vaccine as the backbone [56] has provided a sound basis for the future development of ZIKV vaccine candidate.",
+      "expected_labels": [
+        "overstated",
+        "contradicted",
+        "not_found"
+      ],
+      "expected_failure_modes": [
+        "number_drift"
+      ]
+    }
+  ],
+  "baseline_flags": [
+    [
+      "s1",
+      "r1",
+      "overstated"
+    ],
+    [
+      "s1",
+      "r2",
+      "overstated"
+    ],
+    [
+      "s12",
+      "r27",
+      "contradicted"
+    ],
+    [
+      "s13",
+      "r29",
+      "not_found"
+    ],
+    [
+      "s14",
+      "r30",
+      "unverifiable"
+    ],
+    [
+      "s14",
+      "r31",
+      "not_found"
+    ],
+    [
+      "s23",
+      "r31",
+      "not_found"
+    ],
+    [
+      "s25",
+      "r39",
+      "not_found"
+    ],
+    [
+      "s25",
+      "r40",
+      "not_found"
+    ],
+    [
+      "s26",
+      "r40",
+      "overstated"
+    ],
+    [
+      "s27",
+      "r42",
+      "not_found"
+    ],
+    [
+      "s27",
+      "r43",
+      "contradicted"
+    ],
+    [
+      "s31",
+      "r50",
+      "overstated"
+    ],
+    [
+      "s33",
+      "r52",
+      "overstated"
+    ],
+    [
+      "s4",
+      "r8",
+      "overstated"
+    ],
+    [
+      "s4",
+      "r9",
+      "overstated"
+    ],
+    [
+      "s8",
+      "r13",
+      "not_found"
+    ]
+  ]
+}

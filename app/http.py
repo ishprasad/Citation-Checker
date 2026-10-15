@@ -20,8 +20,9 @@ log = logging.getLogger(__name__)
 # (configurable via ARXIV_MIN_INTERVAL).
 HOST_INTERVALS = {
     "api.openalex.org": 0.12,
-    "api.crossref.org": 0.1,
+    "api.crossref.org": 0.25,  # Crossref refuses bursts (HTTP 429) well below its documented limit
     "api.semanticscholar.org": 1.0,
+    "www.ebi.ac.uk": 0.1,  # Europe PMC
 }
 ARXIV_HOSTS = ("arxiv.org", "export.arxiv.org")
 MAX_ATTEMPTS = 4
@@ -32,6 +33,22 @@ NEGATIVE_STATUSES = (401, 403, 404, 410, 451)
 
 class DownloadTooLarge(Exception):
     pass
+
+
+class HostUnavailable(httpx.HTTPError):
+    """The host asked us to stop for longer than is worth waiting (e.g. a daily quota is used up)."""
+
+
+# A Retry-After longer than this is not waited out: the host is skipped until then instead.
+MAX_RETRY_AFTER = 60.0
+_blocked_until: dict[str, float] = {}
+
+
+def host_blocked(host: str) -> Optional[float]:
+    """Seconds until `host` may be asked again, or None."""
+    until = _blocked_until.get(host, 0.0)
+    remaining = until - time.time()
+    return remaining if remaining > 0 else None
 
 
 class _HostLimiter:
@@ -60,6 +77,12 @@ def user_agent() -> str:
     return f"CitationChecker/0.1 (mailto:{email})" if email else "CitationChecker/0.1"
 
 
+def _auth_headers(host: str) -> Optional[dict[str, str]]:
+    """API keys go only to their own host (never into URLs, logs or cache keys)."""
+    key = get_settings().openalex_api_key
+    return {"Authorization": f"Bearer {key}"} if key and host == "api.openalex.org" else None
+
+
 def get_client() -> httpx.AsyncClient:
     global _client
     if _client is None or _client.is_closed:
@@ -76,15 +99,18 @@ def set_client(client: Optional[httpx.AsyncClient]) -> None:
     global _client, _limiter
     _client = client
     _limiter = _HostLimiter()
+    _blocked_until.clear()
 
 
 async def fetch(url: str, params: Optional[dict] = None, max_bytes: int = DEFAULT_MAX_BYTES) -> httpx.Response:
     """GET with per-host rate limiting, retries on 429/5xx/network errors, and a size cap."""
     host = urlparse(url).hostname or ""
     for attempt in range(MAX_ATTEMPTS):
+        if (remaining := host_blocked(host)) is not None:
+            raise HostUnavailable(f"{host} is not accepting requests for another {remaining / 3600:.1f} h")
         await _limiter.wait(host)
         try:
-            async with get_client().stream("GET", url, params=params) as resp:
+            async with get_client().stream("GET", url, params=params, headers=_auth_headers(host)) as resp:
                 declared = resp.headers.get("content-length", "")
                 if declared.isdigit() and int(declared) > max_bytes:
                     raise DownloadTooLarge(f"{url}: {int(declared) / 1e6:.0f} MB")
@@ -102,12 +128,16 @@ async def fetch(url: str, params: Optional[dict] = None, max_bytes: int = DEFAUL
             await asyncio.sleep(2**attempt)
             continue
         if resp.status_code == 429 or resp.status_code >= 500:
-            if attempt == MAX_ATTEMPTS - 1:
-                resp.raise_for_status()
             retry_after = resp.headers.get("retry-after", "")
             delay = float(retry_after) if retry_after.isdigit() else 2 ** (attempt + 1)
+            if delay > MAX_RETRY_AFTER:
+                _blocked_until[host] = time.time() + delay
+                log.warning("%s asks to wait %.1f h (quota?); skipping it until then", host, delay / 3600)
+                raise HostUnavailable(f"{host} asked to wait {delay / 3600:.1f} h")
+            if attempt == MAX_ATTEMPTS - 1:
+                resp.raise_for_status()
             log.warning("GET %s -> %d; retry in %.0fs", url, resp.status_code, delay)
-            await asyncio.sleep(min(delay, 60))
+            await asyncio.sleep(delay)
             continue
         return resp
     raise AssertionError("unreachable")

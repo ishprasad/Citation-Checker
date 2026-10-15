@@ -1,0 +1,215 @@
+{
+  "paper": "astro-2305.00803",
+  "annotations": [
+    {
+      "sentence_id": "s1",
+      "reference_key": "Dressing15",
+      "verdict": "debatable",
+      "note": "Group citation (e.g., four occurrence-rate studies) for a summary range: this work finds ~3.8 times more small habitable-zone planets around M dwarfs than FGK stars (inside the 3-10 range); the 50-100 day window and super-Earth/mini-Neptune size range are the citing authors' synthesis."
+    },
+    {
+      "sentence_id": "s1",
+      "reference_key": "Gaidos2016",
+      "verdict": "debatable",
+      "note": "Group citation (e.g., four occurrence-rate studies) for a summary range: this work reports elevated Earth- to Neptune-size planet occurrence around M dwarfs without a factor; a fair member of the group, but it does not give the 3-10 factor."
+    },
+    {
+      "sentence_id": "s1",
+      "reference_key": "Hsu20",
+      "verdict": "debatable",
+      "note": "Group citation (e.g., four occurrence-rate studies) for a summary range: this work finds M-dwarf rates elevated relative to FGK (factors of a few for 2-32 days); the 50-100 day window is the citing authors' extension."
+    },
+    {
+      "sentence_id": "s1",
+      "reference_key": "Mulders15",
+      "verdict": "debatable",
+      "note": "Group citation (e.g., four occurrence-rate studies) for a summary range: this work gives factors of 2 (vs G) to 3 (vs F) up to 50-day periods, at the low end of or below the cited 3-10 range."
+    },
+    {
+      "sentence_id": "s4",
+      "reference_key": "Fulton21",
+      "verdict": "debatable",
+      "note": "CLS II confirms giant-planet occurrence increases with stellar mass and that M dwarfs have lower rates, but gives no factor of 2-3; the factor may come from the co-cited Clanton & Gaudi."
+    },
+    {
+      "sentence_id": "s9",
+      "reference_key": "Lin18",
+      "verdict": "false_alarm",
+      "note": "The source says at least 10 Earth masses are lost to drift for every 1 Earth mass netted, so a ~10 Earth-mass isolation core implies ~100 Earth masses drifted; 10 AU is the citing authors' example location."
+    },
+    {
+      "sentence_id": "s11",
+      "reference_key": "VanZandt2023",
+      "verdict": "debatable",
+      "note": "The source finds its preliminary conditional occurrence 'similar to the underlying rate' of field stars; 'statistically consistent' implies a test it does not report. Co-cited with Bonomo et al. (2023)."
+    },
+    {
+      "sentence_id": "s13",
+      "reference_key": "Lin18",
+      "verdict": "false_alarm",
+      "note": "The accretion-rate formula follows Lin et al. as stated; the pebble scale-height definition in the same sentence is standard and not attributed to them (the sentence also says 'see also')."
+    },
+    {
+      "sentence_id": "s16",
+      "reference_key": "Birnstiel11",
+      "verdict": "false_alarm",
+      "note": "'As inferred from': Birnstiel et al. tabulate exponents of n(m)·m·a of 1/2 (turbulent) and 1/4 (settling), which per unit Stokes number give exactly St^-0.5 and St^-0.75. The current judge did not do the conversion; the old pipeline could not see the table."
+    },
+    {
+      "sentence_id": "s21",
+      "reference_key": "Dalessio98",
+      "verdict": "false_alarm",
+      "note": "The 'agrees with' comparison is the citing authors' (or Ida et al.'s); D'Alessio et al. supply the radiative-transfer calculations, as the current pipeline found."
+    },
+    {
+      "sentence_id": "s22",
+      "reference_key": "Manara22",
+      "verdict": "debatable",
+      "note": "Manara et al. report Macc-M* slopes of ~1.6-2 (B = 2 is the upper end, not a measured mean); the 30-70 percentile accretion-rate range is the citing authors' reading of the compiled data ('e.g.')."
+    },
+    {
+      "sentence_id": "s24",
+      "reference_key": "Dalessio98",
+      "verdict": "false_alarm",
+      "note": "The source gives the dust sublimation temperature as ≈1800-2000 K, the thermostat behind the 2000 K cap; the number-drift tag compares 2000 with the lower end of the range (both pipelines)."
+    },
+    {
+      "sentence_id": "s25",
+      "reference_key": "Lynden-Bell74",
+      "verdict": "false_alarm",
+      "note": "Method citation for the self-similar viscous disk solution (Σ ∝ 1/ν in the inner disk), which Lynden-Bell & Pringle introduced; the pressure scaling is the citing authors' derivation."
+    },
+    {
+      "sentence_id": "s31",
+      "reference_key": "Chachan21",
+      "verdict": "debatable",
+      "note": "Cited with three other works for runaway masses that depend on opacity and metallicity, which this work discusses; it quotes ~15 Earth-mass cores for giant nucleation, above the citing authors' 9-10, so the agreement is loose."
+    },
+    {
+      "sentence_id": "s31",
+      "reference_key": "Lee15",
+      "verdict": "false_alarm",
+      "note": "Lee & Chiang find cores above ~5 Earth masses cannot avoid runaway in gas-rich disks, so a 9-10 Earth-mass core suffices; 'always ≳ 9-10' refers to the citing authors' own isolation mass, not the cited work."
+    },
+    {
+      "sentence_id": "s31",
+      "reference_key": "Piso15",
+      "verdict": "false_alarm",
+      "note": "Piso et al. compute a critical core mass of ~8 Earth masses at 5 AU, below the citing authors' isolation mass of 9-10, so the latter suffices; the number-drift tag compares two different quantities."
+    },
+    {
+      "sentence_id": "s31",
+      "reference_key": "Venturini15",
+      "verdict": "false_alarm",
+      "note": "Venturini et al. give critical masses of ~10 Earth masses, falling with envelope enrichment, which supports both parts of the sentence; the old pipeline's 'contradicted' reads a lower bound on the needed mass as a contradiction."
+    },
+    {
+      "sentence_id": "s32",
+      "reference_key": "Lin18",
+      "verdict": "debatable",
+      "note": "'In agreement with previous results': Lin et al. show pebble accretion of an outer core drifts large solid masses inward, consistent with the citing result, but they do not state it about inner and outer planets."
+    },
+    {
+      "sentence_id": "s32",
+      "reference_key": "Chachan22",
+      "verdict": "false_alarm",
+      "note": "Chachan et al. show that disks massive enough to build cold-giant cores can deliver enough solids inward to form inner super-Earths; 'in agreement with' is a fair comparison by the citing authors."
+    },
+    {
+      "sentence_id": "s39",
+      "reference_key": "Mulders21",
+      "verdict": "debatable",
+      "note": "The cited work's no-snow-line case appears in its second figure in the text we read, not Figure 1; plot legends are not in the text and journal figure numbering may differ."
+    },
+    {
+      "sentence_id": "s40",
+      "reference_key": "Kimura20",
+      "verdict": "false_alarm",
+      "note": "Kimura et al. challenge the assumption that icy aggregates have much higher disruption velocities than silicate ones, i.e. fragmentation velocities are more uniform than assumed; the term v_f is the citing paper's."
+    },
+    {
+      "sentence_id": "s40",
+      "reference_key": "Musiolik19",
+      "verdict": "false_alarm",
+      "note": "Musiolik & Wurm find water ice has no sticking advantage over silicates at the measured temperatures, supporting a more uniform fragmentation velocity."
+    },
+    {
+      "sentence_id": "s41",
+      "reference_key": "Dressing15",
+      "verdict": "false_alarm",
+      "note": "Dressing & Charbonneau report higher small-planet occurrence around M dwarfs than FGK stars (0.83 per M dwarf HZ vs 22%), the observed enhancement the sentence refers to."
+    },
+    {
+      "sentence_id": "s45",
+      "reference_key": "Dawson16",
+      "verdict": "false_alarm",
+      "note": "Joint citation: Dawson et al. simulate the giant-impact phase that grows embryos into super-Earths, Lee & Chiang the final mass doubling; each supports its part."
+    },
+    {
+      "sentence_id": "s45",
+      "reference_key": "Lee16",
+      "verdict": "false_alarm",
+      "note": "Lee & Chiang describe the final doubling of core mass by mergers of protocores in the gas-depleted late stage, i.e. giant impacts."
+    },
+    {
+      "sentence_id": "s46",
+      "reference_key": "Rosenthal22",
+      "verdict": "false_alarm",
+      "note": "Rosenthal et al. find giants within 0.3-3 au may suppress inner small planets, a weaker inner-outer correlation for warmer giants; 'in qualitative agreement' is the citing authors' comparison."
+    },
+    {
+      "sentence_id": "s50",
+      "reference_key": "Manara22",
+      "verdict": "false_alarm",
+      "note": "Manara et al. convert fluxes to dust masses with this opacity and T = 20 K under the optically thin assumption, as the sentence says."
+    },
+    {
+      "sentence_id": "s51",
+      "reference_key": "Najita14",
+      "verdict": "false_alarm",
+      "note": "The abstract hedges (\"suggests ... likely\") but the conclusions are firm: the data \"directly imply a mismatch\" between planet and class II disc masses. \"Known to\" is a fair restatement."
+    },
+    {
+      "sentence_id": "s52",
+      "reference_key": "Tobin20",
+      "verdict": "false_alarm",
+      "note": "Data-source citation: the VANDAM survey measured Class I disk dust masses in Orion with the VLA; 'better mass estimates' was the judge's own reading of the context."
+    },
+    {
+      "sentence_id": "s56",
+      "reference_key": "Tobin20",
+      "verdict": "false_alarm",
+      "note": "Data-source citation: the citing authors ran the regression on Tobin et al.'s Class I VLA data; the exponent 0.25 is their result, not one claimed for the cited paper."
+    },
+    {
+      "sentence_id": "s57",
+      "reference_key": "Bonnell2001",
+      "verdict": "debatable",
+      "note": "Bonnell et al. introduce competitive accretion; the accretion-rate scaling in the sentence appears to come from McKee & Offner's analytic approximation, cited alongside."
+    },
+    {
+      "sentence_id": "s57",
+      "reference_key": "McKee2010",
+      "verdict": "false_alarm",
+      "note": "McKee & Offner give an analytic representation of the competitive accretion model, which is what the sentence uses."
+    },
+    {
+      "sentence_id": "s58",
+      "reference_key": "Manara22",
+      "verdict": "false_alarm",
+      "note": "'The relation we get for the Manara et al. sample': the citing authors fit the compiled data themselves; the different slopes Manara et al. quote for individual regions do not make this a citation problem."
+    },
+    {
+      "sentence_id": "s59",
+      "reference_key": "Tobin20",
+      "verdict": "false_alarm",
+      "note": "β_T = 0.125 or 0.5 are the citing authors' limiting cases derived in the previous sentences for the Tobin et al. sample, not values claimed for the cited paper."
+    },
+    {
+      "sentence_id": "s59",
+      "reference_key": "Manara22",
+      "verdict": "false_alarm",
+      "note": "β_M ~ 1 is the citing authors' own fit to the Manara et al. compilation (previous sentence), not a value claimed for the cited paper."
+    }
+  ]
+}

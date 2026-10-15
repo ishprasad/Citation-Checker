@@ -1,0 +1,263 @@
+{
+  "slug": "biology-elife.87318",
+  "field": "Biology / neuroscience",
+  "title": "Primaquine in glucose-6-phosphate dehydrogenase deficiency: an adaptive pharmacometric assessment of ascending dose regimens in healthy volunteers",
+  "job_id": "64b986524ded",
+  "scored_at": "2026-10-08T17:31:04+00:00",
+  "planted": 7,
+  "checked": 7,
+  "caught": 4,
+  "recall": 0.5714285714285714,
+  "label_accuracy": 0.5714285714285714,
+  "expected_mode_rate": 0.14285714285714285,
+  "untouched_verdicts": 32,
+  "other_flags": 10,
+  "other_flags_preexisting": 10,
+  "precision": 0.2857142857142857,
+  "precision_excluding_preexisting": 1.0,
+  "by_mutation": {
+    "citation_swap": {
+      "planted": 4,
+      "caught": 2
+    },
+    "scope_inflation": {
+      "planted": 3,
+      "caught": 2
+    }
+  },
+  "flagged_citations": 10,
+  "review": {
+    "genuine": 0,
+    "false_alarm": 9,
+    "debatable": 1,
+    "unreviewed": 0
+  },
+  "review_details": {
+    "genuine": [],
+    "false_alarm": [
+      {
+        "sentence_id": "s10",
+        "reference_key": "r16",
+        "note": "The weekly regimen is a single 0.75 mg/kg (about 45 mg) dose each week; 28% of G6PD-deficient patients had a >25% haemoglobin fall by day 7 (after the first dose) and one needed transfusion, which supports 'may not be safe'."
+      },
+      {
+        "sentence_id": "s12",
+        "reference_key": "r6",
+        "note": "Definition citation: the CPIC/DPWG consensus defines the activity score and phenotype for *10/*10 (intermediate metaboliser); the 8/27 frequency is the citing study's own result."
+      },
+      {
+        "sentence_id": "s15",
+        "reference_key": "r16",
+        "note": "The cited study reports significant, mostly transient haemoglobin falls after the first weekly dose, and contrasts the weekly regimen's smaller drops with daily dosing; the sentence paraphrases it fairly."
+      },
+      {
+        "sentence_id": "s16",
+        "reference_key": "r8",
+        "note": "The cited meta-analysis states that primaquine compounds the haemoglobin reduction, particularly in G6PD deficiency, which is the context of the sentence; the 'not predictable in G6PD-normal patients' objection misses that context."
+      },
+      {
+        "sentence_id": "s27",
+        "reference_key": "r16",
+        "note": "Data-source citation: the Cambodian study is the dataset of vivax patients given 45 mg (0.75 mg/kg) primaquine doses that the model used."
+      },
+      {
+        "sentence_id": "s27",
+        "reference_key": "r25",
+        "note": "This is the modelling paper itself, and it explicitly uses the Cambodian vivax-patient data; the objection that the population is not stated as vivax patients is wrong."
+      },
+      {
+        "sentence_id": "s30",
+        "reference_key": "r22",
+        "note": "Method citation for the CYP2D6 genotyping protocol, which the cited paper describes; the haemoglobin electrophoresis in the same sentence is the citing study's own procedure."
+      },
+      {
+        "sentence_id": "s5",
+        "reference_key": "r10",
+        "note": "The Papua audit shows vivax malaria (a relapsing infection) causing deaths, with extreme anaemia the commonest cause and young children at high risk; cited jointly with a meta-analysis. 'Relapsing' and 'higher transmission settings' are context, not unsupported claims."
+      },
+      {
+        "sentence_id": "s5",
+        "reference_key": "r8",
+        "note": "The meta-analysis states vivax is a significant cause of morbidity and mortality and that relapses compound anaemia; the child-mortality part is carried by the co-cited audit."
+      }
+    ],
+    "debatable": [
+      {
+        "sentence_id": "s26",
+        "reference_key": "r7",
+        "note": "The cited meta-analysis supports a high total dose of about 7 mg/kg versus 3.5 mg/kg; the lower bound of '5 to 7 mg/kg' is not stated in it."
+      }
+    ],
+    "unreviewed": []
+  },
+  "precision_reviewed": 0.3076923076923077,
+  "summary_line": "Caught 4 of 7 planted errors · 9 false alarms",
+  "details": [
+    {
+      "id": "p1",
+      "sentence_id": "s3",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Recht et al., 2018 ) with (Commons, 2023) (\"Effect of primaquine dose on the risk of recurrence in patients with uncomplicated Plasmodium vivax: a systematic review and individual patient data meta-analysis\") (similarity 0.38 vs 0.59 for the original)",
+      "checked": true,
+      "caught": false,
+      "label_correct": false,
+      "labels": [
+        "supported"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": false
+    },
+    {
+      "id": "p2",
+      "sentence_id": "s7",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"in every population and setting\" before the citation",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [
+        "scope_inflation"
+      ],
+      "expected_mode_found": true,
+      "escalated": false
+    },
+    {
+      "id": "p3",
+      "sentence_id": "s11",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"universally, in all cases\" before the citation",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "overstated"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": false
+    },
+    {
+      "id": "p4",
+      "sentence_id": "s17",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Awab et al., 2021 ) with (Douglas, 2014) (\"Mortality attributable to Plasmodium vivaxmalaria: a clinical audit from Papua, Indonesia\") (similarity 0.61 vs 0.84 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": true
+    },
+    {
+      "id": "p5",
+      "sentence_id": "s21",
+      "mutation": "scope_inflation",
+      "description": "Added the scope \"without exception\" before the citation",
+      "checked": true,
+      "caught": false,
+      "label_correct": false,
+      "labels": [
+        "unverifiable"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": false
+    },
+    {
+      "id": "p6",
+      "sentence_id": "s23",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Kheng et al., 2015 ) with (Puaprasert et al., 2018) (\"Real time PCR detection of common CYP2D6 genetic variants and its application in a Karen population study\") (similarity 0.55 vs 0.73 for the original)",
+      "checked": true,
+      "caught": true,
+      "label_correct": true,
+      "labels": [
+        "not_found"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": true
+    },
+    {
+      "id": "p7",
+      "sentence_id": "s24",
+      "mutation": "citation_swap",
+      "description": "Replaced the citation (Bancone et al., 2019 ) with (Hsiang, 2013) (\"Mass drug administration for the control and elimination of Plasmodium vivax malaria: an ecological study from Jiangsu province, China\") (similarity 0.27 vs 0.49 for the original)",
+      "checked": true,
+      "caught": false,
+      "label_correct": false,
+      "labels": [
+        "unverifiable"
+      ],
+      "failure_modes": [],
+      "expected_mode_found": false,
+      "escalated": true
+    }
+  ],
+  "verdicts": 40,
+  "escalation": {
+    "verdicts": 40,
+    "escalated": 7,
+    "label_changed": 0,
+    "transitions": {}
+  },
+  "coverage": {
+    "total": 24,
+    "full": 14,
+    "abstract_only": 2,
+    "unavailable": 8,
+    "retracted": 0,
+    "line": "Full text found for 14 of 24 references · abstract only for 2 · unavailable for 8."
+  },
+  "usage": {
+    "per_model": [
+      {
+        "model": "Qwen/Qwen3-Embedding-8B",
+        "role": "embed",
+        "calls": 4,
+        "cached_calls": 0,
+        "prompt_tokens": 255,
+        "completion_tokens": 0,
+        "estimated_cost_usd": 3e-06
+      },
+      {
+        "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+        "role": "escalate",
+        "calls": 7,
+        "cached_calls": 4,
+        "prompt_tokens": 78648,
+        "completion_tokens": 16452,
+        "estimated_cost_usd": 0.128004
+      },
+      {
+        "model": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+        "role": "extract",
+        "calls": 32,
+        "cached_calls": 25,
+        "prompt_tokens": 62183,
+        "completion_tokens": 7028,
+        "estimated_cost_usd": 0.005418
+      },
+      {
+        "model": "nvidia/nemotron-3-super-120b-a12b",
+        "role": "judge",
+        "calls": 25,
+        "cached_calls": 17,
+        "prompt_tokens": 124736,
+        "completion_tokens": 38285,
+        "estimated_cost_usd": 0.071877
+      }
+    ],
+    "total_prompt_tokens": 265822,
+    "total_completion_tokens": 61765,
+    "total_estimated_cost_usd": 0.205302
+  },
+  "baseline_cost_usd": 0.184
+}
