@@ -64,7 +64,11 @@ PASSAGES_KEPT, PASSAGE_CHARS = 3, 800
 
 
 def slim_reference(ref: dict) -> dict:
-    return {k: ref.get(k) for k in REFERENCE_FIELDS}
+    from app.config import portable_path
+
+    slim = {k: ref.get(k) for k in REFERENCE_FIELDS}
+    slim["text_path"] = portable_path(slim.get("text_path"))  # committed: no local directory
+    return slim
 
 
 def slim_evidence(ev: dict) -> dict:

@@ -30,7 +30,7 @@ from typing import Any, Optional, TypeVar
 from pydantic import BaseModel
 
 from app import demo, llm
-from app.config import get_settings
+from app.config import get_settings, portable_path
 from app.db import Database, get_database
 from app.models import (
     CitingSentence,
@@ -253,6 +253,10 @@ class JobRunner:
         job = self.store.load_job(job_id)
         db = self.store.db
         artifacts = {kind: db.artifacts(job_id, kind) for kind in ("ingest", "reference", "claims", "judged", "verdict")}
+        # The snapshot is committed: cited-text paths are stored relative to the project.
+        for key, data in artifacts["reference"].items():
+            ref = Reference.model_validate_json(data)
+            artifacts["reference"][key] = ref.model_copy(update={"text_path": portable_path(ref.text_path)}).model_dump_json()
         demo.write_json(path or demo.SNAPSHOT_PATH, {"job": json.loads(job.model_dump_json()), "artifacts": artifacts})
 
     def import_snapshot(self, path=None) -> Job:

@@ -31,7 +31,7 @@ from difflib import SequenceMatcher
 from pathlib import Path
 from typing import Any, Awaitable, Callable, Optional, Union
 
-from app.config import get_settings
+from app.config import get_settings, project_path
 import httpx
 
 from app.http import DownloadTooLarge, cache_path, fetch_cached
@@ -508,14 +508,14 @@ def _store_text(identity: str, fetched: FetchedText) -> str:
 
 
 def read_reference_text(ref: Reference) -> Optional[str]:
-    if ref.text_path and Path(ref.text_path).exists():
-        return Path(ref.text_path).read_text(encoding="utf-8")
+    if ref.text_path and project_path(ref.text_path).exists():
+        return project_path(ref.text_path).read_text(encoding="utf-8")
     return None
 
 
 def read_reference_sidecar(ref: Reference) -> dict:
     if ref.text_path:
-        path = Path(ref.text_path).with_suffix(".refs.json")
+        path = project_path(ref.text_path).with_suffix(".refs.json")
         if path.exists():
             return json.loads(path.read_text(encoding="utf-8"))
     return {}

@@ -48,7 +48,7 @@ from typing import Any, Optional
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from app import demo, llm  # noqa: E402
-from app.config import ROOT_DIR, get_settings  # noqa: E402
+from app.config import ROOT_DIR, get_settings, portable_path  # noqa: E402
 from app.http import fetch_cached  # noqa: E402
 from app.models import Claim, Coverage, Evidence, IngestResult, Job, Reference, Verdict  # noqa: E402
 from app.pipeline.ingest import IngestError, ingest_pdf, normalize_arxiv_id  # noqa: E402
@@ -921,7 +921,7 @@ def _review_sheet(p: dict, intro: str, runs, flagged, sentences) -> list[str]:
         for name, claims, verdicts, refs, evidence in runs:
             run_ref = refs.get(key)
             lines.append(f"**{name}** · reference text: {run_ref.fulltext_status if run_ref else '?'}"
-                         + (f" · `{run_ref.text_path}`" if run_ref and run_ref.text_path else ""))
+                         + (f" · `{portable_path(run_ref.text_path)}`" if run_ref and run_ref.text_path else ""))
             for v in [v for v in verdicts if v.reference_key == key and claims[v.claim_id].citing_sentence_id == sid]:
                 c = claims[v.claim_id]
                 lines += [f"- **{v.label}** ({v.confidence:.2f}){' · escalated' if v.escalated else ''}"

@@ -11,7 +11,25 @@ from dotenv import load_dotenv
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 
-ROLES = ("extract", "judge", "escalate", "vision", "embed")
+
+def portable_path(path: str | None) -> str | None:
+    """A path inside the project as a relative, forward-slash path (".cache/fulltext/x.txt"), for
+    files that are committed or shared: they must not carry the local directory or user name."""
+    if not path:
+        return path
+    try:
+        return Path(path).resolve().relative_to(ROOT_DIR).as_posix()
+    except ValueError:
+        return Path(path).name  # outside the project: keep only the file name
+
+
+def project_path(path: str) -> Path:
+    """Resolve a path that may be relative to the project (see portable_path)."""
+    p = Path(path)
+    return p if p.is_absolute() else ROOT_DIR / p
+
+
+ROLES =("extract", "judge", "escalate", "vision", "embed")
 
 DEFAULT_EMBED_QUERY_INSTRUCTION = (
     "Given a claim that a paper attributes to a cited work, retrieve passages from the cited work "
