@@ -426,7 +426,7 @@ function initJobView() {
   renderGuide();
   $("#line-map").addEventListener("click", (e) => {
     const stop = e.target.closest("[data-go-sid]");
-    if (stop) { select(stop.dataset.goSid, Number(stop.dataset.goM), true); return; }
+    if (stop) { select(stop.dataset.goSid, Number(stop.dataset.goM), true, stop.dataset.goKey || null); return; }
     const station = e.target.closest("[data-station]");
     if (station) goToSection(S.lineStations[Number(station.dataset.station)]?.title);
   });
@@ -934,8 +934,9 @@ function markSelected() {
   $(`.sent[data-sid="${sid}"]`, $("#paper"))?.classList.add("selected");
 }
 
-function select(sid, m, scroll = false) {
-  S.selected = sid ? { sid, m } : null;
+// key: a cited work, when one stop on the line map was chosen rather than the whole marker.
+function select(sid, m, scroll = false, key = null) {
+  S.selected = sid ? { sid, m, key } : null;
   if (sid && S.sentById.has(sid)) S.currentSection = S.sentById.get(sid).section || "";
   if (scroll) spySection.pausedUntil = Date.now() + 900; // let the smooth scroll land first
   markSelected();
@@ -945,7 +946,8 @@ function select(sid, m, scroll = false) {
     $(`.cite[data-sid="${sid}"][data-m="${m}"]`, $("#paper"))?.scrollIntoView({ block: "center", behavior: "smooth" });
   }
   if (sid) {
-    $("#detail").scrollTop = 0;
+    const card = key ? $$(".card[data-ref-key]", $("#detail")).find((c) => c.dataset.refKey === key) : null;
+    $("#detail").scrollTop = card ? Math.max(0, card.offsetTop - 12) : 0;
     // Single-column layout: the detail panel sits below the paper, so bring it into view.
     if (window.matchMedia("(max-width: 900px)").matches) $("#detail").scrollIntoView({ behavior: "smooth", block: "start" });
   }
@@ -987,11 +989,30 @@ function scheduleLine() {
   scheduleLine.timer = setTimeout(() => { scheduleLine.timer = null; renderLine(); }, 30);
 }
 
-// The paper as a line: each section with citations is a station, each citation a stop.
+// One stop per cited work behind a marker: "[3, 4]" is two stops, and each keeps its own verdict.
+function citationStops(sid, m) {
+  const s = S.sentById.get(sid);
+  const { status, items } = markerItems(sid, m);
+  if (status === "unchecked") {
+    return ((s?.marker_keys && s.marker_keys[m]) || s?.reference_keys || []).map((key) => ({ key, status: "unchecked", escalated: false }));
+  }
+  const keys = [...new Set(items.map((x) => x.key))];
+  return keys.map((key) => {
+    const own = items.filter((x) => x.key === key);
+    const labels = own.filter((x) => x.verdict).map((x) => x.verdict.label);
+    let label = SEVERITY.find((l) => labels.includes(l)) || "pending";
+    if (own.some((x) => !x.verdict) && label === "supported" && !FINISHED.has(S.job?.status)) label = "pending";
+    return { key, status: label, escalated: own.some((x) => x.verdict?.escalated) };
+  });
+}
+
+// The paper as a line: each section with citations is a station; inside it, each citing
+// sentence is a row and each cited work a stop.
 function renderLine() {
   const el = $("#line-map");
   const buttons = $$(".cite", $("#paper"));
   if (!buttons.length) { el.innerHTML = ""; S.lineStations = []; return; }
+  const f = S.filter;
   const stations = [];
   const byTitle = new Map();
   for (const btn of buttons) {
@@ -999,16 +1020,22 @@ function renderLine() {
     const title = S.sentById.get(sid)?.section || "";
     let st = byTitle.get(title);
     if (!st) {
-      st = { title, stops: [], issues: 0, escalated: 0, checked: 0 };
+      st = { title, rows: [], citations: 0, issues: 0, escalated: 0, checked: 0 };
       byTitle.set(title, st);
       stations.push(st);
     }
+    let row = st.rows[st.rows.length - 1];
+    if (!row || row.sid !== sid) { row = { sid, stops: [] }; st.rows.push(row); }
     const m = Number(btn.dataset.m);
-    const { status, items } = markerItems(sid, m);
-    st.stops.push({ sid, m, status, marker: btn.textContent, dim: btn.classList.contains("dim") });
-    if (status !== "unchecked") st.checked += 1;
-    if (ISSUES.has(status)) st.issues += 1;
-    if (items.some((x) => x.verdict?.escalated)) st.escalated += 1;
+    const markerDim = btn.classList.contains("dim");
+    for (const stop of citationStops(sid, m)) {
+      const dim = markerDim || (f.labels.size > 0 && !f.labels.has(stop.status)) || (f.issuesOnly && !ISSUES.has(stop.status));
+      row.stops.push({ ...stop, sid, m, marker: btn.textContent, dim: stop.status !== "unchecked" && dim });
+      st.citations += 1;
+      if (stop.status !== "unchecked") st.checked += 1;
+      if (ISSUES.has(stop.status)) st.issues += 1;
+      if (stop.escalated) st.escalated += 1;
+    }
   }
   S.lineStations = stations;
   if (S.currentSection === null || !byTitle.has(S.currentSection)) S.currentSection = stations[0].title;
@@ -1017,22 +1044,32 @@ function renderLine() {
     <h2 class="line-title">Sections</h2>
     <ol class="stations">${stations.map((st, i) => {
       const here = st.title === S.currentSection;
-      const n = st.stops.length;
+      const n = st.citations;
       let meta = "Not checked yet";
       if (st.checked) {
         meta = `${n} citation${n === 1 ? "" : "s"}`;
-        if (st.issues) meta += ` · <span class="issues">${st.issues} to check</span>`;
-        if (st.escalated) meta += ` · ${st.escalated} re-read by Ultra`;
+        if (st.issues) meta += ` · <span class="issues">${st.issues} need${st.issues === 1 ? "s" : ""} a check</span>`;
+        if (st.escalated) meta += ` · ${st.escalated} via Ultra`;
       }
+      if (here) meta += " · you are here";
       const classes = ["station", here && "here", st.escalated && "interchange", !st.checked && "unchecked", st.issues && "has-issues"].filter(Boolean).join(" ");
-      const stops = here ? `<div class="stops" role="group" aria-label="Citations in ${esc(st.title || "this section")}">${st.stops.map((x) => {
-        const label = x.status === "unchecked" ? "Not checked" : x.status === "pending" ? "Checking…" : LABELS[x.status].text;
-        const icon = x.status === "unchecked" ? "·" : x.status === "pending" ? "…" : LABELS[x.status].icon;
-        const isSel = sel && sel.sid === x.sid && sel.m === x.m;
-        const cls = ["stop", x.status === "unchecked" ? "unchecked" : `v-${x.status}`, isSel && "selected", x.dim && "dim"].filter(Boolean).join(" ");
-        return x.status === "unchecked"
-          ? `<span class="${cls}" title="${esc(x.marker)}: ${label}" aria-hidden="true">${icon}</span>`
-          : `<button type="button" class="${cls}" data-go-sid="${x.sid}" data-go-m="${x.m}" title="${esc(x.marker)}: ${esc(label)}" aria-label="Citation ${esc(x.marker)}: ${esc(label)}">${icon}</button>`;
+      const stops = here ? `<div class="stop-rows" role="group" aria-label="Cited works in ${esc(st.title || "this section")}">${st.rows.map((row, r) => {
+        let rowSelected = false;
+        const boxes = row.stops.map((x) => {
+          const ref = S.refs.get(x.key);
+          const work = ref?.label || x.key;
+          const label = x.status === "unchecked" ? "Not checked" : x.status === "pending" ? "Checking…" : LABELS[x.status].text;
+          const icon = x.status === "unchecked" ? "·" : x.status === "pending" ? "…" : LABELS[x.status].icon;
+          const isSel = sel && sel.sid === x.sid && sel.m === x.m && (!sel.key || sel.key === x.key);
+          if (isSel) rowSelected = true;
+          const cls = ["stop", x.status === "unchecked" ? "unchecked" : `v-${x.status}`, isSel && "selected", x.dim && "dim"].filter(Boolean).join(" ");
+          return x.status === "unchecked"
+            ? `<span class="${cls}" title="${esc(work)}: ${label}" aria-hidden="true">${icon}</span>`
+            : `<button type="button" class="${cls}" data-go-sid="${x.sid}" data-go-m="${x.m}" data-go-key="${esc(x.key)}"
+                 title="${esc(work)}: ${esc(label)}" aria-label="${esc(work)}: ${esc(label)}">${icon}</button>`;
+        }).join("");
+        return `<span class="stop-row-label${rowSelected ? " selected" : ""}">s${r + 1}</span>
+          <span class="stop-row">${boxes}${rowSelected ? `<span class="stop-selected">selected</span>` : ""}</span>`;
       }).join("")}</div>` : "";
       return `<li class="${classes}">
         <button type="button" class="station-btn" data-station="${i}"${here ? ` aria-current="location"` : ""}>
@@ -1165,7 +1202,8 @@ function renderReferenceCard(key, group) {
   const statusBadge = ref.fulltext_status ? `<span class="badge ${ref.fulltext_status}">${esc(TEXT_STATUS[ref.fulltext_status] || ref.fulltext_status)}</span>` : "";
   const claims = group.filter((x) => x.claim);
   const count = claims.length > 1 ? `<span>${claims.length} claims checked</span>` : "";
-  return `<div class="card">
+  const focused = S.selected?.key === key && group.length;
+  return `<div class="card${focused ? " focused" : ""}" data-ref-key="${esc(key)}">
     <div class="ref-title">[${esc(ref.label || key)}] ${link ? `<a href="${esc(link)}" target="_blank" rel="noopener">${esc(title)}</a>` : esc(title)}</div>
     <div class="ref-meta">${ref.year ? `<span>${esc(ref.year)}</span>` : ""}${statusBadge}
       ${ref.retracted ? `<span class="badge" style="color:var(--bad);background:var(--bad-bg)">Retracted</span>` : ""}${count}</div>
