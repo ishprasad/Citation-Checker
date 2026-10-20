@@ -1333,7 +1333,8 @@ function renderClaimSection({ claim, key, verdict }, ref, index, total) {
           <div class="verdict-line">${renderPill(verdict.label, verdict.confidence)}</div></li>
       </ol>`
     : `<div class="verdict-line">${renderPill(verdict.label, verdict.confidence)}</div>`;
-  const needsCheck = verdict.label !== "supported"
+  // Same rule as "Next issue", the "Needs human check" list and the exported report.
+  const needsCheck = ISSUES.has(verdict.label)
     ? `<div class="human-check ${["contradicted", "not_found"].includes(verdict.label) ? "bad" : ""}">Needs human check</div>` : "";
   const modes = verdict.failure_modes || [];
   const chips = modes.length ? `
