@@ -740,8 +740,13 @@ function renderProgress() {
   let line;
   if (finished) {
     const text = job.status === "done" ? "Check complete" : job.status === "partial" ? "Check stopped early" : "Check failed";
+    // The stages count every (claim, cited work) check; repeats of the same verdict are merged in the report.
+    const merged = S.duplicates.size;
+    const checks = merged ? ` (${verdictCount + merged} checks, ${merged} merged as ${merged === 1 ? "a duplicate" : "duplicates"})` : "";
+    const ultraChecks = job.progress.find((p) => p.stage === "escalate")?.done ?? escalated;
+    const ultra = ultraChecks !== escalated ? ` (${ultraChecks} checks)` : "";
     line = `<div class="progress-line"><strong><span class="status-dot ${job.status}" aria-hidden="true"></span>${text}</strong>
-      <span class="muted">${verdictCount} citation verdicts · ${escalated} escalated to Ultra</span>
+      <span class="muted">${verdictCount} citation verdicts${checks} · ${escalated} escalated to Ultra${ultra}</span>
       <button class="btn link" type="button" data-toggle-stages aria-expanded="${S.showStages}">${S.showStages ? "Hide" : "Show"} stages</button></div>`;
   } else {
     const eta = timeLeftText(job);
