@@ -462,7 +462,15 @@ h1, h2, h3 { font-family: var(--display); }
 .board-hint { font-size: 13px; margin: 14px 0 0; }
 
 .card { border-top: 1px solid #2f353c; padding: 16px 0 6px; margin-top: 14px; }
-.card.focused { border-top: 3px solid var(--board-link); }
+.work-switch { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 14px; }
+.work-switch-label { width: 100%; font: 600 12px var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--board-muted); }
+.work-tab {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 4px 12px; border-radius: var(--pill);
+  border: 1.5px solid #5a6068; background: transparent; color: var(--board-text); font: 600 13px var(--sans); cursor: pointer; text-align: left;
+}
+.work-tab:hover { background: var(--board-2); }
+.work-tab[aria-pressed="true"] { background: var(--board-text); color: var(--board); border-color: var(--board-text); }
+.work-tab[aria-pressed="true"] .glyph { color: inherit; }
 .ref-title { font: 800 16px/1.35 var(--display); }
 .ref-meta { font-size: 13px; color: var(--board-muted); margin-top: 4px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
 .badge { display: inline-flex; align-items: center; gap: 5px; font: 600 12px var(--sans); border-radius: var(--pill); padding: 2px 10px; background: var(--board-2); color: var(--board-muted); }

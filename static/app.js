@@ -382,7 +382,7 @@ function initJobView() {
   $("#paper").addEventListener("click", (e) => {
     const btn = e.target.closest(".cite");
     if (!btn) return;
-    select(btn.dataset.sid, Number(btn.dataset.m));
+    select(btn.dataset.sid, Number(btn.dataset.m), false, clickedKey(btn, e));
   });
   $("#paper").addEventListener("keydown", (e) => {
     const btn = e.target.closest(".cite");
@@ -392,7 +392,9 @@ function initJobView() {
   });
   $("#detail").addEventListener("click", (e) => {
     const go = e.target.closest("[data-go-sid]");
-    if (go) { select(go.dataset.goSid, Number(go.dataset.goM), true); return; }
+    if (go) { select(go.dataset.goSid, Number(go.dataset.goM), true, go.dataset.goKey || null); return; }
+    const pick = e.target.closest("[data-pick-key]");
+    if (pick && S.selected) { select(S.selected.sid, S.selected.m, false, pick.dataset.pickKey); return; }
     if (e.target.closest("[data-close]")) { select(null); return; }
     if (e.target.closest("[data-expand]")) expandJob();
   });
@@ -934,8 +936,10 @@ function markSelected() {
   $(`.sent[data-sid="${sid}"]`, $("#paper"))?.classList.add("selected");
 }
 
-// key: a cited work, when one stop on the line map was chosen rather than the whole marker.
+// A selection is always one cited work (key) behind one marker. Without a key, the work
+// that needs the most attention is chosen: the one that gives the marker its colour.
 function select(sid, m, scroll = false, key = null) {
+  if (sid && !citationStops(sid, m).some((x) => x.key === key)) key = defaultKey(sid, m);
   S.selected = sid ? { sid, m, key } : null;
   if (sid && S.sentById.has(sid)) S.currentSection = S.sentById.get(sid).section || "";
   if (scroll) spySection.pausedUntil = Date.now() + 900; // let the smooth scroll land first
@@ -946,8 +950,7 @@ function select(sid, m, scroll = false, key = null) {
     $(`.cite[data-sid="${sid}"][data-m="${m}"]`, $("#paper"))?.scrollIntoView({ block: "center", behavior: "smooth" });
   }
   if (sid) {
-    const card = key ? $$(".card[data-ref-key]", $("#detail")).find((c) => c.dataset.refKey === key) : null;
-    $("#detail").scrollTop = card ? Math.max(0, card.offsetTop - 12) : 0;
+    $("#detail").scrollTop = 0;
     // Single-column layout: the detail panel sits below the paper, so bring it into view.
     if (window.matchMedia("(max-width: 900px)").matches) $("#detail").scrollIntoView({ behavior: "smooth", block: "start" });
   }
@@ -957,21 +960,50 @@ function refreshDetailFor(sid) {
   if (S.selected && S.selected.sid === sid) renderDetail();
 }
 
+function defaultKey(sid, m) {
+  const rank = (status) => (SEVERITY.includes(status) ? SEVERITY.indexOf(status) : SEVERITY.length);
+  return citationStops(sid, m).slice().sort((a, b) => rank(a.status) - rank(b.status))[0]?.key ?? null;
+}
+
+// Which cited work inside a multi-work marker was clicked: "(A, 2019; B, 2020)" or "[3, 4]" split
+// into as many parts as the marker has works. Keyboard activation or ranges like "[3–5]" fall back.
+function clickedKey(btn, e) {
+  const s = S.sentById.get(btn.dataset.sid);
+  const keys = (s?.marker_keys && s.marker_keys[Number(btn.dataset.m)]) || s?.reference_keys || [];
+  if (keys.length < 2 || !e || !e.detail) return null;
+  const text = btn.textContent;
+  const sep = text.includes(";") ? ";" : /^[\s[(]*\d[\d\s,]*[\])]?\s*$/.test(text) ? "," : null;
+  const parts = sep ? text.split(sep) : [];
+  if (parts.length !== keys.length) return null;
+  let offset = null;
+  if (document.caretPositionFromPoint) {
+    const p = document.caretPositionFromPoint(e.clientX, e.clientY);
+    if (p && btn.contains(p.offsetNode)) offset = p.offset;
+  } else if (document.caretRangeFromPoint) {
+    const r = document.caretRangeFromPoint(e.clientX, e.clientY);
+    if (r && btn.contains(r.startContainer)) offset = r.startOffset;
+  }
+  if (offset === null) return null;
+  let end = 0;
+  for (let i = 0; i < parts.length; i++) {
+    end += parts[i].length + 1;
+    if (offset < end) return keys[i];
+  }
+  return keys[keys.length - 1];
+}
+
+// Steps through flagged cited works one at a time, in reading order.
 function nextIssue() {
-  const buttons = $$(".cite", $("#paper")).filter((b) => {
-    const { status, items } = markerItems(b.dataset.sid, Number(b.dataset.m));
-    return ISSUES.has(status) && matchesFilter(b.dataset.sid, Number(b.dataset.m), status, items);
-  });
-  if (!buttons.length) { toast("No citations need a human check so far."); return; }
-  let idx = 0;
+  const list = issueEntries().filter((e) => ISSUES.has(e.status) && matchesFilter(e.sid, e.m, e.status, e.items));
+  if (!list.length) { toast("No citations need a human check so far."); return; }
+  let next = list[0];
   if (S.selected) {
     const all = $$(".cite", $("#paper"));
-    const current = all.findIndex((b) => b.dataset.sid === S.selected.sid && Number(b.dataset.m) === S.selected.m);
-    idx = buttons.findIndex((b) => all.indexOf(b) > current);
-    if (idx < 0) idx = 0;
+    const ci = all.findIndex((b) => b.dataset.sid === S.selected.sid && Number(b.dataset.m) === S.selected.m);
+    const cj = citationStops(S.selected.sid, S.selected.m).findIndex((x) => x.key === S.selected.key);
+    next = list.find((e) => e.i > ci || (e.i === ci && e.j > cj)) || list[0];
   }
-  const btn = buttons[idx];
-  select(btn.dataset.sid, Number(btn.dataset.m), true);
+  select(next.sid, next.m, true, next.key);
 }
 
 // ------------------------------------------------------------------ line map
@@ -1122,17 +1154,23 @@ function renderDetail() {
   else el.innerHTML = renderOverview();
 }
 
+// One entry per judged cited work, in reading order (i: marker, j: work within the marker).
 function issueEntries() {
   const entries = [];
-  for (const btn of $$(".cite", $("#paper"))) {
+  $$(".cite", $("#paper")).forEach((btn, i) => {
     const sid = btn.dataset.sid;
     const m = Number(btn.dataset.m);
     const { status, items } = markerItems(sid, m);
-    if (status === "unchecked" || status === "pending") continue;
-    entries.push({ sid, m, status, items, marker: btn.textContent });
-  }
+    if (status === "unchecked") return;
+    citationStops(sid, m).forEach((stop, j) => {
+      if (!LABELS[stop.status]) return; // still being checked
+      entries.push({ sid, m, i, j, key: stop.key, status: stop.status, items: items.filter((x) => x.key === stop.key), marker: btn.textContent });
+    });
+  });
   return entries;
 }
+
+const workLabel = (key) => { const ref = S.refs.get(key); return `[${ref?.label || key}]`; };
 
 function renderOverview() {
   const entries = issueEntries();
@@ -1149,9 +1187,9 @@ function renderOverview() {
   const items = list.slice(0, 200).map((e) => {
     const first = e.items.find((x) => x.verdict && x.verdict.label === e.status) || e.items[0];
     const what = first?.verdict?.attributed_claim || first?.claim?.claim_text || S.sentById.get(e.sid)?.text || "";
-    return `<li><button type="button" data-go-sid="${e.sid}" data-go-m="${e.m}">
+    return `<li><button type="button" data-go-sid="${e.sid}" data-go-m="${e.m}" data-go-key="${esc(e.key)}">
       <span class="glyph v-${e.status}" aria-hidden="true">${LABELS[e.status]?.icon || ""}</span>
-      <span><strong>${esc(e.marker)}</strong> ${esc(LABELS[e.status]?.text || "")}${S.demo?.planted_by_sentence?.[e.sid] ? ` <span class="badge planted-badge">Planted</span>` : ""}<br>
+      <span><strong>${esc(workLabel(e.key))}</strong> ${esc(LABELS[e.status]?.text || "")}${S.demo?.planted_by_sentence?.[e.sid] ? ` <span class="badge planted-badge">Planted</span>` : ""}<br>
       <span class="what">${esc(what.length > 150 ? `${what.slice(0, 150)}…` : what)}</span></span></button></li>`;
   }).join("");
   const running = !FINISHED.has(S.job.status);
@@ -1187,12 +1225,26 @@ function renderCitation(sid, m) {
     return `${head}<div class="card"><p class="muted"><span class="spinner"></span> Extracting the claim behind this citation…</p></div>`;
   }
   // One card per cited work; each claim attached to it is a numbered section of that card.
+  // Only the selected work's card is shown; the other works behind the same marker are a click away.
   const groups = new Map();
   for (const item of items) {
     if (!groups.has(item.key)) groups.set(item.key, []);
     groups.get(item.key).push(item);
   }
-  return head + Array.from(groups, ([key, group]) => renderReferenceCard(key, group)).join("");
+  const key = S.selected?.key;
+  const shown = key && groups.has(key) ? [[key, groups.get(key)]] : Array.from(groups);
+  const works = citationStops(sid, m);
+  const switcher = works.length > 1 ? `
+    <div class="work-switch" role="group" aria-label="Works cited by this marker">
+      <span class="work-switch-label">This marker cites ${works.length} works</span>
+      ${works.map((w) => {
+        const icon = LABELS[w.status]?.icon || "…";
+        const text = LABELS[w.status]?.text || "Checking…";
+        return `<button type="button" class="work-tab v-${w.status}" data-pick-key="${esc(w.key)}" aria-pressed="${w.key === key}"
+          title="${esc(text)}"><span class="glyph v-${w.status}" aria-hidden="true">${icon}</span>${esc(workLabel(w.key))}</button>`;
+      }).join("")}
+    </div>` : "";
+  return head + switcher + shown.map(([k, group]) => renderReferenceCard(k, group)).join("");
 }
 
 function renderReferenceCard(key, group) {
@@ -1202,8 +1254,7 @@ function renderReferenceCard(key, group) {
   const statusBadge = ref.fulltext_status ? `<span class="badge ${ref.fulltext_status}">${esc(TEXT_STATUS[ref.fulltext_status] || ref.fulltext_status)}</span>` : "";
   const claims = group.filter((x) => x.claim);
   const count = claims.length > 1 ? `<span>${claims.length} claims checked</span>` : "";
-  const focused = S.selected?.key === key && group.length;
-  return `<div class="card${focused ? " focused" : ""}" data-ref-key="${esc(key)}">
+  return `<div class="card" data-ref-key="${esc(key)}">
     <div class="ref-title">[${esc(ref.label || key)}] ${link ? `<a href="${esc(link)}" target="_blank" rel="noopener">${esc(title)}</a>` : esc(title)}</div>
     <div class="ref-meta">${ref.year ? `<span>${esc(ref.year)}</span>` : ""}${statusBadge}
       ${ref.retracted ? `<span class="badge" style="color:var(--bad);background:var(--bad-bg)">Retracted</span>` : ""}${count}</div>
