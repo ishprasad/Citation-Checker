@@ -237,11 +237,8 @@ class JobRunner:
             self.start(job.id)
         return job
 
-    def latest_demo_job(self, any_version: bool = False) -> Optional[Job]:
-        """The newest finished check of the current demo paper, if any (reused instantly).
-
-        Only checks made by the current pipeline count, so a pipeline change shows up in the demo.
-        `any_version` lifts that when nothing can be re-run (no API key)."""
+    def latest_demo_job(self) -> Optional[Job]:
+        """The newest finished check of the current demo paper made by the current pipeline, if any."""
         paper = demo.load_demo_paper()
         if paper is None:
             return None
@@ -249,8 +246,19 @@ class JobRunner:
             Job.model_validate_json(d) for d in self.store.db.jobs_with_status(("done",))
         ]
         candidates = [j for j in candidates if j.source == "demo" and j.paper_id == paper.paper.id
-                      and (any_version or j.pipeline_version == PIPELINE_VERSION)]
+                      and j.pipeline_version == PIPELINE_VERSION]
         return max(candidates, key=lambda j: j.created_at, default=None)
+
+    def snapshot_demo_job(self, path=None) -> Job:
+        """The recorded demo check (demo/snapshot.json), imported on first use and reused after that.
+        An import keeps the recorded check's creation time, which identifies it (and the original)."""
+        data = json.loads((path or demo.SNAPSHOT_PATH).read_text(encoding="utf-8"))
+        recorded = Job.model_validate(data["job"])
+        for d in self.store.db.jobs_with_status(("done",)):
+            j = Job.model_validate_json(d)
+            if j.source == "demo" and j.paper_id == recorded.paper_id and j.created_at == recorded.created_at:
+                return j
+        return self.import_snapshot(data=data)
 
     def export_snapshot(self, job_id: str, path=None) -> None:
         """Save a finished job's results so the demo can be shown without network or API key."""
@@ -263,8 +271,8 @@ class JobRunner:
             artifacts["reference"][key] = ref.model_copy(update={"text_path": portable_path(ref.text_path)}).model_dump_json()
         demo.write_json(path or demo.SNAPSHOT_PATH, {"job": json.loads(job.model_dump_json()), "artifacts": artifacts})
 
-    def import_snapshot(self, path=None) -> Job:
-        data = json.loads((path or demo.SNAPSHOT_PATH).read_text(encoding="utf-8"))
+    def import_snapshot(self, path=None, data: Optional[dict] = None) -> Job:
+        data = data or json.loads((path or demo.SNAPSHOT_PATH).read_text(encoding="utf-8"))
         job = Job.model_validate(data["job"]).model_copy(update={"id": uuid.uuid4().hex[:12]})
         for kind, items in data["artifacts"].items():
             for item_id, value in items.items():

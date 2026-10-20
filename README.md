@@ -249,7 +249,7 @@ The demo is the Chain-of-Thought Prompting paper (arXiv:2201.11903). Its referen
 
 Edits are applied from the end of the text backwards, so every offset stays exact; this is covered by tests. The output is `demo/paper.json` and `demo/ground_truth.json`, which also records the citations flagged in the unmodified paper.
 
-**Demo button (`POST /api/demo`).** It returns the latest finished check of the demo paper instantly. If there is none, it runs one live; with warm caches that takes about 30 seconds. With no API key configured, it shows the bundled snapshot of a recorded check (`demo/snapshot.json`). In the UI, the banner shows the score, each planted citation shows what was changed and its original sentence, and the issue list marks planted entries.
+**Demo button (`POST /api/demo`).** It shows the bundled recording of a full check made after the initial calibration (`demo/snapshot.json`), which the results below describe. It opens instantly and needs no API key. `POST /api/demo?fresh=1` checks the paper again with the current pipeline; with warm caches that takes about 30 seconds. In the UI, the banner shows the score, each planted citation shows what was changed and its original sentence, and the issue list marks planted entries.
 
 ### Initial calibration
 

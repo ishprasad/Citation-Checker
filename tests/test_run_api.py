@@ -366,19 +366,26 @@ def test_api_demo_runs_scores_and_reuses(client, demo_files, monkeypatch):
     assert fresh != job_id
     _wait_done(c, fresh)
 
-    # Without an API key, the recorded snapshot is shown instead of running models.
-    get_runner_ = run_mod.get_runner
-    get_runner_().export_snapshot(job_id)
+    # Once a check is recorded, the demo shows the recording (here the first check), not the newer one.
+    run_mod.get_runner().export_snapshot(job_id)
+    assert c.post("/api/demo").json()["id"] == job_id
+
+    # A recording made elsewhere is imported once and reused; no API key is needed, and without one
+    # fresh=1 shows the recording too.
+    data = json.loads(demo_files["SNAPSHOT_PATH"].read_text(encoding="utf-8"))
+    data["job"]["created_at"] = "2026-01-01T00:00:00Z"
+    demo_files["SNAPSHOT_PATH"].write_text(json.dumps(data), encoding="utf-8")
     import app.main as main_mod
     monkeypatch.setattr(main_mod, "get_settings", lambda: replace(get_settings(), nebius_api_key=""))
     r = c.post("/api/demo?fresh=1")
     snap_id = r.json()["id"]
     assert snap_id not in (job_id, fresh) and r.json()["job"]["status"] == "done"
+    assert c.post("/api/demo").json()["id"] == snap_id
     snap = c.get(f"/api/jobs/{snap_id}/report").json()
     assert len(snap["verdicts"]) == len(report["verdicts"]) and snap["demo"]["eval"] is not None
 
 
-def test_api_demo_reuses_only_the_current_pipeline(client, demo_files, monkeypatch):
+def test_api_demo_without_a_recording_reuses_only_the_current_pipeline(client, demo_files, monkeypatch):
     c, _ = client
     old = c.post("/api/demo").json()["id"]
     assert _wait_done(c, old)["pipeline_version"] == run_mod.PIPELINE_VERSION
@@ -390,11 +397,11 @@ def test_api_demo_reuses_only_the_current_pipeline(client, demo_files, monkeypat
     _wait_done(c, new)
     assert c.post("/api/demo").json()["id"] == new
 
-    # Without an API key nothing can run, so the newest finished check is shown whatever its version.
+    # Without an API key there is nothing current to show or run.
     monkeypatch.setattr(run_mod, "PIPELINE_VERSION", run_mod.PIPELINE_VERSION + 1)
     import app.main as main_mod
     monkeypatch.setattr(main_mod, "get_settings", lambda: replace(get_settings(), nebius_api_key=""))
-    assert c.post("/api/demo").json()["id"] == new
+    assert c.post("/api/demo").status_code == 503
 
 
 def test_api_demo_unavailable(client, monkeypatch, tmp_path):
