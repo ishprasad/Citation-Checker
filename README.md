@@ -2,7 +2,7 @@
 
 For every citation in a research paper, Citation Checker asks one question: does the cited source actually say what the citing author claims it says? It runs on NVIDIA Nemotron models served through Nebius Token Factory.
 
-Give it an arXiv ID, an arxiv.org link or a PDF. For each citation it extracts the claim, finds and reads the cited paper, and reports whether the cited text supports the claim, with the exact quote. Anything that is not clearly supported is marked "Needs human check", never "wrong".
+Give it an arXiv ID, an arxiv.org link or a PDF. For each citation it extracts the claim, finds and reads the cited paper, and reports whether the cited text supports the claim, with the exact quote. Citations that look overstated, contradicted or not found in the cited text are marked "Needs human check", never "wrong".
 
 Made for the Nebius x NVIDIA Global AI Hackathon 2026.
 
@@ -224,7 +224,7 @@ The UI is plain HTML, CSS and JavaScript, with no build step and no CDN. Run `uv
 
 - **Start.** Enter an arXiv ID or any arxiv.org link, or drop a PDF. Choose a quick check (the first 20 citing sentences) or a full check, or try the demo paper.
 - **Progress.** The report opens as soon as the paper is parsed. A six-stage tracker fills in live from the event stream (for example "Judging claims: 37 / 84"). Citation markers change from "being checked" to their verdict as results arrive, and the coverage line appears once reference resolution finishes.
-- **Report.** The paper text is on the left. Each citation is coloured by verdict *and* has its own underline style and glyph (✓ supported, ! overstated, ✕ contradicted, ? not found, – could not be verified), so colour is never the only cue. The detail panel on the right shows the citing sentence and, for each cited work:
+- **Report.** The paper text is in the middle. Each citation is coloured by verdict *and* has its own underline style and glyph (✓ supported, ! overstated, ✕ contradicted, ? not found, – could not be verified), so colour is never the only cue. The detail panel on the right shows the citing sentence and, for the selected cited work:
   - the claim checked;
   - a link to the cited paper and whether its full text was available;
   - the verdict and confidence;
@@ -232,9 +232,9 @@ The UI is plain HTML, CSS and JavaScript, with no build step and no CDN. Run `uv
   - the cited paper's text with the supporting quote highlighted;
   - an "Escalated to Nemotron Ultra" badge and a "Needs human check" banner where relevant.
 
-  With nothing selected, the panel shows a legend and the list of citations that need a human check.
-- **Top bar.** Verdict counts double as filters. There's also a search box (over sentences, claims, reference titles and explanations), a "Show only issues" toggle, and "Next issue" (or press `j`). Export gives Markdown or JSON. A cost panel shows tokens and estimated cost per model, plus how many verdicts needed the large model.
-- **Layout.** Light and dark themes follow `prefers-color-scheme`. The layout is two-column at laptop widths and single-column below 900px. The URL (`#/job/<id>`) reopens a report after a reload.
+  With nothing selected, the panel shows the list of citations that need a human check. The legend is in the "How to read this report" band above the report.
+- **Top bar and filters.** Verdict counts double as filters, next to a "Show only human-check issues" toggle. The top bar has a search box (over sentences, claims, reference titles and explanations) and "Go to next human-check issue" (or press `j`). Export gives Markdown or JSON. A cost panel shows tokens and estimated cost per model, plus how many verdicts needed the large model.
+- **Layout.** Light and dark themes follow `prefers-color-scheme`. The layout is three-column on wide screens, two-column below 1240px and single-column below 900px. The URL (`#/job/<id>`) reopens a report after a reload.
 
 ## Demo paper and evaluation (`app/demo.py`, `scripts/plant_errors.py`, `scripts/evaluate.py`)
 
