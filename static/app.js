@@ -46,6 +46,7 @@ const STAGE_TEXT = {
   judge: "Judging claims",
   escalate: "Escalating to Ultra",
 };
+const STAGE_MODEL = { extract: "Nemotron Nano", judge: "Nemotron Super", escalate: "Nemotron Ultra" };
 const ROLE_TEXT = {
   extract: "Claim extraction · Nemotron Nano",
   judge: "Judging · Nemotron Super",
@@ -149,8 +150,14 @@ function freshState() {
     poll: null,
     reportLoading: null,
     showStages: false,
+    currentSection: null, // the line map's "you are here" station
+    lineStations: [],
   };
 }
+
+// The "How to read this report" band stays open or closed across reports (per browser).
+let guideOpen = true;
+try { guideOpen = localStorage.getItem("cc.guide") !== "closed"; } catch { /* storage unavailable */ }
 
 function teardown() {
   if (S.es) S.es.close();
@@ -405,6 +412,24 @@ function initJobView() {
     searchTimer = setTimeout(() => { S.filter.query = e.target.value.trim().toLowerCase(); applyFilter(); if (!S.selected) renderDetail(); }, 150);
   });
   $("#next-issue").addEventListener("click", nextIssue);
+  $("#guide-toggle").addEventListener("click", () => {
+    guideOpen = !guideOpen;
+    try { localStorage.setItem("cc.guide", guideOpen ? "open" : "closed"); } catch { /* storage unavailable */ }
+    renderGuide();
+  });
+  renderGuide();
+  $("#line-map").addEventListener("click", (e) => {
+    const stop = e.target.closest("[data-go-sid]");
+    if (stop) { select(stop.dataset.goSid, Number(stop.dataset.goM), true); return; }
+    const station = e.target.closest("[data-station]");
+    if (station) goToSection(S.lineStations[Number(station.dataset.station)]?.title);
+  });
+  let spyQueued = false;
+  window.addEventListener("scroll", () => {
+    if (spyQueued || $("#job").hidden) return;
+    spyQueued = true;
+    requestAnimationFrame(() => { spyQueued = false; spySection(); });
+  }, { passive: true });
   setupMenu("#export-button", "#export-menu");
   setupMenu("#cost-button", "#cost-panel");
   document.addEventListener("keydown", (e) => {
@@ -444,6 +469,7 @@ async function openJob(jobId) {
   $("#paper").innerHTML = `<p class="empty">Loading…</p>`;
   $("#detail").innerHTML = "";
   $("#paper-head").innerHTML = "";
+  $("#line-map").innerHTML = "";
   try {
     S.job = await api(`/api/jobs/${jobId}`);
   } catch (err) {
@@ -614,6 +640,7 @@ function renderAllChrome() {
 function renderFailed(title, message) {
   $("#paper-head").innerHTML = "";
   $("#progress").innerHTML = "";
+  $("#line-map").innerHTML = "";
   $("#paper").innerHTML = `
     <div class="failed-card">
       <h2>${esc(title)}</h2>
@@ -684,27 +711,36 @@ function renderProgress() {
   el.classList.toggle("compact", finished && !S.showStages);
   const stages = job.progress.map((p) => {
     const name = STAGE_TEXT[p.stage] || p.label;
+    const model = STAGE_MODEL[p.stage];
     const total = p.total || 0;
     const ratio = p.state === "done" ? 1 : total ? Math.min(1, p.done / total) : 0;
     let count;
     if (p.stage === "parse") count = p.state === "done" ? "Done" : p.state === "running" ? "Working…" : "Waiting";
     else if (p.stage === "escalate" && p.state === "done" && !total) count = "None needed";
     else count = total || p.state !== "pending" ? `${p.done} / ${total}` : "Waiting";
+    const bar = p.state === "running" && total ? `<div class="bar"><span style="width:${(ratio * 100).toFixed(1)}%"></span></div>` : "";
     return `
-      <div class="stage ${p.state}" aria-label="${esc(name)}: ${esc(count)}">
-        <div class="stage-name"><span class="stage-icon" aria-hidden="true"></span>${esc(name)}</div>
-        <div class="stage-count">${esc(count)}</div>
-        <div class="bar"><span style="width:${(ratio * 100).toFixed(1)}%"></span></div>
-      </div>`;
+      <li class="stage ${p.state}${model ? " interchange" : ""}" aria-label="${esc(name)}: ${esc(count)}">
+        <span class="stage-stop" aria-hidden="true"></span>
+        <span class="stage-name">${esc(name)}</span>
+        <span class="stage-count">${esc(count)}${model ? ` · ${esc(model.replace("Nemotron ", ""))}` : ""}</span>
+        ${bar}
+      </li>`;
   }).join("");
   const verdictCount = liveVerdicts().length;
   const escalated = liveVerdicts().filter((v) => v.escalated).length;
-  const line = finished
-    ? `<div class="progress-line">${job.status === "done" ? "Check complete" : job.status === "partial" ? "Check stopped early" : "Check failed"}
-        · ${verdictCount} citation verdicts · ${escalated} escalated to Ultra
-        <button class="btn link" type="button" data-toggle-stages>${S.showStages ? "Hide" : "Show"} stages</button></div>`
-    : timeLeftText(job) ? `<div class="progress-line eta">${esc(timeLeftText(job))}</div>` : "";
-  el.innerHTML = `${line}<div class="stages">${stages}</div>`;
+  let line;
+  if (finished) {
+    const text = job.status === "done" ? "Check complete" : job.status === "partial" ? "Check stopped early" : "Check failed";
+    line = `<div class="progress-line"><strong><span class="status-dot ${job.status}" aria-hidden="true"></span>${text}</strong>
+      <span class="muted">${verdictCount} citation verdicts · ${escalated} escalated to Ultra</span>
+      <button class="btn link" type="button" data-toggle-stages aria-expanded="${S.showStages}">${S.showStages ? "Hide" : "Show"} stages</button></div>`;
+  } else {
+    const eta = timeLeftText(job);
+    line = `<div class="progress-line eta"><strong><span class="spinner" aria-hidden="true"></span>${job.status === "queued" ? "Waiting to start" : "Checking citations"}</strong>
+      ${eta ? `<span class="muted">${esc(eta)}</span>` : ""}</div>`;
+  }
+  el.innerHTML = `${line}<ol class="stage-route">${stages}</ol>`;
 }
 
 function liveVerdicts() {
@@ -722,7 +758,7 @@ function renderSummary() {
   $("#summary").innerHTML = SUMMARY_ORDER.map((label) => `
     <button type="button" class="chip" data-label="${label}" aria-pressed="${S.filter.labels.has(label)}"
             title="Show only: ${esc(LABELS[label].text)}">
-      <span class="dot v-${label}" aria-hidden="true"></span>${esc(CHIP_TEXT[label])} <span class="n">${counts[label]}</span>
+      <span class="swatch v-${label}" aria-hidden="true">${LABELS[label].icon}</span>${esc(CHIP_TEXT[label])} <span class="n">${counts[label]}</span>
     </button>`).join("");
 }
 
@@ -852,6 +888,7 @@ function updateMarkers(sid) {
   }
   applyFilter(sid);
   if (S.selected) markSelected();
+  scheduleLine();
 }
 
 function matchesFilter(sid, m, status, items) {
@@ -878,6 +915,7 @@ function applyFilter(sid) {
     const { status, items } = markerItems(btn.dataset.sid, m);
     btn.classList.toggle("dim", !!active && !matchesFilter(btn.dataset.sid, m, status, items));
   }
+  scheduleLine();
 }
 
 function markSelected() {
@@ -890,7 +928,10 @@ function markSelected() {
 
 function select(sid, m, scroll = false) {
   S.selected = sid ? { sid, m } : null;
+  if (sid && S.sentById.has(sid)) S.currentSection = S.sentById.get(sid).section || "";
+  if (scroll) spySection.pausedUntil = Date.now() + 900; // let the smooth scroll land first
   markSelected();
+  scheduleLine();
   renderDetail();
   if (sid && scroll) {
     $(`.cite[data-sid="${sid}"][data-m="${m}"]`, $("#paper"))?.scrollIntoView({ block: "center", behavior: "smooth" });
@@ -923,6 +964,110 @@ function nextIssue() {
   select(btn.dataset.sid, Number(btn.dataset.m), true);
 }
 
+// ------------------------------------------------------------------ line map
+
+function renderGuide() {
+  $("#guide").hidden = !guideOpen;
+  const button = $("#guide-toggle");
+  button.textContent = guideOpen ? "Hide the guide" : "How to read this report";
+  button.setAttribute("aria-expanded", String(guideOpen));
+}
+
+// A timer, not requestAnimationFrame: verdicts keep streaming into background tabs.
+function scheduleLine() {
+  if (scheduleLine.timer) return;
+  scheduleLine.timer = setTimeout(() => { scheduleLine.timer = null; renderLine(); }, 30);
+}
+
+// The paper as a line: each section with citations is a station, each citation a stop.
+function renderLine() {
+  const el = $("#line-map");
+  const buttons = $$(".cite", $("#paper"));
+  if (!buttons.length) { el.innerHTML = ""; S.lineStations = []; return; }
+  const stations = [];
+  const byTitle = new Map();
+  for (const btn of buttons) {
+    const sid = btn.dataset.sid;
+    const title = S.sentById.get(sid)?.section || "";
+    let st = byTitle.get(title);
+    if (!st) {
+      st = { title, stops: [], issues: 0, escalated: 0, checked: 0 };
+      byTitle.set(title, st);
+      stations.push(st);
+    }
+    const m = Number(btn.dataset.m);
+    const { status, items } = markerItems(sid, m);
+    st.stops.push({ sid, m, status, marker: btn.textContent, dim: btn.classList.contains("dim") });
+    if (status !== "unchecked") st.checked += 1;
+    if (ISSUES.has(status)) st.issues += 1;
+    if (items.some((x) => x.verdict?.escalated)) st.escalated += 1;
+  }
+  S.lineStations = stations;
+  if (S.currentSection === null || !byTitle.has(S.currentSection)) S.currentSection = stations[0].title;
+  const sel = S.selected;
+  el.innerHTML = `
+    <h2 class="line-title">Sections</h2>
+    <ol class="stations">${stations.map((st, i) => {
+      const here = st.title === S.currentSection;
+      const n = st.stops.length;
+      let meta = "Not checked yet";
+      if (st.checked) {
+        meta = `${n} citation${n === 1 ? "" : "s"}`;
+        if (st.issues) meta += ` · <span class="issues">${st.issues} to check</span>`;
+        if (st.escalated) meta += ` · ${st.escalated} re-read by Ultra`;
+      }
+      const classes = ["station", here && "here", st.escalated && "interchange", !st.checked && "unchecked", st.issues && "has-issues"].filter(Boolean).join(" ");
+      const stops = here ? `<div class="stops" role="group" aria-label="Citations in ${esc(st.title || "this section")}">${st.stops.map((x) => {
+        const label = x.status === "unchecked" ? "Not checked" : x.status === "pending" ? "Checking…" : LABELS[x.status].text;
+        const icon = x.status === "unchecked" ? "·" : x.status === "pending" ? "…" : LABELS[x.status].icon;
+        const isSel = sel && sel.sid === x.sid && sel.m === x.m;
+        const cls = ["stop", x.status === "unchecked" ? "unchecked" : `v-${x.status}`, isSel && "selected", x.dim && "dim"].filter(Boolean).join(" ");
+        return x.status === "unchecked"
+          ? `<span class="${cls}" title="${esc(x.marker)}: ${label}" aria-hidden="true">${icon}</span>`
+          : `<button type="button" class="${cls}" data-go-sid="${x.sid}" data-go-m="${x.m}" title="${esc(x.marker)}: ${esc(label)}" aria-label="Citation ${esc(x.marker)}: ${esc(label)}">${icon}</button>`;
+      }).join("")}</div>` : "";
+      return `<li class="${classes}">
+        <button type="button" class="station-btn" data-station="${i}"${here ? ` aria-current="location"` : ""}>
+          <span class="station-icon" aria-hidden="true"></span>
+          <span class="station-text"><span class="station-name">${esc(st.title || "Start of the paper")}</span>
+            <span class="station-meta">${meta}</span></span>
+        </button>${stops}</li>`;
+    }).join("")}</ol>`;
+  // Narrow layouts show the line as a horizontal strip: keep "you are here" in view without scrolling the page.
+  const here = $(".station.here", el);
+  if (here && el.scrollWidth > el.clientWidth) {
+    const left = here.offsetLeft - el.offsetLeft;
+    if (left < el.scrollLeft || left + here.offsetWidth > el.scrollLeft + el.clientWidth) el.scrollLeft = Math.max(0, left - 16);
+  }
+}
+
+function goToSection(title) {
+  if (title === undefined) return;
+  S.currentSection = title;
+  renderLine();
+  const heading = title ? $$("h2", $("#paper")).find((h) => h.textContent.trim() === title) : null;
+  const first = $$(".sent", $("#paper")).find((el) => (S.sentById.get(el.dataset.sid)?.section || "") === title);
+  const target = heading || first;
+  if (!target) return;
+  spySection.pausedUntil = Date.now() + 900; // let the smooth scroll land before the spy takes over
+  target.scrollIntoView({ block: "start", behavior: "smooth" });
+}
+
+// "You are here": the section of the last citing sentence that has scrolled past the header.
+function spySection() {
+  if (Date.now() < (spySection.pausedUntil || 0)) return;
+  const sents = $$(".sent", $("#paper"));
+  if (!sents.length) return;
+  const limit = (parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--topbar-h")) || 72) + 140;
+  let current = sents[0];
+  for (const el of sents) {
+    if (el.getBoundingClientRect().top > limit) break;
+    current = el;
+  }
+  const title = S.sentById.get(current.dataset.sid)?.section || "";
+  if (title !== S.currentSection) { S.currentSection = title; scheduleLine(); }
+}
+
 // ------------------------------------------------------------- detail panel
 
 function renderDetail() {
@@ -945,9 +1090,6 @@ function issueEntries() {
 }
 
 function renderOverview() {
-  const legend = SUMMARY_ORDER.concat(["pending"]).map((l) => `
-    <div class="legend-row"><span class="cite v-${l}">[1]</span>
-      <span>${l === "pending" ? "Being checked" : esc(LABELS[l].text)}</span></div>`).join("");
   const entries = issueEntries();
   const query = S.filter.query;
   let listTitle;
@@ -963,18 +1105,16 @@ function renderOverview() {
     const first = e.items.find((x) => x.verdict && x.verdict.label === e.status) || e.items[0];
     const what = first?.verdict?.attributed_claim || first?.claim?.claim_text || S.sentById.get(e.sid)?.text || "";
     return `<li><button type="button" data-go-sid="${e.sid}" data-go-m="${e.m}">
-      <span class="dot v-${e.status}" aria-hidden="true"></span>
+      <span class="glyph v-${e.status}" aria-hidden="true">${LABELS[e.status]?.icon || ""}</span>
       <span><strong>${esc(e.marker)}</strong> ${esc(LABELS[e.status]?.text || "")}${S.demo?.planted_by_sentence?.[e.sid] ? ` <span class="badge planted-badge">Planted</span>` : ""}<br>
       <span class="what">${esc(what.length > 150 ? `${what.slice(0, 150)}…` : what)}</span></span></button></li>`;
   }).join("");
   const running = !FINISHED.has(S.job.status);
   return `
-    <h2>How to read this report</h2>
-    <p class="muted">Each citation in the paper is coloured by what the cited work says about the claim attached to it.
-      Select a citation to see the claim and the evidence side by side.</p>
-    <div class="legend">${legend}</div>
-    <h3>${listTitle}</h3>
-    ${items ? `<ul class="issue-list">${items}</ul>` : `<p class="muted">${running ? "Results appear here as citations are checked." : query ? "No citations match." : "No citations were flagged."}</p>`}`;
+    <div class="board-head"><p class="board-kicker">${running ? "Arrivals so far" : "Overview"}</p></div>
+    <h2>${listTitle}</h2>
+    ${items ? `<ul class="issue-list">${items}</ul>` : `<p class="muted">${running ? "Results appear here as citations are checked." : query ? "No citations match." : "No citations were flagged."}</p>`}
+    <p class="muted board-hint">Select a citation in the paper, or a stop on the line map, to see the claim and the evidence side by side.</p>`;
 }
 
 function renderCitation(sid, m) {
@@ -987,11 +1127,13 @@ function renderCitation(sid, m) {
       <div>${esc(planted.description)}.</div>
       <details><summary>Original sentence</summary><p>${esc(planted.original)}</p></details>
     </div>` : "";
-  const head = `<button type="button" class="btn small close" data-close>← Overview</button>
+  const head = `<div class="board-head">
+      <p class="board-kicker">${s.section ? `Now at · ${esc(s.section)}` : "Citation"}</p>
+      <button type="button" class="btn small close" data-close>← All issues</button>
+    </div>
     <h2>Citation ${esc(S.text.slice(...s.marker_spans[m]))}</h2>
     ${plantedHtml}
-    <p class="sentence">${esc(s.text)}</p>
-    <p class="muted" style="font-size:12.5px;margin:0">${esc(s.section || "")}</p>`;
+    <p class="sentence">${esc(s.text)}</p>`;
   if (status === "unchecked") {
     return `${head}<div class="card"><p>This citation was not part of the quick check.</p>
       ${FINISHED.has(S.job.status) ? `<button class="btn small" type="button" data-expand>Check the rest of the paper</button>` : ""}</div>`;
