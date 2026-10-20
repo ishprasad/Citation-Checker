@@ -270,28 +270,19 @@ h1, h2, h3 { font-family: var(--display); }
 .status-dot.partial { background: var(--warn); }
 .status-dot.failed { background: var(--bad); }
 .progress-line .muted { color: var(--muted); }
-.stage-route {
-  list-style: none; margin: 4px 0 6px; padding: 6px 0 2px; position: relative;
-  display: grid; grid-template-columns: repeat(6, minmax(120px, 1fr)); gap: 8px; overflow-x: auto;
+/* One progress bar per stage. */
+.stages {
+  list-style: none; margin: 4px 0 8px; padding: 4px 0 0;
+  display: grid; grid-template-columns: repeat(6, minmax(120px, 1fr)); gap: 12px 20px;
 }
-.stage-route::before { content: ""; position: absolute; left: 12px; right: 12px; top: 18px; height: 6px; border-radius: 3px; background: var(--border); }
-.stage { position: relative; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
-.stage::before { content: ""; position: absolute; left: 0; right: -8px; top: 12px; height: 6px; background: transparent; }
-.stage.done::before, .stage.running::before { background: var(--line); }
-.stage:last-child::before { right: 0; }
-.stage-stop {
-  position: relative; width: 26px; height: 26px; border-radius: 50%; box-sizing: border-box;
-  background: var(--surface); border: 4px solid var(--border-strong);
-}
-.stage.done .stage-stop { background: var(--line); border-color: var(--ink); }
-.stage.running .stage-stop { border-color: var(--line); animation: pulse 1.4s ease-in-out infinite; }
-.stage.interchange .stage-stop { border-width: 3px; }
-.stage.done.interchange .stage-stop { background: var(--surface); box-shadow: inset 0 0 0 4px var(--surface), inset 0 0 0 10px var(--line); }
+.stage { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 .stage-name { font: 800 14px/1.25 var(--display); }
+.stage.pending .stage-name { color: var(--muted); }
 .stage-count { font: 13px/1.3 var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
-.bar { height: 4px; border-radius: 4px; background: var(--surface-2); overflow: hidden; max-width: 140px; }
-.bar > span { display: block; height: 100%; background: var(--line); width: 0; transition: width 0.3s; }
-.progress.compact .stage-route { display: none; }
+.bar { height: 8px; border-radius: 4px; background: var(--border); overflow: hidden; }
+.bar > span { display: block; height: 100%; border-radius: 4px; background: var(--line); width: 0; transition: width 0.3s; }
+.stage.running .bar > span { animation: pulse 1.4s ease-in-out infinite; }
+.progress.compact .stages { display: none; }
 @keyframes spin { to { transform: rotate(360deg); } }
 @keyframes pulse { 50% { opacity: 0.45; } }
 
@@ -558,14 +549,13 @@ h1, h2, h3 { font-family: var(--display); }
   .report { grid-template-columns: minmax(0, 1fr); }
   .detail { position: static; max-height: none; }
   .topbar { position: static; }
-  .stage-route { grid-template-columns: repeat(3, minmax(110px, 1fr)); }
-  .stage-route::before, .stage::before { display: none; }
+  .stages { grid-template-columns: repeat(3, minmax(110px, 1fr)); }
 }
 @media (max-width: 560px) {
   .start-body, .masthead, .topbar-row, .paper-head, .progress, .guide, .filterbar, .report, .start-footer { padding-left: 16px; padding-right: 16px; }
   .plan h1 { font-size: 32px; }
   .route-card { padding: 22px 18px; }
   .cost-panel { min-width: 0; width: calc(100vw - 32px); }
-  .stage-route { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stages { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .human-check { margin-left: -22px; margin-right: -22px; }
 }

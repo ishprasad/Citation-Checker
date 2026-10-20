@@ -726,13 +726,13 @@ function renderProgress() {
     if (p.stage === "parse") count = p.state === "done" ? "Done" : p.state === "running" ? "Working…" : "Waiting";
     else if (p.stage === "escalate" && p.state === "done" && !total) count = "None needed";
     else count = total || p.state !== "pending" ? `${p.done} / ${total}` : "Waiting";
-    const bar = p.state === "running" && total ? `<div class="bar"><span style="width:${(ratio * 100).toFixed(1)}%"></span></div>` : "";
+    const percent = Math.round(ratio * 100);
     return `
-      <li class="stage ${p.state}${model ? " interchange" : ""}" aria-label="${esc(name)}: ${esc(count)}">
-        <span class="stage-stop" aria-hidden="true"></span>
+      <li class="stage ${p.state}">
         <span class="stage-name">${esc(name)}</span>
+        <div class="bar" role="progressbar" aria-label="${esc(name)}" aria-valuemin="0" aria-valuemax="100"
+             aria-valuenow="${percent}" aria-valuetext="${esc(count)}"><span style="width:${percent}%"></span></div>
         <span class="stage-count">${esc(count)}${model ? ` · ${esc(model.replace("Nemotron ", ""))}` : ""}</span>
-        ${bar}
       </li>`;
   }).join("");
   const verdictCount = liveVerdicts().length;
@@ -753,7 +753,7 @@ function renderProgress() {
     line = `<div class="progress-line eta"><strong><span class="spinner" aria-hidden="true"></span>${job.status === "queued" ? "Waiting to start" : "Checking citations"}</strong>
       ${eta ? `<span class="muted">${esc(eta)}</span>` : ""}</div>`;
   }
-  el.innerHTML = `${line}<ol class="stage-route">${stages}</ol>`;
+  el.innerHTML = `${line}<ol class="stages">${stages}</ol>`;
 }
 
 function liveVerdicts() {
