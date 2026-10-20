@@ -15,6 +15,7 @@
   --line: #0067b8;         /* the line itself; also "supported" */
   --line-text: #005baa;
   --line-soft: rgba(0, 103, 184, 0.1);
+  --selected-bg: rgba(22, 163, 74, 0.16); /* the selected citing sentence: green, so it never reads as "supported" blue */
   --focus: #0067b8;
 
   --ok: #0067b8;
@@ -55,7 +56,7 @@
     color-scheme: dark;
     --bg: #101215; --surface: #171a1e; --surface-2: #1f2328; --text: #e8e9ea; --muted: #aab0b6; --faint: #9399a0;
     --border: #2c3137; --border-strong: #5a6068; --ink: #e8e9ea;
-    --line: #4da3ff; --line-text: #8cc4ff; --line-soft: rgba(77, 163, 255, 0.14); --focus: #4da3ff;
+    --line: #4da3ff; --line-text: #8cc4ff; --line-soft: rgba(77, 163, 255, 0.14); --selected-bg: rgba(74, 222, 128, 0.18); --focus: #4da3ff;
     --ok: #4da3ff; --ok-bg: rgba(77, 163, 255, 0.16); --warn: #f0954a; --warn-bg: rgba(240, 149, 74, 0.18);
     --bad: #ff7b7b; --bad-bg: rgba(255, 123, 123, 0.16); --nf: #b794f6; --nf-bg: rgba(183, 148, 246, 0.12);
     --unv: #9aa0a8; --unv-bg: rgba(154, 160, 168, 0.12); --pending: #7c8288;
@@ -68,7 +69,7 @@
   color-scheme: dark;
   --bg: #101215; --surface: #171a1e; --surface-2: #1f2328; --text: #e8e9ea; --muted: #aab0b6; --faint: #9399a0;
   --border: #2c3137; --border-strong: #5a6068; --ink: #e8e9ea;
-  --line: #4da3ff; --line-text: #8cc4ff; --line-soft: rgba(77, 163, 255, 0.14); --focus: #4da3ff;
+  --line: #4da3ff; --line-text: #8cc4ff; --line-soft: rgba(77, 163, 255, 0.14); --selected-bg: rgba(74, 222, 128, 0.18); --focus: #4da3ff;
   --ok: #4da3ff; --ok-bg: rgba(77, 163, 255, 0.16); --warn: #f0954a; --warn-bg: rgba(240, 149, 74, 0.18);
   --bad: #ff7b7b; --bad-bg: rgba(255, 123, 123, 0.16); --nf: #b794f6; --nf-bg: rgba(183, 148, 246, 0.12);
   --unv: #9aa0a8; --unv-bg: rgba(154, 160, 168, 0.12); --pending: #7c8288;
@@ -388,7 +389,7 @@ h1, h2, h3 { font-family: var(--display); }
 .paper p { margin: 0 0 16px; hyphens: auto; }
 .paper .nowrap { white-space: nowrap; }
 .paper .sent { border-radius: 3px; transition: background 0.2s; }
-.paper .sent.selected { background: var(--line-soft); box-shadow: 0 0 0 2px var(--line-soft); }
+.paper .sent.selected { background: var(--selected-bg); box-shadow: 0 0 0 2px var(--selected-bg); }
 .paper .empty { color: var(--muted); font: 15px var(--sans); }
 
 /* Citation markers: colour + underline style + glyph, so colour is never the only cue. */
