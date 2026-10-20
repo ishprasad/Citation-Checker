@@ -230,7 +230,7 @@ The UI is plain HTML, CSS and JavaScript, with no build step and no CDN. Run `uv
   - the verdict and confidence;
   - failure-mode chips with notes;
   - the cited paper's text with the supporting quote highlighted;
-  - an "Escalated to Nemotron Ultra" badge and a "Needs human check" banner where relevant.
+  - where relevant, the two steps of an escalated verdict (first check by Nemotron Super, second opinion by Nemotron Ultra) and a "Needs human check" banner.
 
   With nothing selected, the panel shows the list of citations that need a human check. The legend is in the "How to read this report" band above the report.
 - **Top bar and filters.** Verdict counts double as filters, next to a "Show only human-check issues" toggle. The top bar has a search box (over sentences, claims, reference titles and explanations) and "Go to next human-check issue" (or press `j`). Export gives Markdown or JSON. A cost panel shows tokens and estimated cost per model, plus how many verdicts needed the large model.
