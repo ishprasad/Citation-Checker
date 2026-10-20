@@ -1250,7 +1250,7 @@ function renderCitation(sid, m) {
     </div>` : "";
   const head = `<div class="board-head">
       <p class="board-kicker">${s.section ? `Now at · ${esc(s.section)}` : "Citation"}</p>
-      <button type="button" class="btn small close" data-close>← All issues</button>
+      <button type="button" class="btn small close" data-close>← List of human-check issues</button>
     </div>
     <h2>Citation ${esc(S.selected?.key ? workLabel(S.selected.key) : S.text.slice(...s.marker_spans[m]))}</h2>
     ${plantedHtml}
@@ -1333,7 +1333,7 @@ function renderClaimSection({ claim, key, verdict }, ref, index, total) {
           <div class="verdict-line">${renderPill(verdict.label, verdict.confidence)}</div></li>
       </ol>`
     : `<div class="verdict-line">${renderPill(verdict.label, verdict.confidence)}</div>`;
-  // Same rule as "Next issue", the "Needs human check" list and the exported report.
+  // Same rule as "Go to next human-check issue", the "Needs human check" list and the exported report.
   const needsCheck = ISSUES.has(verdict.label)
     ? `<div class="human-check ${["contradicted", "not_found"].includes(verdict.label) ? "bad" : ""}">Needs human check</div>` : "";
   const modes = verdict.failure_modes || [];

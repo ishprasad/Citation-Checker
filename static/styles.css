@@ -438,7 +438,8 @@ h1, h2, h3 { font-family: var(--display); }
 .detail h2 { margin: 0 0 10px; font: 800 20px/1.25 var(--display); }
 .detail h3 { margin: 18px 0 8px; font: 800 12.5px var(--display); text-transform: uppercase; letter-spacing: 0.1em; color: var(--board-muted); }
 .detail .muted { color: var(--board-muted); }
-.board-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
+.board-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 10px; margin-bottom: 8px; }
+.board-head .close { white-space: nowrap; }
 .board-kicker { margin: 0; font: 600 12px var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--board-muted); }
 .detail .btn { background: transparent; color: var(--board-text); border-color: #5a6068; }
 .detail .btn:hover { background: rgba(255, 255, 255, 0.08); }
