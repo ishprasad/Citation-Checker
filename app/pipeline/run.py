@@ -231,21 +231,25 @@ class JobRunner:
         if paper is None:
             raise FileNotFoundError("demo paper missing")
         job = Job(id=uuid.uuid4().hex[:12], mode="full", source="demo", arxiv_id=paper.paper.arxiv_id,
-                  paper_id=paper.paper.id, title=paper.paper.title)
+                  paper_id=paper.paper.id, title=paper.paper.title, pipeline_version=PIPELINE_VERSION)
         self.store.save_job(job)
         if start:
             self.start(job.id)
         return job
 
-    def latest_demo_job(self) -> Optional[Job]:
-        """The newest finished check of the current demo paper, if any (reused instantly)."""
+    def latest_demo_job(self, any_version: bool = False) -> Optional[Job]:
+        """The newest finished check of the current demo paper, if any (reused instantly).
+
+        Only checks made by the current pipeline count, so a pipeline change shows up in the demo.
+        `any_version` lifts that when nothing can be re-run (no API key)."""
         paper = demo.load_demo_paper()
         if paper is None:
             return None
         candidates = [
             Job.model_validate_json(d) for d in self.store.db.jobs_with_status(("done",))
         ]
-        candidates = [j for j in candidates if j.source == "demo" and j.paper_id == paper.paper.id]
+        candidates = [j for j in candidates if j.source == "demo" and j.paper_id == paper.paper.id
+                      and (any_version or j.pipeline_version == PIPELINE_VERSION)]
         return max(candidates, key=lambda j: j.created_at, default=None)
 
     def export_snapshot(self, job_id: str, path=None) -> None:

@@ -364,11 +364,13 @@ async def start_demo(fresh: bool = False):
     if not demo.demo_available():
         return _error(501, "The demo paper has not been generated yet (run scripts/plant_errors.py).")
     runner = get_runner()
+    has_key = bool(get_settings().nebius_api_key)
     if not fresh:
-        existing = runner.latest_demo_job()
+        # Without an API key nothing can be re-run, so a check from an older pipeline is still shown.
+        existing = runner.latest_demo_job(any_version=not has_key)
         if existing is not None:
             return {"id": existing.id, "job": _job_view(existing)}
-    if not get_settings().nebius_api_key:
+    if not has_key:
         if not demo.SNAPSHOT_PATH.exists():
             return _error(503, "No model API key is configured and there is no recorded demo to show.")
         job = runner.import_snapshot()

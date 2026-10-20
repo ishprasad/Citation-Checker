@@ -378,6 +378,25 @@ def test_api_demo_runs_scores_and_reuses(client, demo_files, monkeypatch):
     assert len(snap["verdicts"]) == len(report["verdicts"]) and snap["demo"]["eval"] is not None
 
 
+def test_api_demo_reuses_only_the_current_pipeline(client, demo_files, monkeypatch):
+    c, _ = client
+    old = c.post("/api/demo").json()["id"]
+    assert _wait_done(c, old)["pipeline_version"] == run_mod.PIPELINE_VERSION
+
+    # After a pipeline change, the demo runs again instead of showing the older check.
+    monkeypatch.setattr(run_mod, "PIPELINE_VERSION", run_mod.PIPELINE_VERSION + 1)
+    new = c.post("/api/demo").json()["id"]
+    assert new != old
+    _wait_done(c, new)
+    assert c.post("/api/demo").json()["id"] == new
+
+    # Without an API key nothing can run, so the newest finished check is shown whatever its version.
+    monkeypatch.setattr(run_mod, "PIPELINE_VERSION", run_mod.PIPELINE_VERSION + 1)
+    import app.main as main_mod
+    monkeypatch.setattr(main_mod, "get_settings", lambda: replace(get_settings(), nebius_api_key=""))
+    assert c.post("/api/demo").json()["id"] == new
+
+
 def test_api_demo_unavailable(client, monkeypatch, tmp_path):
     import app.demo as demo_mod
 
