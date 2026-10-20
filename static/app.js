@@ -382,13 +382,13 @@ function initJobView() {
   $("#paper").addEventListener("click", (e) => {
     const btn = e.target.closest(".cite");
     if (!btn) return;
-    select(btn.dataset.sid, Number(btn.dataset.m), false, clickedKey(btn, e));
+    select(btn.dataset.sid, Number(btn.dataset.m), false, btn.dataset.key || null);
   });
   $("#paper").addEventListener("keydown", (e) => {
     const btn = e.target.closest(".cite");
     if (!btn || (e.key !== "Enter" && e.key !== " ")) return;
     e.preventDefault();
-    select(btn.dataset.sid, Number(btn.dataset.m));
+    select(btn.dataset.sid, Number(btn.dataset.m), false, btn.dataset.key || null);
   });
   $("#detail").addEventListener("click", (e) => {
     const go = e.target.closest("[data-go-sid]");
@@ -841,9 +841,7 @@ function renderPaper() {
         // Long author-year markers must stay free to wrap.
         const punct = b - a <= 24 ? text.slice(b, Math.min(s.end, b + 2)).match(/^[.,;:)\]]+/) : null;
         const tail = punct ? punct[0] : "";
-        // An inline span, not a <button>: buttons never break across lines, so a long
-        // author-year marker would jump to a line of its own.
-        const button = `<span role="button" tabindex="0" class="cite" data-sid="${s.id}" data-m="${m}">${esc(text.slice(a, b))}</span>`;
+        const button = renderMarker(s, m, text.slice(a, b));
         out += tail ? `<span class="nowrap">${button}${esc(tail)}</span>` : button;
         q = b + tail.length;
       });
@@ -856,6 +854,76 @@ function renderPaper() {
   $("#paper").innerHTML = html.join("");
   updateMarkers();
   if (S.selected) markSelected();
+}
+
+// Splits a marker that cites several works into one part per work, when its text allows it:
+// "(A, 2018; B, 2019)" and "[3, 4]" split; "[3–5]" does not. Offsets are within the marker text.
+function markerParts(mtext, keys) {
+  if (!keys || keys.length < 2) return null;
+  const open = mtext.match(/^[\s([]*/)[0];
+  const close = mtext.slice(open.length).match(/[\s)\]]*$/)[0];
+  const inner = mtext.slice(open.length, mtext.length - close.length);
+  const sep = inner.includes(";") ? ";" : /^[\d\s,]+$/.test(inner) ? "," : null;
+  const raw = sep ? inner.split(sep) : [];
+  if (raw.length !== keys.length || raw.some((p) => !p.trim())) return null;
+  const parts = [];
+  let pos = open.length;
+  raw.forEach((p, i) => {
+    const lead = p.length - p.trimStart().length;
+    parts.push({ start: pos + lead, end: pos + lead + p.trim().length, key: keys[i] });
+    pos += p.length + sep.length;
+  });
+  return parts;
+}
+
+const markerKeys = (s, m) => (s.marker_keys && s.marker_keys[m]) || s.reference_keys || [];
+
+// Inline spans, not <button>s: buttons never break across lines, so a long author-year
+// marker would jump to a line of its own. A multi-work marker becomes one span per work.
+function renderMarker(s, m, mtext) {
+  const attrs = `role="button" tabindex="0" data-sid="${s.id}" data-m="${m}"`;
+  const parts = markerParts(mtext, markerKeys(s, m));
+  if (!parts) return `<span class="cite" ${attrs}>${esc(mtext)}</span>`;
+  let out = "";
+  let q = 0;
+  for (const p of parts) {
+    out += `${esc(mtext.slice(q, p.start))}<span class="cite" ${attrs} data-key="${esc(p.key)}">${esc(mtext.slice(p.start, p.end))}</span>`;
+    q = p.end;
+  }
+  return out + esc(mtext.slice(q));
+}
+
+// Status and items for one annotation in the paper: a single cited work, or a whole marker
+// whose text could not be split by work.
+function citeState(el) {
+  const sid = el.dataset.sid;
+  const m = Number(el.dataset.m);
+  const marker = markerItems(sid, m);
+  const key = el.dataset.key;
+  if (!key) return marker;
+  const stop = citationStops(sid, m).find((x) => x.key === key);
+  return { status: stop ? stop.status : marker.status, items: marker.items.filter((x) => x.key === key) };
+}
+
+// Each marker once, in reading order (a split marker has several .cite spans).
+function markerList() {
+  const seen = new Set();
+  const out = [];
+  for (const el of $$(".cite", $("#paper"))) {
+    const id = `${el.dataset.sid}|${el.dataset.m}`;
+    if (seen.has(id)) continue;
+    seen.add(id);
+    const s = S.sentById.get(el.dataset.sid);
+    const m = Number(el.dataset.m);
+    out.push({ sid: el.dataset.sid, m, text: s ? S.text.slice(...s.marker_spans[m]) : el.textContent });
+  }
+  return out;
+}
+
+// The paper annotation for a selection: the work's own span, or its unsplit marker.
+function citeEl(sid, m, key) {
+  const els = $$(`.cite[data-sid="${sid}"][data-m="${m}"]`, $("#paper"));
+  return els.find((el) => el.dataset.key === key) || els.find((el) => !el.dataset.key) || els[0] || null;
 }
 
 // --------------------------------------------------------------- marker state
@@ -888,7 +956,7 @@ function markerItems(sid, m) {
 function updateMarkers(sid) {
   const sel = sid ? `.cite[data-sid="${sid}"]` : ".cite";
   for (const btn of $$(sel, $("#paper"))) {
-    const { status } = markerItems(btn.dataset.sid, Number(btn.dataset.m));
+    const { status } = citeState(btn);
     btn.className = `cite ${status === "unchecked" ? "unchecked" : `v-${status}`}`;
     btn.dataset.status = status;
     const label = status === "unchecked" ? "Not checked in this quick check" : status === "pending" ? "Checking…" : LABELS[status].text;
@@ -921,9 +989,8 @@ function applyFilter(sid) {
   const sel = sid ? `.cite[data-sid="${sid}"]` : ".cite";
   const active = S.filter.labels.size || S.filter.issuesOnly || S.filter.query;
   for (const btn of $$(sel, $("#paper"))) {
-    const m = Number(btn.dataset.m);
-    const { status, items } = markerItems(btn.dataset.sid, m);
-    btn.classList.toggle("dim", !!active && !matchesFilter(btn.dataset.sid, m, status, items));
+    const { status, items } = citeState(btn);
+    btn.classList.toggle("dim", !!active && !matchesFilter(btn.dataset.sid, Number(btn.dataset.m), status, items));
   }
   scheduleLine();
 }
@@ -931,8 +998,8 @@ function applyFilter(sid) {
 function markSelected() {
   $$(".cite.selected, .sent.selected", $("#paper")).forEach((el) => el.classList.remove("selected"));
   if (!S.selected) return;
-  const { sid, m } = S.selected;
-  $(`.cite[data-sid="${sid}"][data-m="${m}"]`, $("#paper"))?.classList.add("selected");
+  const { sid, m, key } = S.selected;
+  citeEl(sid, m, key)?.classList.add("selected");
   $(`.sent[data-sid="${sid}"]`, $("#paper"))?.classList.add("selected");
 }
 
@@ -947,7 +1014,7 @@ function select(sid, m, scroll = false, key = null) {
   scheduleLine();
   renderDetail();
   if (sid && scroll) {
-    $(`.cite[data-sid="${sid}"][data-m="${m}"]`, $("#paper"))?.scrollIntoView({ block: "center", behavior: "smooth" });
+    citeEl(sid, m, key)?.scrollIntoView({ block: "center", behavior: "smooth" });
   }
   if (sid) {
     $("#detail").scrollTop = 0;
@@ -965,41 +1032,13 @@ function defaultKey(sid, m) {
   return citationStops(sid, m).slice().sort((a, b) => rank(a.status) - rank(b.status))[0]?.key ?? null;
 }
 
-// Which cited work inside a multi-work marker was clicked: "(A, 2019; B, 2020)" or "[3, 4]" split
-// into as many parts as the marker has works. Keyboard activation or ranges like "[3–5]" fall back.
-function clickedKey(btn, e) {
-  const s = S.sentById.get(btn.dataset.sid);
-  const keys = (s?.marker_keys && s.marker_keys[Number(btn.dataset.m)]) || s?.reference_keys || [];
-  if (keys.length < 2 || !e || !e.detail) return null;
-  const text = btn.textContent;
-  const sep = text.includes(";") ? ";" : /^[\s[(]*\d[\d\s,]*[\])]?\s*$/.test(text) ? "," : null;
-  const parts = sep ? text.split(sep) : [];
-  if (parts.length !== keys.length) return null;
-  let offset = null;
-  if (document.caretPositionFromPoint) {
-    const p = document.caretPositionFromPoint(e.clientX, e.clientY);
-    if (p && btn.contains(p.offsetNode)) offset = p.offset;
-  } else if (document.caretRangeFromPoint) {
-    const r = document.caretRangeFromPoint(e.clientX, e.clientY);
-    if (r && btn.contains(r.startContainer)) offset = r.startOffset;
-  }
-  if (offset === null) return null;
-  let end = 0;
-  for (let i = 0; i < parts.length; i++) {
-    end += parts[i].length + 1;
-    if (offset < end) return keys[i];
-  }
-  return keys[keys.length - 1];
-}
-
 // Steps through flagged cited works one at a time, in reading order.
 function nextIssue() {
   const list = issueEntries().filter((e) => ISSUES.has(e.status) && matchesFilter(e.sid, e.m, e.status, e.items));
   if (!list.length) { toast("No citations need a human check so far."); return; }
   let next = list[0];
   if (S.selected) {
-    const all = $$(".cite", $("#paper"));
-    const ci = all.findIndex((b) => b.dataset.sid === S.selected.sid && Number(b.dataset.m) === S.selected.m);
+    const ci = markerList().findIndex((x) => x.sid === S.selected.sid && x.m === S.selected.m);
     const cj = citationStops(S.selected.sid, S.selected.m).findIndex((x) => x.key === S.selected.key);
     next = list.find((e) => e.i > ci || (e.i === ci && e.j > cj)) || list[0];
   }
@@ -1028,7 +1067,10 @@ function citationStops(sid, m) {
   if (status === "unchecked") {
     return ((s?.marker_keys && s.marker_keys[m]) || s?.reference_keys || []).map((key) => ({ key, status: "unchecked", escalated: false }));
   }
-  const keys = [...new Set(items.map((x) => x.key))];
+  // In the marker's own order, so stops line up with the annotations in the paper.
+  const present = new Set(items.map((x) => x.key));
+  const ordered = markerKeys(s, m).filter((k) => present.has(k));
+  const keys = [...ordered, ...[...present].filter((k) => !ordered.includes(k))];
   return keys.map((key) => {
     const own = items.filter((x) => x.key === key);
     const labels = own.filter((x) => x.verdict).map((x) => x.verdict.label);
@@ -1042,13 +1084,12 @@ function citationStops(sid, m) {
 // sentence is a row and each cited work a stop.
 function renderLine() {
   const el = $("#line-map");
-  const buttons = $$(".cite", $("#paper"));
-  if (!buttons.length) { el.innerHTML = ""; S.lineStations = []; return; }
-  const f = S.filter;
+  const markers = markerList();
+  if (!markers.length) { el.innerHTML = ""; S.lineStations = []; return; }
+  const active = S.filter.labels.size || S.filter.issuesOnly || S.filter.query;
   const stations = [];
   const byTitle = new Map();
-  for (const btn of buttons) {
-    const sid = btn.dataset.sid;
+  for (const { sid, m, text } of markers) {
     const title = S.sentById.get(sid)?.section || "";
     let st = byTitle.get(title);
     if (!st) {
@@ -1058,11 +1099,10 @@ function renderLine() {
     }
     let row = st.rows[st.rows.length - 1];
     if (!row || row.sid !== sid) { row = { sid, stops: [] }; st.rows.push(row); }
-    const m = Number(btn.dataset.m);
-    const markerDim = btn.classList.contains("dim");
+    const { items } = markerItems(sid, m);
     for (const stop of citationStops(sid, m)) {
-      const dim = markerDim || (f.labels.size > 0 && !f.labels.has(stop.status)) || (f.issuesOnly && !ISSUES.has(stop.status));
-      row.stops.push({ ...stop, sid, m, marker: btn.textContent, dim: stop.status !== "unchecked" && dim });
+      const dim = !!active && stop.status !== "unchecked" && !matchesFilter(sid, m, stop.status, items.filter((x) => x.key === stop.key));
+      row.stops.push({ ...stop, sid, m, marker: text, dim });
       st.citations += 1;
       if (stop.status !== "unchecked") st.checked += 1;
       if (ISSUES.has(stop.status)) st.issues += 1;
@@ -1157,14 +1197,12 @@ function renderDetail() {
 // One entry per judged cited work, in reading order (i: marker, j: work within the marker).
 function issueEntries() {
   const entries = [];
-  $$(".cite", $("#paper")).forEach((btn, i) => {
-    const sid = btn.dataset.sid;
-    const m = Number(btn.dataset.m);
+  markerList().forEach(({ sid, m, text }, i) => {
     const { status, items } = markerItems(sid, m);
     if (status === "unchecked") return;
     citationStops(sid, m).forEach((stop, j) => {
       if (!LABELS[stop.status]) return; // still being checked
-      entries.push({ sid, m, i, j, key: stop.key, status: stop.status, items: items.filter((x) => x.key === stop.key), marker: btn.textContent });
+      entries.push({ sid, m, i, j, key: stop.key, status: stop.status, items: items.filter((x) => x.key === stop.key), marker: text });
     });
   });
   return entries;
@@ -1214,7 +1252,7 @@ function renderCitation(sid, m) {
       <p class="board-kicker">${s.section ? `Now at · ${esc(s.section)}` : "Citation"}</p>
       <button type="button" class="btn small close" data-close>← All issues</button>
     </div>
-    <h2>Citation ${esc(S.text.slice(...s.marker_spans[m]))}</h2>
+    <h2>Citation ${esc(S.selected?.key ? workLabel(S.selected.key) : S.text.slice(...s.marker_spans[m]))}</h2>
     ${plantedHtml}
     <p class="sentence">${esc(s.text)}</p>`;
   if (status === "unchecked") {
@@ -1234,7 +1272,9 @@ function renderCitation(sid, m) {
   const key = S.selected?.key;
   const shown = key && groups.has(key) ? [[key, groups.get(key)]] : Array.from(groups);
   const works = citationStops(sid, m);
-  const switcher = works.length > 1 ? `
+  // Split markers are separate annotations in the paper; only an unsplit one ("[3–5]") needs a switcher.
+  const split = !!markerParts(S.text.slice(...s.marker_spans[m]), markerKeys(s, m));
+  const switcher = works.length > 1 && !split ? `
     <div class="work-switch" role="group" aria-label="Works cited by this marker">
       <span class="work-switch-label">This marker cites ${works.length} works</span>
       ${works.map((w) => {
