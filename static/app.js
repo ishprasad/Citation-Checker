@@ -384,6 +384,12 @@ function initJobView() {
     if (!btn) return;
     select(btn.dataset.sid, Number(btn.dataset.m));
   });
+  $("#paper").addEventListener("keydown", (e) => {
+    const btn = e.target.closest(".cite");
+    if (!btn || (e.key !== "Enter" && e.key !== " ")) return;
+    e.preventDefault();
+    select(btn.dataset.sid, Number(btn.dataset.m));
+  });
   $("#detail").addEventListener("click", (e) => {
     const go = e.target.closest("[data-go-sid]");
     if (go) { select(go.dataset.goSid, Number(go.dataset.goM), true); return; }
@@ -833,7 +839,9 @@ function renderPaper() {
         // Long author-year markers must stay free to wrap.
         const punct = b - a <= 24 ? text.slice(b, Math.min(s.end, b + 2)).match(/^[.,;:)\]]+/) : null;
         const tail = punct ? punct[0] : "";
-        const button = `<button type="button" class="cite" data-sid="${s.id}" data-m="${m}">${esc(text.slice(a, b))}</button>`;
+        // An inline span, not a <button>: buttons never break across lines, so a long
+        // author-year marker would jump to a line of its own.
+        const button = `<span role="button" tabindex="0" class="cite" data-sid="${s.id}" data-m="${m}">${esc(text.slice(a, b))}</span>`;
         out += tail ? `<span class="nowrap">${button}${esc(tail)}</span>` : button;
         q = b + tail.length;
       });

@@ -398,6 +398,7 @@ h1, h2, h3 { font-family: var(--display); }
   border-radius: 3px; cursor: pointer; text-decoration-line: underline; text-decoration-thickness: 2px;
   text-underline-offset: 4px; text-decoration-color: var(--pending); text-decoration-style: dotted;
   transition: background 0.15s, opacity 0.2s;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone; /* each wrapped line keeps its padding and outline */
 }
 .cite::after { font: 800 0.7em var(--sans); vertical-align: super; margin-left: 2px; }
 .cite:hover { filter: brightness(0.96); }
