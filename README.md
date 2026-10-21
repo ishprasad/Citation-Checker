@@ -31,12 +31,13 @@ Or without Compose: `docker build -t citation-checker .` and `docker run --env-f
 
 1. Sign up at [render.com](https://render.com) with your GitHub account.
 2. In the dashboard choose **New → Blueprint**, select this repository, and confirm.
-3. Render asks for three secrets, which are never stored in the repository:
+3. Render asks for four secrets, which are never stored in the repository:
    - `NEBIUS_API_KEY`;
    - `CONTACT_EMAIL`, the address used for the polite API pools;
-   - `JUDGE_MODE_PASSWORD`, which full checks, "Check the rest" and new demo runs then require.
+   - `JUDGE_MODE_PASSWORD`, which full checks, "Check the rest" and new demo runs then require;
+   - `OPENALEX_API_KEY`, a free key from openalex.org that raises the daily budget for reference look-ups.
 
-   Optionally add `OPENALEX_API_KEY` afterwards under the service's **Environment**.
+   Render asks for these only when the Blueprint is first created. To add or change one later, use the service's **Environment** tab.
 4. When the first build finishes (several minutes), the app is at `https://citation-checker-<id>.onrender.com`. Every push to the connected branch redeploys it.
 5. Open `/api/health` on that address. `your_address` should be your own public IP address. On Render, requests pass through Cloudflare, Render's load balancer and one internal hop, so `render.yaml` sets `TRUSTED_PROXY_HOPS=3`. If `your_address` shows a Cloudflare address (`172.64.x.x`–`172.71.x.x`) or an internal one, raise it by one under **Environment**. If a request sent with `curl -H "X-Forwarded-For: 1.2.3.4"` reports `1.2.3.4`, lower it by one.
 

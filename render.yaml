@@ -19,6 +19,8 @@ services:
         sync: false
       - key: JUDGE_MODE_PASSWORD
         sync: false
+      - key: OPENALEX_API_KEY     # free key from openalex.org; raises the daily metadata budget
+        sync: false
       # Models (Nebius Token Factory model IDs).
       - key: MODEL_EXTRACT
         value: nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B
