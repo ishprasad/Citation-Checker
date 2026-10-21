@@ -233,7 +233,7 @@ The UI is plain HTML, CSS and JavaScript, with no build step and no CDN. Run `uv
   - where relevant, the two steps of an escalated verdict (first check by Nemotron Super, second opinion by Nemotron Ultra) and a "Needs human check" banner.
 
   With nothing selected, the panel shows the list of citations that need a human check. The legend is in the "How to read this report" band above the report.
-- **Top bar and filters.** Verdict counts double as filters, next to a "Show only human-check issues" toggle. The top bar has a search box (over sentences, claims, reference titles and explanations) and "Go to next human-check issue" (or press `j`). Export gives Markdown or JSON. A cost panel shows tokens and estimated cost per model, plus how many verdicts needed the large model.
+- **Top bar and filters.** Verdict counts double as filters, next to a "Show only issues" toggle. The top bar has a search box (over sentences, claims, reference titles and explanations) and "Go to next issue" (or press `j`). Export gives Markdown or JSON. A cost panel shows tokens and estimated cost per model, plus how many verdicts needed the large model.
 - **Layout.** Light and dark themes follow `prefers-color-scheme`. The layout is three-column on wide screens, two-column below 1240px and single-column below 900px. The URL (`#/job/<id>`) reopens a report after a reload.
 
 ## Demo paper and evaluation (`app/demo.py`, `scripts/plant_errors.py`, `scripts/evaluate.py`)
