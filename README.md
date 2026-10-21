@@ -1,15 +1,3 @@
----
-title: Citation Checker
-emoji: 📚
-colorFrom: blue
-colorTo: green
-sdk: docker
-app_port: 8000
-pinned: false
-license: mit
-short_description: Does each cited paper say what the citing paper claims?
----
-
 # Citation Checker
 
 For every citation in a research paper, Citation Checker asks one question: does the cited source actually say what the citing author claims it says? It runs on NVIDIA Nemotron models served through Nebius Token Factory.
@@ -39,27 +27,25 @@ docker compose --profile grobid up        # also start GROBID; then set GROBID_U
 
 Or without Compose: `docker build -t citation-checker .` and `docker run --env-file .env -p 8000:8000 -v citation-cache:/app/.cache citation-checker`. Run a single container (one worker): jobs, rate limits and live progress live in the process, and finished work in SQLite under `.cache/`.
 
-**Free hosting on Hugging Face Spaces.** The block at the top of this file configures a Docker Space: it builds the `Dockerfile` and serves the app on port 8000.
+**Free hosting on Render.** `render.yaml` describes the app as one free Docker web service, with the settings and limits a public site needs.
 
-1. Create a Space with the Docker SDK at huggingface.co/new-space.
-2. Push this repository to it:
-   ```bash
-   git remote add space https://huggingface.co/spaces/<user>/<space>
-   git push space main
-   ```
-   For the password, use a Hugging Face access token with write permission.
-3. In the Space's *Settings → Variables and secrets*, add these as **secrets**:
+1. Sign up at [render.com](https://render.com) with your GitHub account.
+2. In the dashboard choose **New → Blueprint**, select this repository, and confirm.
+3. Render asks for three secrets, which are never stored in the repository:
    - `NEBIUS_API_KEY`;
-   - the model IDs from your `.env` (`MODEL_EXTRACT`, `MODEL_JUDGE`, `MODEL_ESCALATE`, `MODEL_EMBED`);
-   - `CONTACT_EMAIL`, and optionally `OPENALEX_API_KEY`;
-   - `JUDGE_MODE_PASSWORD`.
+   - `CONTACT_EMAIL`, the address used for the polite API pools;
+   - `JUDGE_MODE_PASSWORD`, which full checks, "Check the rest" and new demo runs then require.
 
-   Add these as **variables**:
-   - `TRUST_PROXY_HEADERS=true`;
-   - `MAX_TOKENS_PER_JOB=5000000`.
-4. Once the Space is running, open `https://<user>-<space>.hf.space/api/health`. `your_address` should be your own public IP address. If it shows an internal address instead (for example `10.x.x.x`), raise `TRUSTED_PROXY_HOPS` by one and check again. Until then, all visitors share one rate-limit allowance.
+   Optionally add `OPENALEX_API_KEY` afterwards under the service's **Environment**.
+4. When the first build finishes (several minutes), the app is at `https://citation-checker-<id>.onrender.com`. Every push to the connected branch redeploys it.
+5. Open `/api/health` on that address. `your_address` should be your own public IP address. If it shows an internal address instead, set `TRUSTED_PROXY_HOPS` to `2` under **Environment** and check again. Until then, all visitors share one rate-limit allowance.
 
-On the free hardware the Space sleeps when unused and its disk is reset on restart, so finished checks and the cache are not kept. The demo button always shows the bundled recording, so it costs nothing and opens instantly even after a restart. Checks of other papers run on your Token Factory key, within the limits above: full checks, "Check the rest" and a new demo run need the passcode, and new checks are limited per visitor.
+What the free plan means for this app:
+
+- **Small instance (0.1 CPU, 512 MB).** Checks run more slowly than on a laptop, since parsing the cited papers is CPU work. One check runs at a time (`MAX_CONCURRENT_JOBS=1`) to stay within memory.
+- **It sleeps after 15 minutes without visitors.** The next visit wakes it in about a minute.
+- **The disk is not persistent.** Finished checks and the cache are lost when it sleeps or redeploys. The demo button always shows the bundled recording, so it stays instant and free.
+- **Model calls are billed to your Token Factory key.** A check is capped at 5M tokens, new checks are limited to 5 per visitor per hour, and paid full checks need the passcode.
 
 **Developer scripts.**
 

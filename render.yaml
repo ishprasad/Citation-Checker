@@ -1,0 +1,56 @@
+# Render Blueprint: the app as one free Docker web service (render.com/docs/blueprint-spec).
+# Create it with New → Blueprint in the Render dashboard; Render asks for the sync: false values.
+# Free instances: 0.1 CPU and 512 MB, sleep after 15 minutes idle, no persistent disk.
+services:
+  - type: web
+    name: citation-checker
+    runtime: docker
+    plan: free
+    region: singapore           # cannot be changed after creation
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    autoDeployTrigger: commit   # redeploy on every push to the connected branch
+    envVars:
+      # Secrets: asked for once, when the Blueprint is created; never stored in this file.
+      - key: NEBIUS_API_KEY
+        sync: false
+      - key: CONTACT_EMAIL
+        sync: false
+      - key: JUDGE_MODE_PASSWORD
+        sync: false
+      # Models (Nebius Token Factory model IDs).
+      - key: MODEL_EXTRACT
+        value: nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B
+      - key: MODEL_JUDGE
+        value: nvidia/nemotron-3-super-120b-a12b
+      - key: MODEL_ESCALATE
+        value: nvidia/Nemotron-3-Ultra-550b-a55b
+      - key: MODEL_EMBED
+        value: Qwen/Qwen3-Embedding-8B
+      # Prices per million tokens, for the cost panel.
+      - key: PRICE_EXTRACT_IN
+        value: "0.06"
+      - key: PRICE_EXTRACT_OUT
+        value: "0.24"
+      - key: PRICE_JUDGE_IN
+        value: "0.3"
+      - key: PRICE_JUDGE_OUT
+        value: "0.9"
+      - key: PRICE_ESCALATE_IN
+        value: "1"
+      - key: PRICE_ESCALATE_OUT
+        value: "3"
+      - key: PRICE_EMBED_IN
+        value: "0.01"
+      # Limits for a public site.
+      - key: TRUST_PROXY_HEADERS
+        value: "true"
+      - key: TRUSTED_PROXY_HOPS   # check /api/health after deploying (see README)
+        value: "1"
+      - key: MAX_TOKENS_PER_JOB   # caps the cost of any one check
+        value: "5000000"
+      - key: MAX_CONCURRENT_JOBS  # one check at a time fits in 512 MB
+        value: "1"
+      - key: MAX_JOBS_PER_IP_PER_HOUR
+        value: "5"
