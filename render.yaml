@@ -46,8 +46,8 @@ services:
       # Limits for a public site.
       - key: TRUST_PROXY_HEADERS
         value: "true"
-      - key: TRUSTED_PROXY_HOPS   # check /api/health after deploying (see README)
-        value: "1"
+      - key: TRUSTED_PROXY_HOPS   # Cloudflare, Render's load balancer, one internal hop; check /api/health
+        value: "3"
       - key: MAX_TOKENS_PER_JOB   # caps the cost of any one check
         value: "5000000"
       - key: MAX_CONCURRENT_JOBS  # one check at a time fits in 512 MB

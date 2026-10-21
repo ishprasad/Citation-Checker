@@ -38,7 +38,7 @@ Or without Compose: `docker build -t citation-checker .` and `docker run --env-f
 
    Optionally add `OPENALEX_API_KEY` afterwards under the service's **Environment**.
 4. When the first build finishes (several minutes), the app is at `https://citation-checker-<id>.onrender.com`. Every push to the connected branch redeploys it.
-5. Open `/api/health` on that address. `your_address` should be your own public IP address. If it shows an internal address instead, set `TRUSTED_PROXY_HOPS` to `2` under **Environment** and check again. Until then, all visitors share one rate-limit allowance.
+5. Open `/api/health` on that address. `your_address` should be your own public IP address. On Render, requests pass through Cloudflare, Render's load balancer and one internal hop, so `render.yaml` sets `TRUSTED_PROXY_HOPS=3`. If `your_address` shows a Cloudflare address (`172.64.x.x`–`172.71.x.x`) or an internal one, raise it by one under **Environment**. If a request sent with `curl -H "X-Forwarded-For: 1.2.3.4"` reports `1.2.3.4`, lower it by one.
 
 What the free plan means for this app:
 
