@@ -46,12 +46,15 @@ class RateLimiter:
 
 
 def client_ip(request: Request, settings: Settings) -> str:
-    """The caller's IP. Proxy headers are trusted only when configured (TRUST_PROXY_HEADERS)."""
+    """The caller's IP. Proxy headers are trusted only when configured (TRUST_PROXY_HEADERS).
+
+    Each proxy appends the address it received the request from, so the client's address is the
+    entry added by the outermost trusted proxy: TRUSTED_PROXY_HOPS entries from the end. Entries
+    further left come from the client itself and could be forged to dodge the rate limits."""
     if settings.trust_proxy_headers:
-        forwarded = request.headers.get("x-forwarded-for", "")
-        first = forwarded.split(",", 1)[0].strip()
-        if first:
-            return first
+        entries = [e.strip() for e in request.headers.get("x-forwarded-for", "").split(",") if e.strip()]
+        if entries:
+            return entries[-min(settings.trusted_proxy_hops, len(entries))]
     return request.client.host if request.client else "unknown"
 
 

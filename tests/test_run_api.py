@@ -395,6 +395,28 @@ def test_api_demo_runs_scores_and_reuses(client, demo_files, monkeypatch):
     assert len(snap["verdicts"]) == len(report["verdicts"]) and snap["demo"]["eval"] is not None
 
 
+def test_api_demo_fresh_run_needs_the_passcode_and_counts_toward_limits(client, demo_files, monkeypatch):
+    # A new demo run is a paid full check: on a public server, ?fresh=1 must not bypass the passcode
+    # or the per-IP limit. Showing the existing check stays open to everyone.
+    c, _ = client
+    first = c.post("/api/demo").json()["id"]
+    _wait_done(c, first)
+    import app.main as main_mod
+    monkeypatch.setattr(main_mod, "get_settings", lambda: api_settings(judge_mode_password="s3cret"))
+    assert c.post("/api/demo").json()["id"] == first  # no passcode needed to see the demo
+    r = c.post("/api/demo?fresh=1")
+    assert r.status_code == 403 and r.json()["code"] == "passcode"
+    r = c.post("/api/demo?fresh=1", json={"passcode": "wrong"})
+    assert r.status_code == 403
+    r = c.post("/api/demo?fresh=1", json={"passcode": "s3cret"})
+    assert r.status_code == 201 and r.json()["id"] != first
+    _wait_done(c, r.json()["id"])
+    monkeypatch.setattr(main_mod, "get_settings",
+                        lambda: api_settings(judge_mode_password="s3cret", max_jobs_per_ip_per_hour=1))
+    r = c.post("/api/demo?fresh=1", json={"passcode": "s3cret"})
+    assert r.status_code == 429 and r.json()["code"] == "rate_limited"
+
+
 def test_api_demo_without_a_recording_reuses_only_the_current_pipeline(client, demo_files, monkeypatch):
     c, _ = client
     old = c.post("/api/demo").json()["id"]
@@ -459,7 +481,13 @@ def test_passcode_and_client_ip():
     assert passcode_ok(locked, " s3cret ") and not passcode_ok(locked, "nope") and not passcode_ok(locked, None)
     request = SimpleNamespace(headers={"x-forwarded-for": "1.2.3.4, 10.0.0.1"}, client=SimpleNamespace(host="10.0.0.1"))
     assert client_ip(request, api_settings()) == "10.0.0.1"
-    assert client_ip(request, api_settings(trust_proxy_headers=True)) == "1.2.3.4"
+    # Two proxies: the outer one appended the client (1.2.3.4), the inner one the outer proxy (10.0.0.1).
+    assert client_ip(request, api_settings(trust_proxy_headers=True, trusted_proxy_hops=2)) == "1.2.3.4"
+    assert client_ip(request, api_settings(trust_proxy_headers=True)) == "10.0.0.1"  # one hop: the last entry
+    # A client cannot dodge the limits by sending its own X-Forwarded-For: only the end is trusted.
+    forged = SimpleNamespace(headers={"x-forwarded-for": "6.6.6.6, 1.2.3.4"}, client=SimpleNamespace(host="10.0.0.9"))
+    assert client_ip(forged, api_settings(trust_proxy_headers=True)) == "1.2.3.4"
+    assert client_ip(forged, api_settings(trust_proxy_headers=True, trusted_proxy_hops=5)) == "6.6.6.6"  # capped
     assert (minutes_text(40), minutes_text(300)) == ("about a minute", "about 5 minutes")
 
 

@@ -71,10 +71,13 @@ def _job_view(job) -> dict[str, Any]:
 
 
 @app.get("/api/health")
-def health() -> dict:
+def health(request: Request) -> dict:
     settings = get_settings()
     return {
         "status": "ok",
+        # The address rate limits are counted against, to check TRUST_PROXY_HEADERS / TRUSTED_PROXY_HOPS
+        # after deploying: it should be your own public address.
+        "your_address": client_ip(request, settings),
         "api_key_configured": bool(settings.nebius_api_key),
         "models": {role: bool(model) for role, model in settings.models.items()},
         "limits": {
@@ -358,15 +361,30 @@ async def job_events(job_id: str, request: Request):
 
 
 @app.post("/api/demo", status_code=201)
-async def start_demo(fresh: bool = False):
+async def start_demo(request: Request, fresh: bool = False):
     """The bundled demo paper (planted errors) as checked by the calibrated pipeline: the recorded
     check in demo/snapshot.json, whose numbers the README reports. `fresh` checks it again with the
     current pipeline (needs an API key). Without a recording, the latest check by the current
-    pipeline is reused, or a new one runs."""
+    pipeline is reused, or a new one runs.
+
+    A new run is a paid full check, so it takes the same passcode (body: {"passcode": "..."}) and
+    the same capacity and per-IP limits as any full check; showing the recording is always free."""
     if not demo.demo_available():
         return _error(501, "The demo paper has not been generated yet (run scripts/plant_errors.py).")
     runner = get_runner()
-    has_key = bool(get_settings().nebius_api_key)
+    settings = get_settings()
+    has_key = bool(settings.nebius_api_key)
+    runs_new = has_key and (fresh or (not demo.SNAPSHOT_PATH.exists() and runner.latest_demo_job() is None))
+    if runs_new:
+        try:
+            data = await request.json()
+        except (json.JSONDecodeError, UnicodeDecodeError):
+            data = {}
+        passcode = data.get("passcode") if isinstance(data, dict) else None
+        refused = (_passcode_error(settings, passcode) if fresh else None) or _admit(request, settings)
+        if refused:
+            return refused
+        request.app.state.job_limiter.record(client_ip(request, settings))
     if fresh and has_key:
         job = runner.create_demo_job()
     elif demo.SNAPSHOT_PATH.exists():

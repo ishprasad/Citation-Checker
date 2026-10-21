@@ -99,6 +99,7 @@ class Settings:
     judge_mode_password: str = ""
     grobid_url: str = ""
     trust_proxy_headers: bool = False  # use X-Forwarded-For for rate limiting (only behind a trusted proxy)
+    trusted_proxy_hops: int = 1  # proxies in front of the app; the client is the entry the outermost one added
 
     def model_for(self, role: str) -> str:
         model = self.models.get(role, "")
@@ -172,4 +173,5 @@ def get_settings() -> Settings:
         judge_mode_password=_env("JUDGE_MODE_PASSWORD"),
         grobid_url=_env("GROBID_URL"),
         trust_proxy_headers=_env("TRUST_PROXY_HEADERS", "false").lower() in ("1", "true", "yes", "on"),
+        trusted_proxy_hops=max(1, _env_int("TRUSTED_PROXY_HOPS", 1)),
     )

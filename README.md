@@ -1,3 +1,15 @@
+---
+title: Citation Checker
+emoji: 📚
+colorFrom: blue
+colorTo: green
+sdk: docker
+app_port: 8000
+pinned: false
+license: mit
+short_description: Does each cited paper say what the citing paper claims?
+---
+
 # Citation Checker
 
 For every citation in a research paper, Citation Checker asks one question: does the cited source actually say what the citing author claims it says? It runs on NVIDIA Nemotron models served through Nebius Token Factory.
@@ -26,6 +38,28 @@ docker compose --profile grobid up        # also start GROBID; then set GROBID_U
 ```
 
 Or without Compose: `docker build -t citation-checker .` and `docker run --env-file .env -p 8000:8000 -v citation-cache:/app/.cache citation-checker`. Run a single container (one worker): jobs, rate limits and live progress live in the process, and finished work in SQLite under `.cache/`.
+
+**Free hosting on Hugging Face Spaces.** The block at the top of this file configures a Docker Space: it builds the `Dockerfile` and serves the app on port 8000.
+
+1. Create a Space with the Docker SDK at huggingface.co/new-space.
+2. Push this repository to it:
+   ```bash
+   git remote add space https://huggingface.co/spaces/<user>/<space>
+   git push space main
+   ```
+   For the password, use a Hugging Face access token with write permission.
+3. In the Space's *Settings → Variables and secrets*, add these as **secrets**:
+   - `NEBIUS_API_KEY`;
+   - the model IDs from your `.env` (`MODEL_EXTRACT`, `MODEL_JUDGE`, `MODEL_ESCALATE`, `MODEL_EMBED`);
+   - `CONTACT_EMAIL`, and optionally `OPENALEX_API_KEY`;
+   - `JUDGE_MODE_PASSWORD`.
+
+   Add these as **variables**:
+   - `TRUST_PROXY_HEADERS=true`;
+   - `MAX_TOKENS_PER_JOB=5000000`.
+4. Once the Space is running, open `https://<user>-<space>.hf.space/api/health`. `your_address` should be your own public IP address. If it shows an internal address instead (for example `10.x.x.x`), raise `TRUSTED_PROXY_HOPS` by one and check again. Until then, all visitors share one rate-limit allowance.
+
+On the free hardware the Space sleeps when unused and its disk is reset on restart, so finished checks and the cache are not kept. The demo button always shows the bundled recording, so it costs nothing and opens instantly even after a restart. Checks of other papers run on your Token Factory key, within the limits above: full checks, "Check the rest" and a new demo run need the passcode, and new checks are limited per visitor.
 
 **Developer scripts.**
 
@@ -216,6 +250,7 @@ Every intermediate result is stored in SQLite. When the server restarts it resum
 | `JUDGE_MODE_PASSWORD` | empty | If set, full checks and "Check the rest" need this passcode; quick checks, cached results and the demo stay open. |
 | `MAX_PDF_MB` | 25 | Upload size limit. |
 | `TRUST_PROXY_HEADERS` | false | Behind a trusted reverse proxy, rate-limit by `X-Forwarded-For`. |
+| `TRUSTED_PROXY_HOPS` | 1 | How many proxies sit in front of the app. The client address is read that many entries from the end of `X-Forwarded-For`, which a client cannot forge. |
 | `GROBID_URL` | empty | Use a GROBID server for PDF parsing. |
 
 ### UI (`static/`)
