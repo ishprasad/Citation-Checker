@@ -380,4 +380,14 @@ async def start_demo(fresh: bool = False):
     return {"id": job.id, "job": _job_view(job)}
 
 
-app.mount("/", StaticFiles(directory=ROOT_DIR / "static", html=True), name="static")
+class UIFiles(StaticFiles):
+    """The UI's files. "no-cache" makes browsers check for a newer version on every load (an unchanged
+    file comes back as a short 304), so a new UI shows up at once instead of a stale cached copy."""
+
+    async def get_response(self, path: str, scope) -> Response:
+        response = await super().get_response(path, scope)
+        response.headers["Cache-Control"] = "no-cache"
+        return response
+
+
+app.mount("/", UIFiles(directory=ROOT_DIR / "static", html=True), name="static")

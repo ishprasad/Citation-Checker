@@ -322,6 +322,16 @@ def test_api_unknown_job(client):
     assert c.post("/api/jobs/nope/expand").status_code == 404
 
 
+def test_ui_files_are_revalidated(client):
+    c, _ = client
+    for path in ("/", "/app.js", "/styles.css"):
+        r = c.get(path)
+        assert r.status_code == 200 and r.headers["cache-control"] == "no-cache"
+        # An unchanged file comes back as a short 304, still marked no-cache.
+        again = c.get(path, headers={"If-None-Match": r.headers["etag"]})
+        assert again.status_code == 304 and again.headers["cache-control"] == "no-cache"
+
+
 # ----------------------------------------------------------------------------- demo
 
 
