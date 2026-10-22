@@ -275,7 +275,7 @@ Edits are applied from the end of the text backwards, so every offset stays exac
 
 ### Initial calibration
 
-Flags on untouched citations were reviewed by hand (`demo/annotations.json`) classified as genuine, false alarm or debatable, after being checked against the cited texts. Most false alarms fell into two groups:
+Flags on untouched citations were reviewed by hand (`demo/annotations.json`), and classified as genuine, false alarm or debatable, after being checked against the cited texts. Most false alarms fell into two groups:
 
 - **Group citations read literally.** "Improving factuality is an open direction (A; B; C)" was flagged because A "does not mention chain-of-thought".
 - **Identification citations judged on the citing authors' own description.** BIG-bench was flagged for "not describing" the Date Understanding task.
