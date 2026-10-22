@@ -260,7 +260,7 @@ The UI is plain HTML, CSS and JavaScript, with no build step and no CDN. Run `uv
 
 ## Demo paper and evaluation (`app/demo.py`, `scripts/plant_errors.py`, `scripts/evaluate.py`)
 
-The demo is the Chain-of-Thought Prompting paper (arXiv:2201.11903). Its references are mostly open (full text for 78 of 82), and 10 of its citations have been deliberately altered.
+The paper for the demo is the Chain-of-Thought Prompting paper (arXiv:2201.11903). Its references are mostly open (full text for 78 of 82), and 10 of its citations have been deliberately altered.
 
 **How errors are planted.** `plant_errors.py` first checks the unmodified paper. Errors are planted only on citations the checker judged supported with high confidence and no tags, so a caught error can't be a pre-existing problem. The four mutation types:
 
@@ -275,12 +275,12 @@ Edits are applied from the end of the text backwards, so every offset stays exac
 
 ### Initial calibration
 
-Flags on untouched citations were reviewed by hand (`demo/annotations.json`: genuine, false alarm or debatable, with notes; checked against the cited texts where it mattered). Most false alarms fell into two groups:
+Flags on untouched citations were reviewed by hand (`demo/annotations.json`) classified as genuine, false alarm or debatable, after being checked against the cited texts. Most false alarms fell into two groups:
 
 - **Group citations read literally.** "Improving factuality is an open direction (A; B; C)" was flagged because A "does not mention chain-of-thought".
 - **Identification citations judged on the citing authors' own description.** BIG-bench was flagged for "not describing" the Date Understanding task.
 
-The fixes:
+The fixes made in the calibration:
 
 - A marker citing three or more works for a statement without numbers is judged like a background citation: supported or "could not be verified".
 - An identification claim without numbers can no longer be "not found" or "overstated". It still escalates, and explicit contradictions stay strict.
@@ -327,8 +327,6 @@ The demo numbers above come from the paper the checker was calibrated on. For a 
 - **The detector rules** gained 7 planted errors and lost none.
 - **The scope and hedge gains are optimistic.** The rules were written on these papers, and those gains match the planting script's own wording. A third round with different wording is needed to measure them.
 - **The checker also found 17 genuine problems in the original papers**, such as 20.5% reported for a cited 24.5%, and a 39% prevalence said to agree with a study that found 1.07%.
-
-Details and caveats: [`eval/heldout-2/README.md`](eval/heldout-2/README.md).
 
 ## Limitations and future work
 
