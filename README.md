@@ -133,13 +133,14 @@ Each reference is matched to a real paper, and its text is fetched using free AP
 - **Fetch text.** The app tries these sources in order:
   1. arXiv LaTeX source, converted with figure and table captions kept, since captions often hold the cited numbers.
   2. The arXiv PDF.
-  3. An open-access PDF listed by OpenAlex.
-  4. An arXiv preprint "twin" of a published paper.
-  5. The abstract alone, marked `abstract_only`.
+  3. Europe PMC full-text XML (JATS), found by DOI or by the PMC ID listed in OpenAlex. This covers PubMed Central's open-access subset, including most biomedical journals whose sites refuse automated downloads.
+  4. An open-access PDF listed by OpenAlex.
+  5. An arXiv preprint "twin" of a published paper.
+  6. The abstract alone, marked `abstract_only`.
 
-  PDF text comes from PyMuPDF, with hyphenation and ligatures repaired. The cited paper's own reference list is stored next to its text, for the secondary-citation detector.
+  If the citing paper cites a journal version published in a later year than its arXiv preprint, steps 3 and 4 come before steps 1 and 2, because the numbers may have changed between versions. PDF text comes from PyMuPDF, with hyphenation and ligatures repaired. The cited paper's own reference list is stored next to its text, for the secondary-citation detector.
 - **Retractions.** The app uses OpenAlex `is_retracted` and Crossref `updated-by` entries with `type: "retraction"`. Crossref includes Retraction Watch data. If neither source has a record, `retracted` stays `null`.
-- **Caching and politeness.** Every HTTP response and every resolved reference is cached under `.cache/`. Requests carry a `mailto` User-Agent, and arXiv requests are spaced 3 seconds apart. A transient download failure degrades to the abstract and is not cached, so the next run retries. When arXiv's search API rate-limits the preprint look-up, it is skipped for 10 minutes instead of retried per reference (papers outside CS, maths and physics rarely have an arXiv preprint anyway).
+- **Caching and politeness.** Every HTTP response and every resolved reference is cached under `.cache/`. Requests carry a `mailto` User-Agent, arXiv requests are spaced 3 seconds apart, and Europe PMC requests 0.1 seconds apart. A transient download failure degrades to the abstract and is not cached, so the next run retries. When arXiv's search API rate-limits the preprint look-up, it is skipped for 10 minutes instead of retried per reference (papers outside CS, maths and physics rarely have an arXiv preprint anyway).
 
 Coverage on real papers:
 
