@@ -74,19 +74,19 @@
         <p>Every citation rides this line. Interchanges are where a Nemotron model takes over.</p>
         <ol class="route">
           <li><span class="route-stop" aria-hidden="true"></span>
-            <div><strong>Parsing paper</strong><span>LaTeX source or PDF → citing sentences and the bibliography</span></div></li>
+            <div><strong>Parsing paper</strong><span>Parses ingested paper - citing sentences and the bibliography</span></div></li>
           <li><span class="route-stop" aria-hidden="true"></span>
-            <div><strong>Resolving references</strong><span>arXiv, OpenAlex, Crossref and Europe PMC; full text wherever it is open</span></div></li>
+            <div><strong>Resolving references</strong><span>Papers from bibliography found by searching arXiv, OpenAlex, Crossref and Europe PMC</span></div></li>
           <li class="interchange"><span class="route-stop" aria-hidden="true"></span>
-            <div><strong>Extracting claims <span class="model">Nemotron Nano</span></strong><span>What each sentence says the cited work contains</span></div></li>
+            <div><strong>Extracting claims <span class="model">Nemotron Nano</span></strong><span>Extracts what each sentence says the citing paper contains</span></div></li>
           <li><span class="route-stop" aria-hidden="true"></span>
-            <div><strong>Retrieving evidence</strong><span>The five closest passages of the cited paper, plus its abstract</span></div></li>
+            <div><strong>Retrieving evidence</strong><span>Retrieves relevant passages of the cited paper, plus its abstract</span></div></li>
           <li class="interchange"><span class="route-stop" aria-hidden="true"></span>
-            <div><strong>Judging claims <span class="model">Nemotron Super</span></strong><span>A verdict with a quote verified word for word in the source</span></div></li>
+            <div><strong>Judging claims <span class="model">Nemotron Super</span></strong><span>Judges claims against retrieved evidence and gives a verdict</span></div></li>
           <li class="interchange"><span class="route-stop" aria-hidden="true"></span>
-            <div><strong>Escalating to Ultra <span class="model">Nemotron Ultra</span></strong><span>Reads the whole cited paper when a verdict needs a second look</span></div></li>
+            <div><strong>Escalating to Ultra <span class="model">Nemotron Ultra</span></strong><span>Gives a second opinion on a verdict when necessary</span></div></li>
           <li class="terminus"><span class="route-stop" aria-hidden="true"></span>
-            <div><strong>Report</strong><span>Every citation underlined by its verdict, with the evidence beside it</span></div></li>
+            <div><strong>Report</strong><span>Presents every citation underlined by its verdict, with the evidence beside it</span></div></li>
         </ol>
       </aside>
     </div>
